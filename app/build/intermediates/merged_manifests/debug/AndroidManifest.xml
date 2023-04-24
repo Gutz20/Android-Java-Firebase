@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="26"
+        android:minSdkVersion="28"
         android:targetSdkVersion="33" />
 
     <permission
@@ -27,6 +27,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.PaqtaFood" >
+        <activity
+            android:name="com.paqta.paqtafood.presentation.signup.Signup"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.presentation.login.Login"
+            android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.MainActivity"
             android:exported="true" >

@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+color colorFondo
+color colorLogo
 color md_theme_dark_background
 color md_theme_dark_error
 color md_theme_dark_errorContainer
@@ -61,14 +63,37 @@ color md_theme_light_surfaceVariant
 color md_theme_light_tertiary
 color md_theme_light_tertiaryContainer
 color seed
+drawable background_resturant
+drawable baseline_person_outline_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-id button
+drawable lineas
+drawable logo
+drawable logo_black_transparent
+drawable logo_black_transparent_small
+drawable logo_blank_transparent
+drawable logo_rose_transparent
+drawable outline_lock_24
+id btnLogin
+id imageView2
+id materialCardView
+id tvwLogin
+id txtLayoutPassword
+id txtLayoutUser
+id txtPassword
+id txtUser
+layout activity_login
 layout activity_main
+layout activity_signup
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string labelButtonLogin
+string labelPassword
+string labelTextViewLogin
+string labelUser
 style Base.Theme.PaqtaFood
 style Theme.PaqtaFood
+style roundedImageViewRounded
 xml backup_rules
 xml data_extraction_rules

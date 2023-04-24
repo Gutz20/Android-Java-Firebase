@@ -5,7 +5,7 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="26"
+8        android:minSdkVersion="28"
 8-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
 9-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml
@@ -22,7 +22,7 @@
 15-->[androidx.core:core:1.9.0] C:\Users\USUARIO\.gradle\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:5:5-24:19
+17-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:5:5-30:19
 18        android:allowBackup="true"
 18-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -45,44 +45,56 @@
 29        android:theme="@style/Theme.PaqtaFood" >
 29-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:13:9-47
 30        <activity
-30-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:15:9-23:20
-31            android:name="com.paqta.paqtafood.MainActivity"
-31-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:16:13-41
-32            android:exported="true" >
-32-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:17:13-36
-33            <intent-filter>
-33-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:18:13-22:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:19:17-69
-34-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:19:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:21:17-77
-36-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:21:27-74
-37            </intent-filter>
-38        </activity>
-39
-40        <provider
-40-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-41            android:name="androidx.startup.InitializationProvider"
-41-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-42            android:authorities="com.paqta.paqtafood.androidx-startup"
-42-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-43            android:exported="false" >
-43-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-44            <meta-data
-44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-45                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-46                android:value="androidx.startup" />
-46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-47            <meta-data
-47-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\USUARIO\.gradle\caches\transforms-3\ae3e8265de2d7f874c642be745cd48da\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-48                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-48-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\USUARIO\.gradle\caches\transforms-3\ae3e8265de2d7f874c642be745cd48da\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-49                android:value="androidx.startup" />
-49-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\USUARIO\.gradle\caches\transforms-3\ae3e8265de2d7f874c642be745cd48da\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-50        </provider>
-51    </application>
-52
-53</manifest>
+30-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:15:9-17:40
+31            android:name="com.paqta.paqtafood.presentation.signup.Signup"
+31-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:16:13-55
+32            android:exported="false" />
+32-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:17:13-37
+33        <activity
+33-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:18:9-20:40
+34            android:name="com.paqta.paqtafood.presentation.login.Login"
+34-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:19:13-53
+35            android:exported="false" />
+35-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:20:13-37
+36        <activity
+36-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:21:9-29:20
+37            android:name="com.paqta.paqtafood.MainActivity"
+37-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:22:13-41
+38            android:exported="true" >
+38-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:23:13-36
+39            <intent-filter>
+39-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:24:13-28:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:25:17-69
+40-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:25:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:27:17-77
+42-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:27:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <provider
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+47            android:name="androidx.startup.InitializationProvider"
+47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+48            android:authorities="com.paqta.paqtafood.androidx-startup"
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+49            android:exported="false" >
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+50            <meta-data
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+51                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+52                android:value="androidx.startup" />
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\0fef484d2d7d3612c69865f977f8c08f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+53            <meta-data
+53-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\USUARIO\.gradle\caches\transforms-3\ae3e8265de2d7f874c642be745cd48da\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+54                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+54-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\USUARIO\.gradle\caches\transforms-3\ae3e8265de2d7f874c642be745cd48da\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+55                android:value="androidx.startup" />
+55-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\USUARIO\.gradle\caches\transforms-3\ae3e8265de2d7f874c642be745cd48da\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+56        </provider>
+57    </application>
+58
+59</manifest>

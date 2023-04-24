@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PaqtaFood</string>
+    <string name="labelUser">Usuario</string>
+    <string name="labelPassword">Contraseña</string>
+    <string name="labelButtonLogin">Iniciar Sesion</string>
+    <string name="labelTextViewLogin">LOGIN</string>
 </resources>
