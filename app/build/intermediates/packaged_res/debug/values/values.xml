@@ -2,6 +2,8 @@
 <resources>
     <color name="colorFondo">#151C48</color>
     <color name="colorLogo">#DECDC6</color>
+    <color name="colorOscuro">#000</color>
+    <color name="colorRojo">#FD5F5F</color>
     <color name="md_theme_dark_background">#1C1B1F</color>
     <color name="md_theme_dark_error">#F2B8B5</color>
     <color name="md_theme_dark_errorContainer">#8C1D18</color>
@@ -66,6 +68,8 @@
     <string name="app_name">PaqtaFood</string>
     <string name="labelButtonLogin">Iniciar Sesion</string>
     <string name="labelPassword">Contraseña</string>
+    <string name="labelRegistro">REGISTRARSE</string>
+    <string name="labelRememberPassword">¿Olvidaste tu contraseña?</string>
     <string name="labelTextViewLogin">LOGIN</string>
     <string name="labelUser">Usuario</string>
     <style name="Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">

@@ -4,4 +4,6 @@
     <string name="labelPassword">Contraseña</string>
     <string name="labelButtonLogin">Iniciar Sesion</string>
     <string name="labelTextViewLogin">LOGIN</string>
+    <string name="labelRememberPassword">¿Olvidaste tu contraseña?</string>
+    <string name="labelRegistro">REGISTRARSE</string>
 </resources>

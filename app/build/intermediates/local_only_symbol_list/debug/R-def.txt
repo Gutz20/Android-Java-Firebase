@@ -2,6 +2,8 @@ R_DEF: Internal format may change without notice
 local
 color colorFondo
 color colorLogo
+color colorOscuro
+color colorRojo
 color md_theme_dark_background
 color md_theme_dark_error
 color md_theme_dark_errorContainer
@@ -68,16 +70,24 @@ drawable baseline_person_outline_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable lineas
+drawable llamita
 drawable logo
 drawable logo_black_transparent
 drawable logo_black_transparent_small
 drawable logo_blank_transparent
 drawable logo_rose_transparent
 drawable outline_lock_24
+drawable paqta_food_2
+drawable rayitas
+drawable rayitas_volteadas
 id btnLogin
-id imageView2
+id decorator_bottom
+id decorator_top
+id imageView6
 id materialCardView
+id textView2
 id tvwLogin
+id tvwRegister
 id txtLayoutPassword
 id txtLayoutUser
 id txtPassword
@@ -90,6 +100,8 @@ mipmap ic_launcher_round
 string app_name
 string labelButtonLogin
 string labelPassword
+string labelRegistro
+string labelRememberPassword
 string labelTextViewLogin
 string labelUser
 style Base.Theme.PaqtaFood
