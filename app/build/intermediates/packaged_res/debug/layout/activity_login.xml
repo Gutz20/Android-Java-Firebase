@@ -38,11 +38,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvwLogin"
                 app:startIconDrawable="@drawable/baseline_person_outline_24"
-
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtUser"
+                    android:id="@+id/txtLoginUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -126,7 +125,7 @@
                 app:startIconDrawable="@drawable/outline_lock_24">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtPassword"
+                    android:id="@+id/txtLoginPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/labelPassword"

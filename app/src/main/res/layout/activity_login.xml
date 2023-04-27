@@ -38,7 +38,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvwLogin"
                 app:startIconDrawable="@drawable/baseline_person_outline_24"
-
                 >
 
                 <com.google.android.material.textfield.TextInputEditText

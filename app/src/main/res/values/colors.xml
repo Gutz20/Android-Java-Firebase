@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorBlanco">#fff</color>
     <color name="colorLogo">#DECDC6</color>
     <color name="colorFondo">#151C48</color>
+    <color name="colorFondo2">#9BA1CC</color>
     <color name="colorRojo">#FD5F5F</color>
     <color name="colorOscuro">#000</color>
+    <color name="colorLetra">#103153</color>
     <color name="seed">#6750A4</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
     <color name="md_theme_light_primary">#6750A4</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#EADDFF</color>

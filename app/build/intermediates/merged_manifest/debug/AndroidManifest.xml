@@ -28,6 +28,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.PaqtaFood" >
         <activity
+            android:name="com.paqta.paqtafood.presentation.profile.Profile"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.presentation.staff.Staff"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.presentation.dishes.Dishes"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.presentation.components.DefaultBottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.presentation.principal.Principal"
+            android:exported="false" />
+        <activity
             android:name="com.paqta.paqtafood.presentation.signup.Signup"
             android:exported="false" />
         <activity

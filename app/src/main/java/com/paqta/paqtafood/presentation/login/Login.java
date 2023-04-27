@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 import com.paqta.paqtafood.MainActivity;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.presentation.components.DefaultBottomNavigation;
+import com.paqta.paqtafood.presentation.fragment.ProfileFragment;
+import com.paqta.paqtafood.presentation.principal.Principal;
+import com.paqta.paqtafood.presentation.profile.Profile;
 import com.paqta.paqtafood.presentation.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;
 
@@ -39,7 +43,15 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Login.this, "Este es el user: " + txtUser.getText().toString() + " " + txtPassword.getText().toString(), Toast.LENGTH_SHORT).show();
+
+                if (txtUser.getText().toString().equals("admin") && txtPassword.getText().toString().equals("123456")) {
+                    Intent intent = new Intent(Login.this, Principal.class);
+                    startActivity(intent);
+                } else if (!txtUser.getText().toString().equals("admin") || !txtPassword.toString().equals("123456")) {
+                    Toast.makeText(Login.this, "datos incorrectos", Toast.LENGTH_SHORT).show();
+                } else if (txtUser.getText().toString().isEmpty() && txtPassword.getText().toString().isEmpty()) {
+                    Toast.makeText(Login.this, "Error datos vacios", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -50,6 +62,7 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         changeColorBar.window = getWindow();
         changeColorBar.cambiarColor("#151C48", "#151C48");

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo2"
+    tools:context=".presentation.principal.Principal">
+
+
+    <TextView
+        android:id="@+id/textViewTitleMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/labelMenuGestion"
+        android:textColor="@color/colorOscuro"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:dividerInsetEnd="32dp"
+        app:dividerInsetStart="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleMenu" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMenuBox1"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="#000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleMenu">
+
+        <ImageView
+            android:id="@+id/imgViewPlato"
+            android:layout_width="match_parent"
+            android:contentDescription="@string/descriptionImagesMenuPlat"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/box_image_1" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMenuBox2"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorBlanco"
+        app:layout_constraintStart_toEndOf="@+id/cardMenuBox1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleMenu">
+
+        <ImageView
+            android:id="@+id/imgViewOtro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/box_image_2" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMenuBox3"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorBlanco"
+        app:layout_constraintStart_toEndOf="@+id/cardMenuBox2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleMenu">
+
+        <ImageView
+            android:id="@+id/imgViewOtro2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/box_image_3" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMenuBox4"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorBlanco"
+        app:layout_constraintStart_toEndOf="@+id/cardMenuBox3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleMenu">
+
+        <ImageView
+            android:id="@+id/imgViewOtro3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/box_image_4" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/txtMenu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:text="Principal"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardMenuBox1" />
+
+    <TextView
+        android:id="@+id/txtMenu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:text="Combos"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/txtMenu1"
+        app:layout_constraintTop_toBottomOf="@+id/cardMenuBox1" />
+
+    <TextView
+        android:id="@+id/txtMenu3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:text="Extras"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/txtMenu2"
+        app:layout_constraintTop_toBottomOf="@+id/cardMenuBox1" />
+
+    <TextView
+        android:id="@+id/txtMenu4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
+        android:text="Bebidas"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/txtMenu3"
+        app:layout_constraintTop_toBottomOf="@+id/cardMenuBox1" />
+
+    <TextView
+        android:id="@+id/txtSubMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="Platillos"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMenu1" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPlat_1"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="179dp"
+        android:layout_height="213dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorBlanco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/descriptionImagesMenuPlat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/platillos_img_1" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/descriptionImagesMenuPlat"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:srcCompat="@drawable/contenido_platillo_img_1" />
+
+            <TextView
+                android:id="@+id/txtNamePlat1"
+                android:layout_width="155dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="12dp"
+                android:text="Alas con papas fritas y arroz chaufa"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.521"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+            <ImageView
+                android:id="@+id/imgMenuIcon"
+                android:layout_width="18dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNamePlat1"
+                app:srcCompat="@drawable/baseline_menu_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPlat_2"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="181dp"
+        android:layout_height="213dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorBlanco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgCard2Plat1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/descriptionImagesMenuPlat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/platillos_img_1" />
+
+            <ImageView
+                android:id="@+id/imgCard2Plat2"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/descriptionImagesMenuPlat"
+                app:layout_constraintBottom_toBottomOf="@+id/imgCard2Plat1"
+                app:layout_constraintEnd_toEndOf="@+id/imgCard2Plat1"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/imgCard2Plat1"
+                app:layout_constraintTop_toTopOf="@+id/imgCard2Plat1"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/contenido_platillo_img_2" />
+
+            <TextView
+                android:id="@+id/txtNamePlat"
+                android:layout_width="155dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="12dp"
+                android:text="Alas con papas fritas y arroz chaufa"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.521"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgCard2Plat1" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="18dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNamePlat"
+                app:srcCompat="@drawable/baseline_menu_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

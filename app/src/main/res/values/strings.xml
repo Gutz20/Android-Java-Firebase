@@ -7,8 +7,25 @@
     <string name="labelButtonLogin">Iniciar Sesion</string>
     <string name="labelButtonRegistro">Registrarse</string>
     <string name="labelTextViewLogin">LOGIN</string>
+    <string name="labelMenuGestion">Menú de Gestion</string>
     <string name="labelTextViewSignup">REGISTRO</string>
     <string name="labelRememberPassword">¿Olvidaste tu contraseña?</string>
     <string name="labelRegistro">REGISTRARSE</string>
     <string name="labelLogin">INICIA SESION</string>
+    <string name="descriptionImagesMenuPlat">Plato</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Dishes-->
+    <string name="labelTitleFishes">Directorio de Platos</string>
+    <string name="btnNuevoFishes">NUEVO</string>
+    <string name="labelFishes">Arroz Chaufa y papas fritas</string>
+    <string name="labelSecundaryFishes">Principal</string>
+
+    <!--    Staff-->
+    <string name="labelTitleStaff">Directorio de personal</string>
+
+    <!--    Profile-->
+    <string name="labelCampoNulo">...</string>
+
 </resources>
