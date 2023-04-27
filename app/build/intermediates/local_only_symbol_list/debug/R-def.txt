@@ -88,6 +88,10 @@ id materialCardView
 id textView2
 id tvwLogin
 id tvwRegister
+id txtConfirmPassword
+id txtEmail
+id txtLayoutConfirmPassword
+id txtLayoutEmail
 id txtLayoutPassword
 id txtLayoutUser
 id txtPassword
@@ -99,10 +103,15 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string labelButtonLogin
+string labelButtonRegistro
+string labelConfirmPassword
+string labelEmail
+string labelLogin
 string labelPassword
 string labelRegistro
 string labelRememberPassword
 string labelTextViewLogin
+string labelTextViewSignup
 string labelUser
 style Base.Theme.PaqtaFood
 style Theme.PaqtaFood

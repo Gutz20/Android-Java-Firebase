@@ -2,8 +2,13 @@
     <string name="app_name">PaqtaFood</string>
     <string name="labelUser">Usuario</string>
     <string name="labelPassword">Contraseña</string>
+    <string name="labelConfirmPassword">Confirmar Contraseña</string>
+    <string name="labelEmail">Email</string>
     <string name="labelButtonLogin">Iniciar Sesion</string>
+    <string name="labelButtonRegistro">Registrarse</string>
     <string name="labelTextViewLogin">LOGIN</string>
+    <string name="labelTextViewSignup">REGISTRO</string>
     <string name="labelRememberPassword">¿Olvidaste tu contraseña?</string>
     <string name="labelRegistro">REGISTRARSE</string>
+    <string name="labelLogin">INICIA SESION</string>
 </resources>
