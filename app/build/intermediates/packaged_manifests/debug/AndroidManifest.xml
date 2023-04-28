@@ -28,25 +28,28 @@
         android:testOnly="true"
         android:theme="@style/Theme.PaqtaFood" >
         <activity
-            android:name="com.paqta.paqtafood.presentation.profile.Profile"
+            android:name="com.paqta.paqtafood.screens.components.DefaultNavigationApp"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.presentation.staff.Staff"
+            android:name="com.paqta.paqtafood.screens.components.DefaultNavigationDrawer"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.presentation.dishes.Dishes"
+            android:name="com.paqta.paqtafood.screens.profile.Profile"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.presentation.components.DefaultBottomNavigation"
+            android:name="com.paqta.paqtafood.screens.staff.Staff"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.presentation.principal.Principal"
+            android:name="com.paqta.paqtafood.screens.dishes.Dishes"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.presentation.signup.Signup"
+            android:name="com.paqta.paqtafood.screens.principal.Principal"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.presentation.login.Login"
+            android:name="com.paqta.paqtafood.screens.signup.Signup"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.screens.login.Login"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.MainActivity"

@@ -91,6 +91,7 @@
     <color name="seed">#6750A4</color>
     <string name="app_name">PaqtaFood</string>
     <string name="btnNuevoFishes">NUEVO</string>
+    <string name="close">Close Navigation Drawer</string>
     <string name="descriptionImagesMenuPlat">Plato</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="labelButtonLogin">Iniciar Sesion</string>
@@ -110,6 +111,7 @@
     <string name="labelTitleFishes">Directorio de Platos</string>
     <string name="labelTitleStaff">Directorio de personal</string>
     <string name="labelUser">Usuario</string>
+    <string name="open">Open Navigation Drawer</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

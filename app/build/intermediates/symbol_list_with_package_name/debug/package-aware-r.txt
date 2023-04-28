@@ -2775,6 +2775,7 @@ drawable background_resturant
 drawable baseline_arrow_back_ios_24
 drawable baseline_chevron_right_24
 drawable baseline_circle_24
+drawable baseline_close_24
 drawable baseline_home_24
 drawable baseline_menu_24
 drawable baseline_person_24
@@ -2937,6 +2938,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id about
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3031,6 +3033,7 @@ id button4
 id buttonPanel
 id cache_measures
 id callMeasure
+id camera
 id cancel_button
 id cardMenuBox1
 id cardMenuBox2
@@ -3062,12 +3065,14 @@ id compress
 id confirm_button
 id constraint
 id constraintLayout
+id contact
 id container
 id content
 id contentPanel
 id contiguous
 id continuousVelocity
 id coordinator
+id coordinatorLayout
 id cos
 id counterclockwise
 id cradle
@@ -3105,6 +3110,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawer_layout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -3139,6 +3145,7 @@ id fragment_container_view_tag
 id frame_layout
 id frost
 id fullscreen_header
+id gallery
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3151,6 +3158,7 @@ id header_title
 id hideable
 id home
 id homeAsUp
+id homeDrawer
 id honorRequest
 id horizontal_only
 id icon
@@ -3206,6 +3214,7 @@ id linear
 id linearLayout
 id listMode
 id list_item
+id login
 id m3_side_sheet
 id marquee
 id masked
@@ -3248,6 +3257,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id more
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3273,6 +3283,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nav_view
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3315,6 +3326,7 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
+id rate_us
 id ratio
 id rectangles
 id reverseSawtooth
@@ -3362,6 +3374,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id share
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3452,6 +3465,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id top
+id topAppBar
 id topPanel
 id touch_outside
 id transitionToEnd
@@ -3615,7 +3629,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_default_bottom_navigation
+layout activity_default_navigation_app
+layout activity_default_navigation_drawer
 layout activity_dishes
 layout activity_login
 layout activity_main
@@ -3644,6 +3659,7 @@ layout fragment_favorite
 layout fragment_menu
 layout fragment_profile
 layout fragment_search
+layout header
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3706,6 +3722,8 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
+menu main_menu
+menu top_app_bar
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -3750,6 +3768,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string close
 string descriptionImagesMenuPlat
 string error_a11y_label
 string error_icon_content_description
@@ -3872,6 +3891,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string open
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

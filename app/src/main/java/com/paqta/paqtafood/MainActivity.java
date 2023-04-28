@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.paqta.paqtafood.presentation.login.Login;
+import com.paqta.paqtafood.screens.login.Login;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -2774,6 +2774,7 @@ int drawable background_resturant 0x7f08007b
 int drawable baseline_arrow_back_ios_24 0x7f080110
 int drawable baseline_chevron_right_24 0x7f08007c
 int drawable baseline_circle_24 0x7f08007d
+int drawable baseline_close_24 0x7f080111
 int drawable baseline_home_24 0x7f08007e
 int drawable baseline_menu_24 0x7f08007f
 int drawable baseline_person_24 0x7f080080
@@ -2936,6 +2937,7 @@ int id SHOW_PROGRESS 0x7f0a000a
 int id SYM 0x7f0a000b
 int id TOP_END 0x7f0a000c
 int id TOP_START 0x7f0a000d
+int id about 0x7f0a024a
 int id accelerate 0x7f0a000e
 int id accessibility_action_clickable_span 0x7f0a000f
 int id accessibility_custom_action_0 0x7f0a0010
@@ -3030,6 +3032,7 @@ int id button4 0x7f0a0247
 int id buttonPanel 0x7f0a0067
 int id cache_measures 0x7f0a0068
 int id callMeasure 0x7f0a0069
+int id camera 0x7f0a0253
 int id cancel_button 0x7f0a006a
 int id cardMenuBox1 0x7f0a006b
 int id cardMenuBox2 0x7f0a006c
@@ -3061,12 +3064,14 @@ int id compress 0x7f0a0085
 int id confirm_button 0x7f0a0086
 int id constraint 0x7f0a0087
 int id constraintLayout 0x7f0a0249
+int id contact 0x7f0a024b
 int id container 0x7f0a0088
 int id content 0x7f0a0089
 int id contentPanel 0x7f0a008a
 int id contiguous 0x7f0a008b
 int id continuousVelocity 0x7f0a008c
 int id coordinator 0x7f0a008d
+int id coordinatorLayout 0x7f0a0256
 int id cos 0x7f0a008e
 int id counterclockwise 0x7f0a008f
 int id cradle 0x7f0a0090
@@ -3104,6 +3109,7 @@ int id dragLeft 0x7f0a00af
 int id dragRight 0x7f0a00b0
 int id dragStart 0x7f0a00b1
 int id dragUp 0x7f0a00b2
+int id drawer_layout 0x7f0a024c
 int id dropdown_menu 0x7f0a00b3
 int id easeIn 0x7f0a00b4
 int id easeInOut 0x7f0a00b5
@@ -3138,6 +3144,7 @@ int id fragment_container_view_tag 0x7f0a00d1
 int id frame_layout 0x7f0a00d2
 int id frost 0x7f0a00d3
 int id fullscreen_header 0x7f0a00d4
+int id gallery 0x7f0a024d
 int id ghost_view 0x7f0a00d5
 int id ghost_view_holder 0x7f0a00d6
 int id gone 0x7f0a00d7
@@ -3150,6 +3157,7 @@ int id header_title 0x7f0a00dd
 int id hideable 0x7f0a00de
 int id home 0x7f0a00df
 int id homeAsUp 0x7f0a00e0
+int id homeDrawer 0x7f0a024e
 int id honorRequest 0x7f0a00e1
 int id horizontal_only 0x7f0a00e2
 int id icon 0x7f0a00e3
@@ -3205,6 +3213,7 @@ int id linear 0x7f0a0113
 int id linearLayout 0x7f0a0114
 int id listMode 0x7f0a0115
 int id list_item 0x7f0a0116
+int id login 0x7f0a024f
 int id m3_side_sheet 0x7f0a0117
 int id marquee 0x7f0a0118
 int id masked 0x7f0a0119
@@ -3247,6 +3256,7 @@ int id month_navigation_fragment_toggle 0x7f0a013d
 int id month_navigation_next 0x7f0a013e
 int id month_navigation_previous 0x7f0a013f
 int id month_title 0x7f0a0140
+int id more 0x7f0a0254
 int id motion_base 0x7f0a0141
 int id mtrl_anchor_parent 0x7f0a0142
 int id mtrl_calendar_day_selector_frame 0x7f0a0143
@@ -3272,6 +3282,7 @@ int id mtrl_picker_text_input_range_start 0x7f0a0156
 int id mtrl_picker_title_text 0x7f0a0157
 int id mtrl_view_tag_bottom_padding 0x7f0a0158
 int id multiply 0x7f0a0159
+int id nav_view 0x7f0a0250
 int id navigation_bar_item_active_indicator_view 0x7f0a015a
 int id navigation_bar_item_icon_container 0x7f0a015b
 int id navigation_bar_item_icon_view 0x7f0a015c
@@ -3314,6 +3325,7 @@ int id pressed 0x7f0a0180
 int id progress_circular 0x7f0a0181
 int id progress_horizontal 0x7f0a0182
 int id radio 0x7f0a0183
+int id rate_us 0x7f0a0251
 int id ratio 0x7f0a0184
 int id rectangles 0x7f0a0185
 int id reverseSawtooth 0x7f0a0186
@@ -3361,6 +3373,7 @@ int id search_voice_btn 0x7f0a01af
 int id select_dialog_listview 0x7f0a01b0
 int id selected 0x7f0a01b1
 int id selection_type 0x7f0a01b2
+int id share 0x7f0a0252
 int id sharedValueSet 0x7f0a01b3
 int id sharedValueUnset 0x7f0a01b4
 int id shortcut 0x7f0a01b5
@@ -3451,6 +3464,7 @@ int id titleDividerNoCustom 0x7f0a0209
 int id title_template 0x7f0a020a
 int id toggle 0x7f0a020b
 int id top 0x7f0a020c
+int id topAppBar 0x7f0a0255
 int id topPanel 0x7f0a020d
 int id touch_outside 0x7f0a020e
 int id transitionToEnd 0x7f0a020f
@@ -3614,7 +3628,8 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
-int layout activity_default_bottom_navigation 0x7f0d001c
+int layout activity_default_navigation_app 0x7f0d0079
+int layout activity_default_navigation_drawer 0x7f0d0076
 int layout activity_dishes 0x7f0d001d
 int layout activity_login 0x7f0d001e
 int layout activity_main 0x7f0d001f
@@ -3643,6 +3658,7 @@ int layout fragment_favorite 0x7f0d0035
 int layout fragment_menu 0x7f0d0036
 int layout fragment_profile 0x7f0d0075
 int layout fragment_search 0x7f0d0037
+int layout header 0x7f0d0077
 int layout m3_alert_dialog 0x7f0d0038
 int layout m3_alert_dialog_actions 0x7f0d0039
 int layout m3_alert_dialog_title 0x7f0d003a
@@ -3705,6 +3721,8 @@ int layout select_dialog_multichoice_material 0x7f0d0072
 int layout select_dialog_singlechoice_material 0x7f0d0073
 int layout support_simple_spinner_dropdown_item 0x7f0d0074
 int menu bottom_nav_menu 0x7f0f0000
+int menu main_menu 0x7f0f0001
+int menu top_app_bar 0x7f0f0002
 int mipmap ic_launcher 0x7f100000
 int mipmap ic_launcher_round 0x7f100001
 int plurals mtrl_badge_content_description 0x7f110000
@@ -3749,6 +3767,7 @@ int string character_counter_content_description 0x7f120025
 int string character_counter_overflowed_content_description 0x7f120026
 int string character_counter_pattern 0x7f120027
 int string clear_text_end_icon_content_description 0x7f120028
+int string close 0x7f1200af
 int string descriptionImagesMenuPlat 0x7f120029
 int string error_a11y_label 0x7f12002a
 int string error_icon_content_description 0x7f12002b
@@ -3871,6 +3890,7 @@ int string mtrl_switch_track_decoration_path 0x7f12009f
 int string mtrl_switch_track_path 0x7f1200a0
 int string mtrl_timepicker_cancel 0x7f1200a1
 int string mtrl_timepicker_confirm 0x7f1200a2
+int string open 0x7f1200b0
 int string password_toggle_content_description 0x7f1200a3
 int string path_password_eye 0x7f1200a4
 int string path_password_eye_mask_strike_through 0x7f1200a5

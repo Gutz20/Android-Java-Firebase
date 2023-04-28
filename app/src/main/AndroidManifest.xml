@@ -13,25 +13,28 @@
         android:theme="@style/Theme.PaqtaFood"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.profile.Profile"
+            android:name=".screens.components.DefaultNavigationApp"
             android:exported="false" />
         <activity
-            android:name=".presentation.staff.Staff"
+            android:name=".screens.components.DefaultNavigationDrawer"
             android:exported="false" />
         <activity
-            android:name=".presentation.dishes.Dishes"
+            android:name=".screens.profile.Profile"
             android:exported="false" />
         <activity
-            android:name=".presentation.components.DefaultBottomNavigation"
+            android:name=".screens.staff.Staff"
             android:exported="false" />
         <activity
-            android:name=".presentation.principal.Principal"
+            android:name=".screens.dishes.Dishes"
             android:exported="false" />
         <activity
-            android:name=".presentation.signup.Signup"
+            android:name=".screens.principal.Principal"
             android:exported="false" />
         <activity
-            android:name=".presentation.login.Login"
+            android:name=".screens.signup.Signup"
+            android:exported="false" />
+        <activity
+            android:name=".screens.login.Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
