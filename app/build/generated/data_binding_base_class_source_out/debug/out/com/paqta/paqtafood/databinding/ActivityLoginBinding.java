@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,10 +35,13 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final ImageView decoratorTop;
 
   @NonNull
-  public final ImageView imageView6;
+  public final ImageView logoImageViewLogin;
 
   @NonNull
   public final MaterialCardView materialCardView;
+
+  @NonNull
+  public final ProgressBar progressBar;
 
   @NonNull
   public final TextView textView2;
@@ -62,16 +66,18 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnLogin,
       @NonNull ImageView decoratorBottom, @NonNull ImageView decoratorTop,
-      @NonNull ImageView imageView6, @NonNull MaterialCardView materialCardView,
-      @NonNull TextView textView2, @NonNull TextView tvwLogin, @NonNull TextView tvwRegister,
-      @NonNull TextInputLayout txtLayoutPassword, @NonNull TextInputLayout txtLayoutUser,
-      @NonNull TextInputEditText txtLoginPassword, @NonNull TextInputEditText txtLoginUser) {
+      @NonNull ImageView logoImageViewLogin, @NonNull MaterialCardView materialCardView,
+      @NonNull ProgressBar progressBar, @NonNull TextView textView2, @NonNull TextView tvwLogin,
+      @NonNull TextView tvwRegister, @NonNull TextInputLayout txtLayoutPassword,
+      @NonNull TextInputLayout txtLayoutUser, @NonNull TextInputEditText txtLoginPassword,
+      @NonNull TextInputEditText txtLoginUser) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.decoratorBottom = decoratorBottom;
     this.decoratorTop = decoratorTop;
-    this.imageView6 = imageView6;
+    this.logoImageViewLogin = logoImageViewLogin;
     this.materialCardView = materialCardView;
+    this.progressBar = progressBar;
     this.textView2 = textView2;
     this.tvwLogin = tvwLogin;
     this.tvwRegister = tvwRegister;
@@ -126,15 +132,21 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView6;
-      ImageView imageView6 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView6 == null) {
+      id = R.id.logoImageViewLogin;
+      ImageView logoImageViewLogin = ViewBindings.findChildViewById(rootView, id);
+      if (logoImageViewLogin == null) {
         break missingId;
       }
 
       id = R.id.materialCardView;
       MaterialCardView materialCardView = ViewBindings.findChildViewById(rootView, id);
       if (materialCardView == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
         break missingId;
       }
 
@@ -181,8 +193,8 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, btnLogin, decoratorBottom,
-          decoratorTop, imageView6, materialCardView, textView2, tvwLogin, tvwRegister,
-          txtLayoutPassword, txtLayoutUser, txtLoginPassword, txtLoginUser);
+          decoratorTop, logoImageViewLogin, materialCardView, progressBar, textView2, tvwLogin,
+          tvwRegister, txtLayoutPassword, txtLayoutUser, txtLoginPassword, txtLoginUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

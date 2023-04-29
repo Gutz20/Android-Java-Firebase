@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".screens.signup.Signup">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         style="@style/Widget.Material3.CardView.Elevated"
@@ -123,10 +132,10 @@
                     android:id="@+id/txtRegisterConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_theme_light_onSurfaceVariant"
                     android:hint="@string/labelConfirmPassword"
+                    android:inputType="textPassword"
 
-                    android:inputType="textPassword" />
+                    android:textColor="@color/md_theme_light_onSurfaceVariant" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -201,5 +210,6 @@
         app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toEndOf="@+id/decorator_bottom"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

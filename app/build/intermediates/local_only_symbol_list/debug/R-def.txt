@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+anim desplazamiento_abajo
+anim desplazamiento_arriba
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
@@ -128,9 +130,12 @@ drawable rectangle
 drawable rectangle_12
 drawable rectangle_66
 drawable whitebck
+font abel
 font acme
 font archivo
 id about
+id backgroundLayout
+id bluePaqtaLogo
 id bottomNavigationView
 id btnLogin
 id btnRegister
@@ -138,6 +143,7 @@ id button
 id button2
 id button3
 id button4
+id byTextView
 id camera
 id cardMenuBox1
 id cardMenuBox2
@@ -152,6 +158,7 @@ id coordinatorLayout
 id decorator_bottom
 id decorator_top
 id drawer_layout
+id end
 id favorites
 id frame_layout
 id gallery
@@ -184,6 +191,9 @@ id imgViewOtro3
 id imgViewPlato
 id linearLayout
 id login
+id logoImageView
+id logoImageViewLogin
+id logoTextView
 id materialCardView
 id materialDivider1
 id materialDivider2
@@ -192,10 +202,14 @@ id materialDivider4
 id materialDivider5
 id menu
 id more
+id motionLayout
 id nav_view
+id originPaqtaLogo
+id progressBar
 id rate_us
 id search
 id share
+id start
 id textView
 id textView2
 id textView20
@@ -243,8 +257,6 @@ layout activity_default_navigation_drawer
 layout activity_dishes
 layout activity_login
 layout activity_main
-layout activity_principal
-layout activity_profile
 layout activity_signup
 layout activity_staff
 layout fragment_cart
@@ -261,7 +273,13 @@ mipmap ic_launcher_round
 string app_name
 string btnNuevoFishes
 string close
+string default_web_client_id
 string descriptionImagesMenuPlat
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string hello_blank_fragment
 string labelButtonLogin
 string labelButtonRegistro
@@ -281,9 +299,11 @@ string labelTitleFishes
 string labelTitleStaff
 string labelUser
 string open
+string project_id
 style AppTheme
 style Base.Theme.PaqtaFood
 style Theme.PaqtaFood
 style rounded
+xml activity_main_scene
 xml backup_rules
 xml data_extraction_rules

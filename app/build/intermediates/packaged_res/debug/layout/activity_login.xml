@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="12dp"
-                android:hint="@string/labelUser"
+                android:hint="@string/labelEmail"
                 app:boxBackgroundColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -42,6 +42,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtLoginUser"
+                    android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -54,6 +55,7 @@
                 android:text="@string/labelTextViewLogin"
                 android:textColor="#fff"
                 android:textSize="20sp"
+                android:transitionName="textTransition"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,6 +139,15 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/decorator_top"
         android:layout_width="167dp"
@@ -162,10 +173,11 @@
         app:srcCompat="@drawable/rayitas_volteadas" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/logoImageViewLogin"
         android:layout_width="359dp"
         android:layout_height="161dp"
         app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+        android:transitionName="logoImageTrans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

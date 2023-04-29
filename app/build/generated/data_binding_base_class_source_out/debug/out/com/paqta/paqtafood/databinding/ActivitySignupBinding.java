@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +44,9 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final MaterialCardView materialCardView;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final TextView tvwLogin;
 
   @NonNull
@@ -72,10 +76,10 @@ public final class ActivitySignupBinding implements ViewBinding {
   private ActivitySignupBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnRegister,
       @NonNull ImageView decoratorBottom, @NonNull ImageView decoratorTop,
       @NonNull ImageView imageView6, @NonNull ImageView imgBackLogin,
-      @NonNull MaterialCardView materialCardView, @NonNull TextView tvwLogin,
-      @NonNull TextInputLayout txtLayoutConfirmPassword, @NonNull TextInputLayout txtLayoutEmail,
-      @NonNull TextInputLayout txtLayoutPassword, @NonNull TextInputLayout txtLayoutUser,
-      @NonNull TextInputEditText txtRegisterConfirmPassword,
+      @NonNull MaterialCardView materialCardView, @NonNull ProgressBar progressBar,
+      @NonNull TextView tvwLogin, @NonNull TextInputLayout txtLayoutConfirmPassword,
+      @NonNull TextInputLayout txtLayoutEmail, @NonNull TextInputLayout txtLayoutPassword,
+      @NonNull TextInputLayout txtLayoutUser, @NonNull TextInputEditText txtRegisterConfirmPassword,
       @NonNull TextInputEditText txtRegisterEmail, @NonNull TextInputEditText txtRegisterPassword,
       @NonNull TextInputEditText txtRegisterUser) {
     this.rootView = rootView;
@@ -85,6 +89,7 @@ public final class ActivitySignupBinding implements ViewBinding {
     this.imageView6 = imageView6;
     this.imgBackLogin = imgBackLogin;
     this.materialCardView = materialCardView;
+    this.progressBar = progressBar;
     this.tvwLogin = tvwLogin;
     this.txtLayoutConfirmPassword = txtLayoutConfirmPassword;
     this.txtLayoutEmail = txtLayoutEmail;
@@ -159,6 +164,12 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.tvwLogin;
       TextView tvwLogin = ViewBindings.findChildViewById(rootView, id);
       if (tvwLogin == null) {
@@ -214,7 +225,7 @@ public final class ActivitySignupBinding implements ViewBinding {
       }
 
       return new ActivitySignupBinding((ConstraintLayout) rootView, btnRegister, decoratorBottom,
-          decoratorTop, imageView6, imgBackLogin, materialCardView, tvwLogin,
+          decoratorTop, imageView6, imgBackLogin, materialCardView, progressBar, tvwLogin,
           txtLayoutConfirmPassword, txtLayoutEmail, txtLayoutPassword, txtLayoutUser,
           txtRegisterConfirmPassword, txtRegisterEmail, txtRegisterPassword, txtRegisterUser);
     }

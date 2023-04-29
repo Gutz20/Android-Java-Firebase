@@ -15,6 +15,7 @@
         </item>
     </string-array>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/abel</item>
         <item>@font/acme</item>
         <item>@font/archivo</item>
     </array>
@@ -92,7 +93,13 @@
     <string name="app_name">PaqtaFood</string>
     <string name="btnNuevoFishes">NUEVO</string>
     <string name="close">Close Navigation Drawer</string>
+    <string name="default_web_client_id" translatable="false">1091847638331-1atsamm1797kb7s7f11rfdsbtm8p8bs6.apps.googleusercontent.com</string>
     <string name="descriptionImagesMenuPlat">Plato</string>
+    <string name="gcm_defaultSenderId" translatable="false">1091847638331</string>
+    <string name="google_api_key" translatable="false">AIzaSyD-j3wQVy5DJ8Jdgxsh-OxnxeQmlF5P8HM</string>
+    <string name="google_app_id" translatable="false">1:1091847638331:android:fe60ffa222a708fdde7b1e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD-j3wQVy5DJ8Jdgxsh-OxnxeQmlF5P8HM</string>
+    <string name="google_storage_bucket" translatable="false">paqtafood.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="labelButtonLogin">Iniciar Sesion</string>
     <string name="labelButtonRegistro">Registrarse</string>
@@ -112,10 +119,13 @@
     <string name="labelTitleStaff">Directorio de personal</string>
     <string name="labelUser">Usuario</string>
     <string name="open">Open Navigation Drawer</string>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <string name="project_id" translatable="false">paqtafood</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
     </style>
     <style name="Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>

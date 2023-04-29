@@ -4,13 +4,13 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.textfield.TextInputLayout;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,16 +21,25 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final MaterialCardView materialCardView;
+  public final TextView byTextView;
 
   @NonNull
-  public final TextInputLayout txtLayoutUser;
+  public final ImageView logoImageView;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull MaterialCardView materialCardView, @NonNull TextInputLayout txtLayoutUser) {
+  @NonNull
+  public final TextView logoTextView;
+
+  @NonNull
+  public final ConstraintLayout motionLayout;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView byTextView,
+      @NonNull ImageView logoImageView, @NonNull TextView logoTextView,
+      @NonNull ConstraintLayout motionLayout) {
     this.rootView = rootView;
-    this.materialCardView = materialCardView;
-    this.txtLayoutUser = txtLayoutUser;
+    this.byTextView = byTextView;
+    this.logoImageView = logoImageView;
+    this.logoTextView = logoTextView;
+    this.motionLayout = motionLayout;
   }
 
   @Override
@@ -60,19 +69,28 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.materialCardView;
-      MaterialCardView materialCardView = ViewBindings.findChildViewById(rootView, id);
-      if (materialCardView == null) {
+      id = R.id.byTextView;
+      TextView byTextView = ViewBindings.findChildViewById(rootView, id);
+      if (byTextView == null) {
         break missingId;
       }
 
-      id = R.id.txtLayoutUser;
-      TextInputLayout txtLayoutUser = ViewBindings.findChildViewById(rootView, id);
-      if (txtLayoutUser == null) {
+      id = R.id.logoImageView;
+      ImageView logoImageView = ViewBindings.findChildViewById(rootView, id);
+      if (logoImageView == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, materialCardView, txtLayoutUser);
+      id = R.id.logoTextView;
+      TextView logoTextView = ViewBindings.findChildViewById(rootView, id);
+      if (logoTextView == null) {
+        break missingId;
+      }
+
+      ConstraintLayout motionLayout = (ConstraintLayout) rootView;
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, byTextView, logoImageView,
+          logoTextView, motionLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

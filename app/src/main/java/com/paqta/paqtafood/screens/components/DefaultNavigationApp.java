@@ -5,15 +5,20 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.cart.CartFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
+import com.paqta.paqtafood.screens.login.Login;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
 
@@ -22,7 +27,8 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
     MaterialToolbar materialToolbar;
     ActivityDefaultNavigationAppBinding binding;
-
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +83,15 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
             return true;
         });
+
+        auth = FirebaseAuth.getInstance();
+
+        user = auth.getCurrentUser();
+        if (user == null) {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     // Metodo que se encargara de remplazar el layout del contenido por el que nosotros

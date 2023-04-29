@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1091847638331",
+    "project_id": "paqtafood",
+    "storage_bucket": "paqtafood.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091847638331:android:fe60ffa222a708fdde7b1e",
+        "android_client_info": {
+          "package_name": "com.paqta.paqtafood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091847638331-1atsamm1797kb7s7f11rfdsbtm8p8bs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-j3wQVy5DJ8Jdgxsh-OxnxeQmlF5P8HM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091847638331-1atsamm1797kb7s7f11rfdsbtm8p8bs6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

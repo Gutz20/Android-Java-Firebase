@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-26:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-31:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\bf6a9fc0cc64a6732cf913207b51114b\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\987f992c46fc8b51cf9bbe78a656596f\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
