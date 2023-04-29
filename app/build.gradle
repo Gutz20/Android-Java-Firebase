@@ -39,7 +39,18 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
 //    firebase
-    implementation 'com.google.firebase:firebase-auth-ktx:21.3.0'
+
+//    BOOM
+    implementation platform('com.google.firebase:firebase-bom:31.4.0')
+
+//    Authentication
+    implementation 'com.google.firebase:firebase-auth'
+
+//    Google
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

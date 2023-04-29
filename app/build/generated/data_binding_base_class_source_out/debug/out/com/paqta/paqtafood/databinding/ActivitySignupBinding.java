@@ -4,15 +4,14 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -26,7 +25,7 @@ public final class ActivitySignupBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button btnRegister;
+  public final MaterialButton btnRegister;
 
   @NonNull
   public final ImageView decoratorBottom;
@@ -35,7 +34,7 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final ImageView decoratorTop;
 
   @NonNull
-  public final ImageView imageView6;
+  public final ImageView imageLogoSignup;
 
   @NonNull
   public final ImageView imgBackLogin;
@@ -44,10 +43,10 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final MaterialCardView materialCardView;
 
   @NonNull
-  public final ProgressBar progressBar;
+  public final TextView tvwSignup;
 
   @NonNull
-  public final TextView tvwLogin;
+  public final TextView tvwSignupToLogin;
 
   @NonNull
   public final TextInputLayout txtLayoutConfirmPassword;
@@ -73,24 +72,25 @@ public final class ActivitySignupBinding implements ViewBinding {
   @NonNull
   public final TextInputEditText txtRegisterUser;
 
-  private ActivitySignupBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnRegister,
-      @NonNull ImageView decoratorBottom, @NonNull ImageView decoratorTop,
-      @NonNull ImageView imageView6, @NonNull ImageView imgBackLogin,
-      @NonNull MaterialCardView materialCardView, @NonNull ProgressBar progressBar,
-      @NonNull TextView tvwLogin, @NonNull TextInputLayout txtLayoutConfirmPassword,
-      @NonNull TextInputLayout txtLayoutEmail, @NonNull TextInputLayout txtLayoutPassword,
-      @NonNull TextInputLayout txtLayoutUser, @NonNull TextInputEditText txtRegisterConfirmPassword,
+  private ActivitySignupBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnRegister, @NonNull ImageView decoratorBottom,
+      @NonNull ImageView decoratorTop, @NonNull ImageView imageLogoSignup,
+      @NonNull ImageView imgBackLogin, @NonNull MaterialCardView materialCardView,
+      @NonNull TextView tvwSignup, @NonNull TextView tvwSignupToLogin,
+      @NonNull TextInputLayout txtLayoutConfirmPassword, @NonNull TextInputLayout txtLayoutEmail,
+      @NonNull TextInputLayout txtLayoutPassword, @NonNull TextInputLayout txtLayoutUser,
+      @NonNull TextInputEditText txtRegisterConfirmPassword,
       @NonNull TextInputEditText txtRegisterEmail, @NonNull TextInputEditText txtRegisterPassword,
       @NonNull TextInputEditText txtRegisterUser) {
     this.rootView = rootView;
     this.btnRegister = btnRegister;
     this.decoratorBottom = decoratorBottom;
     this.decoratorTop = decoratorTop;
-    this.imageView6 = imageView6;
+    this.imageLogoSignup = imageLogoSignup;
     this.imgBackLogin = imgBackLogin;
     this.materialCardView = materialCardView;
-    this.progressBar = progressBar;
-    this.tvwLogin = tvwLogin;
+    this.tvwSignup = tvwSignup;
+    this.tvwSignupToLogin = tvwSignupToLogin;
     this.txtLayoutConfirmPassword = txtLayoutConfirmPassword;
     this.txtLayoutEmail = txtLayoutEmail;
     this.txtLayoutPassword = txtLayoutPassword;
@@ -129,7 +129,7 @@ public final class ActivitySignupBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnRegister;
-      Button btnRegister = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnRegister = ViewBindings.findChildViewById(rootView, id);
       if (btnRegister == null) {
         break missingId;
       }
@@ -146,9 +146,9 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView6;
-      ImageView imageView6 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView6 == null) {
+      id = R.id.imageLogoSignup;
+      ImageView imageLogoSignup = ViewBindings.findChildViewById(rootView, id);
+      if (imageLogoSignup == null) {
         break missingId;
       }
 
@@ -164,15 +164,15 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
+      id = R.id.tvwSignup;
+      TextView tvwSignup = ViewBindings.findChildViewById(rootView, id);
+      if (tvwSignup == null) {
         break missingId;
       }
 
-      id = R.id.tvwLogin;
-      TextView tvwLogin = ViewBindings.findChildViewById(rootView, id);
-      if (tvwLogin == null) {
+      id = R.id.tvwSignupToLogin;
+      TextView tvwSignupToLogin = ViewBindings.findChildViewById(rootView, id);
+      if (tvwSignupToLogin == null) {
         break missingId;
       }
 
@@ -225,9 +225,10 @@ public final class ActivitySignupBinding implements ViewBinding {
       }
 
       return new ActivitySignupBinding((ConstraintLayout) rootView, btnRegister, decoratorBottom,
-          decoratorTop, imageView6, imgBackLogin, materialCardView, progressBar, tvwLogin,
-          txtLayoutConfirmPassword, txtLayoutEmail, txtLayoutPassword, txtLayoutUser,
-          txtRegisterConfirmPassword, txtRegisterEmail, txtRegisterPassword, txtRegisterUser);
+          decoratorTop, imageLogoSignup, imgBackLogin, materialCardView, tvwSignup,
+          tvwSignupToLogin, txtLayoutConfirmPassword, txtLayoutEmail, txtLayoutPassword,
+          txtLayoutUser, txtRegisterConfirmPassword, txtRegisterEmail, txtRegisterPassword,
+          txtRegisterUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

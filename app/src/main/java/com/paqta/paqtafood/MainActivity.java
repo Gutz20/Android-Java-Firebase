@@ -17,9 +17,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.screens.login.Login;
+import com.paqta.paqtafood.screens.profileActivity.Profileactivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     FirebaseUser user;
     WindowInsetsAnimationController mViewModel;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +54,23 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, Login.class);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(MainActivity.this);
 
-                Pair[] pairs = new Pair[2];
-                pairs[0] = new Pair<View, String>(logoImgView, "logoImageTrans");
-                pairs[1] = new Pair<View, String>(byTextView, "textTransition");
+                if (user != null && account != null) {
+                    Intent intent = new Intent(MainActivity.this, Profileactivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Intent intent = new Intent(MainActivity.this, Login.class);
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
-                startActivity(intent, options.toBundle());
+                    Pair[] pairs = new Pair[2];
+                    pairs[0] = new Pair<View, String>(logoImgView, "logoImageTrans");
+                    pairs[1] = new Pair<View, String>(byTextView, "textTransition");
+
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                    startActivity(intent, options.toBundle());
+                }
             }
 
         }, 4000);

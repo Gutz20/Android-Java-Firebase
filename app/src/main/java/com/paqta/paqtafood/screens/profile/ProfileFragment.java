@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.paqta.paqtafood.R;
 
@@ -20,9 +21,7 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-//    MaterialCardView mcdView, mcdView2;
-//
-//    ActivityDefaultBottomNavigationBinding binding;
+    private Button button;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -44,6 +43,7 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
 //
 //        mcdView = getView().findViewById(R.id.cardPlat_1);
 //        mcdView2 = getView().findViewById(R.id.cardPlat_2);

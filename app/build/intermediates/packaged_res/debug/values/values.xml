@@ -90,6 +90,7 @@
     <color name="md_theme_light_tertiary">#7D5260</color>
     <color name="md_theme_light_tertiaryContainer">#FFD8E4</color>
     <color name="seed">#6750A4</color>
+    <dimen name="fab_margin">16dp</dimen>
     <string name="app_name">PaqtaFood</string>
     <string name="btnNuevoFishes">NUEVO</string>
     <string name="close">Close Navigation Drawer</string>
@@ -120,12 +121,17 @@
     <string name="labelUser">Usuario</string>
     <string name="open">Open Navigation Drawer</string>
     <string name="project_id" translatable="false">paqtafood</string>
+    <string name="web_client_id">1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:windowContentTransitions">true</item>
+    </style>
+    <style name="Base.Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
     </style>
     <style name="Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>

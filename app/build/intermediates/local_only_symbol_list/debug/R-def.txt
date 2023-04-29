@@ -77,6 +77,7 @@ color md_theme_light_surfaceVariant
 color md_theme_light_tertiary
 color md_theme_light_tertiaryContainer
 color seed
+dimen fab_margin
 drawable alitas
 drawable background_resturant
 drawable baseline_arrow_back_ios_24
@@ -116,6 +117,7 @@ drawable mask_group_ek1
 drawable mask_group_ek2
 drawable mask_group_ek3
 drawable mask_group_ek4
+drawable outline_email_24
 drawable outline_fastfood_24
 drawable outline_lock_24
 drawable outline_shopping_cart_24
@@ -158,11 +160,14 @@ id coordinatorLayout
 id decorator_bottom
 id decorator_top
 id drawer_layout
+id emailTextView
 id end
 id favorites
 id frame_layout
 id gallery
 id homeDrawer
+id imageLogoSignup
+id imageView
 id imageView2
 id imageView24
 id imageView25
@@ -191,9 +196,11 @@ id imgViewOtro3
 id imgViewPlato
 id linearLayout
 id login
+id loginGoogle
 id logoImageView
 id logoImageViewLogin
 id logoTextView
+id logoutButton
 id materialCardView
 id materialDivider1
 id materialDivider2
@@ -205,7 +212,6 @@ id more
 id motionLayout
 id nav_view
 id originPaqtaLogo
-id progressBar
 id rate_us
 id search
 id share
@@ -230,6 +236,8 @@ id title
 id topAppBar
 id tvwLogin
 id tvwRegister
+id tvwSignup
+id tvwSignupToLogin
 id txtLayoutConfirmPassword
 id txtLayoutEmail
 id txtLayoutPassword
@@ -257,6 +265,7 @@ layout activity_default_navigation_drawer
 layout activity_dishes
 layout activity_login
 layout activity_main
+layout activity_profileactivity
 layout activity_signup
 layout activity_staff
 layout fragment_cart
@@ -300,7 +309,9 @@ string labelTitleStaff
 string labelUser
 string open
 string project_id
+string web_client_id
 style AppTheme
+style Base.Base.Theme.PaqtaFood
 style Base.Theme.PaqtaFood
 style Theme.PaqtaFood
 style rounded

@@ -20,6 +20,7 @@ import com.paqta.paqtafood.screens.cart.CartFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
 import com.paqta.paqtafood.screens.login.Login;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
+import com.paqta.paqtafood.screens.profile.ProfileFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
 
 

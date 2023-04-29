@@ -6,20 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".screens.signup.Signup">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         style="@style/Widget.Material3.CardView.Elevated"
-        android:layout_width="356dp"
-        android:layout_height="366dp"
+        android:layout_width="358dp"
+        android:layout_height="389dp"
         android:elevation="4dp"
         app:cardBackgroundColor="@color/colorFondo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +24,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvwLogin"
+                android:id="@+id/tvwSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -41,9 +32,11 @@
                 android:textColor="#fff"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:transitionName="textTrans"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtLayoutUser"
@@ -54,13 +47,14 @@
                 android:layout_marginTop="4dp"
                 android:hint="@string/labelUser"
                 app:boxBackgroundColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintHorizontal_bias="0.48"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvwLogin"
-                app:startIconDrawable="@drawable/baseline_person_outline_24"
 
-                >
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.136"
+                app:startIconDrawable="@drawable/baseline_person_outline_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtRegisterUser"
@@ -68,47 +62,41 @@
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegister"
-                style="@style/Widget.Material3.Button.TonalButton"
+                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginVertical="10dp"
                 android:backgroundTint="@color/colorRojo"
                 android:text="@string/labelButtonRegistro"
+                android:textColor="#000000"
                 android:textStyle="bold"
+                android:transitionName="buttonSignInTrans"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtLayoutEmail"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.844" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtLayoutPassword"
-                style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="25dp"
-                android:layout_marginVertical="10dp"
-                app:boxBackgroundColor="#fff"
-                app:boxBackgroundMode="filled"
-                app:endIconMode="password_toggle"
+            <TextView
+                android:id="@+id/tvwSignupToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="¿Ya tienes una cuenta? Inicia Sesion"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:transitionName="newUserTrans"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLayoutEmail"
-                app:startIconDrawable="@drawable/outline_lock_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtRegisterPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/labelPassword"
-
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtLayoutConfirmPassword"
@@ -122,10 +110,9 @@
                 app:endIconMode="password_toggle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLayoutPassword"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.732"
                 app:startIconDrawable="@drawable/outline_lock_24">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -145,19 +132,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="8dp"
                 android:hint="@string/labelEmail"
-
+                android:transitionName="emailInputTextTrans"
                 app:boxBackgroundColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.46"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLayoutUser"
-                app:startIconDrawable="@drawable/baseline_person_outline_24">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.342"
+                app:startIconDrawable="@drawable/outline_email_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtRegisterEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtLayoutPassword"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="10dp"
+                android:transitionName="passwordInputTextTrans"
+                app:boxBackgroundColor="#fff"
+                app:boxBackgroundMode="filled"
+                app:endIconMode="password_toggle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.534"
+                app:startIconDrawable="@drawable/outline_lock_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtRegisterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/labelPassword"
+
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -190,9 +206,10 @@
         app:srcCompat="@drawable/rayitas_volteadas" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageLogoSignup"
         android:layout_width="359dp"
         android:layout_height="161dp"
+        android:transitionName="logoImageTrans"
         app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

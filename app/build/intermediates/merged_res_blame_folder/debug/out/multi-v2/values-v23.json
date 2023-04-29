@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-31:/values-v23/values-v23.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-44:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\cfdbee0d1ae476556cbadab517dd5312\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
@@ -12,6 +12,14 @@
                         "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
                         "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
                         "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,12,26,40,41,42,45,49,50,51,52",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,820,1558,2308,2427,2554,2776,3000,3115,3222,3335",
+                        "endLines": "2,3,4,5,25,39,40,41,44,48,49,50,51,55",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1553,2303,2422,2549,2771,2995,3110,3217,3330,3560"
                     }
                 },
                 {
@@ -25,12 +33,12 @@
                         "endOffsets": "200"
                     },
                     "to": {
-                        "startLines": "50",
+                        "startLines": "56",
                         "startColumns": "4",
-                        "startOffsets": "3232",
-                        "endLines": "52",
+                        "startOffsets": "3565",
+                        "endLines": "58",
                         "endColumns": "12",
-                        "endOffsets": "3377"
+                        "endOffsets": "3710"
                     }
                 },
                 {
@@ -44,12 +52,31 @@
                         "endOffsets": "266,476,796,1033,1240,1447,1650,1982,2184,2449,2722"
                     },
                     "to": {
-                        "startLines": "53,56,59,64,68,71,74,77,82,85,89",
+                        "startLines": "59,62,65,70,74,77,80,83,88,91,95",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3382,3598,3808,4128,4365,4572,4779,4982,5314,5516,5781",
-                        "endLines": "55,58,63,67,70,73,76,81,84,88,92",
+                        "startOffsets": "3715,3931,4141,4461,4698,4905,5112,5315,5647,5849,6114",
+                        "endLines": "61,64,69,73,76,79,82,87,90,94,98",
                         "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "3593,3803,4123,4360,4567,4774,4977,5309,5511,5776,6049"
+                        "endOffsets": "3926,4136,4456,4693,4900,5107,5310,5642,5844,6109,6382"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\USUARIO\\Desktop\\ProyectsAndroidStudio\\PaqtaFood\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "64",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "442"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "487",
+                        "endLines": "11",
+                        "endColumns": "12",
+                        "endOffsets": "815"
                     }
                 }
             ]

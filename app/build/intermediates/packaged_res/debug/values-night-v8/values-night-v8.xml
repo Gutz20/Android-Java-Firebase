@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Base.Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
     <style name="Base.Theme.PaqtaFood" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>

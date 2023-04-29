@@ -14,6 +14,9 @@
     <string name="labelLogin">INICIA SESION</string>
     <string name="descriptionImagesMenuPlat">Plato</string>
 
+<!--    Firebase-->
+    <string name="web_client_id">1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com</string>
+
     <!--    Navigation Drawer-->
     <string name="open">Open Navigation Drawer</string>
     <string name="close">Close Navigation Drawer</string>
