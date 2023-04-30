@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
@@ -28,6 +29,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.screens.profileActivity.Profileactivity;
@@ -41,29 +43,42 @@ public class Login extends AppCompatActivity {
     TextInputEditText editTextEmail, editTextPassword;
     ImageView loginImage;
     MaterialButton btnLogin;
-    private FirebaseAuth mAuth;
+
     TextView textViewRegister, tvwLogin;
     ChangeColorBar changeColorBar = new ChangeColorBar();
 
-    SignInButton signInButton;
+//    FIREBASE
+    SignInButton mSignInButtonGoogle;
+    FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
+
+    /**
+     * Al iniciarse el layout verificara si existe un usario de darse el caso
+     * sera redirigido a la ventana de perfil
+     */
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
+    /**
+     * Abrira la ventana de login por google que mostrara las cuenta del dispositivo
+     */
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        FIREBASE
-        mAuth = FirebaseAuth.getInstance();
 
-//        GOOGLE
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
+        // COMPONENTES
         loginImage = findViewById(R.id.logoImageViewLogin);
         textViewRegister = findViewById(R.id.tvwRegister);
         editTextEmail = findViewById(R.id.txtLoginUser);
@@ -71,6 +86,24 @@ public class Login extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         tvwLogin = findViewById(R.id.tvwLogin);
 
+//        FIREBASE
+        mAuth = FirebaseAuth.getInstance();
+        mSignInButtonGoogle = findViewById(R.id.btnGoogle);
+
+//        GOOGLE
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        mSignInButtonGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,76 +133,70 @@ public class Login extends AppCompatActivity {
         changeColorBar.window = getWindow();
         changeColorBar.cambiarColor("#151C48", "#151C48");
 
-        // Google Sign-In
-//        signInButton = findViewById(R.id.loginGoogle);
-//        signInButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                signInWithGoogle();
-//            }
-//        });
-//
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.web_client_id))
-//                .requestEmail()
-//                .build();
-//
-//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-//    private void signInWithGoogle() {
-////        ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
-////                new ActivityResultContracts.StartActivityForResult(),
-////                new ActivityResultCallback<ActivityResult>() {
-////                    @Override
-////                    public void onActivityResult(ActivityResult result) {
-////                        if (result.getResultCode() == Activity.RESULT_OK) {
-////                            Intent data = result.getData();
-////                            Uri uri = data.getData();
-////
-////                        }
-////
-////                    }
-////                }
-////        );
-//
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-//        startActivityForResult(signInIntent, RC_SIGN_IN);
-////        someActivityResultLauncher.launch(signInIntent);
-//    }
-//
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == RC_SIGN_IN) {
-//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-//            try {
-//                GoogleSignInAccount account = task.getResult(ApiException.class);
-//                firebaseAuthWithGoogle(account.getIdToken());
-//            } catch (ApiException e) {
-//                Toast.makeText(Login.this, "Fallo Google", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
-//
-//    private void firebaseAuthWithGoogle(String idToken) {
-//        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-//        mAuth.signInWithCredential(credential)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            Intent intent = new Intent(Login.this, Profileactivity.class);
-//                            startActivity(intent);
-//                            finish();
-//                        } else {
-//                            Toast.makeText(Login.this, "Fallo en iniciar sesion", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+    /**
+     * Autenticacion con google mediante firebase, obtiene las credenciales para luego
+     * logearse con las mismas mediante Firebase Authentication
+     * @param idToken, token que se enviara para obtener la credencial del usuario de google
+     */
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            irHome();
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(Login.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+    }
+
+    private void updateUI(FirebaseUser user) {
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            irHome();
+        }
+    }
+
+    private void irHome() {
+        Intent intent = new Intent(Login.this, Profileactivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**
+     * Valida los campos de entrada para verificar que todo este acorde
+     * a como esta en la database. Asociado al login por correo
+     * @param v, Vista que se enviara para el snackbar
+     */
     public void validate(View v) {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -194,6 +221,12 @@ public class Login extends AppCompatActivity {
         iniciarSesion(v, email, password);
     }
 
+    /**
+     * Inicia sesion con las credenciales del correo y la contraseña
+     * @param v, Vista enviada al snackbar
+     * @param email, Email que el usuario ingresara
+     * @param password, Password que el usuario ingresara
+     */
     public void iniciarSesion(View v, String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

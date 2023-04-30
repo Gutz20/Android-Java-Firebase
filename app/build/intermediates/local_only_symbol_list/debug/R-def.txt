@@ -139,6 +139,7 @@ id about
 id backgroundLayout
 id bluePaqtaLogo
 id bottomNavigationView
+id btnGoogle
 id btnLogin
 id btnRegister
 id button
@@ -196,7 +197,6 @@ id imgViewOtro3
 id imgViewPlato
 id linearLayout
 id login
-id loginGoogle
 id logoImageView
 id logoImageViewLogin
 id logoTextView

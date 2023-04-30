@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "1091847638331-1atsamm1797kb7s7f11rfdsbtm8p8bs6.apps.googleusercontent.com",
+          "client_id": "1091847638331-2veh0fsoel1prqrkmem6vvmtasrs5ufn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paqta.paqtafood",
+            "certificate_hash": "8d2f8ee10a2221e318e67734f2dee9f4efcae012"
+          }
+        },
+        {
+          "client_id": "1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

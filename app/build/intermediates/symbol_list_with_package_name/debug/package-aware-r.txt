@@ -3129,6 +3129,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnGoogle
 id btnLogin
 id btnRegister
 id button
@@ -3328,7 +3329,6 @@ id listMode
 id list_item
 id locale
 id login
-id loginGoogle
 id logoImageView
 id logoImageViewLogin
 id logoTextView

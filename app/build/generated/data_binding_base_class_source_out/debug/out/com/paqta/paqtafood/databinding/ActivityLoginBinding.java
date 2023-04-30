@@ -26,6 +26,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final SignInButton btnGoogle;
+
+  @NonNull
   public final MaterialButton btnLogin;
 
   @NonNull
@@ -33,9 +36,6 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @NonNull
   public final ImageView decoratorTop;
-
-  @NonNull
-  public final SignInButton loginGoogle;
 
   @NonNull
   public final ImageView logoImageViewLogin;
@@ -64,18 +64,18 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final TextInputEditText txtLoginUser;
 
-  private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton btnLogin,
-      @NonNull ImageView decoratorBottom, @NonNull ImageView decoratorTop,
-      @NonNull SignInButton loginGoogle, @NonNull ImageView logoImageViewLogin,
+  private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull SignInButton btnGoogle,
+      @NonNull MaterialButton btnLogin, @NonNull ImageView decoratorBottom,
+      @NonNull ImageView decoratorTop, @NonNull ImageView logoImageViewLogin,
       @NonNull MaterialCardView materialCardView, @NonNull TextView textView2,
       @NonNull TextView tvwLogin, @NonNull TextView tvwRegister,
       @NonNull TextInputLayout txtLayoutPassword, @NonNull TextInputLayout txtLayoutUser,
       @NonNull TextInputEditText txtLoginPassword, @NonNull TextInputEditText txtLoginUser) {
     this.rootView = rootView;
+    this.btnGoogle = btnGoogle;
     this.btnLogin = btnLogin;
     this.decoratorBottom = decoratorBottom;
     this.decoratorTop = decoratorTop;
-    this.loginGoogle = loginGoogle;
     this.logoImageViewLogin = logoImageViewLogin;
     this.materialCardView = materialCardView;
     this.textView2 = textView2;
@@ -114,6 +114,12 @@ public final class ActivityLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnGoogle;
+      SignInButton btnGoogle = ViewBindings.findChildViewById(rootView, id);
+      if (btnGoogle == null) {
+        break missingId;
+      }
+
       id = R.id.btnLogin;
       MaterialButton btnLogin = ViewBindings.findChildViewById(rootView, id);
       if (btnLogin == null) {
@@ -129,12 +135,6 @@ public final class ActivityLoginBinding implements ViewBinding {
       id = R.id.decorator_top;
       ImageView decoratorTop = ViewBindings.findChildViewById(rootView, id);
       if (decoratorTop == null) {
-        break missingId;
-      }
-
-      id = R.id.loginGoogle;
-      SignInButton loginGoogle = ViewBindings.findChildViewById(rootView, id);
-      if (loginGoogle == null) {
         break missingId;
       }
 
@@ -192,8 +192,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, btnLogin, decoratorBottom,
-          decoratorTop, loginGoogle, logoImageViewLogin, materialCardView, textView2, tvwLogin,
+      return new ActivityLoginBinding((ConstraintLayout) rootView, btnGoogle, btnLogin,
+          decoratorBottom, decoratorTop, logoImageViewLogin, materialCardView, textView2, tvwLogin,
           tvwRegister, txtLayoutPassword, txtLayoutUser, txtLoginPassword, txtLoginUser);
     }
     String missingId = rootView.getResources().getResourceName(id);

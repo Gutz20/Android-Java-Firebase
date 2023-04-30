@@ -18,10 +18,23 @@ public class Profileactivity extends AppCompatActivity {
     TextView emailTextView;
     MaterialButton logoutButton;
 
+    FirebaseAuth mAuth;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            irMain();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profileactivity);
+
+        mAuth = FirebaseAuth.getInstance();
 
         emailTextView = findViewById(R.id.emailTextView);
         logoutButton = findViewById(R.id.logoutButton);
@@ -34,11 +47,20 @@ public class Profileactivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(Profileactivity.this, Login.class);
-                startActivity(intent);
-                finish();
+                logout();
             }
         });
     }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        irMain();
+    }
+
+    private void irMain() {
+        Intent intent = new Intent(Profileactivity.this, Login.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
