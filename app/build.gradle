@@ -49,6 +49,9 @@ dependencies {
 //    Google
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
+//    Recyclerview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'
 

@@ -44,10 +44,10 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final MaterialCardView materialCardView;
 
   @NonNull
-  public final TextView textView2;
+  public final TextView tvwLogin;
 
   @NonNull
-  public final TextView tvwLogin;
+  public final TextView tvwOlvidasteContra;
 
   @NonNull
   public final TextView tvwRegister;
@@ -67,8 +67,8 @@ public final class ActivityLoginBinding implements ViewBinding {
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull SignInButton btnGoogle,
       @NonNull MaterialButton btnLogin, @NonNull ImageView decoratorBottom,
       @NonNull ImageView decoratorTop, @NonNull ImageView logoImageViewLogin,
-      @NonNull MaterialCardView materialCardView, @NonNull TextView textView2,
-      @NonNull TextView tvwLogin, @NonNull TextView tvwRegister,
+      @NonNull MaterialCardView materialCardView, @NonNull TextView tvwLogin,
+      @NonNull TextView tvwOlvidasteContra, @NonNull TextView tvwRegister,
       @NonNull TextInputLayout txtLayoutPassword, @NonNull TextInputLayout txtLayoutUser,
       @NonNull TextInputEditText txtLoginPassword, @NonNull TextInputEditText txtLoginUser) {
     this.rootView = rootView;
@@ -78,8 +78,8 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.decoratorTop = decoratorTop;
     this.logoImageViewLogin = logoImageViewLogin;
     this.materialCardView = materialCardView;
-    this.textView2 = textView2;
     this.tvwLogin = tvwLogin;
+    this.tvwOlvidasteContra = tvwOlvidasteContra;
     this.tvwRegister = tvwRegister;
     this.txtLayoutPassword = txtLayoutPassword;
     this.txtLayoutUser = txtLayoutUser;
@@ -150,15 +150,15 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
       id = R.id.tvwLogin;
       TextView tvwLogin = ViewBindings.findChildViewById(rootView, id);
       if (tvwLogin == null) {
+        break missingId;
+      }
+
+      id = R.id.tvwOlvidasteContra;
+      TextView tvwOlvidasteContra = ViewBindings.findChildViewById(rootView, id);
+      if (tvwOlvidasteContra == null) {
         break missingId;
       }
 
@@ -193,8 +193,9 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, btnGoogle, btnLogin,
-          decoratorBottom, decoratorTop, logoImageViewLogin, materialCardView, textView2, tvwLogin,
-          tvwRegister, txtLayoutPassword, txtLayoutUser, txtLoginPassword, txtLoginUser);
+          decoratorBottom, decoratorTop, logoImageViewLogin, materialCardView, tvwLogin,
+          tvwOlvidasteContra, tvwRegister, txtLayoutPassword, txtLayoutUser, txtLoginPassword,
+          txtLoginUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

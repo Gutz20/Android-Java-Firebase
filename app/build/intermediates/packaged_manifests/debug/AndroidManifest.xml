@@ -31,6 +31,12 @@
         android:testOnly="true"
         android:theme="@style/Base.Theme.PaqtaFood" >
         <activity
+            android:name="com.paqta.paqtafood.screens.recycler.RecyclerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.screens.forgotPassword.ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name="com.paqta.paqtafood.screens.profileActivity.Profileactivity"
             android:exported="false" />
         <activity

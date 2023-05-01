@@ -4,7 +4,7 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-44:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\987f992c46fc8b51cf9bbe78a656596f\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\61b171c448166aefd915a1082974a326\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

@@ -12,7 +12,7 @@
         style="@style/Widget.Material3.CardView.Elevated"
         android:layout_width="332dp"
         android:layout_height="355dp"
-        android:elevation="4dp"
+        app:cardElevation="20dp"
         app:cardBackgroundColor="@color/colorFondo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvwOlvidasteContra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"

@@ -11,7 +11,7 @@
         style="@style/Widget.Material3.CardView.Elevated"
         android:layout_width="358dp"
         android:layout_height="389dp"
-        android:elevation="4dp"
+        app:cardElevation="20dp"
         app:cardBackgroundColor="@color/colorFondo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -84,6 +84,7 @@ drawable baseline_arrow_back_ios_24
 drawable baseline_chevron_right_24
 drawable baseline_circle_24
 drawable baseline_close_24
+drawable baseline_contact_mail_24
 drawable baseline_home_24
 drawable baseline_menu_24
 drawable baseline_person_24
@@ -155,9 +156,11 @@ id cardMenuBox4
 id cardPlat_1
 id cardPlat_2
 id cart
+id cityTextView
 id constraintLayout
 id contact
 id coordinatorLayout
+id cv
 id decorator_bottom
 id decorator_top
 id drawer_layout
@@ -167,6 +170,7 @@ id favorites
 id frame_layout
 id gallery
 id homeDrawer
+id iconImageView
 id imageLogoSignup
 id imageView
 id imageView2
@@ -196,6 +200,7 @@ id imgViewOtro2
 id imgViewOtro3
 id imgViewPlato
 id linearLayout
+id listRecyclerView
 id login
 id logoImageView
 id logoImageViewLogin
@@ -210,12 +215,15 @@ id materialDivider5
 id menu
 id more
 id motionLayout
+id nameTextView
 id nav_view
 id originPaqtaLogo
 id rate_us
+id recuperarBtn
 id search
 id share
 id start
+id statusTextView
 id textView
 id textView2
 id textView20
@@ -233,8 +241,11 @@ id textView5
 id textView6
 id textViewTitleMenu
 id title
+id titleTextView
 id topAppBar
+id tvwEjem
 id tvwLogin
+id tvwOlvidasteContra
 id tvwRegister
 id tvwSignup
 id tvwSignupToLogin
@@ -263,9 +274,11 @@ id txtView35
 layout activity_default_navigation_app
 layout activity_default_navigation_drawer
 layout activity_dishes
+layout activity_forgot_password
 layout activity_login
 layout activity_main
 layout activity_profileactivity
+layout activity_recycler
 layout activity_signup
 layout activity_staff
 layout fragment_cart
@@ -274,6 +287,7 @@ layout fragment_menu
 layout fragment_profile
 layout fragment_search
 layout header
+layout list_element
 menu bottom_nav_menu
 menu main_menu
 menu top_app_bar

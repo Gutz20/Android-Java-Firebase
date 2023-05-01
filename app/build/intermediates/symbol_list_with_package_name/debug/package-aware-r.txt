@@ -2848,6 +2848,7 @@ drawable baseline_arrow_back_ios_24
 drawable baseline_chevron_right_24
 drawable baseline_circle_24
 drawable baseline_close_24
+drawable baseline_contact_mail_24
 drawable baseline_home_24
 drawable baseline_menu_24
 drawable baseline_person_24
@@ -3162,6 +3163,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id cityTextView
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3187,6 +3189,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id cv
 id dark
 id date_picker_actions
 id decelerate
@@ -3271,6 +3274,7 @@ id homeDrawer
 id honorRequest
 id horizontal_only
 id icon
+id iconImageView
 id icon_group
 id icon_only
 id ifRoom
@@ -3326,6 +3330,7 @@ id line3
 id linear
 id linearLayout
 id listMode
+id listRecyclerView
 id list_item
 id locale
 id login
@@ -3403,6 +3408,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameTextView
 id nav_controller_view_tag
 id nav_host_fragment_container
 id nav_view
@@ -3452,6 +3458,7 @@ id radio
 id rate_us
 id ratio
 id rectangles
+id recuperarBtn
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3534,6 +3541,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statusTextView
 id stop
 id stretch
 id submenuarrow
@@ -3588,6 +3596,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id titleTextView
 id title_template
 id toggle
 id top
@@ -3602,7 +3611,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvwEjem
 id tvwLogin
+id tvwOlvidasteContra
 id tvwRegister
 id tvwSignup
 id tvwSignupToLogin
@@ -3763,9 +3774,11 @@ layout abc_tooltip
 layout activity_default_navigation_app
 layout activity_default_navigation_drawer
 layout activity_dishes
+layout activity_forgot_password
 layout activity_login
 layout activity_main
 layout activity_profileactivity
+layout activity_recycler
 layout activity_signup
 layout activity_staff
 layout browser_actions_context_menu_page
@@ -3792,6 +3805,7 @@ layout fragment_menu
 layout fragment_profile
 layout fragment_search
 layout header
+layout list_element
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

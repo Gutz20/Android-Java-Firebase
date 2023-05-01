@@ -32,7 +32,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.screens.components.DefaultNavigationApp;
+import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.profileActivity.Profileactivity;
+import com.paqta.paqtafood.screens.recycler.RecyclerActivity;
 import com.paqta.paqtafood.screens.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;
 
@@ -44,7 +47,7 @@ public class Login extends AppCompatActivity {
     ImageView loginImage;
     MaterialButton btnLogin;
 
-    TextView textViewRegister, tvwLogin;
+    TextView textViewRegister, tvwLogin, tvwOlvidasteContra;
     ChangeColorBar changeColorBar = new ChangeColorBar();
 
 //    FIREBASE
@@ -85,6 +88,7 @@ public class Login extends AppCompatActivity {
         editTextPassword = findViewById(R.id.txtLoginPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvwLogin = findViewById(R.id.tvwLogin);
+        tvwOlvidasteContra = findViewById(R.id.tvwOlvidasteContra);
 
 //        FIREBASE
         mAuth = FirebaseAuth.getInstance();
@@ -97,6 +101,15 @@ public class Login extends AppCompatActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        tvwOlvidasteContra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, ForgotPassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         mSignInButtonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,8 +221,8 @@ public class Login extends AppCompatActivity {
             editTextEmail.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 8) {
-            editTextPassword.setError("Se necesitan más de 8 caracteres");
+        if (password.isEmpty() || password.length() < 6) {
+            editTextPassword.setError("Se necesitan más de 6 caracteres");
             return;
         } else if (!Pattern.compile("[0-9]").matcher(password).find()) {
             editTextPassword.setError("Al menos un numero");
@@ -233,9 +246,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(Login.this, Profileactivity.class);
-                            startActivity(intent);
-                            finish();
+                            irHome();
                         } else {
                             Snackbar.make(v, "Credenciales incorrectas, intente otra ves", Snackbar.LENGTH_LONG)
                                     .show();

@@ -94,8 +94,8 @@ public class Signup extends AppCompatActivity {
             txtRegEmail.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 8) {
-            txtRegPassword.setError("Se necesitan más de 8 caracteres");
+        if (password.isEmpty() || password.length() < 6) {
+            txtRegPassword.setError("Se necesitan más de 6 caracteres");
             return;
         } else if (!Pattern.compile("[0-9]").matcher(password).find()) {
             txtRegPassword.setError("Al menos un numero");
