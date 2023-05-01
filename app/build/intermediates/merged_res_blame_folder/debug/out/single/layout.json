@@ -1,70 +1,74 @@
 [
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_login.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_login.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_staff.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_staff.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_default_navigation_app.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_default_navigation_app.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_default_navigation_drawer.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_default_navigation_drawer.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_recycler.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_recycler.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/fragment_search.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/fragment_search.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_main.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_main.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/list_element.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/list_element.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_profileactivity.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_profileactivity.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_profileactivity.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_profileactivity.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_dishes.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_dishes.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/fragment_cart.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/fragment_cart.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/fragment_favorite.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/fragment_favorite.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_signup.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_signup.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/fragment_profile.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/fragment_profile.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_login.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_login.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/fragment_menu.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/fragment_menu.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_steps.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_steps.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/fragment_search.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/fragment_search.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_main.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_main.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_staff.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_staff.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_default_navigation_app.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_default_navigation_app.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/fragment_cart.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/fragment_cart.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_forgot_password.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_forgot_password.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_default_navigation_drawer.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_default_navigation_drawer.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_dishes.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_dishes.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/header.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/header.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/fragment_profile.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_forgot_password.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_forgot_password.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/header.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/header.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/list_element.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/list_element.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/activity_recycler.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_recycler.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-45:/layout/activity_signup.xml",
-        "source": "com.paqta.paqtafood.app-main-48:/layout/activity_signup.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/fragment_favorite.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/fragment_favorite.xml"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-46:/layout/fragment_menu.xml",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/fragment_menu.xml"
     }
 ]

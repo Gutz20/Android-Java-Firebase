@@ -15,6 +15,9 @@
         android:theme="@style/Base.Theme.PaqtaFood"
         tools:targetApi="31">
         <activity
+            android:name=".screens.components.steps.StepsActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.recycler.RecyclerActivity"
             android:exported="false" />
         <activity

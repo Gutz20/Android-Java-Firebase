@@ -2,6 +2,8 @@ R_DEF: Internal format may change without notice
 local
 anim desplazamiento_abajo
 anim desplazamiento_arriba
+anim fade_transition
+anim slide
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
@@ -163,6 +165,7 @@ id coordinatorLayout
 id cv
 id decorator_bottom
 id decorator_top
+id descriptionTextView
 id drawer_layout
 id emailTextView
 id end
@@ -224,6 +227,8 @@ id search
 id share
 id start
 id statusTextView
+id stepTextView
+id step_view
 id textView
 id textView2
 id textView20
@@ -281,6 +286,7 @@ layout activity_profileactivity
 layout activity_recycler
 layout activity_signup
 layout activity_staff
+layout activity_steps
 layout fragment_cart
 layout fragment_favorite
 layout fragment_menu

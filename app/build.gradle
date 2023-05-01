@@ -52,6 +52,9 @@ dependencies {
 //    Recyclerview
     implementation 'androidx.cardview:cardview:1.0.0'
 
+//    Steps view
+    implementation 'com.github.shuhart:stepview:1.5.1'
+
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'
 

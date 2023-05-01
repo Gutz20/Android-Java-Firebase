@@ -29,6 +29,7 @@ anim design_snackbar_in
 anim design_snackbar_out
 anim desplazamiento_abajo
 anim desplazamiento_arriba
+anim fade_transition
 anim fragment_fast_out_extra_slow_in
 anim linear_indeterminate_line1_head_interpolator
 anim linear_indeterminate_line1_tail_interpolator
@@ -47,6 +48,7 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim slide
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -88,6 +90,7 @@ array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
+array steps
 attr SharedValue
 attr SharedValueId
 attr action
@@ -1114,6 +1117,31 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr sv_animationDuration
+attr sv_animationType
+attr sv_background
+attr sv_doneCircleColor
+attr sv_doneCircleRadius
+attr sv_doneStepLineColor
+attr sv_doneStepMarkColor
+attr sv_doneTextColor
+attr sv_nextStepCircleColor
+attr sv_nextStepCircleEnabled
+attr sv_nextStepLineColor
+attr sv_nextTextColor
+attr sv_selectedCircleColor
+attr sv_selectedCircleRadius
+attr sv_selectedStepNumberColor
+attr sv_selectedTextColor
+attr sv_stepLineWidth
+attr sv_stepNumberTextSize
+attr sv_stepPadding
+attr sv_stepViewStyle
+attr sv_steps
+attr sv_stepsNumber
+attr sv_textPadding
+attr sv_textSize
+attr sv_typeface
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -2043,6 +2071,15 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color seed
+color stepview_circle_done
+color stepview_circle_selected
+color stepview_line_done
+color stepview_line_next
+color stepview_mark
+color stepview_selected_number
+color stepview_text_done
+color stepview_text_next
+color stepview_text_selected
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -3021,12 +3058,16 @@ font abel
 font acme
 font archivo
 id ALT
+id All
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Circle
 id FUNCTION
+id Line
 id META
 id NO_DEBUG
+id None
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -3200,6 +3241,7 @@ id decorator_top
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descriptionTextView
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3542,6 +3584,8 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id statusTextView
+id stepTextView
+id step_view
 id stop
 id stretch
 id submenuarrow
@@ -3781,6 +3825,7 @@ layout activity_profileactivity
 layout activity_recycler
 layout activity_signup
 layout activity_staff
+layout activity_steps
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -4474,6 +4519,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style StepView
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -5332,6 +5378,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable StepView sv_animationDuration sv_animationType sv_background sv_doneCircleColor sv_doneCircleRadius sv_doneStepLineColor sv_doneStepMarkColor sv_doneTextColor sv_nextStepCircleColor sv_nextStepCircleEnabled sv_nextStepLineColor sv_nextTextColor sv_selectedCircleColor sv_selectedCircleRadius sv_selectedStepNumberColor sv_selectedTextColor sv_stepLineWidth sv_stepNumberTextSize sv_stepPadding sv_stepViewStyle sv_steps sv_stepsNumber sv_textPadding sv_textSize sv_typeface
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-44:/values-sk/values-sk.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-45:/values-sk/values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\57fdfdf95c102fd746ae4db150f15c1e\\transformed\\play-services-base-18.0.1\\res\\values-sk\\values.xml",

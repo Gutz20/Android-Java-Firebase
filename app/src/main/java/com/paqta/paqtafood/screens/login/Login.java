@@ -33,6 +33,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.screens.components.DefaultNavigationApp;
+import com.paqta.paqtafood.screens.components.steps.StepsActivity;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.profileActivity.Profileactivity;
 import com.paqta.paqtafood.screens.recycler.RecyclerActivity;
@@ -200,7 +201,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void irHome() {
-        Intent intent = new Intent(Login.this, Profileactivity.class);
+        Intent intent = new Intent(Login.this, StepsActivity.class);
         startActivity(intent);
         finish();
     }
