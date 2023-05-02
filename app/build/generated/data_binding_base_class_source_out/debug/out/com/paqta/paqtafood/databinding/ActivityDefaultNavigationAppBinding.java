@@ -35,6 +35,9 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
   public final CoordinatorLayout coordinatorLayout;
 
   @NonNull
+  public final CoordinatorLayout coordinatorLayout2;
+
+  @NonNull
   public final DrawerLayout drawerLayout;
 
   @NonNull
@@ -51,13 +54,15 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
 
   private ActivityDefaultNavigationAppBinding(@NonNull DrawerLayout rootView,
       @NonNull BottomAppBar bottomAppBar, @NonNull BottomNavigationView bottomNavigationView,
-      @NonNull CoordinatorLayout coordinatorLayout, @NonNull DrawerLayout drawerLayout,
-      @NonNull FloatingActionButton fab, @NonNull FrameLayout frameLayout,
-      @NonNull NavigationView navView, @NonNull MaterialToolbar topAppBar) {
+      @NonNull CoordinatorLayout coordinatorLayout, @NonNull CoordinatorLayout coordinatorLayout2,
+      @NonNull DrawerLayout drawerLayout, @NonNull FloatingActionButton fab,
+      @NonNull FrameLayout frameLayout, @NonNull NavigationView navView,
+      @NonNull MaterialToolbar topAppBar) {
     this.rootView = rootView;
     this.bottomAppBar = bottomAppBar;
     this.bottomNavigationView = bottomNavigationView;
     this.coordinatorLayout = coordinatorLayout;
+    this.coordinatorLayout2 = coordinatorLayout2;
     this.drawerLayout = drawerLayout;
     this.fab = fab;
     this.frameLayout = frameLayout;
@@ -110,6 +115,12 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.coordinatorLayout2;
+      CoordinatorLayout coordinatorLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (coordinatorLayout2 == null) {
+        break missingId;
+      }
+
       DrawerLayout drawerLayout = (DrawerLayout) rootView;
 
       id = R.id.fab;
@@ -137,8 +148,8 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
       }
 
       return new ActivityDefaultNavigationAppBinding((DrawerLayout) rootView, bottomAppBar,
-          bottomNavigationView, coordinatorLayout, drawerLayout, fab, frameLayout, navView,
-          topAppBar);
+          bottomNavigationView, coordinatorLayout, coordinatorLayout2, drawerLayout, fab,
+          frameLayout, navView, topAppBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -189,6 +189,7 @@ id cityDescriptionTextView
 id cityTextView
 id constraintLayout
 id coordinatorLayout
+id coordinatorLayout2
 id createText
 id cv
 id dashboard_item

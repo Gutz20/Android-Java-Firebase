@@ -3249,6 +3249,7 @@ int id contiguous 0x7f0a00a5
 int id continuousVelocity 0x7f0a00a6
 int id coordinator 0x7f0a00a7
 int id coordinatorLayout 0x7f0a00a8
+int id coordinatorLayout2 0x7f0a02a0
 int id cos 0x7f0a00a9
 int id counterclockwise 0x7f0a00aa
 int id cradle 0x7f0a00ab
