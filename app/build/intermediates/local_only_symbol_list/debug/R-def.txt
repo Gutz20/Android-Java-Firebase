@@ -123,6 +123,7 @@ drawable mask_group_ek4
 drawable outline_email_24
 drawable outline_fastfood_24
 drawable outline_lock_24
+drawable outline_person_24
 drawable outline_shopping_cart_24
 drawable paqta_food_2
 drawable paqta_food_logos_black_3
@@ -139,6 +140,7 @@ font abel
 font acme
 font archivo
 id about
+id app_bar_main
 id backgroundLayout
 id bluePaqtaLogo
 id bottomNavigationView
@@ -149,8 +151,10 @@ id button
 id button2
 id button3
 id button4
+id button5
+id button6
+id button7
 id byTextView
-id camera
 id cardMenuBox1
 id cardMenuBox2
 id cardMenuBox3
@@ -158,6 +162,7 @@ id cardMenuBox4
 id cardPlat_1
 id cardPlat_2
 id cart
+id cityDescriptionTextView
 id cityTextView
 id constraintLayout
 id contact
@@ -192,8 +197,10 @@ id imageView36
 id imageView37
 id imageView38
 id imageView4
+id imageView5
 id imageView6
 id imageView7
+id imageView8
 id imgBackLogin
 id imgCard2Plat1
 id imgCard2Plat2
@@ -226,6 +233,7 @@ id recuperarBtn
 id search
 id share
 id start
+id statusDescriptionTextView
 id statusTextView
 id stepTextView
 id step_view
@@ -246,7 +254,9 @@ id textView5
 id textView6
 id textViewTitleMenu
 id title
+id titleDescriptionTextView
 id titleTextView
+id toolbar
 id topAppBar
 id tvwEjem
 id tvwLogin
@@ -276,8 +286,9 @@ id txtView32
 id txtView33
 id txtView34
 id txtView35
+layout activity_default_drawer_menu
 layout activity_default_navigation_app
-layout activity_default_navigation_drawer
+layout activity_description
 layout activity_dishes
 layout activity_forgot_password
 layout activity_login
@@ -287,15 +298,16 @@ layout activity_recycler
 layout activity_signup
 layout activity_staff
 layout activity_steps
+layout app_bar_main
 layout fragment_cart
 layout fragment_favorite
 layout fragment_menu
 layout fragment_profile
 layout fragment_search
-layout header
+layout header_main
 layout list_element
 menu bottom_nav_menu
-menu main_menu
+menu drawer_menu
 menu top_app_bar
 mipmap ic_launcher
 mipmap ic_launcher_round

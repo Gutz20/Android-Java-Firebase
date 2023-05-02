@@ -68,6 +68,10 @@
         "source": "com.paqta.paqtafood.app-main-49:/font/abel.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_outline_person_24.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/drawable/outline_person_24.xml"
+    },
+    {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_img_staff_2.png.flat",
         "source": "com.paqta.paqtafood.app-main-49:/drawable/img_staff_2.png"
     },
@@ -94,10 +98,6 @@
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_logo.jpeg.flat",
         "source": "com.paqta.paqtafood.app-main-49:/drawable/logo.jpeg"
-    },
-    {
-        "merged": "com.paqta.paqtafood.app-merged_res-47:/menu_main_menu.xml.flat",
-        "source": "com.paqta.paqtafood.app-main-49:/menu/main_menu.xml"
     },
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_fragment_favorite.xml.flat",
@@ -164,6 +164,10 @@
         "source": "com.paqta.paqtafood.app-main-49:/drawable/rectangle_12.png"
     },
     {
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_activity_description.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_description.xml"
+    },
+    {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/anim_fade_transition.xml.flat",
         "source": "com.paqta.paqtafood.app-main-49:/anim/fade_transition.xml"
     },
@@ -212,16 +216,8 @@
         "source": "com.paqta.paqtafood.app-main-49:/drawable/img_staff_1.png"
     },
     {
-        "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_activity_default_navigation_drawer.xml.flat",
-        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_default_navigation_drawer.xml"
-    },
-    {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_fragment_menu.xml.flat",
         "source": "com.paqta.paqtafood.app-main-49:/layout/fragment_menu.xml"
-    },
-    {
-        "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_header.xml.flat",
-        "source": "com.paqta.paqtafood.app-main-49:/layout/header.xml"
     },
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_paqta_food_logos_black_3.png.flat",
@@ -246,6 +242,10 @@
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_rectangle.png.flat",
         "source": "com.paqta.paqtafood.app-main-49:/drawable/rectangle.png"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_activity_default_drawer_menu.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/activity_default_drawer_menu.xml"
     },
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_logo_rose_transparent.png.flat",
@@ -274,6 +274,10 @@
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_rectangle_66.png.flat",
         "source": "com.paqta.paqtafood.app-main-49:/drawable/rectangle_66.png"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_header_main.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/header_main.xml"
     },
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/font_acme.xml.flat",
@@ -348,6 +352,10 @@
         "source": "com.paqta.paqtafood.app-main-49:/drawable/baseline_close_24.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/layout_app_bar_main.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/layout/app_bar_main.xml"
+    },
+    {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "com.paqta.paqtafood.app-main-49:/mipmap-xxxhdpi/ic_launcher.webp"
     },
@@ -372,12 +380,16 @@
         "source": "com.paqta.paqtafood.app-main-49:/drawable/baseline_circle_24.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_outline_lock_24.xml.flat",
-        "source": "com.paqta.paqtafood.app-main-49:/drawable/outline_lock_24.xml"
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/menu_drawer_menu.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/menu/drawer_menu.xml"
     },
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_llamita.png.flat",
         "source": "com.paqta.paqtafood.app-main-49:/drawable/llamita.png"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-merged_res-47:/drawable_outline_lock_24.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-49:/drawable/outline_lock_24.xml"
     },
     {
         "merged": "com.paqta.paqtafood.app-merged_res-47:/menu_top_app_bar.xml.flat",

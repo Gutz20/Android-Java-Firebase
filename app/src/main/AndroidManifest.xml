@@ -15,6 +15,12 @@
         android:theme="@style/Base.Theme.PaqtaFood"
         tools:targetApi="31">
         <activity
+            android:name=".screens.components.DefaultDrawerMenu"
+            android:exported="false" />
+        <activity
+            android:name=".screens.recycler.DescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.components.steps.StepsActivity"
             android:exported="false" />
         <activity
@@ -28,9 +34,6 @@
             android:exported="false" />
         <activity
             android:name=".screens.components.DefaultNavigationApp"
-            android:exported="false" />
-        <activity
-            android:name=".screens.components.DefaultNavigationDrawer"
             android:exported="false" />
         <activity
             android:name=".screens.staff.Staff"

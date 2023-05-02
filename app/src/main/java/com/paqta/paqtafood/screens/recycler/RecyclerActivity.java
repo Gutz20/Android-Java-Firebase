@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.paqta.paqtafood.R;
@@ -38,10 +39,21 @@ public class RecyclerActivity extends AppCompatActivity {
         elements.add(new ListElement("#f44336", "Jessica", "Tumbes", "Inactivo"));
         elements.add(new ListElement("#009688", "Armando", "Yucatan", "Activo"));
 
-        ListAdapter listAdapter = new ListAdapter(elements, this);
+        ListAdapter listAdapter = new ListAdapter(elements, this, new ListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(ListElement item) {
+                moveToDescription(item);
+            }
+        });
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(listAdapter);
+    }
+
+    public void moveToDescription(ListElement item) {
+        Intent intent = new Intent(this, DescriptionActivity.class);
+        intent.putExtra("ListElement", item);
+        startActivity(intent);
     }
 }

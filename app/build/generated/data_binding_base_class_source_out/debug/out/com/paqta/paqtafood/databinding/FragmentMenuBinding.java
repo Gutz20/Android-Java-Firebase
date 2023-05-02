@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class FragmentMenuBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final Button button5;
 
   @NonNull
   public final MaterialCardView cardMenuBox1;
@@ -93,11 +97,11 @@ public final class FragmentMenuBinding implements ViewBinding {
   @NonNull
   public final TextView txtSubMenu;
 
-  private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull MaterialCardView cardMenuBox1,
-      @NonNull MaterialCardView cardMenuBox2, @NonNull MaterialCardView cardMenuBox3,
-      @NonNull MaterialCardView cardMenuBox4, @NonNull MaterialCardView cardPlat1,
-      @NonNull MaterialCardView cardPlat2, @NonNull ImageView imageView2,
-      @NonNull ImageView imageView3, @NonNull ImageView imageView4,
+  private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull Button button5,
+      @NonNull MaterialCardView cardMenuBox1, @NonNull MaterialCardView cardMenuBox2,
+      @NonNull MaterialCardView cardMenuBox3, @NonNull MaterialCardView cardMenuBox4,
+      @NonNull MaterialCardView cardPlat1, @NonNull MaterialCardView cardPlat2,
+      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull ImageView imageView4,
       @NonNull ImageView imgCard2Plat1, @NonNull ImageView imgCard2Plat2,
       @NonNull ImageView imgMenuIcon, @NonNull ImageView imgViewOtro,
       @NonNull ImageView imgViewOtro2, @NonNull ImageView imgViewOtro3,
@@ -106,6 +110,7 @@ public final class FragmentMenuBinding implements ViewBinding {
       @NonNull TextView txtMenu4, @NonNull TextView txtNamePlat, @NonNull TextView txtNamePlat1,
       @NonNull TextView txtSubMenu) {
     this.rootView = rootView;
+    this.button5 = button5;
     this.cardMenuBox1 = cardMenuBox1;
     this.cardMenuBox2 = cardMenuBox2;
     this.cardMenuBox3 = cardMenuBox3;
@@ -159,6 +164,12 @@ public final class FragmentMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button5;
+      Button button5 = ViewBindings.findChildViewById(rootView, id);
+      if (button5 == null) {
+        break missingId;
+      }
+
       id = R.id.cardMenuBox1;
       MaterialCardView cardMenuBox1 = ViewBindings.findChildViewById(rootView, id);
       if (cardMenuBox1 == null) {
@@ -303,7 +314,7 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMenuBinding((FrameLayout) rootView, cardMenuBox1, cardMenuBox2,
+      return new FragmentMenuBinding((FrameLayout) rootView, button5, cardMenuBox1, cardMenuBox2,
           cardMenuBox3, cardMenuBox4, cardPlat1, cardPlat2, imageView2, imageView3, imageView4,
           imgCard2Plat1, imgCard2Plat2, imgMenuIcon, imgViewOtro, imgViewOtro2, imgViewOtro3,
           imgViewPlato, textViewTitleMenu, txtMenu1, txtMenu2, txtMenu3, txtMenu4, txtNamePlat,

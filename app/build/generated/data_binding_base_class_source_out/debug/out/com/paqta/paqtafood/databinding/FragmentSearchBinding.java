@@ -5,19 +5,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentSearchBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentSearchBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final ImageView imageView5;
+
+  @NonNull
+  public final ImageView imageView8;
+
+  private FragmentSearchBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView5,
+      @NonNull ImageView imageView8) {
     this.rootView = rootView;
+    this.imageView5 = imageView5;
+    this.imageView8 = imageView8;
   }
 
   @Override
@@ -43,10 +55,25 @@ public final class FragmentSearchBinding implements ViewBinding {
 
   @NonNull
   public static FragmentSearchBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.imageView5;
+      ImageView imageView5 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView5 == null) {
+        break missingId;
+      }
 
-    return new FragmentSearchBinding((FrameLayout) rootView);
+      id = R.id.imageView8;
+      ImageView imageView8 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView8 == null) {
+        break missingId;
+      }
+
+      return new FragmentSearchBinding((FrameLayout) rootView, imageView5, imageView8);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

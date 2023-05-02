@@ -31,6 +31,12 @@
         android:testOnly="true"
         android:theme="@style/Base.Theme.PaqtaFood" >
         <activity
+            android:name="com.paqta.paqtafood.screens.components.DefaultDrawerMenu"
+            android:exported="false" />
+        <activity
+            android:name="com.paqta.paqtafood.screens.recycler.DescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name="com.paqta.paqtafood.screens.components.steps.StepsActivity"
             android:exported="false" />
         <activity
@@ -44,9 +50,6 @@
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.screens.components.DefaultNavigationApp"
-            android:exported="false" />
-        <activity
-            android:name="com.paqta.paqtafood.screens.components.DefaultNavigationDrawer"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.screens.staff.Staff"

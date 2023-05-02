@@ -4,20 +4,32 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentFavoriteBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentFavoriteBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button button6;
+
+  @NonNull
+  public final Button button7;
+
+  private FragmentFavoriteBinding(@NonNull FrameLayout rootView, @NonNull Button button6,
+      @NonNull Button button7) {
     this.rootView = rootView;
+    this.button6 = button6;
+    this.button7 = button7;
   }
 
   @Override
@@ -43,10 +55,25 @@ public final class FragmentFavoriteBinding implements ViewBinding {
 
   @NonNull
   public static FragmentFavoriteBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.button6;
+      Button button6 = ViewBindings.findChildViewById(rootView, id);
+      if (button6 == null) {
+        break missingId;
+      }
 
-    return new FragmentFavoriteBinding((FrameLayout) rootView);
+      id = R.id.button7;
+      Button button7 = ViewBindings.findChildViewById(rootView, id);
+      if (button7 == null) {
+        break missingId;
+      }
+
+      return new FragmentFavoriteBinding((FrameLayout) rootView, button6, button7);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
