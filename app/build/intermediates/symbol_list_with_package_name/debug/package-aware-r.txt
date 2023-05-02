@@ -3390,10 +3390,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
-id label_one
-id label_two
 id labeled
-id labels_item
 id layout
 id layoutLive
 id layoutShorts
@@ -3890,7 +3887,6 @@ layout fragment_home
 layout fragment_menu
 layout fragment_profile
 layout fragment_search
-layout header_main
 layout list_element
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

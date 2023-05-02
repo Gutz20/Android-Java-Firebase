@@ -76,27 +76,16 @@ public class DefaultNavigationApp extends AppCompatActivity {
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
-//        binding.navView.setCheckedItem(R.id.search_item);
-//        binding.navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//                if (item.getItemId() == R.id.nav_home) {
-//                    replaceFragment(new HomeFragment());
-//                } else if (item.getItemId() == R.id.nav_settings) {
-//                    replaceFragment(new SearchFragment());
-//                } else if (item.getItemId() == R.id.nav_share) {
-//                    replaceFragment(new ProfileFragment());
-//                } else if (item.getItemId() == R.id.nav_about) {
-//                    replaceFragment(new MenuFragment());
-//                } else if (item.getItemId() == R.id.nav_logout) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Logout", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                drawerLayout.closeDrawer(GravityCompat.START);
-//                return false;
-//            }
-//        });
+        toolbar.setOnMenuItemClickListener(item -> {
+            int search;
+            search = R.id.search;
+
+            if (item.getItemId() == search) {
+                replaceFragment(new HomeFragment());
+            }
+
+            return true;
+        });
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -118,13 +107,34 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
             return true;
         });
-
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showBottomDialog();
             }
+        });
+
+        // DRAWEL IS NOT WORKING
+
+        navigationView.setCheckedItem(R.id.search_item);
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int search, rotation, accelerator, dashboard;
+            search = R.id.search_item;
+            rotation = R.id.rotation_item;
+            accelerator = R.id.accelerator_item;
+            dashboard = R.id.dashboard_item;
+
+
+            if (item.getItemId() == search) {
+                replaceFragment(new HomeFragment());
+            } else if (item.getItemId() == rotation) {
+                replaceFragment(new ProfileFragment());
+            } else if (item.getItemId() == accelerator) {
+                replaceFragment(new MenuFragment());
+            } else if (item.getItemId() == dashboard) {
+                replaceFragment(new SearchFragment());
+            }
+            return true;
         });
     }
 
@@ -201,26 +211,5 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
     }
 
-    // METODO DE PRUEBA
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Bundle bundle =new Bundle();
-        if (item.getItemId() == R.id.accelerator_item) {
-            // Manually build the NavOptions that manually do
-            // what NavigationUI.onNavDestinationSelected does for you
-            NavOptions navOptions = new NavOptions.Builder()
-                    .setPopUpTo(R.id.rotation_item, false, true)
-                    .setRestoreState(true)
-                    .build();
-
-            NavController navController = Navigation.findNavController(this,
-                    R.id.frame_layout);
-
-            navController.navigate(String.valueOf(R.id.search_item), navOptions);
-            return true;
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
-    }
 
 }

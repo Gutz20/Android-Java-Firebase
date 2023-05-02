@@ -3389,10 +3389,7 @@ int id italic 0x7f0a0130
 int id item_touch_helper_previous_elevation 0x7f0a0131
 int id jumpToEnd 0x7f0a0132
 int id jumpToStart 0x7f0a0133
-int id label_one 0x7f0a029a
-int id label_two 0x7f0a029b
 int id labeled 0x7f0a0134
-int id labels_item 0x7f0a029c
 int id layout 0x7f0a0135
 int id layoutLive 0x7f0a0136
 int id layoutShorts 0x7f0a0137
@@ -3889,7 +3886,6 @@ int layout fragment_home 0x7f0d003f
 int layout fragment_menu 0x7f0d0040
 int layout fragment_profile 0x7f0d0041
 int layout fragment_search 0x7f0d0042
-int layout header_main 0x7f0d0043
 int layout list_element 0x7f0d0044
 int layout m3_alert_dialog 0x7f0d0045
 int layout m3_alert_dialog_actions 0x7f0d0046

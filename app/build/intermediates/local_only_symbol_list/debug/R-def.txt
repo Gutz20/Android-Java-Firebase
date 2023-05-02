@@ -232,9 +232,6 @@ id imgViewOtro
 id imgViewOtro2
 id imgViewOtro3
 id imgViewPlato
-id label_one
-id label_two
-id labels_item
 id layoutLive
 id layoutShorts
 id layoutVideo
@@ -334,7 +331,6 @@ layout fragment_home
 layout fragment_menu
 layout fragment_profile
 layout fragment_search
-layout header_main
 layout list_element
 layout nav_header
 menu bottom_menu
