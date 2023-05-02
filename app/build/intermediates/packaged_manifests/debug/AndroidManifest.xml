@@ -31,9 +31,6 @@
         android:testOnly="true"
         android:theme="@style/Base.Theme.PaqtaFood" >
         <activity
-            android:name="com.paqta.paqtafood.screens.components.DefaultDrawerMenu"
-            android:exported="false" />
-        <activity
             android:name="com.paqta.paqtafood.screens.recycler.DescriptionActivity"
             android:exported="false" />
         <activity
@@ -73,6 +70,9 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

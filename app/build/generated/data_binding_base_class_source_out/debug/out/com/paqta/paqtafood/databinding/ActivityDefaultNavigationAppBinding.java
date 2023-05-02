@@ -7,12 +7,15 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,7 +23,10 @@ import java.lang.String;
 
 public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final DrawerLayout rootView;
+
+  @NonNull
+  public final BottomAppBar bottomAppBar;
 
   @NonNull
   public final BottomNavigationView bottomNavigationView;
@@ -29,25 +35,39 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
   public final CoordinatorLayout coordinatorLayout;
 
   @NonNull
+  public final DrawerLayout drawerLayout;
+
+  @NonNull
+  public final FloatingActionButton fab;
+
+  @NonNull
   public final FrameLayout frameLayout;
+
+  @NonNull
+  public final NavigationView navView;
 
   @NonNull
   public final MaterialToolbar topAppBar;
 
-  private ActivityDefaultNavigationAppBinding(@NonNull ConstraintLayout rootView,
-      @NonNull BottomNavigationView bottomNavigationView,
-      @NonNull CoordinatorLayout coordinatorLayout, @NonNull FrameLayout frameLayout,
-      @NonNull MaterialToolbar topAppBar) {
+  private ActivityDefaultNavigationAppBinding(@NonNull DrawerLayout rootView,
+      @NonNull BottomAppBar bottomAppBar, @NonNull BottomNavigationView bottomNavigationView,
+      @NonNull CoordinatorLayout coordinatorLayout, @NonNull DrawerLayout drawerLayout,
+      @NonNull FloatingActionButton fab, @NonNull FrameLayout frameLayout,
+      @NonNull NavigationView navView, @NonNull MaterialToolbar topAppBar) {
     this.rootView = rootView;
+    this.bottomAppBar = bottomAppBar;
     this.bottomNavigationView = bottomNavigationView;
     this.coordinatorLayout = coordinatorLayout;
+    this.drawerLayout = drawerLayout;
+    this.fab = fab;
     this.frameLayout = frameLayout;
+    this.navView = navView;
     this.topAppBar = topAppBar;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public DrawerLayout getRoot() {
     return rootView;
   }
 
@@ -72,6 +92,12 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.bottomAppBar;
+      BottomAppBar bottomAppBar = ViewBindings.findChildViewById(rootView, id);
+      if (bottomAppBar == null) {
+        break missingId;
+      }
+
       id = R.id.bottomNavigationView;
       BottomNavigationView bottomNavigationView = ViewBindings.findChildViewById(rootView, id);
       if (bottomNavigationView == null) {
@@ -84,9 +110,23 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
         break missingId;
       }
 
+      DrawerLayout drawerLayout = (DrawerLayout) rootView;
+
+      id = R.id.fab;
+      FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
+      if (fab == null) {
+        break missingId;
+      }
+
       id = R.id.frame_layout;
       FrameLayout frameLayout = ViewBindings.findChildViewById(rootView, id);
       if (frameLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.nav_view;
+      NavigationView navView = ViewBindings.findChildViewById(rootView, id);
+      if (navView == null) {
         break missingId;
       }
 
@@ -96,8 +136,9 @@ public final class ActivityDefaultNavigationAppBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDefaultNavigationAppBinding((ConstraintLayout) rootView,
-          bottomNavigationView, coordinatorLayout, frameLayout, topAppBar);
+      return new ActivityDefaultNavigationAppBinding((DrawerLayout) rootView, bottomAppBar,
+          bottomNavigationView, coordinatorLayout, drawerLayout, fab, frameLayout, navView,
+          topAppBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

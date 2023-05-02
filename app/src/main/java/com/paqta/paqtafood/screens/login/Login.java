@@ -1,13 +1,11 @@
 package com.paqta.paqtafood.screens.login;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
@@ -32,12 +30,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.components.DefaultDrawerMenu;
 import com.paqta.paqtafood.screens.components.DefaultNavigationApp;
-import com.paqta.paqtafood.screens.components.steps.StepsActivity;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
-import com.paqta.paqtafood.screens.profileActivity.Profileactivity;
-import com.paqta.paqtafood.screens.recycler.RecyclerActivity;
 import com.paqta.paqtafood.screens.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;
 

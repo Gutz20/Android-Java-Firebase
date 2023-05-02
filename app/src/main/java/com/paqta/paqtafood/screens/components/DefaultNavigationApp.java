@@ -1,6 +1,7 @@
 package com.paqta.paqtafood.screens.components;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -9,14 +10,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +36,7 @@ import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.cart.CartFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
+import com.paqta.paqtafood.screens.home.HomeFragment;
 import com.paqta.paqtafood.screens.login.Login;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
@@ -33,18 +46,16 @@ import com.paqta.paqtafood.utils.ChangeColorBar;
 
 public class DefaultNavigationApp extends AppCompatActivity {
 
-    ActivityDefaultNavigationAppBinding binding;
-    FirebaseAuth auth;
-    FirebaseUser user;
-    ChangeColorBar changeColorBar = new ChangeColorBar();
-
+    FloatingActionButton fab;
     DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    ActionBarDrawerToggle drawerToggle;
+    BottomNavigationView bottomNavigationView;
+    ActivityDefaultNavigationAppBinding binding;
+    ChangeColorBar changeColorBar = new ChangeColorBar();
+    ActionBarDrawerToggle toggle;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (drawerToggle.onOptionsItemSelected(item)) {
+        if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -55,132 +66,114 @@ public class DefaultNavigationApp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDefaultNavigationAppBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new ProfileFragment());
 
-//        NAVEGACION SUPERIOR
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        fab = findViewById(R.id.fab);
+        drawerLayout = findViewById(R.id.drawer_layout);
 
-        binding.topAppBar.setNavigationIcon(R.drawable.baseline_menu_24);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        MaterialToolbar toolbar = findViewById(R.id.topAppBar);
 
-        binding.topAppBar.setNavigationIcon(R.drawable.baseline_menu_24);
-        binding.topAppBar.setTitle("Menu");
-        binding.topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Mostrar el sidebar
-                Toast.makeText(DefaultNavigationApp.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
-            }
-        });
+        setSupportActionBar(toolbar);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
-        binding.topAppBar.setOnMenuItemClickListener(item -> {
-
-            if (item.getItemId() == R.id.search) {
-                binding.topAppBar.setTitle("Mi Perfil");
-                Toast.makeText(DefaultNavigationApp.this, "Search", Toast.LENGTH_SHORT).show();
-                replaceFragment(new ProfileFragment());
-            } else if (item.getItemId() == R.id.more) {
-                Toast.makeText(DefaultNavigationApp.this, "More", Toast.LENGTH_SHORT).show();
-            }
-            return false;
-        });
-
-//        NAVEGACION INFERIOR
-        binding.bottomNavigationView.getOrCreateBadge(R.id.cart).setNumber(10);
+        binding.bottomNavigationView.setBackground(null);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-            int fastFood = R.id.menu;
-            int search = R.id.search;
-            int cart = R.id.cart;
-            int favorite = R.id.favorites;
+            int home, shorts, subscription, library;
+            home = R.id.nav_home;
+            shorts = R.id.shorts;
+            subscription = R.id.subscriptions;
+            library = R.id.library;
 
-            if (item.getItemId() == fastFood) {
+            if (item.getItemId() == home) {
+                replaceFragment(new HomeFragment());
+            } else if (item.getItemId() == shorts) {
                 replaceFragment(new MenuFragment());
-            } else if (item.getItemId() == search) {
+            } else if (item.getItemId() == subscription) {
+                replaceFragment(new ProfileFragment());
+            } else if (item.getItemId() == library) {
                 replaceFragment(new SearchFragment());
-            } else if (item.getItemId() == cart) {
-                replaceFragment(new CartFragment());
-            } else if (item.getItemId() == favorite) {
-                replaceFragment(new FavoriteFragment());
             }
 
             return true;
         });
 
-        // DRAWER NAVIGATION
-
-
-//        drawerLayout = findViewById(R.id.drawer_layout);
-//        navigationView = findViewById(R.id.nav_view);
-//
-//        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-//
-//        drawerLayout.addDrawerListener(drawerToggle);
-//        drawerToggle.syncState();
-//        if (getSupportActionBar() != null) {
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        }
-//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            int homeDrawer = R.id.homeDrawer;
-//            int contact = R.id.contact;
-//            int gallery = R.id.gallery;
-//            int about = R.id.about;
-//            int login = R.id.login;
-//            int share = R.id.share;
-//            int rate_us = R.id.rate_us;
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//
-//                if (item.getItemId() == homeDrawer) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Home Selected", Toast.LENGTH_SHORT).show();
-//                } else if (item.getItemId() == contact) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Contact Selected", Toast.LENGTH_SHORT).show();
-//                } else if (item.getItemId() == gallery) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Gallery Selected", Toast.LENGTH_SHORT).show();
-//                } else if (item.getItemId() == about) {
-//                    Toast.makeText(DefaultNavigationApp.this, "About Selected", Toast.LENGTH_SHORT).show();
-//                } else if (item.getItemId() == login) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Login Selected", Toast.LENGTH_SHORT).show();
-//                } else if (item.getItemId() == share) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Home Selected", Toast.LENGTH_SHORT).show();
-//                } else if (item.getItemId() == rate_us) {
-//                    Toast.makeText(DefaultNavigationApp.this, "Home Selected", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                return false;
-//            }
-//        });
-
-        // AUTENTICACION
-
-        auth = FirebaseAuth.getInstance();
-
-        user = auth.getCurrentUser();
-        if (user == null) {
-            Intent intent = new Intent(getApplicationContext(), Login.class);
-            startActivity(intent);
-            finish();
-        }
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showBottomDialog();
+            }
+        });
 
         changeColorBar.window = getWindow();
         changeColorBar.cambiarColor("#151C48", "#151C48");
     }
 
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-        super.onBackPressed();
-    }
-
-    // Metodo que se encargara de remplazar el layout del contenido por el que nosotros
-    // asignemos
+    /**
+     * Metodo que se encargara de remplazar el layout del contenido por el que nosotros asignemos
+     *
+     * @param fragment, contenido
+     */
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
+
+    private void showBottomDialog() {
+
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.bottomsheetlayout);
+
+        LinearLayout videoLayout = dialog.findViewById(R.id.layoutVideo);
+        LinearLayout shortsLayout = dialog.findViewById(R.id.layoutShorts);
+        LinearLayout liveLayout = dialog.findViewById(R.id.layoutLive);
+        ImageView cancelButton = dialog.findViewById(R.id.cancelButton);
+
+        videoLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(DefaultNavigationApp.this, "Upload a Video is clicked", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        shortsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Toast.makeText(DefaultNavigationApp.this, "Create a short is Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        liveLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Toast.makeText(DefaultNavigationApp.this, "Go live is Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+    }
+
 
 }
