@@ -9,6 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -48,41 +52,56 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
     FloatingActionButton fab;
     DrawerLayout drawerLayout;
-    BottomNavigationView bottomNavigationView;
     ActivityDefaultNavigationAppBinding binding;
-    ChangeColorBar changeColorBar = new ChangeColorBar();
-    ActionBarDrawerToggle toggle;
+    ActionBarDrawerToggle actionBarDrawerToggle;
+    MaterialToolbar toolbar;
+    NavigationView navigationView;
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    BottomNavigationView bottomNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDefaultNavigationAppBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        fab = findViewById(R.id.fab);
         drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        fab = findViewById(R.id.fab);
+        toolbar = findViewById(R.id.topAppBar);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        MaterialToolbar toolbar = findViewById(R.id.topAppBar);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+        actionBarDrawerToggle.syncState();
 
-        setSupportActionBar(toolbar);
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+//        binding.navView.setCheckedItem(R.id.search_item);
+//        binding.navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//                if (item.getItemId() == R.id.nav_home) {
+//                    replaceFragment(new HomeFragment());
+//                } else if (item.getItemId() == R.id.nav_settings) {
+//                    replaceFragment(new SearchFragment());
+//                } else if (item.getItemId() == R.id.nav_share) {
+//                    replaceFragment(new ProfileFragment());
+//                } else if (item.getItemId() == R.id.nav_about) {
+//                    replaceFragment(new MenuFragment());
+//                } else if (item.getItemId() == R.id.nav_logout) {
+//                    Toast.makeText(DefaultNavigationApp.this, "Logout", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                drawerLayout.closeDrawer(GravityCompat.START);
+//                return false;
+//            }
+//        });
 
-        binding.bottomNavigationView.setBackground(null);
-        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
             int home, shorts, subscription, library;
-            home = R.id.nav_home;
+            home = R.id.home;
             shorts = R.id.shorts;
             subscription = R.id.subscriptions;
             library = R.id.library;
@@ -100,15 +119,22 @@ public class DefaultNavigationApp extends AppCompatActivity {
             return true;
         });
 
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showBottomDialog();
             }
         });
+    }
 
-        changeColorBar.window = getWindow();
-        changeColorBar.cambiarColor("#151C48", "#151C48");
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     /**
@@ -175,5 +201,26 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
     }
 
+    // METODO DE PRUEBA
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Bundle bundle =new Bundle();
+        if (item.getItemId() == R.id.accelerator_item) {
+            // Manually build the NavOptions that manually do
+            // what NavigationUI.onNavDestinationSelected does for you
+            NavOptions navOptions = new NavOptions.Builder()
+                    .setPopUpTo(R.id.rotation_item, false, true)
+                    .setRestoreState(true)
+                    .build();
+
+            NavController navController = Navigation.findNavController(this,
+                    R.id.frame_layout);
+
+            navController.navigate(String.valueOf(R.id.search_item), navOptions);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
 
 }

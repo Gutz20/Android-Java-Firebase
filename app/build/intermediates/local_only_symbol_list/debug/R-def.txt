@@ -162,6 +162,7 @@ drawable whitebck
 font abel
 font acme
 font archivo
+id accelerator_item
 id backgroundLayout
 id bluePaqtaLogo
 id bottomAppBar
@@ -190,6 +191,7 @@ id constraintLayout
 id coordinatorLayout
 id createText
 id cv
+id dashboard_item
 id decorator_bottom
 id decorator_top
 id descriptionTextView
@@ -230,6 +232,9 @@ id imgViewOtro
 id imgViewOtro2
 id imgViewOtro3
 id imgViewPlato
+id label_one
+id label_two
+id labels_item
 id layoutLive
 id layoutShorts
 id layoutVideo
@@ -240,6 +245,7 @@ id logoImageView
 id logoImageViewLogin
 id logoTextView
 id logoutButton
+id main_item
 id materialCardView
 id materialDivider1
 id materialDivider2
@@ -249,15 +255,12 @@ id materialDivider5
 id more
 id motionLayout
 id nameTextView
-id nav_about
-id nav_home
-id nav_logout
-id nav_settings
-id nav_share
 id nav_view
 id originPaqtaLogo
 id recuperarBtn
+id rotation_item
 id search
+id search_item
 id shorts
 id start
 id statusDescriptionTextView

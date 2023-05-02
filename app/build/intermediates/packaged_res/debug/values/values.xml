@@ -101,7 +101,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <string name="app_name">PaqtaFood</string>
     <string name="btnNuevoFishes">NUEVO</string>
-    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="close_nav">close</string>
     <string name="default_web_client_id" translatable="false">1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com</string>
     <string name="descriptionImagesMenuPlat">Plato</string>
     <string name="gcm_defaultSenderId" translatable="false">1091847638331</string>
@@ -127,7 +127,7 @@
     <string name="labelTitleFishes">Directorio de Platos</string>
     <string name="labelTitleStaff">Directorio de personal</string>
     <string name="labelUser">Usuario</string>
-    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="open_nav">open</string>
     <string name="project_id" translatable="false">paqtafood</string>
     <string name="web_client_id">1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
