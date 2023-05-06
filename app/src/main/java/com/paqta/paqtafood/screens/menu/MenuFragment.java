@@ -46,13 +46,21 @@ public class MenuFragment extends Fragment {
 
     private Button button;
 
+//    List<Dish> elements;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_menu, container, false);
+//        elements = new ArrayList<>();
+//        elements.add(new Dish("Arroz chaufa y papas fritas", "desc", 5));
+//        elements.add(new Dish("Arroz chaufa y papas fritas", "desc", 5));
+//        elements.add(new Dish("Arroz chaufa y papas fritas", "desc", 5));
+//        elements.add(new Dish("Arroz chaufa y papas fritas", "desc", 5));
 
         button = root.findViewById(R.id.button5);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

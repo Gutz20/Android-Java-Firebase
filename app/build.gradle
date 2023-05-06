@@ -46,6 +46,9 @@ dependencies {
 //    Authentication
     implementation 'com.google.firebase:firebase-auth'
 
+//    Analytics
+    implementation 'com.google.firebase:firebase-analytics'
+
 //    Google
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
@@ -54,6 +57,12 @@ dependencies {
 
 //    Steps view
     implementation 'com.github.shuhart:stepview:1.5.1'
+
+//   Realtime Database
+    implementation 'com.google.firebase:firebase-database'
+
+//    Firestore Database
+    implementation 'com.google.firebase:firebase-firestore'
 
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'

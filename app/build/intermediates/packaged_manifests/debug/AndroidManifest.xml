@@ -10,6 +10,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <permission
         android:name="com.paqta.paqtafood.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -24,9 +27,9 @@
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_logo_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Base.Theme.PaqtaFood" >
@@ -43,16 +46,10 @@
             android:name="com.paqta.paqtafood.screens.forgotPassword.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.profileActivity.Profileactivity"
-            android:exported="false" />
-        <activity
             android:name="com.paqta.paqtafood.screens.components.DefaultNavigationApp"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.screens.staff.Staff"
-            android:exported="false" />
-        <activity
-            android:name="com.paqta.paqtafood.screens.dishes.Dishes"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.screens.signup.Signup"
@@ -121,6 +118,18 @@
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 
         <activity
@@ -144,6 +153,22 @@
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

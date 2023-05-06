@@ -4,26 +4,23 @@
     >
 
     <item
-        android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/baseline_home_24"/>
+        android:id="@+id/nav_bottom_home"
+        android:title="Inicio"
+        android:icon="@drawable/outline_fastfood_24"/>
 
     <item
-        android:id="@+id/shorts"
-        android:title="Shorts"
-        android:icon="@drawable/baseline_whatshot_24"
+        android:id="@+id/nav_bottom_favorite"
+        android:title="Favoritos"
+        android:icon="@drawable/heart_bottom_nav"
         />
 
     <item
-        android:title=""/>
-
+        android:id="@+id/nav_bottom_search"
+        android:title="Buscar"
+        android:icon="@drawable/baseline_search_24" />
     <item
-        android:id="@+id/subscriptions"
-        android:title="Subscriptions"
-        android:icon="@drawable/baseline_subscriptions_24" />
-    <item
-        android:id="@+id/library"
-        android:title="Library"
-        android:icon="@drawable/baseline_video_library_24" />
+        android:id="@+id/nav_bottom_cart"
+        android:title="Carrito"
+        android:icon="@drawable/outline_shopping_cart_24" />
 
 </menu>

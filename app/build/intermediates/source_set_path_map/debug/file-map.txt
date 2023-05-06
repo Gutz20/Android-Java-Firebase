@@ -13,10 +13,10 @@ com.paqta.paqtafood.app-navigation-fragment-2.5.3-11 C:\Users\USUARIO\.gradle\ca
 com.paqta.paqtafood.app-navigation-common-2.5.3-12 C:\Users\USUARIO\.gradle\caches\transforms-3\2f59d9bda05d32dd0a6b3a2b6f8beb68\transformed\navigation-common-2.5.3\res
 com.paqta.paqtafood.app-lifecycle-viewmodel-2.5.1-13 C:\Users\USUARIO\.gradle\caches\transforms-3\3371e832ef00c7ae1e09828d81b3ab14\transformed\lifecycle-viewmodel-2.5.1\res
 com.paqta.paqtafood.app-lifecycle-viewmodel-savedstate-2.5.1-14 C:\Users\USUARIO\.gradle\caches\transforms-3\36153f7fb1d42ce561a33443445ad1c0\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
-com.paqta.paqtafood.app-play-services-auth-20.5.0-15 C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\res
-com.paqta.paqtafood.app-drawerlayout-1.1.1-16 C:\Users\USUARIO\.gradle\caches\transforms-3\5462aa7b63d011dcee1fb8a8ed03cda6\transformed\drawerlayout-1.1.1\res
-com.paqta.paqtafood.app-emoji2-1.2.0-17 C:\Users\USUARIO\.gradle\caches\transforms-3\56d27122fee915162e00ac1343b2ac76\transformed\emoji2-1.2.0\res
-com.paqta.paqtafood.app-play-services-base-18.0.1-18 C:\Users\USUARIO\.gradle\caches\transforms-3\57fdfdf95c102fd746ae4db150f15c1e\transformed\play-services-base-18.0.1\res
+com.paqta.paqtafood.app-play-services-base-18.1.0-15 C:\Users\USUARIO\.gradle\caches\transforms-3\49dee99b6c928111fce1cbb1146f6eb1\transformed\play-services-base-18.1.0\res
+com.paqta.paqtafood.app-play-services-auth-20.5.0-16 C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\res
+com.paqta.paqtafood.app-drawerlayout-1.1.1-17 C:\Users\USUARIO\.gradle\caches\transforms-3\5462aa7b63d011dcee1fb8a8ed03cda6\transformed\drawerlayout-1.1.1\res
+com.paqta.paqtafood.app-emoji2-1.2.0-18 C:\Users\USUARIO\.gradle\caches\transforms-3\56d27122fee915162e00ac1343b2ac76\transformed\emoji2-1.2.0\res
 com.paqta.paqtafood.app-material-1.8.0-19 C:\Users\USUARIO\.gradle\caches\transforms-3\61b171c448166aefd915a1082974a326\transformed\material-1.8.0\res
 com.paqta.paqtafood.app-viewpager2-1.0.0-20 C:\Users\USUARIO\.gradle\caches\transforms-3\63e320e3ecc97107b7c1f29cd0587690\transformed\viewpager2-1.0.0\res
 com.paqta.paqtafood.app-emoji2-views-helper-1.2.0-21 C:\Users\USUARIO\.gradle\caches\transforms-3\649cf036617d04ff7890762b8f6b1ea6\transformed\emoji2-views-helper-1.2.0\res

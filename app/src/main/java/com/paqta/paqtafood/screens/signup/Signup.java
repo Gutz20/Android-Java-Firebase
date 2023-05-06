@@ -20,10 +20,9 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.screens.components.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.login.Login;
-import com.paqta.paqtafood.screens.profileActivity.Profileactivity;
 import com.paqta.paqtafood.utils.ChangeColorBar;
 
 import java.util.regex.Pattern;
@@ -119,7 +118,7 @@ public class Signup extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(Signup.this, Profileactivity.class);
+                            Intent intent = new Intent(Signup.this, DefaultNavigationApp.class);
                             startActivity(intent);
                             finish();
                         } else {

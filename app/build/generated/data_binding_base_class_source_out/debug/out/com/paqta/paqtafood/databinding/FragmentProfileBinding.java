@@ -12,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
@@ -23,7 +24,25 @@ public final class FragmentProfileBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final TextView addressTextViewDesc;
+
+  @NonNull
+  public final TextView addressTextViewTitle;
+
+  @NonNull
+  public final MaterialButton adminButton;
+
+  @NonNull
   public final ConstraintLayout constraintLayout;
+
+  @NonNull
+  public final TextView dniTextViewDesc;
+
+  @NonNull
+  public final TextView dniTextViewTitle;
+
+  @NonNull
+  public final MaterialButton editButton;
 
   @NonNull
   public final TextView emailTextView;
@@ -34,14 +53,55 @@ public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
   public final MaterialButton logoutButton;
 
+  @NonNull
+  public final MaterialCardView materialCardView2;
+
+  @NonNull
+  public final TextView nameTextViewDesc;
+
+  @NonNull
+  public final TextView nameTextViewTitle;
+
+  @NonNull
+  public final TextView phoneTextViewDesc;
+
+  @NonNull
+  public final TextView phoneTextViewTitle;
+
+  @NonNull
+  public final TextView rolTextViewDesc;
+
+  @NonNull
+  public final TextView rolTextViewTitle;
+
   private FragmentProfileBinding(@NonNull FrameLayout rootView,
-      @NonNull ConstraintLayout constraintLayout, @NonNull TextView emailTextView,
-      @NonNull ShapeableImageView imageView, @NonNull MaterialButton logoutButton) {
+      @NonNull TextView addressTextViewDesc, @NonNull TextView addressTextViewTitle,
+      @NonNull MaterialButton adminButton, @NonNull ConstraintLayout constraintLayout,
+      @NonNull TextView dniTextViewDesc, @NonNull TextView dniTextViewTitle,
+      @NonNull MaterialButton editButton, @NonNull TextView emailTextView,
+      @NonNull ShapeableImageView imageView, @NonNull MaterialButton logoutButton,
+      @NonNull MaterialCardView materialCardView2, @NonNull TextView nameTextViewDesc,
+      @NonNull TextView nameTextViewTitle, @NonNull TextView phoneTextViewDesc,
+      @NonNull TextView phoneTextViewTitle, @NonNull TextView rolTextViewDesc,
+      @NonNull TextView rolTextViewTitle) {
     this.rootView = rootView;
+    this.addressTextViewDesc = addressTextViewDesc;
+    this.addressTextViewTitle = addressTextViewTitle;
+    this.adminButton = adminButton;
     this.constraintLayout = constraintLayout;
+    this.dniTextViewDesc = dniTextViewDesc;
+    this.dniTextViewTitle = dniTextViewTitle;
+    this.editButton = editButton;
     this.emailTextView = emailTextView;
     this.imageView = imageView;
     this.logoutButton = logoutButton;
+    this.materialCardView2 = materialCardView2;
+    this.nameTextViewDesc = nameTextViewDesc;
+    this.nameTextViewTitle = nameTextViewTitle;
+    this.phoneTextViewDesc = phoneTextViewDesc;
+    this.phoneTextViewTitle = phoneTextViewTitle;
+    this.rolTextViewDesc = rolTextViewDesc;
+    this.rolTextViewTitle = rolTextViewTitle;
   }
 
   @Override
@@ -71,9 +131,45 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.addressTextViewDesc;
+      TextView addressTextViewDesc = ViewBindings.findChildViewById(rootView, id);
+      if (addressTextViewDesc == null) {
+        break missingId;
+      }
+
+      id = R.id.addressTextViewTitle;
+      TextView addressTextViewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (addressTextViewTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.adminButton;
+      MaterialButton adminButton = ViewBindings.findChildViewById(rootView, id);
+      if (adminButton == null) {
+        break missingId;
+      }
+
       id = R.id.constraintLayout;
       ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.dniTextViewDesc;
+      TextView dniTextViewDesc = ViewBindings.findChildViewById(rootView, id);
+      if (dniTextViewDesc == null) {
+        break missingId;
+      }
+
+      id = R.id.dniTextViewTitle;
+      TextView dniTextViewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (dniTextViewTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.editButton;
+      MaterialButton editButton = ViewBindings.findChildViewById(rootView, id);
+      if (editButton == null) {
         break missingId;
       }
 
@@ -95,8 +191,53 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProfileBinding((FrameLayout) rootView, constraintLayout, emailTextView,
-          imageView, logoutButton);
+      id = R.id.materialCardView2;
+      MaterialCardView materialCardView2 = ViewBindings.findChildViewById(rootView, id);
+      if (materialCardView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.nameTextViewDesc;
+      TextView nameTextViewDesc = ViewBindings.findChildViewById(rootView, id);
+      if (nameTextViewDesc == null) {
+        break missingId;
+      }
+
+      id = R.id.nameTextViewTitle;
+      TextView nameTextViewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (nameTextViewTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.phoneTextViewDesc;
+      TextView phoneTextViewDesc = ViewBindings.findChildViewById(rootView, id);
+      if (phoneTextViewDesc == null) {
+        break missingId;
+      }
+
+      id = R.id.phoneTextViewTitle;
+      TextView phoneTextViewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (phoneTextViewTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.rolTextViewDesc;
+      TextView rolTextViewDesc = ViewBindings.findChildViewById(rootView, id);
+      if (rolTextViewDesc == null) {
+        break missingId;
+      }
+
+      id = R.id.rolTextViewTitle;
+      TextView rolTextViewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (rolTextViewTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentProfileBinding((FrameLayout) rootView, addressTextViewDesc,
+          addressTextViewTitle, adminButton, constraintLayout, dniTextViewDesc, dniTextViewTitle,
+          editButton, emailTextView, imageView, logoutButton, materialCardView2, nameTextViewDesc,
+          nameTextViewTitle, phoneTextViewDesc, phoneTextViewTitle, rolTextViewDesc,
+          rolTextViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

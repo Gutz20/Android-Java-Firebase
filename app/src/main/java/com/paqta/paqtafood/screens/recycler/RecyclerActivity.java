@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.ListElement;
-import com.paqta.paqtafood.utils.ListAdapter;
+import com.paqta.paqtafood.adapters.ListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

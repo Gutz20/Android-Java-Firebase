@@ -14,8 +14,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="142dp"
+            android:layout_width="409dp"
+            android:layout_height="110dp"
             android:background="@drawable/rectangle_66"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,16 +23,21 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/logoutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Cerrar Sesion"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="48dp"
+            android:outlineAmbientShadowColor="@color/colorOscuro"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/rounded"
+            app:srcCompat="@drawable/logo"
+            app:strokeColor="@color/colorOscuro"
+            app:strokeWidth="2dp" />
 
         <TextView
             android:id="@+id/emailTextView"
@@ -47,22 +52,197 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="80dp"
-            android:scaleType="centerCrop"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logoutButton"
+            android:layout_width="307dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:text="CERRAR SESION"
+            app:backgroundTint="@color/colorRojo"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:outlineAmbientShadowColor="@color/colorOscuro"
-            app:shapeAppearanceOverlay="@style/rounded"
-            app:srcCompat="@drawable/logo"
-            app:strokeColor="@color/colorOscuro"
-            app:strokeWidth="2dp"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/adminButton"
+            app:layout_constraintVertical_bias="0.272" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/adminButton"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="ADMIN"
+            app:backgroundTint="@color/colorFondo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.199"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editButton"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="EDITAR"
+            app:backgroundTint="@color/colorFondo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.118"
+            app:layout_constraintStart_toEndOf="@+id/adminButton"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/colorOscuro"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailTextView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/rolTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Rol"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nameTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Nombre"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.092"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rolTextViewTitle" />
+
+                <TextView
+                    android:id="@+id/addressTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Direccion"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.098"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameTextViewTitle" />
+
+                <TextView
+                    android:id="@+id/phoneTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Telefono"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.095"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addressTextViewTitle" />
+
+                <TextView
+                    android:id="@+id/dniTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="DNI"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.078"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/phoneTextViewTitle" />
+
+                <TextView
+                    android:id="@+id/rolTextViewDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Administrador"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.731"
+                    app:layout_constraintStart_toEndOf="@+id/rolTextViewTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nameTextViewDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Paqta ADM"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.432"
+                    app:layout_constraintStart_toEndOf="@+id/nameTextViewTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/rolTextViewDesc" />
+
+                <TextView
+                    android:id="@+id/phoneTextViewDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.204"
+                    app:layout_constraintStart_toEndOf="@+id/phoneTextViewTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addressTextViewDesc" />
+
+                <TextView
+                    android:id="@+id/dniTextViewDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.371"
+                    app:layout_constraintStart_toEndOf="@+id/dniTextViewTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/phoneTextViewDesc" />
+
+                <TextView
+                    android:id="@+id/addressTextViewDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.181"
+                    app:layout_constraintStart_toEndOf="@+id/addressTextViewTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/nameTextViewDesc" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

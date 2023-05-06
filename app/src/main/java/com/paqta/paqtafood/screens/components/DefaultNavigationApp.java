@@ -1,7 +1,5 @@
 package com.paqta.paqtafood.screens.components;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -9,43 +7,31 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.NavOptions;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
-import com.paqta.paqtafood.screens.cart.CartFragment;
-import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
+import com.paqta.paqtafood.screens.dishes.DishesFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
-import com.paqta.paqtafood.screens.login.Login;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
-import com.paqta.paqtafood.utils.ChangeColorBar;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {
@@ -58,6 +44,8 @@ public class DefaultNavigationApp extends AppCompatActivity {
     NavigationView navigationView;
 
     BottomNavigationView bottomNavigationView;
+    FirebaseAuth mAuth;
+
 
 
     @Override
@@ -67,7 +55,16 @@ public class DefaultNavigationApp extends AppCompatActivity {
         setContentView(binding.getRoot());
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        fab = findViewById(R.id.fab);
+
+//        mAuth = FirebaseAuth.getInstance();
+//        mUser = mAuth.getCurrentUser();
+//
+//        if (mUser != null) {
+//            mEmailUser.setText(mUser.getDisplayName());
+//            mNameUser.setText(mUser.getEmail());
+//        }
+
+//        fab = findViewById(R.id.fab);
         toolbar = findViewById(R.id.topAppBar);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -75,6 +72,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
+        replaceFragment(new HomeFragment());
 
         toolbar.setOnMenuItemClickListener(item -> {
             int search;
@@ -87,34 +85,29 @@ public class DefaultNavigationApp extends AppCompatActivity {
             return true;
         });
 
+
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            int home, shorts, subscription, library;
-            home = R.id.home;
-            shorts = R.id.shorts;
-            subscription = R.id.subscriptions;
-            library = R.id.library;
 
-            if (item.getItemId() == home) {
+            if (item.getItemId() == R.id.nav_bottom_home) {
                 replaceFragment(new HomeFragment());
-            } else if (item.getItemId() == shorts) {
+            } else if (item.getItemId() == R.id.nav_bottom_favorite) {
                 replaceFragment(new MenuFragment());
-            } else if (item.getItemId() == subscription) {
+            } else if (item.getItemId() == R.id.nav_bottom_search) {
                 replaceFragment(new ProfileFragment());
-            } else if (item.getItemId() == library) {
+            } else if (item.getItemId() == R.id.nav_bottom_cart) {
                 replaceFragment(new SearchFragment());
             }
 
             return true;
         });
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showBottomDialog();
-            }
-        });
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showBottomDialog();
+//            }
+//        });
 
-        // DRAWEL IS NOT WORKING
 
         navigationView.setCheckedItem(R.id.search_item);
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -132,7 +125,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             } else if (item.getItemId() == accelerator) {
                 replaceFragment(new MenuFragment());
             } else if (item.getItemId() == dashboard) {
-                replaceFragment(new SearchFragment());
+                replaceFragment(new DishesFragment());
             }
             return true;
         });
@@ -159,6 +152,10 @@ public class DefaultNavigationApp extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    /**
+     * Muestra un dialog (ventana desplegable que nos dara opciones) practicamente
+     * es un Bottom Sheets
+     */
     private void showBottomDialog() {
 
         final Dialog dialog = new Dialog(this);
@@ -175,7 +172,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             public void onClick(View v) {
 
                 dialog.dismiss();
-                Toast.makeText(DefaultNavigationApp.this, "Upload a Video is clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DefaultNavigationApp.this, "Opcion 1", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -184,7 +181,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                Toast.makeText(DefaultNavigationApp.this, "Create a short is Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DefaultNavigationApp.this, "Opcion 2", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -192,7 +189,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                Toast.makeText(DefaultNavigationApp.this, "Go live is Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DefaultNavigationApp.this, "Opcion 3", Toast.LENGTH_SHORT).show();
             }
         });
 
