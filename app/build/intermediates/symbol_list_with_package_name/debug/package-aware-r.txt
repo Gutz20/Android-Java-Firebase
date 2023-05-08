@@ -2889,6 +2889,8 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable alitas
+drawable arrow_left_home
+drawable arrow_right_home
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_home
@@ -2903,6 +2905,7 @@ drawable baseline_close_24
 drawable baseline_contact_mail_24
 drawable baseline_exit_app_24
 drawable baseline_home_24
+drawable baseline_image_24
 drawable baseline_info_24
 drawable baseline_menu_24
 drawable baseline_person_24
@@ -2957,6 +2960,8 @@ drawable fondo_prueba
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_bottom_nav
+drawable home_bebidas
+drawable home_qr
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -3070,7 +3075,9 @@ drawable paqta_food_2
 drawable paqta_food_logos_black_3
 drawable paqta_food_logos_white_1
 drawable platillo
+drawable platillos_home
 drawable platillos_img_1
+drawable postres_home
 drawable rayitas
 drawable rayitas_volteadas
 drawable rectangle
@@ -3278,6 +3285,9 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detailDesc
+id detailImage
+id detailTitle
 id dialog_button
 id dimensions
 id direct
@@ -3314,6 +3324,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fade
 id fill
 id fill_horizontal
@@ -3356,6 +3367,9 @@ id ignoreRequest
 id image
 id imageLogoSignup
 id imageView
+id imageView10
+id imageView11
+id imageView12
 id imageView2
 id imageView26
 id imageView28
@@ -3369,8 +3383,10 @@ id imageView35
 id imageView36
 id imageView4
 id imageView5
+id imageView6
 id imageView7
 id imageView8
+id imageView9
 id imgBackLogin
 id imgCard2Plat1
 id imgCard2Plat2
@@ -3419,6 +3435,11 @@ id match_constraint
 id match_parent
 id materialCardView
 id materialCardView2
+id materialCardView3
+id materialCardView4
+id materialCardView5
+id materialCardView6
+id materialCardView7
 id materialDivider1
 id materialDivider2
 id materialDivider3
@@ -3537,8 +3558,14 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recCard
+id recCategory
+id recDescription
+id recImage
+id recTitle
 id rectangles
 id recuperarBtn
+id recyclerView
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3550,6 +3577,7 @@ id rotation_item
 id rounded
 id row_index_key
 id rtl
+id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3657,6 +3685,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView10
 id textView20
 id textView22
 id textView23
@@ -3668,6 +3697,9 @@ id textView29
 id textView30
 id textView4
 id textView6
+id textView7
+id textView8
+id textView9
 id textViewCorreoUser
 id textViewNameUser
 id textViewTitleMenu
@@ -3705,6 +3737,8 @@ id tvwOlvidasteContra
 id tvwRegister
 id tvwSignup
 id tvwSignupToLogin
+id txtCategoria
+id txtDescripcion
 id txtLayoutConfirmPassword
 id txtLayoutEmail
 id txtLayoutPassword
@@ -3717,6 +3751,7 @@ id txtMenu3
 id txtMenu4
 id txtNamePlat
 id txtNamePlat1
+id txtNombre
 id txtRegisterConfirmPassword
 id txtRegisterEmail
 id txtRegisterPassword
@@ -3726,6 +3761,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id uploadImage
 id useLogo
 id vertical_only
 id viewSupporter
@@ -3883,11 +3919,14 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_add_product
 layout fragment_cart
+layout fragment_detail_product
 layout fragment_dishes
 layout fragment_favorite
 layout fragment_home
 layout fragment_menu
+layout fragment_product
 layout fragment_profile
 layout fragment_search
 layout item_container_user
@@ -3950,6 +3989,8 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout progress_layout
+layout recycler_item_product
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

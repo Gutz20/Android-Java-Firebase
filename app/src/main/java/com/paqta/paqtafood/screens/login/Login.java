@@ -30,7 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.components.DefaultNavigationApp;
+import com.paqta.paqtafood.navigation.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;

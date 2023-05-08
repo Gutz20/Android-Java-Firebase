@@ -28,7 +28,7 @@
             android:name=".screens.forgotPassword.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".screens.components.DefaultNavigationApp"
+            android:name=".navigation.DefaultNavigationApp"
             android:exported="false" />
         <activity
             android:name=".screens.staff.Staff"

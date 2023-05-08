@@ -46,7 +46,7 @@
             android:name="com.paqta.paqtafood.screens.forgotPassword.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.components.DefaultNavigationApp"
+            android:name="com.paqta.paqtafood.navigation.DefaultNavigationApp"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.screens.staff.Staff"
@@ -123,6 +123,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"

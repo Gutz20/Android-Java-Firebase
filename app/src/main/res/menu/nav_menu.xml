@@ -8,30 +8,30 @@
 
     <item
         android:id="@+id/main_item"
-        android:title="mail_subheader_title">
+        android:title="Menu de opciones">
         <menu>
             <item
                 android:id="@+id/search_item"
                 android:icon="@drawable/outline_email_24"
-                android:title="search_title"
+                android:title="Gestion de platos"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
                 android:id="@+id/rotation_item"
                 android:icon="@drawable/outline_email_24"
-                android:title="3d_title"
+                android:title="Gestion de personal"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
                 android:id="@+id/accelerator_item"
                 android:icon="@drawable/outline_email_24"
-                android:title="accelerator_title"
+                android:title="QR"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
                 android:id="@+id/dashboard_item"
                 android:icon="@drawable/outline_email_24"
-                android:title="dashboard_title"
+                android:title="Otro"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
         </menu>

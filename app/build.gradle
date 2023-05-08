@@ -61,8 +61,11 @@ dependencies {
 //   Realtime Database
     implementation 'com.google.firebase:firebase-database'
 
-//    Firestore Database
+//    Firestore Database - FireStore
     implementation 'com.google.firebase:firebase-firestore'
+
+//    FireStorage
+    implementation 'com.google.firebase:firebase-storage'
 
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'
