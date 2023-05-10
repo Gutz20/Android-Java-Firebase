@@ -20,6 +20,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -29,12 +31,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.navigation.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Login extends AppCompatActivity {
@@ -50,6 +56,7 @@ public class Login extends AppCompatActivity {
     SignInButton mSignInButtonGoogle;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
+    FirebaseFirestore mFirestore;
     private static final int RC_SIGN_IN = 9001;
 
     /**
@@ -89,6 +96,7 @@ public class Login extends AppCompatActivity {
 //        FIREBASE
         mAuth = FirebaseAuth.getInstance();
         mSignInButtonGoogle = findViewById(R.id.btnGoogle);
+        mFirestore = FirebaseFirestore.getInstance();
 
 //        GOOGLE
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -176,9 +184,28 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            irHome();
+
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            Map<String, Object> map = new HashMap<>();
+                            String id = user.getUid();
+                            map.put("id", id);
+                            map.put("username", user.getDisplayName());
+                            map.put("email", user.getEmail());
+
+                            mFirestore.collection("usuarios").document(id).set(map)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            updateUI(user);
+                                            Toast.makeText(Login.this, "Usuario registrado con exito", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Login.this, "Error al guardar", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Login.this, task.getException().toString(), Toast.LENGTH_SHORT).show();

@@ -24,7 +24,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgProfileUser"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="48dp"
@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imgProfileUser" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/logoutButton"
@@ -106,24 +106,10 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/rolTextViewTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Rol"
-                    android:textColor="@color/colorBlanco"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.077"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
                     android:id="@+id/nameTextViewTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="24dp"
                     android:text="Nombre"
                     android:textColor="@color/colorBlanco"
                     android:textSize="20sp"
@@ -131,7 +117,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.092"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rolTextViewTitle" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/addressTextViewTitle"
@@ -176,30 +162,17 @@
                     app:layout_constraintTop_toBottomOf="@+id/phoneTextViewTitle" />
 
                 <TextView
-                    android:id="@+id/rolTextViewDesc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Administrador"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.731"
-                    app:layout_constraintStart_toEndOf="@+id/rolTextViewTitle"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
                     android:id="@+id/nameTextViewDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Paqta ADM"
+                    android:layout_marginTop="24dp"
+                    android:text="..."
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.432"
+                    app:layout_constraintHorizontal_bias="0.242"
                     app:layout_constraintStart_toEndOf="@+id/nameTextViewTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/rolTextViewDesc" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/phoneTextViewDesc"

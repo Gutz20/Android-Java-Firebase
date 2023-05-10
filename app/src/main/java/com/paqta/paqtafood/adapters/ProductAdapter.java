@@ -26,10 +26,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
     private Context context;
     private List<Producto> dataList;
+    private ListAdapter.OnItemClickListener listener;
 
     public ProductAdapter(Context context, List<Producto> dataList) {
         this.context = context;
         this.dataList = dataList;
+    }
+
+    public void setListener(ListAdapter.OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -50,12 +55,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, DetailProductFragment.class);
-                intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getImagen());
-                intent.putExtra("Descripcion", dataList.get(holder.getAdapterPosition()).getDescripcion());
-                intent.putExtra("Titulo", dataList.get(holder.getAdapterPosition()).getNombre());
-
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, DetailProductFragment.class);
+//                intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getImagen());
+//                intent.putExtra("Descripcion", dataList.get(holder.getAdapterPosition()).getDescripcion());
+//                intent.putExtra("Titulo", dataList.get(holder.getAdapterPosition()).getNombre());
+//
+//                context.startActivity(intent);
             }
         });
     }
@@ -64,7 +69,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     public int getItemCount() {
         return dataList.size();
     }
-
 
 }
 

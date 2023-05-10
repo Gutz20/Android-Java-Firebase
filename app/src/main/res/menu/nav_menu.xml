@@ -5,10 +5,10 @@
     >
 
 <!--    tools:showIn="navigation_view"-->
-
     <item
         android:id="@+id/main_item"
-        android:title="Menu de opciones">
+        android:title="Menu de opciones"
+        >
         <menu>
             <item
                 android:id="@+id/search_item"
@@ -36,24 +36,24 @@
                 app:showAsAction="ifRoom"/>
         </menu>
     </item>
-<!--    <item-->
-<!--        android:id="@+id/labels_item"-->
-<!--        android:title="labels_subheader_title">-->
-<!--        <menu>-->
-<!--            <item-->
-<!--                android:id="@+id/label_one"-->
-<!--                android:icon="@drawable/outline_person_24"-->
-<!--                android:title="label_one_title"-->
-<!--                android:checkable="true"-->
-<!--                app:showAsAction="ifRoom"/>-->
-<!--            <item-->
-<!--                android:id="@+id/label_two"-->
-<!--                android:icon="@drawable/outline_email_24"-->
-<!--                android:title="label_two_title"-->
-<!--                android:checkable="true"-->
-<!--                app:showAsAction="ifRoom"/>-->
-<!--        </menu>-->
-<!--    </item>-->
+    <item
+        android:id="@+id/second_item"
+        android:title="Otros">
+        <menu>
+            <item
+                android:id="@+id/otherNewItem"
+                android:icon="@drawable/outline_person_24"
+                android:title="OtherNew1"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/otherNewItem2"
+                android:icon="@drawable/outline_email_24"
+                android:title="OtherNew2"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+        </menu>
+    </item>
 
 
 </menu>

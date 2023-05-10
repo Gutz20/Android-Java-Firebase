@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,8 @@ import com.paqta.paqtafood.screens.login.Login;
 public class ForgotPassword extends AppCompatActivity {
 
     MaterialButton recuperarBtn;
+
+    TextView txtRegisterBack;
     TextInputEditText emailEditText;
 
     @Override
@@ -29,6 +32,16 @@ public class ForgotPassword extends AppCompatActivity {
 
         recuperarBtn = findViewById(R.id.recuperarBtn);
         emailEditText = findViewById(R.id.txtLoginUser);
+        txtRegisterBack = findViewById(R.id.tvwRegister);
+
+        txtRegisterBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForgotPassword.this, Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         recuperarBtn.setOnClickListener(new View.OnClickListener() {
             @Override

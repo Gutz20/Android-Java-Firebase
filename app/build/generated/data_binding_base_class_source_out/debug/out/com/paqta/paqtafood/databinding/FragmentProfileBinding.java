@@ -48,7 +48,7 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView emailTextView;
 
   @NonNull
-  public final ShapeableImageView imageView;
+  public final ShapeableImageView imgProfileUser;
 
   @NonNull
   public final MaterialButton logoutButton;
@@ -68,22 +68,15 @@ public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
   public final TextView phoneTextViewTitle;
 
-  @NonNull
-  public final TextView rolTextViewDesc;
-
-  @NonNull
-  public final TextView rolTextViewTitle;
-
   private FragmentProfileBinding(@NonNull FrameLayout rootView,
       @NonNull TextView addressTextViewDesc, @NonNull TextView addressTextViewTitle,
       @NonNull MaterialButton adminButton, @NonNull ConstraintLayout constraintLayout,
       @NonNull TextView dniTextViewDesc, @NonNull TextView dniTextViewTitle,
       @NonNull MaterialButton editButton, @NonNull TextView emailTextView,
-      @NonNull ShapeableImageView imageView, @NonNull MaterialButton logoutButton,
+      @NonNull ShapeableImageView imgProfileUser, @NonNull MaterialButton logoutButton,
       @NonNull MaterialCardView materialCardView2, @NonNull TextView nameTextViewDesc,
       @NonNull TextView nameTextViewTitle, @NonNull TextView phoneTextViewDesc,
-      @NonNull TextView phoneTextViewTitle, @NonNull TextView rolTextViewDesc,
-      @NonNull TextView rolTextViewTitle) {
+      @NonNull TextView phoneTextViewTitle) {
     this.rootView = rootView;
     this.addressTextViewDesc = addressTextViewDesc;
     this.addressTextViewTitle = addressTextViewTitle;
@@ -93,15 +86,13 @@ public final class FragmentProfileBinding implements ViewBinding {
     this.dniTextViewTitle = dniTextViewTitle;
     this.editButton = editButton;
     this.emailTextView = emailTextView;
-    this.imageView = imageView;
+    this.imgProfileUser = imgProfileUser;
     this.logoutButton = logoutButton;
     this.materialCardView2 = materialCardView2;
     this.nameTextViewDesc = nameTextViewDesc;
     this.nameTextViewTitle = nameTextViewTitle;
     this.phoneTextViewDesc = phoneTextViewDesc;
     this.phoneTextViewTitle = phoneTextViewTitle;
-    this.rolTextViewDesc = rolTextViewDesc;
-    this.rolTextViewTitle = rolTextViewTitle;
   }
 
   @Override
@@ -179,9 +170,9 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView;
-      ShapeableImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
+      id = R.id.imgProfileUser;
+      ShapeableImageView imgProfileUser = ViewBindings.findChildViewById(rootView, id);
+      if (imgProfileUser == null) {
         break missingId;
       }
 
@@ -221,23 +212,10 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rolTextViewDesc;
-      TextView rolTextViewDesc = ViewBindings.findChildViewById(rootView, id);
-      if (rolTextViewDesc == null) {
-        break missingId;
-      }
-
-      id = R.id.rolTextViewTitle;
-      TextView rolTextViewTitle = ViewBindings.findChildViewById(rootView, id);
-      if (rolTextViewTitle == null) {
-        break missingId;
-      }
-
       return new FragmentProfileBinding((FrameLayout) rootView, addressTextViewDesc,
           addressTextViewTitle, adminButton, constraintLayout, dniTextViewDesc, dniTextViewTitle,
-          editButton, emailTextView, imageView, logoutButton, materialCardView2, nameTextViewDesc,
-          nameTextViewTitle, phoneTextViewDesc, phoneTextViewTitle, rolTextViewDesc,
-          rolTextViewTitle);
+          editButton, emailTextView, imgProfileUser, logoutButton, materialCardView2,
+          nameTextViewDesc, nameTextViewTitle, phoneTextViewDesc, phoneTextViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

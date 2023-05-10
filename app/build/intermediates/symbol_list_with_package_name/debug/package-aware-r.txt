@@ -3345,6 +3345,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -3392,6 +3393,7 @@ id imgCard2Plat1
 id imgCard2Plat2
 id imgMenuIcon
 id imgProfile
+id imgProfileUser
 id imgViewOtro
 id imgViewOtro2
 id imgViewOtro3
@@ -3422,6 +3424,7 @@ id linearLayout
 id listMode
 id listRecyclerView
 id list_item
+id listview_data
 id locale
 id logoImageView
 id logoImageViewLogin
@@ -3534,6 +3537,8 @@ id off
 id on
 id onInterceptTouchReturnSwipe
 id originPaqtaLogo
+id otherNewItem
+id otherNewItem2
 id outline
 id outward
 id overshoot
@@ -3571,8 +3576,6 @@ id right
 id rightToLeft
 id right_icon
 id right_side
-id rolTextViewDesc
-id rolTextViewTitle
 id rotation_item
 id rounded
 id row_index_key
@@ -3614,6 +3617,7 @@ id search_view_status_bar_spacer
 id search_view_toolbar
 id search_view_toolbar_container
 id search_voice_btn
+id second_item
 id select_dialog_listview
 id selected
 id selection_type
@@ -3929,6 +3933,7 @@ layout fragment_menu
 layout fragment_product
 layout fragment_profile
 layout fragment_search
+layout fragment_staff
 layout item_container_user
 layout list_element
 layout m3_alert_dialog

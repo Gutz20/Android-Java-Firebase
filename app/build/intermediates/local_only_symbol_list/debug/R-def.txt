@@ -243,6 +243,7 @@ id imgCard2Plat1
 id imgCard2Plat2
 id imgMenuIcon
 id imgProfile
+id imgProfileUser
 id imgViewOtro
 id imgViewOtro2
 id imgViewOtro3
@@ -252,6 +253,7 @@ id layoutShorts
 id layoutVideo
 id linearLayout
 id listRecyclerView
+id listview_data
 id logoImageView
 id logoImageViewLogin
 id logoutButton
@@ -279,6 +281,8 @@ id nav_bottom_home
 id nav_bottom_search
 id nav_view
 id originPaqtaLogo
+id otherNewItem
+id otherNewItem2
 id phoneTextViewDesc
 id phoneTextViewTitle
 id recCard
@@ -288,12 +292,11 @@ id recImage
 id recTitle
 id recuperarBtn
 id recyclerView
-id rolTextViewDesc
-id rolTextViewTitle
 id rotation_item
 id saveButton
 id search
 id search_item
+id second_item
 id start
 id statusDescriptionTextView
 id statusTextView
@@ -372,6 +375,7 @@ layout fragment_menu
 layout fragment_product
 layout fragment_profile
 layout fragment_search
+layout fragment_staff
 layout item_container_user
 layout list_element
 layout nav_header
