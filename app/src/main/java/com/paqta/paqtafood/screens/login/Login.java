@@ -31,7 +31,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.navigation.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
@@ -52,7 +57,7 @@ public class Login extends AppCompatActivity {
     TextView textViewRegister, tvwLogin, tvwOlvidasteContra;
     ChangeColorBar changeColorBar = new ChangeColorBar();
 
-//    FIREBASE
+    //    FIREBASE
     SignInButton mSignInButtonGoogle;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
@@ -174,6 +179,7 @@ public class Login extends AppCompatActivity {
     /**
      * Autenticacion con google mediante firebase, obtiene las credenciales para luego
      * logearse con las mismas mediante Firebase Authentication
+     *
      * @param idToken, token que se enviara para obtener la credencial del usuario de google
      */
     private void firebaseAuthWithGoogle(String idToken) {
@@ -184,28 +190,16 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-
                             FirebaseUser user = mAuth.getCurrentUser();
                             Map<String, Object> map = new HashMap<>();
-                            String id = user.getUid();
-                            map.put("id", id);
+                            assert user != null;
                             map.put("username", user.getDisplayName());
                             map.put("email", user.getEmail());
 
-                            mFirestore.collection("usuarios").document(id).set(map)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            updateUI(user);
-                                            Toast.makeText(Login.this, "Usuario registrado con exito", Toast.LENGTH_SHORT).show();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Login.this, "Error al guardar", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                            CollectionReference usuariosRef = mFirestore.collection("usuarios");
+                            Query consulta = usuariosRef.whereEqualTo("email", user.getEmail());
+
+                            registerUserBySocialNetwork(consulta, user, map);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Login.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
@@ -231,6 +225,7 @@ public class Login extends AppCompatActivity {
     /**
      * Valida los campos de entrada para verificar que todo este acorde
      * a como esta en la database. Asociado al login por correo
+     *
      * @param v, Vista que se enviara para el snackbar
      */
     public void validate(View v) {
@@ -259,8 +254,9 @@ public class Login extends AppCompatActivity {
 
     /**
      * Inicia sesion con las credenciales del correo y la contraseña
-     * @param v, Vista enviada al snackbar
-     * @param email, Email que el usuario ingresara
+     *
+     * @param v,        Vista enviada al snackbar
+     * @param email,    Email que el usuario ingresara
      * @param password, Password que el usuario ingresara
      */
     public void iniciarSesion(View v, String email, String password) {
@@ -276,6 +272,43 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    /**
+     * Verifica si no existe algun otro usuario con el mismo correo, para despues agregarlo a Firestore
+     * @param consulta
+     * @param user
+     * @param map
+     */
+    public void registerUserBySocialNetwork(Query consulta, FirebaseUser user, Map map) {
+        consulta.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                if (!queryDocumentSnapshots.isEmpty()) {
+                    DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                    if (documentSnapshot.get("email").toString().matches(user.getEmail())) {
+                        updateUI(user);
+                        Toast.makeText(Login.this, "Logeando", Toast.LENGTH_SHORT).show();
+                    } else {
+                        mFirestore.collection("usuarios").add(map)
+                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        updateUI(user);
+                                        Toast.makeText(Login.this, "Usuario registrado con exito", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(Login.this, "Error al guardar", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
+
+                }
+            }
+        });
     }
 
 }

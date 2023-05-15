@@ -30,9 +30,6 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView addressTextViewTitle;
 
   @NonNull
-  public final MaterialButton adminButton;
-
-  @NonNull
   public final ConstraintLayout constraintLayout;
 
   @NonNull
@@ -70,17 +67,15 @@ public final class FragmentProfileBinding implements ViewBinding {
 
   private FragmentProfileBinding(@NonNull FrameLayout rootView,
       @NonNull TextView addressTextViewDesc, @NonNull TextView addressTextViewTitle,
-      @NonNull MaterialButton adminButton, @NonNull ConstraintLayout constraintLayout,
-      @NonNull TextView dniTextViewDesc, @NonNull TextView dniTextViewTitle,
-      @NonNull MaterialButton editButton, @NonNull TextView emailTextView,
-      @NonNull ShapeableImageView imgProfileUser, @NonNull MaterialButton logoutButton,
-      @NonNull MaterialCardView materialCardView2, @NonNull TextView nameTextViewDesc,
-      @NonNull TextView nameTextViewTitle, @NonNull TextView phoneTextViewDesc,
-      @NonNull TextView phoneTextViewTitle) {
+      @NonNull ConstraintLayout constraintLayout, @NonNull TextView dniTextViewDesc,
+      @NonNull TextView dniTextViewTitle, @NonNull MaterialButton editButton,
+      @NonNull TextView emailTextView, @NonNull ShapeableImageView imgProfileUser,
+      @NonNull MaterialButton logoutButton, @NonNull MaterialCardView materialCardView2,
+      @NonNull TextView nameTextViewDesc, @NonNull TextView nameTextViewTitle,
+      @NonNull TextView phoneTextViewDesc, @NonNull TextView phoneTextViewTitle) {
     this.rootView = rootView;
     this.addressTextViewDesc = addressTextViewDesc;
     this.addressTextViewTitle = addressTextViewTitle;
-    this.adminButton = adminButton;
     this.constraintLayout = constraintLayout;
     this.dniTextViewDesc = dniTextViewDesc;
     this.dniTextViewTitle = dniTextViewTitle;
@@ -131,12 +126,6 @@ public final class FragmentProfileBinding implements ViewBinding {
       id = R.id.addressTextViewTitle;
       TextView addressTextViewTitle = ViewBindings.findChildViewById(rootView, id);
       if (addressTextViewTitle == null) {
-        break missingId;
-      }
-
-      id = R.id.adminButton;
-      MaterialButton adminButton = ViewBindings.findChildViewById(rootView, id);
-      if (adminButton == null) {
         break missingId;
       }
 
@@ -213,9 +202,9 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       return new FragmentProfileBinding((FrameLayout) rootView, addressTextViewDesc,
-          addressTextViewTitle, adminButton, constraintLayout, dniTextViewDesc, dniTextViewTitle,
-          editButton, emailTextView, imgProfileUser, logoutButton, materialCardView2,
-          nameTextViewDesc, nameTextViewTitle, phoneTextViewDesc, phoneTextViewTitle);
+          addressTextViewTitle, constraintLayout, dniTextViewDesc, dniTextViewTitle, editButton,
+          emailTextView, imgProfileUser, logoutButton, materialCardView2, nameTextViewDesc,
+          nameTextViewTitle, phoneTextViewDesc, phoneTextViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

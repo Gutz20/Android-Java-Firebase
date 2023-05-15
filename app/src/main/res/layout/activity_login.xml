@@ -12,8 +12,8 @@
         style="@style/Widget.Material3.CardView.Elevated"
         android:layout_width="332dp"
         android:layout_height="355dp"
-        app:cardElevation="20dp"
         app:cardBackgroundColor="@color/colorFondo"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,8 @@
                 android:id="@+id/btnGoogle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="252dp"
+                android:layout_marginTop="256dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.121"
                 app:layout_constraintStart_toStartOf="parent"
@@ -150,6 +151,25 @@
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/facebookBtn"-->
+<!--                style="@style/Widget.Material3.Button.TonalButton"-->
+<!--                android:layout_width="138dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:backgroundTint="@color/colorBlanco"-->
+<!--                android:text="@string/facebook"-->
+<!--                android:textColor="@color/colorOscuro"-->
+<!--                app:cornerRadius="2dp"-->
+<!--                app:icon="@drawable/facebook"-->
+<!--                app:iconGravity="start"-->
+<!--                app:iconTint="@android:color/transparent"-->
+<!--                app:iconTintMode="screen"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.418"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/btnGoogle"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />-->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -182,8 +202,8 @@
         android:id="@+id/logoImageViewLogin"
         android:layout_width="359dp"
         android:layout_height="161dp"
-        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         android:transitionName="logoImageTrans"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

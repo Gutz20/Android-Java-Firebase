@@ -143,50 +143,48 @@ public class Signup extends AppCompatActivity {
 
     public void addUser(String username, String email, String password) {
 
-        String id = mAuth.getCurrentUser().getUid();
         String newPass = sha256(password);
         Map<String, Object> user = new HashMap<>();
-        user.put("id", id);
         user.put("username", username);
         user.put("email", email);
         user.put("password", newPass);
 
         db.collection("usuarios")
-                .document(id)
-                .set(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
-                    public void onSuccess(Void unused) {
+                    public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(Signup.this, "Registrado con exito", Toast.LENGTH_SHORT).show();
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
+                }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(Signup.this, "Error: " + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+
                     }
                 });
     }
 
     /**
      * Hasheo de contraseña
+     *
      * @param base
      * @return
      */
     public static String sha256(String base) {
-        try{
+        try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(base.getBytes("UTF-8"));
             StringBuffer hexString = new StringBuffer();
 
             for (int i = 0; i < hash.length; i++) {
                 String hex = Integer.toHexString(0xff & hash[i]);
-                if(hex.length() == 1) hexString.append('0');
+                if (hex.length() == 1) hexString.append('0');
                 hexString.append(hex);
             }
 
             return hexString.toString();
-        } catch(Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }

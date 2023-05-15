@@ -17,14 +17,11 @@ import android.view.ViewGroup;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.adapters.ProductAdapter;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.screens.product.components.AddProductFragment;
 
@@ -87,28 +84,28 @@ public class ProductFragment extends Fragment {
 
         dataList = new ArrayList<>();
 
-        ProductAdapter adapter = new ProductAdapter(getContext(), dataList);
-        recyclerView.setAdapter(adapter);
-
-        mFirestore = FirebaseFirestore.getInstance();
-        dialog.show();
-        mFirestore.collection("productos")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Producto producto = document.toObject(Producto.class);
-                                dataList.add(producto);
-                            }
-                            adapter.notifyDataSetChanged();
-                            dialog.dismiss();
-                        } else {
-                            dialog.dismiss();
-                        }
-                    }
-                });
+//        ProductAdapter adapter = new ProductAdapter(getContext(), dataList);
+//        recyclerView.setAdapter(adapter);
+//
+//        mFirestore = FirebaseFirestore.getInstance();
+//        dialog.show();
+//        mFirestore.collection("productos")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                Producto producto = document.toObject(Producto.class);
+//                                dataList.add(producto);
+//                            }
+//                            adapter.notifyDataSetChanged();
+//                            dialog.dismiss();
+//                        } else {
+//                            dialog.dismiss();
+//                        }
+//                    }
+//                });
 
 
         fab.setOnClickListener(new View.OnClickListener() {

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-46:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-49:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\61b171c448166aefd915a1082974a326\\transformed\\material-1.8.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\9effa6581a6790790789a4e1fa89b489\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

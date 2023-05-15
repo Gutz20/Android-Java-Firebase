@@ -32,9 +32,11 @@ import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
+import com.paqta.paqtafood.screens.offers.OffersFragment;
 import com.paqta.paqtafood.screens.product.ProductFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
+import com.paqta.paqtafood.screens.staffFragment.StaffFragment;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {
@@ -95,7 +97,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             if (item.getItemId() == R.id.nav_bottom_home) {
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.nav_bottom_favorite) {
-                replaceFragment(new MenuFragment());
+                replaceFragment(new OffersFragment());
             } else if (item.getItemId() == R.id.nav_bottom_search) {
                 replaceFragment(new ProfileFragment());
             } else if (item.getItemId() == R.id.nav_bottom_cart) {
@@ -122,7 +124,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             if (item.getItemId() == search) {
                 replaceFragment(new ProductFragment());
             } else if (item.getItemId() == rotation) {
-                replaceFragment(new ProfileFragment());
+                replaceFragment(new StaffFragment());
             } else if (item.getItemId() == accelerator) {
                 replaceFragment(new MenuFragment());
             } else if (item.getItemId() == dashboard) {

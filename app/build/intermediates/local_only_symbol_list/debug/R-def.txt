@@ -125,6 +125,9 @@ drawable combo_dishes
 drawable contenido_platillo_img_1
 drawable contenido_platillo_img_2
 drawable dialogbkg
+drawable facebook
+drawable facebook_logo_icon
+drawable fondo_offers
 drawable fondo_prueba
 drawable heart_bottom_nav
 drawable home_bebidas
@@ -175,7 +178,7 @@ font archivo
 id accelerator_item
 id addressTextViewDesc
 id addressTextViewTitle
-id adminButton
+id ageProduct
 id backgroundLayout
 id bluePaqtaLogo
 id bottomNavigationView
@@ -195,6 +198,7 @@ id cardPlat_1
 id cardPlat_2
 id cityDescriptionTextView
 id cityTextView
+id colorProduct
 id constraintLayout
 id coordinatorLayout
 id coordinatorLayout2
@@ -272,6 +276,7 @@ id materialDivider4
 id materialDivider5
 id more
 id motionLayout
+id nameProduct
 id nameTextView
 id nameTextViewDesc
 id nameTextViewTitle
@@ -292,6 +297,7 @@ id recImage
 id recTitle
 id recuperarBtn
 id recyclerView
+id recyclerViewOffers
 id rotation_item
 id saveButton
 id search
@@ -367,11 +373,13 @@ layout activity_steps
 layout bottomsheetlayout
 layout fragment_add_product
 layout fragment_cart
+layout fragment_content_offers
 layout fragment_detail_product
 layout fragment_dishes
 layout fragment_favorite
 layout fragment_home
 layout fragment_menu
+layout fragment_offers
 layout fragment_product
 layout fragment_profile
 layout fragment_search
@@ -381,6 +389,7 @@ layout list_element
 layout nav_header
 layout progress_layout
 layout recycler_item_product
+layout view_producto_single
 menu bottom_menu
 menu nav_menu
 menu top_app_bar
@@ -394,6 +403,7 @@ string btnNuevoFishes
 string close_nav
 string default_web_client_id
 string descriptionImagesMenuPlat
+string facebook
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

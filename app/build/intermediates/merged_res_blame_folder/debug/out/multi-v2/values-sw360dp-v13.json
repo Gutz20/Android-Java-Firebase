@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-49:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\e07184198a3debfefef4a4bf872611ea\\transformed\\firebase-ui-auth-8.0.2\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,186,247,302,356,414",
+                        "endColumns": "69,60,60,54,53,57,56",
+                        "endOffsets": "120,181,242,297,351,409,466"
+                    }
+                }
+            ]
+        }
+    ]
+}

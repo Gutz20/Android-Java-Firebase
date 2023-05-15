@@ -35,5 +35,6 @@
 
     <!--    Profile-->
     <string name="labelCampoNulo">...</string>
+    <string name="facebook">Facebook</string>
 
 </resources>
