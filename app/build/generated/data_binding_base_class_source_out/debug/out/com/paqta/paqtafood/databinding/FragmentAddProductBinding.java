@@ -4,14 +4,14 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,30 +22,29 @@ public final class FragmentAddProductBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final MaterialButton saveButton;
+  public final Button btnAdd;
 
   @NonNull
-  public final TextInputEditText txtCategoria;
+  public final EditText edtTextCategoria;
 
   @NonNull
-  public final TextInputEditText txtDescripcion;
+  public final EditText edtTextDescripcion;
 
   @NonNull
-  public final TextInputEditText txtNombre;
+  public final EditText edtTextNombre;
 
   @NonNull
-  public final ImageView uploadImage;
+  public final TextView textView2;
 
-  private FragmentAddProductBinding(@NonNull FrameLayout rootView,
-      @NonNull MaterialButton saveButton, @NonNull TextInputEditText txtCategoria,
-      @NonNull TextInputEditText txtDescripcion, @NonNull TextInputEditText txtNombre,
-      @NonNull ImageView uploadImage) {
+  private FragmentAddProductBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
+      @NonNull EditText edtTextCategoria, @NonNull EditText edtTextDescripcion,
+      @NonNull EditText edtTextNombre, @NonNull TextView textView2) {
     this.rootView = rootView;
-    this.saveButton = saveButton;
-    this.txtCategoria = txtCategoria;
-    this.txtDescripcion = txtDescripcion;
-    this.txtNombre = txtNombre;
-    this.uploadImage = uploadImage;
+    this.btnAdd = btnAdd;
+    this.edtTextCategoria = edtTextCategoria;
+    this.edtTextDescripcion = edtTextDescripcion;
+    this.edtTextNombre = edtTextNombre;
+    this.textView2 = textView2;
   }
 
   @Override
@@ -75,38 +74,38 @@ public final class FragmentAddProductBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.saveButton;
-      MaterialButton saveButton = ViewBindings.findChildViewById(rootView, id);
-      if (saveButton == null) {
+      id = R.id.btn_add;
+      Button btnAdd = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdd == null) {
         break missingId;
       }
 
-      id = R.id.txtCategoria;
-      TextInputEditText txtCategoria = ViewBindings.findChildViewById(rootView, id);
-      if (txtCategoria == null) {
+      id = R.id.edtTextCategoria;
+      EditText edtTextCategoria = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextCategoria == null) {
         break missingId;
       }
 
-      id = R.id.txtDescripcion;
-      TextInputEditText txtDescripcion = ViewBindings.findChildViewById(rootView, id);
-      if (txtDescripcion == null) {
+      id = R.id.edtTextDescripcion;
+      EditText edtTextDescripcion = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextDescripcion == null) {
         break missingId;
       }
 
-      id = R.id.txtNombre;
-      TextInputEditText txtNombre = ViewBindings.findChildViewById(rootView, id);
-      if (txtNombre == null) {
+      id = R.id.edtTextNombre;
+      EditText edtTextNombre = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextNombre == null) {
         break missingId;
       }
 
-      id = R.id.uploadImage;
-      ImageView uploadImage = ViewBindings.findChildViewById(rootView, id);
-      if (uploadImage == null) {
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
         break missingId;
       }
 
-      return new FragmentAddProductBinding((FrameLayout) rootView, saveButton, txtCategoria,
-          txtDescripcion, txtNombre, uploadImage);
+      return new FragmentAddProductBinding((FrameLayout) rootView, btnAdd, edtTextCategoria,
+          edtTextDescripcion, edtTextNombre, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

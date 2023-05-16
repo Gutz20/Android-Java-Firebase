@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,15 +24,24 @@ public final class ViewProductoSingleBinding implements ViewBinding {
   public final TextView ageProduct;
 
   @NonNull
+  public final ImageView btnEditar;
+
+  @NonNull
+  public final ImageView btnEliminar;
+
+  @NonNull
   public final TextView colorProduct;
 
   @NonNull
   public final TextView nameProduct;
 
   private ViewProductoSingleBinding(@NonNull CardView rootView, @NonNull TextView ageProduct,
-      @NonNull TextView colorProduct, @NonNull TextView nameProduct) {
+      @NonNull ImageView btnEditar, @NonNull ImageView btnEliminar, @NonNull TextView colorProduct,
+      @NonNull TextView nameProduct) {
     this.rootView = rootView;
     this.ageProduct = ageProduct;
+    this.btnEditar = btnEditar;
+    this.btnEliminar = btnEliminar;
     this.colorProduct = colorProduct;
     this.nameProduct = nameProduct;
   }
@@ -69,6 +79,18 @@ public final class ViewProductoSingleBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnEditar;
+      ImageView btnEditar = ViewBindings.findChildViewById(rootView, id);
+      if (btnEditar == null) {
+        break missingId;
+      }
+
+      id = R.id.btnEliminar;
+      ImageView btnEliminar = ViewBindings.findChildViewById(rootView, id);
+      if (btnEliminar == null) {
+        break missingId;
+      }
+
       id = R.id.colorProduct;
       TextView colorProduct = ViewBindings.findChildViewById(rootView, id);
       if (colorProduct == null) {
@@ -81,8 +103,8 @@ public final class ViewProductoSingleBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewProductoSingleBinding((CardView) rootView, ageProduct, colorProduct,
-          nameProduct);
+      return new ViewProductoSingleBinding((CardView) rootView, ageProduct, btnEditar, btnEliminar,
+          colorProduct, nameProduct);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

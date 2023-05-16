@@ -4,14 +4,14 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-49:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\Desktop\\ProyectsAndroidStudio\\PaqtaFood\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\USUARIO\\Desktop\\Proyecto-android\\PaqtaFood\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "31,2",
                         "startColumns": "4,4",
-                        "startOffsets": "2342,100",
+                        "startOffsets": "2373,102",
                         "endLines": "34,29",
                         "endColumns": "12,12",
-                        "endOffsets": "2563,2300"
+                        "endOffsets": "2597,2329"
                     },
                     "to": {
                         "startLines": "2,6",

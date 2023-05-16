@@ -6,16 +6,16 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="28"
-8-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml
+8-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml
+9-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:6:5-67
-11-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:6:22-64
+11-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:6:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:7:5-79
-12-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:7:22-76
+12-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:7:22-76
 13
 14    <!-- Used to check if a browser is available before launching phone auth -->
 15    <!-- See ui/phone/PhoneNumberVerificationHandler.isBrowserAvailable() -->
@@ -59,106 +59,106 @@
 34-->[androidx.core:core:1.9.0] C:\Users\USUARIO\.gradle\caches\transforms-3\67f0b316e1656a3fe9aff13e51ef9187\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 35
 36    <application
-36-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:9:5-60:19
+36-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:9:5-60:19
 37        android:allowBackup="true"
-37-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:10:9-35
+37-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:10:9-35
 38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 38-->[androidx.core:core:1.9.0] C:\Users\USUARIO\.gradle\caches\transforms-3\67f0b316e1656a3fe9aff13e51ef9187\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 39        android:dataExtractionRules="@xml/data_extraction_rules"
-39-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:11:9-65
+39-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:11:9-65
 40        android:debuggable="true"
 41        android:extractNativeLibs="false"
 42        android:fullBackupContent="@xml/backup_rules"
-42-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:12:9-54
+42-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:12:9-54
 43        android:icon="@mipmap/ic_launcher_logo"
-43-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:13:9-48
+43-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:13:9-48
 44        android:label="@string/app_name"
-44-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:14:9-41
+44-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:14:9-41
 45        android:roundIcon="@mipmap/ic_launcher_logo_round"
-45-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:15:9-59
+45-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:15:9-59
 46        android:supportsRtl="true"
-46-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:16:9-35
+46-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:16:9-35
 47        android:testOnly="true"
 48        android:theme="@style/Base.Theme.PaqtaFood" >
-48-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:17:9-52
+48-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:17:9-52
 49        <activity
-49-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:19:9-21:40
+49-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:19:9-21:40
 50            android:name="com.paqta.paqtafood.screens.recycler.DescriptionActivity"
-50-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:20:13-65
+50-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:20:13-65
 51            android:exported="false" />
-51-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:21:13-37
+51-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:21:13-37
 52        <activity
-52-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:22:9-24:40
+52-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:22:9-24:40
 53            android:name="com.paqta.paqtafood.screens.components.steps.StepsActivity"
-53-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:23:13-67
+53-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:23:13-67
 54            android:exported="false" />
-54-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:24:13-37
+54-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:24:13-37
 55        <activity
-55-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:25:9-27:40
+55-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:25:9-27:40
 56            android:name="com.paqta.paqtafood.screens.recycler.RecyclerActivity"
-56-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:26:13-62
+56-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:26:13-62
 57            android:exported="false" />
-57-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:27:13-37
+57-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:27:13-37
 58        <activity
-58-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:28:9-30:40
+58-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:28:9-30:40
 59            android:name="com.paqta.paqtafood.screens.forgotPassword.ForgotPassword"
-59-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:29:13-66
+59-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:29:13-66
 60            android:exported="false" />
-60-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:30:13-37
+60-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:30:13-37
 61        <activity
-61-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:31:9-33:40
+61-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:31:9-33:40
 62            android:name="com.paqta.paqtafood.navigation.DefaultNavigationApp"
-62-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:32:13-60
+62-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:32:13-60
 63            android:exported="false" />
-63-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:33:13-37
+63-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:33:13-37
 64        <activity
-64-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:34:9-36:40
+64-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:34:9-36:40
 65            android:name="com.paqta.paqtafood.screens.staff.Staff"
-65-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:35:13-48
+65-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:35:13-48
 66            android:exported="false" />
-66-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:36:13-37
+66-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:36:13-37
 67        <activity
-67-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:37:9-39:40
+67-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:37:9-39:40
 68            android:name="com.paqta.paqtafood.screens.signup.Signup"
-68-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:38:13-50
+68-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:38:13-50
 69            android:exported="false" />
-69-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:39:13-37
+69-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:39:13-37
 70        <activity
-70-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:40:9-42:40
+70-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:40:9-42:40
 71            android:name="com.paqta.paqtafood.screens.login.Login"
-71-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:41:13-48
+71-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:41:13-48
 72            android:exported="false" />
-72-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:42:13-37
+72-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:42:13-37
 73        <activity
-73-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:43:9-51:20
+73-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:43:9-51:20
 74            android:name="com.paqta.paqtafood.MainActivity"
-74-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:44:13-41
+74-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:44:13-41
 75            android:exported="true" >
-75-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:45:13-36
+75-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:45:13-36
 76            <intent-filter>
-76-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:46:13-50:29
+76-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:46:13-50:29
 77                <action android:name="android.intent.action.MAIN" />
-77-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:47:17-69
-77-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:47:25-66
+77-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:47:17-69
+77-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:47:25-66
 78
 79                <category android:name="android.intent.category.LAUNCHER" />
-79-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:49:17-77
-79-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:49:27-74
+79-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:49:17-77
+79-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:49:27-74
 80            </intent-filter>
 81        </activity>
 82
 83        <meta-data
-83-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:53:9-55:32
+83-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:53:9-55:32
 84            android:name="android.app.lib_name"
-84-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:54:13-48
+84-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:54:13-48
 85            android:value="" />
-85-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:55:13-29
+85-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:55:13-29
 86        <meta-data
-86-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:57:9-59:57
+86-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:57:9-59:57
 87            android:name="preloaded_fonts"
-87-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:58:13-43
+87-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:58:13-43
 88            android:resource="@array/preloaded_fonts" />
-88-->C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood\app\src\main\AndroidManifest.xml:59:13-54
+88-->C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:59:13-54
 89        <meta-data
 89-->[com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:26:9-28:69
 90            android:name="com.google.android.gms.version"

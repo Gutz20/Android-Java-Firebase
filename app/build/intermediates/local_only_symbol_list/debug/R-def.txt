@@ -104,6 +104,7 @@ drawable baseline_circle_24
 drawable baseline_clear_24
 drawable baseline_close_24
 drawable baseline_contact_mail_24
+drawable baseline_edit_24
 drawable baseline_exit_app_24
 drawable baseline_home_24
 drawable baseline_image_24
@@ -132,6 +133,7 @@ drawable fondo_prueba
 drawable heart_bottom_nav
 drawable home_bebidas
 drawable home_qr
+drawable ic_delete_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_logo_background
@@ -182,9 +184,14 @@ id ageProduct
 id backgroundLayout
 id bluePaqtaLogo
 id bottomNavigationView
+id btnAddFragmentProduct
+id btnAddProduct
+id btnEditar
+id btnEliminar
 id btnGoogle
 id btnLogin
 id btnRegister
+id btn_add
 id button
 id button5
 id button6
@@ -208,13 +215,13 @@ id dashboard_item
 id decorator_bottom
 id decorator_top
 id descriptionTextView
-id detailDesc
-id detailImage
-id detailTitle
 id dniTextViewDesc
 id dniTextViewTitle
 id drawer_layout
 id editButton
+id edtTextCategoria
+id edtTextDescripcion
+id edtTextNombre
 id emailTextView
 id end
 id fab
@@ -256,6 +263,7 @@ id layoutLive
 id layoutShorts
 id layoutVideo
 id linearLayout
+id linearLayout2
 id listRecyclerView
 id listview_data
 id logoImageView
@@ -296,10 +304,9 @@ id recDescription
 id recImage
 id recTitle
 id recuperarBtn
-id recyclerView
+id recyclerProductos
 id recyclerViewOffers
 id rotation_item
-id saveButton
 id search
 id search_item
 id second_item
@@ -312,6 +319,7 @@ id textEmail
 id textName
 id textView
 id textView10
+id textView2
 id textView20
 id textView22
 id textView23
@@ -339,8 +347,6 @@ id tvwOlvidasteContra
 id tvwRegister
 id tvwSignup
 id tvwSignupToLogin
-id txtCategoria
-id txtDescripcion
 id txtLayoutConfirmPassword
 id txtLayoutEmail
 id txtLayoutPassword
@@ -353,13 +359,11 @@ id txtMenu3
 id txtMenu4
 id txtNamePlat
 id txtNamePlat1
-id txtNombre
 id txtRegisterConfirmPassword
 id txtRegisterEmail
 id txtRegisterPassword
 id txtRegisterUser
 id txtSubMenu
-id uploadImage
 id viewSupporter
 layout activity_default_navigation_app
 layout activity_description
@@ -374,7 +378,6 @@ layout bottomsheetlayout
 layout fragment_add_product
 layout fragment_cart
 layout fragment_content_offers
-layout fragment_detail_product
 layout fragment_dishes
 layout fragment_favorite
 layout fragment_home

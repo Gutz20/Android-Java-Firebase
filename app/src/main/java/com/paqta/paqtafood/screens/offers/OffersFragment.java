@@ -63,7 +63,7 @@ public class OffersFragment extends Fragment {
                 new FirestoreRecyclerOptions.Builder<Producto>()
                         .setQuery(query, Producto.class).build();
 
-        mAdapter = new ProductoAdapter(firestoreRecyclerOptions);
+        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity());
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);
 

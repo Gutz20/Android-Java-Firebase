@@ -61,15 +61,6 @@ public class DefaultNavigationApp extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
-//        mAuth = FirebaseAuth.getInstance();
-//        mUser = mAuth.getCurrentUser();
-//
-//        if (mUser != null) {
-//            mEmailUser.setText(mUser.getDisplayName());
-//            mNameUser.setText(mUser.getEmail());
-//        }
-
-//        fab = findViewById(R.id.fab);
         toolbar = findViewById(R.id.topAppBar);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -84,6 +75,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             search = R.id.search;
 
             if (item.getItemId() == search) {
+
                 replaceFragment(new HomeFragment());
             }
 
@@ -95,23 +87,21 @@ public class DefaultNavigationApp extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.nav_bottom_home) {
+                toolbar.setTitle("INICIO PAQTAFOOD");
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.nav_bottom_favorite) {
+                toolbar.setTitle("BLACK DAY");
                 replaceFragment(new OffersFragment());
             } else if (item.getItemId() == R.id.nav_bottom_search) {
+                toolbar.setTitle("PERFIL");
                 replaceFragment(new ProfileFragment());
             } else if (item.getItemId() == R.id.nav_bottom_cart) {
+                toolbar.setTitle("BUSQUEDA");
                 replaceFragment(new SearchFragment());
             }
 
             return true;
         });
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                showBottomDialog();
-//            }
-//        });
 
         navigationView.setNavigationItemSelectedListener(item -> {
             int search, rotation, accelerator, dashboard;

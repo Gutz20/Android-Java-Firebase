@@ -4,7 +4,9 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,16 +23,30 @@ public final class FragmentProductBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Button btnAddFragmentProduct;
+
+  @NonNull
+  public final Button btnAddProduct;
+
+  @NonNull
   public final FloatingActionButton fab;
 
   @NonNull
-  public final RecyclerView recyclerView;
+  public final LinearLayout linearLayout2;
 
-  private FragmentProductBinding(@NonNull FrameLayout rootView, @NonNull FloatingActionButton fab,
-      @NonNull RecyclerView recyclerView) {
+  @NonNull
+  public final RecyclerView recyclerProductos;
+
+  private FragmentProductBinding(@NonNull FrameLayout rootView,
+      @NonNull Button btnAddFragmentProduct, @NonNull Button btnAddProduct,
+      @NonNull FloatingActionButton fab, @NonNull LinearLayout linearLayout2,
+      @NonNull RecyclerView recyclerProductos) {
     this.rootView = rootView;
+    this.btnAddFragmentProduct = btnAddFragmentProduct;
+    this.btnAddProduct = btnAddProduct;
     this.fab = fab;
-    this.recyclerView = recyclerView;
+    this.linearLayout2 = linearLayout2;
+    this.recyclerProductos = recyclerProductos;
   }
 
   @Override
@@ -60,19 +76,38 @@ public final class FragmentProductBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAddFragmentProduct;
+      Button btnAddFragmentProduct = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddFragmentProduct == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAddProduct;
+      Button btnAddProduct = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddProduct == null) {
+        break missingId;
+      }
+
       id = R.id.fab;
       FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
       if (fab == null) {
         break missingId;
       }
 
-      id = R.id.recyclerView;
-      RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerView == null) {
+      id = R.id.linearLayout2;
+      LinearLayout linearLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout2 == null) {
         break missingId;
       }
 
-      return new FragmentProductBinding((FrameLayout) rootView, fab, recyclerView);
+      id = R.id.recyclerProductos;
+      RecyclerView recyclerProductos = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerProductos == null) {
+        break missingId;
+      }
+
+      return new FragmentProductBinding((FrameLayout) rootView, btnAddFragmentProduct,
+          btnAddProduct, fab, linearLayout2, recyclerProductos);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

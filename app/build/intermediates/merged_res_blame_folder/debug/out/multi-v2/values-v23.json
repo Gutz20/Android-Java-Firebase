@@ -42,14 +42,14 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USUARIO\\Desktop\\ProyectsAndroidStudio\\PaqtaFood\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "source": "C:\\Users\\USUARIO\\Desktop\\Proyecto-android\\PaqtaFood\\app\\src\\main\\res\\values-v23\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "64",
+                        "startOffsets": "66",
                         "endLines": "7",
                         "endColumns": "12",
-                        "endOffsets": "442"
+                        "endOffsets": "449"
                     },
                     "to": {
                         "startLines": "6",

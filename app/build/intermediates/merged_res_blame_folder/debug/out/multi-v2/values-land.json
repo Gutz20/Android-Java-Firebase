@@ -33,13 +33,13 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USUARIO\\Desktop\\ProyectsAndroidStudio\\PaqtaFood\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "source": "C:\\Users\\USUARIO\\Desktop\\Proyecto-android\\PaqtaFood\\app\\src\\main\\res\\values-land\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endColumns": "41",
-                        "endOffsets": "53"
+                        "endOffsets": "54"
                     },
                     "to": {
                         "startLines": "5",

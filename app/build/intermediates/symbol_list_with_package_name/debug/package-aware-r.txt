@@ -3138,6 +3138,7 @@ drawable baseline_circle_24
 drawable baseline_clear_24
 drawable baseline_close_24
 drawable baseline_contact_mail_24
+drawable baseline_edit_24
 drawable baseline_exit_app_24
 drawable baseline_home_24
 drawable baseline_image_24
@@ -3214,6 +3215,7 @@ drawable home_qr
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete_24
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3458,9 +3460,14 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAddFragmentProduct
+id btnAddProduct
+id btnEditar
+id btnEliminar
 id btnGoogle
 id btnLogin
 id btnRegister
+id btn_add
 id btn_holder
 id button
 id button5
@@ -3550,9 +3557,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id detailDesc
-id detailImage
-id detailTitle
 id dialog_button
 id dimensions
 id direct
@@ -3581,6 +3585,9 @@ id edge
 id editButton
 id edit_phone_number
 id edit_query
+id edtTextCategoria
+id edtTextDescripcion
+id edtTextNombre
 id elastic
 id email
 id emailTextView
@@ -3700,6 +3707,7 @@ id line1
 id line3
 id linear
 id linearLayout
+id linearLayout2
 id listMode
 id listRecyclerView
 id list_item
@@ -3860,7 +3868,7 @@ id recImage
 id recTitle
 id rectangles
 id recuperarBtn
-id recyclerView
+id recyclerProductos
 id recyclerViewOffers
 id resend_barrier
 id resend_code
@@ -3874,7 +3882,6 @@ id rotation_item
 id rounded
 id row_index_key
 id rtl
-id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3988,6 +3995,7 @@ id textStart
 id textTop
 id textView
 id textView10
+id textView2
 id textView20
 id textView22
 id textView23
@@ -4043,8 +4051,6 @@ id tvwOlvidasteContra
 id tvwRegister
 id tvwSignup
 id tvwSignupToLogin
-id txtCategoria
-id txtDescripcion
 id txtLayoutConfirmPassword
 id txtLayoutEmail
 id txtLayoutPassword
@@ -4057,7 +4063,6 @@ id txtMenu3
 id txtMenu4
 id txtNamePlat
 id txtNamePlat1
-id txtNombre
 id txtRegisterConfirmPassword
 id txtRegisterEmail
 id txtRegisterPassword
@@ -4067,7 +4072,6 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id uploadImage
 id useLogo
 id vertical_only
 id viewSupporter
@@ -4240,7 +4244,6 @@ layout design_text_input_start_icon
 layout fragment_add_product
 layout fragment_cart
 layout fragment_content_offers
-layout fragment_detail_product
 layout fragment_dishes
 layout fragment_favorite
 layout fragment_home
