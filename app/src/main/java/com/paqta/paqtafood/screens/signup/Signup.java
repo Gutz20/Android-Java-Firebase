@@ -41,17 +41,18 @@ public class Signup extends AppCompatActivity {
     TextInputEditText txtRegUser, txtRegPassword, txtRegConfirmPassword, txtRegEmail;
     ImageView imgViewSignup;
     TextView nuevoUsuario, labelRegistro;
-    FirebaseAuth mAuth;
     MaterialButton btnRegister;
     ImageView imageView;
     ChangeColorBar changeColorBar = new ChangeColorBar();
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore mFirestore;
+    FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
         txtRegUser = findViewById(R.id.txtRegisterUser);
@@ -130,10 +131,9 @@ public class Signup extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            addUser(username, email, password);
-                            Intent intent = new Intent(Signup.this, DefaultNavigationApp.class);
-                            startActivity(intent);
-                            finish();
+                            String id = mAuth.getCurrentUser().getUid();
+                            addUser(id, username, email, password);
+
                         } else {
                             Snackbar.make(v, "Fallo en registrarse", Snackbar.LENGTH_SHORT).show();
                         }
@@ -141,20 +141,24 @@ public class Signup extends AppCompatActivity {
                 });
     }
 
-    public void addUser(String username, String email, String password) {
-
+    public void addUser(String id, String username, String email, String password) {
         String newPass = sha256(password);
         Map<String, Object> user = new HashMap<>();
+        user.put("id", id);
         user.put("username", username);
         user.put("email", email);
         user.put("password", newPass);
 
-        db.collection("usuarios")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        mFirestore.collection("usuarios")
+                .document(id)
+                .set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(Signup.this, "Registrado con exito", Toast.LENGTH_SHORT).show();
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Signup.this, "Usuario registrado con exito", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Signup.this, DefaultNavigationApp.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

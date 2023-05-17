@@ -191,15 +191,26 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Map<String, Object> map = new HashMap<>();
+                            String id = mAuth.getCurrentUser().getUid();
+                            Map<String, Object> usuario = new HashMap<>();
                             assert user != null;
-                            map.put("username", user.getDisplayName());
-                            map.put("email", user.getEmail());
+                            usuario.put("id", id);
+                            usuario.put("username", user.getDisplayName());
+                            usuario.put("email", user.getEmail());
 
-                            CollectionReference usuariosRef = mFirestore.collection("usuarios");
-                            Query consulta = usuariosRef.whereEqualTo("email", user.getEmail());
-
-                            registerUserBySocialNetwork(consulta, user, map);
+                            mFirestore.collection("usuarios").document(id).set(usuario)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Login.this, "Logeado desde google", Toast.LENGTH_SHORT).show();
+                                            updateUI(user);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Login.this, "Error al logear desde google", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Login.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
@@ -272,43 +283,6 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    /**
-     * Verifica si no existe algun otro usuario con el mismo correo, para despues agregarlo a Firestore
-     * @param consulta
-     * @param user
-     * @param map
-     */
-    public void registerUserBySocialNetwork(Query consulta, FirebaseUser user, Map map) {
-        consulta.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                if (!queryDocumentSnapshots.isEmpty()) {
-                    DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
-                    if (documentSnapshot.get("email").toString().matches(user.getEmail())) {
-                        updateUI(user);
-                        Toast.makeText(Login.this, "Logeando", Toast.LENGTH_SHORT).show();
-                    } else {
-                        mFirestore.collection("usuarios").add(map)
-                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                    @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        updateUI(user);
-                                        Toast.makeText(Login.this, "Usuario registrado con exito", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(Login.this, "Error al guardar", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                    }
-
-                }
-            }
-        });
     }
 
 }
