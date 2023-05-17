@@ -3,6 +3,7 @@ package com.paqta.paqtafood.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -31,7 +33,7 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     Activity activity;
-
+    FragmentManager fm;
 
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
@@ -39,9 +41,10 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
      *
      * @param options
      */
-    public ProductoAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity) {
+    public ProductoAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);
         this.activity = activity;
+        this.fm = fm;
     }
 
     @Override
@@ -65,6 +68,14 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
 //                intent.putExtra("id_prod", id);
 //                activity.startActivity(intent);
 
+                AddProductFragment addProductFragment = new AddProductFragment();
+                Bundle bunble = new Bundle();
+                bunble.putString("id_prod", id);
+                addProductFragment.setArguments(bunble);
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, addProductFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
     }

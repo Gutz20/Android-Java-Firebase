@@ -54,7 +54,7 @@ public class ProductFragment extends Fragment {
         FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
 
-        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity());
+        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);
 

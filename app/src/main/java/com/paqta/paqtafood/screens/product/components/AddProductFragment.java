@@ -31,14 +31,17 @@ import java.util.Map;
 
 public class AddProductFragment extends Fragment  {
 
+    String id_prod;
     Button btn_add;
     EditText edtTxtNombre, edtTxtDescripcion, edtTxtCategoria;
-
     private FirebaseFirestore mFirestore;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            id_prod = getArguments().getString("id_prod");
+        }
     }
 
     @Override
@@ -53,14 +56,7 @@ public class AddProductFragment extends Fragment  {
         edtTxtDescripcion = root.findViewById(R.id.edtTextDescripcion);
         edtTxtCategoria = root.findViewById(R.id.edtTextCategoria);
 
-        Bundle args = getArguments();
-        if (args != null) {
-            String idproduct = args.getString("id_prod");
-        }
-
-        String id = getActivity().getIntent().getStringExtra("id_prod");
-
-        if (id == null || id.isEmpty()) {
+        if (id_prod == null || id_prod.isEmpty()) {
             btn_add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -76,8 +72,8 @@ public class AddProductFragment extends Fragment  {
                 }
             });
         } else {
+            getProduct();
             btn_add.setText("Actualizar");
-            getProduct(id);
             btn_add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -88,7 +84,7 @@ public class AddProductFragment extends Fragment  {
                     if (nombre.isEmpty() && descripcion.isEmpty() && categoria.isEmpty()) {
                         Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
                     } else {
-                        updateProduct(nombre, descripcion, categoria, id);
+                        updateProduct(nombre, descripcion, categoria);
                     }
                 }
             });
@@ -97,17 +93,18 @@ public class AddProductFragment extends Fragment  {
         return root;
     }
 
-    private void updateProduct(String nombre, String descripcion, String categoria, String id) {
+    private void updateProduct(String nombre, String descripcion, String categoria) {
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", nombre);
         map.put("descripcion", descripcion);
         map.put("categoria", categoria);
 
-        mFirestore.collection("productos").document(id).update(map)
+        mFirestore.collection("productos").document(id_prod).update(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(getContext(), "Actualizado exitosamente", Toast.LENGTH_SHORT).show();
+                        replaceFragment(new ProductFragment());
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -115,21 +112,6 @@ public class AddProductFragment extends Fragment  {
                         Toast.makeText(getContext(), "Error al actualizar", Toast.LENGTH_SHORT).show();
                     }
                 });
-    }
-
-    /**
-     * Validacion de los campos y agrega el producto si todo esta bien
-     */
-    public void validarCampos() {
-        String nombre = edtTxtNombre.getText().toString().trim();
-        String descripcion = edtTxtDescripcion.getText().toString().trim();
-        String categoria = edtTxtCategoria.getText().toString().trim();
-
-        if (nombre.isEmpty() && descripcion.isEmpty() && categoria.isEmpty()) {
-            Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
-        } else {
-            postProduct(nombre, descripcion, categoria);
-        }
     }
 
     /**
@@ -159,8 +141,8 @@ public class AddProductFragment extends Fragment  {
         });
     }
 
-    private void getProduct(String id) {
-        mFirestore.collection("productos").document(id).get()
+    private void getProduct() {
+        mFirestore.collection("productos").document(id_prod).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
