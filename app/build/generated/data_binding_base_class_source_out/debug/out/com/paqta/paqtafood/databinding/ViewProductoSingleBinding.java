@@ -33,16 +33,20 @@ public final class ViewProductoSingleBinding implements ViewBinding {
   public final TextView colorProduct;
 
   @NonNull
+  public final ImageView imagenProduct;
+
+  @NonNull
   public final TextView nameProduct;
 
   private ViewProductoSingleBinding(@NonNull CardView rootView, @NonNull TextView ageProduct,
       @NonNull ImageView btnEditar, @NonNull ImageView btnEliminar, @NonNull TextView colorProduct,
-      @NonNull TextView nameProduct) {
+      @NonNull ImageView imagenProduct, @NonNull TextView nameProduct) {
     this.rootView = rootView;
     this.ageProduct = ageProduct;
     this.btnEditar = btnEditar;
     this.btnEliminar = btnEliminar;
     this.colorProduct = colorProduct;
+    this.imagenProduct = imagenProduct;
     this.nameProduct = nameProduct;
   }
 
@@ -97,6 +101,12 @@ public final class ViewProductoSingleBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imagenProduct;
+      ImageView imagenProduct = ViewBindings.findChildViewById(rootView, id);
+      if (imagenProduct == null) {
+        break missingId;
+      }
+
       id = R.id.nameProduct;
       TextView nameProduct = ViewBindings.findChildViewById(rootView, id);
       if (nameProduct == null) {
@@ -104,7 +114,7 @@ public final class ViewProductoSingleBinding implements ViewBinding {
       }
 
       return new ViewProductoSingleBinding((CardView) rootView, ageProduct, btnEditar, btnEliminar,
-          colorProduct, nameProduct);
+          colorProduct, imagenProduct, nameProduct);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

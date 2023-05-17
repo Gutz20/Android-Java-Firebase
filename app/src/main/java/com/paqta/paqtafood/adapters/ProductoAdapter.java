@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -55,6 +56,8 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
         holder.nombre.setText(model.getNombre());
         holder.descripcion.setText(model.getDescripcion());
         holder.categoria.setText(model.getCategoria());
+        String foto = model.getImagen();
+        Glide.with(activity.getApplicationContext()).load(foto).into(holder.imagen);
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,14 +67,15 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
         holder.btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(activity, AddProductFragment.class);
-//                intent.putExtra("id_prod", id);
-//                activity.startActivity(intent);
-
+                //Inicializamos el fragment al que queremos ir
                 AddProductFragment addProductFragment = new AddProductFragment();
+
+                //Establecemos los argumentos que se enviaran
                 Bundle bunble = new Bundle();
                 bunble.putString("id_prod", id);
                 addProductFragment.setArguments(bunble);
+
+                //Cambiamos el fragment
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, addProductFragment);
                 fragmentTransaction.addToBackStack(null);
@@ -80,6 +84,11 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
         });
     }
 
+    /**
+     * Elimina el producto seleccionado mediante su id del documento
+     *
+     * @param id
+     */
     private void deleteProduct(String id) {
         mFirestore.collection("productos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -103,13 +112,15 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombre, descripcion, categoria;
-        ImageView btn_delete, btn_edit;
+        ImageView imagen, btn_delete, btn_edit;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nombre = itemView.findViewById(R.id.nameProduct);
             descripcion = itemView.findViewById(R.id.ageProduct);
             categoria = itemView.findViewById(R.id.colorProduct);
+            imagen = itemView.findViewById(R.id.imagenProduct);
             btn_delete = itemView.findViewById(R.id.btnEliminar);
             btn_edit = itemView.findViewById(R.id.btnEditar);
         }

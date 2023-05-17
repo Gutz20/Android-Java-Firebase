@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -25,26 +26,49 @@ public final class FragmentAddProductBinding implements ViewBinding {
   public final Button btnAdd;
 
   @NonNull
-  public final EditText edtTextCategoria;
+  public final Button btnDeleteImage;
 
   @NonNull
-  public final EditText edtTextDescripcion;
+  public final Button btnDialogImage;
 
   @NonNull
-  public final EditText edtTextNombre;
+  public final TextInputEditText edtTextCategoria;
 
   @NonNull
-  public final TextView textView2;
+  public final TextInputEditText edtTextDescripcion;
+
+  @NonNull
+  public final TextInputEditText edtTextNombre;
+
+  @NonNull
+  public final TextInputLayout filledTextField;
+
+  @NonNull
+  public final TextInputLayout filledTextField2;
+
+  @NonNull
+  public final TextInputLayout filledTextField3;
+
+  @NonNull
+  public final ImageView imageProducto;
 
   private FragmentAddProductBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
-      @NonNull EditText edtTextCategoria, @NonNull EditText edtTextDescripcion,
-      @NonNull EditText edtTextNombre, @NonNull TextView textView2) {
+      @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
+      @NonNull TextInputEditText edtTextCategoria, @NonNull TextInputEditText edtTextDescripcion,
+      @NonNull TextInputEditText edtTextNombre, @NonNull TextInputLayout filledTextField,
+      @NonNull TextInputLayout filledTextField2, @NonNull TextInputLayout filledTextField3,
+      @NonNull ImageView imageProducto) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
+    this.btnDeleteImage = btnDeleteImage;
+    this.btnDialogImage = btnDialogImage;
     this.edtTextCategoria = edtTextCategoria;
     this.edtTextDescripcion = edtTextDescripcion;
     this.edtTextNombre = edtTextNombre;
-    this.textView2 = textView2;
+    this.filledTextField = filledTextField;
+    this.filledTextField2 = filledTextField2;
+    this.filledTextField3 = filledTextField3;
+    this.imageProducto = imageProducto;
   }
 
   @Override
@@ -80,32 +104,63 @@ public final class FragmentAddProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnDeleteImage;
+      Button btnDeleteImage = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeleteImage == null) {
+        break missingId;
+      }
+
+      id = R.id.btnDialogImage;
+      Button btnDialogImage = ViewBindings.findChildViewById(rootView, id);
+      if (btnDialogImage == null) {
+        break missingId;
+      }
+
       id = R.id.edtTextCategoria;
-      EditText edtTextCategoria = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edtTextCategoria = ViewBindings.findChildViewById(rootView, id);
       if (edtTextCategoria == null) {
         break missingId;
       }
 
       id = R.id.edtTextDescripcion;
-      EditText edtTextDescripcion = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edtTextDescripcion = ViewBindings.findChildViewById(rootView, id);
       if (edtTextDescripcion == null) {
         break missingId;
       }
 
       id = R.id.edtTextNombre;
-      EditText edtTextNombre = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edtTextNombre = ViewBindings.findChildViewById(rootView, id);
       if (edtTextNombre == null) {
         break missingId;
       }
 
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
+      id = R.id.filledTextField;
+      TextInputLayout filledTextField = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField == null) {
         break missingId;
       }
 
-      return new FragmentAddProductBinding((FrameLayout) rootView, btnAdd, edtTextCategoria,
-          edtTextDescripcion, edtTextNombre, textView2);
+      id = R.id.filledTextField2;
+      TextInputLayout filledTextField2 = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField2 == null) {
+        break missingId;
+      }
+
+      id = R.id.filledTextField3;
+      TextInputLayout filledTextField3 = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField3 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageProducto;
+      ImageView imageProducto = ViewBindings.findChildViewById(rootView, id);
+      if (imageProducto == null) {
+        break missingId;
+      }
+
+      return new FragmentAddProductBinding((FrameLayout) rootView, btnAdd, btnDeleteImage,
+          btnDialogImage, edtTextCategoria, edtTextDescripcion, edtTextNombre, filledTextField,
+          filledTextField2, filledTextField3, imageProducto);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

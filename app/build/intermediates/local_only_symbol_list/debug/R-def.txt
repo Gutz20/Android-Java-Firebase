@@ -137,6 +137,7 @@ drawable ic_delete_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_logo_background
+drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
 drawable img_staff_3
@@ -186,6 +187,8 @@ id bluePaqtaLogo
 id bottomNavigationView
 id btnAddFragmentProduct
 id btnAddProduct
+id btnDeleteImage
+id btnDialogImage
 id btnEditar
 id btnEliminar
 id btnGoogle
@@ -225,9 +228,13 @@ id edtTextNombre
 id emailTextView
 id end
 id fab
+id filledTextField
+id filledTextField2
+id filledTextField3
 id frame_layout
 id iconImageView
 id imageLogoSignup
+id imageProducto
 id imageView
 id imageView10
 id imageView11
@@ -249,6 +256,7 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
+id imagenProduct
 id imgBackLogin
 id imgCard2Plat1
 id imgCard2Plat2
@@ -319,7 +327,6 @@ id textEmail
 id textName
 id textView
 id textView10
-id textView2
 id textView20
 id textView22
 id textView23
@@ -442,3 +449,4 @@ style rounded
 xml activity_main_scene
 xml backup_rules
 xml data_extraction_rules
+xml file_paths

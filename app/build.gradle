@@ -38,39 +38,24 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-//    firebase
+    //    Implementaciones de Firebase
 
-//    BOOM
+    //    BOOM
     implementation platform('com.google.firebase:firebase-bom:31.5.0')
 
-//    Authentication
+    //    Authentication
     implementation 'com.google.firebase:firebase-auth'
 
-//    Analytics
+    //    Analytics
     implementation 'com.google.firebase:firebase-analytics'
 
-//    Google
-    implementation 'com.google.android.gms:play-services-auth:20.5.0'
-
-//    Recyclerview
-    implementation 'androidx.cardview:cardview:1.0.0'
-
-//    Steps view
-    implementation 'com.github.shuhart:stepview:1.5.1'
-
-//   Realtime Database
-    implementation 'com.google.firebase:firebase-database'
-
-//    Firestore Database - FireStore
+    //    Firestore Database - FireStore
     implementation 'com.google.firebase:firebase-firestore'
 
-//    FireStorage
+    //    FireStorage
     implementation 'com.google.firebase:firebase-storage'
 
-//    Glide
-    implementation 'com.github.bumptech.glide:glide:4.15.1'
-
-//    Firebase UI
+    //    Firebase UI
     // FirebaseUI for Firebase Realtime Database
     implementation 'com.firebaseui:firebase-ui-database:8.0.2'
 
@@ -82,6 +67,30 @@ dependencies {
 
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
+
+    //  Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-database'
+
+
+//    Otras implementaciones ->
+
+//    Recyclerview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+//    Steps view | pasos
+    implementation 'com.github.shuhart:stepview:1.5.1'
+
+//    Glide | Para imagenes - Comunidad activa
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+//    Picasso | Mostrar imagenes - Ultima actualizacion -  Aug 10, 2020 | Maybe Desfazado
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // Google | Google authentication
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+
+
+
 
 
 //    Facebook

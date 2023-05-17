@@ -51,7 +51,6 @@ public class ProfileFragment extends Fragment {
     StorageReference storageReference;
     Uri imageUri;
     FirebaseUser mUser;
-    Map<String, Object> userMap = new HashMap<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

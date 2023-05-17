@@ -3228,6 +3228,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
 drawable img_staff_3
@@ -3462,6 +3463,8 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddFragmentProduct
 id btnAddProduct
+id btnDeleteImage
+id btnDialogImage
 id btnEditar
 id btnEliminar
 id btnGoogle
@@ -3610,6 +3613,9 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filledTextField
+id filledTextField2
+id filledTextField3
 id fitCenter
 id fitEnd
 id fitStart
@@ -3652,6 +3658,7 @@ id ignore
 id ignoreRequest
 id image
 id imageLogoSignup
+id imageProducto
 id imageView
 id imageView10
 id imageView11
@@ -3673,6 +3680,7 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
+id imagenProduct
 id imgBackLogin
 id imgCard2Plat1
 id imgCard2Plat2
@@ -3995,7 +4003,6 @@ id textStart
 id textTop
 id textView
 id textView10
-id textView2
 id textView20
 id textView22
 id textView23
@@ -6018,4 +6025,5 @@ styleable include constraintSet
 xml activity_main_scene
 xml backup_rules
 xml data_extraction_rules
+xml file_paths
 xml image_share_filepaths
