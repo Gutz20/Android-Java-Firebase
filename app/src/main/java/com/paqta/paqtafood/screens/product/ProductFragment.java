@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,10 +30,11 @@ public class ProductFragment extends Fragment {
 
     FloatingActionButton fab;
     Button btnAddProduct;
-
     RecyclerView mRecycler;
     ProductoAdapter mAdapter;
     FirebaseFirestore mFirestore;
+    SearchView searchView;
+    Query query;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,20 +46,12 @@ public class ProductFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_product, container, false);
 
+        mFirestore = FirebaseFirestore.getInstance();
+
+        searchView = root.findViewById(R.id.search);
         btnAddProduct = root.findViewById(R.id.btnAddProduct);
         fab = root.findViewById(R.id.fab);
-        mFirestore = FirebaseFirestore.getInstance();
         mRecycler = root.findViewById(R.id.recyclerProductos);
-        mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        Query query = mFirestore.collection("productos");
-
-        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
-
-        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
-        mAdapter.notifyDataSetChanged();
-        mRecycler.setAdapter(mAdapter);
-
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +67,47 @@ public class ProductFragment extends Fragment {
             }
         });
 
+        setUpRecyclerView();
+        setupSearchView();
         return root;
+    }
+
+    private void setUpRecyclerView() {
+        mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        query = mFirestore.collection("productos");
+
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
+
+        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
+        mAdapter.notifyDataSetChanged();
+        mRecycler.setAdapter(mAdapter);
+    }
+
+    private void setupSearchView() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                textSearch(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                textSearch(newText);
+                return false;
+            }
+        });
+    }
+
+    private void textSearch(String s) {
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>()
+                        .setQuery(query.orderBy("nombre")
+                                .startAt(s).endAt(s + "~"), Producto.class).build();
+        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
+        mAdapter.startListening();
+        mRecycler.setAdapter(mAdapter);
     }
 
     @Override

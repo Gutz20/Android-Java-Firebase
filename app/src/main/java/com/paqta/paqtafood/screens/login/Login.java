@@ -71,9 +71,11 @@ public class Login extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            startActivity(new Intent(Login.this, DefaultNavigationApp.class));
+            finish();
+        }
     }
 
     /**
@@ -277,10 +279,18 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             irHome();
+                            Snackbar.make(v, "Bienvenido", Snackbar.LENGTH_LONG)
+                                    .show();
                         } else {
                             Snackbar.make(v, "Credenciales incorrectas, intente otra ves", Snackbar.LENGTH_LONG)
                                     .show();
                         }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Snackbar.make(v, "Error al iniciar sesion", Snackbar.LENGTH_LONG)
+                                .show();
                     }
                 });
     }

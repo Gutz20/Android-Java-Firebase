@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,16 +38,20 @@ public final class FragmentProductBinding implements ViewBinding {
   @NonNull
   public final RecyclerView recyclerProductos;
 
+  @NonNull
+  public final SearchView search;
+
   private FragmentProductBinding(@NonNull FrameLayout rootView,
       @NonNull Button btnAddFragmentProduct, @NonNull Button btnAddProduct,
       @NonNull FloatingActionButton fab, @NonNull LinearLayout linearLayout2,
-      @NonNull RecyclerView recyclerProductos) {
+      @NonNull RecyclerView recyclerProductos, @NonNull SearchView search) {
     this.rootView = rootView;
     this.btnAddFragmentProduct = btnAddFragmentProduct;
     this.btnAddProduct = btnAddProduct;
     this.fab = fab;
     this.linearLayout2 = linearLayout2;
     this.recyclerProductos = recyclerProductos;
+    this.search = search;
   }
 
   @Override
@@ -106,8 +111,14 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.search;
+      SearchView search = ViewBindings.findChildViewById(rootView, id);
+      if (search == null) {
+        break missingId;
+      }
+
       return new FragmentProductBinding((FrameLayout) rootView, btnAddFragmentProduct,
-          btnAddProduct, fab, linearLayout2, recyclerProductos);
+          btnAddProduct, fab, linearLayout2, recyclerProductos, search);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
