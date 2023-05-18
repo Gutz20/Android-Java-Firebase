@@ -13,6 +13,12 @@
             <item
                 android:id="@+id/search_item"
                 android:icon="@drawable/outline_email_24"
+                android:title="Gestion de productos"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/dishes_item"
+                android:icon="@drawable/outline_email_24"
                 android:title="Gestion de platos"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>

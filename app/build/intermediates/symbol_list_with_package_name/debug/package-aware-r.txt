@@ -3567,6 +3567,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id dishes_item
 id disjoint
 id dniTextViewDesc
 id dniTextViewTitle
@@ -4248,11 +4249,11 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_add_product
 layout fragment_cart
 layout fragment_content_offers
 layout fragment_dishes
 layout fragment_favorite
+layout fragment_form_product
 layout fragment_home
 layout fragment_menu
 layout fragment_offers

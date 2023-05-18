@@ -2,19 +2,15 @@ package com.paqta.paqtafood.adapters;
 
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.product.components.AddProductFragment;
+import com.paqta.paqtafood.screens.product.components.FormProductFragment;
 
 public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, ProductoAdapter.ViewHolder> {
 
@@ -68,7 +64,7 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
             @Override
             public void onClick(View v) {
                 //Inicializamos el fragment al que queremos ir
-                AddProductFragment addProductFragment = new AddProductFragment();
+                FormProductFragment addProductFragment = new FormProductFragment();
 
                 //Establecemos los argumentos que se enviaran
                 Bundle bunble = new Bundle();
@@ -86,7 +82,6 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
 
     /**
      * Elimina el producto seleccionado mediante su id del documento
-     *
      * @param id
      */
     private void deleteProduct(String id) {

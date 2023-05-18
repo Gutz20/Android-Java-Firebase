@@ -22,8 +22,7 @@ import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.ProductoAdapter;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.product.components.AddProductFragment;
-import com.paqta.paqtafood.screens.profile.ProfileFragment;
+import com.paqta.paqtafood.screens.product.components.FormProductFragment;
 
 
 public class ProductFragment extends Fragment {
@@ -56,14 +55,14 @@ public class ProductFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new AddProductFragment());
+                replaceFragment(new FormProductFragment());
             }
         });
 
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new AddProductFragment());
+                replaceFragment(new FormProductFragment());
             }
         });
 
