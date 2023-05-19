@@ -28,6 +28,10 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\fragment_content_offers.xml"
     },
     {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\view_platillo_single.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\view_platillo_single.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\fragment_add_product.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\fragment_add_product.xml"
     },
@@ -84,16 +88,20 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\fragment_offers.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-50:/layout/fragment_home.xml",
+        "source": "com.paqta.paqtafood.app-main-53:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\fragment_form_dishes.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\fragment_form_dishes.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\fragment_dishes.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\fragment_dishes.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\activity_description.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\activity_description.xml"
-    },
-    {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-50:/layout/fragment_form_product.xml",
-        "source": "com.paqta.paqtafood.app-main-53:/layout/fragment_form_product.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\activity_staff.xml",
@@ -106,6 +114,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\list_element.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\list_element.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\fragment_form_product.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-53:\\layout\\fragment_form_product.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-50:\\layout\\fragment_search.xml",

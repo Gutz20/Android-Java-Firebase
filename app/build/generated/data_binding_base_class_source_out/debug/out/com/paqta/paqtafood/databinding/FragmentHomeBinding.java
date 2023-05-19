@@ -47,6 +47,18 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView imageView9;
 
   @NonNull
+  public final ImageView imgQR1;
+
+  @NonNull
+  public final ImageView imgQR2;
+
+  @NonNull
+  public final ImageView imgQR3;
+
+  @NonNull
+  public final MaterialCardView materialCardView10;
+
+  @NonNull
   public final MaterialCardView materialCardView3;
 
   @NonNull
@@ -60,6 +72,12 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public final MaterialCardView materialCardView7;
+
+  @NonNull
+  public final MaterialCardView materialCardView8;
+
+  @NonNull
+  public final MaterialCardView materialCardView9;
 
   @NonNull
   public final TextView textView;
@@ -82,12 +100,14 @@ public final class FragmentHomeBinding implements ViewBinding {
   private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull ShapeableImageView imageView,
       @NonNull ImageView imageView10, @NonNull ImageView imageView11,
       @NonNull ImageView imageView12, @NonNull ImageView imageView6, @NonNull ImageView imageView7,
-      @NonNull ImageView imageView8, @NonNull ImageView imageView9,
-      @NonNull MaterialCardView materialCardView3, @NonNull MaterialCardView materialCardView4,
-      @NonNull MaterialCardView materialCardView5, @NonNull MaterialCardView materialCardView6,
-      @NonNull MaterialCardView materialCardView7, @NonNull TextView textView,
-      @NonNull TextView textView10, @NonNull TextView textView6, @NonNull TextView textView7,
-      @NonNull TextView textView8, @NonNull TextView textView9) {
+      @NonNull ImageView imageView8, @NonNull ImageView imageView9, @NonNull ImageView imgQR1,
+      @NonNull ImageView imgQR2, @NonNull ImageView imgQR3,
+      @NonNull MaterialCardView materialCardView10, @NonNull MaterialCardView materialCardView3,
+      @NonNull MaterialCardView materialCardView4, @NonNull MaterialCardView materialCardView5,
+      @NonNull MaterialCardView materialCardView6, @NonNull MaterialCardView materialCardView7,
+      @NonNull MaterialCardView materialCardView8, @NonNull MaterialCardView materialCardView9,
+      @NonNull TextView textView, @NonNull TextView textView10, @NonNull TextView textView6,
+      @NonNull TextView textView7, @NonNull TextView textView8, @NonNull TextView textView9) {
     this.rootView = rootView;
     this.imageView = imageView;
     this.imageView10 = imageView10;
@@ -97,11 +117,17 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.imageView7 = imageView7;
     this.imageView8 = imageView8;
     this.imageView9 = imageView9;
+    this.imgQR1 = imgQR1;
+    this.imgQR2 = imgQR2;
+    this.imgQR3 = imgQR3;
+    this.materialCardView10 = materialCardView10;
     this.materialCardView3 = materialCardView3;
     this.materialCardView4 = materialCardView4;
     this.materialCardView5 = materialCardView5;
     this.materialCardView6 = materialCardView6;
     this.materialCardView7 = materialCardView7;
+    this.materialCardView8 = materialCardView8;
+    this.materialCardView9 = materialCardView9;
     this.textView = textView;
     this.textView10 = textView10;
     this.textView6 = textView6;
@@ -185,6 +211,30 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imgQR1;
+      ImageView imgQR1 = ViewBindings.findChildViewById(rootView, id);
+      if (imgQR1 == null) {
+        break missingId;
+      }
+
+      id = R.id.imgQR2;
+      ImageView imgQR2 = ViewBindings.findChildViewById(rootView, id);
+      if (imgQR2 == null) {
+        break missingId;
+      }
+
+      id = R.id.imgQR3;
+      ImageView imgQR3 = ViewBindings.findChildViewById(rootView, id);
+      if (imgQR3 == null) {
+        break missingId;
+      }
+
+      id = R.id.materialCardView10;
+      MaterialCardView materialCardView10 = ViewBindings.findChildViewById(rootView, id);
+      if (materialCardView10 == null) {
+        break missingId;
+      }
+
       id = R.id.materialCardView3;
       MaterialCardView materialCardView3 = ViewBindings.findChildViewById(rootView, id);
       if (materialCardView3 == null) {
@@ -212,6 +262,18 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.materialCardView7;
       MaterialCardView materialCardView7 = ViewBindings.findChildViewById(rootView, id);
       if (materialCardView7 == null) {
+        break missingId;
+      }
+
+      id = R.id.materialCardView8;
+      MaterialCardView materialCardView8 = ViewBindings.findChildViewById(rootView, id);
+      if (materialCardView8 == null) {
+        break missingId;
+      }
+
+      id = R.id.materialCardView9;
+      MaterialCardView materialCardView9 = ViewBindings.findChildViewById(rootView, id);
+      if (materialCardView9 == null) {
         break missingId;
       }
 
@@ -252,8 +314,9 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((FrameLayout) rootView, imageView, imageView10, imageView11,
-          imageView12, imageView6, imageView7, imageView8, imageView9, materialCardView3,
-          materialCardView4, materialCardView5, materialCardView6, materialCardView7, textView,
+          imageView12, imageView6, imageView7, imageView8, imageView9, imgQR1, imgQR2, imgQR3,
+          materialCardView10, materialCardView3, materialCardView4, materialCardView5,
+          materialCardView6, materialCardView7, materialCardView8, materialCardView9, textView,
           textView10, textView6, textView7, textView8, textView9);
     }
     String missingId = rootView.getResources().getResourceName(id);

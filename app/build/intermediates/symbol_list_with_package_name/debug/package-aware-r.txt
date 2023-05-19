@@ -3192,6 +3192,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dialogbkg
+drawable elipse_bg_platillo
 drawable facebook
 drawable facebook_logo_icon
 drawable fondo_offers
@@ -3330,6 +3331,9 @@ drawable platillo
 drawable platillos_home
 drawable platillos_img_1
 drawable postres_home
+drawable qr1
+drawable qr2
+drawable qr3
 drawable rayitas
 drawable rayitas_volteadas
 drawable rectangle
@@ -3466,7 +3470,9 @@ id btnAddProduct
 id btnDeleteImage
 id btnDialogImage
 id btnEditar
+id btnEditarPlatillo
 id btnEliminar
+id btnEliminarPlatillo
 id btnGoogle
 id btnLogin
 id btnRegister
@@ -3495,6 +3501,7 @@ id cardMenuBox4
 id cardPlat_1
 id cardPlat_2
 id carryVelocity
+id categoriaPlatillo
 id center
 id centerCrop
 id centerInside
@@ -3522,6 +3529,7 @@ id confirmation_code
 id confirmation_code_layout
 id constraint
 id constraintLayout
+id constraintLayout2
 id container
 id content
 id contentPanel
@@ -3681,6 +3689,7 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
+id imagenPlatillo
 id imagenProduct
 id imgBackLogin
 id imgCard2Plat1
@@ -3688,6 +3697,9 @@ id imgCard2Plat2
 id imgMenuIcon
 id imgProfile
 id imgProfileUser
+id imgQR1
+id imgQR2
+id imgQR3
 id imgViewOtro
 id imgViewOtro2
 id imgViewOtro3
@@ -3735,12 +3747,15 @@ id masked
 id match_constraint
 id match_parent
 id materialCardView
+id materialCardView10
 id materialCardView2
 id materialCardView3
 id materialCardView4
 id materialCardView5
 id materialCardView6
 id materialCardView7
+id materialCardView8
+id materialCardView9
 id materialDivider1
 id materialDivider2
 id materialDivider3
@@ -3805,6 +3820,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id name
+id namePlatillo
 id nameProduct
 id nameTextView
 id nameTextViewDesc
@@ -4253,6 +4269,7 @@ layout fragment_cart
 layout fragment_content_offers
 layout fragment_dishes
 layout fragment_favorite
+layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_home
 layout fragment_menu
@@ -4362,6 +4379,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout view_platillo_single
 layout view_producto_single
 menu bottom_menu
 menu nav_menu

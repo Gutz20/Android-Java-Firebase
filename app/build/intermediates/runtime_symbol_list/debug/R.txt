@@ -3191,6 +3191,7 @@ int drawable design_ic_visibility_off 0x7f0800b9
 int drawable design_password_eye 0x7f0800ba
 int drawable design_snackbar_background 0x7f0800bb
 int drawable dialogbkg 0x7f0800bc
+int drawable elipse_bg_platillo 0x7f080151
 int drawable facebook 0x7f0800bd
 int drawable facebook_logo_icon 0x7f0800be
 int drawable fondo_offers 0x7f0800bf
@@ -3329,6 +3330,9 @@ int drawable platillo 0x7f080143
 int drawable platillos_home 0x7f080144
 int drawable platillos_img_1 0x7f080145
 int drawable postres_home 0x7f080146
+int drawable qr1 0x7f080152
+int drawable qr2 0x7f080153
+int drawable qr3 0x7f080154
 int drawable rayitas 0x7f080147
 int drawable rayitas_volteadas 0x7f080148
 int drawable rectangle 0x7f080149
@@ -3465,7 +3469,9 @@ int id btnAddProduct 0x7f0a0077
 int id btnDeleteImage 0x7f0a0078
 int id btnDialogImage 0x7f0a0079
 int id btnEditar 0x7f0a007a
+int id btnEditarPlatillo 0x7f0a02fa
 int id btnEliminar 0x7f0a007b
+int id btnEliminarPlatillo 0x7f0a02fb
 int id btnGoogle 0x7f0a007c
 int id btnLogin 0x7f0a007d
 int id btnRegister 0x7f0a007e
@@ -3494,6 +3500,7 @@ int id cardMenuBox4 0x7f0a0094
 int id cardPlat_1 0x7f0a0095
 int id cardPlat_2 0x7f0a0096
 int id carryVelocity 0x7f0a0097
+int id categoriaPlatillo 0x7f0a02fc
 int id center 0x7f0a0098
 int id centerCrop 0x7f0a0099
 int id centerInside 0x7f0a009a
@@ -3521,6 +3528,7 @@ int id confirmation_code 0x7f0a00af
 int id confirmation_code_layout 0x7f0a00b0
 int id constraint 0x7f0a00b1
 int id constraintLayout 0x7f0a00b2
+int id constraintLayout2 0x7f0a02fd
 int id container 0x7f0a00b3
 int id content 0x7f0a00b4
 int id contentPanel 0x7f0a00b5
@@ -3680,6 +3688,7 @@ int id imageView6 0x7f0a014e
 int id imageView7 0x7f0a014f
 int id imageView8 0x7f0a0150
 int id imageView9 0x7f0a0151
+int id imagenPlatillo 0x7f0a02fe
 int id imagenProduct 0x7f0a0152
 int id imgBackLogin 0x7f0a0153
 int id imgCard2Plat1 0x7f0a0154
@@ -3687,6 +3696,9 @@ int id imgCard2Plat2 0x7f0a0155
 int id imgMenuIcon 0x7f0a0156
 int id imgProfile 0x7f0a0157
 int id imgProfileUser 0x7f0a0158
+int id imgQR1 0x7f0a0300
+int id imgQR2 0x7f0a0301
+int id imgQR3 0x7f0a0302
 int id imgViewOtro 0x7f0a0159
 int id imgViewOtro2 0x7f0a015a
 int id imgViewOtro3 0x7f0a015b
@@ -3734,12 +3746,15 @@ int id masked 0x7f0a0184
 int id match_constraint 0x7f0a0185
 int id match_parent 0x7f0a0186
 int id materialCardView 0x7f0a0187
+int id materialCardView10 0x7f0a0303
 int id materialCardView2 0x7f0a0188
 int id materialCardView3 0x7f0a0189
 int id materialCardView4 0x7f0a018a
 int id materialCardView5 0x7f0a018b
 int id materialCardView6 0x7f0a018c
 int id materialCardView7 0x7f0a018d
+int id materialCardView8 0x7f0a0304
+int id materialCardView9 0x7f0a0305
 int id materialDivider1 0x7f0a018e
 int id materialDivider2 0x7f0a018f
 int id materialDivider3 0x7f0a0190
@@ -3804,6 +3819,7 @@ int id mtrl_picker_title_text 0x7f0a01ca
 int id mtrl_view_tag_bottom_padding 0x7f0a01cb
 int id multiply 0x7f0a01cc
 int id name 0x7f0a01cd
+int id namePlatillo 0x7f0a02ff
 int id nameProduct 0x7f0a01ce
 int id nameTextView 0x7f0a01cf
 int id nameTextViewDesc 0x7f0a01d0
@@ -4252,6 +4268,7 @@ int layout fragment_cart 0x7f0d0038
 int layout fragment_content_offers 0x7f0d0039
 int layout fragment_dishes 0x7f0d003a
 int layout fragment_favorite 0x7f0d003b
+int layout fragment_form_dishes 0x7f0d00aa
 int layout fragment_form_product 0x7f0d003c
 int layout fragment_home 0x7f0d003d
 int layout fragment_menu 0x7f0d003e
@@ -4361,6 +4378,7 @@ int layout select_dialog_item_material 0x7f0d00a5
 int layout select_dialog_multichoice_material 0x7f0d00a6
 int layout select_dialog_singlechoice_material 0x7f0d00a7
 int layout support_simple_spinner_dropdown_item 0x7f0d00a8
+int layout view_platillo_single 0x7f0d00ab
 int layout view_producto_single 0x7f0d00a9
 int menu bottom_menu 0x7f0f0000
 int menu nav_menu 0x7f0f0001

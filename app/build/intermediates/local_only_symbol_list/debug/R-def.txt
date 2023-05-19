@@ -126,6 +126,7 @@ drawable combo_dishes
 drawable contenido_platillo_img_1
 drawable contenido_platillo_img_2
 drawable dialogbkg
+drawable elipse_bg_platillo
 drawable facebook
 drawable facebook_logo_icon
 drawable fondo_offers
@@ -168,6 +169,9 @@ drawable platillo
 drawable platillos_home
 drawable platillos_img_1
 drawable postres_home
+drawable qr1
+drawable qr2
+drawable qr3
 drawable rayitas
 drawable rayitas_volteadas
 drawable rectangle
@@ -190,7 +194,9 @@ id btnAddProduct
 id btnDeleteImage
 id btnDialogImage
 id btnEditar
+id btnEditarPlatillo
 id btnEliminar
+id btnEliminarPlatillo
 id btnGoogle
 id btnLogin
 id btnRegister
@@ -206,10 +212,12 @@ id cardMenuBox3
 id cardMenuBox4
 id cardPlat_1
 id cardPlat_2
+id categoriaPlatillo
 id cityDescriptionTextView
 id cityTextView
 id colorProduct
 id constraintLayout
+id constraintLayout2
 id coordinatorLayout
 id coordinatorLayout2
 id createText
@@ -257,6 +265,7 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
+id imagenPlatillo
 id imagenProduct
 id imgBackLogin
 id imgCard2Plat1
@@ -264,6 +273,9 @@ id imgCard2Plat2
 id imgMenuIcon
 id imgProfile
 id imgProfileUser
+id imgQR1
+id imgQR2
+id imgQR3
 id imgViewOtro
 id imgViewOtro2
 id imgViewOtro3
@@ -280,12 +292,15 @@ id logoImageViewLogin
 id logoutButton
 id main_item
 id materialCardView
+id materialCardView10
 id materialCardView2
 id materialCardView3
 id materialCardView4
 id materialCardView5
 id materialCardView6
 id materialCardView7
+id materialCardView8
+id materialCardView9
 id materialDivider1
 id materialDivider2
 id materialDivider3
@@ -293,6 +308,7 @@ id materialDivider4
 id materialDivider5
 id more
 id motionLayout
+id namePlatillo
 id nameProduct
 id nameTextView
 id nameTextViewDesc
@@ -387,6 +403,7 @@ layout fragment_cart
 layout fragment_content_offers
 layout fragment_dishes
 layout fragment_favorite
+layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_home
 layout fragment_menu
@@ -400,6 +417,7 @@ layout list_element
 layout nav_header
 layout progress_layout
 layout recycler_item_product
+layout view_platillo_single
 layout view_producto_single
 menu bottom_menu
 menu nav_menu
