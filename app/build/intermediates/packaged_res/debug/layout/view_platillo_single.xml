@@ -48,9 +48,11 @@
             android:id="@+id/btnEditarPlatillo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/baseline_edit_24"
-            tools:layout_editor_absoluteX="332dp"
-            tools:layout_editor_absoluteY="18dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnEliminarPlatillo"
+            app:layout_constraintStart_toEndOf="@+id/namePlatillo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_edit_24" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"

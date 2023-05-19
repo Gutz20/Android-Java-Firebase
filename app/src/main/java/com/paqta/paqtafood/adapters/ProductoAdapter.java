@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.screens.product.components.FormProductFragment;
@@ -29,6 +31,7 @@ import com.paqta.paqtafood.screens.product.components.FormProductFragment;
 public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, ProductoAdapter.ViewHolder> {
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
+    private FirebaseStorage mStorage = FirebaseStorage.getInstance();
     Activity activity;
     FragmentManager fm;
 
@@ -82,13 +85,27 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
 
     /**
      * Elimina el producto seleccionado mediante su id del documento
+     *
      * @param id
      */
     private void deleteProduct(String id) {
+        String storagePath = "productos/*", prefijo = "photo";
         mFirestore.collection("productos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(activity, "Eliminado correctamente", Toast.LENGTH_SHORT).show();
+                String rutaStorageFoto = storagePath + "" + prefijo + "" + id;
+                mStorage.getReference().child(rutaStorageFoto).delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(activity, "Eliminado correctamente", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(activity, "Error al eliminar la imagen", Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

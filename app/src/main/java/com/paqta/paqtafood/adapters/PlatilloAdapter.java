@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
@@ -22,6 +23,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Platillo;
 import com.paqta.paqtafood.screens.dishes.components.FormDishesFragment;
@@ -29,6 +32,7 @@ import com.paqta.paqtafood.screens.dishes.components.FormDishesFragment;
 public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, PlatilloAdapter.ViewHolder> {
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
+    private FirebaseStorage mStorage = FirebaseStorage.getInstance();
     Activity activity;
     FragmentManager fm;
 
@@ -76,10 +80,25 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, Platillo
     }
 
     private void eliminarPlatillo(View view, String id) {
-        mFirestore.collection("productos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+        String storage_path = "platillos/*", prefijo = "platillo";
+
+        mFirestore.collection("platillos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Snackbar.make(view, "Eliminado", Snackbar.LENGTH_LONG).show();
+                String ruta_storage_foto = storage_path + "" + prefijo + "" + id;
+                StorageReference imageRef = mStorage.getReference().child(ruta_storage_foto);
+                imageRef.delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Snackbar.make(view, "Eliminado con su imagen", Snackbar.LENGTH_LONG).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(activity, "Eliminado al eliminar su imagen", Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

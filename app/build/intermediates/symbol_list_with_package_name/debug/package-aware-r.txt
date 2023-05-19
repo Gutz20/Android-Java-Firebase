@@ -3152,6 +3152,7 @@ drawable baseline_share_24
 drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
+drawable bg_card_favorite
 drawable box_image_1
 drawable box_image_2
 drawable box_image_3
@@ -4372,6 +4373,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout view_platillo_favorite
 layout view_platillo_single
 layout view_producto_single
 menu bottom_menu

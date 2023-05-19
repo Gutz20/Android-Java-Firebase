@@ -118,6 +118,7 @@ drawable baseline_share_24
 drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
+drawable bg_card_favorite
 drawable box_image_1
 drawable box_image_2
 drawable box_image_3
@@ -410,6 +411,7 @@ layout list_element
 layout nav_header
 layout progress_layout
 layout recycler_item_product
+layout view_platillo_favorite
 layout view_platillo_single
 layout view_producto_single
 menu bottom_menu
