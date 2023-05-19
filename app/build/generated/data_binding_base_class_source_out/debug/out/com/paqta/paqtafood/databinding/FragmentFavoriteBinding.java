@@ -4,8 +4,8 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,16 +20,11 @@ public final class FragmentFavoriteBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button button6;
+  public final TextView textView16;
 
-  @NonNull
-  public final Button button7;
-
-  private FragmentFavoriteBinding(@NonNull FrameLayout rootView, @NonNull Button button6,
-      @NonNull Button button7) {
+  private FragmentFavoriteBinding(@NonNull FrameLayout rootView, @NonNull TextView textView16) {
     this.rootView = rootView;
-    this.button6 = button6;
-    this.button7 = button7;
+    this.textView16 = textView16;
   }
 
   @Override
@@ -59,19 +54,13 @@ public final class FragmentFavoriteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button6;
-      Button button6 = ViewBindings.findChildViewById(rootView, id);
-      if (button6 == null) {
+      id = R.id.textView16;
+      TextView textView16 = ViewBindings.findChildViewById(rootView, id);
+      if (textView16 == null) {
         break missingId;
       }
 
-      id = R.id.button7;
-      Button button7 = ViewBindings.findChildViewById(rootView, id);
-      if (button7 == null) {
-        break missingId;
-      }
-
-      return new FragmentFavoriteBinding((FrameLayout) rootView, button6, button7);
+      return new FragmentFavoriteBinding((FrameLayout) rootView, textView16);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

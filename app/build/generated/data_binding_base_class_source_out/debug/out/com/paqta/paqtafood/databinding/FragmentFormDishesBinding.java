@@ -4,20 +4,71 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentFormDishesBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentFormDishesBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button btnAdd;
+
+  @NonNull
+  public final Button btnDeleteImage;
+
+  @NonNull
+  public final Button btnDialogImage;
+
+  @NonNull
+  public final TextInputEditText edtTextCategoria;
+
+  @NonNull
+  public final TextInputEditText edtTextDescripcion;
+
+  @NonNull
+  public final TextInputEditText edtTextNombre;
+
+  @NonNull
+  public final TextInputLayout filledTextField;
+
+  @NonNull
+  public final TextInputLayout filledTextField2;
+
+  @NonNull
+  public final TextInputLayout filledTextField3;
+
+  @NonNull
+  public final ImageView imagePlatillo;
+
+  private FragmentFormDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
+      @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
+      @NonNull TextInputEditText edtTextCategoria, @NonNull TextInputEditText edtTextDescripcion,
+      @NonNull TextInputEditText edtTextNombre, @NonNull TextInputLayout filledTextField,
+      @NonNull TextInputLayout filledTextField2, @NonNull TextInputLayout filledTextField3,
+      @NonNull ImageView imagePlatillo) {
     this.rootView = rootView;
+    this.btnAdd = btnAdd;
+    this.btnDeleteImage = btnDeleteImage;
+    this.btnDialogImage = btnDialogImage;
+    this.edtTextCategoria = edtTextCategoria;
+    this.edtTextDescripcion = edtTextDescripcion;
+    this.edtTextNombre = edtTextNombre;
+    this.filledTextField = filledTextField;
+    this.filledTextField2 = filledTextField2;
+    this.filledTextField3 = filledTextField3;
+    this.imagePlatillo = imagePlatillo;
   }
 
   @Override
@@ -43,10 +94,75 @@ public final class FragmentFormDishesBinding implements ViewBinding {
 
   @NonNull
   public static FragmentFormDishesBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btn_add;
+      Button btnAdd = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdd == null) {
+        break missingId;
+      }
 
-    return new FragmentFormDishesBinding((FrameLayout) rootView);
+      id = R.id.btnDeleteImage;
+      Button btnDeleteImage = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeleteImage == null) {
+        break missingId;
+      }
+
+      id = R.id.btnDialogImage;
+      Button btnDialogImage = ViewBindings.findChildViewById(rootView, id);
+      if (btnDialogImage == null) {
+        break missingId;
+      }
+
+      id = R.id.edtTextCategoria;
+      TextInputEditText edtTextCategoria = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextCategoria == null) {
+        break missingId;
+      }
+
+      id = R.id.edtTextDescripcion;
+      TextInputEditText edtTextDescripcion = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextDescripcion == null) {
+        break missingId;
+      }
+
+      id = R.id.edtTextNombre;
+      TextInputEditText edtTextNombre = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextNombre == null) {
+        break missingId;
+      }
+
+      id = R.id.filledTextField;
+      TextInputLayout filledTextField = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField == null) {
+        break missingId;
+      }
+
+      id = R.id.filledTextField2;
+      TextInputLayout filledTextField2 = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField2 == null) {
+        break missingId;
+      }
+
+      id = R.id.filledTextField3;
+      TextInputLayout filledTextField3 = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField3 == null) {
+        break missingId;
+      }
+
+      id = R.id.imagePlatillo;
+      ImageView imagePlatillo = ViewBindings.findChildViewById(rootView, id);
+      if (imagePlatillo == null) {
+        break missingId;
+      }
+
+      return new FragmentFormDishesBinding((FrameLayout) rootView, btnAdd, btnDeleteImage,
+          btnDialogImage, edtTextCategoria, edtTextDescripcion, edtTextNombre, filledTextField,
+          filledTextField2, filledTextField3, imagePlatillo);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

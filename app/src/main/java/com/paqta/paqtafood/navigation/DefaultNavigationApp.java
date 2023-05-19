@@ -28,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
+import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
 import com.paqta.paqtafood.screens.offers.OffersFragment;
@@ -71,7 +72,6 @@ public class DefaultNavigationApp extends AppCompatActivity {
             search = R.id.search;
 
             if (item.getItemId() == search) {
-
                 replaceFragment(new HomeFragment());
             }
 
@@ -84,10 +84,10 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
             if (item.getItemId() == R.id.nav_bottom_home) {
                 toolbar.setTitle("INICIO PAQTAFOOD");
-                replaceFragment(new HomeFragment());
+                replaceFragment(new MenuFragment());
             } else if (item.getItemId() == R.id.nav_bottom_favorite) {
                 toolbar.setTitle("BLACK DAY");
-                replaceFragment(new OffersFragment());
+                replaceFragment(new FavoriteFragment());
             } else if (item.getItemId() == R.id.nav_bottom_search) {
                 toolbar.setTitle("PERFIL");
                 replaceFragment(new ProfileFragment());
@@ -98,6 +98,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
             return true;
         });
+
 
         navigationView.setNavigationItemSelectedListener(item -> {
             int search, rotation, accelerator, dashboard, dishes;

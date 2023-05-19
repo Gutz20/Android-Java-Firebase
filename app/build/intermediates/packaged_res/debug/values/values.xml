@@ -18,6 +18,7 @@
         <item>@font/abel</item>
         <item>@font/acme</item>
         <item>@font/archivo</item>
+        <item>@font/ceviche_one</item>
     </array>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#D81B60</color>

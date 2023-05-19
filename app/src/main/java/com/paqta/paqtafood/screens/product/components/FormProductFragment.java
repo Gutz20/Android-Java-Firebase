@@ -105,7 +105,6 @@ public class FormProductFragment extends Fragment {
                         .setPositiveButton("Galeria", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                permisosCamara();
                                 openImageGallery();
                             }
                         })
@@ -207,6 +206,7 @@ public class FormProductFragment extends Fragment {
      * Abre la galeria de imagenes
      */
     private void openImageGallery() {
+        permisosCamara();
         Intent galeria = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         galeria.setType("image/*");
         startActivityForResult(galeria, REQUEST_IMAGE_GALLERY);
@@ -303,7 +303,8 @@ public class FormProductFragment extends Fragment {
      * @param documentReference
      */
     private void subirImagen(DocumentReference documentReference) {
-        String ruta_storage_foto = storage_path + "" + photo + "" + mAuth.getUid() + "" + documentReference.getId();
+//        String ruta_storage_foto = storage_path + "" + photo + "" + mAuth.getUid() + "" + documentReference.getId();
+        String ruta_storage_foto = storage_path + "" + photo +  "" + documentReference.getId();
         StorageReference imageRef = mStorage.getReference().child(ruta_storage_foto);
 
         UploadTask uploadTask = imageRef.putFile(image_url);

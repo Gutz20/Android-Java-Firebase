@@ -4,9 +4,8 @@ public class Platillo extends Producto{
     private String tipo;
     private Double precio;
 
-    public Platillo(String tipo, Double precio) {
-        this.tipo = tipo;
-        this.precio = precio;
+    public Platillo() {
+
     }
 
     public Platillo(String nombre, String descripcion, String categoria, Integer cantidad, String imagen, String tipo, Double precio) {

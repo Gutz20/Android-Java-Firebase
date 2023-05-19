@@ -59,15 +59,6 @@ public class MenuFragment extends Fragment {
 //        elements.add(new Dish("Arroz chaufa y papas fritas", "desc", 5));
 //        elements.add(new Dish("Arroz chaufa y papas fritas", "desc", 5));
 
-        button = root.findViewById(R.id.button5);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "Hola!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         return root;
     }
 }
