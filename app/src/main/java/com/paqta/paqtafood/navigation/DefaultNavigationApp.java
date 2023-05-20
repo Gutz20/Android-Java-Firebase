@@ -46,7 +46,6 @@ public class DefaultNavigationApp extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     MaterialToolbar toolbar;
     NavigationView navigationView;
-
     BottomNavigationView bottomNavigationView;
     FirebaseAuth mAuth;
 
@@ -72,7 +71,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             search = R.id.search;
 
             if (item.getItemId() == search) {
-                replaceFragment(new HomeFragment());
+                replaceFragment(new ProfileFragment());
             }
 
             return true;
@@ -89,8 +88,8 @@ public class DefaultNavigationApp extends AppCompatActivity {
                 toolbar.setTitle("BLACK DAY");
                 replaceFragment(new FavoriteFragment());
             } else if (item.getItemId() == R.id.nav_bottom_search) {
-                toolbar.setTitle("PERFIL");
-                replaceFragment(new ProfileFragment());
+                toolbar.setTitle("BUSQUEDA");
+                replaceFragment(new SearchFragment());
             } else if (item.getItemId() == R.id.nav_bottom_cart) {
                 toolbar.setTitle("BUSQUEDA");
                 replaceFragment(new SearchFragment());

@@ -64,8 +64,8 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-55:\\layout\\fragment_favorite.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-52:/layout/fragment_favorite.xml",
-        "source": "com.paqta.paqtafood.app-main-55:/layout/fragment_favorite.xml"
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-52:/layout/view_platillo_search.xml",
+        "source": "com.paqta.paqtafood.app-main-55:/layout/view_platillo_search.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-52:\\layout\\activity_description.xml",
@@ -74,6 +74,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-52:\\layout\\activity_main.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-55:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-52:\\layout\\view_platillo_search.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-55:\\layout\\view_platillo_search.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-52:\\layout\\activity_login.xml",
@@ -90,6 +94,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-52:\\layout\\progress_layout.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-55:\\layout\\progress_layout.xml"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-52:/layout/fragment_search.xml",
+        "source": "com.paqta.paqtafood.app-main-55:/layout/fragment_search.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-52:\\layout\\fragment_staff.xml",

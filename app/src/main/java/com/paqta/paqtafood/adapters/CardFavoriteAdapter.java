@@ -40,12 +40,6 @@ public class CardFavoriteAdapter extends FirestoreRecyclerAdapter<Platillo, Card
         return new CardViewHolder(view);
     }
 
-    @Override
-    public int getItemCount() {
-
-        return super.getItemCount();
-    }
-
     static class CardViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tituloView;

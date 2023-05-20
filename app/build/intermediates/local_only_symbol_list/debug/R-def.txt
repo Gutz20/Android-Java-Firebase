@@ -121,6 +121,7 @@ drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
 drawable bg_card_favorite
+drawable bg_search_item
 drawable box_image_1
 drawable box_image_2
 drawable box_image_3
@@ -130,6 +131,7 @@ drawable combo_dishes
 drawable contenido_platillo_img_1
 drawable contenido_platillo_img_2
 drawable dialogbkg
+drawable divider_search
 drawable elipse_bg_platillo
 drawable facebook
 drawable facebook_logo_icon
@@ -260,6 +262,8 @@ id imageView11
 id imageView12
 id imageView13
 id imageView14
+id imageView15
+id imageView16
 id imageView2
 id imageView26
 id imageView28
@@ -278,6 +282,7 @@ id imageView7
 id imageView8
 id imageView9
 id image_view_favorite
+id image_view_search
 id imagenPlatillo
 id imagenProduct
 id imgBackLogin
@@ -337,12 +342,15 @@ id recDescription
 id recImage
 id recTitle
 id recuperarBtn
+id recyclerOtherMenus
 id recyclerPlatillos
 id recyclerProductos
+id recyclerSearch
 id recyclerViewOffers
 id rotation_item
 id search
 id searchPlatillo
+id searchView
 id search_item
 id second_item
 id start
@@ -354,6 +362,8 @@ id textEmail
 id textName
 id textView
 id textView10
+id textView11
+id textView12
 id textView16
 id textView2
 id textView20
@@ -374,6 +384,7 @@ id textView8
 id textView9
 id textViewCorreoUser
 id textViewNameUser
+id text_item_search
 id title
 id titleDescriptionTextView
 id titleTextView
@@ -426,6 +437,7 @@ layout nav_header
 layout progress_layout
 layout recycler_item_product
 layout view_platillo_favorite
+layout view_platillo_search
 layout view_platillo_single
 layout view_producto_single
 menu bottom_menu

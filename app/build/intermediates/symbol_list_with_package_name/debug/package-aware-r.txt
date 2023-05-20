@@ -3200,6 +3200,7 @@ drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
 drawable bg_card_favorite
+drawable bg_search_item
 drawable bottom_top_shadow
 drawable box_image_1
 drawable box_image_2
@@ -3243,6 +3244,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dialogbkg
+drawable divider_search
 drawable elipse_bg_platillo
 drawable facebook
 drawable facebook_logo_icon
@@ -3742,6 +3744,8 @@ id imageView11
 id imageView12
 id imageView13
 id imageView14
+id imageView15
+id imageView16
 id imageView2
 id imageView26
 id imageView28
@@ -3760,6 +3764,7 @@ id imageView7
 id imageView8
 id imageView9
 id image_view_favorite
+id image_view_search
 id imagenPlatillo
 id imagenProduct
 id img
@@ -3963,8 +3968,10 @@ id recImage
 id recTitle
 id rectangles
 id recuperarBtn
+id recyclerOtherMenus
 id recyclerPlatillos
 id recyclerProductos
+id recyclerSearch
 id recyclerView
 id recyclerViewOffers
 id resend_barrier
@@ -3991,6 +3998,7 @@ id scrollView
 id scrollable
 id search
 id searchPlatillo
+id searchView
 id search_badge
 id search_bar
 id search_bar_text_view
@@ -4093,6 +4101,8 @@ id textStart
 id textTop
 id textView
 id textView10
+id textView11
+id textView12
 id textView16
 id textView2
 id textView20
@@ -4116,6 +4126,7 @@ id textViewNameUser
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_item_search
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -4459,6 +4470,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout view_platillo_favorite
+layout view_platillo_search
 layout view_platillo_single
 layout view_producto_single
 menu bottom_menu
