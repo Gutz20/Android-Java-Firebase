@@ -2,59 +2,98 @@ package com.paqta.paqtafood.screens.favorite;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.adapters.CardFavoriteAdapter;
+import com.paqta.paqtafood.model.Platillo;
+
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
+import org.imaginativeworld.whynotimagecarousel.model.CarouselGravity;
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
+import org.imaginativeworld.whynotimagecarousel.model.CarouselType;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class FavoriteFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public FavoriteFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FavoriteFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FavoriteFragment newInstance(String param1, String param2) {
-        FavoriteFragment fragment = new FavoriteFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
+
+    private FirebaseFirestore mFirestore;
+
+    RecyclerView mRecycler, mRecycler2, mRecycler3;
+    List<CardFavoriteAdapter> adapters;
+    Query query;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        View root = inflater.inflate(R.layout.fragment_favorite, container, false);
+
+        mFirestore = FirebaseFirestore.getInstance();
+        mRecycler = root.findViewById(R.id.carouselPlatillos);
+        mRecycler2 = root.findViewById(R.id.carouselBebidas);
+        mRecycler3 = root.findViewById(R.id.carouselPostres);
+        adapters = new ArrayList<>();
+
+        setupRecyclerView(mRecycler);
+        setupRecyclerView(mRecycler2);
+        setupRecyclerView(mRecycler3);
+        return root;
     }
+
+    private void setupRecyclerView(RecyclerView recyclerView) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+
+        recyclerView.setLayoutManager(layoutManager);
+
+        query = mFirestore.collection("platillos");
+
+        FirestoreRecyclerOptions<Platillo> options = new FirestoreRecyclerOptions.Builder<Platillo>()
+                .setQuery(query, Platillo.class)
+                .build();
+
+        CardFavoriteAdapter mAdapter = new CardFavoriteAdapter(options);
+        mAdapter.notifyDataSetChanged();
+        adapters.add(mAdapter);
+        recyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapters.forEach(FirestoreRecyclerAdapter::startListening);
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapters.forEach(FirestoreRecyclerAdapter::stopListening);
+    }
+
 }

@@ -89,6 +89,13 @@ dependencies {
     // Google | Google authentication
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
+//    Carrusel de imagenes
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
+
+    // Indicador circular
+    implementation 'me.relex:circleindicator:2.1.6'
+
+
 
 
 

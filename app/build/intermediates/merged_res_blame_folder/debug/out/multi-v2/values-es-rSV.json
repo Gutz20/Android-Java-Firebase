@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-49:/values-es-rSV/values-es-rSV.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-51:/values-es-rSV/values-es-rSV.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\e07184198a3debfefef4a4bf872611ea\\transformed\\firebase-ui-auth-8.0.2\\res\\values-es-rSV\\values-es-rSV.xml",

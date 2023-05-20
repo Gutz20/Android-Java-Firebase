@@ -4,6 +4,7 @@ ADDED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\Andr
 INJECTED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-81:12
 INJECTED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-81:12
 INJECTED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-81:12
+MERGED from [org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\bfad89065c2a1f61d065adfae9abe458\transformed\whynotimagecarousel-2.1.0-debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:viewbinding:8.0.1] C:\Users\USUARIO\.gradle\caches\transforms-3\93fc01b482810959fdf32a7a742bd601\transformed\viewbinding-8.0.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:2:1-119:12
 MERGED from [androidx.navigation:navigation-ui:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\bc850a5ae00b689348bf07de2037e7ec\transformed\navigation-ui-2.5.3\AndroidManifest.xml:17:1-24:12
@@ -23,6 +24,7 @@ MERGED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.gra
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\c5e7ba88dae72cfaccdc99f6c9d1ed23\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:17:1-40:12
+MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\22f05cfc1fa08f21dc73287331226ee7\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:17:1-37:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\c8eedc61750ada8f5fd6ce22bf52a018\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
@@ -135,6 +137,8 @@ ADDED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\Andr
 		ADDED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:8:9-47
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml:11:5-67
+MERGED from [org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\bfad89065c2a1f61d065adfae9abe458\transformed\whynotimagecarousel-2.1.0-debug\AndroidManifest.xml:9:5-67
+MERGED from [org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\bfad89065c2a1f61d065adfae9abe458\transformed\whynotimagecarousel-2.1.0-debug\AndroidManifest.xml:9:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:11:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:11:5-67
 MERGED from [com.firebaseui:firebase-ui-database:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\b7a2245faf52f04b8c4d386dbcde69d7\transformed\firebase-ui-database-8.0.2\AndroidManifest.xml:9:5-67
@@ -391,6 +395,8 @@ uses-sdk
 INJECTED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\USUARIO\Desktop\Proyecto-android\PaqtaFood\app\src\main\AndroidManifest.xml
+MERGED from [org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\bfad89065c2a1f61d065adfae9abe458\transformed\whynotimagecarousel-2.1.0-debug\AndroidManifest.xml:5:5-7:41
+MERGED from [org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\bfad89065c2a1f61d065adfae9abe458\transformed\whynotimagecarousel-2.1.0-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.databinding:viewbinding:8.0.1] C:\Users\USUARIO\.gradle\caches\transforms-3\93fc01b482810959fdf32a7a742bd601\transformed\viewbinding-8.0.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.0.1] C:\Users\USUARIO\.gradle\caches\transforms-3\93fc01b482810959fdf32a7a742bd601\transformed\viewbinding-8.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:6:5-8:41
@@ -429,6 +435,8 @@ MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\ca
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:20:5-44
+MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\22f05cfc1fa08f21dc73287331226ee7\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\22f05cfc1fa08f21dc73287331226ee7\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:20:5-44

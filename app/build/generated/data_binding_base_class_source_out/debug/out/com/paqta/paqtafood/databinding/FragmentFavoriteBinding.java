@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
@@ -20,10 +21,24 @@ public final class FragmentFavoriteBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final RecyclerView carouselBebidas;
+
+  @NonNull
+  public final RecyclerView carouselPlatillos;
+
+  @NonNull
+  public final RecyclerView carouselPostres;
+
+  @NonNull
   public final TextView textView16;
 
-  private FragmentFavoriteBinding(@NonNull FrameLayout rootView, @NonNull TextView textView16) {
+  private FragmentFavoriteBinding(@NonNull FrameLayout rootView,
+      @NonNull RecyclerView carouselBebidas, @NonNull RecyclerView carouselPlatillos,
+      @NonNull RecyclerView carouselPostres, @NonNull TextView textView16) {
     this.rootView = rootView;
+    this.carouselBebidas = carouselBebidas;
+    this.carouselPlatillos = carouselPlatillos;
+    this.carouselPostres = carouselPostres;
     this.textView16 = textView16;
   }
 
@@ -54,13 +69,32 @@ public final class FragmentFavoriteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.carouselBebidas;
+      RecyclerView carouselBebidas = ViewBindings.findChildViewById(rootView, id);
+      if (carouselBebidas == null) {
+        break missingId;
+      }
+
+      id = R.id.carouselPlatillos;
+      RecyclerView carouselPlatillos = ViewBindings.findChildViewById(rootView, id);
+      if (carouselPlatillos == null) {
+        break missingId;
+      }
+
+      id = R.id.carouselPostres;
+      RecyclerView carouselPostres = ViewBindings.findChildViewById(rootView, id);
+      if (carouselPostres == null) {
+        break missingId;
+      }
+
       id = R.id.textView16;
       TextView textView16 = ViewBindings.findChildViewById(rootView, id);
       if (textView16 == null) {
         break missingId;
       }
 
-      return new FragmentFavoriteBinding((FrameLayout) rootView, textView16);
+      return new FragmentFavoriteBinding((FrameLayout) rootView, carouselBebidas, carouselPlatillos,
+          carouselPostres, textView16);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

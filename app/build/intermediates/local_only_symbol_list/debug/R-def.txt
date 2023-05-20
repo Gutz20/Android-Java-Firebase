@@ -96,6 +96,7 @@ drawable arrow_left_home
 drawable arrow_right_home
 drawable background_home
 drawable background_resturant
+drawable badge_platillo_favorite
 drawable baseline_add_24
 drawable baseline_arrow_back_ios_24
 drawable baseline_cast_connected_24
@@ -106,6 +107,7 @@ drawable baseline_close_24
 drawable baseline_contact_mail_24
 drawable baseline_edit_24
 drawable baseline_exit_app_24
+drawable baseline_favorite_border_24
 drawable baseline_home_24
 drawable baseline_image_24
 drawable baseline_info_24
@@ -123,6 +125,7 @@ drawable box_image_1
 drawable box_image_2
 drawable box_image_3
 drawable box_image_4
+drawable card_favorite_img
 drawable combo_dishes
 drawable contenido_platillo_img_1
 drawable contenido_platillo_img_2
@@ -139,6 +142,7 @@ drawable ic_delete_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_logo_background
+drawable icon_menu_card
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -184,6 +188,7 @@ drawable rectangle
 drawable rectangle_12
 drawable rectangle_66
 drawable round_remove_24
+drawable simbol_dolar_favorite
 drawable whitebck
 font abel
 font acme
@@ -212,12 +217,16 @@ id btn_add
 id button
 id cancelButton
 id cardPlat_1
+id carouselBebidas
+id carouselPlatillos
+id carouselPostres
 id categoriaPlatillo
 id cityDescriptionTextView
 id cityTextView
 id colorProduct
 id constraintLayout
 id constraintLayout2
+id constraintLayout3
 id coordinatorLayout
 id coordinatorLayout2
 id createText
@@ -250,6 +259,7 @@ id imageView10
 id imageView11
 id imageView12
 id imageView13
+id imageView14
 id imageView2
 id imageView26
 id imageView28
@@ -267,6 +277,7 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
+id image_view_favorite
 id imagenPlatillo
 id imagenProduct
 id imgBackLogin
@@ -276,6 +287,7 @@ id imgProfileUser
 id imgQR1
 id imgQR2
 id imgQR3
+id img_view_icon_favorite
 id layoutLive
 id layoutShorts
 id layoutVideo
@@ -342,7 +354,6 @@ id textEmail
 id textName
 id textView
 id textView10
-id textView11
 id textView16
 id textView2
 id textView20
@@ -353,8 +364,10 @@ id textView25
 id textView26
 id textView27
 id textView29
+id textView3
 id textView30
 id textView4
+id textView5
 id textView6
 id textView7
 id textView8
@@ -364,6 +377,7 @@ id textViewNameUser
 id title
 id titleDescriptionTextView
 id titleTextView
+id title_view_favorite
 id topAppBar
 id tvwEjem
 id tvwLogin
