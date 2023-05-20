@@ -3199,6 +3199,8 @@ int drawable baseline_subscriptions_24 0x7f080094
 int drawable baseline_video_library_24 0x7f080095
 int drawable baseline_whatshot_24 0x7f080096
 int drawable bg_card_favorite 0x7f080097
+int drawable bg_card_menu_detail 0x7f080168
+int drawable bg_menu_detail 0x7f080169
 int drawable bg_search_item 0x7f080098
 int drawable bottom_top_shadow 0x7f080099
 int drawable box_image_1 0x7f08009a
@@ -3284,6 +3286,7 @@ int drawable ic_mtrl_chip_checked_circle 0x7f0800e9
 int drawable ic_mtrl_chip_close_circle 0x7f0800ea
 int drawable ic_search_black_24 0x7f0800eb
 int drawable icon_menu_card 0x7f0800ec
+int drawable icon_menu_detail 0x7f08016a
 int drawable image_icon_124 0x7f0800ed
 int drawable img_staff_1 0x7f0800ee
 int drawable img_staff_2 0x7f0800ef
@@ -3901,6 +3904,7 @@ int id name_layout 0x7f0a01e6
 int id nav_bottom_cart 0x7f0a01e7
 int id nav_bottom_favorite 0x7f0a01e8
 int id nav_bottom_home 0x7f0a01e9
+int id nav_bottom_menu_detail 0x7f0a031b
 int id nav_bottom_search 0x7f0a01ea
 int id nav_controller_view_tag 0x7f0a01eb
 int id nav_host_fragment_container 0x7f0a01ec
@@ -4102,6 +4106,7 @@ int id textView 0x7f0a02af
 int id textView10 0x7f0a02b0
 int id textView11 0x7f0a02b1
 int id textView12 0x7f0a02b2
+int id textView13 0x7f0a031c
 int id textView16 0x7f0a02b3
 int id textView2 0x7f0a02b4
 int id textView20 0x7f0a02b5
@@ -4358,6 +4363,7 @@ int layout fragment_form_dishes 0x7f0d003c
 int layout fragment_form_product 0x7f0d003d
 int layout fragment_home 0x7f0d003e
 int layout fragment_menu 0x7f0d003f
+int layout fragment_menu_detail 0x7f0d00b2
 int layout fragment_offers 0x7f0d0040
 int layout fragment_product 0x7f0d0041
 int layout fragment_profile 0x7f0d0042

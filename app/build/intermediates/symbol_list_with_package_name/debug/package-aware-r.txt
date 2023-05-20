@@ -3200,6 +3200,8 @@ drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
 drawable bg_card_favorite
+drawable bg_card_menu_detail
+drawable bg_menu_detail
 drawable bg_search_item
 drawable bottom_top_shadow
 drawable box_image_1
@@ -3285,6 +3287,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable icon_menu_card
+drawable icon_menu_detail
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -3902,6 +3905,7 @@ id name_layout
 id nav_bottom_cart
 id nav_bottom_favorite
 id nav_bottom_home
+id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_controller_view_tag
 id nav_host_fragment_container
@@ -4103,6 +4107,7 @@ id textView
 id textView10
 id textView11
 id textView12
+id textView13
 id textView16
 id textView2
 id textView20
@@ -4359,6 +4364,7 @@ layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_home
 layout fragment_menu
+layout fragment_menu_detail
 layout fragment_offers
 layout fragment_product
 layout fragment_profile

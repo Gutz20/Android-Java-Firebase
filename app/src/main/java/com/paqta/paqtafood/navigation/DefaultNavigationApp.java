@@ -31,6 +31,7 @@ import com.paqta.paqtafood.screens.dishes.DishesFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
+import com.paqta.paqtafood.screens.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.screens.offers.OffersFragment;
 import com.paqta.paqtafood.screens.product.ProductFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
@@ -90,6 +91,9 @@ public class DefaultNavigationApp extends AppCompatActivity {
             } else if (item.getItemId() == R.id.nav_bottom_search) {
                 toolbar.setTitle("BUSQUEDA");
                 replaceFragment(new SearchFragment());
+            } else if (item.getItemId() == R.id.nav_bottom_menu_detail) {
+                toolbar.setTitle("BUSQUEMOS TU PLATILLOS");
+                replaceFragment(new MenuDetailFragment());
             } else if (item.getItemId() == R.id.nav_bottom_cart) {
                 toolbar.setTitle("BUSQUEDA");
                 replaceFragment(new SearchFragment());
