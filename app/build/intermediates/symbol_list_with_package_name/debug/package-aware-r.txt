@@ -3176,6 +3176,7 @@ drawable avd_show_password
 drawable background_home
 drawable background_resturant
 drawable badge_platillo_favorite
+drawable badge_price_menu_detail
 drawable baseline_add_24
 drawable baseline_arrow_back_ios_24
 drawable baseline_cast_connected_24
@@ -3749,6 +3750,7 @@ id imageView13
 id imageView14
 id imageView15
 id imageView16
+id imageView18
 id imageView2
 id imageView26
 id imageView28
@@ -3768,6 +3770,7 @@ id imageView8
 id imageView9
 id image_view_favorite
 id image_view_search
+id imagenMenuDetail
 id imagenPlatillo
 id imagenProduct
 id img
@@ -3923,6 +3926,7 @@ id neverCompleteToStart
 id next_button_container
 id noScroll
 id noState
+id nombreMenuDetail
 id none
 id normal
 id north
@@ -3972,6 +3976,7 @@ id recImage
 id recTitle
 id rectangles
 id recuperarBtn
+id recyclerMenuDetail
 id recyclerOtherMenus
 id recyclerPlatillos
 id recyclerProductos
@@ -4476,6 +4481,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout view_platillo_favorite
+layout view_platillo_menu_detail
 layout view_platillo_search
 layout view_platillo_single
 layout view_producto_single

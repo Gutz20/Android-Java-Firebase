@@ -3175,6 +3175,7 @@ int drawable avd_show_password 0x7f08007c
 int drawable background_home 0x7f08007d
 int drawable background_resturant 0x7f08007e
 int drawable badge_platillo_favorite 0x7f08007f
+int drawable badge_price_menu_detail 0x7f08016b
 int drawable baseline_add_24 0x7f080080
 int drawable baseline_arrow_back_ios_24 0x7f080081
 int drawable baseline_cast_connected_24 0x7f080082
@@ -3748,6 +3749,7 @@ int id imageView13 0x7f0a014a
 int id imageView14 0x7f0a014b
 int id imageView15 0x7f0a014c
 int id imageView16 0x7f0a014d
+int id imageView18 0x7f0a031d
 int id imageView2 0x7f0a014e
 int id imageView26 0x7f0a014f
 int id imageView28 0x7f0a0150
@@ -3767,6 +3769,7 @@ int id imageView8 0x7f0a015d
 int id imageView9 0x7f0a015e
 int id image_view_favorite 0x7f0a015f
 int id image_view_search 0x7f0a0160
+int id imagenMenuDetail 0x7f0a031e
 int id imagenPlatillo 0x7f0a0161
 int id imagenProduct 0x7f0a0162
 int id img 0x7f0a0163
@@ -3922,6 +3925,7 @@ int id neverCompleteToStart 0x7f0a01f7
 int id next_button_container 0x7f0a01f8
 int id noScroll 0x7f0a01f9
 int id noState 0x7f0a01fa
+int id nombreMenuDetail 0x7f0a031f
 int id none 0x7f0a01fb
 int id normal 0x7f0a01fc
 int id north 0x7f0a01fd
@@ -3971,6 +3975,7 @@ int id recImage 0x7f0a0228
 int id recTitle 0x7f0a0229
 int id rectangles 0x7f0a022a
 int id recuperarBtn 0x7f0a022b
+int id recyclerMenuDetail 0x7f0a0320
 int id recyclerOtherMenus 0x7f0a022c
 int id recyclerPlatillos 0x7f0a022d
 int id recyclerProductos 0x7f0a022e
@@ -4475,6 +4480,7 @@ int layout select_dialog_multichoice_material 0x7f0d00ab
 int layout select_dialog_singlechoice_material 0x7f0d00ac
 int layout support_simple_spinner_dropdown_item 0x7f0d00ad
 int layout view_platillo_favorite 0x7f0d00ae
+int layout view_platillo_menu_detail 0x7f0d00b3
 int layout view_platillo_search 0x7f0d00af
 int layout view_platillo_single 0x7f0d00b0
 int layout view_producto_single 0x7f0d00b1

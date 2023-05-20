@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="wrap_content"
+            android:layout_width="196dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/ceviche_one"
@@ -33,6 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMenuDetail"
             android:layout_width="326dp"
             android:layout_height="521dp"
             android:layout_marginStart="1dp"

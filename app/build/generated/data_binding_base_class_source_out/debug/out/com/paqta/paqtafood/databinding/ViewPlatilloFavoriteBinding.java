@@ -24,9 +24,6 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   public final ConstraintLayout constraintLayout3;
 
   @NonNull
-  public final ImageView imageView14;
-
-  @NonNull
   public final ImageView imageViewFavorite;
 
   @NonNull
@@ -42,13 +39,11 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   public final TextView titleViewFavorite;
 
   private ViewPlatilloFavoriteBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull ImageView imageView14,
-      @NonNull ImageView imageViewFavorite, @NonNull ImageView imgViewIconFavorite,
-      @NonNull TextView textView3, @NonNull TextView textView5,
-      @NonNull TextView titleViewFavorite) {
+      @NonNull ConstraintLayout constraintLayout3, @NonNull ImageView imageViewFavorite,
+      @NonNull ImageView imgViewIconFavorite, @NonNull TextView textView3,
+      @NonNull TextView textView5, @NonNull TextView titleViewFavorite) {
     this.rootView = rootView;
     this.constraintLayout3 = constraintLayout3;
-    this.imageView14 = imageView14;
     this.imageViewFavorite = imageViewFavorite;
     this.imgViewIconFavorite = imgViewIconFavorite;
     this.textView3 = textView3;
@@ -89,12 +84,6 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView14;
-      ImageView imageView14 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView14 == null) {
-        break missingId;
-      }
-
       id = R.id.image_view_favorite;
       ImageView imageViewFavorite = ViewBindings.findChildViewById(rootView, id);
       if (imageViewFavorite == null) {
@@ -126,8 +115,7 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
       }
 
       return new ViewPlatilloFavoriteBinding((ConstraintLayout) rootView, constraintLayout3,
-          imageView14, imageViewFavorite, imgViewIconFavorite, textView3, textView5,
-          titleViewFavorite);
+          imageViewFavorite, imgViewIconFavorite, textView3, textView5, titleViewFavorite);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

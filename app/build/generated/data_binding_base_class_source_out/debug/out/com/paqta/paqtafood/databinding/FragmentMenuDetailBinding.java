@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
@@ -20,10 +21,15 @@ public final class FragmentMenuDetailBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final RecyclerView recyclerMenuDetail;
+
+  @NonNull
   public final TextView textView13;
 
-  private FragmentMenuDetailBinding(@NonNull FrameLayout rootView, @NonNull TextView textView13) {
+  private FragmentMenuDetailBinding(@NonNull FrameLayout rootView,
+      @NonNull RecyclerView recyclerMenuDetail, @NonNull TextView textView13) {
     this.rootView = rootView;
+    this.recyclerMenuDetail = recyclerMenuDetail;
     this.textView13 = textView13;
   }
 
@@ -54,13 +60,19 @@ public final class FragmentMenuDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.recyclerMenuDetail;
+      RecyclerView recyclerMenuDetail = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerMenuDetail == null) {
+        break missingId;
+      }
+
       id = R.id.textView13;
       TextView textView13 = ViewBindings.findChildViewById(rootView, id);
       if (textView13 == null) {
         break missingId;
       }
 
-      return new FragmentMenuDetailBinding((FrameLayout) rootView, textView13);
+      return new FragmentMenuDetailBinding((FrameLayout) rootView, recyclerMenuDetail, textView13);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
