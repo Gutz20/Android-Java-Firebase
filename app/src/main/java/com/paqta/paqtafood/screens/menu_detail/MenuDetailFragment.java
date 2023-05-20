@@ -26,6 +26,7 @@ public class MenuDetailFragment extends Fragment {
     FirebaseFirestore mFirestore;
     CardMenuDetailAdapter menuDetailAdapter;
     Query query;
+    private Integer NUMBER_OF_COLUMNS = 2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,12 +42,8 @@ public class MenuDetailFragment extends Fragment {
 
         recyclerView = root.findViewById(R.id.recyclerMenuDetail);
 
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), GridLayoutManager.DEFAULT_SPAN_COUNT);
-//        recyclerView.setLayoutManager(gridLayoutManager);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
-        recyclerView.setLayoutManager(layoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), NUMBER_OF_COLUMNS);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         query = mFirestore.collection("platillos");
 

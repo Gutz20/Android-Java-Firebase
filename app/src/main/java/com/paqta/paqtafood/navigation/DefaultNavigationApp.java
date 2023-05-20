@@ -104,25 +104,24 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
 
         navigationView.setNavigationItemSelectedListener(item -> {
-            int search, rotation, accelerator, dashboard, dishes;
-            search = R.id.search_item;
-            rotation = R.id.rotation_item;
-            accelerator = R.id.accelerator_item;
-            dashboard = R.id.dashboard_item;
-            dishes = R.id.dishes_item;
-
-
-            if (item.getItemId() == search) {
-                replaceFragment(new ProductFragment());
-            } else if (item.getItemId() == rotation) {
-                replaceFragment(new StaffFragment());
-            } else if (item.getItemId() == accelerator) {
-                replaceFragment(new MenuFragment());
-            } else if (item.getItemId() == dashboard) {
-                replaceFragment(new DishesFragment());
-            } else if (item.getItemId() == dishes) {
-                replaceFragment(new DishesFragment());
-            }
+//            int search, rotation, accelerator, dashboard, dishes;
+//            search = R.id.search_item;
+//            rotation = R.id.rotation_item;
+//            accelerator = R.id.accelerator_item;
+//            dishes = R.id.dishes_item;
+//
+//
+//            if (item.getItemId() == search) {
+//                replaceFragment(new ProductFragment());
+//            } else if (item.getItemId() == rotation) {
+//                replaceFragment(new StaffFragment());
+//            } else if (item.getItemId() == accelerator) {
+//                replaceFragment(new MenuFragment());
+//            } else if (item.getItemId() == dashboard) {
+//                replaceFragment(new DishesFragment());
+//            } else if (item.getItemId() == dishes) {
+//                replaceFragment(new DishesFragment());
+//            }
             return true;
         });
     }

@@ -3202,8 +3202,10 @@ drawable baseline_video_library_24
 drawable baseline_whatshot_24
 drawable bg_card_favorite
 drawable bg_card_menu_detail
+drawable bg_header_sidebar
 drawable bg_menu_detail
 drawable bg_search_item
+drawable bg_sidebar
 drawable bottom_top_shadow
 drawable box_image_1
 drawable box_image_2
@@ -3289,6 +3291,10 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable icon_menu_card
 drawable icon_menu_detail
+drawable icon_sidebar_1
+drawable icon_sidebar_2
+drawable icon_sidebar_3
+drawable icon_sidebar_4
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -3301,6 +3307,7 @@ drawable logo
 drawable logo_black_transparent
 drawable logo_black_transparent_small
 drawable logo_blank_transparent
+drawable logo_header_sidebar
 drawable logo_prueba
 drawable logo_rose_transparent
 drawable m3_appbar_background
@@ -3624,7 +3631,6 @@ id customPanel
 id cut
 id cv
 id dark
-id dashboard_item
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3750,6 +3756,7 @@ id imageView13
 id imageView14
 id imageView15
 id imageView16
+id imageView17
 id imageView18
 id imageView2
 id imageView26
@@ -3937,8 +3944,6 @@ id off
 id on
 id onInterceptTouchReturnSwipe
 id originPaqtaLogo
-id otherNewItem
-id otherNewItem2
 id outline
 id outward
 id overshoot
@@ -4033,7 +4038,6 @@ id search_view_status_bar_spacer
 id search_view_toolbar
 id search_view_toolbar_container
 id search_voice_btn
-id second_item
 id select_dialog_listview
 id selected
 id selection_type
@@ -4131,8 +4135,6 @@ id textView6
 id textView7
 id textView8
 id textView9
-id textViewCorreoUser
-id textViewNameUser
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

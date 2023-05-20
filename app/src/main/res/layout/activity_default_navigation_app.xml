@@ -84,7 +84,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         android:fitsSystemWindows="true"
-        android:background="@color/colorBlanco"
-        app:menu="@menu/nav_menu" />
+        android:background="@drawable/bg_sidebar"
+        app:menu="@menu/nav_menu"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -3201,8 +3201,10 @@ int drawable baseline_video_library_24 0x7f080095
 int drawable baseline_whatshot_24 0x7f080096
 int drawable bg_card_favorite 0x7f080097
 int drawable bg_card_menu_detail 0x7f080168
+int drawable bg_header_sidebar 0x7f08016c
 int drawable bg_menu_detail 0x7f080169
 int drawable bg_search_item 0x7f080098
+int drawable bg_sidebar 0x7f08016e
 int drawable bottom_top_shadow 0x7f080099
 int drawable box_image_1 0x7f08009a
 int drawable box_image_2 0x7f08009b
@@ -3288,6 +3290,10 @@ int drawable ic_mtrl_chip_close_circle 0x7f0800ea
 int drawable ic_search_black_24 0x7f0800eb
 int drawable icon_menu_card 0x7f0800ec
 int drawable icon_menu_detail 0x7f08016a
+int drawable icon_sidebar_1 0x7f08016f
+int drawable icon_sidebar_2 0x7f080170
+int drawable icon_sidebar_3 0x7f080171
+int drawable icon_sidebar_4 0x7f080172
 int drawable image_icon_124 0x7f0800ed
 int drawable img_staff_1 0x7f0800ee
 int drawable img_staff_2 0x7f0800ef
@@ -3300,6 +3306,7 @@ int drawable logo 0x7f0800f5
 int drawable logo_black_transparent 0x7f0800f6
 int drawable logo_black_transparent_small 0x7f0800f7
 int drawable logo_blank_transparent 0x7f0800f8
+int drawable logo_header_sidebar 0x7f08016d
 int drawable logo_prueba 0x7f0800f9
 int drawable logo_rose_transparent 0x7f0800fa
 int drawable m3_appbar_background 0x7f0800fb
@@ -3623,7 +3630,6 @@ int id customPanel 0x7f0a00cc
 int id cut 0x7f0a00cd
 int id cv 0x7f0a00ce
 int id dark 0x7f0a00cf
-int id dashboard_item 0x7f0a00d0
 int id date_picker_actions 0x7f0a00d1
 int id decelerate 0x7f0a00d2
 int id decelerateAndComplete 0x7f0a00d3
@@ -3749,6 +3755,7 @@ int id imageView13 0x7f0a014a
 int id imageView14 0x7f0a014b
 int id imageView15 0x7f0a014c
 int id imageView16 0x7f0a014d
+int id imageView17 0x7f0a0321
 int id imageView18 0x7f0a031d
 int id imageView2 0x7f0a014e
 int id imageView26 0x7f0a014f
@@ -3936,8 +3943,6 @@ int id off 0x7f0a0201
 int id on 0x7f0a0202
 int id onInterceptTouchReturnSwipe 0x7f0a0203
 int id originPaqtaLogo 0x7f0a0204
-int id otherNewItem 0x7f0a0205
-int id otherNewItem2 0x7f0a0206
 int id outline 0x7f0a0207
 int id outward 0x7f0a0208
 int id overshoot 0x7f0a0209
@@ -4032,7 +4037,6 @@ int id search_view_status_bar_spacer 0x7f0a0260
 int id search_view_toolbar 0x7f0a0261
 int id search_view_toolbar_container 0x7f0a0262
 int id search_voice_btn 0x7f0a0263
-int id second_item 0x7f0a0264
 int id select_dialog_listview 0x7f0a0265
 int id selected 0x7f0a0266
 int id selection_type 0x7f0a0267
@@ -4130,8 +4134,6 @@ int id textView6 0x7f0a02c1
 int id textView7 0x7f0a02c2
 int id textView8 0x7f0a02c3
 int id textView9 0x7f0a02c4
-int id textViewCorreoUser 0x7f0a02c5
-int id textViewNameUser 0x7f0a02c6
 int id text_input_end_icon 0x7f0a02c7
 int id text_input_error_icon 0x7f0a02c8
 int id text_input_start_icon 0x7f0a02c9

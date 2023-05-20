@@ -4,8 +4,8 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,16 +20,11 @@ public final class NavHeaderBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextView textViewCorreoUser;
+  public final ImageView imageView17;
 
-  @NonNull
-  public final TextView textViewNameUser;
-
-  private NavHeaderBinding(@NonNull LinearLayout rootView, @NonNull TextView textViewCorreoUser,
-      @NonNull TextView textViewNameUser) {
+  private NavHeaderBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageView17) {
     this.rootView = rootView;
-    this.textViewCorreoUser = textViewCorreoUser;
-    this.textViewNameUser = textViewNameUser;
+    this.imageView17 = imageView17;
   }
 
   @Override
@@ -59,19 +54,13 @@ public final class NavHeaderBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.textViewCorreoUser;
-      TextView textViewCorreoUser = ViewBindings.findChildViewById(rootView, id);
-      if (textViewCorreoUser == null) {
+      id = R.id.imageView17;
+      ImageView imageView17 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView17 == null) {
         break missingId;
       }
 
-      id = R.id.textViewNameUser;
-      TextView textViewNameUser = ViewBindings.findChildViewById(rootView, id);
-      if (textViewNameUser == null) {
-        break missingId;
-      }
-
-      return new NavHeaderBinding((LinearLayout) rootView, textViewCorreoUser, textViewNameUser);
+      return new NavHeaderBinding((LinearLayout) rootView, imageView17);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

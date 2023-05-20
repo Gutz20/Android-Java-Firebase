@@ -123,8 +123,10 @@ drawable baseline_video_library_24
 drawable baseline_whatshot_24
 drawable bg_card_favorite
 drawable bg_card_menu_detail
+drawable bg_header_sidebar
 drawable bg_menu_detail
 drawable bg_search_item
+drawable bg_sidebar
 drawable box_image_1
 drawable box_image_2
 drawable box_image_3
@@ -149,6 +151,10 @@ drawable ic_launcher_foreground
 drawable ic_launcher_logo_background
 drawable icon_menu_card
 drawable icon_menu_detail
+drawable icon_sidebar_1
+drawable icon_sidebar_2
+drawable icon_sidebar_3
+drawable icon_sidebar_4
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -161,6 +167,7 @@ drawable logo
 drawable logo_black_transparent
 drawable logo_black_transparent_small
 drawable logo_blank_transparent
+drawable logo_header_sidebar
 drawable logo_prueba
 drawable logo_rose_transparent
 drawable mask_group
@@ -237,7 +244,6 @@ id coordinatorLayout
 id coordinatorLayout2
 id createText
 id cv
-id dashboard_item
 id decorator_bottom
 id decorator_top
 id descriptionTextView
@@ -268,6 +274,7 @@ id imageView13
 id imageView14
 id imageView15
 id imageView16
+id imageView17
 id imageView18
 id imageView2
 id imageView26
@@ -340,8 +347,6 @@ id nav_bottom_search
 id nav_view
 id nombreMenuDetail
 id originPaqtaLogo
-id otherNewItem
-id otherNewItem2
 id phoneTextViewDesc
 id phoneTextViewTitle
 id recCard
@@ -361,7 +366,6 @@ id search
 id searchPlatillo
 id searchView
 id search_item
-id second_item
 id start
 id statusDescriptionTextView
 id statusTextView
@@ -392,8 +396,6 @@ id textView6
 id textView7
 id textView8
 id textView9
-id textViewCorreoUser
-id textViewNameUser
 id text_item_search
 id title
 id titleDescriptionTextView
