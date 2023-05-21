@@ -3200,6 +3200,7 @@ drawable baseline_share_24
 drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
+drawable bckgestor
 drawable bg_card_favorite
 drawable bg_card_menu_detail
 drawable bg_header_sidebar
@@ -3294,7 +3295,6 @@ drawable icon_menu_detail
 drawable icon_sidebar_1
 drawable icon_sidebar_2
 drawable icon_sidebar_3
-drawable icon_sidebar_4
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -3405,6 +3405,7 @@ drawable postres_home
 drawable qr1
 drawable qr2
 drawable qr3
+drawable qr_icon
 drawable qr_menu
 drawable rayitas
 drawable rayitas_volteadas
@@ -3446,7 +3447,6 @@ id SYM
 id TOP_END
 id TOP_START
 id accelerate
-id accelerator_item
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -3653,7 +3653,6 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
-id dishes_item
 id disjoint
 id dniTextViewDesc
 id dniTextViewTitle
@@ -3919,6 +3918,14 @@ id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_controller_view_tag
 id nav_host_fragment_container
+id nav_sidebar_cart
+id nav_sidebar_combos
+id nav_sidebar_exit
+id nav_sidebar_offers
+id nav_sidebar_platos
+id nav_sidebar_productos
+id nav_sidebar_profile
+id nav_sidebar_qr
 id nav_view
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3996,7 +4003,6 @@ id rightToLeft
 id right_icon
 id right_side
 id root
-id rotation_item
 id rounded
 id row_index_key
 id rtl
@@ -4020,7 +4026,6 @@ id search_button
 id search_close_btn
 id search_edit_frame
 id search_go_btn
-id search_item
 id search_mag_icon
 id search_plate
 id search_src_text

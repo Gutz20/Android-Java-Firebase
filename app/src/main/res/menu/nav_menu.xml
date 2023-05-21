@@ -5,37 +5,61 @@
     tools:showIn="navigation_view"
     >
 
-
     <item
         android:id="@+id/main_item"
-        android:title="Menu"
+        android:title="Menu de opciones"
         >
         <menu>
             <item
-                android:id="@+id/search_item"
+                android:id="@+id/nav_sidebar_productos"
+                android:icon="@drawable/outline_email_24"
+                android:title="Gestion de productos"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/nav_sidebar_platos"
+                android:icon="@drawable/outline_fastfood_24"
+                android:title="Gestion de platos"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/nav_sidebar_offers"
                 android:icon="@drawable/icon_sidebar_1"
                 android:title="OFERTAS"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
-                android:id="@+id/dishes_item"
+                android:id="@+id/nav_sidebar_combos"
                 android:icon="@drawable/icon_sidebar_2"
                 android:title="COMBOS"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
-                android:id="@+id/rotation_item"
-                android:icon="@drawable/icon_sidebar_3"
+                android:id="@+id/nav_sidebar_profile"
+                android:icon="@drawable/outline_person_24"
                 android:title="PERFIL"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
-                android:id="@+id/accelerator_item"
-                android:icon="@drawable/icon_sidebar_4"
+                android:id="@+id/nav_sidebar_qr"
+                android:icon="@drawable/qr_icon"
+                android:title="QR"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/nav_sidebar_cart"
+                android:icon="@drawable/outline_shopping_cart_24"
                 android:title="CARRITO"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
         </menu>
     </item>
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sidebar_exit"
+            android:icon="@drawable/baseline_exit_app_24"
+            android:title="Salir"
+            />
+    </group>
 </menu>

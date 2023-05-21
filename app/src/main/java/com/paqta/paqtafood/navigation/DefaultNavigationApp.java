@@ -27,6 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
+import com.paqta.paqtafood.screens.cart.CartFragment;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
@@ -104,24 +105,34 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
 
         navigationView.setNavigationItemSelectedListener(item -> {
-//            int search, rotation, accelerator, dashboard, dishes;
-//            search = R.id.search_item;
-//            rotation = R.id.rotation_item;
-//            accelerator = R.id.accelerator_item;
-//            dishes = R.id.dishes_item;
-//
-//
-//            if (item.getItemId() == search) {
-//                replaceFragment(new ProductFragment());
-//            } else if (item.getItemId() == rotation) {
-//                replaceFragment(new StaffFragment());
-//            } else if (item.getItemId() == accelerator) {
-//                replaceFragment(new MenuFragment());
-//            } else if (item.getItemId() == dashboard) {
-//                replaceFragment(new DishesFragment());
-//            } else if (item.getItemId() == dishes) {
-//                replaceFragment(new DishesFragment());
-//            }
+            int offers, combos, perfil, cart, exit, qr, gestion_productos, gestion_platos;
+            offers = R.id.nav_sidebar_offers;
+            combos = R.id.nav_sidebar_combos;
+            perfil = R.id.nav_sidebar_profile;
+            cart = R.id.nav_sidebar_cart;
+            exit = R.id.nav_sidebar_exit;
+            qr = R.id.nav_sidebar_qr;
+            gestion_productos = R.id.nav_sidebar_productos;
+            gestion_platos = R.id.nav_sidebar_platos;
+
+            if (item.getItemId() == offers) {
+                replaceFragment(new OffersFragment());
+            } else if (item.getItemId() == combos) {
+                Toast.makeText(this, "Combos", Toast.LENGTH_SHORT).show();
+            } else if (item.getItemId() == perfil) {
+                replaceFragment(new ProfileFragment());
+            } else if (item.getItemId() == cart) {
+                replaceFragment(new CartFragment());
+            } else if (item.getItemId() == exit) {
+                Toast.makeText(this, "Cerrar sesion", Toast.LENGTH_SHORT).show();
+            } else if (item.getItemId() == qr) {
+                replaceFragment(new MenuFragment());
+            } else if (item.getItemId() == gestion_platos) {
+                replaceFragment(new DishesFragment());
+            } else if (item.getItemId() == gestion_productos) {
+                replaceFragment(new ProductFragment());
+            }
+
             return true;
         });
     }

@@ -121,6 +121,7 @@ drawable baseline_share_24
 drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
+drawable bckgestor
 drawable bg_card_favorite
 drawable bg_card_menu_detail
 drawable bg_header_sidebar
@@ -154,7 +155,6 @@ drawable icon_menu_detail
 drawable icon_sidebar_1
 drawable icon_sidebar_2
 drawable icon_sidebar_3
-drawable icon_sidebar_4
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -194,6 +194,7 @@ drawable postres_home
 drawable qr1
 drawable qr2
 drawable qr3
+drawable qr_icon
 drawable qr_menu
 drawable rayitas
 drawable rayitas_volteadas
@@ -207,7 +208,6 @@ font abel
 font acme
 font archivo
 font ceviche_one
-id accelerator_item
 id addressTextViewDesc
 id addressTextViewTitle
 id ageProduct
@@ -247,7 +247,6 @@ id cv
 id decorator_bottom
 id decorator_top
 id descriptionTextView
-id dishes_item
 id dniTextViewDesc
 id dniTextViewTitle
 id drawer_layout
@@ -344,6 +343,14 @@ id nav_bottom_favorite
 id nav_bottom_home
 id nav_bottom_menu_detail
 id nav_bottom_search
+id nav_sidebar_cart
+id nav_sidebar_combos
+id nav_sidebar_exit
+id nav_sidebar_offers
+id nav_sidebar_platos
+id nav_sidebar_productos
+id nav_sidebar_profile
+id nav_sidebar_qr
 id nav_view
 id nombreMenuDetail
 id originPaqtaLogo
@@ -361,11 +368,9 @@ id recyclerPlatillos
 id recyclerProductos
 id recyclerSearch
 id recyclerViewOffers
-id rotation_item
 id search
 id searchPlatillo
 id searchView
-id search_item
 id start
 id statusDescriptionTextView
 id statusTextView
