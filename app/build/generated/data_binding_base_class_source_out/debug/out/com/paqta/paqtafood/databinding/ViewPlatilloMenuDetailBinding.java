@@ -21,7 +21,7 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView imageView18;
+  public final ImageView imageViewDetail;
 
   @NonNull
   public final ImageView imagenMenuDetail;
@@ -36,11 +36,11 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
   public final TextView textView5;
 
   private ViewPlatilloMenuDetailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView imageView18, @NonNull ImageView imagenMenuDetail,
+      @NonNull ImageView imageViewDetail, @NonNull ImageView imagenMenuDetail,
       @NonNull TextView nombreMenuDetail, @NonNull TextView textView3,
       @NonNull TextView textView5) {
     this.rootView = rootView;
-    this.imageView18 = imageView18;
+    this.imageViewDetail = imageViewDetail;
     this.imagenMenuDetail = imagenMenuDetail;
     this.nombreMenuDetail = nombreMenuDetail;
     this.textView3 = textView3;
@@ -74,9 +74,9 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageView18;
-      ImageView imageView18 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView18 == null) {
+      id = R.id.imageViewDetail;
+      ImageView imageViewDetail = ViewBindings.findChildViewById(rootView, id);
+      if (imageViewDetail == null) {
         break missingId;
       }
 
@@ -104,7 +104,7 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewPlatilloMenuDetailBinding((ConstraintLayout) rootView, imageView18,
+      return new ViewPlatilloMenuDetailBinding((ConstraintLayout) rootView, imageViewDetail,
           imagenMenuDetail, nombreMenuDetail, textView3, textView5);
     }
     String missingId = rootView.getResources().getResourceName(id);

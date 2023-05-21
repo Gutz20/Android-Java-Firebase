@@ -96,6 +96,7 @@ drawable arrow_left_home
 drawable arrow_right_home
 drawable background_home
 drawable background_resturant
+drawable badge_perso2
 drawable badge_platillo_favorite
 drawable badge_price_menu_detail
 drawable baseline_add_24
@@ -122,8 +123,12 @@ drawable baseline_subscriptions_24
 drawable baseline_video_library_24
 drawable baseline_whatshot_24
 drawable bckgestor
+drawable bckp
+drawable bg_card_detail_dishes
 drawable bg_card_favorite
 drawable bg_card_menu_detail
+drawable bg_detail_dishes
+drawable bg_detalle_platillo
 drawable bg_header_sidebar
 drawable bg_menu_detail
 drawable bg_search_item
@@ -137,6 +142,7 @@ drawable combo_dishes
 drawable contenido_platillo_img_1
 drawable contenido_platillo_img_2
 drawable dialogbkg
+drawable divider_perso
 drawable divider_search
 drawable elipse_bg_platillo
 drawable facebook
@@ -179,6 +185,7 @@ drawable menu_bebidas
 drawable menu_combos
 drawable menu_extras
 drawable menu_principal
+drawable muestra_platillo
 drawable outline_email_24
 drawable outline_fastfood_24
 drawable outline_lock_24
@@ -207,6 +214,7 @@ drawable whitebck
 font abel
 font acme
 font archivo
+font caesar_dressing
 font ceviche_one
 id addressTextViewDesc
 id addressTextViewTitle
@@ -228,6 +236,9 @@ id btnLogin
 id btnRegister
 id btn_add
 id button
+id button2
+id button3
+id button4
 id cancelButton
 id cardPlat_1
 id carouselBebidas
@@ -275,7 +286,11 @@ id imageView15
 id imageView16
 id imageView17
 id imageView18
+id imageView19
 id imageView2
+id imageView20
+id imageView21
+id imageView22
 id imageView26
 id imageView28
 id imageView29
@@ -292,6 +307,7 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
+id imageViewDetail
 id image_view_favorite
 id image_view_search
 id imagenMenuDetail
@@ -310,6 +326,7 @@ id layoutShorts
 id layoutVideo
 id linearLayout
 id linearLayout2
+id linearLayout4
 id listRecyclerView
 id listview_data
 id logoImageView
@@ -383,7 +400,9 @@ id textView10
 id textView11
 id textView12
 id textView13
+id textView15
 id textView16
+id textView17
 id textView2
 id textView20
 id textView22
@@ -437,6 +456,7 @@ layout activity_steps
 layout bottomsheetlayout
 layout fragment_cart
 layout fragment_content_offers
+layout fragment_detail_dishes
 layout fragment_dishes
 layout fragment_favorite
 layout fragment_form_dishes

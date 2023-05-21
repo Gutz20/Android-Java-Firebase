@@ -52,7 +52,7 @@ public class MenuDetailFragment extends Fragment {
                         .setQuery(query, Platillo.class)
                         .build();
 
-        menuDetailAdapter = new CardMenuDetailAdapter(firestoreRecyclerOptions);
+        menuDetailAdapter = new CardMenuDetailAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         menuDetailAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(menuDetailAdapter);
         return root;
