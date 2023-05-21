@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.card.MaterialCardView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,16 +22,7 @@ public final class FragmentMenuBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final MaterialCardView cardPlat1;
-
-  @NonNull
   public final ImageView imageView13;
-
-  @NonNull
-  public final ImageView imageView2;
-
-  @NonNull
-  public final ImageView imageView3;
 
   @NonNull
   public final ImageView imageView4;
@@ -49,32 +40,29 @@ public final class FragmentMenuBinding implements ViewBinding {
   public final ImageView imageView8;
 
   @NonNull
-  public final ImageView imgMenuIcon;
+  public final RecyclerView recyclerMenu;
+
+  @NonNull
+  public final TextView textView14;
 
   @NonNull
   public final TextView textView2;
 
-  @NonNull
-  public final TextView txtNamePlat1;
-
-  private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull MaterialCardView cardPlat1,
-      @NonNull ImageView imageView13, @NonNull ImageView imageView2, @NonNull ImageView imageView3,
+  private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView13,
       @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
-      @NonNull ImageView imageView7, @NonNull ImageView imageView8, @NonNull ImageView imgMenuIcon,
-      @NonNull TextView textView2, @NonNull TextView txtNamePlat1) {
+      @NonNull ImageView imageView7, @NonNull ImageView imageView8,
+      @NonNull RecyclerView recyclerMenu, @NonNull TextView textView14,
+      @NonNull TextView textView2) {
     this.rootView = rootView;
-    this.cardPlat1 = cardPlat1;
     this.imageView13 = imageView13;
-    this.imageView2 = imageView2;
-    this.imageView3 = imageView3;
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
     this.imageView6 = imageView6;
     this.imageView7 = imageView7;
     this.imageView8 = imageView8;
-    this.imgMenuIcon = imgMenuIcon;
+    this.recyclerMenu = recyclerMenu;
+    this.textView14 = textView14;
     this.textView2 = textView2;
-    this.txtNamePlat1 = txtNamePlat1;
   }
 
   @Override
@@ -104,27 +92,9 @@ public final class FragmentMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardPlat_1;
-      MaterialCardView cardPlat1 = ViewBindings.findChildViewById(rootView, id);
-      if (cardPlat1 == null) {
-        break missingId;
-      }
-
       id = R.id.imageView13;
       ImageView imageView13 = ViewBindings.findChildViewById(rootView, id);
       if (imageView13 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView2;
-      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView2 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView3;
-      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView3 == null) {
         break missingId;
       }
 
@@ -158,9 +128,15 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imgMenuIcon;
-      ImageView imgMenuIcon = ViewBindings.findChildViewById(rootView, id);
-      if (imgMenuIcon == null) {
+      id = R.id.recyclerMenu;
+      RecyclerView recyclerMenu = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.textView14;
+      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
+      if (textView14 == null) {
         break missingId;
       }
 
@@ -170,15 +146,8 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtNamePlat1;
-      TextView txtNamePlat1 = ViewBindings.findChildViewById(rootView, id);
-      if (txtNamePlat1 == null) {
-        break missingId;
-      }
-
-      return new FragmentMenuBinding((FrameLayout) rootView, cardPlat1, imageView13, imageView2,
-          imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imgMenuIcon,
-          textView2, txtNamePlat1);
+      return new FragmentMenuBinding((FrameLayout) rootView, imageView13, imageView4, imageView5,
+          imageView6, imageView7, imageView8, recyclerMenu, textView14, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

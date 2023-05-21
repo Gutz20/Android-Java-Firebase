@@ -3175,6 +3175,7 @@ int drawable avd_show_password 0x7f08007c
 int drawable background_home 0x7f08007d
 int drawable background_resturant 0x7f08007e
 int drawable badge_perso2 0x7f08007f
+int drawable badge_perso3 0x7f08017b
 int drawable badge_platillo_favorite 0x7f080080
 int drawable badge_price_menu_detail 0x7f080081
 int drawable baseline_add_24 0x7f080082
@@ -3209,6 +3210,7 @@ int drawable bg_detail_dishes 0x7f08009e
 int drawable bg_detalle_platillo 0x7f08009f
 int drawable bg_header_sidebar 0x7f0800a0
 int drawable bg_menu_detail 0x7f0800a1
+int drawable bg_platillo_menu 0x7f08017c
 int drawable bg_search_item 0x7f0800a2
 int drawable bg_sidebar 0x7f0800a3
 int drawable bottom_top_shadow 0x7f0800a4
@@ -3407,6 +3409,7 @@ int drawable paqta_food_logos_white_1 0x7f080164
 int drawable platillo 0x7f080165
 int drawable platillos_home 0x7f080166
 int drawable platillos_img_1 0x7f080167
+int drawable plato 0x7f08017d
 int drawable postres_home 0x7f080168
 int drawable qr1 0x7f080169
 int drawable qr2 0x7f08016a
@@ -3584,7 +3587,6 @@ int id callMeasure 0x7f0a0095
 int id cancelButton 0x7f0a0096
 int id cancel_action 0x7f0a0097
 int id cancel_button 0x7f0a0098
-int id cardPlat_1 0x7f0a0099
 int id carouselBebidas 0x7f0a009a
 int id carouselPlatillos 0x7f0a009b
 int id carouselPostres 0x7f0a009c
@@ -3619,6 +3621,8 @@ int id constraint 0x7f0a00b8
 int id constraintLayout 0x7f0a00b9
 int id constraintLayout2 0x7f0a00ba
 int id constraintLayout3 0x7f0a00bb
+int id constraintLayout4 0x7f0a032b
+int id constraintLayout5 0x7f0a032c
 int id container 0x7f0a00bc
 int id content 0x7f0a00bd
 int id contentPanel 0x7f0a00be
@@ -3768,14 +3772,12 @@ int id imageView16 0x7f0a014d
 int id imageView17 0x7f0a014e
 int id imageView18 0x7f0a014f
 int id imageView19 0x7f0a0150
-int id imageView2 0x7f0a0151
 int id imageView20 0x7f0a0152
 int id imageView21 0x7f0a0153
 int id imageView22 0x7f0a0154
 int id imageView26 0x7f0a0155
 int id imageView28 0x7f0a0156
 int id imageView29 0x7f0a0157
-int id imageView3 0x7f0a0158
 int id imageView30 0x7f0a0159
 int id imageView31 0x7f0a015a
 int id imageView32 0x7f0a015b
@@ -3793,10 +3795,10 @@ int id image_view_favorite 0x7f0a0165
 int id image_view_search 0x7f0a0166
 int id imagenMenuDetail 0x7f0a0167
 int id imagenPlatillo 0x7f0a0168
+int id imagenPlatilloMenu 0x7f0a032d
 int id imagenProduct 0x7f0a0169
 int id img 0x7f0a016a
 int id imgBackLogin 0x7f0a016b
-int id imgMenuIcon 0x7f0a016c
 int id imgProfile 0x7f0a016d
 int id imgProfileUser 0x7f0a016e
 int id imgQR1 0x7f0a016f
@@ -4004,6 +4006,7 @@ int id recImage 0x7f0a0238
 int id recTitle 0x7f0a0239
 int id rectangles 0x7f0a023a
 int id recuperarBtn 0x7f0a023b
+int id recyclerMenu 0x7f0a032e
 int id recyclerMenuDetail 0x7f0a023c
 int id recyclerOtherMenus 0x7f0a023d
 int id recyclerPlatillos 0x7f0a023e
@@ -4129,6 +4132,7 @@ int id text2 0x7f0a02b5
 int id textEmail 0x7f0a02b6
 int id textEnd 0x7f0a02b7
 int id textName 0x7f0a02b8
+int id textNombrePlatilloMenu 0x7f0a032f
 int id textSpacerNoButtons 0x7f0a02b9
 int id textSpacerNoTitle 0x7f0a02ba
 int id textStart 0x7f0a02bb
@@ -4138,6 +4142,7 @@ int id textView10 0x7f0a02be
 int id textView11 0x7f0a02bf
 int id textView12 0x7f0a02c0
 int id textView13 0x7f0a02c1
+int id textView14 0x7f0a0330
 int id textView15 0x7f0a02c2
 int id textView16 0x7f0a02c3
 int id textView17 0x7f0a02c4
@@ -4205,7 +4210,6 @@ int id txtLayoutPassword 0x7f0a0301
 int id txtLayoutUser 0x7f0a0302
 int id txtLoginPassword 0x7f0a0303
 int id txtLoginUser 0x7f0a0304
-int id txtNamePlat1 0x7f0a0305
 int id txtRegisterConfirmPassword 0x7f0a0306
 int id txtRegisterEmail 0x7f0a0307
 int id txtRegisterPassword 0x7f0a0308
@@ -4217,6 +4221,7 @@ int id up 0x7f0a030d
 int id useLogo 0x7f0a030e
 int id vertical 0x7f0a030f
 int id vertical_only 0x7f0a0310
+int id viewDetailPlatilloMenu 0x7f0a0331
 int id viewSupporter 0x7f0a0311
 int id view_bottom_shadow 0x7f0a0312
 int id view_offset_helper 0x7f0a0313
@@ -4507,6 +4512,7 @@ int layout select_dialog_multichoice_material 0x7f0d00ad
 int layout select_dialog_singlechoice_material 0x7f0d00ae
 int layout support_simple_spinner_dropdown_item 0x7f0d00af
 int layout view_platillo_favorite 0x7f0d00b0
+int layout view_platillo_menu 0x7f0d00b5
 int layout view_platillo_menu_detail 0x7f0d00b1
 int layout view_platillo_search 0x7f0d00b2
 int layout view_platillo_single 0x7f0d00b3

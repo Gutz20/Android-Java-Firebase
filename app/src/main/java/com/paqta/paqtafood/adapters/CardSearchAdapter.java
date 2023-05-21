@@ -30,6 +30,7 @@ public class CardSearchAdapter extends FirestoreRecyclerAdapter<Platillo, CardSe
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_platillo_search, parent, false);
         return new CardViewHolder(view);
     }

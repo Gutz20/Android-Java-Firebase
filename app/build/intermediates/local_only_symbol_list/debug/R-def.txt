@@ -97,6 +97,7 @@ drawable arrow_right_home
 drawable background_home
 drawable background_resturant
 drawable badge_perso2
+drawable badge_perso3
 drawable badge_platillo_favorite
 drawable badge_price_menu_detail
 drawable baseline_add_24
@@ -131,6 +132,7 @@ drawable bg_detail_dishes
 drawable bg_detalle_platillo
 drawable bg_header_sidebar
 drawable bg_menu_detail
+drawable bg_platillo_menu
 drawable bg_search_item
 drawable bg_sidebar
 drawable box_image_1
@@ -197,6 +199,7 @@ drawable paqta_food_logos_white_1
 drawable platillo
 drawable platillos_home
 drawable platillos_img_1
+drawable plato
 drawable postres_home
 drawable qr1
 drawable qr2
@@ -240,7 +243,6 @@ id button2
 id button3
 id button4
 id cancelButton
-id cardPlat_1
 id carouselBebidas
 id carouselPlatillos
 id carouselPostres
@@ -251,6 +253,8 @@ id colorProduct
 id constraintLayout
 id constraintLayout2
 id constraintLayout3
+id constraintLayout4
+id constraintLayout5
 id coordinatorLayout
 id coordinatorLayout2
 id createText
@@ -287,14 +291,12 @@ id imageView16
 id imageView17
 id imageView18
 id imageView19
-id imageView2
 id imageView20
 id imageView21
 id imageView22
 id imageView26
 id imageView28
 id imageView29
-id imageView3
 id imageView30
 id imageView31
 id imageView32
@@ -312,9 +314,9 @@ id image_view_favorite
 id image_view_search
 id imagenMenuDetail
 id imagenPlatillo
+id imagenPlatilloMenu
 id imagenProduct
 id imgBackLogin
-id imgMenuIcon
 id imgProfile
 id imgProfileUser
 id imgQR1
@@ -379,6 +381,7 @@ id recDescription
 id recImage
 id recTitle
 id recuperarBtn
+id recyclerMenu
 id recyclerMenuDetail
 id recyclerOtherMenus
 id recyclerPlatillos
@@ -395,11 +398,13 @@ id stepTextView
 id step_view
 id textEmail
 id textName
+id textNombrePlatilloMenu
 id textView
 id textView10
 id textView11
 id textView12
 id textView13
+id textView14
 id textView15
 id textView16
 id textView17
@@ -438,11 +443,11 @@ id txtLayoutPassword
 id txtLayoutUser
 id txtLoginPassword
 id txtLoginUser
-id txtNamePlat1
 id txtRegisterConfirmPassword
 id txtRegisterEmail
 id txtRegisterPassword
 id txtRegisterUser
+id viewDetailPlatilloMenu
 id viewSupporter
 layout activity_default_navigation_app
 layout activity_description
@@ -475,6 +480,7 @@ layout nav_header
 layout progress_layout
 layout recycler_item_product
 layout view_platillo_favorite
+layout view_platillo_menu
 layout view_platillo_menu_detail
 layout view_platillo_search
 layout view_platillo_single

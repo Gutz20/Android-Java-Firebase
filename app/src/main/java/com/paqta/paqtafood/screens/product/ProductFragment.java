@@ -73,7 +73,7 @@ public class ProductFragment extends Fragment {
 
     private void setUpRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         mRecycler.setLayoutManager(linearLayoutManager);
 
         query = mFirestore.collection("productos");
