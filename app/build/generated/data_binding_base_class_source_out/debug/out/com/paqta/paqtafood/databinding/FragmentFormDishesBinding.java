@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -32,7 +33,7 @@ public final class FragmentFormDishesBinding implements ViewBinding {
   public final Button btnDialogImage;
 
   @NonNull
-  public final TextInputEditText edtTextCategoria;
+  public final AutoCompleteTextView cmbCategoria;
 
   @NonNull
   public final TextInputEditText edtTextDescripcion;
@@ -54,7 +55,7 @@ public final class FragmentFormDishesBinding implements ViewBinding {
 
   private FragmentFormDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
       @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
-      @NonNull TextInputEditText edtTextCategoria, @NonNull TextInputEditText edtTextDescripcion,
+      @NonNull AutoCompleteTextView cmbCategoria, @NonNull TextInputEditText edtTextDescripcion,
       @NonNull TextInputEditText edtTextNombre, @NonNull TextInputLayout filledTextField,
       @NonNull TextInputLayout filledTextField2, @NonNull TextInputLayout filledTextField3,
       @NonNull ImageView imagePlatillo) {
@@ -62,7 +63,7 @@ public final class FragmentFormDishesBinding implements ViewBinding {
     this.btnAdd = btnAdd;
     this.btnDeleteImage = btnDeleteImage;
     this.btnDialogImage = btnDialogImage;
-    this.edtTextCategoria = edtTextCategoria;
+    this.cmbCategoria = cmbCategoria;
     this.edtTextDescripcion = edtTextDescripcion;
     this.edtTextNombre = edtTextNombre;
     this.filledTextField = filledTextField;
@@ -116,9 +117,9 @@ public final class FragmentFormDishesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.edtTextCategoria;
-      TextInputEditText edtTextCategoria = ViewBindings.findChildViewById(rootView, id);
-      if (edtTextCategoria == null) {
+      id = R.id.cmbCategoria;
+      AutoCompleteTextView cmbCategoria = ViewBindings.findChildViewById(rootView, id);
+      if (cmbCategoria == null) {
         break missingId;
       }
 
@@ -159,7 +160,7 @@ public final class FragmentFormDishesBinding implements ViewBinding {
       }
 
       return new FragmentFormDishesBinding((FrameLayout) rootView, btnAdd, btnDeleteImage,
-          btnDialogImage, edtTextCategoria, edtTextDescripcion, edtTextNombre, filledTextField,
+          btnDialogImage, cmbCategoria, edtTextDescripcion, edtTextNombre, filledTextField,
           filledTextField2, filledTextField3, imagePlatillo);
     }
     String missingId = rootView.getResources().getResourceName(id);

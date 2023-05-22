@@ -103,6 +103,7 @@ drawable badge_price_menu_detail
 drawable baseline_add_24
 drawable baseline_arrow_back_ios_24
 drawable baseline_cast_connected_24
+drawable baseline_category_24
 drawable baseline_chevron_right_24
 drawable baseline_circle_24
 drawable baseline_clear_24
@@ -133,6 +134,7 @@ drawable bg_detalle_platillo
 drawable bg_header_sidebar
 drawable bg_menu_detail
 drawable bg_platillo_menu
+drawable bg_scan
 drawable bg_search_item
 drawable bg_sidebar
 drawable box_image_1
@@ -163,6 +165,7 @@ drawable icon_menu_detail
 drawable icon_sidebar_1
 drawable icon_sidebar_2
 drawable icon_sidebar_3
+drawable icono_de_image_512
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -225,6 +228,7 @@ id ageProduct
 id backgroundLayout
 id bluePaqtaLogo
 id bottomNavigationView
+id btnAddCategory
 id btnAddFragmentProduct
 id btnAddPlatillo
 id btnAddProduct
@@ -243,12 +247,14 @@ id button2
 id button3
 id button4
 id cancelButton
+id card
 id carouselBebidas
 id carouselPlatillos
 id carouselPostres
 id categoriaPlatillo
 id cityDescriptionTextView
 id cityTextView
+id cmbCategoria
 id colorProduct
 id constraintLayout
 id constraintLayout2
@@ -261,6 +267,7 @@ id createText
 id cv
 id decorator_bottom
 id decorator_top
+id descriptionCat
 id descriptionTextView
 id dniTextViewDesc
 id dniTextViewTitle
@@ -277,6 +284,8 @@ id filledTextField2
 id filledTextField3
 id frame_layout
 id iconImageView
+id imageCat
+id imageCategory
 id imageLogoSignup
 id imagePlatillo
 id imageProducto
@@ -363,6 +372,7 @@ id nav_bottom_home
 id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_sidebar_cart
+id nav_sidebar_categorias
 id nav_sidebar_combos
 id nav_sidebar_exit
 id nav_sidebar_offers
@@ -381,6 +391,7 @@ id recDescription
 id recImage
 id recTitle
 id recuperarBtn
+id recyclerCategorias
 id recyclerMenu
 id recyclerMenuDetail
 id recyclerOtherMenus
@@ -430,6 +441,7 @@ id title
 id titleDescriptionTextView
 id titleTextView
 id title_view_favorite
+id tituloCat
 id topAppBar
 id tvwEjem
 id tvwLogin
@@ -460,10 +472,12 @@ layout activity_staff
 layout activity_steps
 layout bottomsheetlayout
 layout fragment_cart
+layout fragment_category
 layout fragment_content_offers
 layout fragment_detail_dishes
 layout fragment_dishes
 layout fragment_favorite
+layout fragment_form_category
 layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_home
@@ -479,6 +493,7 @@ layout list_element
 layout nav_header
 layout progress_layout
 layout recycler_item_product
+layout view_category_single
 layout view_platillo_favorite
 layout view_platillo_menu
 layout view_platillo_menu_detail

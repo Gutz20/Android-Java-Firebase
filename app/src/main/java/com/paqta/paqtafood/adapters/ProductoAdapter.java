@@ -30,17 +30,12 @@ import com.paqta.paqtafood.screens.product.components.FormProductFragment;
 
 public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, ProductoAdapter.ViewHolder> {
 
+    String storagePath = "productos/*", prefijo = "photo";
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     private FirebaseStorage mStorage = FirebaseStorage.getInstance();
     Activity activity;
     FragmentManager fm;
 
-    /**
-     * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
-     * FirestoreRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
     public ProductoAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);
         this.activity = activity;
@@ -89,7 +84,6 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
      * @param id
      */
     private void deleteProduct(String id) {
-        String storagePath = "productos/*", prefijo = "photo";
         mFirestore.collection("productos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {

@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class FragmentMenuBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final ImageView imageView12;
 
   @NonNull
   public final ImageView imageView13;
@@ -40,7 +44,13 @@ public final class FragmentMenuBinding implements ViewBinding {
   public final ImageView imageView8;
 
   @NonNull
+  public final MaterialCardView materialCardView7;
+
+  @NonNull
   public final RecyclerView recyclerMenu;
+
+  @NonNull
+  public final TextView textView10;
 
   @NonNull
   public final TextView textView14;
@@ -48,19 +58,22 @@ public final class FragmentMenuBinding implements ViewBinding {
   @NonNull
   public final TextView textView2;
 
-  private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView13,
-      @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
-      @NonNull ImageView imageView7, @NonNull ImageView imageView8,
-      @NonNull RecyclerView recyclerMenu, @NonNull TextView textView14,
-      @NonNull TextView textView2) {
+  private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView12,
+      @NonNull ImageView imageView13, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
+      @NonNull ImageView imageView6, @NonNull ImageView imageView7, @NonNull ImageView imageView8,
+      @NonNull MaterialCardView materialCardView7, @NonNull RecyclerView recyclerMenu,
+      @NonNull TextView textView10, @NonNull TextView textView14, @NonNull TextView textView2) {
     this.rootView = rootView;
+    this.imageView12 = imageView12;
     this.imageView13 = imageView13;
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
     this.imageView6 = imageView6;
     this.imageView7 = imageView7;
     this.imageView8 = imageView8;
+    this.materialCardView7 = materialCardView7;
     this.recyclerMenu = recyclerMenu;
+    this.textView10 = textView10;
     this.textView14 = textView14;
     this.textView2 = textView2;
   }
@@ -92,6 +105,12 @@ public final class FragmentMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imageView12;
+      ImageView imageView12 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView12 == null) {
+        break missingId;
+      }
+
       id = R.id.imageView13;
       ImageView imageView13 = ViewBindings.findChildViewById(rootView, id);
       if (imageView13 == null) {
@@ -128,9 +147,21 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.materialCardView7;
+      MaterialCardView materialCardView7 = ViewBindings.findChildViewById(rootView, id);
+      if (materialCardView7 == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerMenu;
       RecyclerView recyclerMenu = ViewBindings.findChildViewById(rootView, id);
       if (recyclerMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.textView10;
+      TextView textView10 = ViewBindings.findChildViewById(rootView, id);
+      if (textView10 == null) {
         break missingId;
       }
 
@@ -146,8 +177,9 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMenuBinding((FrameLayout) rootView, imageView13, imageView4, imageView5,
-          imageView6, imageView7, imageView8, recyclerMenu, textView14, textView2);
+      return new FragmentMenuBinding((FrameLayout) rootView, imageView12, imageView13, imageView4,
+          imageView5, imageView6, imageView7, imageView8, materialCardView7, recyclerMenu,
+          textView10, textView14, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

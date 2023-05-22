@@ -61,8 +61,6 @@ public class FormProductFragment extends Fragment {
     EditText edtTxtNombre, edtTxtDescripcion, edtTxtCategoria;
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
-    private FirebaseAuth mAuth;
-
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_GALLERY = 2;
 
@@ -84,7 +82,6 @@ public class FormProductFragment extends Fragment {
 
         mFirestore = FirebaseFirestore.getInstance();
         mStorage = FirebaseStorage.getInstance();
-        mAuth = FirebaseAuth.getInstance();
 
         edtTxtNombre = root.findViewById(R.id.edtTextNombre);
         edtTxtDescripcion = root.findViewById(R.id.edtTextDescripcion);

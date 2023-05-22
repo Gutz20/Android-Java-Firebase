@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorFondo2"
+    android:background="@drawable/bckgestor"
     tools:context=".screens.dishes.components.FormDishesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +23,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
             <ImageView
                 android:id="@+id/imagePlatillo"
@@ -68,6 +72,10 @@
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="?attr/textInputFilledStyle"
                 android:id="@+id/filledTextField"
@@ -100,24 +108,41 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="?attr/textInputFilledStyle"-->
+<!--                android:id="@+id/filledTextField3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Categoria">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/edtTextCategoria"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
             <com.google.android.material.textfield.TextInputLayout
-                style="?attr/textInputFilledStyle"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:id="@+id/filledTextField3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Categoria">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtTextCategoria"
+                <AutoCompleteTextView
+                    android:id="@+id/cmbCategoria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="none"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp" />
+                android:layout_height="40dp" />
 
             <Button
                 android:id="@+id/btn_add"

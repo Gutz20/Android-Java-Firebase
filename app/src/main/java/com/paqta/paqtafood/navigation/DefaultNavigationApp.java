@@ -28,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.cart.CartFragment;
+import com.paqta.paqtafood.screens.category.CategoryFragment;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
@@ -37,7 +38,6 @@ import com.paqta.paqtafood.screens.offers.OffersFragment;
 import com.paqta.paqtafood.screens.product.ProductFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
-import com.paqta.paqtafood.screens.staffFragment.StaffFragment;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {
@@ -105,7 +105,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
 
         navigationView.setNavigationItemSelectedListener(item -> {
-            int offers, combos, perfil, cart, exit, qr, gestion_productos, gestion_platos;
+            int offers, combos, perfil, cart, exit, qr, gestion_productos, gestion_platos, categorias;
             offers = R.id.nav_sidebar_offers;
             combos = R.id.nav_sidebar_combos;
             perfil = R.id.nav_sidebar_profile;
@@ -114,6 +114,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             qr = R.id.nav_sidebar_qr;
             gestion_productos = R.id.nav_sidebar_productos;
             gestion_platos = R.id.nav_sidebar_platos;
+            categorias = R.id.nav_sidebar_categorias;
 
             if (item.getItemId() == offers) {
                 replaceFragment(new OffersFragment());
@@ -131,6 +132,8 @@ public class DefaultNavigationApp extends AppCompatActivity {
                 replaceFragment(new DishesFragment());
             } else if (item.getItemId() == gestion_productos) {
                 replaceFragment(new ProductFragment());
+            } else if (item.getItemId() == categorias) {
+                replaceFragment(new CategoryFragment());
             }
 
             return true;

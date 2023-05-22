@@ -20,6 +20,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.screens.detail_dishes.DetailDishesFragment;
 import com.paqta.paqtafood.screens.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.screens.product.components.FormProductFragment;
 
@@ -44,7 +45,7 @@ public class CardMenuAdapter extends FirestoreRecyclerAdapter<Platillo, CardMenu
             @Override
             public void onClick(View v) {
                 //Inicializamos el fragment al que queremos ir
-                MenuDetailFragment menuDetailFragment = new MenuDetailFragment();
+                DetailDishesFragment menuDetailFragment = new DetailDishesFragment();
 
                 //Establecemos los argumentos que se enviaran
                 Bundle bunble = new Bundle();

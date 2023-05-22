@@ -24,6 +24,8 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,7 +53,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FormDishesFragment extends Fragment {
@@ -66,6 +70,7 @@ public class FormDishesFragment extends Fragment {
     private FirebaseAuth mAuth;
 
     TextInputEditText edtTxtNombre, edtTxtDescripcion, edtTxtCategoria;
+    AutoCompleteTextView autoCompleteTextView;
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_GALLERY = 2;
@@ -85,6 +90,12 @@ public class FormDishesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_form_dishes, container, false);
 
+        List<String> opciones = new ArrayList<>();
+        opciones.add("Opción 1");
+        opciones.add("Opción 2");
+        opciones.add("Opción 3");
+
+
         mFirestore = FirebaseFirestore.getInstance();
         mStorage = FirebaseStorage.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -93,10 +104,14 @@ public class FormDishesFragment extends Fragment {
         edtTxtNombre = root.findViewById(R.id.edtTextNombre);
         edtTxtDescripcion = root.findViewById(R.id.edtTextDescripcion);
         edtTxtCategoria = root.findViewById(R.id.edtTextCategoria);
+        autoCompleteTextView = root.findViewById(R.id.cmbCategoria);
 
         btnAdd = root.findViewById(R.id.btn_add);
         btnRemoveImage = root.findViewById(R.id.btnDeleteImage);
         btnDialogImage = root.findViewById(R.id.btnDialogImage);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, opciones);
+        autoCompleteTextView.setAdapter(adapter);
 
         btnDialogImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,6 +23,12 @@
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
+                android:id="@+id/nav_sidebar_categorias"
+                android:icon="@drawable/baseline_category_24"
+                android:title="Adm Categorias"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
                 android:id="@+id/nav_sidebar_offers"
                 android:icon="@drawable/icon_sidebar_1"
                 android:title="OFERTAS"
