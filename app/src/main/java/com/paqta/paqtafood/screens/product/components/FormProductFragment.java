@@ -164,27 +164,27 @@ public class FormProductFragment extends Fragment {
      * @return
      */
     private boolean validar(String nombre, String descripcion, String categoria) {
-        boolean isValidate = false;
+        Drawable currentDrawable = photo_prod.getDrawable();
+        Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
+        Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
+        Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
 
-        if (nombre.isEmpty() && descripcion.isEmpty() && categoria.isEmpty()) {
+        if (nombre.isEmpty() || descripcion.isEmpty() || categoria.isEmpty()) {
             Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
-        } else if (photo_prod.getDrawable() == null) {
-            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
-        } else {
-            Drawable currentDrawable = photo_prod.getDrawable();
-            Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
-
-            Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
-            Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
-
-            if (currentBitmap.equals(defaultBitmap)) {
-                Toast.makeText(getContext(), "Selecciona una imagen diferente", Toast.LENGTH_SHORT).show();
-            } else {
-                isValidate = true;
-            }
+            return false;
         }
 
-        return isValidate;
+        if (photo_prod.getDrawable() == null) {
+            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (currentBitmap.equals(defaultBitmap)) {
+            Toast.makeText(getContext(), "Selecciona una imagen diferente", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -301,7 +301,7 @@ public class FormProductFragment extends Fragment {
      */
     private void subirImagen(DocumentReference documentReference) {
 //        String ruta_storage_foto = storage_path + "" + photo + "" + mAuth.getUid() + "" + documentReference.getId();
-        String ruta_storage_foto = storage_path + "" + photo +  "" + documentReference.getId();
+        String ruta_storage_foto = storage_path + "" + photo + "" + documentReference.getId();
         StorageReference imageRef = mStorage.getReference().child(ruta_storage_foto);
 
         UploadTask uploadTask = imageRef.putFile(image_url);

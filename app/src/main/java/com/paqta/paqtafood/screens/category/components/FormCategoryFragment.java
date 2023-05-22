@@ -270,27 +270,27 @@ public class FormCategoryFragment extends Fragment {
     }
 
     private boolean validar(String nombre, String descripcion) {
-        boolean isValidate = false;
+        Drawable currentDrawable = imageViewCategory.getDrawable();
+        Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
+        Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
+        Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
 
-        if (nombre.isEmpty() && descripcion.isEmpty()) {
+        if (nombre.isEmpty() || descripcion.isEmpty()) {
             Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
-        } else if (imageViewCategory.getDrawable() == null) {
-            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
-        } else {
-            Drawable currentDrawable = imageViewCategory.getDrawable();
-            Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
-
-            Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
-            Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
-
-            if (currentBitmap.equals(defaultBitmap)) {
-                Toast.makeText(getContext(), "Selecciona una imagen diferente", Toast.LENGTH_SHORT).show();
-            } else {
-                isValidate = true;
-            }
+            return false;
         }
 
-        return isValidate;
+        if (imageViewCategory.getDrawable() == null) {
+            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (currentBitmap.equals(defaultBitmap)) {
+            Toast.makeText(getContext(), "Selecciona una imagen diferente", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 
     private void setupDialog() {

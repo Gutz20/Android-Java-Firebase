@@ -21,6 +21,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +45,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -67,9 +71,8 @@ public class FormDishesFragment extends Fragment {
 
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
-    private FirebaseAuth mAuth;
 
-    TextInputEditText edtTxtNombre, edtTxtDescripcion, edtTxtCategoria;
+    TextInputEditText edtTxtNombre, edtTxtDescripcion;
     AutoCompleteTextView autoCompleteTextView;
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -77,6 +80,7 @@ public class FormDishesFragment extends Fragment {
 
     private Uri imageUrl;
     private Bitmap imageCamera;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,28 +94,19 @@ public class FormDishesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_form_dishes, container, false);
 
-        List<String> opciones = new ArrayList<>();
-        opciones.add("Opción 1");
-        opciones.add("Opción 2");
-        opciones.add("Opción 3");
-
 
         mFirestore = FirebaseFirestore.getInstance();
         mStorage = FirebaseStorage.getInstance();
-        mAuth = FirebaseAuth.getInstance();
 
         fotoPlatillo = root.findViewById(R.id.imagePlatillo);
         edtTxtNombre = root.findViewById(R.id.edtTextNombre);
         edtTxtDescripcion = root.findViewById(R.id.edtTextDescripcion);
-        edtTxtCategoria = root.findViewById(R.id.edtTextCategoria);
         autoCompleteTextView = root.findViewById(R.id.cmbCategoria);
 
         btnAdd = root.findViewById(R.id.btn_add);
         btnRemoveImage = root.findViewById(R.id.btnDeleteImage);
         btnDialogImage = root.findViewById(R.id.btnDialogImage);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, opciones);
-        autoCompleteTextView.setAdapter(adapter);
 
         btnDialogImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +143,7 @@ public class FormDishesFragment extends Fragment {
                 public void onClick(View v) {
                     String nombre = edtTxtNombre.getText().toString().trim();
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
-                    String categoria = edtTxtCategoria.getText().toString().trim();
+                    String categoria = autoCompleteTextView.getText().toString().trim();
 
                     if (validar(nombre, descripcion, categoria)) {
                         postPlatillo(nombre, descripcion, categoria);
@@ -163,7 +158,7 @@ public class FormDishesFragment extends Fragment {
                 public void onClick(View v) {
                     String nombre = edtTxtNombre.getText().toString().trim();
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
-                    String categoria = edtTxtCategoria.getText().toString().trim();
+                    String categoria = autoCompleteTextView.getText().toString().trim();
 
                     if (validar(nombre, descripcion, categoria)) {
                         updatePlatillo(nombre, descripcion, categoria);
@@ -172,7 +167,29 @@ public class FormDishesFragment extends Fragment {
             });
         }
 
+        setupDropdown();
         return root;
+    }
+
+    private void setupDropdown() {
+        List<String> opciones = new ArrayList<>();
+        mFirestore.collection("categorias")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        queryDocumentSnapshots.forEach(queryDocumentSnapshot -> {
+                            opciones.add(queryDocumentSnapshot.getData().get("nombre").toString());
+                        });
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, opciones);
+                        autoCompleteTextView.setAdapter(adapter);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(), "Error al obtener las categorias", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     /**
@@ -184,27 +201,27 @@ public class FormDishesFragment extends Fragment {
      * @return
      */
     private boolean validar(String nombre, String descripcion, String categoria) {
-        boolean isValidate = false;
+        Drawable currentDrawable = fotoPlatillo.getDrawable();
+        Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
+        Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
+        Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
 
-        if (nombre.isEmpty() && descripcion.isEmpty() && categoria.isEmpty()) {
+        if (nombre.isEmpty() || descripcion.isEmpty() || categoria.isEmpty()) {
             Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
-        } else if (fotoPlatillo.getDrawable() == null) {
-            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
-        } else {
-            Drawable currentDrawable = fotoPlatillo.getDrawable();
-            Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
-
-            Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
-            Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
-
-            if (currentBitmap.equals(defaultBitmap)) {
-                Toast.makeText(getContext(), "Selecciona una imagen diferente", Toast.LENGTH_SHORT).show();
-            } else {
-                isValidate = true;
-            }
+            return false;
         }
 
-        return isValidate;
+        if (fotoPlatillo.getDrawable() == null) {
+            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (currentBitmap.equals(defaultBitmap)) {
+            Toast.makeText(getContext(), "Selecciona una imagen diferente", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -286,7 +303,7 @@ public class FormDishesFragment extends Fragment {
 
                         edtTxtNombre.setText(nombre);
                         edtTxtDescripcion.setText(descripcion);
-                        edtTxtCategoria.setText(categoria);
+                        autoCompleteTextView.setText(categoria);
 
                         if (imagen == null) {
                             fotoPlatillo.setImageResource(R.drawable.image_icon_124);
@@ -309,7 +326,7 @@ public class FormDishesFragment extends Fragment {
      * @param documentReference
      */
     private void subirImagen(DocumentReference documentReference) {
-        String ruta_storage_foto = storage_path + "" + prefijo +  "" + documentReference.getId();
+        String ruta_storage_foto = storage_path + "" + prefijo + "" + documentReference.getId();
         StorageReference imageRef = mStorage.getReference().child(ruta_storage_foto);
 
         UploadTask uploadTask = imageRef.putFile(imageUrl);
@@ -390,6 +407,7 @@ public class FormDishesFragment extends Fragment {
 
     /**
      * Remplaza el anterior fragment con otro
+     *
      * @param fragment
      */
     private void replaceFragment(Fragment fragment) {

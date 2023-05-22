@@ -73,23 +73,52 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
     }
 
     private void deleteCategory(String id) {
+//        DocumentReference categoriaRef = mFirestore.collection("categorias").document(id);
+//        CollectionReference platillosRef = mFirestore.collection("platillos");
+//        Query query = platillosRef.whereEqualTo("categoria", categoriaRef);
+//
+//        query.get().addOnSuccessListener(queryDocumentSnapshots -> {
+//            WriteBatch batch = mFirestore.batch();
+//            for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+//                DocumentReference platilloRef = documentSnapshot.getReference();
+//                batch.delete(platilloRef);
+//            }
+//            batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+//                        @Override
+//                        public void onSuccess(Void unused) {
+//                            Toast.makeText(activity, "Se eliminaron los platillos relacionados", Toast.LENGTH_SHORT).show();
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(activity, "Error al eliminar los platillos relacionados", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
         mFirestore.collection("categorias").document(id).delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        String rutaStorageFoto = storagePath + "" + prefijo + "" + id;
-                        mStorage.getReference().child(rutaStorageFoto).delete()
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        Toast.makeText(activity, "Eliminado correctamente", Toast.LENGTH_SHORT).show();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(activity, "Error al eliminar la imagen", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                        deleteImage(id);
+                    }
+                });
+    }
+
+    ;
+
+
+    private void deleteImage(String id) {
+        String rutaStorageFoto = storagePath + "" + prefijo + "" + id;
+        mStorage.getReference().child(rutaStorageFoto).delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(activity, "Eliminado correctamente", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity, "Error al eliminar la imagen", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
