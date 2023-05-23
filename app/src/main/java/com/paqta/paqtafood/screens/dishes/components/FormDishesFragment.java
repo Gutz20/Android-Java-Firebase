@@ -107,7 +107,6 @@ public class FormDishesFragment extends Fragment {
         btnRemoveImage = root.findViewById(R.id.btnDeleteImage);
         btnDialogImage = root.findViewById(R.id.btnDialogImage);
 
-
         btnDialogImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -233,7 +232,7 @@ public class FormDishesFragment extends Fragment {
      */
     private void updatePlatillo(String nombre, String descripcion, String categoria) {
 
-        DocumentReference documentReference = mFirestore.collection("platillos").document(idPlatillo);
+        DocumentReference documentReference = mFirestore.collection("productos").document(idPlatillo);
 
         Map<String, Object> updates = new HashMap<>();
         updates.put("nombre", nombre);
@@ -268,7 +267,7 @@ public class FormDishesFragment extends Fragment {
      */
     private void postPlatillo(String nombre, String descripcion, String categoria) {
 
-        DocumentReference documentReference = mFirestore.collection("platillos").document();
+        DocumentReference documentReference = mFirestore.collection("productos").document();
 
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", nombre);
@@ -292,7 +291,7 @@ public class FormDishesFragment extends Fragment {
      * este pasa parametros a traves de los framents
      */
     private void getPlatillo() {
-        mFirestore.collection("platillos").document(idPlatillo).get()
+        mFirestore.collection("productos").document(idPlatillo).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {

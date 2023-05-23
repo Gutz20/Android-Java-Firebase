@@ -5,19 +5,99 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentContentOffersBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentContentOffersBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final ShapeableImageView imageView16;
+
+  @NonNull
+  public final ImageView imageView17;
+
+  @NonNull
+  public final ImageView imageView18;
+
+  @NonNull
+  public final ImageView imageView21;
+
+  @NonNull
+  public final ImageView imageView22;
+
+  @NonNull
+  public final ImageView imageView23;
+
+  @NonNull
+  public final ImageView imageView25;
+
+  @NonNull
+  public final ImageView imageView27;
+
+  @NonNull
+  public final ImageView imageView39;
+
+  @NonNull
+  public final ImageView imageView40;
+
+  @NonNull
+  public final TextView textView12;
+
+  @NonNull
+  public final TextView textView13;
+
+  @NonNull
+  public final TextView textView14;
+
+  @NonNull
+  public final TextView textView15;
+
+  @NonNull
+  public final TextView textView17;
+
+  @NonNull
+  public final TextView textView3;
+
+  @NonNull
+  public final TextView textView5;
+
+  private FragmentContentOffersBinding(@NonNull FrameLayout rootView,
+      @NonNull ShapeableImageView imageView16, @NonNull ImageView imageView17,
+      @NonNull ImageView imageView18, @NonNull ImageView imageView21,
+      @NonNull ImageView imageView22, @NonNull ImageView imageView23,
+      @NonNull ImageView imageView25, @NonNull ImageView imageView27,
+      @NonNull ImageView imageView39, @NonNull ImageView imageView40, @NonNull TextView textView12,
+      @NonNull TextView textView13, @NonNull TextView textView14, @NonNull TextView textView15,
+      @NonNull TextView textView17, @NonNull TextView textView3, @NonNull TextView textView5) {
     this.rootView = rootView;
+    this.imageView16 = imageView16;
+    this.imageView17 = imageView17;
+    this.imageView18 = imageView18;
+    this.imageView21 = imageView21;
+    this.imageView22 = imageView22;
+    this.imageView23 = imageView23;
+    this.imageView25 = imageView25;
+    this.imageView27 = imageView27;
+    this.imageView39 = imageView39;
+    this.imageView40 = imageView40;
+    this.textView12 = textView12;
+    this.textView13 = textView13;
+    this.textView14 = textView14;
+    this.textView15 = textView15;
+    this.textView17 = textView17;
+    this.textView3 = textView3;
+    this.textView5 = textView5;
   }
 
   @Override
@@ -43,10 +123,118 @@ public final class FragmentContentOffersBinding implements ViewBinding {
 
   @NonNull
   public static FragmentContentOffersBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.imageView16;
+      ShapeableImageView imageView16 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView16 == null) {
+        break missingId;
+      }
 
-    return new FragmentContentOffersBinding((FrameLayout) rootView);
+      id = R.id.imageView17;
+      ImageView imageView17 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView17 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView18;
+      ImageView imageView18 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView18 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView21;
+      ImageView imageView21 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView21 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView22;
+      ImageView imageView22 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView22 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView23;
+      ImageView imageView23 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView23 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView25;
+      ImageView imageView25 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView25 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView27;
+      ImageView imageView27 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView27 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView39;
+      ImageView imageView39 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView39 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView40;
+      ImageView imageView40 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView40 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView12;
+      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
+      if (textView12 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView13;
+      TextView textView13 = ViewBindings.findChildViewById(rootView, id);
+      if (textView13 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView14;
+      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
+      if (textView14 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView15;
+      TextView textView15 = ViewBindings.findChildViewById(rootView, id);
+      if (textView15 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView17;
+      TextView textView17 = ViewBindings.findChildViewById(rootView, id);
+      if (textView17 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView3;
+      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
+      if (textView3 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView5;
+      TextView textView5 = ViewBindings.findChildViewById(rootView, id);
+      if (textView5 == null) {
+        break missingId;
+      }
+
+      return new FragmentContentOffersBinding((FrameLayout) rootView, imageView16, imageView17,
+          imageView18, imageView21, imageView22, imageView23, imageView25, imageView27, imageView39,
+          imageView40, textView12, textView13, textView14, textView15, textView17, textView3,
+          textView5);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

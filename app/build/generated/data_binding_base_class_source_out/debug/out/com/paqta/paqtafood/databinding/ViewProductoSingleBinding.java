@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -18,7 +18,7 @@ import java.lang.String;
 
 public final class ViewProductoSingleBinding implements ViewBinding {
   @NonNull
-  private final CardView rootView;
+  private final MaterialCardView rootView;
 
   @NonNull
   public final TextView ageProduct;
@@ -38,9 +38,10 @@ public final class ViewProductoSingleBinding implements ViewBinding {
   @NonNull
   public final TextView nameProduct;
 
-  private ViewProductoSingleBinding(@NonNull CardView rootView, @NonNull TextView ageProduct,
-      @NonNull ImageView btnEditar, @NonNull ImageView btnEliminar, @NonNull TextView colorProduct,
-      @NonNull ImageView imagenProduct, @NonNull TextView nameProduct) {
+  private ViewProductoSingleBinding(@NonNull MaterialCardView rootView,
+      @NonNull TextView ageProduct, @NonNull ImageView btnEditar, @NonNull ImageView btnEliminar,
+      @NonNull TextView colorProduct, @NonNull ImageView imagenProduct,
+      @NonNull TextView nameProduct) {
     this.rootView = rootView;
     this.ageProduct = ageProduct;
     this.btnEditar = btnEditar;
@@ -52,7 +53,7 @@ public final class ViewProductoSingleBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public CardView getRoot() {
+  public MaterialCardView getRoot() {
     return rootView;
   }
 
@@ -113,8 +114,8 @@ public final class ViewProductoSingleBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewProductoSingleBinding((CardView) rootView, ageProduct, btnEditar, btnEliminar,
-          colorProduct, imagenProduct, nameProduct);
+      return new ViewProductoSingleBinding((MaterialCardView) rootView, ageProduct, btnEditar,
+          btnEliminar, colorProduct, imagenProduct, nameProduct);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -45,7 +45,7 @@ public class MenuDetailFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), NUMBER_OF_COLUMNS);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        query = mFirestore.collection("platillos");
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
         FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Platillo>()

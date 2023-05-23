@@ -53,7 +53,7 @@ public class SearchFragment extends Fragment {
         mRecycler.setLayoutManager(layoutManager1);
         mRecyclerOtherMenu.setLayoutManager(layoutManager2);
 
-        query = mFirestore.collection("platillos");
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
         FirestoreRecyclerOptions<Platillo> options = new FirestoreRecyclerOptions.Builder<Platillo>()
                 .setQuery(query, Platillo.class)

@@ -84,7 +84,7 @@ public class DishesFragment extends Fragment {
 
     private void setUpRecyclerView() {
         mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        query = mFirestore.collection("platillos");
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
         FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Platillo>().setQuery(query, Platillo.class).build();

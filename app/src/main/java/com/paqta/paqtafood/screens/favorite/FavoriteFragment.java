@@ -73,7 +73,7 @@ public class FavoriteFragment extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        query = mFirestore.collection("platillos");
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
         FirestoreRecyclerOptions<Platillo> options = new FirestoreRecyclerOptions.Builder<Platillo>()
                 .setQuery(query, Platillo.class)

@@ -50,7 +50,7 @@ public class MenuFragment extends Fragment {
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         mRecycler.setLayoutManager(linearLayoutManager);
 
-        query = mFirestore.collection("platillos");
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
         FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Platillo>().setQuery(query, Platillo.class).build();

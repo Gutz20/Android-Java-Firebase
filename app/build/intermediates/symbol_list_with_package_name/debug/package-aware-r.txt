@@ -3231,6 +3231,8 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable card_favorite_img
 drawable carousel_default_placeholder
+drawable carrito
+drawable combo
 drawable combo_dishes
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -3258,12 +3260,16 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dialocura
 drawable dialogbkg
+drawable divider3
 drawable divider_perso
 drawable divider_search
 drawable elipse_bg_platillo
 drawable facebook
 drawable facebook_logo_icon
+drawable favorito
+drawable fondo
 drawable fondo_offers
 drawable fondo_prueba
 drawable fui_ic_anonymous_white_24dp
@@ -3425,9 +3431,12 @@ drawable rayitas_volteadas
 drawable rectangle
 drawable rectangle_12
 drawable rectangle_66
+drawable referencia_img
 drawable round_remove_24
 drawable simbol_dolar_favorite
+drawable sorpresa
 drawable test_level_drawable
+drawable texto
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable top_bottom_shadow
@@ -3785,7 +3794,10 @@ id imageView19
 id imageView20
 id imageView21
 id imageView22
+id imageView23
+id imageView25
 id imageView26
+id imageView27
 id imageView28
 id imageView29
 id imageView30
@@ -3794,7 +3806,9 @@ id imageView32
 id imageView33
 id imageView35
 id imageView36
+id imageView39
 id imageView4
+id imageView40
 id imageView5
 id imageView6
 id imageView7
@@ -4530,6 +4544,7 @@ layout view_category_single
 layout view_platillo_favorite
 layout view_platillo_menu
 layout view_platillo_menu_detail
+layout view_platillo_offer
 layout view_platillo_search
 layout view_platillo_single
 layout view_producto_single
