@@ -3190,6 +3190,7 @@ drawable baseline_close_24
 drawable baseline_contact_mail_24
 drawable baseline_edit_24
 drawable baseline_exit_app_24
+drawable baseline_favorite_24
 drawable baseline_favorite_border_24
 drawable baseline_home_24
 drawable baseline_image_24
@@ -3434,6 +3435,7 @@ drawable rectangle_66
 drawable referencia_img
 drawable round_remove_24
 drawable simbol_dolar_favorite
+drawable sl_favourite_24dp
 drawable sorpresa
 drawable test_level_drawable
 drawable texto

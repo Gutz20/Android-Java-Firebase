@@ -3,6 +3,7 @@ package com.paqta.paqtafood.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,7 +44,8 @@ public class CardFavoriteAdapter extends FirestoreRecyclerAdapter<Platillo, Card
     static class CardViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tituloView;
-        private ImageView imagenView, iconFavorite;
+        private ImageView imagenView;
+        private CheckBox iconFavorite;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);

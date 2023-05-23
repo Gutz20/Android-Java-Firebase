@@ -3189,6 +3189,7 @@ int drawable baseline_close_24 0x7f08008a
 int drawable baseline_contact_mail_24 0x7f08008b
 int drawable baseline_edit_24 0x7f08008c
 int drawable baseline_exit_app_24 0x7f08008d
+int drawable baseline_favorite_24 0x7f08018a
 int drawable baseline_favorite_border_24 0x7f08008e
 int drawable baseline_home_24 0x7f08008f
 int drawable baseline_image_24 0x7f080090
@@ -3433,6 +3434,7 @@ int drawable rectangle_66 0x7f08017e
 int drawable referencia_img 0x7f08017f
 int drawable round_remove_24 0x7f080180
 int drawable simbol_dolar_favorite 0x7f080181
+int drawable sl_favourite_24dp 0x7f08018b
 int drawable sorpresa 0x7f080182
 int drawable test_level_drawable 0x7f080183
 int drawable texto 0x7f080184

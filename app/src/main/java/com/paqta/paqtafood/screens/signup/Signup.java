@@ -148,6 +148,7 @@ public class Signup extends AppCompatActivity {
         user.put("username", username);
         user.put("email", email);
         user.put("password", newPass);
+        user.put("rol", "usuario");
 
         mFirestore.collection("usuarios")
                 .document(id)

@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,7 +28,7 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   public final ImageView imageViewFavorite;
 
   @NonNull
-  public final ImageView imgViewIconFavorite;
+  public final CheckBox imgViewIconFavorite;
 
   @NonNull
   public final TextView textView3;
@@ -40,7 +41,7 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
 
   private ViewPlatilloFavoriteBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout constraintLayout3, @NonNull ImageView imageViewFavorite,
-      @NonNull ImageView imgViewIconFavorite, @NonNull TextView textView3,
+      @NonNull CheckBox imgViewIconFavorite, @NonNull TextView textView3,
       @NonNull TextView textView5, @NonNull TextView titleViewFavorite) {
     this.rootView = rootView;
     this.constraintLayout3 = constraintLayout3;
@@ -91,7 +92,7 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
       }
 
       id = R.id.img_view_icon_favorite;
-      ImageView imgViewIconFavorite = ViewBindings.findChildViewById(rootView, id);
+      CheckBox imgViewIconFavorite = ViewBindings.findChildViewById(rootView, id);
       if (imgViewIconFavorite == null) {
         break missingId;
       }

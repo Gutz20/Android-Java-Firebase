@@ -199,6 +199,7 @@ public class Login extends AppCompatActivity {
                             usuario.put("id", id);
                             usuario.put("username", user.getDisplayName());
                             usuario.put("email", user.getEmail());
+                            usuario.put("rol", "usuario");
 
                             mFirestore.collection("usuarios").document(id).set(usuario)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
