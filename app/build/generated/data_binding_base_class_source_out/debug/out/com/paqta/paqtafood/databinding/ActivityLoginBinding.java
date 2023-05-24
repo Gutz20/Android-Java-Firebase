@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -30,6 +31,9 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @NonNull
   public final MaterialButton btnLogin;
+
+  @NonNull
+  public final Button button2;
 
   @NonNull
   public final ImageView decoratorBottom;
@@ -65,7 +69,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextInputEditText txtLoginUser;
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull SignInButton btnGoogle,
-      @NonNull MaterialButton btnLogin, @NonNull ImageView decoratorBottom,
+      @NonNull MaterialButton btnLogin, @NonNull Button button2, @NonNull ImageView decoratorBottom,
       @NonNull ImageView decoratorTop, @NonNull ImageView logoImageViewLogin,
       @NonNull MaterialCardView materialCardView, @NonNull TextView tvwLogin,
       @NonNull TextView tvwOlvidasteContra, @NonNull TextView tvwRegister,
@@ -74,6 +78,7 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.rootView = rootView;
     this.btnGoogle = btnGoogle;
     this.btnLogin = btnLogin;
+    this.button2 = button2;
     this.decoratorBottom = decoratorBottom;
     this.decoratorTop = decoratorTop;
     this.logoImageViewLogin = logoImageViewLogin;
@@ -123,6 +128,12 @@ public final class ActivityLoginBinding implements ViewBinding {
       id = R.id.btnLogin;
       MaterialButton btnLogin = ViewBindings.findChildViewById(rootView, id);
       if (btnLogin == null) {
+        break missingId;
+      }
+
+      id = R.id.button2;
+      Button button2 = ViewBindings.findChildViewById(rootView, id);
+      if (button2 == null) {
         break missingId;
       }
 
@@ -192,7 +203,7 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, btnGoogle, btnLogin,
+      return new ActivityLoginBinding((ConstraintLayout) rootView, btnGoogle, btnLogin, button2,
           decoratorBottom, decoratorTop, logoImageViewLogin, materialCardView, tvwLogin,
           tvwOlvidasteContra, tvwRegister, txtLayoutPassword, txtLayoutUser, txtLoginPassword,
           txtLoginUser);

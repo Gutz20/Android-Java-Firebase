@@ -3332,6 +3332,7 @@ drawable divider_perso
 drawable divider_search
 drawable elipse_bg_platillo
 drawable facebook
+drawable facebook_icon
 drawable facebook_logo_icon
 drawable favorito
 drawable fondo
@@ -3383,6 +3384,7 @@ drawable img_staff_2
 drawable img_staff_3
 drawable img_staff_4
 drawable img_staff_5
+drawable instagram_icon
 drawable lineas
 drawable llamita
 drawable logo
@@ -3422,6 +3424,7 @@ drawable menu_bebidas
 drawable menu_combos
 drawable menu_extras
 drawable menu_principal
+drawable messenger_icon
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
 drawable mtrl_checkbox_button_checked_unchecked
@@ -3496,6 +3499,7 @@ drawable rayitas_volteadas
 drawable rectangle
 drawable rectangle_12
 drawable rectangle_66
+drawable reddit_icon
 drawable referencia_img
 drawable round_remove_24
 drawable simbol_dolar_favorite
@@ -3506,6 +3510,8 @@ drawable texto
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable top_bottom_shadow
+drawable twitter_icon
+drawable whatsapp_icon
 drawable white_radius
 drawable whitebck
 font abel
@@ -3657,6 +3663,7 @@ id btn_holder
 id btn_next
 id btn_previous
 id button
+id button2
 id buttonPanel
 id button_continue
 id button_create
@@ -3666,13 +3673,9 @@ id button_resend_email
 id button_sign_in
 id cache_measures
 id callMeasure
-id cancelButton
 id cancel_action
 id cancel_button
 id card
-id carouselBebidas
-id carouselPlatillos
-id carouselPostres
 id carryVelocity
 id categoriaPlatillo
 id center
@@ -3732,7 +3735,6 @@ id country_list
 id country_list_layout
 id country_list_popup_anchor
 id cradle
-id createText
 id cross_device_linking_body
 id currentState
 id custom
@@ -3806,6 +3808,9 @@ id expand_activities_button
 id expanded_menu
 id fab
 id fade
+id favoritesBebidas
+id favoritesPlatillos
+id favoritesPostres
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3926,9 +3931,6 @@ id jumpToStart
 id labeled
 id large
 id layout
-id layoutLive
-id layoutShorts
-id layoutVideo
 id left
 id leftToRight
 id legacy
@@ -4180,6 +4182,9 @@ id selected
 id selection_type
 id send_code
 id send_sms_tos
+id share_facebook
+id share_twitter
+id share_whatsapp
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -4258,7 +4263,6 @@ id textView12
 id textView13
 id textView14
 id textView15
-id textView16
 id textView17
 id textView2
 id textView20
@@ -4277,6 +4281,7 @@ id textView6
 id textView7
 id textView8
 id textView9
+id textViewShare
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4644,6 +4649,7 @@ layout view_platillo_single
 layout view_producto_single
 menu bottom_menu
 menu nav_menu
+menu share_menu
 menu top_app_bar
 mipmap ic_launcher
 mipmap ic_launcher_logo

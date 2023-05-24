@@ -18,19 +18,20 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardFavoriteAdapter extends FirestoreRecyclerAdapter<Platillo, CardFavoriteAdapter.CardViewHolder> {
+public class CardFavoriteAdapter extends FirestoreRecyclerAdapter<Producto, CardFavoriteAdapter.CardViewHolder> {
 
 
-    public CardFavoriteAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options) {
+    public CardFavoriteAdapter(@NonNull FirestoreRecyclerOptions<Producto> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull CardViewHolder holder, int position, @NonNull Platillo model) {
+    protected void onBindViewHolder(@NonNull CardViewHolder holder, int position, @NonNull Producto model) {
         holder.bindData(model);
     }
 
@@ -54,7 +55,7 @@ public class CardFavoriteAdapter extends FirestoreRecyclerAdapter<Platillo, Card
             iconFavorite = itemView.findViewById(R.id.img_view_icon_favorite);
         }
 
-        public void bindData(Platillo cardFavorite) {
+        public void bindData(Producto cardFavorite) {
             tituloView.setText(cardFavorite.getNombre());
             Glide.with(imagenView.getContext()).load(cardFavorite.getImagen()).into(imagenView);
             iconFavorite.setOnClickListener(new View.OnClickListener() {

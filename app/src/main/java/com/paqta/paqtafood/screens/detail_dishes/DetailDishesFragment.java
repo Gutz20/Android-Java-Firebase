@@ -3,17 +3,18 @@ package com.paqta.paqtafood.screens.detail_dishes;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.PopupMenu;
+import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -83,12 +85,23 @@ public class DetailDishesFragment extends Fragment {
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(v, "Compartir", Snackbar.LENGTH_SHORT).show();
+                configurarCompartir();
             }
         });
-
         verificarEstados();
         return root;
+    }
+
+    private void configurarCompartir() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+        bottomSheetDialog.setContentView(R.layout.bottomsheetlayout);
+
+        bottomSheetDialog.setCanceledOnTouchOutside(true);
+        bottomSheetDialog.setCancelable(true);
+
+
+        // Muestra el Bottom Sheet
+        bottomSheetDialog.show();
     }
 
     private void verificarEstados() {

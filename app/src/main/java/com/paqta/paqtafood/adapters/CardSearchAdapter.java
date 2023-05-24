@@ -17,19 +17,20 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 
-public class CardSearchAdapter extends FirestoreRecyclerAdapter<Platillo, CardSearchAdapter.CardViewHolder> {
+public class CardSearchAdapter extends FirestoreRecyclerAdapter<Producto, CardSearchAdapter.CardViewHolder> {
 
     Activity activity;
     FragmentManager fm;
-    public CardSearchAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options, Activity activity, FragmentManager fm) {
+    public CardSearchAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);
         this.activity = activity;
         this.fm = fm;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull CardSearchAdapter.CardViewHolder holder, int position, @NonNull Platillo model) {
+    protected void onBindViewHolder(@NonNull CardSearchAdapter.CardViewHolder holder, int position, @NonNull Producto model) {
         holder.bindData(model);
     }
 
@@ -51,9 +52,9 @@ public class CardSearchAdapter extends FirestoreRecyclerAdapter<Platillo, CardSe
             imagenView = itemView.findViewById(R.id.image_view_search);
         }
 
-        public void bindData(Platillo platillo) {
-            nombreView.setText(platillo.getNombre());
-            Glide.with(imagenView.getContext()).load(platillo.getImagen()).into(imagenView);
+        public void bindData(Producto producto) {
+            nombreView.setText(producto.getNombre());
+            Glide.with(imagenView.getContext()).load(producto.getImagen()).into(imagenView);
         }
 
     }

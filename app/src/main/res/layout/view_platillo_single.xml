@@ -27,13 +27,15 @@
 
         <TextView
             android:id="@+id/namePlatillo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="214dp"
+            android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:text="Arroz chaufa y papas "
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnEditarPlatillo"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
             app:layout_constraintTop_toTopOf="parent" />
 

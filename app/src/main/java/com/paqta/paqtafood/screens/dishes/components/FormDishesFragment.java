@@ -270,6 +270,7 @@ public class FormDishesFragment extends Fragment {
         DocumentReference documentReference = mFirestore.collection("productos").document();
 
         Map<String, Object> map = new HashMap<>();
+        map.put("id", documentReference.getId());
         map.put("nombre", nombre);
         map.put("descripcion", descripcion);
         map.put("categoria", categoria);

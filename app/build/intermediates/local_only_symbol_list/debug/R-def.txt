@@ -157,6 +157,7 @@ drawable divider_perso
 drawable divider_search
 drawable elipse_bg_platillo
 drawable facebook
+drawable facebook_icon
 drawable facebook_logo_icon
 drawable favorito
 drawable fondo
@@ -181,6 +182,7 @@ drawable img_staff_2
 drawable img_staff_3
 drawable img_staff_4
 drawable img_staff_5
+drawable instagram_icon
 drawable lineas
 drawable llamita
 drawable logo
@@ -199,6 +201,7 @@ drawable menu_bebidas
 drawable menu_combos
 drawable menu_extras
 drawable menu_principal
+drawable messenger_icon
 drawable muestra_platillo
 drawable outline_email_24
 drawable outline_fastfood_24
@@ -223,12 +226,15 @@ drawable rayitas_volteadas
 drawable rectangle
 drawable rectangle_12
 drawable rectangle_66
+drawable reddit_icon
 drawable referencia_img
 drawable round_remove_24
 drawable simbol_dolar_favorite
 drawable sl_favourite_24dp
 drawable sorpresa
 drawable texto
+drawable twitter_icon
+drawable whatsapp_icon
 drawable whitebck
 font abel
 font acme
@@ -259,11 +265,8 @@ id btnRegister
 id btnShare
 id btn_add
 id button
-id cancelButton
+id button2
 id card
-id carouselBebidas
-id carouselPlatillos
-id carouselPostres
 id categoriaPlatillo
 id cityDescriptionTextView
 id cityTextView
@@ -277,7 +280,6 @@ id constraintLayout5
 id constraintLayout6
 id coordinatorLayout
 id coordinatorLayout2
-id createText
 id cv
 id decorator_bottom
 id decorator_top
@@ -293,6 +295,9 @@ id edtTextNombre
 id emailTextView
 id end
 id fab
+id favoritesBebidas
+id favoritesPlatillos
+id favoritesPostres
 id filledTextField
 id filledTextField2
 id filledTextField3
@@ -352,9 +357,6 @@ id imgQR1
 id imgQR2
 id imgQR3
 id img_view_icon_favorite
-id layoutLive
-id layoutShorts
-id layoutVideo
 id linearLayout
 id linearLayout2
 id linearLayout4
@@ -422,6 +424,9 @@ id recyclerViewOffers
 id search
 id searchPlatillo
 id searchView
+id share_facebook
+id share_twitter
+id share_whatsapp
 id start
 id statusDescriptionTextView
 id statusTextView
@@ -437,7 +442,6 @@ id textView12
 id textView13
 id textView14
 id textView15
-id textView16
 id textView17
 id textView2
 id textView20
@@ -456,6 +460,7 @@ id textView6
 id textView7
 id textView8
 id textView9
+id textViewShare
 id text_item_search
 id title
 id titleDescriptionTextView
@@ -523,6 +528,7 @@ layout view_platillo_single
 layout view_producto_single
 menu bottom_menu
 menu nav_menu
+menu share_menu
 menu top_app_bar
 mipmap ic_launcher
 mipmap ic_launcher_logo

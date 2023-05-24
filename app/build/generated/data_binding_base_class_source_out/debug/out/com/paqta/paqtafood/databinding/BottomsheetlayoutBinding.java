@@ -4,7 +4,6 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,29 +20,12 @@ public final class BottomsheetlayoutBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView cancelButton;
+  public final TextView textViewShare;
 
-  @NonNull
-  public final TextView createText;
-
-  @NonNull
-  public final LinearLayout layoutLive;
-
-  @NonNull
-  public final LinearLayout layoutShorts;
-
-  @NonNull
-  public final LinearLayout layoutVideo;
-
-  private BottomsheetlayoutBinding(@NonNull LinearLayout rootView, @NonNull ImageView cancelButton,
-      @NonNull TextView createText, @NonNull LinearLayout layoutLive,
-      @NonNull LinearLayout layoutShorts, @NonNull LinearLayout layoutVideo) {
+  private BottomsheetlayoutBinding(@NonNull LinearLayout rootView,
+      @NonNull TextView textViewShare) {
     this.rootView = rootView;
-    this.cancelButton = cancelButton;
-    this.createText = createText;
-    this.layoutLive = layoutLive;
-    this.layoutShorts = layoutShorts;
-    this.layoutVideo = layoutVideo;
+    this.textViewShare = textViewShare;
   }
 
   @Override
@@ -73,38 +55,13 @@ public final class BottomsheetlayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cancelButton;
-      ImageView cancelButton = ViewBindings.findChildViewById(rootView, id);
-      if (cancelButton == null) {
+      id = R.id.textViewShare;
+      TextView textViewShare = ViewBindings.findChildViewById(rootView, id);
+      if (textViewShare == null) {
         break missingId;
       }
 
-      id = R.id.createText;
-      TextView createText = ViewBindings.findChildViewById(rootView, id);
-      if (createText == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutLive;
-      LinearLayout layoutLive = ViewBindings.findChildViewById(rootView, id);
-      if (layoutLive == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutShorts;
-      LinearLayout layoutShorts = ViewBindings.findChildViewById(rootView, id);
-      if (layoutShorts == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutVideo;
-      LinearLayout layoutVideo = ViewBindings.findChildViewById(rootView, id);
-      if (layoutVideo == null) {
-        break missingId;
-      }
-
-      return new BottomsheetlayoutBinding((LinearLayout) rootView, cancelButton, createText,
-          layoutLive, layoutShorts, layoutVideo);
+      return new BottomsheetlayoutBinding((LinearLayout) rootView, textViewShare);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

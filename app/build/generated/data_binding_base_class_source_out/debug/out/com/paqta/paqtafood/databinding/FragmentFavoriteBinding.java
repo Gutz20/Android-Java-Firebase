@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,25 +20,21 @@ public final class FragmentFavoriteBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final RecyclerView carouselBebidas;
+  public final RecyclerView favoritesBebidas;
 
   @NonNull
-  public final RecyclerView carouselPlatillos;
+  public final RecyclerView favoritesPlatillos;
 
   @NonNull
-  public final RecyclerView carouselPostres;
-
-  @NonNull
-  public final TextView textView16;
+  public final RecyclerView favoritesPostres;
 
   private FragmentFavoriteBinding(@NonNull FrameLayout rootView,
-      @NonNull RecyclerView carouselBebidas, @NonNull RecyclerView carouselPlatillos,
-      @NonNull RecyclerView carouselPostres, @NonNull TextView textView16) {
+      @NonNull RecyclerView favoritesBebidas, @NonNull RecyclerView favoritesPlatillos,
+      @NonNull RecyclerView favoritesPostres) {
     this.rootView = rootView;
-    this.carouselBebidas = carouselBebidas;
-    this.carouselPlatillos = carouselPlatillos;
-    this.carouselPostres = carouselPostres;
-    this.textView16 = textView16;
+    this.favoritesBebidas = favoritesBebidas;
+    this.favoritesPlatillos = favoritesPlatillos;
+    this.favoritesPostres = favoritesPostres;
   }
 
   @Override
@@ -69,32 +64,26 @@ public final class FragmentFavoriteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.carouselBebidas;
-      RecyclerView carouselBebidas = ViewBindings.findChildViewById(rootView, id);
-      if (carouselBebidas == null) {
+      id = R.id.favoritesBebidas;
+      RecyclerView favoritesBebidas = ViewBindings.findChildViewById(rootView, id);
+      if (favoritesBebidas == null) {
         break missingId;
       }
 
-      id = R.id.carouselPlatillos;
-      RecyclerView carouselPlatillos = ViewBindings.findChildViewById(rootView, id);
-      if (carouselPlatillos == null) {
+      id = R.id.favoritesPlatillos;
+      RecyclerView favoritesPlatillos = ViewBindings.findChildViewById(rootView, id);
+      if (favoritesPlatillos == null) {
         break missingId;
       }
 
-      id = R.id.carouselPostres;
-      RecyclerView carouselPostres = ViewBindings.findChildViewById(rootView, id);
-      if (carouselPostres == null) {
+      id = R.id.favoritesPostres;
+      RecyclerView favoritesPostres = ViewBindings.findChildViewById(rootView, id);
+      if (favoritesPostres == null) {
         break missingId;
       }
 
-      id = R.id.textView16;
-      TextView textView16 = ViewBindings.findChildViewById(rootView, id);
-      if (textView16 == null) {
-        break missingId;
-      }
-
-      return new FragmentFavoriteBinding((FrameLayout) rootView, carouselBebidas, carouselPlatillos,
-          carouselPostres, textView16);
+      return new FragmentFavoriteBinding((FrameLayout) rootView, favoritesBebidas,
+          favoritesPlatillos, favoritesPostres);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

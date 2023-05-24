@@ -20,6 +20,7 @@ import com.paqta.paqtafood.adapters.CardFavoriteAdapter;
 import com.paqta.paqtafood.adapters.CardSearchAdapter;
 import com.paqta.paqtafood.adapters.PlatilloAdapter;
 import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 
 import java.util.List;
 
@@ -59,8 +60,8 @@ public class SearchFragment extends Fragment {
 
         query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
-        FirestoreRecyclerOptions<Platillo> options = new FirestoreRecyclerOptions.Builder<Platillo>()
-                .setQuery(query, Platillo.class)
+        FirestoreRecyclerOptions<Producto> options = new FirestoreRecyclerOptions.Builder<Producto>()
+                .setQuery(query, Producto.class)
                 .build();
 
         mAdapter = new CardSearchAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
@@ -92,10 +93,11 @@ public class SearchFragment extends Fragment {
     }
 
     private void textSearch(String s) {
-        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Platillo>()
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>()
                         .setQuery(query.orderBy("nombre")
-                                .startAt(s).endAt(s + "~"), Platillo.class).build();
+                                .startAt(s).endAt(s + "~"), Producto.class).build();
+
         mAdapter = new CardSearchAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.startListening();
         mRecycler.setAdapter(mAdapter);

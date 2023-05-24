@@ -10,6 +10,7 @@ import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +50,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.navigation.DefaultNavigationApp;
+import com.paqta.paqtafood.screens.components.steps.StepsActivity;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;
@@ -103,6 +105,16 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button button = findViewById(R.id.button2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, StepsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // COMPONENTES
         loginImage = findViewById(R.id.logoImageViewLogin);
