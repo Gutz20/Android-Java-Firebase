@@ -71,6 +71,9 @@ dependencies {
     //  Firebase Realtime Database
     implementation 'com.google.firebase:firebase-database'
 
+//    Facebook
+    implementation 'com.facebook.android:facebook-login:latest.release'
+
 
 //    Otras implementaciones ->
 
@@ -82,9 +85,6 @@ dependencies {
 
 //    Glide | Para imagenes - Comunidad activa
     implementation 'com.github.bumptech.glide:glide:4.15.1'
-
-//    Picasso | Mostrar imagenes - Ultima actualizacion -  Aug 10, 2020 | Maybe Desfazado
-    implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // Google | Google authentication
     implementation 'com.google.android.gms:play-services-auth:20.5.0'

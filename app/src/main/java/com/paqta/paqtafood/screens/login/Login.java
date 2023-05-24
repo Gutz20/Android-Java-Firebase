@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
@@ -13,10 +14,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +37,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
@@ -42,6 +52,8 @@ import com.paqta.paqtafood.navigation.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.signup.Signup;
 import com.paqta.paqtafood.utils.ChangeColorBar;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -59,6 +71,7 @@ public class Login extends AppCompatActivity {
 
     //    FIREBASE
     SignInButton mSignInButtonGoogle;
+
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     FirebaseFirestore mFirestore;
@@ -129,6 +142,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -177,7 +191,6 @@ public class Login extends AppCompatActivity {
         }
     }
 
-
     /**
      * Autenticacion con google mediante firebase, obtiene las credenciales para luego
      * logearse con las mismas mediante Firebase Authentication
@@ -196,28 +209,35 @@ public class Login extends AppCompatActivity {
                             String id = mAuth.getCurrentUser().getUid();
                             Map<String, Object> usuario = new HashMap<>();
                             assert user != null;
-                            usuario.put("id", id);
                             usuario.put("username", user.getDisplayName());
                             usuario.put("email", user.getEmail());
-                            usuario.put("rol", "usuario");
 
-                            mFirestore.collection("usuarios").document(id).set(usuario)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            DocumentReference userRef = mFirestore.collection("usuarios").document(id);
+
+                            userRef.get()
+                                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                         @Override
-                                        public void onSuccess(Void unused) {
-                                            Toast.makeText(Login.this, "Logeado desde google", Toast.LENGTH_SHORT).show();
-                                            updateUI(user);
+                                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                            if (documentSnapshot.exists()) {
+                                                userRef.update(usuario);
+                                            } else {
+                                                usuario.put("id", id);
+                                                usuario.put("rol", "usuario");
+                                                userRef.set(usuario);
+                                            }
                                         }
-                                    }).addOnFailureListener(new OnFailureListener() {
+                                    })
+                                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                         @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Login.this, "Error al logear desde google", Toast.LENGTH_SHORT).show();
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(Login.this, "Logeado desde google", Toast.LENGTH_SHORT).show();
+                                                updateUI(user);
+                                            } else {
+                                                Toast.makeText(Login.this, "Error al logear desde google", Toast.LENGTH_SHORT).show();
+                                            }
                                         }
                                     });
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Login.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                            updateUI(null);
                         }
                     }
                 });
@@ -295,5 +315,6 @@ public class Login extends AppCompatActivity {
                     }
                 });
     }
+
 
 }
