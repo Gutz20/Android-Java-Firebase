@@ -1,5 +1,6 @@
 package com.paqta.paqtafood.adapters;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -18,8 +20,12 @@ import com.paqta.paqtafood.model.Platillo;
 
 public class CardSearchAdapter extends FirestoreRecyclerAdapter<Platillo, CardSearchAdapter.CardViewHolder> {
 
-    public CardSearchAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options) {
+    Activity activity;
+    FragmentManager fm;
+    public CardSearchAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options, Activity activity, FragmentManager fm) {
         super(options);
+        this.activity = activity;
+        this.fm = fm;
     }
 
     @Override

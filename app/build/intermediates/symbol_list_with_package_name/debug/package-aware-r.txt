@@ -3570,7 +3570,9 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAddCart
 id btnAddCategory
+id btnAddFavorito
 id btnAddFragmentProduct
 id btnAddPlatillo
 id btnAddProduct
@@ -3583,14 +3585,12 @@ id btnEliminarPlatillo
 id btnGoogle
 id btnLogin
 id btnRegister
+id btnShare
 id btn_add
 id btn_holder
 id btn_next
 id btn_previous
 id button
-id button2
-id button3
-id button4
 id buttonPanel
 id button_continue
 id button_create
@@ -3769,6 +3769,7 @@ id homeAsUp
 id honorRequest
 id horizontal
 id horizontal_only
+id icButtonDetail
 id icon
 id iconImageView
 id icon_group

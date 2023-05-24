@@ -1,17 +1,18 @@
 package com.paqta.paqtafood.model;
 
+import java.util.List;
+
 public class Platillo extends Producto{
     private String tipo;
-    private Double precio;
+    private List<String> contenido;
 
     public Platillo() {
-
     }
 
-    public Platillo(String nombre, String descripcion, String categoria, Integer cantidad, String imagen, String tipo, Double precio) {
-        super(nombre, descripcion, categoria, cantidad, imagen);
+    public Platillo(String nombre, String descripcion, String categoria, Integer cantidad, String imagen, Double precio, String tipo, List<String> contenido) {
+        super(nombre, descripcion, categoria, cantidad, imagen, precio);
         this.tipo = tipo;
-        this.precio = precio;
+        this.contenido = contenido;
     }
 
     public String getTipo() {
@@ -22,19 +23,11 @@ public class Platillo extends Producto{
         this.tipo = tipo;
     }
 
-    public Double getPrecio() {
-        return precio;
+    public List<String> getContenido() {
+        return contenido;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
-    }
-
-    @Override
-    public String toString() {
-        return "Platillo{" +
-                "tipo='" + tipo + '\'' +
-                ", precio=" + precio +
-                "} " + super.toString();
+    public void setContenido(List<String> contenido) {
+        this.contenido = contenido;
     }
 }

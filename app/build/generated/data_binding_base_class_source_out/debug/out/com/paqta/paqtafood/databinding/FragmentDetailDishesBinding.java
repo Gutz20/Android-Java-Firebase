@@ -23,13 +23,13 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button button2;
+  public final Button btnAddCart;
 
   @NonNull
-  public final Button button3;
+  public final Button btnAddFavorito;
 
   @NonNull
-  public final Button button4;
+  public final Button btnShare;
 
   @NonNull
   public final ImageView imageView18;
@@ -55,16 +55,16 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
   @NonNull
   public final TextView textView17;
 
-  private FragmentDetailDishesBinding(@NonNull FrameLayout rootView, @NonNull Button button2,
-      @NonNull Button button3, @NonNull Button button4, @NonNull ImageView imageView18,
+  private FragmentDetailDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddCart,
+      @NonNull Button btnAddFavorito, @NonNull Button btnShare, @NonNull ImageView imageView18,
       @NonNull ImageView imageView19, @NonNull ImageView imageView20,
       @NonNull ImageView imageView21, @NonNull ImageView imageView22,
       @NonNull LinearLayout linearLayout4, @NonNull TextView textView15,
       @NonNull TextView textView17) {
     this.rootView = rootView;
-    this.button2 = button2;
-    this.button3 = button3;
-    this.button4 = button4;
+    this.btnAddCart = btnAddCart;
+    this.btnAddFavorito = btnAddFavorito;
+    this.btnShare = btnShare;
     this.imageView18 = imageView18;
     this.imageView19 = imageView19;
     this.imageView20 = imageView20;
@@ -102,21 +102,21 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button2;
-      Button button2 = ViewBindings.findChildViewById(rootView, id);
-      if (button2 == null) {
+      id = R.id.btnAddCart;
+      Button btnAddCart = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddCart == null) {
         break missingId;
       }
 
-      id = R.id.button3;
-      Button button3 = ViewBindings.findChildViewById(rootView, id);
-      if (button3 == null) {
+      id = R.id.btnAddFavorito;
+      Button btnAddFavorito = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddFavorito == null) {
         break missingId;
       }
 
-      id = R.id.button4;
-      Button button4 = ViewBindings.findChildViewById(rootView, id);
-      if (button4 == null) {
+      id = R.id.btnShare;
+      Button btnShare = ViewBindings.findChildViewById(rootView, id);
+      if (btnShare == null) {
         break missingId;
       }
 
@@ -168,8 +168,8 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDetailDishesBinding((FrameLayout) rootView, button2, button3, button4,
-          imageView18, imageView19, imageView20, imageView21, imageView22, linearLayout4,
+      return new FragmentDetailDishesBinding((FrameLayout) rootView, btnAddCart, btnAddFavorito,
+          btnShare, imageView18, imageView19, imageView20, imageView21, imageView22, linearLayout4,
           textView15, textView17);
     }
     String missingId = rootView.getResources().getResourceName(id);

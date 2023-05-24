@@ -3569,7 +3569,9 @@ int id browser_actions_menu_item_icon 0x7f0a0075
 int id browser_actions_menu_item_text 0x7f0a0076
 int id browser_actions_menu_items 0x7f0a0077
 int id browser_actions_menu_view 0x7f0a0078
+int id btnAddCart 0x7f0a033d
 int id btnAddCategory 0x7f0a0079
+int id btnAddFavorito 0x7f0a033e
 int id btnAddFragmentProduct 0x7f0a007a
 int id btnAddPlatillo 0x7f0a007b
 int id btnAddProduct 0x7f0a007c
@@ -3582,14 +3584,12 @@ int id btnEliminarPlatillo 0x7f0a0082
 int id btnGoogle 0x7f0a0083
 int id btnLogin 0x7f0a0084
 int id btnRegister 0x7f0a0085
+int id btnShare 0x7f0a033f
 int id btn_add 0x7f0a0086
 int id btn_holder 0x7f0a0087
 int id btn_next 0x7f0a0088
 int id btn_previous 0x7f0a0089
 int id button 0x7f0a008a
-int id button2 0x7f0a008b
-int id button3 0x7f0a008c
-int id button4 0x7f0a008d
 int id buttonPanel 0x7f0a008e
 int id button_continue 0x7f0a008f
 int id button_create 0x7f0a0090
@@ -3768,6 +3768,7 @@ int id homeAsUp 0x7f0a013c
 int id honorRequest 0x7f0a013d
 int id horizontal 0x7f0a013e
 int id horizontal_only 0x7f0a013f
+int id icButtonDetail 0x7f0a033c
 int id icon 0x7f0a0140
 int id iconImageView 0x7f0a0141
 int id icon_group 0x7f0a0142

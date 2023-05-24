@@ -1,16 +1,27 @@
 package com.paqta.paqtafood.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class User implements Serializable {
 
-    public String name, image, email, token;
+    private String name;
+    private String image;
+    private String email;
+    private String token;
+    private List<String> favoritos;
+    private List<String> carrito;
 
-    public User(String name, String image, String email, String token) {
+    public User() {
+    }
+
+    public User(String name, String image, String email, String token, List<String> favoritos, List<String> carrito) {
         this.name = name;
         this.image = image;
         this.email = email;
         this.token = token;
+        this.favoritos = favoritos;
+        this.carrito = carrito;
     }
 
     public String getName() {
@@ -43,5 +54,21 @@ public class User implements Serializable {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public List<String> getFavoritos() {
+        return favoritos;
+    }
+
+    public void setFavoritos(List<String> favoritos) {
+        this.favoritos = favoritos;
+    }
+
+    public List<String> getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(List<String> carrito) {
+        this.carrito = carrito;
     }
 }
