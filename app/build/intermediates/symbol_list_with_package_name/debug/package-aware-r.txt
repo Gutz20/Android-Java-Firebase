@@ -3223,6 +3223,7 @@ drawable badge_perso3
 drawable badge_platillo_favorite
 drawable badge_price_menu_detail
 drawable baseline_add_24
+drawable baseline_add_shopping_cart_24
 drawable baseline_arrow_back_ios_24
 drawable baseline_cast_connected_24
 drawable baseline_category_24
@@ -3241,6 +3242,7 @@ drawable baseline_info_24
 drawable baseline_menu_24
 drawable baseline_person_24
 drawable baseline_person_outline_24
+drawable baseline_remove_shopping_cart_24
 drawable baseline_search_24
 drawable baseline_settings_24
 drawable baseline_share_24
@@ -3715,6 +3717,7 @@ id constraintLayout2
 id constraintLayout3
 id constraintLayout4
 id constraintLayout5
+id constraintLayout6
 id container
 id content
 id contentPanel

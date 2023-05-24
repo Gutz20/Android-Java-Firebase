@@ -3222,6 +3222,7 @@ int drawable badge_perso3 0x7f080080
 int drawable badge_platillo_favorite 0x7f080081
 int drawable badge_price_menu_detail 0x7f080082
 int drawable baseline_add_24 0x7f080083
+int drawable baseline_add_shopping_cart_24 0x7f08019f
 int drawable baseline_arrow_back_ios_24 0x7f080084
 int drawable baseline_cast_connected_24 0x7f080085
 int drawable baseline_category_24 0x7f080086
@@ -3240,6 +3241,7 @@ int drawable baseline_info_24 0x7f080092
 int drawable baseline_menu_24 0x7f080093
 int drawable baseline_person_24 0x7f080094
 int drawable baseline_person_outline_24 0x7f080095
+int drawable baseline_remove_shopping_cart_24 0x7f0801a0
 int drawable baseline_search_24 0x7f080096
 int drawable baseline_settings_24 0x7f080097
 int drawable baseline_share_24 0x7f080098
@@ -3714,6 +3716,7 @@ int id constraintLayout2 0x7f0a00c8
 int id constraintLayout3 0x7f0a00c9
 int id constraintLayout4 0x7f0a00ca
 int id constraintLayout5 0x7f0a00cb
+int id constraintLayout6 0x7f0a0351
 int id container 0x7f0a00cc
 int id content 0x7f0a00cd
 int id contentPanel 0x7f0a00ce

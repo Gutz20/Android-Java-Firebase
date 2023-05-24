@@ -33,8 +33,9 @@ public class DetailDishesFragment extends Fragment {
     String idProd;
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
-    FirebaseUser mUser;
-    Drawable iconFavoriteFilled, iconFavoriteOutlined;
+    private FirebaseUser mUser;
+    Drawable iconFavoriteFilled, iconFavoriteOutlined, iconAddToCart, iconRemoveFromCart;
+    DocumentReference usuarioRef;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,10 @@ public class DetailDishesFragment extends Fragment {
 
         iconFavoriteFilled = ContextCompat.getDrawable(getContext(), R.drawable.baseline_favorite_24);
         iconFavoriteOutlined = ContextCompat.getDrawable(getContext(), R.drawable.baseline_favorite_border_24);
+        iconAddToCart = ContextCompat.getDrawable(getContext(), R.drawable.baseline_add_shopping_cart_24);
+        iconRemoveFromCart = ContextCompat.getDrawable(getContext(), R.drawable.baseline_remove_shopping_cart_24);
+
+        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
 
         btnAddFavorito.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +75,7 @@ public class DetailDishesFragment extends Fragment {
         btnAddCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               addProductoToCart(v);
+                addProductoToCart(v);
             }
 
         });
@@ -82,22 +87,34 @@ public class DetailDishesFragment extends Fragment {
             }
         });
 
-        verificarFavorito();
+        verificarEstados();
         return root;
     }
 
-    private void verificarFavorito() {
-        DocumentReference usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
+    private void verificarEstados() {
+        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
         usuarioRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
+                List<String> carrito = (List<String>) documentSnapshot.get("carrito");
                 List<String> favoritos = (List<String>) documentSnapshot.get("favoritos");
+
+                if (carrito != null && carrito.contains(idProd)) {
+                    // El producto está en el carrito
+                    btnAddCart.setText("Quitar del carrito");
+                    btnAddCart.setIcon(iconRemoveFromCart);
+                } else {
+                    // El producto no está en el carrito
+                    btnAddCart.setText("Agregar carrito");
+                    btnAddCart.setIcon(iconAddToCart);
+                }
+
                 if (favoritos != null && favoritos.contains(idProd)) {
-                    // El producto está en la lista de favoritos
-                    btnAddFavorito.setText("Quitar de favoritos");
+                    // El producto está en favoritos
+                    btnAddFavorito.setText("Quitar favoritos");
                     btnAddFavorito.setIcon(iconFavoriteFilled);
                 } else {
-                    // El producto no está en la lista de favoritos
+                    // El producto no está en favoritos
                     btnAddFavorito.setText("Añadir favoritos");
                     btnAddFavorito.setIcon(iconFavoriteOutlined);
                 }
@@ -106,64 +123,72 @@ public class DetailDishesFragment extends Fragment {
     }
 
     private void addProductoToFavorite(View v) {
-        DocumentReference usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
-        usuarioRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                List<String> favoritos = (List<String>) documentSnapshot.get("favoritos");
+        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
 
-                if (favoritos != null && favoritos.contains(idProd)) {
-                    usuarioRef.update("favoritos", FieldValue.arrayRemove(idProd))
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    btnAddFavorito.setText("Añadir favoritos");
-                                    btnAddFavorito.setIcon(iconFavoriteOutlined);
-                                    Snackbar.make(v, "Eliminado de favoritos", Snackbar.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Snackbar.make(v, "Error al eliminar de favoritos", Snackbar.LENGTH_SHORT).show();
-                                }
-                            });
-                } else {
-                    usuarioRef.update("favoritos", FieldValue.arrayUnion(idProd))
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    btnAddFavorito.setText("Quitar de favoritos");
-                                    btnAddFavorito.setIcon(iconFavoriteFilled);
+        usuarioRef.get().addOnSuccessListener(documentSnapshot -> {
+            List<String> favoritos = (List<String>) documentSnapshot.get("favoritos");
+            boolean isInFavorites = favoritos != null && favoritos.contains(idProd);
 
-                                    Snackbar.make(v, "Añadido a favoritos", Snackbar.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Snackbar.make(v, "Error al añadir a favoritos", Snackbar.LENGTH_SHORT).show();
-                                }
-                            });
-                }
+            if (isInFavorites) {
+                actualizarLista("favoritos", idProd, false, v, "Eliminado de favoritos", "Error al eliminar");
+            } else {
+                actualizarLista("favoritos", idProd, true, v, "Añadido a favoritos", "Error al añadir a favoritos");
             }
+
+            actualizarFavoriteBtn(!isInFavorites);
         });
+
+
     }
 
     private void addProductoToCart(View v) {
-        mFirestore.collection("usuarios").document(mUser.getUid()).update("carrito", FieldValue.arrayUnion(idProd))
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Snackbar.make(v, "Se añadio a tu carrito", Snackbar.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Snackbar.make(v, "Eliminado de tu carrito", Snackbar.LENGTH_SHORT).show();
-                    }
-                });
+        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
+
+        usuarioRef.get().addOnSuccessListener(documentSnapshot -> {
+            List<String> carrito = (List<String>) documentSnapshot.get("carrito");
+            boolean isInCart = carrito != null && carrito.contains(idProd);
+
+            if (isInCart) {
+                actualizarLista("carrito", idProd, false, v, "Producto quitado del carrito", "Error al quitar el producto del carrito");
+            } else {
+                actualizarLista("carrito", idProd, true, v, "Producto añadido al carrito", "Error al añadir el producto al carrito");
+            }
+            actualizarCartBtn(!isInCart);
+        });
+    }
+
+    private void actualizarLista(String lista, String elemento, boolean agregar, View v, String mensajeExito, String mensajeError) {
+        if (agregar) {
+            usuarioRef.update(lista, FieldValue.arrayUnion(elemento))
+                    .addOnSuccessListener(unused -> {
+                        mostrarMensaje(v, mensajeExito);
+                    })
+                    .addOnFailureListener(e -> {
+                        mostrarMensaje(v, mensajeError);
+                    });
+        } else {
+            usuarioRef.update(lista, FieldValue.arrayRemove(elemento))
+                    .addOnSuccessListener(unused -> {
+                        mostrarMensaje(v, mensajeExito);
+                    })
+                    .addOnFailureListener(e -> {
+                        mostrarMensaje(v, mensajeError);
+                    });
+        }
+    }
+
+    private void mostrarMensaje(View v, String mensaje) {
+        Snackbar.make(v, mensaje, Snackbar.LENGTH_SHORT).show();
+    }
+
+    private void actualizarFavoriteBtn(boolean isInFavorite) {
+        btnAddFavorito.setText(isInFavorite ? "Quitar Favorito" : "Añadir Favorito");
+        btnAddFavorito.setIcon(isInFavorite ? iconFavoriteFilled : iconFavoriteOutlined);
+    }
+
+    private void actualizarCartBtn(boolean isInCart) {
+        btnAddCart.setText(isInCart ? "Remover Carrito" : "Añadir Carrito");
+        btnAddCart.setIcon(isInCart ? iconRemoveFromCart : iconAddToCart);
     }
 
 

@@ -33,6 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout6"
             android:layout_width="340dp"
             android:layout_height="266dp"
             android:layout_marginTop="36dp"
@@ -185,14 +186,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="347dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="472dp"
+            android:layout_width="348dp"
+            android:layout_height="73dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
             <Button
                 android:id="@+id/btnAddFavorito"
@@ -203,12 +203,9 @@
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:icon="@drawable/baseline_favorite_border_24"
-                app:iconTint="#6C6C6C" />
-
-            <Space
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                app:iconTint="#6C6C6C"
+                android:layout_marginRight="10dp"
+                />
 
             <Button
                 android:id="@+id/btnAddCart"

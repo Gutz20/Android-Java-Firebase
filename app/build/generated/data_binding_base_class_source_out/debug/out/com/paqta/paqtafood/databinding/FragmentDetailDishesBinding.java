@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
@@ -30,6 +31,9 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
 
   @NonNull
   public final Button btnShare;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout6;
 
   @NonNull
   public final ImageView imageView18;
@@ -56,7 +60,8 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
   public final TextView textView17;
 
   private FragmentDetailDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddCart,
-      @NonNull Button btnAddFavorito, @NonNull Button btnShare, @NonNull ImageView imageView18,
+      @NonNull Button btnAddFavorito, @NonNull Button btnShare,
+      @NonNull ConstraintLayout constraintLayout6, @NonNull ImageView imageView18,
       @NonNull ImageView imageView19, @NonNull ImageView imageView20,
       @NonNull ImageView imageView21, @NonNull ImageView imageView22,
       @NonNull LinearLayout linearLayout4, @NonNull TextView textView15,
@@ -65,6 +70,7 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
     this.btnAddCart = btnAddCart;
     this.btnAddFavorito = btnAddFavorito;
     this.btnShare = btnShare;
+    this.constraintLayout6 = constraintLayout6;
     this.imageView18 = imageView18;
     this.imageView19 = imageView19;
     this.imageView20 = imageView20;
@@ -120,6 +126,12 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.constraintLayout6;
+      ConstraintLayout constraintLayout6 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout6 == null) {
+        break missingId;
+      }
+
       id = R.id.imageView18;
       ImageView imageView18 = ViewBindings.findChildViewById(rootView, id);
       if (imageView18 == null) {
@@ -169,8 +181,8 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
       }
 
       return new FragmentDetailDishesBinding((FrameLayout) rootView, btnAddCart, btnAddFavorito,
-          btnShare, imageView18, imageView19, imageView20, imageView21, imageView22, linearLayout4,
-          textView15, textView17);
+          btnShare, constraintLayout6, imageView18, imageView19, imageView20, imageView21,
+          imageView22, linearLayout4, textView15, textView17);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
