@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.paqta.paqtafood.R;
@@ -27,10 +28,16 @@ public final class FragmentFormDishesBinding implements ViewBinding {
   public final Button btnAdd;
 
   @NonNull
+  public final Button btnAddContent;
+
+  @NonNull
   public final Button btnDeleteImage;
 
   @NonNull
   public final Button btnDialogImage;
+
+  @NonNull
+  public final ChipGroup chipGroup;
 
   @NonNull
   public final AutoCompleteTextView cmbCategoria;
@@ -51,24 +58,31 @@ public final class FragmentFormDishesBinding implements ViewBinding {
   public final TextInputLayout filledTextField3;
 
   @NonNull
+  public final TextInputLayout filledTextField4;
+
+  @NonNull
   public final ImageView imagePlatillo;
 
   private FragmentFormDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
-      @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
-      @NonNull AutoCompleteTextView cmbCategoria, @NonNull TextInputEditText edtTextDescripcion,
-      @NonNull TextInputEditText edtTextNombre, @NonNull TextInputLayout filledTextField,
-      @NonNull TextInputLayout filledTextField2, @NonNull TextInputLayout filledTextField3,
+      @NonNull Button btnAddContent, @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
+      @NonNull ChipGroup chipGroup, @NonNull AutoCompleteTextView cmbCategoria,
+      @NonNull TextInputEditText edtTextDescripcion, @NonNull TextInputEditText edtTextNombre,
+      @NonNull TextInputLayout filledTextField, @NonNull TextInputLayout filledTextField2,
+      @NonNull TextInputLayout filledTextField3, @NonNull TextInputLayout filledTextField4,
       @NonNull ImageView imagePlatillo) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
+    this.btnAddContent = btnAddContent;
     this.btnDeleteImage = btnDeleteImage;
     this.btnDialogImage = btnDialogImage;
+    this.chipGroup = chipGroup;
     this.cmbCategoria = cmbCategoria;
     this.edtTextDescripcion = edtTextDescripcion;
     this.edtTextNombre = edtTextNombre;
     this.filledTextField = filledTextField;
     this.filledTextField2 = filledTextField2;
     this.filledTextField3 = filledTextField3;
+    this.filledTextField4 = filledTextField4;
     this.imagePlatillo = imagePlatillo;
   }
 
@@ -105,6 +119,12 @@ public final class FragmentFormDishesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnAddContent;
+      Button btnAddContent = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddContent == null) {
+        break missingId;
+      }
+
       id = R.id.btnDeleteImage;
       Button btnDeleteImage = ViewBindings.findChildViewById(rootView, id);
       if (btnDeleteImage == null) {
@@ -114,6 +134,12 @@ public final class FragmentFormDishesBinding implements ViewBinding {
       id = R.id.btnDialogImage;
       Button btnDialogImage = ViewBindings.findChildViewById(rootView, id);
       if (btnDialogImage == null) {
+        break missingId;
+      }
+
+      id = R.id.chipGroup;
+      ChipGroup chipGroup = ViewBindings.findChildViewById(rootView, id);
+      if (chipGroup == null) {
         break missingId;
       }
 
@@ -153,15 +179,22 @@ public final class FragmentFormDishesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.filledTextField4;
+      TextInputLayout filledTextField4 = ViewBindings.findChildViewById(rootView, id);
+      if (filledTextField4 == null) {
+        break missingId;
+      }
+
       id = R.id.imagePlatillo;
       ImageView imagePlatillo = ViewBindings.findChildViewById(rootView, id);
       if (imagePlatillo == null) {
         break missingId;
       }
 
-      return new FragmentFormDishesBinding((FrameLayout) rootView, btnAdd, btnDeleteImage,
-          btnDialogImage, cmbCategoria, edtTextDescripcion, edtTextNombre, filledTextField,
-          filledTextField2, filledTextField3, imagePlatillo);
+      return new FragmentFormDishesBinding((FrameLayout) rootView, btnAdd, btnAddContent,
+          btnDeleteImage, btnDialogImage, chipGroup, cmbCategoria, edtTextDescripcion,
+          edtTextNombre, filledTextField, filledTextField2, filledTextField3, filledTextField4,
+          imagePlatillo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

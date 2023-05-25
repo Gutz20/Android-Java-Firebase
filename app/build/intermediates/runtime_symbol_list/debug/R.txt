@@ -3643,6 +3643,7 @@ int id browser_actions_menu_items 0x7f0a0079
 int id browser_actions_menu_view 0x7f0a007a
 int id btnAddCart 0x7f0a007b
 int id btnAddCategory 0x7f0a007c
+int id btnAddContent 0x7f0a0357
 int id btnAddFavorito 0x7f0a007d
 int id btnAddFragmentProduct 0x7f0a007e
 int id btnAddPlatillo 0x7f0a007f
@@ -3687,6 +3688,7 @@ int id chain2 0x7f0a00a8
 int id chains 0x7f0a00a9
 int id checkbox 0x7f0a00aa
 int id checked 0x7f0a00ab
+int id chipGroup 0x7f0a0355
 int id chronometer 0x7f0a00ac
 int id circle_center 0x7f0a00ad
 int id cityDescriptionTextView 0x7f0a00ae
@@ -3817,6 +3819,7 @@ int id filled 0x7f0a0127
 int id filledTextField 0x7f0a0128
 int id filledTextField2 0x7f0a0129
 int id filledTextField3 0x7f0a012a
+int id filledTextField4 0x7f0a0356
 int id fitCenter 0x7f0a012b
 int id fitEnd 0x7f0a012c
 int id fitStart 0x7f0a012d

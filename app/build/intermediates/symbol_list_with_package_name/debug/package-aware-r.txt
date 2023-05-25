@@ -3644,6 +3644,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddCart
 id btnAddCategory
+id btnAddContent
 id btnAddFavorito
 id btnAddFragmentProduct
 id btnAddPlatillo
@@ -3688,6 +3689,7 @@ id chain2
 id chains
 id checkbox
 id checked
+id chipGroup
 id chronometer
 id circle_center
 id cityDescriptionTextView
@@ -3818,6 +3820,7 @@ id filled
 id filledTextField
 id filledTextField2
 id filledTextField3
+id filledTextField4
 id fitCenter
 id fitEnd
 id fitStart

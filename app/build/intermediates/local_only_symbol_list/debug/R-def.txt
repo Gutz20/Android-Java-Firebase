@@ -249,6 +249,7 @@ id bluePaqtaLogo
 id bottomNavigationView
 id btnAddCart
 id btnAddCategory
+id btnAddContent
 id btnAddFavorito
 id btnAddFragmentProduct
 id btnAddPlatillo
@@ -268,6 +269,7 @@ id button
 id button2
 id card
 id categoriaPlatillo
+id chipGroup
 id cityDescriptionTextView
 id cityTextView
 id cmbCategoria
@@ -301,6 +303,7 @@ id favoritesPostres
 id filledTextField
 id filledTextField2
 id filledTextField3
+id filledTextField4
 id frame_layout
 id icButtonDetail
 id iconImageView

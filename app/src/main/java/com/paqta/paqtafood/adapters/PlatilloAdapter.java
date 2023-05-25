@@ -21,8 +21,13 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.WriteBatch;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.paqta.paqtafood.R;
@@ -33,6 +38,7 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, Platillo
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     private FirebaseStorage mStorage = FirebaseStorage.getInstance();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     Activity activity;
     FragmentManager fm;
 
@@ -82,7 +88,7 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, Platillo
     private void eliminarPlatillo(View view, String id) {
         String storage_path = "platillos/*", prefijo = "platillo";
 
-        mFirestore.collection("platillos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("productos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 String ruta_storage_foto = storage_path + "" + prefijo + "" + id;
@@ -92,6 +98,7 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, Platillo
                             @Override
                             public void onSuccess(Void unused) {
                                 Snackbar.make(view, "Eliminado con su imagen", Snackbar.LENGTH_LONG).show();
+                                eliminarReferenciaUsuario(id);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -106,6 +113,66 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, Platillo
                 Snackbar.make(view, "Error al eliminar", Snackbar.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void eliminarReferenciaUsuario(String id) {
+        CollectionReference usersRef = mFirestore.collection("usuarios");
+
+        usersRef
+                .whereArrayContains("favoritos", id)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        WriteBatch batch = mFirestore.batch();
+
+                        for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            String usuarioId = documentSnapshot.getId();
+
+                            batch.update(usersRef.document(usuarioId), "favoritos", FieldValue.arrayRemove(id));
+
+                            batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(activity, "Se removió de los favoritos de los usuarios", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(activity, "Error al remover de los favoritos de los usuarios", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    }
+                });
+
+        usersRef
+                .whereArrayContains("carrito", id) // Reemplaza "carrito" con el nombre del campo en tu colección de usuarios
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        WriteBatch batch = mFirestore.batch();
+
+                        for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            String usuarioId = documentSnapshot.getId();
+
+                            batch.update(usersRef.document(usuarioId), "carrito", FieldValue.arrayRemove(id));
+                        }
+
+                        batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(activity, "Se removió del carrito de los usuarios", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(activity, "Error al remover del carrito de los usuarios", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
     }
 
     @NonNull

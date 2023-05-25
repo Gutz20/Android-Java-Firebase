@@ -2,6 +2,7 @@ package com.paqta.paqtafood.screens.dishes.components;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -38,9 +39,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -52,6 +56,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
+
+import org.checkerframework.checker.units.qual.A;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -67,12 +73,14 @@ public class FormDishesFragment extends Fragment {
     String idPlatillo, storage_path = "platillos/*", prefijo = "platillo";
     ImageView fotoPlatillo;
 
-    Button btnAdd, btnDialogImage, btnRemoveImage;
+    Button btnAdd, btnDialogImage, btnRemoveImage, btnAddContent;
 
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
 
     TextInputEditText edtTxtNombre, edtTxtDescripcion;
+    ChipGroup chipGroup;
+    ArrayList<String> listaContenido;
     AutoCompleteTextView autoCompleteTextView;
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -107,35 +115,71 @@ public class FormDishesFragment extends Fragment {
         btnRemoveImage = root.findViewById(R.id.btnDeleteImage);
         btnDialogImage = root.findViewById(R.id.btnDialogImage);
 
+        // Parte de los chips o contenido de los productos
+        btnAddContent = root.findViewById(R.id.btnAddContent);
+        chipGroup = root.findViewById(R.id.chipGroup);
+        listaContenido = new ArrayList<>();
+
         btnDialogImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MaterialAlertDialogBuilder(getContext())
-                        .setTitle("Seleccione una opcion")
-                        .setMessage("Puede seleccionar la imagen de su galeria o si quiere puede tomar una foto con la camara")
-                        .setPositiveButton("Galeria", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                openImageGallery();
-                            }
-                        })
-                        // Se cambio el orden solamente por estetica ;)
-                        .setNegativeButton("Camara", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                openCamera();
-                            }
-                        })
-                        .setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .show();
+                mostrarDialog();
             }
         });
 
+        btnAddContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("Agregar contenido");
+
+                final EditText editText = new EditText(getContext());
+                builder.setView(editText);
+
+                builder.setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String nuevoContenido = "+ " + editText.getText().toString();
+                        agregarContenido(nuevoContenido);
+                    }
+                });
+
+                builder.setNegativeButton("Cancelar", null);
+                builder.show();
+            }
+        });
+
+        procesarFormulario();
+        setupDropdown();
+        return root;
+    }
+
+    private void agregarContenido(String nuevoContenido) {
+        listaContenido.add(nuevoContenido);
+        mostrarContenido(listaContenido);
+    }
+
+    private void mostrarContenido(List<String> list) {
+        chipGroup.removeAllViews();
+
+        list.forEach(c -> {
+            Chip chip = new Chip(getContext());
+            chip.setText(c);
+            chip.setCloseIconVisible(true);
+            chip.setOnCloseIconClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String contenido = chip.getText().toString();
+                    list.remove(contenido);
+                    mostrarContenido(list);
+                }
+            });
+
+            chipGroup.addView(chip);
+        });
+    }
+
+    private void procesarFormulario(){
         if (idPlatillo == null || idPlatillo.isEmpty()) {
             btnAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -144,7 +188,7 @@ public class FormDishesFragment extends Fragment {
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
                     String categoria = autoCompleteTextView.getText().toString().trim();
 
-                    if (validar(nombre, descripcion, categoria)) {
+                    if (validar(nombre, descripcion, categoria, listaContenido)) {
                         postPlatillo(nombre, descripcion, categoria);
                     }
                 }
@@ -159,15 +203,38 @@ public class FormDishesFragment extends Fragment {
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
                     String categoria = autoCompleteTextView.getText().toString().trim();
 
-                    if (validar(nombre, descripcion, categoria)) {
+                    if (validar(nombre, descripcion, categoria, listaContenido)) {
                         updatePlatillo(nombre, descripcion, categoria);
                     }
                 }
             });
         }
+    }
 
-        setupDropdown();
-        return root;
+    private void mostrarDialog() {
+        new MaterialAlertDialogBuilder(getContext())
+                .setTitle("Seleccione una opcion")
+                .setMessage("Puede seleccionar la imagen de su galeria o si quiere puede tomar una foto con la camara")
+                .setPositiveButton("Galeria", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        openImageGallery();
+                    }
+                })
+                // Se cambio el orden solamente por estetica ;)
+                .setNegativeButton("Camara", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        openCamera();
+                    }
+                })
+                .setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 
     private void setupDropdown() {
@@ -199,13 +266,13 @@ public class FormDishesFragment extends Fragment {
      * @param categoria
      * @return
      */
-    private boolean validar(String nombre, String descripcion, String categoria) {
+    private boolean validar(String nombre, String descripcion, String categoria, List<String> detalles) {
         Drawable currentDrawable = fotoPlatillo.getDrawable();
         Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
         Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
         Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
 
-        if (nombre.isEmpty() || descripcion.isEmpty() || categoria.isEmpty()) {
+        if (nombre.isEmpty() || descripcion.isEmpty() || categoria.isEmpty() || detalles.isEmpty()) {
             Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -274,6 +341,7 @@ public class FormDishesFragment extends Fragment {
         map.put("nombre", nombre);
         map.put("descripcion", descripcion);
         map.put("categoria", categoria);
+        map.put("detalles", listaContenido);
 
         documentReference.set(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -300,10 +368,12 @@ public class FormDishesFragment extends Fragment {
                         String descripcion = documentSnapshot.getString("descripcion");
                         String categoria = documentSnapshot.getString("categoria");
                         String imagen = documentSnapshot.getString("imagen");
+                        List<String> detalles = (List<String>) documentSnapshot.get("detalles");
 
                         edtTxtNombre.setText(nombre);
                         edtTxtDescripcion.setText(descripcion);
                         autoCompleteTextView.setText(categoria);
+                        mostrarContenido(detalles);
 
                         if (imagen == null) {
                             fotoPlatillo.setImageResource(R.drawable.image_icon_124);

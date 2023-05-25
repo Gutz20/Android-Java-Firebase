@@ -3,6 +3,7 @@ package com.paqta.paqtafood.screens.favorite;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.NonUiContext;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,21 +46,16 @@ import java.util.Map;
 
 public class FavoriteFragment extends Fragment {
 
-    public FavoriteFragment() {
-    }
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     RecyclerView mRecyclerPlatillos, mRecyclerBebibas, mRecyclerPostres;
     CardFavoriteAdapter mAdapterPlatillos, mAdapterBebidas, mAdapterPostres;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -144,9 +140,12 @@ public class FavoriteFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        mAdapterPlatillos.stopListening();
-        mAdapterBebidas.stopListening();
-        mAdapterPostres.stopListening();
+        if (mAdapterPlatillos != null && mAdapterBebidas != null && mAdapterPostres != null) {
+            mAdapterPlatillos.stopListening();
+            mAdapterBebidas.stopListening();
+            mAdapterPostres.stopListening();
+        }
+
     }
 
 }
