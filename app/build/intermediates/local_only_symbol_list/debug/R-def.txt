@@ -260,7 +260,6 @@ id btnEditar
 id btnEditarPlatillo
 id btnEliminar
 id btnEliminarPlatillo
-id btnEscanearQR
 id btnGoogle
 id btnLogin
 id btnRegister

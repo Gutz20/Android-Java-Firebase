@@ -98,7 +98,7 @@ dependencies {
     // iText PDF
     implementation 'com.itextpdf:itextg:5.5.10'
 
-//    ZXING
+//    ZXING | QR
     implementation 'com.google.zxing:core:3.4.1'
     implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
 

@@ -3674,7 +3674,6 @@ int id btnEditar 0x7f0a0084
 int id btnEditarPlatillo 0x7f0a0085
 int id btnEliminar 0x7f0a0086
 int id btnEliminarPlatillo 0x7f0a0087
-int id btnEscanearQR 0x7f0a0361
 int id btnGoogle 0x7f0a0088
 int id btnLogin 0x7f0a0089
 int id btnRegister 0x7f0a008a

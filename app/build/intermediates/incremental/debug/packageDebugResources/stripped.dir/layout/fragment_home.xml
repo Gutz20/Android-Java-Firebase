@@ -19,7 +19,7 @@
             android:outlineAmbientShadowColor="@color/colorOscuro"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.134"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/rounded"
@@ -181,8 +181,8 @@
 
                 <TextView
                     android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="103dp"
+                    android:layout_height="36dp"
                     android:layout_marginEnd="36dp"
                     android:text="BEBIDAS"
                     android:textColor="@color/colorFondo"
@@ -280,37 +280,6 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView9"
-            android:layout_width="75dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="404dp"
-            android:backgroundTint="@color/colorFondo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="0dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imgQR2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/messenger_icon"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.466"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.461" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView10"
             android:layout_width="75dp"
             android:layout_height="73dp"
@@ -371,15 +340,36 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <Button
-            android:id="@+id/btnEscanearQR"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Escanear QR"
-            app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView9"
+            android:layout_width="211dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/colorFondo"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialCardView4" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgQR2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/messenger_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.466"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.461" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
