@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-53:/values-cs/values-cs.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-54:/values-cs/values-cs.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\f609fa221937339a486e8e90d8516ce4\\transformed\\appcompat-1.6.1\\res\\values-cs\\values-cs.xml",
@@ -139,6 +139,23 @@
                         "startOffsets": "7883",
                         "endColumns": "142",
                         "endOffsets": "8021"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\531cb829d0606d3d118a191bca5bde26\\transformed\\zxing-android-embedded-4.2.0\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,311",
+                        "endColumns": "58,46,149,83",
+                        "endOffsets": "109,156,306,390"
+                    },
+                    "to": {
+                        "startLines": "236,237,238,239",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "22743,22802,22849,22999",
+                        "endColumns": "58,46,149,83",
+                        "endOffsets": "22797,22844,22994,23078"
                     }
                 },
                 {

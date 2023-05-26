@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-53:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-54:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\531cb829d0606d3d118a191bca5bde26\\transformed\\zxing-android-embedded-4.2.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,104,151,244",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "99,146,239,309"
+                    },
+                    "to": {
+                        "startLines": "234,235,236,237",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "18488,18537,18584,18677",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "18532,18579,18672,18742"
+                    }
+                },
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\67f0b316e1656a3fe9aff13e51ef9187\\transformed\\core-1.9.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
                     "from": {

@@ -38,16 +38,9 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, Platillo
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     private FirebaseStorage mStorage = FirebaseStorage.getInstance();
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     Activity activity;
     FragmentManager fm;
 
-    /**
-     * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
-     * FirestoreRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
     public PlatilloAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options, Activity activity, FragmentManager fm) {
         super(options);
         this.activity = activity;

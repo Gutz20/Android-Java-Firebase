@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -130,7 +131,7 @@ public class FavoriteFragment extends Fragment {
                     mRecyclerPostres.setAdapter(mAdapterPostres);
                     mAdapterPostres.startListening();
                 } else {
-                    Toast.makeText(getContext(), "Aun no tienes nada en favoritos 😔", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(getView(), "Aun no tienes nada en favoritos 😔", Snackbar.LENGTH_SHORT).show();
                 }
 
             }

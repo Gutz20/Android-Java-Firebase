@@ -20,15 +20,14 @@ import com.paqta.paqtafood.model.Producto;
 public class OffersFragment extends Fragment {
 
 
+    RecyclerView mRecycler;
+    ProductoAdapter mAdapter;
+    FirebaseFirestore mFirestore;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-    RecyclerView mRecycler;
-    ProductoAdapter mAdapter;
-    FirebaseFirestore mFirestore;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-53:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-54:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\49dee99b6c928111fce1cbb1146f6eb1\\transformed\\play-services-base-18.1.0\\res\\values-fr-rCA\\values.xml",

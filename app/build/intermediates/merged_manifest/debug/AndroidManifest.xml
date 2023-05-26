@@ -32,6 +32,23 @@
         <package android:name="com.facebook.katana" />
     </queries>
 
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
@@ -88,6 +105,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- <provider -->
+        <!-- android:name="androidx.core.content.FileProvider" -->
+        <!-- android:authorities="com.paqta.paqtafood.fileprovider" -->
+        <!-- android:exported="false" -->
+        <!-- android:grantUriPermissions="true" -->
+        <!-- > -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.FILE_PROVIDER_PATHS" -->
+        <!-- android:resource="@xml/file_paths" -->
+        <!-- /> -->
+        <!-- </provider> -->
 
         <meta-data
             android:name="android.app.lib_name"
@@ -283,6 +312,14 @@
             android:exported="true"
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
             android:visibleToInstantApps="true" />
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"

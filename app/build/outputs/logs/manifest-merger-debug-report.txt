@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
-INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
-INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
-INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
+ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
 MERGED from [org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\bfad89065c2a1f61d065adfae9abe458\transformed\whynotimagecarousel-2.1.0-debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:viewbinding:8.0.1] C:\Users\USUARIO\.gradle\caches\transforms-3\93fc01b482810959fdf32a7a742bd601\transformed\viewbinding-8.0.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:2:1-119:12
@@ -27,6 +27,7 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\USUARIO\.gradle\caches\t
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:17:1-40:12
 MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:2:1-11:12
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:17:1-56:12
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\22f05cfc1fa08f21dc73287331226ee7\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:17:1-37:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\c8eedc61750ada8f5fd6ce22bf52a018\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
@@ -115,27 +116,29 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\USUARIO
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\USUARIO\.gradle\caches\transforms-3\e96692b21a939c6b89f0aaf0296fd980\transformed\grpc-android-1.52.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\2b9ee8b48d1c432910e690e18ce37fbb\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\e4d0705541532d2bfeee506c6391d188\transformed\installreferrer-1.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
-INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
-INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
 	package
 		INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
 		INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
 		INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-80:12
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
 		INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:11-69
 uses-feature#android.hardware.camera
 ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:6:5-8:35
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:25:5-27:36
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:25:5-27:36
 	android:required
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:8:9-32
 	android:name
@@ -198,6 +201,8 @@ MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\USUARIO\.gradle\caches\transf
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:11:22-76
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:12:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:22:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:22:5-65
 	android:name
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:12:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
@@ -209,7 +214,7 @@ ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:14:22-78
 application
-ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:16:5-78:19
+ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:16:5-90:19
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:25:5-117:19
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\USUARIO\.gradle\caches\transforms-3\e07184198a3debfefef4a4bf872611ea\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:25:5-117:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\USUARIO\.gradle\caches\transforms-3\9effa6581a6790790789a4e1fa89b489\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
@@ -234,6 +239,8 @@ MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\ca
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:46:5-54:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:46:5-54:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\c8eedc61750ada8f5fd6ce22bf52a018\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
@@ -379,33 +386,33 @@ ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:56:27-74
 meta-data#android.app.lib_name
-ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:60:9-62:32
+ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:72:9-74:32
 	android:value
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:62:13-29
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:74:13-29
 	android:name
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:61:13-48
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:73:13-48
 meta-data#preloaded_fonts
-ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:64:9-66:57
+ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:76:9-78:57
 	android:resource
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:66:13-54
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:78:13-54
 	android:name
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:65:13-43
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:77:13-43
 provider#androidx.core.content.FileProvider
-ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:68:9-77:20
+ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:80:9-89:20
 	android:grantUriPermissions
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:72:13-47
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:84:13-47
 	android:authorities
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:70:13-67
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:82:13-67
 	android:exported
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:83:13-37
 	android:name
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:69:13-62
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:81:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:74:13-76:54
+ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:86:13-88:54
 	android:resource
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:76:17-51
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:88:17-51
 	android:name
-		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:75:17-67
+		ADDED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:87:17-67
 uses-sdk
 INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml
@@ -456,6 +463,8 @@ MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:20:5-44
 MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
 MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\22f05cfc1fa08f21dc73287331226ee7\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\USUARIO\.gradle\caches\transforms-3\22f05cfc1fa08f21dc73287331226ee7\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:20:5-44
@@ -944,6 +953,50 @@ ADDED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.
 		ADDED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:36:13-107
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:34:13-89
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:29:9-53
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:33:5-35:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:35:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:34:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:36:5-38:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:38:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:37:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:39:5-41:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:41:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:40:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:42:5-44:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:44:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:43:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:47:9-53:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:50:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:49:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:51:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:53:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:52:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:48:13-74
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\72fcd0ea7880aa9e692c432ccd194e21\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\USUARIO\.gradle\caches\transforms-3\5ce2da951670af51ea0b64465db57ce9\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:25:5-68

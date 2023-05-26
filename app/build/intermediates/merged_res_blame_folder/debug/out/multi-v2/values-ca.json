@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-53:/values-ca/values-ca.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-54:/values-ca/values-ca.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\67f0b316e1656a3fe9aff13e51ef9187\\transformed\\core-1.9.0\\res\\values-ca\\values-ca.xml",
@@ -69,6 +69,23 @@
                         "startOffsets": "635,758,863,970,1053,1159,1285,1369,1448,1539,1632,1725,1820,1918,2011,2104,2198,2289,2380,2461,2572,2680,2778,2888,2993,3101,3261,20633",
                         "endColumns": "122,104,106,82,105,125,83,78,90,92,92,94,97,92,92,93,90,90,80,110,107,97,109,104,107,159,98,81",
                         "endOffsets": "753,858,965,1048,1154,1280,1364,1443,1534,1627,1720,1815,1913,2006,2099,2193,2284,2375,2456,2567,2675,2773,2883,2988,3096,3256,3355,20710"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\531cb829d0606d3d118a191bca5bde26\\transformed\\zxing-android-embedded-4.2.0\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,167,323",
+                        "endColumns": "58,52,155,112",
+                        "endOffsets": "109,162,318,431"
+                    },
+                    "to": {
+                        "startLines": "211,212,213,214",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "20816,20875,20928,21084",
+                        "endColumns": "58,52,155,112",
+                        "endOffsets": "20870,20923,21079,21192"
                     }
                 },
                 {

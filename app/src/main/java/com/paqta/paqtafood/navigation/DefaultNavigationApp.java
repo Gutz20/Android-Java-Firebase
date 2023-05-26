@@ -82,22 +82,21 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
-
             if (item.getItemId() == R.id.nav_bottom_home) {
-                toolbar.setTitle("INICIO PAQTAFOOD");
+                toolbar.setTitle("Menú");
                 replaceFragment(new MenuFragment());
             } else if (item.getItemId() == R.id.nav_bottom_favorite) {
-                toolbar.setTitle("BLACK DAY");
+                toolbar.setTitle("Favoritos");
                 replaceFragment(new FavoriteFragment());
             } else if (item.getItemId() == R.id.nav_bottom_search) {
-                toolbar.setTitle("BUSQUEDA");
+                toolbar.setTitle("Busquemos tu Platillo");
                 replaceFragment(new SearchFragment());
             } else if (item.getItemId() == R.id.nav_bottom_menu_detail) {
-                toolbar.setTitle("BUSQUEMOS TU PLATILLOS");
+                toolbar.setTitle("Menú");
                 replaceFragment(new MenuDetailFragment());
             } else if (item.getItemId() == R.id.nav_bottom_cart) {
                 toolbar.setTitle("BUSQUEDA");
-                replaceFragment(new SearchFragment());
+                replaceFragment(new HomeFragment());
             }
 
             return true;
@@ -160,61 +159,5 @@ public class DefaultNavigationApp extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
-
-    /**
-     * Muestra un dialog (ventana desplegable que nos dara opciones) practicamente
-     * es un Bottom Sheets
-     */
-//    private void showBottomDialog() {
-//
-//        final Dialog dialog = new Dialog(this);
-//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        dialog.setContentView(R.layout.bottomsheetlayout);
-//
-//        LinearLayout videoLayout = dialog.findViewById(R.id.layoutVideo);
-//        LinearLayout shortsLayout = dialog.findViewById(R.id.layoutShorts);
-//        LinearLayout liveLayout = dialog.findViewById(R.id.layoutLive);
-//        ImageView cancelButton = dialog.findViewById(R.id.cancelButton);
-//
-//        videoLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                dialog.dismiss();
-//                Toast.makeText(DefaultNavigationApp.this, "Opcion 1", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//
-//        shortsLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialog.dismiss();
-//                Toast.makeText(DefaultNavigationApp.this, "Opcion 2", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        liveLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialog.dismiss();
-//                Toast.makeText(DefaultNavigationApp.this, "Opcion 3", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        cancelButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.dismiss();
-//            }
-//        });
-//
-//        dialog.show();
-//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-//        dialog.getWindow().setGravity(Gravity.BOTTOM);
-//
-//    }
 
 }

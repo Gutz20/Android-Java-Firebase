@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-53:/values-da/values-da.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-54:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\e07184198a3debfefef4a4bf872611ea\\transformed\\firebase-ui-auth-8.0.2\\res\\values-da\\values-da.xml",
@@ -52,6 +52,23 @@
                         "startOffsets": "21896",
                         "endColumns": "100",
                         "endOffsets": "21992"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\531cb829d0606d3d118a191bca5bde26\\transformed\\zxing-android-embedded-4.2.0\\res\\values-da\\values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,307",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "109,156,302,412"
+                    },
+                    "to": {
+                        "startLines": "233,234,235,236",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "21997,22056,22103,22249",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "22051,22098,22244,22354"
                     }
                 },
                 {

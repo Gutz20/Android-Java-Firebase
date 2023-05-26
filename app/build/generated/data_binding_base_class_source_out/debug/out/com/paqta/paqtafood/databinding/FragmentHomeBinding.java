@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +22,9 @@ import java.lang.String;
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final Button btnEscanearQR;
 
   @NonNull
   public final ShapeableImageView imageView;
@@ -97,11 +101,11 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView textView9;
 
-  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull ShapeableImageView imageView,
-      @NonNull ImageView imageView10, @NonNull ImageView imageView11,
-      @NonNull ImageView imageView12, @NonNull ImageView imageView6, @NonNull ImageView imageView7,
-      @NonNull ImageView imageView8, @NonNull ImageView imageView9, @NonNull ImageView imgQR1,
-      @NonNull ImageView imgQR2, @NonNull ImageView imgQR3,
+  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Button btnEscanearQR,
+      @NonNull ShapeableImageView imageView, @NonNull ImageView imageView10,
+      @NonNull ImageView imageView11, @NonNull ImageView imageView12, @NonNull ImageView imageView6,
+      @NonNull ImageView imageView7, @NonNull ImageView imageView8, @NonNull ImageView imageView9,
+      @NonNull ImageView imgQR1, @NonNull ImageView imgQR2, @NonNull ImageView imgQR3,
       @NonNull MaterialCardView materialCardView10, @NonNull MaterialCardView materialCardView3,
       @NonNull MaterialCardView materialCardView4, @NonNull MaterialCardView materialCardView5,
       @NonNull MaterialCardView materialCardView6, @NonNull MaterialCardView materialCardView7,
@@ -109,6 +113,7 @@ public final class FragmentHomeBinding implements ViewBinding {
       @NonNull TextView textView, @NonNull TextView textView10, @NonNull TextView textView6,
       @NonNull TextView textView7, @NonNull TextView textView8, @NonNull TextView textView9) {
     this.rootView = rootView;
+    this.btnEscanearQR = btnEscanearQR;
     this.imageView = imageView;
     this.imageView10 = imageView10;
     this.imageView11 = imageView11;
@@ -163,6 +168,12 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnEscanearQR;
+      Button btnEscanearQR = ViewBindings.findChildViewById(rootView, id);
+      if (btnEscanearQR == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ShapeableImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -313,9 +324,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((FrameLayout) rootView, imageView, imageView10, imageView11,
-          imageView12, imageView6, imageView7, imageView8, imageView9, imgQR1, imgQR2, imgQR3,
-          materialCardView10, materialCardView3, materialCardView4, materialCardView5,
+      return new FragmentHomeBinding((FrameLayout) rootView, btnEscanearQR, imageView, imageView10,
+          imageView11, imageView12, imageView6, imageView7, imageView8, imageView9, imgQR1, imgQR2,
+          imgQR3, materialCardView10, materialCardView3, materialCardView4, materialCardView5,
           materialCardView6, materialCardView7, materialCardView8, materialCardView9, textView,
           textView10, textView6, textView7, textView8, textView9);
     }

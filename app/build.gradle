@@ -89,13 +89,18 @@ dependencies {
     // Google | Google authentication
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
-//    Carrusel de imagenes
+//    Carrusel de imagenes | Las properties no funcionan bien en java
     implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
 
-    // Indicador circular
+    // Indicador circular | Acá no lo probe pero esto es complemento de la anterior dependencia whynotimagecarousel
     implementation 'me.relex:circleindicator:2.1.6'
 
+    // iText PDF
+    implementation 'com.itextpdf:itextg:5.5.10'
 
+//    ZXING
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
 
 
 
