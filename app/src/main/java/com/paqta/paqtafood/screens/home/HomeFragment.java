@@ -96,9 +96,24 @@ public class HomeFragment extends Fragment {
 
         if (result != null && result.getContents() != null) {
             String qrContent = result.getContents();
-//            if (qrContent.equals()) {
-//                descargarPDFFromStorage();
-//            }
+
+            StorageReference storageRef = mStorage.getReference().child("archivos/cartilla.pdf");
+            storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    String storageUrl = uri.toString();
+                    if (qrContent.equals(storageUrl)) {
+                        descargarPDFFromStorage();
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    // Ocurrió un error al obtener la URL del archivo
+                    Toast.makeText(getContext(), "Error al obtener la URL del archivo", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+            });
         }
     }
 
@@ -172,17 +187,12 @@ public class HomeFragment extends Fragment {
         storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                // El archivo PDF se ha descargado exitosamente
                 Toast.makeText(getContext(), "PDF descargado correctamente", Toast.LENGTH_SHORT).show();
-
-                // Aquí puedes abrir el archivo PDF o realizar cualquier otra acción necesaria
-                // Por ejemplo, puedes abrirlo utilizando una aplicación de visor de PDF instalada en el dispositivo
                 openPDF(localFile);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                // Ocurrió un error al descargar el archivo PDF
                 Toast.makeText(getContext(), "Error al descargar el PDF", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
