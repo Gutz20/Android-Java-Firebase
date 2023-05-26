@@ -1,9 +1,7 @@
 package com.paqta.paqtafood.screens.home;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,27 +10,19 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import android.os.Environment;
-import android.os.FileUtils;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageMetadata;
@@ -43,25 +33,32 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.itextpdf.text.pdf.AcroFields;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.ColumnText;
+import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.model.Producto;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
+    private static final String STORAGE_PATH_PDF_CARTILLA = "archivos/cartilla.pdf";
+    private static final String STORAGE_EDITED_PDF_NAME = "cartilla_editada.pdf";
+    private static final String TOAST_PDF_UPLOADED = "PDF editado subido correctamente";
+    private static final String TOAST_PDF_UPLOAD_FAILED = "Error al subir el PDF editado";
+    private static final String TOAST_PDF_EDITED = "Se editó el PDF";
+    private static final String TOAST_PDF_DOWNLOADED = "PDF descargado correctamente";
+    private static final String TOAST_PDF_DOWNLOAD_FAILED = "Error al descargar el PDF";
     String storagePathPdfCartilla = "archivos/cartilla.pdf";
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
@@ -83,8 +80,7 @@ public class HomeFragment extends Fragment {
 
         qr = root.findViewById(R.id.imgQR2);
 
-        subirPDF();
-        generarQR(qr);
+        editarGuardarPDFyGenerarQR();
         return root;
     }
 
@@ -117,85 +113,84 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private void subirPDF() {
-        InputStream inputStream = getResources().openRawResource(R.raw.tarea_semanal_02);
-        StorageReference pdfRef = mStorage.getReference().child("archivos/cartilla.pdf");
+    private void editarGuardarPDFyGenerarQR() {
+        try {
+            InputStream inputStream = getResources().openRawResource(R.raw.tarea_semanal_02);
+            File outputFile = new File(getContext().getFilesDir(), STORAGE_EDITED_PDF_NAME);
 
-        pdfRef.getMetadata().addOnSuccessListener(new OnSuccessListener<StorageMetadata>() {
-            @Override
-            public void onSuccess(StorageMetadata storageMetadata) {
-                Toast.makeText(getContext(), "El archivo ya existe", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                UploadTask uploadTask = pdfRef.putStream(inputStream);
-                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+            PdfReader reader = new PdfReader(inputStream);
+            PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outputFile));
 
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+            int totalPages = reader.getNumberOfPages();
+
+            for (int i = 1; i <= totalPages; i++) {
+                PdfContentByte content = stamper.getOverContent(i);
+
+                // Agregar texto en la posición deseada
+                String texto = "Texto agregado desde Firebase en la página " + i;
+                Font font = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
+                Paragraph paragraph = new Paragraph(texto, font);
+                paragraph.setAlignment(Element.ALIGN_CENTER);
+                paragraph.setSpacingAfter(10);
+                paragraph.setIndentationLeft(50);
+
+                ColumnText.showTextAligned(content, Element.ALIGN_LEFT, paragraph, 100, 100, 0);
             }
-        });
+
+            stamper.close();
+            reader.close();
+
+            Toast.makeText(getContext(), "Se editó el PDF", Toast.LENGTH_SHORT).show();
+
+            // Subir el archivo PDF editado a Firebase Storage
+            StorageReference storageRef = mStorage.getReference().child(STORAGE_PATH_PDF_CARTILLA);
+            Uri fileUri = Uri.fromFile(outputFile);
+            UploadTask uploadTask = storageRef.putFile(fileUri);
+
+            uploadTask.addOnSuccessListener(taskSnapshot -> {
+//                Toast.makeText(getContext(), "PDF editado subido correctamente", Toast.LENGTH_SHORT).show();
+                // Generar el código QR después de que se haya subido el PDF editado
+                generarQR(storageRef);
+            }).addOnFailureListener(e -> {
+//                Toast.makeText(getContext(), "Error al subir el PDF editado", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            });
+
+        } catch (IOException | DocumentException e) {
+            e.printStackTrace();
+//            Toast.makeText(getContext(), "Error al editar el PDF", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void generarQR(ImageView imageView) {
-        StorageReference storageReference = mStorage.getReference().child(storagePathPdfCartilla);
+    private void generarQR(StorageReference storageReference) {
+//        StorageReference storageReference = mStorage.getReference().child(storagePathPdfCartilla);
+        storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
+            String storageUrl = uri.toString();
+            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+            try {
 
-        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                String storageUrl = uri.toString();
-                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-                try {
+                BitMatrix bitMatrix = multiFormatWriter.encode(storageUrl, BarcodeFormat.QR_CODE, 300, 300);
+                BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
 
-                    BitMatrix bitMatrix = multiFormatWriter.encode(storageUrl, BarcodeFormat.QR_CODE, 300, 300);
-                    BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                    Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-
-                    imageView.setImageBitmap(bitmap);
-                    imageView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            descargarPDFFromStorage();
-                        }
-                    });
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Manejar el error de obtener la URL del archivo
+                qr.setImageBitmap(bitmap);
+                qr.setOnClickListener(v -> descargarPDFFromStorage());
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-        });
-
+        }).addOnFailureListener(Throwable::printStackTrace);
     }
 
     private void descargarPDFFromStorage() {
         StorageReference storageRef = mStorage.getReference().child(storagePathPdfCartilla);
         File localFile = new File(getContext().getExternalFilesDir(null), "cartilla.pdf");
 
-        storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(getContext(), "PDF descargado correctamente", Toast.LENGTH_SHORT).show();
-                openPDF(localFile);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getContext(), "Error al descargar el PDF", Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
+        storageRef.getFile(localFile).addOnSuccessListener(taskSnapshot -> {
+            Toast.makeText(getContext(), TOAST_PDF_DOWNLOADED, Toast.LENGTH_SHORT).show();
+            openPDF(localFile);
+        }).addOnFailureListener(e -> {
+            Toast.makeText(getContext(), TOAST_PDF_DOWNLOAD_FAILED, Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         });
     }
 

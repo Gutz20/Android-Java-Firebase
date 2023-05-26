@@ -95,7 +95,7 @@ dependencies {
     // Indicador circular | Acá no lo probe pero esto es complemento de la anterior dependencia whynotimagecarousel
     implementation 'me.relex:circleindicator:2.1.6'
 
-    // iText PDF
+    // iText PDF | For edit
     implementation 'com.itextpdf:itextg:5.5.10'
 
 //    ZXING | QR
