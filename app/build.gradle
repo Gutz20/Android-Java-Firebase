@@ -86,6 +86,9 @@ dependencies {
 //    Glide | Para imagenes - Comunidad activa
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
+//    Picasso | para imagenes
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     // Google | Google authentication
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 

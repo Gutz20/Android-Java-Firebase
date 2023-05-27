@@ -2,7 +2,10 @@ package com.paqta.paqtafood.screens.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,19 +16,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.zxing.BarcodeFormat;
@@ -33,37 +35,39 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.paqta.paqtafood.R;
-
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import java.util.concurrent.atomic.AtomicReference;
+import com.bumptech.glide.request.transition.Transition;
+import com.squareup.picasso.Picasso;
+
+
 public class HomeFragment extends Fragment {
 
     private static final String STORAGE_PATH_PDF_CARTILLA = "archivos/cartilla.pdf";
     private static final String STORAGE_EDITED_PDF_NAME = "cartilla_editada.pdf";
-    private static final String TOAST_PDF_UPLOADED = "PDF editado subido correctamente";
-    private static final String TOAST_PDF_UPLOAD_FAILED = "Error al subir el PDF editado";
-    private static final String TOAST_PDF_EDITED = "Se editó el PDF";
     private static final String TOAST_PDF_DOWNLOADED = "PDF descargado correctamente";
     private static final String TOAST_PDF_DOWNLOAD_FAILED = "Error al descargar el PDF";
+    private static final int MAX_PRODUCTS_PER_PAGE = 5;
     String storagePathPdfCartilla = "archivos/cartilla.pdf";
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
     ImageView qr;
-    Button button;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,7 +84,7 @@ public class HomeFragment extends Fragment {
 
         qr = root.findViewById(R.id.imgQR2);
 
-        editarGuardarPDFyGenerarQR();
+        configurarPDF();
         return root;
     }
 
@@ -113,9 +117,9 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private void editarGuardarPDFyGenerarQR() {
+    private void configurarPDF() {
         try {
-            InputStream inputStream = getResources().openRawResource(R.raw.tarea_semanal_02);
+            InputStream inputStream = getResources().openRawResource(R.raw.cartilla_plantilla);
             File outputFile = new File(getContext().getFilesDir(), STORAGE_EDITED_PDF_NAME);
 
             PdfReader reader = new PdfReader(inputStream);
@@ -124,46 +128,76 @@ public class HomeFragment extends Fragment {
             int totalPages = reader.getNumberOfPages();
 
             for (int i = 1; i <= totalPages; i++) {
-                PdfContentByte content = stamper.getOverContent(i);
+                int imagenX = 100;
+                int imagenY = 700;
+                int textoX = 200;
+                int textoY = 700;
+                int descripcionX = 200;
+                int descripcionY = 650;
 
-                // Agregar texto en la posición deseada
-                String texto = "Texto agregado desde Firebase en la página " + i;
-                Font font = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
-                Paragraph paragraph = new Paragraph(texto, font);
-                paragraph.setAlignment(Element.ALIGN_CENTER);
-                paragraph.setSpacingAfter(10);
-                paragraph.setIndentationLeft(50);
+                AtomicReference<PdfContentByte> canvas = new AtomicReference<>();
+                CollectionReference reference = mFirestore.collection("productos");
+                int finalI = i;
+                reference.get().addOnSuccessListener(querySnapshot -> {
+                    int index = 0;
+                    int yPos = textoY;
 
-                ColumnText.showTextAligned(content, Element.ALIGN_LEFT, paragraph, 100, 100, 0);
+                    for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
+                        String nombre = documentSnapshot.getString("nombre");
+                        String descripcion = documentSnapshot.getString("descripcion");
+
+                        if (index % MAX_PRODUCTS_PER_PAGE == 0) {
+                            // Crear una nueva página si es el primer producto o si se excedió el límite por página
+                            if (canvas.get() != null) {
+                                stamper.insertPage(finalI + 1, reader.getPageSizeWithRotation(1));
+                                canvas.set(stamper.getOverContent(finalI + 1));
+                            } else {
+                                canvas.set(stamper.getOverContent(finalI));
+                            }
+                            yPos = textoY;
+                        }
+                        yPos -= 50;
+
+
+                        // Agrega el nombre
+                        Font nombreFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+                        Phrase nombrePhrase = new Phrase(nombre, nombreFont);
+                        ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, nombrePhrase, textoX, yPos, 0);
+
+                        // Agrega la descripción
+                        Font descripcionFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
+                        Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
+                        ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, descripcionX, yPos - 20, 0);
+
+                        // Resto de tu código para agregar la imagen
+
+                        index++;
+                    }
+
+                    try {
+                        stamper.close();
+                        reader.close();
+
+                        Toast.makeText(getContext(), "Se editó el PDF", Toast.LENGTH_SHORT).show();
+
+                        StorageReference storageRef = mStorage.getReference().child(STORAGE_PATH_PDF_CARTILLA);
+                        Uri fileUri = Uri.fromFile(outputFile);
+                        UploadTask uploadTask = storageRef.putFile(fileUri);
+
+                        uploadTask.addOnSuccessListener(taskSnapshot -> {
+                            generarQR(storageRef);
+                        }).addOnFailureListener(Throwable::printStackTrace);
+                    } catch (DocumentException | IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }).addOnFailureListener(Throwable::printStackTrace);
             }
-
-            stamper.close();
-            reader.close();
-
-            Toast.makeText(getContext(), "Se editó el PDF", Toast.LENGTH_SHORT).show();
-
-            // Subir el archivo PDF editado a Firebase Storage
-            StorageReference storageRef = mStorage.getReference().child(STORAGE_PATH_PDF_CARTILLA);
-            Uri fileUri = Uri.fromFile(outputFile);
-            UploadTask uploadTask = storageRef.putFile(fileUri);
-
-            uploadTask.addOnSuccessListener(taskSnapshot -> {
-//                Toast.makeText(getContext(), "PDF editado subido correctamente", Toast.LENGTH_SHORT).show();
-                // Generar el código QR después de que se haya subido el PDF editado
-                generarQR(storageRef);
-            }).addOnFailureListener(e -> {
-//                Toast.makeText(getContext(), "Error al subir el PDF editado", Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            });
-
         } catch (IOException | DocumentException e) {
             e.printStackTrace();
-//            Toast.makeText(getContext(), "Error al editar el PDF", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void generarQR(StorageReference storageReference) {
-//        StorageReference storageReference = mStorage.getReference().child(storagePathPdfCartilla);
         storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
             String storageUrl = uri.toString();
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();

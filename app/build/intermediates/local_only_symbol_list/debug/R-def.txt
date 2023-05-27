@@ -538,7 +538,7 @@ mipmap ic_launcher_logo
 mipmap ic_launcher_logo_foreground
 mipmap ic_launcher_logo_round
 mipmap ic_launcher_round
-raw tarea_semanal_02
+raw cartilla_plantilla
 string app_name
 string btnNuevoFishes
 string close_nav

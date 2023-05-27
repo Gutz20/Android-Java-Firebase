@@ -25,6 +25,7 @@ MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\USUARIO\.grad
 MERGED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4ff3deaf8de5546bd0079b79b2e137fa\transformed\firebase-database-20.2.0\AndroidManifest.xml:15:1-37:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\c5e7ba88dae72cfaccdc99f6c9d1ed23\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:2:1-14:12
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:17:1-40:12
 MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:2:1-11:12
 MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:17:1-56:12
@@ -114,6 +115,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\USUARIO\.gradle\
 MERGED from [androidx.print:print:1.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\6361f39dbce5ce10d101b0ebd6c66413\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\USUARIO\.gradle\caches\transforms-3\71ea1df654f2adfb016c0188d73b207d\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\USUARIO\.gradle\caches\transforms-3\e96692b21a939c6b89f0aaf0296fd980\transformed\grpc-android-1.52.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\10da744434afc697319d77d2b0f30b48\transformed\exifinterface-27.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\2b9ee8b48d1c432910e690e18ce37fbb\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\e4d0705541532d2bfeee506c6391d188\transformed\installreferrer-1.0\AndroidManifest.xml:2:1-13:12
 INJECTED from C:\Users\USUARIO\Desktop\backup-android\PaqtaFood\app\src\main\AndroidManifest.xml:2:1-92:12
@@ -237,6 +239,8 @@ MERGED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.gra
 MERGED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4ff3deaf8de5546bd0079b79b2e137fa\transformed\firebase-database-20.2.0\AndroidManifest.xml:27:5-35:19
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:7:5-12:19
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\531cb829d0606d3d118a191bca5bde26\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:46:5-54:19
@@ -459,6 +463,8 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\USUARIO\.gradle\caches\t
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\c5e7ba88dae72cfaccdc99f6c9d1ed23\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\USUARIO\.gradle\caches\transforms-3\3b1174c9aae80191d042dac2234b30e2\transformed\glide-4.15.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:20:5-44
 MERGED from [me.relex:circleindicator:2.1.6] C:\Users\USUARIO\.gradle\caches\transforms-3\31a2e547d4841f3dcf5ed556771bf439\transformed\circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
@@ -637,6 +643,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\USUARIO
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\USUARIO\.gradle\caches\transforms-3\71ea1df654f2adfb016c0188d73b207d\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\USUARIO\.gradle\caches\transforms-3\e96692b21a939c6b89f0aaf0296fd980\transformed\grpc-android-1.52.1\AndroidManifest.xml:5:5-7:41
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\USUARIO\.gradle\caches\transforms-3\e96692b21a939c6b89f0aaf0296fd980\transformed\grpc-android-1.52.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\10da744434afc697319d77d2b0f30b48\transformed\exifinterface-27.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\10da744434afc697319d77d2b0f30b48\transformed\exifinterface-27.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\2b9ee8b48d1c432910e690e18ce37fbb\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\USUARIO\.gradle\caches\transforms-3\2b9ee8b48d1c432910e690e18ce37fbb\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\USUARIO\.gradle\caches\transforms-3\e4d0705541532d2bfeee506c6391d188\transformed\installreferrer-1.0\AndroidManifest.xml:5:5-7:41
@@ -933,6 +941,14 @@ ADDED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.grad
 		ADDED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4ff3deaf8de5546bd0079b79b2e137fa\transformed\firebase-database-20.2.0\AndroidManifest.xml:33:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-database:20.2.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4ff3deaf8de5546bd0079b79b2e137fa\transformed\firebase-database-20.2.0\AndroidManifest.xml:32:17-109
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\USUARIO\.gradle\caches\transforms-3\24b4e1d53c02200c57184ed4450b7fe5\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
 ADDED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\USUARIO\.gradle\caches\transforms-3\4dcec280a92b665766826abc9887b59c\transformed\play-services-auth-20.5.0\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents

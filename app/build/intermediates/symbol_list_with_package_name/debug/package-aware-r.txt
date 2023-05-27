@@ -4696,8 +4696,8 @@ mipmap ic_launcher_logo_round
 mipmap ic_launcher_round
 plurals fui_error_weak_password
 plurals mtrl_badge_content_description
+raw cartilla_plantilla
 raw firebase_common_keep
-raw tarea_semanal_02
 raw zxing_beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description

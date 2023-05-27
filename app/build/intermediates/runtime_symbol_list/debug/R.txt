@@ -4695,8 +4695,8 @@ int mipmap ic_launcher_logo_round 0x7f100003
 int mipmap ic_launcher_round 0x7f100004
 int plurals fui_error_weak_password 0x7f110000
 int plurals mtrl_badge_content_description 0x7f110001
+int raw cartilla_plantilla 0x7f120003
 int raw firebase_common_keep 0x7f120000
-int raw tarea_semanal_02 0x7f120001
 int raw zxing_beep 0x7f120002
 int string abc_action_bar_home_description 0x7f130000
 int string abc_action_bar_up_description 0x7f130001
