@@ -2,10 +2,8 @@ package com.paqta.paqtafood.screens.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,15 +11,27 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Image;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import java.io.File;
+import java.util.concurrent.atomic.AtomicReference;
+
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.CustomTarget;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
@@ -38,7 +48,6 @@ import com.google.zxing.integration.android.IntentResult;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
@@ -46,16 +55,6 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.paqta.paqtafood.R;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-import java.util.concurrent.atomic.AtomicReference;
-import com.bumptech.glide.request.transition.Transition;
-import com.squareup.picasso.Picasso;
-
 
 public class HomeFragment extends Fragment {
 
@@ -83,6 +82,9 @@ public class HomeFragment extends Fragment {
         mStorage = FirebaseStorage.getInstance();
 
         qr = root.findViewById(R.id.imgQR2);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         configurarPDF();
         return root;
@@ -145,6 +147,7 @@ public class HomeFragment extends Fragment {
                     for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
                         String nombre = documentSnapshot.getString("nombre");
                         String descripcion = documentSnapshot.getString("descripcion");
+                        String imagen = documentSnapshot.getString("imagen");
 
                         if (index % MAX_PRODUCTS_PER_PAGE == 0) {
                             // Crear una nueva página si es el primer producto o si se excedió el límite por página
@@ -169,27 +172,37 @@ public class HomeFragment extends Fragment {
                         Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
                         ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, descripcionX, yPos - 20, 0);
 
-                        // Resto de tu código para agregar la imagen
+                        // Agregar una imagen al PDF
+                        Image image = null;
+                        try {
+                            image = Image.getInstance(imagen);
+                            image.setAbsolutePosition(imagenX, yPos - 20); // Establece la posición de la imagen en la página
+                            image.scaleToFit(100, image.getHeight()); // Ajusta el tamaño de la imagen
+                            canvas.get().addImage(image);
+                        } catch (IOException | DocumentException e) {
+                            throw new RuntimeException(e);
+                        }
+
 
                         index++;
                     }
 
                     try {
                         stamper.close();
-                        reader.close();
-
-                        Toast.makeText(getContext(), "Se editó el PDF", Toast.LENGTH_SHORT).show();
-
-                        StorageReference storageRef = mStorage.getReference().child(STORAGE_PATH_PDF_CARTILLA);
-                        Uri fileUri = Uri.fromFile(outputFile);
-                        UploadTask uploadTask = storageRef.putFile(fileUri);
-
-                        uploadTask.addOnSuccessListener(taskSnapshot -> {
-                            generarQR(storageRef);
-                        }).addOnFailureListener(Throwable::printStackTrace);
                     } catch (DocumentException | IOException e) {
                         throw new RuntimeException(e);
                     }
+                    reader.close();
+
+                    Toast.makeText(getContext(), "Se editó el PDF", Toast.LENGTH_SHORT).show();
+
+                    StorageReference storageRef = mStorage.getReference().child(STORAGE_PATH_PDF_CARTILLA);
+                    Uri fileUri = Uri.fromFile(outputFile);
+                    UploadTask uploadTask = storageRef.putFile(fileUri);
+
+                    uploadTask.addOnSuccessListener(taskSnapshot -> {
+                        generarQR(storageRef);
+                    }).addOnFailureListener(Throwable::printStackTrace);
                 }).addOnFailureListener(Throwable::printStackTrace);
             }
         } catch (IOException | DocumentException e) {
