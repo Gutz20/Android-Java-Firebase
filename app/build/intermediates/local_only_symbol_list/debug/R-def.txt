@@ -132,6 +132,7 @@ drawable bckp
 drawable bg_card_detail_dishes
 drawable bg_card_favorite
 drawable bg_card_menu_detail
+drawable bg_cart
 drawable bg_detail_dishes
 drawable bg_detalle_platillo
 drawable bg_header_sidebar
@@ -192,6 +193,7 @@ drawable logo_blank_transparent
 drawable logo_header_sidebar
 drawable logo_prueba
 drawable logo_rose_transparent
+drawable logo_white_2
 drawable mask_group
 drawable mask_group_ek1
 drawable mask_group_ek2
@@ -254,6 +256,7 @@ id btnAddFavorito
 id btnAddFragmentProduct
 id btnAddPlatillo
 id btnAddProduct
+id btnComprar
 id btnDeleteImage
 id btnDialogImage
 id btnEditar
@@ -263,11 +266,14 @@ id btnEliminarPlatillo
 id btnGoogle
 id btnLogin
 id btnRegister
+id btnReservar
 id btnShare
 id btn_add
 id button
 id button2
 id card
+id cartBebidasPostres
+id cartPlatillos
 id categoriaPlatillo
 id chipGroup
 id cityDescriptionTextView
@@ -332,6 +338,7 @@ id imageView26
 id imageView27
 id imageView28
 id imageView29
+id imageView3
 id imageView30
 id imageView31
 id imageView32
@@ -362,7 +369,10 @@ id imgQR3
 id img_view_icon_favorite
 id linearLayout
 id linearLayout2
+id linearLayout3
 id linearLayout4
+id linearLayout5
+id linearLayoutContaint
 id listRecyclerView
 id listview_data
 id logoImageView

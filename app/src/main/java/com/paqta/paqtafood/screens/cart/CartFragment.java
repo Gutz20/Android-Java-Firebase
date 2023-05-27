@@ -3,64 +3,107 @@ package com.paqta.paqtafood.screens.cart;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.paqta.paqtafood.R;
+import com.shuhart.stepview.StepView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CartFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CartFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    StepView stepView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    TextView stepTextView;
+    Button btnReservar, btnComprar;
 
-    public CartFragment() {
-        // Required empty public constructor
-    }
+    RecyclerView rycrCartPlatillos, rycrCartBebidasPostres;
+    LinearLayout layoutContaint;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CartFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CartFragment newInstance(String param1, String param2) {
-        CartFragment fragment = new CartFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    int stepIndex = 0;
+    String[] stepsTexts = {"CARRITO", "ENTREGA", "METODO DE PAGO"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        View root = inflater.inflate(R.layout.fragment_cart, container, false);
+
+        btnReservar = root.findViewById(R.id.btnReservar);
+        btnComprar = root.findViewById(R.id.btnComprar);
+
+        rycrCartPlatillos = root.findViewById(R.id.cartPlatillos);
+        rycrCartBebidasPostres = root.findViewById(R.id.cartBebidasPostres);
+        layoutContaint = root.findViewById(R.id.linearLayoutContaint);
+
+        stepTextView = root.findViewById(R.id.stepTextView);
+        stepView = root.findViewById(R.id.step_view);
+        stepView.getState()
+                .animationType(StepView.ANIMATION_ALL)
+                .stepsNumber(3)
+                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
+                .commit();
+
+        btnComprar.setOnClickListener(v -> {
+            stepIndex++;
+            if (stepIndex < stepsTexts.length) {
+                stepTextView.setText(stepsTexts[stepIndex]);
+                stepView.go(stepIndex, true);
+
+                btnReservar.setVisibility(View.GONE);
+//                rycrCartPlatillos.setVisibility(View.GONE);
+//                rycrCartBebidasPostres.setVisibility(View.GONE);
+
+                layoutContaint.removeAllViews();
+
+                TextView textViewDireccion = new TextView(getActivity());
+                textViewDireccion.setText("Direccion");
+                textViewDireccion.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
+                layoutContaint.addView(textViewDireccion);
+
+                TextView textViewPhone = new TextView(getActivity());
+                textViewPhone.setText("Telefono");
+                textViewPhone.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
+                layoutContaint.addView(textViewPhone);
+
+                TextView textViewRef = new TextView(getActivity());
+                textViewRef.setText("Referencia");
+                textViewRef.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
+                layoutContaint.addView(textViewRef);
+
+
+
+            }
+        });
+
+//        nextStep();
+        return root;
+    }
+
+    private void nextStep() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                stepIndex++;
+                if (stepIndex < stepsTexts.length) {
+                    stepTextView.setText(stepsTexts[stepIndex]);
+                    stepView.go(stepIndex, true);
+                    nextStep();
+                }
+            }
+        }, 3000);
     }
 }

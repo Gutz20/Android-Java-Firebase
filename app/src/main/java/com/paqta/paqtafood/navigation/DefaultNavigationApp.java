@@ -96,7 +96,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
                 replaceFragment(new MenuDetailFragment());
             } else if (item.getItemId() == R.id.nav_bottom_cart) {
                 toolbar.setTitle("BUSQUEDA");
-                replaceFragment(new HomeFragment());
+                replaceFragment(new CartFragment());
             }
 
             return true;

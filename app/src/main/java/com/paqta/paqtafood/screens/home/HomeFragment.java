@@ -2,7 +2,6 @@ package com.paqta.paqtafood.screens.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -11,13 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
-import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Image;
 
-import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +19,6 @@ import java.io.InputStream;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
 
-import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,10 +76,10 @@ public class HomeFragment extends Fragment {
 
         qr = root.findViewById(R.id.imgQR2);
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//        StrictMode.setThreadPolicy(policy);
 
-        configurarPDF();
+//        configurarPDF();
         return root;
     }
 

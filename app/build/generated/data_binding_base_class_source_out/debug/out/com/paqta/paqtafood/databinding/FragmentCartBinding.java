@@ -4,20 +4,68 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
+import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentCartBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button btnComprar;
+
+  @NonNull
+  public final Button btnReservar;
+
+  @NonNull
+  public final RecyclerView cartBebidasPostres;
+
+  @NonNull
+  public final RecyclerView cartPlatillos;
+
+  @NonNull
+  public final ImageView imageView3;
+
+  @NonNull
+  public final LinearLayout linearLayout3;
+
+  @NonNull
+  public final LinearLayout linearLayoutContaint;
+
+  @NonNull
+  public final TextView stepTextView;
+
+  @NonNull
+  public final StepView stepView;
+
+  private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
+      @NonNull Button btnReservar, @NonNull RecyclerView cartBebidasPostres,
+      @NonNull RecyclerView cartPlatillos, @NonNull ImageView imageView3,
+      @NonNull LinearLayout linearLayout3, @NonNull LinearLayout linearLayoutContaint,
+      @NonNull TextView stepTextView, @NonNull StepView stepView) {
     this.rootView = rootView;
+    this.btnComprar = btnComprar;
+    this.btnReservar = btnReservar;
+    this.cartBebidasPostres = cartBebidasPostres;
+    this.cartPlatillos = cartPlatillos;
+    this.imageView3 = imageView3;
+    this.linearLayout3 = linearLayout3;
+    this.linearLayoutContaint = linearLayoutContaint;
+    this.stepTextView = stepTextView;
+    this.stepView = stepView;
   }
 
   @Override
@@ -43,10 +91,69 @@ public final class FragmentCartBinding implements ViewBinding {
 
   @NonNull
   public static FragmentCartBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnComprar;
+      Button btnComprar = ViewBindings.findChildViewById(rootView, id);
+      if (btnComprar == null) {
+        break missingId;
+      }
 
-    return new FragmentCartBinding((FrameLayout) rootView);
+      id = R.id.btnReservar;
+      Button btnReservar = ViewBindings.findChildViewById(rootView, id);
+      if (btnReservar == null) {
+        break missingId;
+      }
+
+      id = R.id.cartBebidasPostres;
+      RecyclerView cartBebidasPostres = ViewBindings.findChildViewById(rootView, id);
+      if (cartBebidasPostres == null) {
+        break missingId;
+      }
+
+      id = R.id.cartPlatillos;
+      RecyclerView cartPlatillos = ViewBindings.findChildViewById(rootView, id);
+      if (cartPlatillos == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView3;
+      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView3 == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout3;
+      LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout3 == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayoutContaint;
+      LinearLayout linearLayoutContaint = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayoutContaint == null) {
+        break missingId;
+      }
+
+      id = R.id.stepTextView;
+      TextView stepTextView = ViewBindings.findChildViewById(rootView, id);
+      if (stepTextView == null) {
+        break missingId;
+      }
+
+      id = R.id.step_view;
+      StepView stepView = ViewBindings.findChildViewById(rootView, id);
+      if (stepView == null) {
+        break missingId;
+      }
+
+      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnReservar,
+          cartBebidasPostres, cartPlatillos, imageView3, linearLayout3, linearLayoutContaint,
+          stepTextView, stepView);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

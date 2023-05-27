@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>
+            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
+        </item>
+    </string-array>
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>
+            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
+        </item>
+    </string-array>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abel</item>
+        <item>@font/acme</item>
+        <item>@font/archivo</item>
+        <item>@font/caesar_dressing</item>
+        <item>@font/ceviche_one</item>
+    </array>
+    <color name="black">#FF000000</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBlanco">#fff</color>
+    <color name="colorFondo">#151C48</color>
+    <color name="colorFondo2">#9BA1CC</color>
+    <color name="colorLetra">#103153</color>
+    <color name="colorLogo">#DECDC6</color>
+    <color name="colorOscuro">#000</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorRojo">#FD5F5F</color>
+    <color name="lavender">#8692f7</color>
+    <color name="md_theme_dark_background">#1C1B1F</color>
+    <color name="md_theme_dark_error">#F2B8B5</color>
+    <color name="md_theme_dark_errorContainer">#8C1D18</color>
+    <color name="md_theme_dark_inverseOnSurface">#313033</color>
+    <color name="md_theme_dark_inversePrimary">#6750A4</color>
+    <color name="md_theme_dark_inverseSurface">#E6E1E5</color>
+    <color name="md_theme_dark_onBackground">#E6E1E5</color>
+    <color name="md_theme_dark_onError">#601410</color>
+    <color name="md_theme_dark_onErrorContainer">#F9DEDC</color>
+    <color name="md_theme_dark_onPrimary">#381E72</color>
+    <color name="md_theme_dark_onPrimaryContainer">#EADDFF</color>
+    <color name="md_theme_dark_onSecondary">#332D41</color>
+    <color name="md_theme_dark_onSecondaryContainer">#E8DEF8</color>
+    <color name="md_theme_dark_onSurface">#E6E1E5</color>
+    <color name="md_theme_dark_onSurfaceVariant">#CAC4D0</color>
+    <color name="md_theme_dark_onTertiary">#492532</color>
+    <color name="md_theme_dark_onTertiaryContainer">#FFD8E4</color>
+    <color name="md_theme_dark_outline">#938F99</color>
+    <color name="md_theme_dark_outlineVariant">#49454F</color>
+    <color name="md_theme_dark_primary">#D0BCFF</color>
+    <color name="md_theme_dark_primaryContainer">#4F378B</color>
+    <color name="md_theme_dark_scrim">#000000</color>
+    <color name="md_theme_dark_secondary">#CCC2DC</color>
+    <color name="md_theme_dark_secondaryContainer">#4A4458</color>
+    <color name="md_theme_dark_shadow">#000000</color>
+    <color name="md_theme_dark_surface">#1C1B1F</color>
+    <color name="md_theme_dark_surfaceTint">#D0BCFF</color>
+    <color name="md_theme_dark_surfaceVariant">#49454F</color>
+    <color name="md_theme_dark_tertiary">#EFB8C8</color>
+    <color name="md_theme_dark_tertiaryContainer">#633B48</color>
+    <color name="md_theme_light_background">#FFFBFE</color>
+    <color name="md_theme_light_error">#B3261E</color>
+    <color name="md_theme_light_errorContainer">#F9DEDC</color>
+    <color name="md_theme_light_inverseOnSurface">#F4EFF4</color>
+    <color name="md_theme_light_inversePrimary">#D0BCFF</color>
+    <color name="md_theme_light_inverseSurface">#313033</color>
+    <color name="md_theme_light_onBackground">#1C1B1F</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410E0B</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_onPrimaryContainer">#21005D</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_onSecondaryContainer">#1D192B</color>
+    <color name="md_theme_light_onSurface">#1C1B1F</color>
+    <color name="md_theme_light_onSurfaceVariant">#49454F</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_onTertiaryContainer">#31111D</color>
+    <color name="md_theme_light_outline">#79747E</color>
+    <color name="md_theme_light_outlineVariant">#CAC4D0</color>
+    <color name="md_theme_light_primary">#6750A4</color>
+    <color name="md_theme_light_primaryContainer">#EADDFF</color>
+    <color name="md_theme_light_scrim">#000000</color>
+    <color name="md_theme_light_secondary">#625B71</color>
+    <color name="md_theme_light_secondaryContainer">#E8DEF8</color>
+    <color name="md_theme_light_shadow">#000000</color>
+    <color name="md_theme_light_surface">#FFFBFE</color>
+    <color name="md_theme_light_surfaceTint">#6750A4</color>
+    <color name="md_theme_light_surfaceVariant">#E7E0EC</color>
+    <color name="md_theme_light_tertiary">#7D5260</color>
+    <color name="md_theme_light_tertiaryContainer">#FFD8E4</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="seed">#6750A4</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="fab_margin">16dp</dimen>
+    <string name="app_name">PaqtaFood</string>
+    <string name="btnNuevoFishes">NUEVO</string>
+    <string name="close_nav">close</string>
+    <string name="default_web_client_id" translatable="false">1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com</string>
+    <string name="descriptionImagesMenuPlat">Plato</string>
+    <string name="facebook">Facebook</string>
+    <string name="firebase_database_url" translatable="false">https://paqtafood-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1091847638331</string>
+    <string name="google_api_key" translatable="false">AIzaSyD-j3wQVy5DJ8Jdgxsh-OxnxeQmlF5P8HM</string>
+    <string name="google_app_id" translatable="false">1:1091847638331:android:fe60ffa222a708fdde7b1e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD-j3wQVy5DJ8Jdgxsh-OxnxeQmlF5P8HM</string>
+    <string name="google_storage_bucket" translatable="false">paqtafood.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="labelButtonLogin">Iniciar Sesion</string>
+    <string name="labelButtonRegistro">Registrarse</string>
+    <string name="labelCampoNulo">...</string>
+    <string name="labelConfirmPassword">Confirmar Contraseña</string>
+    <string name="labelEmail">Email</string>
+    <string name="labelFishes">Arroz Chaufa y papas fritas</string>
+    <string name="labelLogin">INICIA SESION</string>
+    <string name="labelMenuGestion">Menú de Gestion</string>
+    <string name="labelPassword">Contraseña</string>
+    <string name="labelRegistro">REGISTRARSE</string>
+    <string name="labelRememberPassword">¿Olvidaste tu contraseña?</string>
+    <string name="labelSecundaryFishes">Principal</string>
+    <string name="labelTextViewLogin">LOGIN</string>
+    <string name="labelTextViewSignup">REGISTRO</string>
+    <string name="labelTitleFishes">Directorio de Platos</string>
+    <string name="labelTitleStaff">Directorio de personal</string>
+    <string name="labelUser">Usuario</string>
+    <string name="open_nav">open</string>
+    <string name="project_id" translatable="false">paqtafood</string>
+    <string name="web_client_id">1091847638331-pr3rnj676qargsnp1m1jdpfaf5sdud2o.apps.googleusercontent.com</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+    <style name="Base.Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Base.Theme.PaqtaFood" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_light_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_light_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="colorOutline">@color/md_theme_light_outline</item>
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_light_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_light_onSurfaceVariant</item>
+        <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+    <style name="Theme.PaqtaFood" parent="Base.Theme.PaqtaFood"/>
+    <style name="rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

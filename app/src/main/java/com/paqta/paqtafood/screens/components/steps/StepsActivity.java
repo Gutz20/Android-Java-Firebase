@@ -38,8 +38,8 @@ public class StepsActivity extends AppCompatActivity {
                 .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
                 .commit();
 
-        nextStep();
 
+        nextStep();
     }
 
     public void nextStep() {
