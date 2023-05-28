@@ -305,6 +305,7 @@ public class FormDishesFragment extends Fragment {
         updates.put("nombre", nombre);
         updates.put("descripcion", descripcion);
         updates.put("categoria", categoria);
+        updates.put("detalles", listaContenido);
 
         documentReference.update(updates)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

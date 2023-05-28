@@ -131,7 +131,7 @@ public class FavoriteFragment extends Fragment {
                     mRecyclerPostres.setAdapter(mAdapterPostres);
                     mAdapterPostres.startListening();
                 } else {
-                    Snackbar.make(getView(), "Aun no tienes nada en favoritos 😔", Snackbar.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Aun no tienes nada en favoritos 😔", Toast.LENGTH_SHORT).show();
                 }
 
             }

@@ -16,19 +16,20 @@ import android.widget.TextView;
 import com.paqta.paqtafood.R;
 import com.shuhart.stepview.StepView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class CartFragment extends Fragment {
-
     StepView stepView;
-
     TextView stepTextView;
     Button btnReservar, btnComprar;
-
     RecyclerView rycrCartPlatillos, rycrCartBebidasPostres;
     LinearLayout layoutContaint;
 
     int stepIndex = 0;
     String[] stepsTexts = {"CARRITO", "ENTREGA", "METODO DE PAGO"};
+    List<TextView> textViewList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,18 +71,21 @@ public class CartFragment extends Fragment {
 
                 TextView textViewDireccion = new TextView(getActivity());
                 textViewDireccion.setText("Direccion");
-                textViewDireccion.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
-                layoutContaint.addView(textViewDireccion);
 
                 TextView textViewPhone = new TextView(getActivity());
                 textViewPhone.setText("Telefono");
-                textViewPhone.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
-                layoutContaint.addView(textViewPhone);
 
                 TextView textViewRef = new TextView(getActivity());
                 textViewRef.setText("Referencia");
-                textViewRef.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
-                layoutContaint.addView(textViewRef);
+
+                textViewList.add(textViewDireccion);
+                textViewList.add(textViewPhone);
+                textViewList.add(textViewRef);
+                textViewList.forEach(textView -> {
+                    textView.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
+                    layoutContaint.addView(textView);
+                });
+
 
 
 

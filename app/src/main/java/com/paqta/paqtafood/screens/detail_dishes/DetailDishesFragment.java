@@ -5,14 +5,18 @@ import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
@@ -24,6 +28,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +44,8 @@ public class DetailDishesFragment extends Fragment {
     private FirebaseUser mUser;
     Drawable iconFavoriteFilled, iconFavoriteOutlined, iconAddToCart, iconRemoveFromCart;
     DocumentReference usuarioRef;
+    ImageView imageProduct;
+    TextView titleTextView, textViewDetalles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,47 +73,59 @@ public class DetailDishesFragment extends Fragment {
         iconAddToCart = ContextCompat.getDrawable(getContext(), R.drawable.baseline_add_shopping_cart_24);
         iconRemoveFromCart = ContextCompat.getDrawable(getContext(), R.drawable.baseline_remove_shopping_cart_24);
 
+        titleTextView = root.findViewById(R.id.titleTextDetail);
+        imageProduct = root.findViewById(R.id.imgPlatillo);
+        textViewDetalles = root.findViewById(R.id.textViewDetalles);
+
+
         usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
 
-        btnAddFavorito.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addProductoToFavorite(v);
-            }
-        });
 
-        btnAddCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addProductoToCart(v);
-            }
+        btnAddFavorito.setOnClickListener(this::addProductoToFavorite);
+        btnAddCart.setOnClickListener(this::addProductoToCart);
+        btnShare.setOnClickListener(this::configurarCompartir);
 
-        });
-
-        btnShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                configurarCompartir();
-            }
-        });
+        getProductById();
         verificarEstados();
         return root;
     }
 
-    private void configurarCompartir() {
+    private void getProductById() {
+        mFirestore.collection("productos").document(idProd).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        String nombre = documentSnapshot.getString("nombre");
+                        String imagen = documentSnapshot.getString("imagen");
+
+                        List<String> detalles = new ArrayList<>();
+                        if (documentSnapshot.contains("detalles")) {
+                            List<Object> detallesObjects = (List<Object>) documentSnapshot.get("detalles");
+                            for (Object detalleObject : detallesObjects) {
+                                detalles.add(detalleObject.toString());
+                            }
+                        }
+                        String detallesText = TextUtils.join("\n", detalles);
+
+                        titleTextView.setText(nombre);
+                        Glide.with(getView()).load(imagen).into(imageProduct);
+                        textViewDetalles.setText(detallesText);
+                    }
+                });
+    }
+
+    private void configurarCompartir(View view) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
         bottomSheetDialog.setContentView(R.layout.bottomsheetlayout);
 
         bottomSheetDialog.setCanceledOnTouchOutside(true);
         bottomSheetDialog.setCancelable(true);
 
-
         // Muestra el Bottom Sheet
         bottomSheetDialog.show();
     }
 
     private void verificarEstados() {
-        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
         usuarioRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -136,8 +156,6 @@ public class DetailDishesFragment extends Fragment {
     }
 
     private void addProductoToFavorite(View v) {
-        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
-
         usuarioRef.get().addOnSuccessListener(documentSnapshot -> {
             List<String> favoritos = (List<String>) documentSnapshot.get("favoritos");
             boolean isInFavorites = favoritos != null && favoritos.contains(idProd);
@@ -155,8 +173,6 @@ public class DetailDishesFragment extends Fragment {
     }
 
     private void addProductoToCart(View v) {
-        usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
-
         usuarioRef.get().addOnSuccessListener(documentSnapshot -> {
             List<String> carrito = (List<String>) documentSnapshot.get("carrito");
             boolean isInCart = carrito != null && carrito.contains(idProd);

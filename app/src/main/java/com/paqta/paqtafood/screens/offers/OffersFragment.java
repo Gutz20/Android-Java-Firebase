@@ -14,14 +14,14 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.adapters.ProductoAdapter;
-import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.adapters.CardOffersAdapter;
+import com.paqta.paqtafood.model.Platillo;
 
 public class OffersFragment extends Fragment {
 
 
     RecyclerView mRecycler;
-    ProductoAdapter mAdapter;
+    CardOffersAdapter mAdapter;
     FirebaseFirestore mFirestore;
 
     @Override
@@ -38,14 +38,13 @@ public class OffersFragment extends Fragment {
         mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         Query query = mFirestore.collection("productos");
 
-        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Producto>()
-                        .setQuery(query, Producto.class).build();
+        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Platillo>()
+                        .setQuery(query, Platillo.class).build();
 
-        mAdapter = new ProductoAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
+        mAdapter = new CardOffersAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);
-
         return root;
     }
 

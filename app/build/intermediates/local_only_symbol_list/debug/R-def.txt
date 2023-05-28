@@ -157,6 +157,7 @@ drawable divider3
 drawable divider_perso
 drawable divider_search
 drawable elipse_bg_platillo
+drawable elipse_precio_offer
 drawable facebook
 drawable facebook_icon
 drawable facebook_logo_icon
@@ -221,6 +222,7 @@ drawable postres_home
 drawable qr1
 drawable qr2
 drawable qr3
+drawable qr_download_offer
 drawable qr_icon
 drawable qr_menu
 drawable rayitas
@@ -243,6 +245,7 @@ font acme
 font archivo
 font caesar_dressing
 font ceviche_one
+font irish_grover
 id addressTextViewDesc
 id addressTextViewTitle
 id ageProduct
@@ -258,6 +261,7 @@ id btnAddPlatillo
 id btnAddProduct
 id btnComprar
 id btnDeleteImage
+id btnDetailOffer
 id btnDialogImage
 id btnEditar
 id btnEditarPlatillo
@@ -286,6 +290,8 @@ id constraintLayout3
 id constraintLayout4
 id constraintLayout5
 id constraintLayout6
+id constraintLayout7
+id constraintLayout8
 id coordinatorLayout
 id coordinatorLayout2
 id cv
@@ -293,6 +299,7 @@ id decorator_bottom
 id decorator_top
 id descriptionCat
 id descriptionTextView
+id detailsOffer
 id dniTextViewDesc
 id dniTextViewTitle
 id drawer_layout
@@ -329,13 +336,13 @@ id imageView16
 id imageView17
 id imageView18
 id imageView19
+id imageView2
 id imageView20
 id imageView21
 id imageView22
 id imageView23
 id imageView25
 id imageView26
-id imageView27
 id imageView28
 id imageView29
 id imageView3
@@ -345,9 +352,7 @@ id imageView32
 id imageView33
 id imageView35
 id imageView36
-id imageView39
 id imageView4
-id imageView40
 id imageView5
 id imageView6
 id imageView7
@@ -357,10 +362,13 @@ id imageViewDetail
 id image_view_favorite
 id image_view_search
 id imagenMenuDetail
+id imagenOffer
 id imagenPlatillo
 id imagenPlatilloMenu
 id imagenProduct
 id imgBackLogin
+id imgOfferDetail
+id imgPlatillo
 id imgProfile
 id imgProfileUser
 id imgQR1
@@ -456,6 +464,7 @@ id textView13
 id textView14
 id textView15
 id textView17
+id textView18
 id textView2
 id textView20
 id textView22
@@ -473,10 +482,13 @@ id textView6
 id textView7
 id textView8
 id textView9
+id textViewDetailOffer
+id textViewDetalles
 id textViewShare
 id text_item_search
 id title
 id titleDescriptionTextView
+id titleTextDetail
 id titleTextView
 id title_view_favorite
 id tituloCat

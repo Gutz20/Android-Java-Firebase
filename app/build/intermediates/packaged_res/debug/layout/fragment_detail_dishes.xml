@@ -44,7 +44,7 @@
 
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/titleTextDetail"
                 android:layout_width="196dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -64,18 +64,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
-            <ImageView
-                android:id="@+id/imageView18"
-                android:layout_width="141dp"
-                android:layout_height="92dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="100dp"
-                android:src="@drawable/bg_detalle_platillo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.372"
-                app:layout_constraintStart_toEndOf="@+id/imageView22" />
 
             <ImageView
                 android:id="@+id/imageView19"
@@ -99,7 +87,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView21"
+                android:id="@+id/imgPlatillo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/muestra_platillo"
@@ -112,8 +100,8 @@
                 android:id="@+id/imageView22"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="84dp"
                 android:src="@drawable/divider_perso"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView20"
@@ -123,12 +111,12 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/badge_perso2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.558"
+                app:layout_constraintHorizontal_bias="0.563"
                 app:layout_constraintStart_toEndOf="@+id/imageView19"
-                app:layout_constraintTop_toBottomOf="@+id/imageView18">
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -159,6 +147,45 @@
                     android:gravity="center"
                     android:text="S/"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout7"
+                android:background="@drawable/bg_detalle_platillo"
+                android:layout_width="154dp"
+                android:layout_height="102dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toEndOf="@+id/imageView22"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextDetail">
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/recyclerDetalles"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginStart="1dp"-->
+<!--                    android:layout_marginTop="1dp"-->
+<!--                    android:layout_marginEnd="1dp"-->
+<!--                    android:layout_marginBottom="1dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+
+                <TextView
+                    android:id="@+id/textViewDetalles"
+                    android:layout_width="138dp"
+                    android:layout_height="96dp"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

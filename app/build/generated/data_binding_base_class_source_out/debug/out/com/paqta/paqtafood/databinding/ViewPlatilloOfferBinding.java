@@ -4,20 +4,39 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ViewPlatilloOfferBinding implements ViewBinding {
   @NonNull
   private final MaterialCardView rootView;
 
-  private ViewPlatilloOfferBinding(@NonNull MaterialCardView rootView) {
+  @NonNull
+  public final MaterialButton btnDetailOffer;
+
+  @NonNull
+  public final TextView detailsOffer;
+
+  @NonNull
+  public final ImageView imagenOffer;
+
+  private ViewPlatilloOfferBinding(@NonNull MaterialCardView rootView,
+      @NonNull MaterialButton btnDetailOffer, @NonNull TextView detailsOffer,
+      @NonNull ImageView imagenOffer) {
     this.rootView = rootView;
+    this.btnDetailOffer = btnDetailOffer;
+    this.detailsOffer = detailsOffer;
+    this.imagenOffer = imagenOffer;
   }
 
   @Override
@@ -43,10 +62,32 @@ public final class ViewPlatilloOfferBinding implements ViewBinding {
 
   @NonNull
   public static ViewPlatilloOfferBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnDetailOffer;
+      MaterialButton btnDetailOffer = ViewBindings.findChildViewById(rootView, id);
+      if (btnDetailOffer == null) {
+        break missingId;
+      }
 
-    return new ViewPlatilloOfferBinding((MaterialCardView) rootView);
+      id = R.id.detailsOffer;
+      TextView detailsOffer = ViewBindings.findChildViewById(rootView, id);
+      if (detailsOffer == null) {
+        break missingId;
+      }
+
+      id = R.id.imagenOffer;
+      ImageView imagenOffer = ViewBindings.findChildViewById(rootView, id);
+      if (imagenOffer == null) {
+        break missingId;
+      }
+
+      return new ViewPlatilloOfferBinding((MaterialCardView) rootView, btnDetailOffer, detailsOffer,
+          imagenOffer);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -36,7 +36,7 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
   public final ConstraintLayout constraintLayout6;
 
   @NonNull
-  public final ImageView imageView18;
+  public final ConstraintLayout constraintLayout7;
 
   @NonNull
   public final ImageView imageView19;
@@ -45,10 +45,10 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
   public final ImageView imageView20;
 
   @NonNull
-  public final ImageView imageView21;
+  public final ImageView imageView22;
 
   @NonNull
-  public final ImageView imageView22;
+  public final ImageView imgPlatillo;
 
   @NonNull
   public final LinearLayout linearLayout4;
@@ -57,28 +57,32 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
   public final TextView textView15;
 
   @NonNull
-  public final TextView textView17;
+  public final TextView textViewDetalles;
+
+  @NonNull
+  public final TextView titleTextDetail;
 
   private FragmentDetailDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddCart,
       @NonNull Button btnAddFavorito, @NonNull Button btnShare,
-      @NonNull ConstraintLayout constraintLayout6, @NonNull ImageView imageView18,
+      @NonNull ConstraintLayout constraintLayout6, @NonNull ConstraintLayout constraintLayout7,
       @NonNull ImageView imageView19, @NonNull ImageView imageView20,
-      @NonNull ImageView imageView21, @NonNull ImageView imageView22,
+      @NonNull ImageView imageView22, @NonNull ImageView imgPlatillo,
       @NonNull LinearLayout linearLayout4, @NonNull TextView textView15,
-      @NonNull TextView textView17) {
+      @NonNull TextView textViewDetalles, @NonNull TextView titleTextDetail) {
     this.rootView = rootView;
     this.btnAddCart = btnAddCart;
     this.btnAddFavorito = btnAddFavorito;
     this.btnShare = btnShare;
     this.constraintLayout6 = constraintLayout6;
-    this.imageView18 = imageView18;
+    this.constraintLayout7 = constraintLayout7;
     this.imageView19 = imageView19;
     this.imageView20 = imageView20;
-    this.imageView21 = imageView21;
     this.imageView22 = imageView22;
+    this.imgPlatillo = imgPlatillo;
     this.linearLayout4 = linearLayout4;
     this.textView15 = textView15;
-    this.textView17 = textView17;
+    this.textViewDetalles = textViewDetalles;
+    this.titleTextDetail = titleTextDetail;
   }
 
   @Override
@@ -132,9 +136,9 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView18;
-      ImageView imageView18 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView18 == null) {
+      id = R.id.constraintLayout7;
+      ConstraintLayout constraintLayout7 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout7 == null) {
         break missingId;
       }
 
@@ -150,15 +154,15 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView21;
-      ImageView imageView21 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView21 == null) {
-        break missingId;
-      }
-
       id = R.id.imageView22;
       ImageView imageView22 = ViewBindings.findChildViewById(rootView, id);
       if (imageView22 == null) {
+        break missingId;
+      }
+
+      id = R.id.imgPlatillo;
+      ImageView imgPlatillo = ViewBindings.findChildViewById(rootView, id);
+      if (imgPlatillo == null) {
         break missingId;
       }
 
@@ -174,15 +178,21 @@ public final class FragmentDetailDishesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView17;
-      TextView textView17 = ViewBindings.findChildViewById(rootView, id);
-      if (textView17 == null) {
+      id = R.id.textViewDetalles;
+      TextView textViewDetalles = ViewBindings.findChildViewById(rootView, id);
+      if (textViewDetalles == null) {
+        break missingId;
+      }
+
+      id = R.id.titleTextDetail;
+      TextView titleTextDetail = ViewBindings.findChildViewById(rootView, id);
+      if (titleTextDetail == null) {
         break missingId;
       }
 
       return new FragmentDetailDishesBinding((FrameLayout) rootView, btnAddCart, btnAddFavorito,
-          btnShare, constraintLayout6, imageView18, imageView19, imageView20, imageView21,
-          imageView22, linearLayout4, textView15, textView17);
+          btnShare, constraintLayout6, constraintLayout7, imageView19, imageView20, imageView22,
+          imgPlatillo, linearLayout4, textView15, textViewDetalles, titleTextDetail);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

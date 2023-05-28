@@ -4,11 +4,14 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -22,6 +25,15 @@ public final class FragmentContentOffersBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Button btnAddCart;
+
+  @NonNull
+  public final Button btnAddFavorito;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout8;
+
+  @NonNull
   public final ShapeableImageView imageView16;
 
   @NonNull
@@ -29,6 +41,9 @@ public final class FragmentContentOffersBinding implements ViewBinding {
 
   @NonNull
   public final ImageView imageView18;
+
+  @NonNull
+  public final ImageView imageView2;
 
   @NonNull
   public final ImageView imageView21;
@@ -43,28 +58,13 @@ public final class FragmentContentOffersBinding implements ViewBinding {
   public final ImageView imageView25;
 
   @NonNull
-  public final ImageView imageView27;
+  public final ImageView imgOfferDetail;
 
   @NonNull
-  public final ImageView imageView39;
+  public final LinearLayout linearLayout5;
 
   @NonNull
-  public final ImageView imageView40;
-
-  @NonNull
-  public final TextView textView12;
-
-  @NonNull
-  public final TextView textView13;
-
-  @NonNull
-  public final TextView textView14;
-
-  @NonNull
-  public final TextView textView15;
-
-  @NonNull
-  public final TextView textView17;
+  public final TextView textView18;
 
   @NonNull
   public final TextView textView3;
@@ -72,32 +72,36 @@ public final class FragmentContentOffersBinding implements ViewBinding {
   @NonNull
   public final TextView textView5;
 
-  private FragmentContentOffersBinding(@NonNull FrameLayout rootView,
+  @NonNull
+  public final TextView textViewDetailOffer;
+
+  private FragmentContentOffersBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddCart,
+      @NonNull Button btnAddFavorito, @NonNull ConstraintLayout constraintLayout8,
       @NonNull ShapeableImageView imageView16, @NonNull ImageView imageView17,
-      @NonNull ImageView imageView18, @NonNull ImageView imageView21,
+      @NonNull ImageView imageView18, @NonNull ImageView imageView2, @NonNull ImageView imageView21,
       @NonNull ImageView imageView22, @NonNull ImageView imageView23,
-      @NonNull ImageView imageView25, @NonNull ImageView imageView27,
-      @NonNull ImageView imageView39, @NonNull ImageView imageView40, @NonNull TextView textView12,
-      @NonNull TextView textView13, @NonNull TextView textView14, @NonNull TextView textView15,
-      @NonNull TextView textView17, @NonNull TextView textView3, @NonNull TextView textView5) {
+      @NonNull ImageView imageView25, @NonNull ImageView imgOfferDetail,
+      @NonNull LinearLayout linearLayout5, @NonNull TextView textView18,
+      @NonNull TextView textView3, @NonNull TextView textView5,
+      @NonNull TextView textViewDetailOffer) {
     this.rootView = rootView;
+    this.btnAddCart = btnAddCart;
+    this.btnAddFavorito = btnAddFavorito;
+    this.constraintLayout8 = constraintLayout8;
     this.imageView16 = imageView16;
     this.imageView17 = imageView17;
     this.imageView18 = imageView18;
+    this.imageView2 = imageView2;
     this.imageView21 = imageView21;
     this.imageView22 = imageView22;
     this.imageView23 = imageView23;
     this.imageView25 = imageView25;
-    this.imageView27 = imageView27;
-    this.imageView39 = imageView39;
-    this.imageView40 = imageView40;
-    this.textView12 = textView12;
-    this.textView13 = textView13;
-    this.textView14 = textView14;
-    this.textView15 = textView15;
-    this.textView17 = textView17;
+    this.imgOfferDetail = imgOfferDetail;
+    this.linearLayout5 = linearLayout5;
+    this.textView18 = textView18;
     this.textView3 = textView3;
     this.textView5 = textView5;
+    this.textViewDetailOffer = textViewDetailOffer;
   }
 
   @Override
@@ -127,6 +131,24 @@ public final class FragmentContentOffersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAddCart;
+      Button btnAddCart = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddCart == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAddFavorito;
+      Button btnAddFavorito = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddFavorito == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout8;
+      ConstraintLayout constraintLayout8 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout8 == null) {
+        break missingId;
+      }
+
       id = R.id.imageView16;
       ShapeableImageView imageView16 = ViewBindings.findChildViewById(rootView, id);
       if (imageView16 == null) {
@@ -142,6 +164,12 @@ public final class FragmentContentOffersBinding implements ViewBinding {
       id = R.id.imageView18;
       ImageView imageView18 = ViewBindings.findChildViewById(rootView, id);
       if (imageView18 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView2;
+      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView2 == null) {
         break missingId;
       }
 
@@ -169,51 +197,21 @@ public final class FragmentContentOffersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView27;
-      ImageView imageView27 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView27 == null) {
+      id = R.id.imgOfferDetail;
+      ImageView imgOfferDetail = ViewBindings.findChildViewById(rootView, id);
+      if (imgOfferDetail == null) {
         break missingId;
       }
 
-      id = R.id.imageView39;
-      ImageView imageView39 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView39 == null) {
+      id = R.id.linearLayout5;
+      LinearLayout linearLayout5 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout5 == null) {
         break missingId;
       }
 
-      id = R.id.imageView40;
-      ImageView imageView40 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView40 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView12;
-      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
-      if (textView12 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView13;
-      TextView textView13 = ViewBindings.findChildViewById(rootView, id);
-      if (textView13 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView14;
-      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
-      if (textView14 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView15;
-      TextView textView15 = ViewBindings.findChildViewById(rootView, id);
-      if (textView15 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView17;
-      TextView textView17 = ViewBindings.findChildViewById(rootView, id);
-      if (textView17 == null) {
+      id = R.id.textView18;
+      TextView textView18 = ViewBindings.findChildViewById(rootView, id);
+      if (textView18 == null) {
         break missingId;
       }
 
@@ -229,10 +227,16 @@ public final class FragmentContentOffersBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentContentOffersBinding((FrameLayout) rootView, imageView16, imageView17,
-          imageView18, imageView21, imageView22, imageView23, imageView25, imageView27, imageView39,
-          imageView40, textView12, textView13, textView14, textView15, textView17, textView3,
-          textView5);
+      id = R.id.textViewDetailOffer;
+      TextView textViewDetailOffer = ViewBindings.findChildViewById(rootView, id);
+      if (textViewDetailOffer == null) {
+        break missingId;
+      }
+
+      return new FragmentContentOffersBinding((FrameLayout) rootView, btnAddCart, btnAddFavorito,
+          constraintLayout8, imageView16, imageView17, imageView18, imageView2, imageView21,
+          imageView22, imageView23, imageView25, imgOfferDetail, linearLayout5, textView18,
+          textView3, textView5, textViewDetailOffer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

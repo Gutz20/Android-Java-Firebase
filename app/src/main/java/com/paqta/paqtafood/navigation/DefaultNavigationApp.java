@@ -81,6 +81,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
 
         bottomNavigationView.setBackground(null);
+        bottomNavigationView.setSelectedItemId(0);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.nav_bottom_home) {
                 toolbar.setTitle("Menú");
