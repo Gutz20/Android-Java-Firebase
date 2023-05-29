@@ -3687,6 +3687,7 @@ id btnLogin
 id btnRegister
 id btnReservar
 id btnShare
+id btnUpdateCartilla
 id btn_add
 id btn_holder
 id btn_next

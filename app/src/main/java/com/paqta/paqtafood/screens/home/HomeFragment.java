@@ -2,6 +2,7 @@ package com.paqta.paqtafood.screens.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -51,11 +52,9 @@ import com.paqta.paqtafood.R;
 
 public class HomeFragment extends Fragment {
 
-    private static final String STORAGE_PATH_PDF_CARTILLA = "archivos/cartilla.pdf";
-    private static final String STORAGE_EDITED_PDF_NAME = "cartilla_editada.pdf";
     private static final String TOAST_PDF_DOWNLOADED = "PDF descargado correctamente";
     private static final String TOAST_PDF_DOWNLOAD_FAILED = "Error al descargar el PDF";
-    private static final int MAX_PRODUCTS_PER_PAGE = 5;
+    final long MAX_SIZE_BYTES = 1024 * 1024;
     String storagePathPdfCartilla = "archivos/cartilla.pdf";
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
@@ -76,11 +75,18 @@ public class HomeFragment extends Fragment {
 
         qr = root.findViewById(R.id.imgQR2);
 
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
-
-//        configurarPDF();
+        establecerQR();
         return root;
+    }
+
+    private void establecerQR() {
+        StorageReference qrImageRef = mStorage.getReference().child("archivos").child("qr.jpg");
+
+        // Error al obtener la imagen del código QR desde Firebase Storage
+        qrImageRef.getBytes(MAX_SIZE_BYTES).addOnSuccessListener(bytes -> {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            qr.setImageBitmap(bitmap);
+        }).addOnFailureListener(Throwable::printStackTrace);
     }
 
     @Override
@@ -110,115 +116,6 @@ public class HomeFragment extends Fragment {
                 }
             });
         }
-    }
-
-    private void configurarPDF() {
-        try {
-            InputStream inputStream = getResources().openRawResource(R.raw.cartilla_plantilla);
-            File outputFile = new File(getContext().getFilesDir(), STORAGE_EDITED_PDF_NAME);
-
-            PdfReader reader = new PdfReader(inputStream);
-            PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outputFile));
-
-            int totalPages = reader.getNumberOfPages();
-
-            for (int i = 1; i <= totalPages; i++) {
-                int imagenX = 100;
-                int imagenY = 700;
-                int textoX = 200;
-                int textoY = 700;
-                int descripcionX = 200;
-                int descripcionY = 650;
-
-                AtomicReference<PdfContentByte> canvas = new AtomicReference<>();
-                CollectionReference reference = mFirestore.collection("productos");
-                int finalI = i;
-                reference.get().addOnSuccessListener(querySnapshot -> {
-                    int index = 0;
-                    int yPos = textoY;
-
-                    for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
-                        String nombre = documentSnapshot.getString("nombre");
-                        String descripcion = documentSnapshot.getString("descripcion");
-                        String imagen = documentSnapshot.getString("imagen");
-
-                        if (index % MAX_PRODUCTS_PER_PAGE == 0) {
-                            // Crear una nueva página si es el primer producto o si se excedió el límite por página
-                            if (canvas.get() != null) {
-                                stamper.insertPage(finalI + 1, reader.getPageSizeWithRotation(1));
-                                canvas.set(stamper.getOverContent(finalI + 1));
-                            } else {
-                                canvas.set(stamper.getOverContent(finalI));
-                            }
-                            yPos = textoY;
-                        }
-                        yPos -= 50;
-
-
-                        // Agrega el nombre
-                        Font nombreFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-                        Phrase nombrePhrase = new Phrase(nombre, nombreFont);
-                        ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, nombrePhrase, textoX, yPos, 0);
-
-                        // Agrega la descripción
-                        Font descripcionFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
-                        Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
-                        ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, descripcionX, yPos - 20, 0);
-
-                        // Agregar una imagen al PDF
-                        Image image = null;
-                        try {
-                            image = Image.getInstance(imagen);
-                            image.setAbsolutePosition(imagenX, yPos - 20); // Establece la posición de la imagen en la página
-                            image.scaleToFit(100, image.getHeight()); // Ajusta el tamaño de la imagen
-                            canvas.get().addImage(image);
-                        } catch (IOException | DocumentException e) {
-                            throw new RuntimeException(e);
-                        }
-
-
-                        index++;
-                    }
-
-                    try {
-                        stamper.close();
-                    } catch (DocumentException | IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    reader.close();
-
-                    Toast.makeText(getContext(), "Se editó el PDF", Toast.LENGTH_SHORT).show();
-
-                    StorageReference storageRef = mStorage.getReference().child(STORAGE_PATH_PDF_CARTILLA);
-                    Uri fileUri = Uri.fromFile(outputFile);
-                    UploadTask uploadTask = storageRef.putFile(fileUri);
-
-                    uploadTask.addOnSuccessListener(taskSnapshot -> {
-                        generarQR(storageRef);
-                    }).addOnFailureListener(Throwable::printStackTrace);
-                }).addOnFailureListener(Throwable::printStackTrace);
-            }
-        } catch (IOException | DocumentException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void generarQR(StorageReference storageReference) {
-        storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
-            String storageUrl = uri.toString();
-            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-            try {
-
-                BitMatrix bitMatrix = multiFormatWriter.encode(storageUrl, BarcodeFormat.QR_CODE, 300, 300);
-                BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-
-                qr.setImageBitmap(bitmap);
-                qr.setOnClickListener(v -> descargarPDFFromStorage());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }).addOnFailureListener(Throwable::printStackTrace);
     }
 
     private void descargarPDFFromStorage() {

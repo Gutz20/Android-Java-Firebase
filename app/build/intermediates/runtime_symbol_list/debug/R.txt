@@ -3686,6 +3686,7 @@ int id btnLogin 0x7f0a008b
 int id btnRegister 0x7f0a008c
 int id btnReservar 0x7f0a008d
 int id btnShare 0x7f0a008e
+int id btnUpdateCartilla 0x7f0a0373
 int id btn_add 0x7f0a008f
 int id btn_holder 0x7f0a0090
 int id btn_next 0x7f0a0091
