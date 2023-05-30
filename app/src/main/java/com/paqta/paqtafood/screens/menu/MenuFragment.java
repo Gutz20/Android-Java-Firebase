@@ -9,15 +9,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardMenuAdapter;
-import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 
 
 public class MenuFragment extends Fragment {
@@ -52,8 +50,8 @@ public class MenuFragment extends Fragment {
 
         query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
-        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Platillo>().setQuery(query, Platillo.class).build();
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
         mAdapter = new CardMenuAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);

@@ -7,214 +7,200 @@
     android:background="@drawable/bg_cart"
     tools:context=".screens.cart.CartFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="310dp"
+            android:layout_height="158dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/stepTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ceviche_one"
+                android:shadowColor="#5BACFF"
+                android:shadowDx="-5"
+                android:shadowDy="7"
+                android:shadowRadius="2"
+                android:text="CARRITO"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlanco"
+                android:textSize="40sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="310dp"
-                android:layout_height="158dp"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/stepTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ceviche_one"
-                    android:shadowColor="#5BACFF"
-                    android:shadowDx="-5"
-                    android:shadowDy="7"
-                    android:shadowRadius="2"
-                    android:text="CARRITO"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorBlanco"
-                    android:textSize="40sp"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnReservar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reservar" />
+
+                    <Button
+                        android:id="@+id/btnComprar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Comprar" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content" />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/btnReservar"
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Reservar" />
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Total:"
+                            android:textColor="@color/white" />
 
-                        <Button
-                            android:id="@+id/btnComprar"
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="Comprar" />
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Envio:"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Subtotal:"
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
                     <Space
                         android:layout_width="25dp"
                         android:layout_height="wrap_content" />
 
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="start|center_vertical"
-                                android:text="Total:"
-                                android:textColor="@color/white" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="start|center_vertical"
-                                android:text="Envio:"
-                                android:textColor="@color/white" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="start|center_vertical"
-                                android:text="Subtotal:"
-                                android:textColor="@color/white" />
-                        </LinearLayout>
-
-                        <Space
-                            android:layout_width="25dp"
-                            android:layout_height="wrap_content" />
-
-                        <LinearLayout
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="S/. 126.95"
+                            android:textColor="@color/white" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="start|center_vertical"
-                                android:text="S/. 126.95"
-                                android:textColor="@color/white" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Calculado en el siguiente paso"
+                            android:textColor="#A7A7A7"
+                            android:textSize="10sp" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="start|center_vertical"
-                                android:text="Calculado en el siguiente paso"
-                                android:textColor="#A7A7A7"
-                                android:textSize="10sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="start|center_vertical"
-                                android:text="S/. 126.95"
-                                android:textColor="@color/white" />
-
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="S/. 126.95"
+                            android:textColor="@color/white" />
 
 
                     </LinearLayout>
 
+
                 </LinearLayout>
+
             </LinearLayout>
+        </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayoutContaint"
-                android:layout_width="309dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.505"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        <com.shuhart.stepview.StepView
+            android:id="@+id/step_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:sv_doneCircleColor="@color/colorAccent"
+            app:sv_doneCircleRadius="12dp"
+            app:sv_doneStepLineColor="@color/colorAccent"
+            app:sv_doneStepMarkColor="@color/colorPrimary"
+            app:sv_nextStepLineColor="@color/colorAccent"
+            app:sv_nextTextColor="@color/colorAccent"
+            app:sv_selectedCircleColor="@color/colorAccent"
+            app:sv_selectedCircleRadius="12dp"
+            app:sv_selectedStepNumberColor="@color/colorPrimary"
+            app:sv_selectedTextColor="@color/colorAccent"
+            app:sv_stepLineWidth="1dp"
+            app:sv_stepNumberTextSize="18sp"
+            app:sv_stepPadding="4dp"
+            app:sv_stepViewStyle="@style/StepView" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/logo_white_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContaint" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutContaint"
+            android:layout_width="match_parent"
+            android:layout_height="217dp"
+            android:layout_marginTop="52dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/cartPlatillos"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/cartBebidasPostres"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-
-                </androidx.recyclerview.widget.RecyclerView>
-            </LinearLayout>
-
-            <com.shuhart.stepview.StepView
-                android:id="@+id/step_view"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartPlatillos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:padding="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:sv_doneCircleColor="@color/colorAccent"
-                app:sv_doneCircleRadius="12dp"
-                app:sv_doneStepLineColor="@color/colorAccent"
-                app:sv_doneStepMarkColor="@color/colorPrimary"
-                app:sv_nextStepLineColor="@color/colorAccent"
-                app:sv_nextTextColor="@color/colorAccent"
-                app:sv_selectedCircleColor="@color/colorAccent"
-                app:sv_selectedCircleRadius="12dp"
-                app:sv_selectedStepNumberColor="@color/colorPrimary"
-                app:sv_selectedTextColor="@color/colorAccent"
-                app:sv_stepLineWidth="1dp"
-                app:sv_stepNumberTextSize="18sp"
-                app:sv_stepPadding="4dp"
-                app:sv_stepViewStyle="@style/StepView" />
+                android:layout_height="match_parent" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:src="@drawable/logo_white_2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutContaint" />
+        </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

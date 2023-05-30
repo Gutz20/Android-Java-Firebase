@@ -11,18 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardFavoriteAdapter;
 import com.paqta.paqtafood.adapters.CardSearchAdapter;
-import com.paqta.paqtafood.adapters.PlatilloAdapter;
-import com.paqta.paqtafood.model.Platillo;
 import com.paqta.paqtafood.model.Producto;
-
-import java.util.List;
 
 public class SearchFragment extends Fragment {
 

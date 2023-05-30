@@ -8,20 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.model.Platillo;
 import com.paqta.paqtafood.model.Producto;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CardFavoriteAdapter extends FirestoreRecyclerAdapter<Producto, CardFavoriteAdapter.CardViewHolder> {
 

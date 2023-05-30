@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardMenuDetailAdapter;
-import com.paqta.paqtafood.model.Platillo;
 import com.paqta.paqtafood.model.Producto;
 
 
@@ -47,9 +45,9 @@ public class MenuDetailFragment extends Fragment {
 
         query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
-        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Platillo>()
-                        .setQuery(query, Platillo.class)
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>()
+                        .setQuery(query, Producto.class)
                         .build();
 
         menuDetailAdapter = new CardMenuDetailAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());

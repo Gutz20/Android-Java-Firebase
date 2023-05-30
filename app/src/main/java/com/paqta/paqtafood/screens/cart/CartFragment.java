@@ -23,12 +23,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.adapters.CardFavoriteAdapter;
-import com.paqta.paqtafood.adapters.CardSearchAdapter;
+import com.paqta.paqtafood.adapters.CardCartAdapter;
 import com.paqta.paqtafood.model.Producto;
 import com.shuhart.stepview.StepView;
 
-import org.xml.sax.XMLFilter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +36,9 @@ public class CartFragment extends Fragment {
     StepView stepView;
     TextView stepTextView;
     Button btnReservar, btnComprar;
-    RecyclerView rycrCartPlatillos, rycrCartBebidasPostres;
+    RecyclerView rycrCart;
 
-    CardSearchAdapter mAdapterPlatillos;
-    CardFavoriteAdapter mAdapterBebidasPostres;
+    CardCartAdapter mAdapterCart;
     LinearLayout layoutContaint;
 
     int stepIndex = 0;
@@ -69,8 +66,7 @@ public class CartFragment extends Fragment {
         btnReservar = root.findViewById(R.id.btnReservar);
         btnComprar = root.findViewById(R.id.btnComprar);
 
-        rycrCartPlatillos = root.findViewById(R.id.cartPlatillos);
-        rycrCartBebidasPostres = root.findViewById(R.id.cartBebidasPostres);
+        rycrCart = root.findViewById(R.id.cartPlatillos);
 
         layoutContaint = root.findViewById(R.id.linearLayoutContaint);
 
@@ -98,35 +94,19 @@ public class CartFragment extends Fragment {
                 List<String> carrito = (List<String>) documentSnapshot.get("carrito");
 
                 if (carrito != null && !carrito.isEmpty()) {
-                    rycrCartPlatillos.setLayoutManager(new LinearLayoutManager(getContext()));
+                    rycrCart.setLayoutManager(new LinearLayoutManager(getContext()));
 
                     Query queryPlatillos = mFirestore.collection("productos")
-                            .whereIn("id", carrito)
-                            .whereEqualTo("categoria", "Platillos");
+                            .whereIn("id", carrito);
 
                     FirestoreRecyclerOptions<Producto> options = new FirestoreRecyclerOptions.Builder<Producto>()
                             .setQuery(queryPlatillos, Producto.class)
                             .build();
 
-                    mAdapterPlatillos = new CardSearchAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
-                    mAdapterPlatillos.notifyDataSetChanged();
-                    rycrCartPlatillos.setAdapter(mAdapterPlatillos);
-                    mAdapterPlatillos.startListening();
-
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                    linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
-                    rycrCartBebidasPostres.setLayoutManager(linearLayoutManager);
-                    Query queryBebidasPostres = mFirestore.collection("productos")
-                            .whereIn("id", carrito)
-                            .whereNotEqualTo("categoria", "Platillos");
-
-                    FirestoreRecyclerOptions<Producto> options1 = new FirestoreRecyclerOptions.Builder<Producto>()
-                            .setQuery(queryBebidasPostres, Producto.class)
-                            .build();
-                    mAdapterBebidasPostres = new CardFavoriteAdapter(options1);
-                    mAdapterBebidasPostres.notifyDataSetChanged();
-                    rycrCartBebidasPostres.setAdapter(mAdapterBebidasPostres);
-                    mAdapterBebidasPostres.startListening();
+                    mAdapterCart = new CardCartAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
+                    mAdapterCart.notifyDataSetChanged();
+                    rycrCart.setAdapter(mAdapterCart);
+                    mAdapterCart.startListening();
                 }
             }
         });
@@ -135,9 +115,8 @@ public class CartFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        if (mAdapterPlatillos != null && mAdapterBebidasPostres != null) {
-            mAdapterPlatillos.stopListening();
-            mAdapterBebidasPostres.stopListening();
+        if (mAdapterCart != null) {
+            mAdapterCart.stopListening();
         }
     }
 

@@ -1,13 +1,9 @@
 package com.paqta.paqtafood.screens.dishes;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -23,8 +19,6 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,8 +30,6 @@ import com.google.firebase.storage.UploadTask;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
@@ -50,7 +42,7 @@ import com.itextpdf.text.pdf.PdfStamper;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.PlatilloAdapter;
-import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.screens.dishes.components.FormDishesFragment;
 
 import java.io.ByteArrayOutputStream;
@@ -244,8 +236,8 @@ public class DishesFragment extends Fragment {
         mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
-        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Platillo>().setQuery(query, Platillo.class).build();
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
 
         mAdapter = new PlatilloAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();
@@ -269,10 +261,10 @@ public class DishesFragment extends Fragment {
     }
 
     private void textSearch(String s) {
-        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Platillo>()
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>()
                         .setQuery(query.orderBy("nombre")
-                                .startAt(s).endAt(s + "~"), Platillo.class).build();
+                                .startAt(s).endAt(s + "~"), Producto.class).build();
         mAdapter = new PlatilloAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.startListening();
         mRecycler.setAdapter(mAdapter);

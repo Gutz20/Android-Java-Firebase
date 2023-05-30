@@ -31,9 +31,6 @@ public final class FragmentCartBinding implements ViewBinding {
   public final Button btnReservar;
 
   @NonNull
-  public final RecyclerView cartBebidasPostres;
-
-  @NonNull
   public final RecyclerView cartPlatillos;
 
   @NonNull
@@ -52,14 +49,13 @@ public final class FragmentCartBinding implements ViewBinding {
   public final StepView stepView;
 
   private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
-      @NonNull Button btnReservar, @NonNull RecyclerView cartBebidasPostres,
-      @NonNull RecyclerView cartPlatillos, @NonNull ImageView imageView3,
-      @NonNull LinearLayout linearLayout3, @NonNull LinearLayout linearLayoutContaint,
-      @NonNull TextView stepTextView, @NonNull StepView stepView) {
+      @NonNull Button btnReservar, @NonNull RecyclerView cartPlatillos,
+      @NonNull ImageView imageView3, @NonNull LinearLayout linearLayout3,
+      @NonNull LinearLayout linearLayoutContaint, @NonNull TextView stepTextView,
+      @NonNull StepView stepView) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
     this.btnReservar = btnReservar;
-    this.cartBebidasPostres = cartBebidasPostres;
     this.cartPlatillos = cartPlatillos;
     this.imageView3 = imageView3;
     this.linearLayout3 = linearLayout3;
@@ -107,12 +103,6 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cartBebidasPostres;
-      RecyclerView cartBebidasPostres = ViewBindings.findChildViewById(rootView, id);
-      if (cartBebidasPostres == null) {
-        break missingId;
-      }
-
       id = R.id.cartPlatillos;
       RecyclerView cartPlatillos = ViewBindings.findChildViewById(rootView, id);
       if (cartPlatillos == null) {
@@ -149,9 +139,8 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnReservar,
-          cartBebidasPostres, cartPlatillos, imageView3, linearLayout3, linearLayoutContaint,
-          stepTextView, stepView);
+      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnReservar, cartPlatillos,
+          imageView3, linearLayout3, linearLayoutContaint, stepTextView, stepView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

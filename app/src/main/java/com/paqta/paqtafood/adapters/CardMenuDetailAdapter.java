@@ -18,22 +18,22 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.screens.detail_dishes.DetailDishesFragment;
 
-public class CardMenuDetailAdapter extends FirestoreRecyclerAdapter<Platillo, CardMenuDetailAdapter.CardViewHolder> {
+public class CardMenuDetailAdapter extends FirestoreRecyclerAdapter<Producto, CardMenuDetailAdapter.CardViewHolder> {
 
     Activity activity;
     FragmentManager fm;
 
-    public CardMenuDetailAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options, Activity activity, FragmentManager fm) {
+    public CardMenuDetailAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);
         this.activity = activity;
         this.fm = fm;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull CardMenuDetailAdapter.CardViewHolder holder, int position, @NonNull Platillo model) {
+    protected void onBindViewHolder(@NonNull CardMenuDetailAdapter.CardViewHolder holder, int position, @NonNull Producto model) {
         DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getBindingAdapterPosition());
         final String id = documentSnapshot.getId();
 

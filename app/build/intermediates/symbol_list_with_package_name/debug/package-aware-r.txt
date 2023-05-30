@@ -3262,6 +3262,7 @@ drawable baseline_info_24
 drawable baseline_menu_24
 drawable baseline_person_24
 drawable baseline_person_outline_24
+drawable baseline_person_white_24
 drawable baseline_remove_shopping_cart_24
 drawable baseline_search_24
 drawable baseline_settings_24
@@ -3280,6 +3281,7 @@ drawable bg_detalle_platillo
 drawable bg_header_sidebar
 drawable bg_menu_detail
 drawable bg_platillo_menu
+drawable bg_product_cart
 drawable bg_scan
 drawable bg_search_item
 drawable bg_sidebar
@@ -3675,7 +3677,9 @@ id btnAddFragmentProduct
 id btnAddPlatillo
 id btnAddProduct
 id btnComprar
+id btnDeleteFromCart
 id btnDeleteImage
+id btnDetail
 id btnDetailOffer
 id btnDialogImage
 id btnEditar
@@ -3707,7 +3711,6 @@ id cancel_action
 id cancel_button
 id card
 id carryVelocity
-id cartBebidasPostres
 id cartPlatillos
 id categoriaPlatillo
 id center
@@ -3948,6 +3951,7 @@ id img
 id imgBackLogin
 id imgOfferDetail
 id imgPlatillo
+id imgProductCart
 id imgProfile
 id imgProfileUser
 id imgQR1
@@ -4290,6 +4294,7 @@ id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id text
 id text2
+id textDetailProductCart
 id textEmail
 id textEnd
 id textName
@@ -4307,8 +4312,10 @@ id textView14
 id textView15
 id textView17
 id textView18
+id textView19
 id textView2
 id textView20
+id textView21
 id textView22
 id textView23
 id textView24
@@ -4376,6 +4383,7 @@ id txtLayoutPassword
 id txtLayoutUser
 id txtLoginPassword
 id txtLoginUser
+id txtNameProductCart
 id txtRegisterConfirmPassword
 id txtRegisterEmail
 id txtRegisterPassword
@@ -4705,6 +4713,7 @@ layout view_platillo_menu_detail
 layout view_platillo_offer
 layout view_platillo_search
 layout view_platillo_single
+layout view_product_cart
 layout view_producto_single
 layout zxing_barcode_scanner
 layout zxing_capture

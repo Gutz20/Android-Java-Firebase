@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardOffersAdapter;
-import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 
 public class OffersFragment extends Fragment {
 
@@ -36,11 +36,12 @@ public class OffersFragment extends Fragment {
         mFirestore = FirebaseFirestore.getInstance();
         mRecycler = root.findViewById(R.id.recyclerViewOffers);
         mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        Query query = mFirestore.collection("productos");
+        Query query = mFirestore.collection("productos")
+                .whereEqualTo("categoria", "Platillos");
 
-        FirestoreRecyclerOptions<Platillo> firestoreRecyclerOptions =
-                new FirestoreRecyclerOptions.Builder<Platillo>()
-                        .setQuery(query, Platillo.class).build();
+        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<Producto>()
+                        .setQuery(query, Producto.class).build();
 
         mAdapter = new CardOffersAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();

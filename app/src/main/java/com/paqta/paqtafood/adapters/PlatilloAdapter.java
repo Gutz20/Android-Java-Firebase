@@ -2,7 +2,6 @@ package com.paqta.paqtafood.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,6 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -31,30 +29,32 @@ import com.google.firebase.firestore.WriteBatch;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.model.Platillo;
+import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.screens.dishes.components.FormDishesFragment;
 
-public class PlatilloAdapter extends FirestoreRecyclerAdapter<Platillo, PlatilloAdapter.ViewHolder> {
+public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, PlatilloAdapter.ViewHolder> {
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     private FirebaseStorage mStorage = FirebaseStorage.getInstance();
     Activity activity;
     FragmentManager fm;
 
-    public PlatilloAdapter(@NonNull FirestoreRecyclerOptions<Platillo> options, Activity activity, FragmentManager fm) {
+    public PlatilloAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);
         this.activity = activity;
         this.fm = fm;
     }
 
+
     @Override
-    protected void onBindViewHolder(@NonNull PlatilloAdapter.ViewHolder holder, int position, @NonNull Platillo model) {
+    protected void onBindViewHolder(@NonNull PlatilloAdapter.ViewHolder holder, int position, @NonNull Producto model) {
         DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getBindingAdapterPosition());
         final String id = documentSnapshot.getId();
 
         holder.nombre.setText(model.getNombre());
         holder.categoria.setText(model.getCategoria());
         Glide.with(activity.getApplicationContext()).load(model.getImagen()).into(holder.imagen);
+
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
