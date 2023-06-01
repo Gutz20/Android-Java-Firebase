@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="180dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@drawable/bg_header_sidebar"
     android:padding="16dp"
     >
 
     <ImageView
-        android:id="@+id/imageView17"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:srcCompat="@drawable/logo_header_sidebar" />
@@ -17,7 +17,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <LinearLayout
             android:layout_width="137dp"
@@ -42,21 +43,28 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pedro Tumay"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+
+                />
 
             <TextView
+                android:id="@+id/userEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="PedroRT@gmail.com"
+                android:gravity="center_vertical"
                 android:textColor="#FFFFFF"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

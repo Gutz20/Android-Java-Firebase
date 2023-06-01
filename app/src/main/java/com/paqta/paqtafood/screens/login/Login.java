@@ -106,16 +106,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button button = findViewById(R.id.button2);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, StepsActivity.class);
-                startActivity(intent);
-            }
-        });
-
         // COMPONENTES
         loginImage = findViewById(R.id.logoImageViewLogin);
         textViewRegister = findViewById(R.id.tvwRegister);

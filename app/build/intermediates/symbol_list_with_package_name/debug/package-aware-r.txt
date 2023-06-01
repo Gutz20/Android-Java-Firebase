@@ -3697,7 +3697,6 @@ id btn_holder
 id btn_next
 id btn_previous
 id button
-id button2
 id buttonPanel
 id button_continue
 id button_create
@@ -4395,6 +4394,8 @@ id unknown
 id unlabeled
 id up
 id useLogo
+id userEmail
+id userName
 id vertical
 id vertical_only
 id viewDetailPlatilloMenu

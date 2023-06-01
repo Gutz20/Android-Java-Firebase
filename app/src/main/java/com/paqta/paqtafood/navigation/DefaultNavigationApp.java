@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
@@ -25,6 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.cart.CartFragment;
@@ -50,12 +52,17 @@ public class DefaultNavigationApp extends AppCompatActivity {
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     FirebaseAuth mAuth;
+    FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDefaultNavigationAppBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
@@ -67,6 +74,13 @@ public class DefaultNavigationApp extends AppCompatActivity {
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
         replaceFragment(new HomeFragment());
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView username = headerView.findViewById(R.id.userName);
+        TextView email = headerView.findViewById(R.id.userEmail);
+
+        username.setText(mUser.getDisplayName());
+        email.setText(mUser.getEmail());
 
         toolbar.setOnMenuItemClickListener(item -> {
             int search;

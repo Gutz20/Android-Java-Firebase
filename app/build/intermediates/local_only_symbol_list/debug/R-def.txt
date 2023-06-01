@@ -279,7 +279,6 @@ id btnShare
 id btnUpdateCartilla
 id btn_add
 id button
-id button2
 id card
 id cartPlatillos
 id categoriaPlatillo
@@ -519,6 +518,8 @@ id txtRegisterConfirmPassword
 id txtRegisterEmail
 id txtRegisterPassword
 id txtRegisterUser
+id userEmail
+id userName
 id viewDetailPlatilloMenu
 id viewSupporter
 layout activity_default_navigation_app

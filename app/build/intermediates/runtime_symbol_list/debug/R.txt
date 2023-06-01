@@ -3696,7 +3696,6 @@ int id btn_holder 0x7f0a0093
 int id btn_next 0x7f0a0094
 int id btn_previous 0x7f0a0095
 int id button 0x7f0a0096
-int id button2 0x7f0a0097
 int id buttonPanel 0x7f0a0098
 int id button_continue 0x7f0a0099
 int id button_create 0x7f0a009a
@@ -4394,6 +4393,8 @@ int id unknown 0x7f0a034c
 int id unlabeled 0x7f0a034d
 int id up 0x7f0a034e
 int id useLogo 0x7f0a034f
+int id userEmail 0x7f0a037a
+int id userName 0x7f0a037b
 int id vertical 0x7f0a0350
 int id vertical_only 0x7f0a0351
 int id viewDetailPlatilloMenu 0x7f0a0352

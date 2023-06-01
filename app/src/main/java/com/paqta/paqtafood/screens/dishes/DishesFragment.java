@@ -58,7 +58,6 @@ public class DishesFragment extends Fragment {
     private static final String STORAGE_PATH_PDF_CARTILLA = "archivos/cartilla.pdf";
     private static final String STORAGE_EDITED_PDF_NAME = "cartilla_editada.pdf";
 
-    private static final int MAX_PRODUCTS_PER_PAGE = 5;
     FloatingActionButton fab;
     Button btnAdd, btnUpdateCartilla;
     RecyclerView mRecycler;

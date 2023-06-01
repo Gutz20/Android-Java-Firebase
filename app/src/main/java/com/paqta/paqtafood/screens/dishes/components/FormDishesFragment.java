@@ -22,6 +22,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -172,7 +173,7 @@ public class FormDishesFragment extends Fragment {
                     String precio = edtTxtPrecio.getText().toString();
 
                     if (validar(nombre, descripcion, categoria, listaContenido, precio)) {
-                        postPlatillo(nombre, descripcion, categoria, precio);
+                        postPlatillo(nombre, descripcion, categoria, Double.parseDouble(precio));
                     }
                 }
             });
@@ -185,10 +186,10 @@ public class FormDishesFragment extends Fragment {
                     String nombre = edtTxtNombre.getText().toString().trim();
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
                     String categoria = autoCompleteTextView.getText().toString().trim();
-                    String precio = edtTxtPrecio.getText().toString().trim();
+                    String precio = edtTxtPrecio.getText().toString();
 
                     if (validar(nombre, descripcion, categoria, listaContenido, precio)) {
-                        updatePlatillo(nombre, descripcion, categoria, precio);
+                        updatePlatillo(nombre, descripcion, categoria, Double.parseDouble(precio));
                     }
                 }
             });
@@ -281,7 +282,7 @@ public class FormDishesFragment extends Fragment {
      * @param descripcion
      * @param categoria
      */
-    private void updatePlatillo(String nombre, String descripcion, String categoria, String precio) {
+    private void updatePlatillo(String nombre, String descripcion, String categoria, Double precio) {
 
         DocumentReference documentReference = mFirestore.collection("productos").document(idPlatillo);
 
@@ -317,9 +318,8 @@ public class FormDishesFragment extends Fragment {
      * @param nombre
      * @param descripcion
      * @param categoria
-     * @param precio
      */
-    private void postPlatillo(String nombre, String descripcion, String categoria, String precio) {
+    private void postPlatillo(String nombre, String descripcion, String categoria, Double precio) {
 
         DocumentReference documentReference = mFirestore.collection("productos").document();
 
@@ -356,12 +356,15 @@ public class FormDishesFragment extends Fragment {
                         String descripcion = documentSnapshot.getString("descripcion");
                         String categoria = documentSnapshot.getString("categoria");
                         String imagen = documentSnapshot.getString("imagen");
+                        Double precio = documentSnapshot.getDouble("precio");
                         List<String> detalles = (List<String>) documentSnapshot.get("detalles");
 
                         edtTxtNombre.setText(nombre);
                         edtTxtDescripcion.setText(descripcion);
+                        edtTxtPrecio.setText(precio.toString());
+                        listaContenido = (ArrayList<String>) detalles;
                         autoCompleteTextView.setText(categoria);
-                        mostrarContenido(detalles);
+                        mostrarContenido(listaContenido);
 
                         if (imagen == null) {
                             fotoPlatillo.setImageResource(R.drawable.image_icon_124);

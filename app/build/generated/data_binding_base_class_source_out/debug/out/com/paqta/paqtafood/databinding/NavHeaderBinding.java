@@ -4,8 +4,8 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,11 +20,16 @@ public final class NavHeaderBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView imageView17;
+  public final TextView userEmail;
 
-  private NavHeaderBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageView17) {
+  @NonNull
+  public final TextView userName;
+
+  private NavHeaderBinding(@NonNull LinearLayout rootView, @NonNull TextView userEmail,
+      @NonNull TextView userName) {
     this.rootView = rootView;
-    this.imageView17 = imageView17;
+    this.userEmail = userEmail;
+    this.userName = userName;
   }
 
   @Override
@@ -54,13 +59,19 @@ public final class NavHeaderBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageView17;
-      ImageView imageView17 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView17 == null) {
+      id = R.id.userEmail;
+      TextView userEmail = ViewBindings.findChildViewById(rootView, id);
+      if (userEmail == null) {
         break missingId;
       }
 
-      return new NavHeaderBinding((LinearLayout) rootView, imageView17);
+      id = R.id.userName;
+      TextView userName = ViewBindings.findChildViewById(rootView, id);
+      if (userName == null) {
+        break missingId;
+      }
+
+      return new NavHeaderBinding((LinearLayout) rootView, userEmail, userName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
