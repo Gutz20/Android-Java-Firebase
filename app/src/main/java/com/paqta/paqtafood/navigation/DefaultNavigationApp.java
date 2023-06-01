@@ -40,6 +40,7 @@ import com.paqta.paqtafood.screens.offers.OffersFragment;
 import com.paqta.paqtafood.screens.product.ProductFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
+import com.paqta.paqtafood.screens.staffFragment.StaffFragment;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {
@@ -119,7 +120,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
 
         navigationView.setNavigationItemSelectedListener(item -> {
-            int offers, combos, perfil, cart, exit, qr, gestion_productos, gestion_platos, categorias;
+            int offers, combos, perfil, cart, exit, qr, gestion_productos, gestion_platos, categorias, gestion_personal;
             offers = R.id.nav_sidebar_offers;
             combos = R.id.nav_sidebar_combos;
             perfil = R.id.nav_sidebar_profile;
@@ -128,6 +129,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             qr = R.id.nav_sidebar_qr;
             gestion_productos = R.id.nav_sidebar_productos;
             gestion_platos = R.id.nav_sidebar_platos;
+            gestion_personal = R.id.nav_sidebar_personal;
             categorias = R.id.nav_sidebar_categorias;
 
             if (item.getItemId() == offers) {
@@ -148,6 +150,8 @@ public class DefaultNavigationApp extends AppCompatActivity {
                 replaceFragment(new ProductFragment());
             } else if (item.getItemId() == categorias) {
                 replaceFragment(new CategoryFragment());
+            } else if (item.getItemId() == gestion_personal) {
+                replaceFragment(new StaffFragment());
             }
 
             return true;

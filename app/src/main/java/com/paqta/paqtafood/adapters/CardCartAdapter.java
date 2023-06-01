@@ -28,7 +28,6 @@ import com.paqta.paqtafood.screens.detail_dishes.DetailDishesFragment;
 import com.paqta.paqtafood.screens.offers.components.content_offers.ContentOffersFragment;
 
 public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCartAdapter.ViewHolder> {
-
     Activity activity;
     FragmentManager fm;
 

@@ -37,12 +37,12 @@
     <string name="labelCampoNulo">...</string>
     <string name="facebook">Facebook</string>
 
-<!--    Facebook-->
-<!--    <string name="facebook_app_id_def">941048803879345</string>-->
+    <!--    Facebook-->
+    <!--    <string name="facebook_app_id_def">941048803879345</string>-->
 
-<!--    <string name="fb_login_protocol_scheme">fb941048803879345</string>-->
+    <!--    <string name="fb_login_protocol_scheme">fb941048803879345</string>-->
 
-<!--    <string name="facebook_client_token_def">768f3ed238db3333214186fca0b6c736</string>-->
+    <!--    <string name="facebook_client_token_def">768f3ed238db3333214186fca0b6c736</string>-->
 
 
 </resources>

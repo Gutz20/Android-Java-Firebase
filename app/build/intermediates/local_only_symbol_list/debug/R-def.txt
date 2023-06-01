@@ -247,6 +247,7 @@ font acme
 font archivo
 font caesar_dressing
 font ceviche_one
+font inter_bold
 font irish_grover
 id addressTextViewDesc
 id addressTextViewTitle
@@ -254,6 +255,7 @@ id ageProduct
 id backgroundLayout
 id bluePaqtaLogo
 id bottomNavigationView
+id btnAdd
 id btnAddCart
 id btnAddCategory
 id btnAddContent
@@ -261,11 +263,13 @@ id btnAddFavorito
 id btnAddFragmentProduct
 id btnAddPlatillo
 id btnAddProduct
+id btnAddStaff
 id btnComprar
 id btnDeleteFromCart
 id btnDeleteImage
 id btnDetail
 id btnDetailOffer
+id btnDetailStaff
 id btnDialogImage
 id btnEditar
 id btnEditarPlatillo
@@ -310,7 +314,10 @@ id editButton
 id edtTextCategoria
 id edtTextDescripcion
 id edtTextNombre
+id edtTextPassword
 id edtTextPrecio
+id edtTextRol
+id edtTextUsername
 id emailTextView
 id end
 id fab
@@ -329,6 +336,7 @@ id imageCategory
 id imageLogoSignup
 id imagePlatillo
 id imageProducto
+id imageStaff
 id imageView
 id imageView10
 id imageView11
@@ -370,6 +378,7 @@ id imagenOffer
 id imagenPlatillo
 id imagenPlatilloMenu
 id imagenProduct
+id imagenStaff
 id imgBackLogin
 id imgOfferDetail
 id imgPlatillo
@@ -387,7 +396,6 @@ id linearLayout4
 id linearLayout5
 id linearLayoutContaint
 id listRecyclerView
-id listview_data
 id logoImageView
 id logoImageViewLogin
 id logoutButton
@@ -424,6 +432,7 @@ id nav_sidebar_categorias
 id nav_sidebar_combos
 id nav_sidebar_exit
 id nav_sidebar_offers
+id nav_sidebar_personal
 id nav_sidebar_platos
 id nav_sidebar_productos
 id nav_sidebar_profile
@@ -447,6 +456,7 @@ id recyclerPlatillos
 id recyclerProductos
 id recyclerSearch
 id recyclerViewOffers
+id rycViewStaff
 id search
 id searchPlatillo
 id searchView
@@ -469,6 +479,7 @@ id textView12
 id textView13
 id textView14
 id textView15
+id textView16
 id textView17
 id textView18
 id textView19
@@ -492,6 +503,8 @@ id textView8
 id textView9
 id textViewDetailOffer
 id textViewDetalles
+id textViewNameStaff
+id textViewRolStaff
 id textViewShare
 id text_item_search
 id title
@@ -541,6 +554,7 @@ layout fragment_favorite
 layout fragment_form_category
 layout fragment_form_dishes
 layout fragment_form_product
+layout fragment_form_staff
 layout fragment_home
 layout fragment_menu
 layout fragment_menu_detail
@@ -563,6 +577,7 @@ layout view_platillo_search
 layout view_platillo_single
 layout view_product_cart
 layout view_producto_single
+layout view_staff_single
 menu bottom_menu
 menu nav_menu
 menu share_menu

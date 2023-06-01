@@ -44,12 +44,12 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\view_platillo_menu_detail.xml"
     },
     {
-        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_form_dishes.xml",
-        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_form_dishes.xml"
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\view_staff_single.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\view_staff_single.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-55:/layout/fragment_form_dishes.xml",
-        "source": "com.paqta.paqtafood.app-main-58:/layout/fragment_form_dishes.xml"
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_form_dishes.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_form_dishes.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\progress_layout.xml",
@@ -70,6 +70,14 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_form_category.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_form_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_form_staff.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_form_staff.xml"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-55:/layout/fragment_form_staff.xml",
+        "source": "com.paqta.paqtafood.app-main-58:/layout/fragment_form_staff.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_profile.xml",

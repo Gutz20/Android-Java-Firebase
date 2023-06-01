@@ -4,6 +4,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,56 +16,78 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.adapters.PlatilloAdapter;
+import com.paqta.paqtafood.adapters.StaffAdapter;
+import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.model.User;
+import com.paqta.paqtafood.screens.staffFragment.components.FormStaffFragment;
 
 public class StaffFragment extends Fragment {
-
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
-    public StaffFragment() {
-    }
-
-    public static StaffFragment newInstance(String param1, String param2) {
-        StaffFragment fragment = new StaffFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    RecyclerView rycStaff;
+    Button btnAdd;
+    private FirebaseFirestore mFirestore;
+    StaffAdapter mAdapter;
+    Query query;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
-
-    ListView listViewData;
-    ArrayAdapter<String> adapter;
-    String[] arrayProductos = {"Cabin in the Woods", "Insidious", "Sinister",
-            "The Conjuring", "Get out", "Hereditary", "Doctor Sleep",
-            "IT", "SAW", "Invasion of the Body Snatchers"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_staff, container, false);
 
-        listViewData = root.findViewById(R.id.listview_data);
-        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_multiple_choice, arrayProductos);
-        listViewData.setAdapter(adapter);
+        mFirestore = FirebaseFirestore.getInstance();
 
+        rycStaff = root.findViewById(R.id.rycViewStaff);
+        btnAdd = root.findViewById(R.id.btnAddStaff);
+
+        btnAdd.setOnClickListener(v -> replaceFragment(new FormStaffFragment()));
+
+        setUpRecyclerView();
         return root;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mAdapter.stopListening();
+    }
+
+    private void setUpRecyclerView() {
+        rycStaff.setLayoutManager(new LinearLayoutManager(getContext()));
+        query = mFirestore.collection("usuarios");
+
+        FirestoreRecyclerOptions<User> firestoreRecyclerOptions =
+                new FirestoreRecyclerOptions.Builder<User>().setQuery(query, User.class).build();
+
+        mAdapter = new StaffAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
+        mAdapter.notifyDataSetChanged();
+        rycStaff.setAdapter(mAdapter);
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 }

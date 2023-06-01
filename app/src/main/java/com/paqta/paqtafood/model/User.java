@@ -5,31 +5,31 @@ import java.util.List;
 
 public class User implements Serializable {
 
-    private String name;
+    private String username;
     private String image;
     private String email;
-    private String token;
+    private String rol;
     private List<String> favoritos;
     private List<String> carrito;
 
     public User() {
     }
 
-    public User(String name, String image, String email, String token, List<String> favoritos, List<String> carrito) {
-        this.name = name;
+    public User(String username, String image, String email, String rol, List<String> favoritos, List<String> carrito) {
+        this.username = username;
         this.image = image;
         this.email = email;
-        this.token = token;
+        this.rol = rol;
         this.favoritos = favoritos;
         this.carrito = carrito;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getImage() {
@@ -48,12 +48,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getToken() {
-        return token;
+    public String getRol() {
+        return rol;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public List<String> getFavoritos() {

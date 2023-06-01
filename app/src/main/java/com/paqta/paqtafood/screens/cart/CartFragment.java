@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -126,26 +128,37 @@ public class CartFragment extends Fragment {
             stepTextView.setText(stepsTexts[stepIndex]);
             stepView.go(stepIndex, true);
 
-            btnReservar.setVisibility(View.GONE);
+            switch (stepIndex){
+                case 2:
+                    btnReservar.setVisibility(View.GONE);
 
-            layoutContaint.removeAllViews();
+                    layoutContaint.removeAllViews();
 
-            TextView textViewDireccion = new TextView(getActivity());
-            textViewDireccion.setText("Direccion");
+                    TextView textViewDireccion = new TextView(getActivity());
+                    textViewDireccion.setText("Direccion");
 
-            TextView textViewPhone = new TextView(getActivity());
-            textViewPhone.setText("Telefono");
+                    TextInputLayout layout = new TextInputLayout(getActivity());
+                    TextInputEditText editText = new TextInputEditText(getActivity());
+                    layout.addView(editText);
 
-            TextView textViewRef = new TextView(getActivity());
-            textViewRef.setText("Referencia");
+                    TextView textViewPhone = new TextView(getActivity());
+                    textViewPhone.setText("Telefono");
 
-            textViewList.add(textViewDireccion);
-            textViewList.add(textViewPhone);
-            textViewList.add(textViewRef);
-            textViewList.forEach(textView -> {
-                textView.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
-                layoutContaint.addView(textView);
-            });
+                    TextView textViewRef = new TextView(getActivity());
+                    textViewRef.setText("Referencia");
+
+                    textViewList.add(textViewDireccion);
+                    textViewList.add(textViewPhone);
+                    textViewList.add(textViewRef);
+                    textViewList.forEach(textView -> {
+                        textView.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
+                        layoutContaint.addView(textView);
+                    });
+                    break;
+                case 3:
+
+                    break;
+            }
         }
     }
 

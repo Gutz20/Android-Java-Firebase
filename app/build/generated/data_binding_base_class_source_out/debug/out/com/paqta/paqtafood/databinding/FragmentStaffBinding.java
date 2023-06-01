@@ -4,10 +4,12 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ListView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.paqta.paqtafood.R;
@@ -20,11 +22,20 @@ public final class FragmentStaffBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final ListView listviewData;
+  public final Button btnAddStaff;
 
-  private FragmentStaffBinding(@NonNull FrameLayout rootView, @NonNull ListView listviewData) {
+  @NonNull
+  public final RecyclerView rycViewStaff;
+
+  @NonNull
+  public final TextView textView16;
+
+  private FragmentStaffBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddStaff,
+      @NonNull RecyclerView rycViewStaff, @NonNull TextView textView16) {
     this.rootView = rootView;
-    this.listviewData = listviewData;
+    this.btnAddStaff = btnAddStaff;
+    this.rycViewStaff = rycViewStaff;
+    this.textView16 = textView16;
   }
 
   @Override
@@ -54,13 +65,26 @@ public final class FragmentStaffBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.listview_data;
-      ListView listviewData = ViewBindings.findChildViewById(rootView, id);
-      if (listviewData == null) {
+      id = R.id.btnAddStaff;
+      Button btnAddStaff = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddStaff == null) {
         break missingId;
       }
 
-      return new FragmentStaffBinding((FrameLayout) rootView, listviewData);
+      id = R.id.rycViewStaff;
+      RecyclerView rycViewStaff = ViewBindings.findChildViewById(rootView, id);
+      if (rycViewStaff == null) {
+        break missingId;
+      }
+
+      id = R.id.textView16;
+      TextView textView16 = ViewBindings.findChildViewById(rootView, id);
+      if (textView16 == null) {
+        break missingId;
+      }
+
+      return new FragmentStaffBinding((FrameLayout) rootView, btnAddStaff, rycViewStaff,
+          textView16);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

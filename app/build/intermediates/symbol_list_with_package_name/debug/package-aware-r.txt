@@ -3545,6 +3545,7 @@ font acme
 font archivo
 font caesar_dressing
 font ceviche_one
+font inter_bold
 font irish_grover
 id ALT
 id All
@@ -3669,6 +3670,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAdd
 id btnAddCart
 id btnAddCategory
 id btnAddContent
@@ -3676,11 +3678,13 @@ id btnAddFavorito
 id btnAddFragmentProduct
 id btnAddPlatillo
 id btnAddProduct
+id btnAddStaff
 id btnComprar
 id btnDeleteFromCart
 id btnDeleteImage
 id btnDetail
 id btnDetailOffer
+id btnDetailStaff
 id btnDialogImage
 id btnEditar
 id btnEditarPlatillo
@@ -3828,7 +3832,10 @@ id edit_query
 id edtTextCategoria
 id edtTextDescripcion
 id edtTextNombre
+id edtTextPassword
 id edtTextPrecio
+id edtTextRol
+id edtTextUsername
 id elastic
 id email
 id emailTextView
@@ -3906,6 +3913,7 @@ id imageCategory
 id imageLogoSignup
 id imagePlatillo
 id imageProducto
+id imageStaff
 id imageView
 id imageView10
 id imageView11
@@ -3947,6 +3955,7 @@ id imagenOffer
 id imagenPlatillo
 id imagenPlatilloMenu
 id imagenProduct
+id imagenStaff
 id img
 id imgBackLogin
 id imgOfferDetail
@@ -3990,7 +3999,6 @@ id linearLayoutContaint
 id listMode
 id listRecyclerView
 id list_item
-id listview_data
 id locale
 id logo
 id logoImageView
@@ -4096,6 +4104,7 @@ id nav_sidebar_categorias
 id nav_sidebar_combos
 id nav_sidebar_exit
 id nav_sidebar_offers
+id nav_sidebar_personal
 id nav_sidebar_platos
 id nav_sidebar_productos
 id nav_sidebar_profile
@@ -4186,6 +4195,7 @@ id root
 id rounded
 id row_index_key
 id rtl
+id rycViewStaff
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -4310,6 +4320,7 @@ id textView12
 id textView13
 id textView14
 id textView15
+id textView16
 id textView17
 id textView18
 id textView19
@@ -4333,6 +4344,8 @@ id textView8
 id textView9
 id textViewDetailOffer
 id textViewDetalles
+id textViewNameStaff
+id textViewRolStaff
 id textViewShare
 id text_input_end_icon
 id text_input_error_icon
@@ -4595,6 +4608,7 @@ layout fragment_favorite
 layout fragment_form_category
 layout fragment_form_dishes
 layout fragment_form_product
+layout fragment_form_staff
 layout fragment_home
 layout fragment_menu
 layout fragment_menu_detail
@@ -4717,6 +4731,7 @@ layout view_platillo_search
 layout view_platillo_single
 layout view_product_cart
 layout view_producto_single
+layout view_staff_single
 layout zxing_barcode_scanner
 layout zxing_capture
 menu bottom_menu
