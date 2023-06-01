@@ -11,14 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import com.itextpdf.text.Image;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 import java.io.File;
-import java.util.concurrent.atomic.AtomicReference;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,26 +21,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.common.BitMatrix;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.ColumnText;
-import com.itextpdf.text.pdf.PdfContentByte;
-import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.PdfStamper;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.paqta.paqtafood.R;
 
 public class HomeFragment extends Fragment {
@@ -56,7 +33,6 @@ public class HomeFragment extends Fragment {
     private static final String TOAST_PDF_DOWNLOAD_FAILED = "Error al descargar el PDF";
     final long MAX_SIZE_BYTES = 1024 * 1024;
     String storagePathPdfCartilla = "archivos/cartilla.pdf";
-    private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
     ImageView qr;
 
@@ -66,16 +42,13 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mFirestore = FirebaseFirestore.getInstance();
         mStorage = FirebaseStorage.getInstance();
-
         qr = root.findViewById(R.id.imgQR2);
-
         establecerQR();
+        qr.setOnClickListener(v -> descargarPDFFromStorage());
         return root;
     }
 

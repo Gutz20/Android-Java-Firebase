@@ -22,18 +22,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -46,20 +42,15 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
-
-import org.checkerframework.checker.units.qual.A;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -71,23 +62,17 @@ import java.util.List;
 import java.util.Map;
 
 public class FormDishesFragment extends Fragment {
-
     String idPlatillo, storage_path = "platillos/*", prefijo = "platillo";
     ImageView fotoPlatillo;
-
     Button btnAdd, btnDialogImage, btnRemoveImage, btnAddContent;
-
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
-
-    TextInputEditText edtTxtNombre, edtTxtDescripcion;
+    TextInputEditText edtTxtNombre, edtTxtDescripcion, edtTxtPrecio;
     ChipGroup chipGroup;
     ArrayList<String> listaContenido;
     AutoCompleteTextView autoCompleteTextView;
-
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_GALLERY = 2;
-
     private Uri imageUrl;
     private Bitmap imageCamera;
 
@@ -104,13 +89,13 @@ public class FormDishesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_form_dishes, container, false);
 
-
         mFirestore = FirebaseFirestore.getInstance();
         mStorage = FirebaseStorage.getInstance();
 
         fotoPlatillo = root.findViewById(R.id.imagePlatillo);
         edtTxtNombre = root.findViewById(R.id.edtTextNombre);
         edtTxtDescripcion = root.findViewById(R.id.edtTextDescripcion);
+        edtTxtPrecio = root.findViewById(R.id.edtTextPrecio);
         autoCompleteTextView = root.findViewById(R.id.cmbCategoria);
 
         btnAdd = root.findViewById(R.id.btn_add);
@@ -122,12 +107,7 @@ public class FormDishesFragment extends Fragment {
         chipGroup = root.findViewById(R.id.chipGroup);
         listaContenido = new ArrayList<>();
 
-        btnDialogImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarDialog();
-            }
-        });
+        btnDialogImage.setOnClickListener(v-> mostrarDialog());
 
         btnAddContent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,9 +169,10 @@ public class FormDishesFragment extends Fragment {
                     String nombre = edtTxtNombre.getText().toString().trim();
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
                     String categoria = autoCompleteTextView.getText().toString().trim();
+                    String precio = edtTxtPrecio.getText().toString();
 
-                    if (validar(nombre, descripcion, categoria, listaContenido)) {
-                        postPlatillo(nombre, descripcion, categoria);
+                    if (validar(nombre, descripcion, categoria, listaContenido, precio)) {
+                        postPlatillo(nombre, descripcion, categoria, precio);
                     }
                 }
             });
@@ -204,9 +185,10 @@ public class FormDishesFragment extends Fragment {
                     String nombre = edtTxtNombre.getText().toString().trim();
                     String descripcion = edtTxtDescripcion.getText().toString().trim();
                     String categoria = autoCompleteTextView.getText().toString().trim();
+                    String precio = edtTxtPrecio.getText().toString().trim();
 
-                    if (validar(nombre, descripcion, categoria, listaContenido)) {
-                        updatePlatillo(nombre, descripcion, categoria);
+                    if (validar(nombre, descripcion, categoria, listaContenido, precio)) {
+                        updatePlatillo(nombre, descripcion, categoria, precio);
                     }
                 }
             });
@@ -268,13 +250,13 @@ public class FormDishesFragment extends Fragment {
      * @param categoria
      * @return
      */
-    private boolean validar(String nombre, String descripcion, String categoria, List<String> detalles) {
+    private boolean validar(String nombre, String descripcion, String categoria, List<String> detalles, String precio) {
         Drawable currentDrawable = fotoPlatillo.getDrawable();
         Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
         Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
         Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
 
-        if (nombre.isEmpty() || descripcion.isEmpty() || categoria.isEmpty() || detalles.isEmpty()) {
+        if (nombre.isEmpty() || descripcion.isEmpty() || categoria.isEmpty() || detalles.isEmpty() || precio.isEmpty()) {
             Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -299,7 +281,7 @@ public class FormDishesFragment extends Fragment {
      * @param descripcion
      * @param categoria
      */
-    private void updatePlatillo(String nombre, String descripcion, String categoria) {
+    private void updatePlatillo(String nombre, String descripcion, String categoria, String precio) {
 
         DocumentReference documentReference = mFirestore.collection("productos").document(idPlatillo);
 
@@ -308,6 +290,7 @@ public class FormDishesFragment extends Fragment {
         updates.put("descripcion", descripcion);
         updates.put("categoria", categoria);
         updates.put("detalles", listaContenido);
+        updates.put("precio", precio);
 
         documentReference.update(updates)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -334,8 +317,9 @@ public class FormDishesFragment extends Fragment {
      * @param nombre
      * @param descripcion
      * @param categoria
+     * @param precio
      */
-    private void postPlatillo(String nombre, String descripcion, String categoria) {
+    private void postPlatillo(String nombre, String descripcion, String categoria, String precio) {
 
         DocumentReference documentReference = mFirestore.collection("productos").document();
 
@@ -345,6 +329,7 @@ public class FormDishesFragment extends Fragment {
         map.put("descripcion", descripcion);
         map.put("categoria", categoria);
         map.put("detalles", listaContenido);
+        map.put("precio", precio);
 
         documentReference.set(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

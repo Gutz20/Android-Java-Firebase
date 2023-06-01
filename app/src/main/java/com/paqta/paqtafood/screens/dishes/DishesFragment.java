@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +29,10 @@ import com.google.firebase.storage.UploadTask;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
@@ -50,6 +49,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -93,8 +93,8 @@ public class DishesFragment extends Fragment {
         btnAdd.setOnClickListener(v -> replaceFragment(new FormDishesFragment()));
         btnUpdateCartilla.setOnClickListener(v -> configurarPDF());
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//        StrictMode.setThreadPolicy(policy);
 
         setUpRecyclerView();
         setupSearchView();
@@ -104,7 +104,7 @@ public class DishesFragment extends Fragment {
 
     private void configurarPDF() {
         try {
-            InputStream inputStream = getResources().openRawResource(R.raw.cartilla_plantilla);
+            InputStream inputStream = getResources().openRawResource(R.raw.cartilla_paqta_food);
             File outputFile = new File(getContext().getFilesDir(), STORAGE_EDITED_PDF_NAME);
 
             PdfReader reader = new PdfReader(inputStream);
@@ -113,61 +113,71 @@ public class DishesFragment extends Fragment {
             int totalPages = reader.getNumberOfPages();
 
             for (int i = 1; i <= totalPages; i++) {
-                int imagenX = 100;
-                int imagenY = 700;
-                int textoX = 200;
-                int textoY = 700;
-                int descripcionX = 200;
-                int descripcionY = 650;
+                int textoPlatilloX = 90;
+                int textoPlatilloY = 525;
+                int textoPostreX = 90;
+                int textoPostreY = 200;
+                int textoBebibasX = 500;
+                int textoBebidasY = 525;
 
-                AtomicReference<PdfContentByte> canvas = new AtomicReference<>();
+                AtomicReference<PdfContentByte> canvas = new AtomicReference<>(stamper.getOverContent(i));
                 CollectionReference reference = mFirestore.collection("productos");
-                int finalI = i;
                 reference.get().addOnSuccessListener(querySnapshot -> {
-                    int index = 0;
-                    int yPos = textoY;
+                    int yPosPlatilloY = textoPlatilloY;
+                    int yPosBebidaY = textoBebidasY;
+                    int yPosPostreY = textoPostreY;
 
                     for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
                         String nombre = documentSnapshot.getString("nombre");
                         String descripcion = documentSnapshot.getString("descripcion");
-                        String imagen = documentSnapshot.getString("imagen");
+                        String categoria = documentSnapshot.getString("categoria");
+//                        String imagen = documentSnapshot.getString("imagen");
 
-                        if (index % MAX_PRODUCTS_PER_PAGE == 0) {
-                            // Crear una nueva página si es el primer producto o si se excedió el límite por página
-                            if (canvas.get() != null) {
-                                stamper.insertPage(finalI + 1, reader.getPageSizeWithRotation(1));
-                                canvas.set(stamper.getOverContent(finalI + 1));
-                            } else {
-                                canvas.set(stamper.getOverContent(finalI));
-                            }
-                            yPos = textoY;
-                        }
-                        yPos -= 50;
+                        String nombreFormat = nombre + "................... S/.";
 
+                        Font nombreFont = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.BOLD);
+                        nombreFont.setColor(BaseColor.WHITE);
 
-                        // Agrega el nombre
-                        Font nombreFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-                        Phrase nombrePhrase = new Phrase(nombre, nombreFont);
-                        ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, nombrePhrase, textoX, yPos, 0);
-
-                        // Agrega la descripción
                         Font descripcionFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
-                        Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
-                        ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, descripcionX, yPos - 20, 0);
+                        descripcionFont.setColor(BaseColor.WHITE);
+
+                        if (Objects.equals(categoria, "Platillos")) {
+                            yPosPlatilloY -= 30;
+                            // Agrega el nombre
+                            Phrase nombrePhrase = new Phrase(nombreFormat, nombreFont);
+                            ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, nombrePhrase, textoPlatilloX, yPosPlatilloY, 0);
+                            // Agrega la descripción
+                            Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
+                            ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, textoPlatilloX, yPosPlatilloY - 10, 0);
+                        } else if (Objects.equals(categoria, "Bebidas")) {
+                            yPosBebidaY -= 30;
+                            // Agrega el nombre
+                            Phrase nombrePhrase = new Phrase(nombreFormat, nombreFont);
+                            ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, nombrePhrase, textoBebibasX, yPosBebidaY, 0);
+                            // Agrega la descripción
+                            Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
+                            ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, textoBebibasX, yPosBebidaY - 10, 0);
+                        } else if (Objects.equals(categoria, "Postres")) {
+                            yPosPostreY -= 30;
+                            // Agrega el nombre
+                            Phrase nombrePhrase = new Phrase(nombreFormat, nombreFont);
+                            ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, nombrePhrase, textoPostreX, yPosPostreY, 0);
+                            // Agrega la descripción
+                            Phrase descripcionPhrase = new Phrase(descripcion, descripcionFont);
+                            ColumnText.showTextAligned(canvas.get(), Element.ALIGN_LEFT, descripcionPhrase, textoPostreX, yPosPostreY - 10, 0);
+                        }
+
 
                         // Agregar una imagen al PDF
-                        Image image = null;
-                        try {
-                            image = Image.getInstance(imagen);
-                            image.setAbsolutePosition(imagenX, yPos - 20); // Establece la posición de la imagen en la página
-                            image.scaleToFit(100, image.getHeight()); // Ajusta el tamaño de la imagen
-                            canvas.get().addImage(image);
-                        } catch (IOException | DocumentException e) {
-                            throw new RuntimeException(e);
-                        }
-
-
-                        index++;
+                        // Image image = null;
+                        // try {
+                        //     image = Image.getInstance(imagen);
+                        //     image.setAbsolutePosition(imagenX, yPos - 20); // Establece la posición de la imagen en la página
+                        //     image.scaleToFit(100, image.getHeight()); // Ajusta el tamaño de la imagen
+                        //     canvas.get().addImage(image);
+                        // } catch (IOException | DocumentException e) {
+                        //     throw new RuntimeException(e);
+                        // }
                     }
 
                     try {

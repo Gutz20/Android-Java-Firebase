@@ -3828,6 +3828,7 @@ int id edit_query 0x7f0a0117
 int id edtTextCategoria 0x7f0a0118
 int id edtTextDescripcion 0x7f0a0119
 int id edtTextNombre 0x7f0a011a
+int id edtTextPrecio 0x7f0a0379
 int id elastic 0x7f0a011b
 int id email 0x7f0a011c
 int id emailTextView 0x7f0a011d
@@ -4727,7 +4728,7 @@ int mipmap ic_launcher_logo_round 0x7f100003
 int mipmap ic_launcher_round 0x7f100004
 int plurals fui_error_weak_password 0x7f110000
 int plurals mtrl_badge_content_description 0x7f110001
-int raw cartilla_plantilla 0x7f120000
+int raw cartilla_paqta_food 0x7f120003
 int raw firebase_common_keep 0x7f120001
 int raw zxing_beep 0x7f120002
 int string abc_action_bar_home_description 0x7f130000

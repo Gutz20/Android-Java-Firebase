@@ -3829,6 +3829,7 @@ id edit_query
 id edtTextCategoria
 id edtTextDescripcion
 id edtTextNombre
+id edtTextPrecio
 id elastic
 id email
 id emailTextView
@@ -4728,7 +4729,7 @@ mipmap ic_launcher_logo_round
 mipmap ic_launcher_round
 plurals fui_error_weak_password
 plurals mtrl_badge_content_description
-raw cartilla_plantilla
+raw cartilla_paqta_food
 raw firebase_common_keep
 raw zxing_beep
 string abc_action_bar_home_description

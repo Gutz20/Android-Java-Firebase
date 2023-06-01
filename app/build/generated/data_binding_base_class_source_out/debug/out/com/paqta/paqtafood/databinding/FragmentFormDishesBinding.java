@@ -49,6 +49,9 @@ public final class FragmentFormDishesBinding implements ViewBinding {
   public final TextInputEditText edtTextNombre;
 
   @NonNull
+  public final TextInputEditText edtTextPrecio;
+
+  @NonNull
   public final TextInputLayout filledTextField;
 
   @NonNull
@@ -67,9 +70,9 @@ public final class FragmentFormDishesBinding implements ViewBinding {
       @NonNull Button btnAddContent, @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
       @NonNull ChipGroup chipGroup, @NonNull AutoCompleteTextView cmbCategoria,
       @NonNull TextInputEditText edtTextDescripcion, @NonNull TextInputEditText edtTextNombre,
-      @NonNull TextInputLayout filledTextField, @NonNull TextInputLayout filledTextField2,
-      @NonNull TextInputLayout filledTextField3, @NonNull TextInputLayout filledTextField4,
-      @NonNull ImageView imagePlatillo) {
+      @NonNull TextInputEditText edtTextPrecio, @NonNull TextInputLayout filledTextField,
+      @NonNull TextInputLayout filledTextField2, @NonNull TextInputLayout filledTextField3,
+      @NonNull TextInputLayout filledTextField4, @NonNull ImageView imagePlatillo) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
     this.btnAddContent = btnAddContent;
@@ -79,6 +82,7 @@ public final class FragmentFormDishesBinding implements ViewBinding {
     this.cmbCategoria = cmbCategoria;
     this.edtTextDescripcion = edtTextDescripcion;
     this.edtTextNombre = edtTextNombre;
+    this.edtTextPrecio = edtTextPrecio;
     this.filledTextField = filledTextField;
     this.filledTextField2 = filledTextField2;
     this.filledTextField3 = filledTextField3;
@@ -161,6 +165,12 @@ public final class FragmentFormDishesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edtTextPrecio;
+      TextInputEditText edtTextPrecio = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextPrecio == null) {
+        break missingId;
+      }
+
       id = R.id.filledTextField;
       TextInputLayout filledTextField = ViewBindings.findChildViewById(rootView, id);
       if (filledTextField == null) {
@@ -193,8 +203,8 @@ public final class FragmentFormDishesBinding implements ViewBinding {
 
       return new FragmentFormDishesBinding((FrameLayout) rootView, btnAdd, btnAddContent,
           btnDeleteImage, btnDialogImage, chipGroup, cmbCategoria, edtTextDescripcion,
-          edtTextNombre, filledTextField, filledTextField2, filledTextField3, filledTextField4,
-          imagePlatillo);
+          edtTextNombre, edtTextPrecio, filledTextField, filledTextField2, filledTextField3,
+          filledTextField4, imagePlatillo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

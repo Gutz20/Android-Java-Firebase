@@ -311,6 +311,7 @@ id editButton
 id edtTextCategoria
 id edtTextDescripcion
 id edtTextNombre
+id edtTextPrecio
 id emailTextView
 id end
 id fab
@@ -570,7 +571,7 @@ mipmap ic_launcher_logo
 mipmap ic_launcher_logo_foreground
 mipmap ic_launcher_logo_round
 mipmap ic_launcher_round
-raw cartilla_plantilla
+raw cartilla_paqta_food
 string app_name
 string btnNuevoFishes
 string close_nav
