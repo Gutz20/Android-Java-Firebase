@@ -4547,6 +4547,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
+int layout activity_admin_navigation 0x7f0d00c3
 int layout activity_default_navigation_app 0x7f0d001c
 int layout activity_description 0x7f0d001d
 int layout activity_forgot_password 0x7f0d001e

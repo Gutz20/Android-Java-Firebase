@@ -92,6 +92,9 @@ dependencies {
     // Google | Google authentication
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
+    // Authentication for google
+    implementation 'com.google.gms:google-services:4.3.15'
+
 //    Carrusel de imagenes | Las properties no funcionan bien en java
     implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
 

@@ -48,6 +48,10 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\view_staff_single.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-55:/layout/activity_admin_navigation.xml",
+        "source": "com.paqta.paqtafood.app-main-58:/layout/activity_admin_navigation.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_form_dishes.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_form_dishes.xml"
     },
@@ -76,10 +80,6 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_form_staff.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-55:/layout/fragment_form_staff.xml",
-        "source": "com.paqta.paqtafood.app-main-58:/layout/fragment_form_staff.xml"
-    },
-    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_profile.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_profile.xml"
     },
@@ -102,6 +102,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\fragment_category.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\activity_admin_navigation.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\activity_admin_navigation.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-55:\\layout\\view_platillo_offer.xml",

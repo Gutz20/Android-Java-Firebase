@@ -515,6 +515,7 @@ id userEmail
 id userName
 id viewDetailPlatilloMenu
 id viewSupporter
+layout activity_admin_navigation
 layout activity_default_navigation_app
 layout activity_description
 layout activity_forgot_password

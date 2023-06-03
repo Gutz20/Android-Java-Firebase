@@ -20,7 +20,6 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.databinding.ActivityDefaultNavigationAppBinding;
 import com.paqta.paqtafood.screens.cart.CartFragment;
 import com.paqta.paqtafood.screens.category.CategoryFragment;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
@@ -39,7 +38,6 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
     FloatingActionButton fab;
     DrawerLayout drawerLayout;
-    ActivityDefaultNavigationAppBinding binding;
     ActionBarDrawerToggle actionBarDrawerToggle;
     MaterialToolbar toolbar;
     NavigationView navigationView;
@@ -50,8 +48,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDefaultNavigationAppBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_default_navigation_app);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();

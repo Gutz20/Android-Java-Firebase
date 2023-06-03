@@ -4548,6 +4548,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin_navigation
 layout activity_default_navigation_app
 layout activity_description
 layout activity_forgot_password

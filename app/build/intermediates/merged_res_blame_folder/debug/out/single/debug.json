@@ -228,10 +228,6 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\fragment_category.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-merged_res-56:/layout_fragment_form_staff.xml.flat",
-        "source": "com.paqta.paqtafood.app-main-58:/layout/fragment_form_staff.xml"
-    },
-    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-56:\\drawable_baseline_arrow_back_ios_24.xml.flat",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\drawable\\baseline_arrow_back_ios_24.xml"
     },
@@ -424,6 +420,10 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\drawable\\baseline_favorite_border_24.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-merged_res-56:/layout_activity_admin_navigation.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-58:/layout/activity_admin_navigation.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-56:\\drawable_box_image_3.png.flat",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\drawable\\box_image_3.png"
     },
@@ -550,6 +550,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-56:\\drawable_arrow_left_home.png.flat",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\drawable\\arrow_left_home.png"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-56:\\layout_activity_admin_navigation.xml.flat",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-58:\\layout\\activity_admin_navigation.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-56:\\drawable_baseline_person_24.xml.flat",
