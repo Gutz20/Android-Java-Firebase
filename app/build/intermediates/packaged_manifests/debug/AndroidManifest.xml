@@ -88,9 +88,6 @@
             android:name="com.paqta.paqtafood.navigation.DefaultNavigationApp"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.staff.Staff"
-            android:exported="false" />
-        <activity
             android:name="com.paqta.paqtafood.screens.signup.Signup"
             android:exported="false" />
         <activity

@@ -32,7 +32,7 @@ import com.paqta.paqtafood.screens.offers.OffersFragment;
 import com.paqta.paqtafood.screens.product.ProductFragment;
 import com.paqta.paqtafood.screens.profile.ProfileFragment;
 import com.paqta.paqtafood.screens.search.SearchFragment;
-import com.paqta.paqtafood.screens.staffFragment.StaffFragment;
+import com.paqta.paqtafood.screens.staff.StaffFragment;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {

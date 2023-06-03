@@ -1,4 +1,4 @@
-#Fri Jun 02 19:58:06 PET 2023
+#Fri Jun 02 22:20:17 PET 2023
 base.0=C\:\\Users\\USUARIO\\Desktop\\backup-android\\PaqtaFood\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\USUARIO\\Desktop\\backup-android\\PaqtaFood\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\USUARIO\\Desktop\\backup-android\\PaqtaFood\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex

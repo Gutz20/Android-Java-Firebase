@@ -2,7 +2,6 @@ package com.paqta.paqtafood.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.User;
-import com.paqta.paqtafood.screens.staffFragment.components.FormStaffFragment;
+import com.paqta.paqtafood.screens.staff.components.FormStaffFragment;
 
 public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.ViewHolder> {
 

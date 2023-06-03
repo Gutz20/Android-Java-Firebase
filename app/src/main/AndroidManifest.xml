@@ -39,9 +39,6 @@
             android:name=".navigation.DefaultNavigationApp"
             android:exported="false" />
         <activity
-            android:name=".screens.staff.Staff"
-            android:exported="false" />
-        <activity
             android:name=".screens.signup.Signup"
             android:exported="false" />
         <activity

@@ -31,6 +31,9 @@ public final class FragmentFormStaffBinding implements ViewBinding {
   public final Button btnDialogImage;
 
   @NonNull
+  public final TextInputEditText edtTextEmail;
+
+  @NonNull
   public final TextInputEditText edtTextPassword;
 
   @NonNull
@@ -44,12 +47,14 @@ public final class FragmentFormStaffBinding implements ViewBinding {
 
   private FragmentFormStaffBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
       @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
-      @NonNull TextInputEditText edtTextPassword, @NonNull TextInputEditText edtTextRol,
-      @NonNull TextInputEditText edtTextUsername, @NonNull ImageView imageStaff) {
+      @NonNull TextInputEditText edtTextEmail, @NonNull TextInputEditText edtTextPassword,
+      @NonNull TextInputEditText edtTextRol, @NonNull TextInputEditText edtTextUsername,
+      @NonNull ImageView imageStaff) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
     this.btnDeleteImage = btnDeleteImage;
     this.btnDialogImage = btnDialogImage;
+    this.edtTextEmail = edtTextEmail;
     this.edtTextPassword = edtTextPassword;
     this.edtTextRol = edtTextRol;
     this.edtTextUsername = edtTextUsername;
@@ -101,6 +106,12 @@ public final class FragmentFormStaffBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edtTextEmail;
+      TextInputEditText edtTextEmail = ViewBindings.findChildViewById(rootView, id);
+      if (edtTextEmail == null) {
+        break missingId;
+      }
+
       id = R.id.edtTextPassword;
       TextInputEditText edtTextPassword = ViewBindings.findChildViewById(rootView, id);
       if (edtTextPassword == null) {
@@ -126,7 +137,7 @@ public final class FragmentFormStaffBinding implements ViewBinding {
       }
 
       return new FragmentFormStaffBinding((FrameLayout) rootView, btnAdd, btnDeleteImage,
-          btnDialogImage, edtTextPassword, edtTextRol, edtTextUsername, imageStaff);
+          btnDialogImage, edtTextEmail, edtTextPassword, edtTextRol, edtTextUsername, imageStaff);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
