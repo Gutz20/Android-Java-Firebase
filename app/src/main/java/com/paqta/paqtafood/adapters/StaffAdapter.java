@@ -2,6 +2,7 @@ package com.paqta.paqtafood.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,13 +47,14 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
             holder.rolStaff.setText(model.getRol());
         }
 
-        if (model.getImage() == null) {
+        if (model.getImagen() == null) {
             Glide.with(holder.imageStaff.getContext())
                     .load("https://img.freepik.com/vector-premium/icono-circulo-usuario-anonimo-ilustracion-vector-estilo-plano-sombra_520826-1931.jpg")
-                    .placeholder(R.drawable.baseline_person_24)
                     .into(holder.imageStaff);
         } else {
-            Glide.with(holder.imageStaff.getContext()).load(model.getImage()).into(holder.imageStaff);
+            Glide.with(holder.imageStaff.getContext())
+                    .load(model.getImagen())
+                    .into(holder.imageStaff);
         }
 
         holder.btnDetail.setOnClickListener(v -> {

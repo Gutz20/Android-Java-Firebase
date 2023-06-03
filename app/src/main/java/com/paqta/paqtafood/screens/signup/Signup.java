@@ -23,7 +23,6 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.navigation.DefaultNavigationApp;
@@ -33,7 +32,6 @@ import com.paqta.paqtafood.utils.ChangeColorBar;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Signup extends AppCompatActivity {

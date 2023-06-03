@@ -6,7 +6,7 @@ import java.util.List;
 public class User implements Serializable {
 
     private String username;
-    private String image;
+    private String imagen;
     private String email;
     private String rol;
     private List<String> favoritos;
@@ -15,9 +15,9 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String username, String image, String email, String rol, List<String> favoritos, List<String> carrito) {
+    public User(String username, String imagen, String email, String rol, List<String> favoritos, List<String> carrito) {
         this.username = username;
-        this.image = image;
+        this.imagen = imagen;
         this.email = email;
         this.rol = rol;
         this.favoritos = favoritos;
@@ -32,12 +32,12 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public String getImage() {
-        return image;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getEmail() {
