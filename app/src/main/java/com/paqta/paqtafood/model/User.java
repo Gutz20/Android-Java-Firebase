@@ -12,6 +12,9 @@ public class User implements Serializable {
     private List<String> favoritos;
     private List<String> carrito;
 
+    private String created_at;
+    private String updated_at;
+
     public User() {
     }
 

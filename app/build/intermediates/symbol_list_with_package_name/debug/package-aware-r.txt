@@ -3252,6 +3252,7 @@ drawable baseline_circle_24
 drawable baseline_clear_24
 drawable baseline_close_24
 drawable baseline_contact_mail_24
+drawable baseline_dashboard_24
 drawable baseline_edit_24
 drawable baseline_exit_app_24
 drawable baseline_favorite_24
@@ -3939,7 +3940,6 @@ id imageView6
 id imageView7
 id imageView8
 id imageView9
-id imageViewDetail
 id image_view_favorite
 id image_view_search
 id imagenMenuDetail
@@ -4050,7 +4050,6 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
-id more
 id motionLayout
 id motion_base
 id mtrl_anchor_parent
@@ -4091,16 +4090,18 @@ id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_controller_view_tag
 id nav_host_fragment_container
+id nav_sidebar_admin_categories
+id nav_sidebar_admin_dashboard
+id nav_sidebar_admin_exit
+id nav_sidebar_admin_platos
+id nav_sidebar_admin_staff
 id nav_sidebar_cart
-id nav_sidebar_categorias
 id nav_sidebar_combos
 id nav_sidebar_exit
 id nav_sidebar_offers
-id nav_sidebar_personal
-id nav_sidebar_platos
-id nav_sidebar_productos
 id nav_sidebar_profile
 id nav_sidebar_qr
+id nav_topbar_admin_profile
 id nav_view
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -4327,6 +4328,7 @@ id textView9
 id textViewDetailOffer
 id textViewDetalles
 id textViewNameStaff
+id textViewPrecio
 id textViewRolStaff
 id textViewShare
 id text_input_end_icon
@@ -4393,6 +4395,7 @@ id userEmail
 id userName
 id vertical
 id vertical_only
+id viewDetail
 id viewDetailPlatilloMenu
 id viewSupporter
 id view_bottom_shadow
@@ -4584,6 +4587,7 @@ layout design_text_input_start_icon
 layout fragment_cart
 layout fragment_category
 layout fragment_content_offers
+layout fragment_dashboard
 layout fragment_detail_dishes
 layout fragment_dishes
 layout fragment_favorite
@@ -4718,8 +4722,10 @@ layout zxing_barcode_scanner
 layout zxing_capture
 menu bottom_menu
 menu nav_menu
+menu nav_menu_admin
 menu share_menu
 menu top_app_bar
+menu top_app_bar_admin
 mipmap ic_launcher
 mipmap ic_launcher_logo
 mipmap ic_launcher_logo_foreground

@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,30 +22,30 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView imageViewDetail;
-
-  @NonNull
   public final ImageView imagenMenuDetail;
 
   @NonNull
   public final TextView nombreMenuDetail;
 
   @NonNull
-  public final TextView textView3;
-
-  @NonNull
   public final TextView textView5;
 
+  @NonNull
+  public final TextView textViewPrecio;
+
+  @NonNull
+  public final MaterialButton viewDetail;
+
   private ViewPlatilloMenuDetailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView imageViewDetail, @NonNull ImageView imagenMenuDetail,
-      @NonNull TextView nombreMenuDetail, @NonNull TextView textView3,
-      @NonNull TextView textView5) {
+      @NonNull ImageView imagenMenuDetail, @NonNull TextView nombreMenuDetail,
+      @NonNull TextView textView5, @NonNull TextView textViewPrecio,
+      @NonNull MaterialButton viewDetail) {
     this.rootView = rootView;
-    this.imageViewDetail = imageViewDetail;
     this.imagenMenuDetail = imagenMenuDetail;
     this.nombreMenuDetail = nombreMenuDetail;
-    this.textView3 = textView3;
     this.textView5 = textView5;
+    this.textViewPrecio = textViewPrecio;
+    this.viewDetail = viewDetail;
   }
 
   @Override
@@ -74,12 +75,6 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageViewDetail;
-      ImageView imageViewDetail = ViewBindings.findChildViewById(rootView, id);
-      if (imageViewDetail == null) {
-        break missingId;
-      }
-
       id = R.id.imagenMenuDetail;
       ImageView imagenMenuDetail = ViewBindings.findChildViewById(rootView, id);
       if (imagenMenuDetail == null) {
@@ -92,20 +87,26 @@ public final class ViewPlatilloMenuDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
-        break missingId;
-      }
-
       id = R.id.textView5;
       TextView textView5 = ViewBindings.findChildViewById(rootView, id);
       if (textView5 == null) {
         break missingId;
       }
 
-      return new ViewPlatilloMenuDetailBinding((ConstraintLayout) rootView, imageViewDetail,
-          imagenMenuDetail, nombreMenuDetail, textView3, textView5);
+      id = R.id.textViewPrecio;
+      TextView textViewPrecio = ViewBindings.findChildViewById(rootView, id);
+      if (textViewPrecio == null) {
+        break missingId;
+      }
+
+      id = R.id.viewDetail;
+      MaterialButton viewDetail = ViewBindings.findChildViewById(rootView, id);
+      if (viewDetail == null) {
+        break missingId;
+      }
+
+      return new ViewPlatilloMenuDetailBinding((ConstraintLayout) rootView, imagenMenuDetail,
+          nombreMenuDetail, textView5, textViewPrecio, viewDetail);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

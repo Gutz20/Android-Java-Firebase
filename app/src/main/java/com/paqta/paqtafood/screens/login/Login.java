@@ -32,10 +32,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.navigation.AdminNavigation;
 import com.paqta.paqtafood.navigation.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.forgotPassword.ForgotPassword;
 import com.paqta.paqtafood.screens.signup.Signup;
@@ -68,8 +71,7 @@ public class Login extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
-            startActivity(new Intent(Login.this, DefaultNavigationApp.class));
-            finish();
+            updateUI(user);
         }
     }
 
@@ -226,9 +228,38 @@ public class Login extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        user = mAuth.getCurrentUser();
         if (user != null) {
-            irHome();
+
+            String userEmail = user.getEmail();
+
+            CollectionReference usuarioRef = mFirestore.collection("usuarios");
+
+            usuarioRef.whereEqualTo("email", userEmail)
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                            if (!queryDocumentSnapshots.isEmpty()) {
+                                DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                                String rol = documentSnapshot.getString("rol");
+
+                                if (rol != null && rol.equals("Admin")) {
+                                    Intent intent = new Intent(Login.this, AdminNavigation.class);
+                                    startActivity(intent);
+                                } else {
+                                    irHome();
+                                }
+                            }
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Login.this, "Error al redirigir", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+//            irHome();
         }
     }
 

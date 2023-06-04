@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
@@ -39,20 +40,18 @@ public class CardMenuDetailAdapter extends FirestoreRecyclerAdapter<Producto, Ca
 
         holder.nombreView.setText(model.getNombre());
         Glide.with(holder.imageView.getContext()).load(model.getImagen()).into(holder.imageView);
-        holder.viewMenuDetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DetailDishesFragment detailDishesFragment = new DetailDishesFragment();
+        holder.precioView.setText(String.valueOf(model.getPrecio()));
+        holder.btnDetail.setOnClickListener(v -> {
+            DetailDishesFragment detailDishesFragment = new DetailDishesFragment();
 
-                Bundle bundle = new Bundle();
-                bundle.putString("idPlatillo", id);
-                detailDishesFragment.setArguments(bundle);
+            Bundle bundle = new Bundle();
+            bundle.putString("idProd", id);
+            detailDishesFragment.setArguments(bundle);
 
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, detailDishesFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.frame_layout, detailDishesFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
         });
     }
 
@@ -64,15 +63,16 @@ public class CardMenuDetailAdapter extends FirestoreRecyclerAdapter<Producto, Ca
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView nombreView;
-        private ImageView imageView, viewMenuDetail;
+        private TextView nombreView, precioView;
+        private ImageView imageView;
+        private MaterialButton btnDetail;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
             nombreView = itemView.findViewById(R.id.nombreMenuDetail);
             imageView = itemView.findViewById(R.id.imagenMenuDetail);
-            viewMenuDetail = itemView.findViewById(R.id.imageViewDetail);
+            precioView = itemView.findViewById(R.id.textViewPrecio);
+            btnDetail = itemView.findViewById(R.id.viewDetail);
         }
     }
 }

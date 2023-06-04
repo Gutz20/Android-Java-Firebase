@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import com.paqta.paqtafood.screens.category.CategoryFragment;
 import com.paqta.paqtafood.screens.dishes.DishesFragment;
 import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
 import com.paqta.paqtafood.screens.home.HomeFragment;
+import com.paqta.paqtafood.screens.login.Login;
 import com.paqta.paqtafood.screens.menu.MenuFragment;
 import com.paqta.paqtafood.screens.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.screens.offers.OffersFragment;
@@ -109,17 +111,13 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
 
         navigationView.setNavigationItemSelectedListener(item -> {
-            int offers, combos, perfil, cart, exit, qr, gestion_productos, gestion_platos, categorias, gestion_personal;
+            int offers, combos, perfil, cart, exit, qr;
             offers = R.id.nav_sidebar_offers;
             combos = R.id.nav_sidebar_combos;
             perfil = R.id.nav_sidebar_profile;
             cart = R.id.nav_sidebar_cart;
             exit = R.id.nav_sidebar_exit;
             qr = R.id.nav_sidebar_qr;
-            gestion_productos = R.id.nav_sidebar_productos;
-            gestion_platos = R.id.nav_sidebar_platos;
-            gestion_personal = R.id.nav_sidebar_personal;
-            categorias = R.id.nav_sidebar_categorias;
 
             if (item.getItemId() == offers) {
                 replaceFragment(new OffersFragment());
@@ -130,17 +128,12 @@ public class DefaultNavigationApp extends AppCompatActivity {
             } else if (item.getItemId() == cart) {
                 replaceFragment(new CartFragment());
             } else if (item.getItemId() == exit) {
+                mAuth.signOut();
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
                 Toast.makeText(this, "Cerrar sesion", Toast.LENGTH_SHORT).show();
             } else if (item.getItemId() == qr) {
                 replaceFragment(new MenuFragment());
-            } else if (item.getItemId() == gestion_platos) {
-                replaceFragment(new DishesFragment());
-            } else if (item.getItemId() == gestion_productos) {
-                replaceFragment(new ProductFragment());
-            } else if (item.getItemId() == categorias) {
-                replaceFragment(new CategoryFragment());
-            } else if (item.getItemId() == gestion_personal) {
-                replaceFragment(new StaffFragment());
             }
 
             return true;

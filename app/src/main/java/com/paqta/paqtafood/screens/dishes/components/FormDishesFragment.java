@@ -43,6 +43,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -57,6 +58,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -292,6 +294,8 @@ public class FormDishesFragment extends Fragment {
         updates.put("categoria", categoria);
         updates.put("detalles", listaContenido);
         updates.put("precio", precio);
+        Timestamp timestamp = Timestamp.now();
+        updates.put("updated_at", timestamp);
 
         documentReference.update(updates)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -330,6 +334,9 @@ public class FormDishesFragment extends Fragment {
         map.put("categoria", categoria);
         map.put("detalles", listaContenido);
         map.put("precio", precio);
+        Timestamp timestamp = Timestamp.now();
+        map.put("created_at", timestamp);
+        map.put("updated_at", timestamp);
 
         documentReference.set(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

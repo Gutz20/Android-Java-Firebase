@@ -3,7 +3,6 @@ package com.paqta.paqtafood.model;
 import java.util.List;
 
 public class Producto {
-
     private String nombre;
     private String descripcion;
     private String categoria;

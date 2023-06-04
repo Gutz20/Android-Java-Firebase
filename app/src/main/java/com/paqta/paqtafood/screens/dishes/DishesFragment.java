@@ -243,7 +243,7 @@ public class DishesFragment extends Fragment {
 
     private void setUpRecyclerView() {
         mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos").limit(3);
 
         FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
@@ -273,7 +273,9 @@ public class DishesFragment extends Fragment {
         FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Producto>()
                         .setQuery(query.orderBy("nombre")
-                                .startAt(s).endAt(s + "~"), Producto.class).build();
+                                .startAt(s)
+                                .endAt(s + "\uf8ff"), Producto.class).build();
+
         mAdapter = new PlatilloAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.startListening();
         mRecycler.setAdapter(mAdapter);

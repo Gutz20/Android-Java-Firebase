@@ -26,6 +26,9 @@ public final class ActivityAdminNavigationBinding implements ViewBinding {
   public final CoordinatorLayout coordinatorLayout;
 
   @NonNull
+  public final DrawerLayout drawerLayout;
+
+  @NonNull
   public final FrameLayout frameLayout;
 
   @NonNull
@@ -35,10 +38,12 @@ public final class ActivityAdminNavigationBinding implements ViewBinding {
   public final MaterialToolbar topAppBar;
 
   private ActivityAdminNavigationBinding(@NonNull DrawerLayout rootView,
-      @NonNull CoordinatorLayout coordinatorLayout, @NonNull FrameLayout frameLayout,
-      @NonNull NavigationView navView, @NonNull MaterialToolbar topAppBar) {
+      @NonNull CoordinatorLayout coordinatorLayout, @NonNull DrawerLayout drawerLayout,
+      @NonNull FrameLayout frameLayout, @NonNull NavigationView navView,
+      @NonNull MaterialToolbar topAppBar) {
     this.rootView = rootView;
     this.coordinatorLayout = coordinatorLayout;
+    this.drawerLayout = drawerLayout;
     this.frameLayout = frameLayout;
     this.navView = navView;
     this.topAppBar = topAppBar;
@@ -77,6 +82,8 @@ public final class ActivityAdminNavigationBinding implements ViewBinding {
         break missingId;
       }
 
+      DrawerLayout drawerLayout = (DrawerLayout) rootView;
+
       id = R.id.frame_layout;
       FrameLayout frameLayout = ViewBindings.findChildViewById(rootView, id);
       if (frameLayout == null) {
@@ -96,7 +103,7 @@ public final class ActivityAdminNavigationBinding implements ViewBinding {
       }
 
       return new ActivityAdminNavigationBinding((DrawerLayout) rootView, coordinatorLayout,
-          frameLayout, navView, topAppBar);
+          drawerLayout, frameLayout, navView, topAppBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

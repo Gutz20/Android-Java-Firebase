@@ -2,8 +2,10 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:openDrawer="start"
     tools:context=".navigation.AdminNavigation">
 
 
@@ -28,7 +30,7 @@
                     android:background="@color/colorFondo"
                     android:elevation="4dp"
                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                    app:menu="@menu/top_app_bar"
+                    app:menu="@menu/top_app_bar_admin"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:title="Paqta Food" />
 
@@ -39,8 +41,8 @@
 
         <FrameLayout
             android:id="@+id/frame_layout"
-            android:layout_width="0dp"
-            android:layout_height="0dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
@@ -49,10 +51,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        android:fitsSystemWindows="true"
         android:background="@drawable/bg_sidebar"
-        app:menu="@menu/nav_menu"
-        />
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu_admin" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

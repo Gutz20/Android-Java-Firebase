@@ -11,30 +11,6 @@
         >
         <menu>
             <item
-                android:id="@+id/nav_sidebar_productos"
-                android:icon="@drawable/outline_email_24"
-                android:title="Gestion de productos"
-                android:checkable="true"
-                app:showAsAction="ifRoom"/>
-            <item
-                android:id="@+id/nav_sidebar_platos"
-                android:icon="@drawable/outline_fastfood_24"
-                android:title="Gestion de platos"
-                android:checkable="true"
-                app:showAsAction="ifRoom"/>
-            <item
-                android:id="@+id/nav_sidebar_personal"
-                android:icon="@drawable/outline_fastfood_24"
-                android:title="Gestion de personal"
-                android:checkable="true"
-                app:showAsAction="ifRoom"/>
-            <item
-                android:id="@+id/nav_sidebar_categorias"
-                android:icon="@drawable/baseline_category_24"
-                android:title="Adm Categorias"
-                android:checkable="true"
-                app:showAsAction="ifRoom"/>
-            <item
                 android:id="@+id/nav_sidebar_offers"
                 android:icon="@drawable/icon_sidebar_1"
                 android:title="OFERTAS"

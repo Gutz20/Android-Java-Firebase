@@ -77,40 +77,40 @@ public class FavoriteFragment extends Fragment {
                     FirestoreRecyclerOptions<Producto> optionsCategoria1 = new FirestoreRecyclerOptions.Builder<Producto>()
                             .setQuery(queryCategoria1, Producto.class)
                             .build();
-                    mAdapterPlatillos = new CardFavoriteAdapter(optionsCategoria1);
+                    mAdapterPlatillos = new CardFavoriteAdapter(optionsCategoria1, favoritos);
                     mAdapterPlatillos.notifyDataSetChanged();
                     mRecyclerPlatillos.setAdapter(mAdapterPlatillos);
                     mAdapterPlatillos.startListening();
 
                     // Categoría 2 (Bebidas)
-                    LinearLayoutManager linearLayoutManagerBebidas = new LinearLayoutManager(getContext());
-                    linearLayoutManagerBebidas.setOrientation(RecyclerView.VERTICAL);
-                    mRecyclerBebibas.setLayoutManager(linearLayoutManagerBebidas);
-                    Query queryCategoriaBebidas = mFirestore.collection("productos")
-                            .whereIn("id", favoritos)
-                            .whereEqualTo("categoria", "Bebidas");
-                    FirestoreRecyclerOptions<Producto> optionsCategoriaBebidas = new FirestoreRecyclerOptions.Builder<Producto>()
-                            .setQuery(queryCategoriaBebidas, Producto.class)
-                            .build();
-                    mAdapterBebidas = new CardFavoriteAdapter(optionsCategoriaBebidas);
-                    mAdapterBebidas.notifyDataSetChanged();
-                    mRecyclerBebibas.setAdapter(mAdapterBebidas);
-                    mAdapterBebidas.startListening();
-
-                    // Categoría 3 (Postres)
-                    LinearLayoutManager linearLayoutManagerPostres = new LinearLayoutManager(getContext());
-                    linearLayoutManagerPostres.setOrientation(RecyclerView.VERTICAL);
-                    mRecyclerPostres.setLayoutManager(linearLayoutManagerPostres);
-                    Query queryCategoriaPostres = mFirestore.collection("productos")
-                            .whereIn("id", favoritos)
-                            .whereEqualTo("categoria", "Postres");
-                    FirestoreRecyclerOptions<Producto> optionsCategoriaPostres = new FirestoreRecyclerOptions.Builder<Producto>()
-                            .setQuery(queryCategoriaPostres, Producto.class)
-                            .build();
-                    mAdapterPostres = new CardFavoriteAdapter(optionsCategoriaPostres);
-                    mAdapterPostres.notifyDataSetChanged();
-                    mRecyclerPostres.setAdapter(mAdapterPostres);
-                    mAdapterPostres.startListening();
+//                    LinearLayoutManager linearLayoutManagerBebidas = new LinearLayoutManager(getContext());
+//                    linearLayoutManagerBebidas.setOrientation(RecyclerView.VERTICAL);
+//                    mRecyclerBebibas.setLayoutManager(linearLayoutManagerBebidas);
+//                    Query queryCategoriaBebidas = mFirestore.collection("productos")
+//                            .whereIn("id", favoritos)
+//                            .whereEqualTo("categoria", "Bebidas");
+//                    FirestoreRecyclerOptions<Producto> optionsCategoriaBebidas = new FirestoreRecyclerOptions.Builder<Producto>()
+//                            .setQuery(queryCategoriaBebidas, Producto.class)
+//                            .build();
+//                    mAdapterBebidas = new CardFavoriteAdapter(optionsCategoriaBebidas, favoritos);
+//                    mAdapterBebidas.notifyDataSetChanged();
+//                    mRecyclerBebibas.setAdapter(mAdapterBebidas);
+//                    mAdapterBebidas.startListening();
+//
+//                    // Categoría 3 (Postres)
+//                    LinearLayoutManager linearLayoutManagerPostres = new LinearLayoutManager(getContext());
+//                    linearLayoutManagerPostres.setOrientation(RecyclerView.VERTICAL);
+//                    mRecyclerPostres.setLayoutManager(linearLayoutManagerPostres);
+//                    Query queryCategoriaPostres = mFirestore.collection("productos")
+//                            .whereIn("id", favoritos)
+//                            .whereEqualTo("categoria", "Postres");
+//                    FirestoreRecyclerOptions<Producto> optionsCategoriaPostres = new FirestoreRecyclerOptions.Builder<Producto>()
+//                            .setQuery(queryCategoriaPostres, Producto.class)
+//                            .build();
+//                    mAdapterPostres = new CardFavoriteAdapter(optionsCategoriaPostres, favoritos);
+//                    mAdapterPostres.notifyDataSetChanged();
+//                    mRecyclerPostres.setAdapter(mAdapterPostres);
+//                    mAdapterPostres.startListening();
                 } else {
                     Toast.makeText(getContext(), "Aun no tienes nada en favoritos 😔", Toast.LENGTH_SHORT).show();
                 }

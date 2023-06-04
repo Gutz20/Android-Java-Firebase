@@ -23,9 +23,8 @@ public class SearchFragment extends Fragment {
 
 
     private FirebaseFirestore mFirestore;
-    RecyclerView mRecycler, mRecyclerOtherMenu;
+    RecyclerView mRecycler;
     CardSearchAdapter mAdapter;
-    CardFavoriteAdapter mAdapterOtherMenu;
     SearchView searchView;
     Query query;
 
@@ -43,7 +42,6 @@ public class SearchFragment extends Fragment {
 
         searchView = root.findViewById(R.id.searchView);
         mRecycler = root.findViewById(R.id.recyclerSearch);
-        mRecyclerOtherMenu = root.findViewById(R.id.recyclerOtherMenus);
 
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext());
 
@@ -51,7 +49,6 @@ public class SearchFragment extends Fragment {
         layoutManager2.setOrientation(RecyclerView.HORIZONTAL);
 
         mRecycler.setLayoutManager(layoutManager1);
-        mRecyclerOtherMenu.setLayoutManager(layoutManager2);
 
         query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
@@ -60,12 +57,8 @@ public class SearchFragment extends Fragment {
                 .build();
 
         mAdapter = new CardSearchAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
-        mAdapterOtherMenu = new CardFavoriteAdapter(options);
         mAdapter.notifyDataSetChanged();
-        mAdapterOtherMenu.notifyDataSetChanged();
-
         mRecycler.setAdapter(mAdapter);
-        mRecyclerOtherMenu.setAdapter(mAdapterOtherMenu);
 
         setupSearchView();
         return root;
@@ -102,13 +95,11 @@ public class SearchFragment extends Fragment {
     public void onStart() {
         super.onStart();
         mAdapter.startListening();
-        mAdapterOtherMenu.startListening();
     }
 
     @Override
     public void onStop() {
         super.onStop();
         mAdapter.stopListening();
-        mAdapterOtherMenu.stopListening();
     }
 }

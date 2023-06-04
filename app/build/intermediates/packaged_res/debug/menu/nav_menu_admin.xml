@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/main_item"
+        android:title="Menu de opciones"
+        >
+        <menu>
+            <item
+                android:id="@+id/nav_sidebar_admin_dashboard"
+                android:icon="@drawable/baseline_dashboard_24"
+                android:title="Dashboard"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/nav_sidebar_admin_platos"
+                android:icon="@drawable/outline_fastfood_24"
+                android:title="Gestion de platos"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/nav_sidebar_admin_categories"
+                android:icon="@drawable/baseline_category_24"
+                android:title="Categorias"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/nav_sidebar_admin_staff"
+                android:icon="@drawable/baseline_person_outline_24"
+                android:title="Gestion de personal"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sidebar_admin_exit"
+            android:icon="@drawable/baseline_exit_app_24"
+            android:title="Salir"
+            />
+    </group>
+
+</menu>

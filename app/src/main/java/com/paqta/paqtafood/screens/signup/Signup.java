@@ -21,6 +21,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -147,6 +148,9 @@ public class Signup extends AppCompatActivity {
         user.put("email", email);
         user.put("password", newPass);
         user.put("rol", "usuario");
+        Timestamp timestamp = Timestamp.now();
+        user.put("created_at", timestamp);
+        user.put("updated_at", timestamp);
 
         mFirestore.collection("usuarios")
                 .document(id)
