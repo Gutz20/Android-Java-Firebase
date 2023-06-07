@@ -86,7 +86,7 @@ dependencies {
 //    Glide | Para imagenes - Comunidad activa
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
-//    Picasso | para imagenes
+//    Picasso | para imagenes desfazado
 //    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Google | Google authentication
@@ -112,7 +112,13 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
 
 //    Google Play Services MAP
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
+//    Retrofit | Consultas al backend
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-jackson:2.9.0'
+//    implementation 'com.squareup.retrofit2:converter-gson'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
 //    Facebook
 //    implementation 'com.facebook.android:facebook-login:latest.release'

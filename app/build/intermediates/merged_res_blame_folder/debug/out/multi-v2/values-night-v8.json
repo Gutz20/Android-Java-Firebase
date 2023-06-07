@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-54:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-55:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\Desktop\\backup-android\\PaqtaFood\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\USUARIO\\Desktop\\PaqtaFood\\cliente\\PaqtaFood\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "31,2",
                         "startColumns": "4,4",

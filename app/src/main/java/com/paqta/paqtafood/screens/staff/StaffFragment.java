@@ -63,7 +63,7 @@ public class StaffFragment extends Fragment {
 
     private void setUpRecyclerView() {
         rycStaff.setLayoutManager(new LinearLayoutManager(getContext()));
-        query = mFirestore.collection("usuarios");
+        query = mFirestore.collection("usuarios").whereEqualTo("estado", true);
 
         FirestoreRecyclerOptions<User> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<User>().setQuery(query, User.class).build();

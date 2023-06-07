@@ -128,37 +128,37 @@ public class CartFragment extends Fragment {
             stepTextView.setText(stepsTexts[stepIndex]);
             stepView.go(stepIndex, true);
 
-            switch (stepIndex){
-                case 2:
-                    btnReservar.setVisibility(View.GONE);
-
-                    layoutContaint.removeAllViews();
-
-                    TextView textViewDireccion = new TextView(getActivity());
-                    textViewDireccion.setText("Direccion");
-
-                    TextInputLayout layout = new TextInputLayout(getActivity());
-                    TextInputEditText editText = new TextInputEditText(getActivity());
-                    layout.addView(editText);
-
-                    TextView textViewPhone = new TextView(getActivity());
-                    textViewPhone.setText("Telefono");
-
-                    TextView textViewRef = new TextView(getActivity());
-                    textViewRef.setText("Referencia");
-
-                    textViewList.add(textViewDireccion);
-                    textViewList.add(textViewPhone);
-                    textViewList.add(textViewRef);
-                    textViewList.forEach(textView -> {
-                        textView.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
-                        layoutContaint.addView(textView);
-                    });
-                    break;
-                case 3:
-
-                    break;
-            }
+//            switch (stepIndex){
+//                case 1:
+//                    btnReservar.setVisibility(View.GONE);
+//
+//                    layoutContaint.removeAllViews();
+//
+//                    TextView textViewDireccion = new TextView(getActivity());
+//                    textViewDireccion.setText("Direccion");
+//
+//                    TextInputLayout layout = new TextInputLayout(getActivity());
+//                    TextInputEditText editText = new TextInputEditText(getActivity());
+//                    layout.addView(editText);
+//
+//                    TextView textViewPhone = new TextView(getActivity());
+//                    textViewPhone.setText("Telefono");
+//
+//                    TextView textViewRef = new TextView(getActivity());
+//                    textViewRef.setText("Referencia");
+//
+//                    textViewList.add(textViewDireccion);
+//                    textViewList.add(textViewPhone);
+//                    textViewList.add(textViewRef);
+//                    textViewList.forEach(textView -> {
+//                        textView.setTextColor(getResources().getColor(R.color.colorBlanco, getActivity().getTheme()));
+//                        layoutContaint.addView(textView);
+//                    });
+//                    break;
+//                case 2:
+//
+//                    break;
+//            }
         }
     }
 

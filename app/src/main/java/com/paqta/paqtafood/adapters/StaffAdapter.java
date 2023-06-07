@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -18,13 +19,27 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.screens.staff.components.FormStaffFragment;
+import com.paqta.paqtafood.services.UserService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.ViewHolder> {
+    private FirebaseFirestore mFirestore;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
 
+    UserService userService = Apis.getUserService();
     Activity activity;
     FragmentManager fm;
 
@@ -32,6 +47,9 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
         super(options);
         this.activity = activity;
         this.fm = supportFragmentManager;
+        mFirestore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
     }
 
     @Override
@@ -69,6 +87,24 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         });
+
+        holder.btnDelete.setOnClickListener(v -> {
+            userService.eliminarUsuario(id);
+            Call<Boolean> call = userService.inhabilitarUsuario(id);
+
+            call.enqueue(new Callback<Boolean>() {
+                @Override
+                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(activity, "Usuario Inhabilitado", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<Boolean> call, Throwable t) {
+                    Toast.makeText(activity, "Error al inhabilitar el usuario", Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
     }
 
     @NonNull
@@ -79,7 +115,6 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imageStaff;
         TextView nameStaff, rolStaff;
         MaterialButton btnDetail, btnDelete;
@@ -90,6 +125,7 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
             nameStaff = itemView.findViewById(R.id.textViewNameStaff);
             rolStaff = itemView.findViewById(R.id.textViewRolStaff);
             btnDetail = itemView.findViewById(R.id.btnDetailStaff);
+            btnDelete = itemView.findViewById(R.id.btnDeleteStaff);
         }
 
 

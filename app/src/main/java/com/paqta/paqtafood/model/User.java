@@ -5,9 +5,11 @@ import java.util.List;
 
 public class User implements Serializable {
 
+    private String id;
     private String username;
     private String imagen;
     private String email;
+    private String password;
     private String rol;
     private List<String> favoritos;
     private List<String> carrito;
@@ -16,6 +18,19 @@ public class User implements Serializable {
     private String updated_at;
 
     public User() {
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(String id, String username, String email, String password) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 
     public User(String username, String imagen, String email, String rol, List<String> favoritos, List<String> carrito) {
@@ -27,12 +42,28 @@ public class User implements Serializable {
         this.carrito = carrito;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getImagen() {

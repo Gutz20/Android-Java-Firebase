@@ -118,6 +118,7 @@ drawable baseline_favorite_border_24
 drawable baseline_home_24
 drawable baseline_image_24
 drawable baseline_info_24
+drawable baseline_location_on_24
 drawable baseline_menu_24
 drawable baseline_person_24
 drawable baseline_person_outline_24
@@ -268,6 +269,7 @@ id btnAddStaff
 id btnComprar
 id btnDeleteFromCart
 id btnDeleteImage
+id btnDeleteStaff
 id btnDetail
 id btnDetailOffer
 id btnDetailStaff

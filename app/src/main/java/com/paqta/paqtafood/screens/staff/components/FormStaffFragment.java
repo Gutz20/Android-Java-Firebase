@@ -236,10 +236,13 @@ public class FormStaffFragment extends Fragment {
                         String rol = documentSnapshot.getString("rol");
                         String password = documentSnapshot.getString("password");
                         String imagen = documentSnapshot.getString("imagen");
+                        String email = documentSnapshot.getString("email");
 
                         edtTxtUsername.setText(username);
+                        edtTxtEmail.setText(email);
                         edtTxtRol.setText(rol);
                         edtTxtPassword.setText(password);
+
 
                         if (imagen == null) {
                             userFoto.setImageResource(R.drawable.image_icon_124);

@@ -13,27 +13,31 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 import com.google.firebase.Timestamp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.api.Apis;
+import com.paqta.paqtafood.model.ApiResponse;
 import com.paqta.paqtafood.navigation.DefaultNavigationApp;
 import com.paqta.paqtafood.screens.login.Login;
+import com.paqta.paqtafood.services.UserService;
 import com.paqta.paqtafood.utils.ChangeColorBar;
 
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Signup extends AppCompatActivity {
 
@@ -45,7 +49,7 @@ public class Signup extends AppCompatActivity {
     ChangeColorBar changeColorBar = new ChangeColorBar();
     FirebaseFirestore mFirestore;
     FirebaseAuth mAuth;
-
+    UserService userService = Apis.getUserService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,51 +129,41 @@ public class Signup extends AppCompatActivity {
     }
 
     public void registrar(View v, String username, String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            String id = mAuth.getCurrentUser().getUid();
-                            addUser(id, username, email, password);
 
-                        } else {
-                            Snackbar.make(v, "Fallo en registrarse", Snackbar.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        HashMap<String, Object> map = new HashMap();
+        map.put("username", username);
+        map.put("email", email);
+        map.put("password", password);
+
+        Call<Boolean> call = userService.registrarUsuario(map);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Snackbar.make(v, "Registrado con éxito", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Signup.this, Login.class);
+                    startActivity(intent);
+                } else {
+                    Snackbar.make(v, "Error al registrar el usuario", Snackbar.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Snackbar.make(v, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void addUser(String id, String username, String email, String password) {
         String newPass = sha256(password);
         Map<String, Object> user = new HashMap<>();
-        user.put("id", id);
-        user.put("username", username);
-        user.put("email", email);
-        user.put("password", newPass);
-        user.put("rol", "usuario");
         Timestamp timestamp = Timestamp.now();
         user.put("created_at", timestamp);
         user.put("updated_at", timestamp);
 
-        mFirestore.collection("usuarios")
-                .document(id)
-                .set(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Signup.this, "Usuario registrado con exito", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Signup.this, DefaultNavigationApp.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Signup.this, "Error: " + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
 
-                    }
-                });
     }
 
     /**

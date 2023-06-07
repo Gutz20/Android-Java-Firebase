@@ -67,7 +67,7 @@ public class FavoriteFragment extends Fragment {
                 if (favoritos != null && !favoritos.isEmpty()) {
                     // Categoría 1
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                    linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+                    linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
                     mRecyclerPlatillos.setLayoutManager(linearLayoutManager);
 
                     Query queryCategoria1 = mFirestore.collection("productos")

@@ -21,13 +21,22 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.screens.detail_dishes.DetailDishesFragment;
 import com.paqta.paqtafood.screens.offers.components.content_offers.ContentOffersFragment;
 
 public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCartAdapter.ViewHolder> {
+
+    private FirebaseFirestore mFirestore;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
     Activity activity;
     FragmentManager fm;
 
@@ -35,6 +44,9 @@ public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCart
         super(options);
         this.activity = activity;
         this.fm = supportFragmentManager;
+        mFirestore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
     }
 
     @Override
@@ -48,9 +60,22 @@ public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCart
             holder.detailProduct.setText(TextUtils.join("\n", model.getDetalles()));
         }
         Glide.with(holder.imagenProductCart.getContext()).load(model.getImagen()).into(holder.imagenProductCart);
+
         holder.btnDelete.setOnClickListener(v -> {
-            Toast.makeText(activity, "Eliminado del carrito", Toast.LENGTH_SHORT).show();
+
+            mFirestore.collection("usuarios")
+                    .document(mUser.getUid())
+                    .update("carrito", FieldValue.arrayRemove(id))
+                    .addOnSuccessListener(command -> {
+                        deleteItem(position);
+                        Toast.makeText(activity, "Eliminado del carrito", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(activity, "Error al eliminar del carrito", Toast.LENGTH_SHORT).show();
+                    });
+
         });
+
         holder.btnDetail.setOnClickListener(v -> {
             Fragment fragment;
             Bundle bundle = new Bundle();
@@ -68,6 +93,10 @@ public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCart
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         });
+    }
+
+    public void deleteItem(int positiion) {
+        getSnapshots().getSnapshot(positiion).getReference().delete();
     }
 
     @NonNull

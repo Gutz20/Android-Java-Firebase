@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.textfield.TextInputEditText;
 import com.paqta.paqtafood.R;
 import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
@@ -48,11 +49,14 @@ public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   public final StepView stepView;
 
+  @NonNull
+  public final TextInputEditText txtLoginUser;
+
   private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
       @NonNull Button btnReservar, @NonNull RecyclerView cartPlatillos,
       @NonNull ImageView imageView3, @NonNull LinearLayout linearLayout3,
       @NonNull LinearLayout linearLayoutContaint, @NonNull TextView stepTextView,
-      @NonNull StepView stepView) {
+      @NonNull StepView stepView, @NonNull TextInputEditText txtLoginUser) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
     this.btnReservar = btnReservar;
@@ -62,6 +66,7 @@ public final class FragmentCartBinding implements ViewBinding {
     this.linearLayoutContaint = linearLayoutContaint;
     this.stepTextView = stepTextView;
     this.stepView = stepView;
+    this.txtLoginUser = txtLoginUser;
   }
 
   @Override
@@ -139,8 +144,14 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtLoginUser;
+      TextInputEditText txtLoginUser = ViewBindings.findChildViewById(rootView, id);
+      if (txtLoginUser == null) {
+        break missingId;
+      }
+
       return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnReservar, cartPlatillos,
-          imageView3, linearLayout3, linearLayoutContaint, stepTextView, stepView);
+          imageView3, linearLayout3, linearLayoutContaint, stepTextView, stepView, txtLoginUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
