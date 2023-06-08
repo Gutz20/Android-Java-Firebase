@@ -21,19 +21,15 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.cart.CartFragment;
-import com.paqta.paqtafood.screens.category.CategoryFragment;
-import com.paqta.paqtafood.screens.dishes.DishesFragment;
-import com.paqta.paqtafood.screens.favorite.FavoriteFragment;
-import com.paqta.paqtafood.screens.home.HomeFragment;
-import com.paqta.paqtafood.screens.login.Login;
-import com.paqta.paqtafood.screens.menu.MenuFragment;
-import com.paqta.paqtafood.screens.menu_detail.MenuDetailFragment;
-import com.paqta.paqtafood.screens.offers.OffersFragment;
-import com.paqta.paqtafood.screens.product.ProductFragment;
-import com.paqta.paqtafood.screens.profile.ProfileFragment;
-import com.paqta.paqtafood.screens.search.SearchFragment;
-import com.paqta.paqtafood.screens.staff.StaffFragment;
+import com.paqta.paqtafood.screens.user.cart.CartFragment;
+import com.paqta.paqtafood.screens.user.favorite.FavoriteFragment;
+import com.paqta.paqtafood.screens.user.home.HomeFragment;
+import com.paqta.paqtafood.screens.user.login.Login;
+import com.paqta.paqtafood.screens.user.menu.MenuFragment;
+import com.paqta.paqtafood.screens.user.menu_detail.MenuDetailFragment;
+import com.paqta.paqtafood.screens.user.offers.OffersFragment;
+import com.paqta.paqtafood.screens.components.profile.ProfileFragment;
+import com.paqta.paqtafood.screens.user.search.SearchFragment;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {

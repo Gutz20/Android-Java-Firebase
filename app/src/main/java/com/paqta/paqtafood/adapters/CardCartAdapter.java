@@ -21,7 +21,6 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,8 +28,8 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.detail_dishes.DetailDishesFragment;
-import com.paqta.paqtafood.screens.offers.components.content_offers.ContentOffersFragment;
+import com.paqta.paqtafood.screens.user.detail_dishes.DetailDishesFragment;
+import com.paqta.paqtafood.screens.user.offers.components.content_offers.ContentOffersFragment;
 
 public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCartAdapter.ViewHolder> {
 

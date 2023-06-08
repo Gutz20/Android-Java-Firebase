@@ -279,9 +279,11 @@ id btnEditarPlatillo
 id btnEliminar
 id btnEliminarPlatillo
 id btnGoogle
+id btnHabilitarUser
 id btnLogin
 id btnRegister
 id btnReservar
+id btnSeeDisableStaff
 id btnShare
 id btnUpdateCartilla
 id btn_add
@@ -292,6 +294,7 @@ id chipGroup
 id cityDescriptionTextView
 id cityTextView
 id cmbCategoria
+id cmbRol
 id colorProduct
 id constraintLayout
 id constraintLayout2
@@ -319,7 +322,6 @@ id edtTextEmail
 id edtTextNombre
 id edtTextPassword
 id edtTextPrecio
-id edtTextRol
 id edtTextUsername
 id emailTextView
 id end

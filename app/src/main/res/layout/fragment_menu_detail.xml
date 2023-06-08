@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_menu_detail"
-    tools:context=".screens.menu_detail.MenuDetailFragment">
+    tools:context=".screens.user.menu_detail.MenuDetailFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

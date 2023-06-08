@@ -1,5 +1,7 @@
 package com.paqta.paqtafood.model;
 
+import com.google.firebase.Timestamp;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,9 +15,9 @@ public class User implements Serializable {
     private String rol;
     private List<String> favoritos;
     private List<String> carrito;
-
-    private String created_at;
-    private String updated_at;
+    private Boolean estado;
+    private Timestamp created_at;
+    private Timestamp updated_at;
 
     public User() {
     }
@@ -104,5 +106,29 @@ public class User implements Serializable {
 
     public void setCarrito(List<String> carrito) {
         this.carrito = carrito;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
+
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
     }
 }

@@ -24,6 +24,7 @@
             <ImageView
                 android:id="@+id/imagenStaff"
                 android:layout_width="80dp"
+                android:layout_gravity="center"
                 android:layout_height="80dp"
                 app:srcCompat="@drawable/alitas" />
 
@@ -56,6 +57,20 @@
                     android:layout_height="wrap_content"
                     android:text="rolStaff"
                     android:textColor="#3F51B5" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnHabilitarUser"
+                    style="@style/Widget.Material3.Button.IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:contentDescription="Habilitar Usuario"
+                    android:text="Habilitar Usuario"
+                    app:icon="@drawable/baseline_person_outline_24"
+                    app:iconTint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:visibility="gone" />
 
 
             </LinearLayout>

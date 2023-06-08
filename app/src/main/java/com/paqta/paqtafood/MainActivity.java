@@ -13,7 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.paqta.paqtafood.screens.login.Login;
+import com.paqta.paqtafood.screens.user.login.Login;
 
 
 public class MainActivity extends AppCompatActivity {

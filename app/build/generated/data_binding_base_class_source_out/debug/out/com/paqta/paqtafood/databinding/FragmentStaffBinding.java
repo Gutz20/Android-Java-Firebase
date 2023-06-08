@@ -25,15 +25,20 @@ public final class FragmentStaffBinding implements ViewBinding {
   public final Button btnAddStaff;
 
   @NonNull
+  public final Button btnSeeDisableStaff;
+
+  @NonNull
   public final RecyclerView rycViewStaff;
 
   @NonNull
   public final TextView textView16;
 
   private FragmentStaffBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddStaff,
-      @NonNull RecyclerView rycViewStaff, @NonNull TextView textView16) {
+      @NonNull Button btnSeeDisableStaff, @NonNull RecyclerView rycViewStaff,
+      @NonNull TextView textView16) {
     this.rootView = rootView;
     this.btnAddStaff = btnAddStaff;
+    this.btnSeeDisableStaff = btnSeeDisableStaff;
     this.rycViewStaff = rycViewStaff;
     this.textView16 = textView16;
   }
@@ -71,6 +76,12 @@ public final class FragmentStaffBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnSeeDisableStaff;
+      Button btnSeeDisableStaff = ViewBindings.findChildViewById(rootView, id);
+      if (btnSeeDisableStaff == null) {
+        break missingId;
+      }
+
       id = R.id.rycViewStaff;
       RecyclerView rycViewStaff = ViewBindings.findChildViewById(rootView, id);
       if (rycViewStaff == null) {
@@ -83,8 +94,8 @@ public final class FragmentStaffBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentStaffBinding((FrameLayout) rootView, btnAddStaff, rycViewStaff,
-          textView16);
+      return new FragmentStaffBinding((FrameLayout) rootView, btnAddStaff, btnSeeDisableStaff,
+          rycViewStaff, textView16);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

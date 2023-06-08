@@ -7,6 +7,8 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -37,16 +39,16 @@
             android:name=".screens.recycler.RecyclerActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.forgotPassword.ForgotPassword"
+            android:name=".screens.user.forgotPassword.ForgotPassword"
             android:exported="false" />
         <activity
             android:name=".navigation.DefaultNavigationApp"
             android:exported="false" />
         <activity
-            android:name=".screens.signup.Signup"
+            android:name=".screens.user.signup.Signup"
             android:exported="false" />
         <activity
-            android:name=".screens.login.Login"
+            android:name=".screens.user.login.Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -67,6 +69,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+
 
         <meta-data
             android:name="android.app.lib_name"

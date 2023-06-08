@@ -23,10 +23,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.product.components.FormProductFragment;
+import com.paqta.paqtafood.screens.admin.product.components.FormProductFragment;
 
 public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, ProductoAdapter.ViewHolder> {
 
@@ -104,7 +103,7 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, Producto
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(activity, "Error al elliminar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Error al eliminar", Toast.LENGTH_SHORT).show();
             }
         });
     }

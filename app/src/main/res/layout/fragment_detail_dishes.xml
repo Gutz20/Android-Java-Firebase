@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_detail_dishes"
-    tools:context=".screens.detail_dishes.DetailDishesFragment">
+    tools:context=".screens.user.detail_dishes.DetailDishesFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -19,7 +19,6 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -27,10 +26,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.WriteBatch;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.dishes.components.FormDishesFragment;
+import com.paqta.paqtafood.screens.admin.dishes.components.FormDishesFragment;
+import com.paqta.paqtafood.services.ProductoService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, PlatilloAdapter.ViewHolder> {
 
@@ -38,6 +42,7 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
     private FirebaseStorage mStorage = FirebaseStorage.getInstance();
     Activity activity;
     FragmentManager fm;
+    ProductoService productoService = Apis.getProductoService();
 
     public PlatilloAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);
@@ -81,38 +86,28 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
     private void eliminarPlatillo(View view, String id) {
         String storage_path = "platillos/*", prefijo = "platillo";
 
-        mFirestore.collection("productos").document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+        Call<Boolean> call =  productoService.disable(id);
+
+        call.enqueue(new Callback<Boolean>() {
             @Override
-            public void onSuccess(Void unused) {
-                String ruta_storage_foto = storage_path + "" + prefijo + "" + id;
-                StorageReference imageRef = mStorage.getReference().child(ruta_storage_foto);
-                imageRef.delete()
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Snackbar.make(view, "Eliminado con su imagen", Snackbar.LENGTH_LONG).show();
-                                eliminarReferenciaUsuario(id);
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(activity, "Eliminado al eliminar su imagen", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                Toast.makeText(activity, "Producto inhabilitado", Toast.LENGTH_SHORT).show();
+                eliminarReferenciaUsuario(id);
             }
-        }).addOnFailureListener(new OnFailureListener() {
+
             @Override
-            public void onFailure(@NonNull Exception e) {
-                Snackbar.make(view, "Error al eliminar", Snackbar.LENGTH_LONG).show();
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al inhabilitar: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                eliminarReferenciaUsuario(id);
             }
         });
     }
 
     private void eliminarReferenciaUsuario(String id) {
+
         CollectionReference usersRef = mFirestore.collection("usuarios");
 
-        usersRef
-                .whereArrayContains("favoritos", id)
+        usersRef.whereArrayContains("favoritos", id)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -139,8 +134,7 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
                     }
                 });
 
-        usersRef
-                .whereArrayContains("carrito", id) // Reemplaza "carrito" con el nombre del campo en tu colección de usuarios
+        usersRef.whereArrayContains("carrito", id) // Reemplaza "carrito" con el nombre del campo en tu colección de usuarios
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override

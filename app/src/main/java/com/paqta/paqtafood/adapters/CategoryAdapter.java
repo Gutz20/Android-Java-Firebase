@@ -25,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Categoria;
-import com.paqta.paqtafood.screens.category.components.FormCategoryFragment;
+import com.paqta.paqtafood.screens.admin.category.components.FormCategoryFragment;
 
 public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, CategoryAdapter.ViewHolder> {
 

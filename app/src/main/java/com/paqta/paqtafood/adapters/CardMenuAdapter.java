@@ -20,7 +20,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.detail_dishes.DetailDishesFragment;
+import com.paqta.paqtafood.screens.user.detail_dishes.DetailDishesFragment;
 
 public class CardMenuAdapter extends FirestoreRecyclerAdapter<Producto, CardMenuAdapter.CardViewHolder> {
 

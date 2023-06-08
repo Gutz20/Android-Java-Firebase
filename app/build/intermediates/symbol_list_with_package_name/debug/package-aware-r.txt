@@ -3719,9 +3719,11 @@ id btnEditarPlatillo
 id btnEliminar
 id btnEliminarPlatillo
 id btnGoogle
+id btnHabilitarUser
 id btnLogin
 id btnRegister
 id btnReservar
+id btnSeeDisableStaff
 id btnShare
 id btnUpdateCartilla
 id btn_add
@@ -3765,6 +3767,7 @@ id clip_vertical
 id clockwise
 id closest
 id cmbCategoria
+id cmbRol
 id collapseActionView
 id colorProduct
 id com_facebook_body_frame
@@ -3863,7 +3866,6 @@ id edtTextEmail
 id edtTextNombre
 id edtTextPassword
 id edtTextPrecio
-id edtTextRol
 id edtTextUsername
 id elastic
 id email

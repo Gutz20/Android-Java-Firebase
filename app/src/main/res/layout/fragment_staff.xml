@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bckgestor"
-    tools:context=".screens.staff.StaffFragment">
+    tools:context=".screens.admin.staff.StaffFragment">
 
 
 
@@ -35,17 +35,31 @@
                 android:textColor="#103153"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnAddStaff"
-                android:layout_width="142dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Nuevo" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAddStaff"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Nuevo" />
+
+                <Button
+                    android:id="@+id/btnSeeDisableStaff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Ver Personal Inhabilitado" />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rycViewStaff"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_width="362dp"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 

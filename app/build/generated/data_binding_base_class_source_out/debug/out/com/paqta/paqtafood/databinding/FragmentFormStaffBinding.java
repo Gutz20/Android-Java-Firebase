@@ -4,6 +4,7 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -31,13 +32,13 @@ public final class FragmentFormStaffBinding implements ViewBinding {
   public final Button btnDialogImage;
 
   @NonNull
+  public final AutoCompleteTextView cmbRol;
+
+  @NonNull
   public final TextInputEditText edtTextEmail;
 
   @NonNull
   public final TextInputEditText edtTextPassword;
-
-  @NonNull
-  public final TextInputEditText edtTextRol;
 
   @NonNull
   public final TextInputEditText edtTextUsername;
@@ -47,16 +48,16 @@ public final class FragmentFormStaffBinding implements ViewBinding {
 
   private FragmentFormStaffBinding(@NonNull FrameLayout rootView, @NonNull Button btnAdd,
       @NonNull Button btnDeleteImage, @NonNull Button btnDialogImage,
-      @NonNull TextInputEditText edtTextEmail, @NonNull TextInputEditText edtTextPassword,
-      @NonNull TextInputEditText edtTextRol, @NonNull TextInputEditText edtTextUsername,
+      @NonNull AutoCompleteTextView cmbRol, @NonNull TextInputEditText edtTextEmail,
+      @NonNull TextInputEditText edtTextPassword, @NonNull TextInputEditText edtTextUsername,
       @NonNull ImageView imageStaff) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
     this.btnDeleteImage = btnDeleteImage;
     this.btnDialogImage = btnDialogImage;
+    this.cmbRol = cmbRol;
     this.edtTextEmail = edtTextEmail;
     this.edtTextPassword = edtTextPassword;
-    this.edtTextRol = edtTextRol;
     this.edtTextUsername = edtTextUsername;
     this.imageStaff = imageStaff;
   }
@@ -106,6 +107,12 @@ public final class FragmentFormStaffBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cmbRol;
+      AutoCompleteTextView cmbRol = ViewBindings.findChildViewById(rootView, id);
+      if (cmbRol == null) {
+        break missingId;
+      }
+
       id = R.id.edtTextEmail;
       TextInputEditText edtTextEmail = ViewBindings.findChildViewById(rootView, id);
       if (edtTextEmail == null) {
@@ -115,12 +122,6 @@ public final class FragmentFormStaffBinding implements ViewBinding {
       id = R.id.edtTextPassword;
       TextInputEditText edtTextPassword = ViewBindings.findChildViewById(rootView, id);
       if (edtTextPassword == null) {
-        break missingId;
-      }
-
-      id = R.id.edtTextRol;
-      TextInputEditText edtTextRol = ViewBindings.findChildViewById(rootView, id);
-      if (edtTextRol == null) {
         break missingId;
       }
 
@@ -137,7 +138,7 @@ public final class FragmentFormStaffBinding implements ViewBinding {
       }
 
       return new FragmentFormStaffBinding((FrameLayout) rootView, btnAdd, btnDeleteImage,
-          btnDialogImage, edtTextEmail, edtTextPassword, edtTextRol, edtTextUsername, imageStaff);
+          btnDialogImage, cmbRol, edtTextEmail, edtTextPassword, edtTextUsername, imageStaff);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

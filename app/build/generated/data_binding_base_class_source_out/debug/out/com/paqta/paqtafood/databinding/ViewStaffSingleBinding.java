@@ -28,6 +28,9 @@ public final class ViewStaffSingleBinding implements ViewBinding {
   public final MaterialButton btnDetailStaff;
 
   @NonNull
+  public final MaterialButton btnHabilitarUser;
+
+  @NonNull
   public final ImageView imagenStaff;
 
   @NonNull
@@ -38,11 +41,12 @@ public final class ViewStaffSingleBinding implements ViewBinding {
 
   private ViewStaffSingleBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton btnDeleteStaff, @NonNull MaterialButton btnDetailStaff,
-      @NonNull ImageView imagenStaff, @NonNull TextView textViewNameStaff,
-      @NonNull TextView textViewRolStaff) {
+      @NonNull MaterialButton btnHabilitarUser, @NonNull ImageView imagenStaff,
+      @NonNull TextView textViewNameStaff, @NonNull TextView textViewRolStaff) {
     this.rootView = rootView;
     this.btnDeleteStaff = btnDeleteStaff;
     this.btnDetailStaff = btnDetailStaff;
+    this.btnHabilitarUser = btnHabilitarUser;
     this.imagenStaff = imagenStaff;
     this.textViewNameStaff = textViewNameStaff;
     this.textViewRolStaff = textViewRolStaff;
@@ -87,6 +91,12 @@ public final class ViewStaffSingleBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnHabilitarUser;
+      MaterialButton btnHabilitarUser = ViewBindings.findChildViewById(rootView, id);
+      if (btnHabilitarUser == null) {
+        break missingId;
+      }
+
       id = R.id.imagenStaff;
       ImageView imagenStaff = ViewBindings.findChildViewById(rootView, id);
       if (imagenStaff == null) {
@@ -106,7 +116,7 @@ public final class ViewStaffSingleBinding implements ViewBinding {
       }
 
       return new ViewStaffSingleBinding((ConstraintLayout) rootView, btnDeleteStaff, btnDetailStaff,
-          imagenStaff, textViewNameStaff, textViewRolStaff);
+          btnHabilitarUser, imagenStaff, textViewNameStaff, textViewRolStaff);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

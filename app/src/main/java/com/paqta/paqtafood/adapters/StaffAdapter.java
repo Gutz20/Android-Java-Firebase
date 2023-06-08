@@ -19,7 +19,6 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -27,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.User;
-import com.paqta.paqtafood.screens.staff.components.FormStaffFragment;
+import com.paqta.paqtafood.screens.admin.staff.components.FormStaffFragment;
 import com.paqta.paqtafood.services.UserService;
 
 import retrofit2.Call;
@@ -58,11 +57,7 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
         final String id = documentSnapshot.getId();
 
         holder.nameStaff.setText(model.getUsername());
-        if (model.getRol() == null) {
-            holder.rolStaff.setText("usuario");
-        } else {
-            holder.rolStaff.setText(model.getRol());
-        }
+        holder.rolStaff.setText(model.getRol());
 
         if (model.getImagen() == null) {
             Glide.with(holder.imageStaff.getContext())
@@ -74,36 +69,91 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
                     .into(holder.imageStaff);
         }
 
-        holder.btnDetail.setOnClickListener(v -> {
-            FormStaffFragment fragment = new FormStaffFragment();
-
-            Bundle bundle = new Bundle();
-            bundle.putString("idStaff", id);
-
-            fragment.setArguments(bundle);
-
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+        holder.btnDetail.setOnClickListener(v -> irAlDetalle(id));
+        holder.btnDelete.setOnClickListener(v -> {
+            if (model.getEstado()) {
+                inhabilitarUser(id);
+            } else {
+                eliminarUser(id);
+            }
         });
 
-        holder.btnDelete.setOnClickListener(v -> {
-            userService.eliminarUsuario(id);
-            Call<Boolean> call = userService.inhabilitarUsuario(id);
+        holder.btnEnableUser.setOnClickListener(v -> {
+            habilitarUser(id);
+        });
 
-            call.enqueue(new Callback<Boolean>() {
-                @Override
-                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                    if (response.isSuccessful()) {
-                        Toast.makeText(activity, "Usuario Inhabilitado", Toast.LENGTH_SHORT).show();
-                    }
+        if (!model.getEstado()) {
+            holder.btnEnableUser.setVisibility(View.VISIBLE);
+        } else {
+            holder.btnEnableUser.setVisibility(View.GONE);
+        }
+    }
+
+    private void irAlDetalle(String id) {
+        FormStaffFragment fragment = new FormStaffFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("idStaff", id);
+
+        fragment.setArguments(bundle);
+
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    private void inhabilitarUser(String id) {
+        Call<Boolean> call = userService.inhabilitarUsuario(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Usuario Inhabilitado", Toast.LENGTH_SHORT).show();
                 }
-                @Override
-                public void onFailure(Call<Boolean> call, Throwable t) {
-                    Toast.makeText(activity, "Error al inhabilitar el usuario", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al inhabilitar el usuario", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void habilitarUser(String id) {
+        Call<Boolean> call = userService.habilitarUsuario(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Usuario habilitado", Toast.LENGTH_SHORT).show();
                 }
-            });
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al habilitar al usuario", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void eliminarUser(String id) {
+        Call<Boolean> call = userService.eliminarUsuario(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Usuario eliminado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al eliminar el usuario", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -117,7 +167,7 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageStaff;
         TextView nameStaff, rolStaff;
-        MaterialButton btnDetail, btnDelete;
+        MaterialButton btnDetail, btnDelete, btnEnableUser;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -126,6 +176,7 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
             rolStaff = itemView.findViewById(R.id.textViewRolStaff);
             btnDetail = itemView.findViewById(R.id.btnDetailStaff);
             btnDelete = itemView.findViewById(R.id.btnDeleteStaff);
+            btnEnableUser = itemView.findViewById(R.id.btnHabilitarUser);
         }
 
 

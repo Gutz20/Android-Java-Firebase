@@ -26,6 +26,9 @@ public interface UserService {
     @PUT(PREFIX + "/{id}/disable")
     Call<Boolean> inhabilitarUsuario(@Path("id") String id);
 
+    @PUT(PREFIX + "/{id}/enable")
+    Call<Boolean> habilitarUsuario(@Path("id") String id);
+
     @DELETE(PREFIX + "/{id}/delete")
     Call<Boolean> eliminarUsuario(@Path("id") String id);
 
