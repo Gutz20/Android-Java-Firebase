@@ -8,10 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,34 +23,34 @@ public final class ViewPlatilloSingleBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
-  public final ImageView btnEditarPlatillo;
+  public final MaterialButton btnDelete;
 
   @NonNull
-  public final ImageView btnEliminarPlatillo;
+  public final MaterialButton btnDetail;
 
   @NonNull
-  public final TextView categoriaPlatillo;
+  public final TextView descripcion;
 
   @NonNull
-  public final ConstraintLayout constraintLayout2;
+  public final ImageView imagen;
 
   @NonNull
-  public final ImageView imagenPlatillo;
+  public final SwitchMaterial swState;
 
   @NonNull
-  public final TextView namePlatillo;
+  public final TextView titulo;
 
   private ViewPlatilloSingleBinding(@NonNull MaterialCardView rootView,
-      @NonNull ImageView btnEditarPlatillo, @NonNull ImageView btnEliminarPlatillo,
-      @NonNull TextView categoriaPlatillo, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ImageView imagenPlatillo, @NonNull TextView namePlatillo) {
+      @NonNull MaterialButton btnDelete, @NonNull MaterialButton btnDetail,
+      @NonNull TextView descripcion, @NonNull ImageView imagen, @NonNull SwitchMaterial swState,
+      @NonNull TextView titulo) {
     this.rootView = rootView;
-    this.btnEditarPlatillo = btnEditarPlatillo;
-    this.btnEliminarPlatillo = btnEliminarPlatillo;
-    this.categoriaPlatillo = categoriaPlatillo;
-    this.constraintLayout2 = constraintLayout2;
-    this.imagenPlatillo = imagenPlatillo;
-    this.namePlatillo = namePlatillo;
+    this.btnDelete = btnDelete;
+    this.btnDetail = btnDetail;
+    this.descripcion = descripcion;
+    this.imagen = imagen;
+    this.swState = swState;
+    this.titulo = titulo;
   }
 
   @Override
@@ -79,44 +80,44 @@ public final class ViewPlatilloSingleBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnEditarPlatillo;
-      ImageView btnEditarPlatillo = ViewBindings.findChildViewById(rootView, id);
-      if (btnEditarPlatillo == null) {
+      id = R.id.btnDelete;
+      MaterialButton btnDelete = ViewBindings.findChildViewById(rootView, id);
+      if (btnDelete == null) {
         break missingId;
       }
 
-      id = R.id.btnEliminarPlatillo;
-      ImageView btnEliminarPlatillo = ViewBindings.findChildViewById(rootView, id);
-      if (btnEliminarPlatillo == null) {
+      id = R.id.btnDetail;
+      MaterialButton btnDetail = ViewBindings.findChildViewById(rootView, id);
+      if (btnDetail == null) {
         break missingId;
       }
 
-      id = R.id.categoriaPlatillo;
-      TextView categoriaPlatillo = ViewBindings.findChildViewById(rootView, id);
-      if (categoriaPlatillo == null) {
+      id = R.id.descripcion;
+      TextView descripcion = ViewBindings.findChildViewById(rootView, id);
+      if (descripcion == null) {
         break missingId;
       }
 
-      id = R.id.constraintLayout2;
-      ConstraintLayout constraintLayout2 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout2 == null) {
+      id = R.id.imagen;
+      ImageView imagen = ViewBindings.findChildViewById(rootView, id);
+      if (imagen == null) {
         break missingId;
       }
 
-      id = R.id.imagenPlatillo;
-      ImageView imagenPlatillo = ViewBindings.findChildViewById(rootView, id);
-      if (imagenPlatillo == null) {
+      id = R.id.swState;
+      SwitchMaterial swState = ViewBindings.findChildViewById(rootView, id);
+      if (swState == null) {
         break missingId;
       }
 
-      id = R.id.namePlatillo;
-      TextView namePlatillo = ViewBindings.findChildViewById(rootView, id);
-      if (namePlatillo == null) {
+      id = R.id.titulo;
+      TextView titulo = ViewBindings.findChildViewById(rootView, id);
+      if (titulo == null) {
         break missingId;
       }
 
-      return new ViewPlatilloSingleBinding((MaterialCardView) rootView, btnEditarPlatillo,
-          btnEliminarPlatillo, categoriaPlatillo, constraintLayout2, imagenPlatillo, namePlatillo);
+      return new ViewPlatilloSingleBinding((MaterialCardView) rootView, btnDelete, btnDetail,
+          descripcion, imagen, swState, titulo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

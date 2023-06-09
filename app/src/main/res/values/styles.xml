@@ -14,4 +14,13 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorPrimaryContainer">@color/colorFondo2</item>
+        <item name="colorPrimary">@color/colorFondo</item>
+    </style>
+
 </resources>

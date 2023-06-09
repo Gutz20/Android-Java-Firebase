@@ -3399,6 +3399,7 @@ int drawable fui_ic_microsoft_24dp 0x7f080104
 int drawable fui_ic_phone_white_24dp 0x7f080105
 int drawable fui_ic_twitter_bird_white_24dp 0x7f080106
 int drawable fui_ic_yahoo_24dp 0x7f080107
+int drawable gaseosas_icon 0x7f0801af
 int drawable googleg_disabled_color_18 0x7f080108
 int drawable googleg_standard_color_18 0x7f080109
 int drawable heart_bottom_nav 0x7f08010a
@@ -3428,6 +3429,7 @@ int drawable icon_sidebar_1 0x7f080121
 int drawable icon_sidebar_2 0x7f080122
 int drawable icon_sidebar_3 0x7f080123
 int drawable icono_de_image_512 0x7f080124
+int drawable image_default_product 0x7f0801b1
 int drawable image_icon_124 0x7f080125
 int drawable img_staff_1 0x7f080126
 int drawable img_staff_2 0x7f080127
@@ -3540,6 +3542,7 @@ int drawable platillos_home 0x7f080191
 int drawable platillos_img_1 0x7f080192
 int drawable plato 0x7f080193
 int drawable postres_home 0x7f080194
+int drawable postres_icon 0x7f0801b0
 int drawable qr1 0x7f080195
 int drawable qr2 0x7f080196
 int drawable qr3 0x7f080197
@@ -3706,6 +3709,7 @@ int id btnAddPlatillo 0x7f0a0081
 int id btnAddProduct 0x7f0a0082
 int id btnAddStaff 0x7f0a0083
 int id btnComprar 0x7f0a0084
+int id btnDelete 0x7f0a0385
 int id btnDeleteFromCart 0x7f0a0085
 int id btnDeleteImage 0x7f0a0086
 int id btnDeleteStaff 0x7f0a0087
@@ -3714,9 +3718,7 @@ int id btnDetailOffer 0x7f0a0089
 int id btnDetailStaff 0x7f0a008a
 int id btnDialogImage 0x7f0a008b
 int id btnEditar 0x7f0a008c
-int id btnEditarPlatillo 0x7f0a008d
 int id btnEliminar 0x7f0a008e
-int id btnEliminarPlatillo 0x7f0a008f
 int id btnGoogle 0x7f0a0090
 int id btnHabilitarUser 0x7f0a037c
 int id btnLogin 0x7f0a0091
@@ -3725,6 +3727,8 @@ int id btnReservar 0x7f0a0093
 int id btnSeeDisableStaff 0x7f0a0094
 int id btnShare 0x7f0a0095
 int id btnUpdateCartilla 0x7f0a0096
+int id btnViewDisable 0x7f0a0383
+int id btnViewState 0x7f0a038a
 int id btn_add 0x7f0a0097
 int id btn_holder 0x7f0a0098
 int id btn_next 0x7f0a0099
@@ -3744,7 +3748,6 @@ int id cancel_button 0x7f0a00a6
 int id card 0x7f0a00a7
 int id carryVelocity 0x7f0a00a8
 int id cartPlatillos 0x7f0a00a9
-int id categoriaPlatillo 0x7f0a00aa
 int id center 0x7f0a00ab
 int id centerCrop 0x7f0a00ac
 int id centerInside 0x7f0a00ad
@@ -3785,7 +3788,6 @@ int id confirmation_code 0x7f0a00ce
 int id confirmation_code_layout 0x7f0a00cf
 int id constraint 0x7f0a00d0
 int id constraintLayout 0x7f0a00d1
-int id constraintLayout2 0x7f0a00d2
 int id constraintLayout3 0x7f0a00d3
 int id constraintLayout4 0x7f0a00d4
 int id constraintLayout5 0x7f0a00d5
@@ -3822,6 +3824,7 @@ int id decorator_top 0x7f0a00f3
 int id default_activity_button 0x7f0a00f4
 int id deltaRelative 0x7f0a00f5
 int id dependency_ordering 0x7f0a00f6
+int id descripcion 0x7f0a0386
 int id descriptionCat 0x7f0a00f7
 int id descriptionTextView 0x7f0a00f8
 int id design_bottom_sheet 0x7f0a00f9
@@ -3971,9 +3974,9 @@ int id imageView8 0x7f0a0189
 int id imageView9 0x7f0a018a
 int id image_view_favorite 0x7f0a018b
 int id image_view_search 0x7f0a018c
+int id imagen 0x7f0a0387
 int id imagenMenuDetail 0x7f0a018d
 int id imagenOffer 0x7f0a018e
-int id imagenPlatillo 0x7f0a018f
 int id imagenPlatilloMenu 0x7f0a0190
 int id imagenProduct 0x7f0a0191
 int id imagenStaff 0x7f0a0192
@@ -4106,7 +4109,6 @@ int id mtrl_picker_title_text 0x7f0a0210
 int id mtrl_view_tag_bottom_padding 0x7f0a0211
 int id multiply 0x7f0a0212
 int id name 0x7f0a0213
-int id namePlatillo 0x7f0a0214
 int id nameProduct 0x7f0a0215
 int id nameTextView 0x7f0a0216
 int id nameTextViewDesc 0x7f0a0217
@@ -4118,11 +4120,14 @@ int id nav_bottom_home 0x7f0a021c
 int id nav_bottom_menu_detail 0x7f0a021d
 int id nav_bottom_search 0x7f0a021e
 int id nav_controller_view_tag 0x7f0a021f
+int id nav_graph 0x7f0a037e
 int id nav_host_fragment_container 0x7f0a0220
+int id nav_sidebar_admin_bebidas 0x7f0a037f
 int id nav_sidebar_admin_categories 0x7f0a0221
 int id nav_sidebar_admin_dashboard 0x7f0a0222
 int id nav_sidebar_admin_exit 0x7f0a0223
 int id nav_sidebar_admin_platos 0x7f0a0224
+int id nav_sidebar_admin_postres 0x7f0a0380
 int id nav_sidebar_admin_staff 0x7f0a0225
 int id nav_sidebar_cart 0x7f0a0226
 int id nav_sidebar_combos 0x7f0a0227
@@ -4198,6 +4203,8 @@ int id recTitle 0x7f0a026c
 int id rectangles 0x7f0a026d
 int id recuperarBtn 0x7f0a026e
 int id recyclerCategorias 0x7f0a026f
+int id recyclerDesserts 0x7f0a0381
+int id recyclerDrinks 0x7f0a0384
 int id recyclerMenu 0x7f0a0270
 int id recyclerMenuDetail 0x7f0a0271
 int id recyclerOtherMenus 0x7f0a0272
@@ -4311,6 +4318,7 @@ int id stretch 0x7f0a02dd
 int id submenuarrow 0x7f0a02de
 int id submit_area 0x7f0a02df
 int id supportScrollUp 0x7f0a02e0
+int id swState 0x7f0a0388
 int id tabMode 0x7f0a02e1
 int id tag_accessibility_actions 0x7f0a02e2
 int id tag_accessibility_clickable_spans 0x7f0a02e3
@@ -4381,6 +4389,7 @@ int id titleTextDetail 0x7f0a0323
 int id titleTextView 0x7f0a0324
 int id title_template 0x7f0a0325
 int id title_view_favorite 0x7f0a0326
+int id titulo 0x7f0a0389
 int id tituloCat 0x7f0a0327
 int id toggle 0x7f0a0328
 int id top 0x7f0a0329
@@ -4619,8 +4628,10 @@ int layout fragment_cart 0x7f0d003d
 int layout fragment_category 0x7f0d003e
 int layout fragment_content_offers 0x7f0d003f
 int layout fragment_dashboard 0x7f0d0040
+int layout fragment_desserts 0x7f0d00c5
 int layout fragment_detail_dishes 0x7f0d0041
 int layout fragment_dishes 0x7f0d0042
+int layout fragment_drinks 0x7f0d00c6
 int layout fragment_favorite 0x7f0d0043
 int layout fragment_form_category 0x7f0d0044
 int layout fragment_form_dishes 0x7f0d0045
@@ -4762,6 +4773,7 @@ int mipmap ic_launcher_logo 0x7f100001
 int mipmap ic_launcher_logo_foreground 0x7f100002
 int mipmap ic_launcher_logo_round 0x7f100003
 int mipmap ic_launcher_round 0x7f100004
+int navigation nav_graph 0x7f170000
 int plurals fui_error_weak_password 0x7f110000
 int plurals mtrl_badge_content_description 0x7f110001
 int raw cartilla_paqta_food 0x7f120000
@@ -5795,6 +5807,7 @@ int style Theme_MaterialComponents_Light_NoActionBar_Bridge 0x7f1402a3
 int style Theme_MaterialComponents_NoActionBar 0x7f1402a4
 int style Theme_MaterialComponents_NoActionBar_Bridge 0x7f1402a5
 int style Theme_PaqtaFood 0x7f1402a6
+int style ThemeOverlay_App_Switch 0x7f140495
 int style ThemeOverlay_AppCompat 0x7f1402a7
 int style ThemeOverlay_AppCompat_ActionBar 0x7f1402a8
 int style ThemeOverlay_AppCompat_Dark 0x7f1402a9
@@ -5906,6 +5919,7 @@ int style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText 0
 int style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary 0x7f140313
 int style ThemeOverlay_MaterialComponents_Toolbar_Primary 0x7f140314
 int style ThemeOverlay_MaterialComponents_Toolbar_Surface 0x7f140315
+int style Widget_App_Switch 0x7f140496
 int style Widget_AppCompat_ActionBar 0x7f140316
 int style Widget_AppCompat_ActionBar_Solid 0x7f140317
 int style Widget_AppCompat_ActionBar_TabBar 0x7f140318

@@ -60,6 +60,13 @@
                     android:text="AÑADIR PLATILLO" />
 
                 <Button
+                    android:id="@+id/btnViewState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ver platillos inhabilitados" />
+
+                <Button
                     android:id="@+id/btnUpdateCartilla"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

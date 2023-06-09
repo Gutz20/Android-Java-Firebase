@@ -169,6 +169,7 @@ drawable favorito
 drawable fondo
 drawable fondo_offers
 drawable fondo_prueba
+drawable gaseosas_icon
 drawable heart_bottom_nav
 drawable home_bebidas
 drawable home_qr
@@ -182,6 +183,7 @@ drawable icon_sidebar_1
 drawable icon_sidebar_2
 drawable icon_sidebar_3
 drawable icono_de_image_512
+drawable image_default_product
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -223,6 +225,7 @@ drawable platillos_home
 drawable platillos_img_1
 drawable plato
 drawable postres_home
+drawable postres_icon
 drawable qr1
 drawable qr2
 drawable qr3
@@ -267,6 +270,7 @@ id btnAddPlatillo
 id btnAddProduct
 id btnAddStaff
 id btnComprar
+id btnDelete
 id btnDeleteFromCart
 id btnDeleteImage
 id btnDeleteStaff
@@ -275,9 +279,7 @@ id btnDetailOffer
 id btnDetailStaff
 id btnDialogImage
 id btnEditar
-id btnEditarPlatillo
 id btnEliminar
-id btnEliminarPlatillo
 id btnGoogle
 id btnHabilitarUser
 id btnLogin
@@ -286,10 +288,11 @@ id btnReservar
 id btnSeeDisableStaff
 id btnShare
 id btnUpdateCartilla
+id btnViewDisable
+id btnViewState
 id btn_add
 id card
 id cartPlatillos
-id categoriaPlatillo
 id chipGroup
 id cityDescriptionTextView
 id cityTextView
@@ -297,7 +300,6 @@ id cmbCategoria
 id cmbRol
 id colorProduct
 id constraintLayout
-id constraintLayout2
 id constraintLayout3
 id constraintLayout4
 id constraintLayout5
@@ -309,6 +311,7 @@ id coordinatorLayout2
 id cv
 id decorator_bottom
 id decorator_top
+id descripcion
 id descriptionCat
 id descriptionTextView
 id detailsOffer
@@ -368,9 +371,9 @@ id imageView8
 id imageView9
 id image_view_favorite
 id image_view_search
+id imagen
 id imagenMenuDetail
 id imagenOffer
-id imagenPlatillo
 id imagenPlatilloMenu
 id imagenProduct
 id imagenStaff
@@ -411,7 +414,6 @@ id materialCardView7
 id materialCardView8
 id materialCardView9
 id motionLayout
-id namePlatillo
 id nameProduct
 id nameTextView
 id nameTextViewDesc
@@ -421,10 +423,13 @@ id nav_bottom_favorite
 id nav_bottom_home
 id nav_bottom_menu_detail
 id nav_bottom_search
+id nav_graph
+id nav_sidebar_admin_bebidas
 id nav_sidebar_admin_categories
 id nav_sidebar_admin_dashboard
 id nav_sidebar_admin_exit
 id nav_sidebar_admin_platos
+id nav_sidebar_admin_postres
 id nav_sidebar_admin_staff
 id nav_sidebar_cart
 id nav_sidebar_combos
@@ -445,6 +450,8 @@ id recImage
 id recTitle
 id recuperarBtn
 id recyclerCategorias
+id recyclerDesserts
+id recyclerDrinks
 id recyclerMenu
 id recyclerMenuDetail
 id recyclerOtherMenus
@@ -464,6 +471,7 @@ id statusDescriptionTextView
 id statusTextView
 id stepTextView
 id step_view
+id swState
 id textDetailProductCart
 id textEmail
 id textName
@@ -498,6 +506,7 @@ id titleDescriptionTextView
 id titleTextDetail
 id titleTextView
 id title_view_favorite
+id titulo
 id tituloCat
 id topAppBar
 id tvwEjem
@@ -536,8 +545,10 @@ layout fragment_cart
 layout fragment_category
 layout fragment_content_offers
 layout fragment_dashboard
+layout fragment_desserts
 layout fragment_detail_dishes
 layout fragment_dishes
+layout fragment_drinks
 layout fragment_favorite
 layout fragment_form_category
 layout fragment_form_dishes
@@ -577,6 +588,7 @@ mipmap ic_launcher_logo
 mipmap ic_launcher_logo_foreground
 mipmap ic_launcher_logo_round
 mipmap ic_launcher_round
+navigation nav_graph
 raw cartilla_paqta_food
 string app_name
 string btnNuevoFishes
@@ -615,7 +627,9 @@ style AppTheme
 style Base.Base.Theme.PaqtaFood
 style Base.Theme.PaqtaFood
 style DialogAnimation
+style ThemeOverlay.App.Switch
 style Theme.PaqtaFood
+style Widget.App.Switch
 style rounded
 xml activity_main_scene
 xml backup_rules

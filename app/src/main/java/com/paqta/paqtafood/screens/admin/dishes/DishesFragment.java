@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -59,7 +61,7 @@ public class DishesFragment extends Fragment {
     private static final String STORAGE_EDITED_PDF_NAME = "cartilla_editada.pdf";
 
     FloatingActionButton fab;
-    Button btnAdd, btnUpdateCartilla;
+    Button btnAdd, btnUpdateCartilla, btnViewState;
     RecyclerView mRecycler;
     PlatilloAdapter mAdapter;
     private FirebaseFirestore mFirestore;
@@ -67,39 +69,54 @@ public class DishesFragment extends Fragment {
     SearchView searchView;
     Query query;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
+    private boolean mostrarHabilitados = true;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_dishes, container, false);
+        return inflater.inflate(R.layout.fragment_dishes, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         mFirestore = FirebaseFirestore.getInstance();
         mStorage = FirebaseStorage.getInstance();
 
-        mRecycler = root.findViewById(R.id.recyclerPlatillos);
-        searchView = root.findViewById(R.id.searchPlatillo);
+        mRecycler = view.findViewById(R.id.recyclerPlatillos);
+        searchView = view.findViewById(R.id.searchPlatillo);
 
-        btnAdd = root.findViewById(R.id.btnAddPlatillo);
-        btnUpdateCartilla = root.findViewById(R.id.btnUpdateCartilla);
-        fab = root.findViewById(R.id.fab);
+        btnAdd = view.findViewById(R.id.btnAddPlatillo);
+        btnUpdateCartilla = view.findViewById(R.id.btnUpdateCartilla);
+        btnViewState = view.findViewById(R.id.btnViewState);
+        fab = view.findViewById(R.id.fab);
 
 
         fab.setOnClickListener(v -> replaceFragment(new FormDishesFragment()));
         btnAdd.setOnClickListener(v -> replaceFragment(new FormDishesFragment()));
         btnUpdateCartilla.setOnClickListener(v -> configurarPDF());
 
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
+
+        btnViewState.setOnClickListener(v -> {
+            if (mostrarHabilitados) {
+                setUpRecyclerView(query.whereEqualTo("estado", false));
+                btnViewState.setText("Ver Platillos habilitados");
+                mAdapter.startListening();
+            } else {
+                setUpRecyclerView(query.whereEqualTo("estado", true));
+                btnViewState.setText("Ver Platillos inhabilitados");
+                mAdapter.startListening();
+            }
+            mostrarHabilitados = !mostrarHabilitados;
+        });
+
 //        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 //        StrictMode.setThreadPolicy(policy);
 
-        setUpRecyclerView();
+        setUpRecyclerView(query.whereEqualTo("estado", true));
         setupSearchView();
-        return root;
     }
-
 
     private void configurarPDF() {
         try {
@@ -241,9 +258,8 @@ public class DishesFragment extends Fragment {
         mAdapter.stopListening();
     }
 
-    private void setUpRecyclerView() {
+    private void setUpRecyclerView(Query query) {
         mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos").limit(3);
 
         FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();

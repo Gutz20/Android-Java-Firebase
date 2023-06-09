@@ -3,6 +3,7 @@ package com.paqta.paqtafood.model;
 import java.util.List;
 
 public class Producto {
+    private String id;
     private String nombre;
     private String descripcion;
     private String categoria;
@@ -11,6 +12,7 @@ public class Producto {
     private Double precio;
     private List<String> detalles;
     private Double descuento;
+    private Boolean estado;
 
     public Producto() {
     }
@@ -24,6 +26,14 @@ public class Producto {
         this.precio = precio;
         this.detalles = detalles;
         this.descuento = descuento;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -88,5 +98,12 @@ public class Producto {
 
     public void setDescuento(Double descuento) {
         this.descuento = descuento;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 }

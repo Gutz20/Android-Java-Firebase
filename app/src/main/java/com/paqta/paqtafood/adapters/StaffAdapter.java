@@ -78,9 +78,7 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
             }
         });
 
-        holder.btnEnableUser.setOnClickListener(v -> {
-            habilitarUser(id);
-        });
+        holder.btnEnableUser.setOnClickListener(v -> habilitarUser(id));
 
         if (!model.getEstado()) {
             holder.btnEnableUser.setVisibility(View.VISIBLE);

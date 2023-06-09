@@ -5,8 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
-    tools:context=".navigation.AdminNavigation">
+    tools:context=".navigation.AdminNavigation"
+    tools:openDrawer="start">
 
 
     <LinearLayout
@@ -57,3 +57,16 @@
         app:menu="@menu/nav_menu_admin" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
+
+    <!--    <androidx.fragment.app.FragmentContainerView-->
+    <!--        android:id="@+id/fragmentContainerView"-->
+    <!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+    <!--        android:layout_width="409dp"-->
+    <!--        android:layout_height="867dp"-->
+    <!--        app:defaultNavHost="true"-->
+    <!--        app:navGraph="@navigation/nav_graph"-->
+    <!--        tools:layout_editor_absoluteX="1dp"-->
+    <!--        tools:layout_editor_absoluteY="1dp" />-->
+
+

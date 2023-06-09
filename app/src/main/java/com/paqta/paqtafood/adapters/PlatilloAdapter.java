@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -39,7 +42,6 @@ import retrofit2.Response;
 public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, PlatilloAdapter.ViewHolder> {
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
-    private FirebaseStorage mStorage = FirebaseStorage.getInstance();
     Activity activity;
     FragmentManager fm;
     ProductoService productoService = Apis.getProductoService();
@@ -56,42 +58,61 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
         DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getBindingAdapterPosition());
         final String id = documentSnapshot.getId();
 
-        holder.nombre.setText(model.getNombre());
-        holder.categoria.setText(model.getCategoria());
+        holder.textViewTitulo.setText(model.getNombre());
+        holder.textViewDescp.setText(model.getDescripcion());
         Glide.with(activity.getApplicationContext()).load(model.getImagen()).into(holder.imagen);
 
-        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                eliminarPlatillo(v, id);
+        holder.btnEliminar.setOnClickListener(v-> {
+            if (model.getEstado()) {
+                inhabilitarProducto(id);
+            } else {
+                eliminarProducto(id);
             }
         });
-        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FormDishesFragment formDishesFragment = new FormDishesFragment();
 
-                Bundle bundle = new Bundle();
-                bundle.putString("idPlatillo", id);
-                formDishesFragment.setArguments(bundle);
+        holder.btnEditar.setOnClickListener(v -> editarProducto(id));
 
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, formDishesFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+        holder.swState.setChecked(model.getEstado());
+        holder.swState.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // Activado
+                habilitarProducto(id);
+            } else {
+                // Desactivado
+                inhabilitarProducto(id);
             }
         });
     }
 
-    private void eliminarPlatillo(View view, String id) {
-        String storage_path = "platillos/*", prefijo = "platillo";
-
-        Call<Boolean> call =  productoService.disable(id);
+    private void eliminarProducto(String id) {
+        Call<Boolean> call = productoService.delete(id);
 
         call.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                Toast.makeText(activity, "Producto inhabilitado", Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Producto Eliminado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void inhabilitarProducto(String id) {
+//        String storage_path = "platillos/*", prefijo = "platillo";
+
+        Call<Boolean> call = productoService.disable(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Producto inhabilitado", Toast.LENGTH_SHORT).show();
+                }
                 eliminarReferenciaUsuario(id);
             }
 
@@ -101,6 +122,37 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
                 eliminarReferenciaUsuario(id);
             }
         });
+    }
+
+    private void habilitarProducto(String id) {
+        Call<Boolean> call = productoService.enable(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Producto habilitado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void editarProducto(String id) {
+        FormDishesFragment formDishesFragment = new FormDishesFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("idPlatillo", id);
+        formDishesFragment.setArguments(bundle);
+
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, formDishesFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     private void eliminarReferenciaUsuario(String id) {
@@ -169,20 +221,22 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
         return new ViewHolder(v);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nombre, categoria;
-        ImageView imagen, btnDelete, btnEdit;
+        TextView textViewTitulo, textViewDescp;
+        MaterialButton btnEditar, btnEliminar;
+        SwitchMaterial swState;
+        ImageView imagen;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            nombre = itemView.findViewById(R.id.namePlatillo);
-            categoria = itemView.findViewById(R.id.categoriaPlatillo);
-            imagen = itemView.findViewById(R.id.imagenPlatillo);
-            btnDelete = itemView.findViewById(R.id.btnEliminarPlatillo);
-            btnEdit = itemView.findViewById(R.id.btnEditarPlatillo);
-
+            imagen = itemView.findViewById(R.id.imagen);
+            textViewTitulo = itemView.findViewById(R.id.titulo);
+            textViewDescp = itemView.findViewById(R.id.descripcion);
+            btnEditar = itemView.findViewById(R.id.btnDetail);
+            btnEliminar = itemView.findViewById(R.id.btnDelete);
+            swState = itemView.findViewById(R.id.swState);
         }
     }
 }

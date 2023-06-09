@@ -2,6 +2,8 @@ package com.paqta.paqtafood.screens.admin.staff;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,12 +14,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.adapters.PlatilloAdapter;
 import com.paqta.paqtafood.adapters.StaffAdapter;
+import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.screens.admin.staff.components.FormStaffFragment;
 
@@ -30,36 +35,37 @@ public class StaffFragment extends Fragment {
     private boolean mostrarTodoElPersonal = true;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_staff, container, false);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_staff, container, false);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         mFirestore = FirebaseFirestore.getInstance();
 
-        rycStaff = root.findViewById(R.id.rycViewStaff);
-        btnAdd = root.findViewById(R.id.btnAddStaff);
-        btnSeeStaffDisable = root.findViewById(R.id.btnSeeDisableStaff);
+        rycStaff = view.findViewById(R.id.rycViewStaff);
+        btnAdd = view.findViewById(R.id.btnAddStaff);
+        btnSeeStaffDisable = view.findViewById(R.id.btnSeeDisableStaff);
 
         query = mFirestore.collection("usuarios");
         btnAdd.setOnClickListener(v -> replaceFragment(new FormStaffFragment()));
         btnSeeStaffDisable.setOnClickListener(v -> {
             if (mostrarTodoElPersonal) {
                 setUpRecyclerView(query.whereEqualTo("estado", false));
+                btnSeeStaffDisable.setText("Ver Personal Habilitado");
                 mAdapter.startListening();
             } else {
                 setUpRecyclerView(query.whereEqualTo("estado", true));
+                btnSeeStaffDisable.setText("Ver Personal inhabilitado");
                 mAdapter.startListening();
             }
             mostrarTodoElPersonal = !mostrarTodoElPersonal;
         });
 
         setUpRecyclerView(query.whereEqualTo("estado", true));
-        return root;
     }
 
     @Override

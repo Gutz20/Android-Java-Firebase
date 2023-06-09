@@ -3400,6 +3400,7 @@ drawable fui_ic_microsoft_24dp
 drawable fui_ic_phone_white_24dp
 drawable fui_ic_twitter_bird_white_24dp
 drawable fui_ic_yahoo_24dp
+drawable gaseosas_icon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_bottom_nav
@@ -3429,6 +3430,7 @@ drawable icon_sidebar_1
 drawable icon_sidebar_2
 drawable icon_sidebar_3
 drawable icono_de_image_512
+drawable image_default_product
 drawable image_icon_124
 drawable img_staff_1
 drawable img_staff_2
@@ -3541,6 +3543,7 @@ drawable platillos_home
 drawable platillos_img_1
 drawable plato
 drawable postres_home
+drawable postres_icon
 drawable qr1
 drawable qr2
 drawable qr3
@@ -3707,6 +3710,7 @@ id btnAddPlatillo
 id btnAddProduct
 id btnAddStaff
 id btnComprar
+id btnDelete
 id btnDeleteFromCart
 id btnDeleteImage
 id btnDeleteStaff
@@ -3715,9 +3719,7 @@ id btnDetailOffer
 id btnDetailStaff
 id btnDialogImage
 id btnEditar
-id btnEditarPlatillo
 id btnEliminar
-id btnEliminarPlatillo
 id btnGoogle
 id btnHabilitarUser
 id btnLogin
@@ -3726,6 +3728,8 @@ id btnReservar
 id btnSeeDisableStaff
 id btnShare
 id btnUpdateCartilla
+id btnViewDisable
+id btnViewState
 id btn_add
 id btn_holder
 id btn_next
@@ -3745,7 +3749,6 @@ id cancel_button
 id card
 id carryVelocity
 id cartPlatillos
-id categoriaPlatillo
 id center
 id centerCrop
 id centerInside
@@ -3786,7 +3789,6 @@ id confirmation_code
 id confirmation_code_layout
 id constraint
 id constraintLayout
-id constraintLayout2
 id constraintLayout3
 id constraintLayout4
 id constraintLayout5
@@ -3823,6 +3825,7 @@ id decorator_top
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descripcion
 id descriptionCat
 id descriptionTextView
 id design_bottom_sheet
@@ -3972,9 +3975,9 @@ id imageView8
 id imageView9
 id image_view_favorite
 id image_view_search
+id imagen
 id imagenMenuDetail
 id imagenOffer
-id imagenPlatillo
 id imagenPlatilloMenu
 id imagenProduct
 id imagenStaff
@@ -4107,7 +4110,6 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id name
-id namePlatillo
 id nameProduct
 id nameTextView
 id nameTextViewDesc
@@ -4119,11 +4121,14 @@ id nav_bottom_home
 id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_controller_view_tag
+id nav_graph
 id nav_host_fragment_container
+id nav_sidebar_admin_bebidas
 id nav_sidebar_admin_categories
 id nav_sidebar_admin_dashboard
 id nav_sidebar_admin_exit
 id nav_sidebar_admin_platos
+id nav_sidebar_admin_postres
 id nav_sidebar_admin_staff
 id nav_sidebar_cart
 id nav_sidebar_combos
@@ -4199,6 +4204,8 @@ id recTitle
 id rectangles
 id recuperarBtn
 id recyclerCategorias
+id recyclerDesserts
+id recyclerDrinks
 id recyclerMenu
 id recyclerMenuDetail
 id recyclerOtherMenus
@@ -4312,6 +4319,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id swState
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -4382,6 +4390,7 @@ id titleTextDetail
 id titleTextView
 id title_template
 id title_view_favorite
+id titulo
 id tituloCat
 id toggle
 id top
@@ -4620,8 +4629,10 @@ layout fragment_cart
 layout fragment_category
 layout fragment_content_offers
 layout fragment_dashboard
+layout fragment_desserts
 layout fragment_detail_dishes
 layout fragment_dishes
+layout fragment_drinks
 layout fragment_favorite
 layout fragment_form_category
 layout fragment_form_dishes
@@ -4763,6 +4774,7 @@ mipmap ic_launcher_logo
 mipmap ic_launcher_logo_foreground
 mipmap ic_launcher_logo_round
 mipmap ic_launcher_round
+navigation nav_graph
 plurals fui_error_weak_password
 plurals mtrl_badge_content_description
 raw cartilla_paqta_food
@@ -5796,6 +5808,7 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_PaqtaFood
+style ThemeOverlay_App_Switch
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -5907,6 +5920,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style Widget_App_Switch
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

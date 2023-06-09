@@ -51,7 +51,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.screens.admin.desserts.DessertsFragment;
 import com.paqta.paqtafood.screens.admin.dishes.DishesFragment;
+import com.paqta.paqtafood.screens.admin.drinks.DrinksFragment;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -300,16 +302,26 @@ public class FormDishesFragment extends Fragment {
                     @Override
                     public void onSuccess(Void unused) {
                         if (imageUrl != null) {
-                            subirImagen(documentReference);
+                            subirImagen(categoria, documentReference);
                         }
-                        Toast.makeText(getContext(), "El platillo se modificó exitosamente", Toast.LENGTH_SHORT).show();
-                        replaceFragment(new DishesFragment());
+                        Toast.makeText(getContext(), "Se modificó exitosamente", Toast.LENGTH_SHORT).show();
+                        switch (categoria) {
+                            case "Bebidas":
+                                replaceFragment(new DrinksFragment());
+                                break;
+                            case "Postres":
+                                replaceFragment(new DessertsFragment());
+                                break;
+                            case "Platillos":
+                                replaceFragment(new DishesFragment());
+                                break;
+                        }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Error al modificar el platillo", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Error al modificar", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -332,6 +344,7 @@ public class FormDishesFragment extends Fragment {
         map.put("categoria", categoria);
         map.put("detalles", listaContenido);
         map.put("precio", precio);
+        map.put("estado", true);
         Timestamp timestamp = Timestamp.now();
         map.put("created_at", timestamp);
         map.put("updated_at", timestamp);
@@ -340,8 +353,18 @@ public class FormDishesFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        subirImagen(documentReference);
-                        replaceFragment(new DishesFragment());
+                        subirImagen(categoria, documentReference);
+                        switch (categoria) {
+                            case "Bebidas":
+                                replaceFragment(new DrinksFragment());
+                                break;
+                            case "Postres":
+                                replaceFragment(new DessertsFragment());
+                                break;
+                            case "Platillos":
+                                replaceFragment(new DishesFragment());
+                                break;
+                        }
                     }
                 });
     }
@@ -391,7 +414,22 @@ public class FormDishesFragment extends Fragment {
      *
      * @param documentReference
      */
-    private void subirImagen(DocumentReference documentReference) {
+    private void subirImagen(String categoria, DocumentReference documentReference) {
+        switch (categoria) {
+            case "Bebidas":
+                storage_path = "bebidas/*";
+                prefijo = "bebida";
+                break;
+            case "Postres":
+                storage_path = "postres/*";
+                prefijo = "postre";
+                break;
+            case "Platillos":
+                storage_path = "platillos/*";
+                prefijo = "platillo";
+                break;
+        }
+
         String ruta_storage_foto = storage_path + "" + prefijo + "" + documentReference.getId();
         StorageReference imageRef = mStorage.getReference().child(ruta_storage_foto);
 

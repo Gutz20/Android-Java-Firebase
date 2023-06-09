@@ -29,6 +29,9 @@ public final class FragmentDishesBinding implements ViewBinding {
   public final Button btnUpdateCartilla;
 
   @NonNull
+  public final Button btnViewState;
+
+  @NonNull
   public final FloatingActionButton fab;
 
   @NonNull
@@ -38,11 +41,13 @@ public final class FragmentDishesBinding implements ViewBinding {
   public final SearchView searchPlatillo;
 
   private FragmentDishesBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddPlatillo,
-      @NonNull Button btnUpdateCartilla, @NonNull FloatingActionButton fab,
-      @NonNull RecyclerView recyclerPlatillos, @NonNull SearchView searchPlatillo) {
+      @NonNull Button btnUpdateCartilla, @NonNull Button btnViewState,
+      @NonNull FloatingActionButton fab, @NonNull RecyclerView recyclerPlatillos,
+      @NonNull SearchView searchPlatillo) {
     this.rootView = rootView;
     this.btnAddPlatillo = btnAddPlatillo;
     this.btnUpdateCartilla = btnUpdateCartilla;
+    this.btnViewState = btnViewState;
     this.fab = fab;
     this.recyclerPlatillos = recyclerPlatillos;
     this.searchPlatillo = searchPlatillo;
@@ -87,6 +92,12 @@ public final class FragmentDishesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnViewState;
+      Button btnViewState = ViewBindings.findChildViewById(rootView, id);
+      if (btnViewState == null) {
+        break missingId;
+      }
+
       id = R.id.fab;
       FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
       if (fab == null) {
@@ -106,7 +117,7 @@ public final class FragmentDishesBinding implements ViewBinding {
       }
 
       return new FragmentDishesBinding((FrameLayout) rootView, btnAddPlatillo, btnUpdateCartilla,
-          fab, recyclerPlatillos, searchPlatillo);
+          btnViewState, fab, recyclerPlatillos, searchPlatillo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

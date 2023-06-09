@@ -182,6 +182,13 @@
         <item name="android:windowExitAnimation">@anim/slide_out</item>
     </style>
     <style name="Theme.PaqtaFood" parent="Base.Theme.PaqtaFood"/>
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorPrimaryContainer">@color/colorFondo2</item>
+        <item name="colorPrimary">@color/colorFondo</item>
+    </style>
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
     <style name="rounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
