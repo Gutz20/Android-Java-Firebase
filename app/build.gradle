@@ -114,6 +114,8 @@ dependencies {
 
 //    Google Play Services MAP
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    // Google Maps Location
+    implementation "com.google.android.gms:play-services-location:21.0.1"
 
 //    Retrofit | Consultas al backend
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

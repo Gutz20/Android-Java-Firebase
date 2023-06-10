@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.button.MaterialButton;
 import com.paqta.paqtafood.R;
 import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
@@ -27,6 +27,12 @@ public final class FragmentCartBinding implements ViewBinding {
 
   @NonNull
   public final Button btnComprar;
+
+  @NonNull
+  public final MaterialButton btnGetUbication;
+
+  @NonNull
+  public final MaterialButton btnOpenMap;
 
   @NonNull
   public final Button btnReservar;
@@ -49,16 +55,16 @@ public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   public final StepView stepView;
 
-  @NonNull
-  public final TextInputEditText txtLoginUser;
-
   private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
+      @NonNull MaterialButton btnGetUbication, @NonNull MaterialButton btnOpenMap,
       @NonNull Button btnReservar, @NonNull RecyclerView cartPlatillos,
       @NonNull ImageView imageView3, @NonNull LinearLayout linearLayout3,
       @NonNull LinearLayout linearLayoutContaint, @NonNull TextView stepTextView,
-      @NonNull StepView stepView, @NonNull TextInputEditText txtLoginUser) {
+      @NonNull StepView stepView) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
+    this.btnGetUbication = btnGetUbication;
+    this.btnOpenMap = btnOpenMap;
     this.btnReservar = btnReservar;
     this.cartPlatillos = cartPlatillos;
     this.imageView3 = imageView3;
@@ -66,7 +72,6 @@ public final class FragmentCartBinding implements ViewBinding {
     this.linearLayoutContaint = linearLayoutContaint;
     this.stepTextView = stepTextView;
     this.stepView = stepView;
-    this.txtLoginUser = txtLoginUser;
   }
 
   @Override
@@ -99,6 +104,18 @@ public final class FragmentCartBinding implements ViewBinding {
       id = R.id.btnComprar;
       Button btnComprar = ViewBindings.findChildViewById(rootView, id);
       if (btnComprar == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGetUbication;
+      MaterialButton btnGetUbication = ViewBindings.findChildViewById(rootView, id);
+      if (btnGetUbication == null) {
+        break missingId;
+      }
+
+      id = R.id.btnOpenMap;
+      MaterialButton btnOpenMap = ViewBindings.findChildViewById(rootView, id);
+      if (btnOpenMap == null) {
         break missingId;
       }
 
@@ -144,14 +161,9 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtLoginUser;
-      TextInputEditText txtLoginUser = ViewBindings.findChildViewById(rootView, id);
-      if (txtLoginUser == null) {
-        break missingId;
-      }
-
-      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnReservar, cartPlatillos,
-          imageView3, linearLayout3, linearLayoutContaint, stepTextView, stepView, txtLoginUser);
+      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnGetUbication,
+          btnOpenMap, btnReservar, cartPlatillos, imageView3, linearLayout3, linearLayoutContaint,
+          stepTextView, stepView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

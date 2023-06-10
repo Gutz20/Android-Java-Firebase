@@ -25,7 +25,6 @@ import com.paqta.paqtafood.ui.user.cart.CartFragment;
 import com.paqta.paqtafood.ui.user.favorite.FavoriteFragment;
 import com.paqta.paqtafood.ui.user.home.HomeFragment;
 import com.paqta.paqtafood.ui.user.login.Login;
-import com.paqta.paqtafood.ui.user.mapa.MapaFragment;
 import com.paqta.paqtafood.ui.user.menu.MenuFragment;
 import com.paqta.paqtafood.ui.user.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.ui.user.offers.OffersFragment;
@@ -98,14 +97,10 @@ public class DefaultNavigationApp extends AppCompatActivity {
             } else if (item.getItemId() == R.id.nav_bottom_menu_detail) {
                 toolbar.setTitle("Menú");
                 replaceFragment(new MenuDetailFragment());
-            } else if (item.getItemId() == R.id.nav_bottom_map) {
-                replaceFragment(new MapaFragment());
+            } else if (item.getItemId() == R.id.nav_bottom_cart) {
+                toolbar.setTitle("Carrito");
+                replaceFragment(new CartFragment());
             }
-
-//            else if (item.getItemId() == R.id.nav_bottom_cart) {
-//                toolbar.setTitle("BUSQUEDA");
-//                replaceFragment(new CartFragment());
-//            }
 
             return true;
         });

@@ -112,6 +112,7 @@ drawable baseline_close_24
 drawable baseline_contact_mail_24
 drawable baseline_dashboard_24
 drawable baseline_edit_24
+drawable baseline_edit_location_alt_24
 drawable baseline_exit_app_24
 drawable baseline_favorite_24
 drawable baseline_favorite_border_24
@@ -119,6 +120,7 @@ drawable baseline_home_24
 drawable baseline_image_24
 drawable baseline_info_24
 drawable baseline_location_on_24
+drawable baseline_map_24
 drawable baseline_menu_24
 drawable baseline_person_24
 drawable baseline_person_outline_24
@@ -160,6 +162,7 @@ drawable dialogbkg
 drawable divider3
 drawable divider_perso
 drawable divider_search
+drawable editar_icon
 drawable elipse_bg_platillo
 drawable elipse_precio_offer
 drawable facebook
@@ -177,6 +180,7 @@ drawable ic_delete_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_logo_background
+drawable icon_cambiar
 drawable icon_menu_card
 drawable icon_menu_detail
 drawable icon_sidebar_1
@@ -201,6 +205,7 @@ drawable logo_header_sidebar
 drawable logo_prueba
 drawable logo_rose_transparent
 drawable logo_white_2
+drawable mapa_icon
 drawable mask_group
 drawable mask_group_ek1
 drawable mask_group_ek2
@@ -280,9 +285,11 @@ id btnDetailStaff
 id btnDialogImage
 id btnEditar
 id btnEliminar
+id btnGetUbication
 id btnGoogle
 id btnHabilitarUser
 id btnLogin
+id btnOpenMap
 id btnRegister
 id btnReservar
 id btnSeeDisableStaff
@@ -318,7 +325,6 @@ id dniTextViewDesc
 id dniTextViewTitle
 id drawer_layout
 id editButton
-id editTextText
 id edtTextCategoria
 id edtTextDescripcion
 id edtTextEmail
@@ -418,9 +424,9 @@ id nameProduct
 id nameTextView
 id nameTextViewDesc
 id nameTextViewTitle
+id nav_bottom_cart
 id nav_bottom_favorite
 id nav_bottom_home
-id nav_bottom_map
 id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_graph
@@ -555,7 +561,6 @@ layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_form_staff
 layout fragment_home
-layout fragment_mapa
 layout fragment_menu
 layout fragment_menu_detail
 layout fragment_offers

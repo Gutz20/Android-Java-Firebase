@@ -1,21 +1,45 @@
 package com.paqta.paqtafood.ui.user.cart;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.location.LocationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -30,14 +54,16 @@ import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
 
 
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements OnMapReadyCallback {
     StepView stepView;
     TextView stepTextView;
+    MaterialButton btnGetLocation;
     Button btnReservar, btnComprar;
     RecyclerView rycrCart;
-
+    GoogleMap mMap;
     CardCartAdapter mAdapterCart;
     LinearLayout layoutContaint;
 
@@ -48,31 +74,32 @@ public class CartFragment extends Fragment {
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_cart, container, false);
+        return inflater.inflate(R.layout.fragment_cart, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        btnReservar = root.findViewById(R.id.btnReservar);
-        btnComprar = root.findViewById(R.id.btnComprar);
+        btnReservar = view.findViewById(R.id.btnReservar);
+        btnComprar = view.findViewById(R.id.btnComprar);
+        btnGetLocation = view.findViewById(R.id.btnGetUbication);
 
-        rycrCart = root.findViewById(R.id.cartPlatillos);
+        rycrCart = view.findViewById(R.id.cartPlatillos);
 
-        layoutContaint = root.findViewById(R.id.linearLayoutContaint);
+        layoutContaint = view.findViewById(R.id.linearLayoutContaint);
 
-        stepTextView = root.findViewById(R.id.stepTextView);
-        stepView = root.findViewById(R.id.step_view);
+        stepTextView = view.findViewById(R.id.stepTextView);
+        stepView = view.findViewById(R.id.step_view);
         stepView.getState()
                 .animationType(StepView.ANIMATION_ALL)
                 .stepsNumber(3)
@@ -81,9 +108,41 @@ public class CartFragment extends Fragment {
 
         btnComprar.setOnClickListener(v -> configureStep());
 
+        // GOOGLE MAPS
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+//        btnGetLocation.setOnClickListener(v -> {
+//            ActivityResultLauncher<String []> locationPermissionRequest = registerForActivityResult(new ActivityResultContracts
+//                    .RequestMultiplePermissions(), result -> {
+//                Boolean fineLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false);
+//                Boolean coarseLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false);
+//                if (fineLocationGranted != null && fineLocationGranted) {
+//
+//                } else if (coarseLocationGranted != null && coarseLocationGranted) {
+//
+//                } else {
+//
+//                }
+//            });
+//
+//            locationPermissionRequest.launch(new String[] {
+//                    Manifest.permission.ACCESS_FINE_LOCATION,
+//                    Manifest.permission.ACCESS_COARSE_LOCATION
+//            });
+//        });
+
         configureRecyclers();
-//        nextStep();
-        return root;
+    }
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAdapterCart != null) {
+            mAdapterCart.stopListening();
+        }
     }
 
     private void configureRecyclers() {
@@ -113,13 +172,6 @@ public class CartFragment extends Fragment {
         });
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAdapterCart != null) {
-            mAdapterCart.stopListening();
-        }
-    }
 
     private void configureStep() {
         stepIndex++;
@@ -143,4 +195,35 @@ public class CartFragment extends Fragment {
             }
         }, 3000);
     }
+
+
+
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0))
+                .title("Marker"));
+
+        LatLng mexico = new LatLng(19.8077463, -99.4077038);
+        mMap.addMarker(new MarkerOptions().position(mexico).title("Mexico"));
+
+        // Configurar la cámara para mostrar los marcadores
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(mexico) // Ubicación de la cámara
+                .zoom(12) // Nivel de zoom
+                .build();
+
+        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
+
+
+
 }

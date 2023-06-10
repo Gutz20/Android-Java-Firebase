@@ -3278,6 +3278,7 @@ int drawable baseline_close_24 0x7f08008b
 int drawable baseline_contact_mail_24 0x7f08008c
 int drawable baseline_dashboard_24 0x7f08008d
 int drawable baseline_edit_24 0x7f08008e
+int drawable baseline_edit_location_alt_24 0x7f0801b2
 int drawable baseline_exit_app_24 0x7f08008f
 int drawable baseline_favorite_24 0x7f080090
 int drawable baseline_favorite_border_24 0x7f080091
@@ -3285,6 +3286,7 @@ int drawable baseline_home_24 0x7f080092
 int drawable baseline_image_24 0x7f080093
 int drawable baseline_info_24 0x7f080094
 int drawable baseline_location_on_24 0x7f080095
+int drawable baseline_map_24 0x7f0801b3
 int drawable baseline_menu_24 0x7f080096
 int drawable baseline_person_24 0x7f080097
 int drawable baseline_person_outline_24 0x7f080098
@@ -3379,6 +3381,7 @@ int drawable dialogbkg 0x7f0800f0
 int drawable divider3 0x7f0800f1
 int drawable divider_perso 0x7f0800f2
 int drawable divider_search 0x7f0800f3
+int drawable editar_icon 0x7f0801b4
 int drawable elipse_bg_platillo 0x7f0800f4
 int drawable elipse_precio_offer 0x7f0800f5
 int drawable facebook 0x7f0800f6
@@ -3423,6 +3426,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f08011c
 int drawable ic_mtrl_chip_checked_circle 0x7f08011d
 int drawable ic_mtrl_chip_close_circle 0x7f08011e
 int drawable ic_search_black_24 0x7f08011f
+int drawable icon_cambiar 0x7f0801b5
 int drawable icon_menu_card 0x7f080120
 int drawable icon_menu_detail 0x7f080121
 int drawable icon_sidebar_1 0x7f080122
@@ -3458,6 +3462,7 @@ int drawable m3_tabs_background 0x7f08013f
 int drawable m3_tabs_line_indicator 0x7f080140
 int drawable m3_tabs_rounded_line_indicator 0x7f080141
 int drawable m3_tabs_transparent_background 0x7f080142
+int drawable mapa_icon 0x7f0801b6
 int drawable mask_group 0x7f080143
 int drawable mask_group_ek1 0x7f080144
 int drawable mask_group_ek2 0x7f080145
@@ -3719,9 +3724,11 @@ int id btnDetailStaff 0x7f0a008b
 int id btnDialogImage 0x7f0a008c
 int id btnEditar 0x7f0a008d
 int id btnEliminar 0x7f0a008e
+int id btnGetUbication 0x7f0a0385
 int id btnGoogle 0x7f0a008f
 int id btnHabilitarUser 0x7f0a0090
 int id btnLogin 0x7f0a0091
+int id btnOpenMap 0x7f0a0384
 int id btnRegister 0x7f0a0092
 int id btnReservar 0x7f0a0093
 int id btnSeeDisableStaff 0x7f0a0094
@@ -3859,7 +3866,6 @@ int id easeOut 0x7f0a0117
 int id east 0x7f0a0118
 int id edge 0x7f0a0119
 int id editButton 0x7f0a011a
-int id editTextText 0x7f0a011b
 int id edit_phone_number 0x7f0a011c
 int id edit_query 0x7f0a011d
 int id edtTextCategoria 0x7f0a011e
@@ -4114,9 +4120,9 @@ int id nameTextView 0x7f0a0216
 int id nameTextViewDesc 0x7f0a0217
 int id nameTextViewTitle 0x7f0a0218
 int id name_layout 0x7f0a0219
+int id nav_bottom_cart 0x7f0a0383
 int id nav_bottom_favorite 0x7f0a021a
 int id nav_bottom_home 0x7f0a021b
-int id nav_bottom_map 0x7f0a021c
 int id nav_bottom_menu_detail 0x7f0a021d
 int id nav_bottom_search 0x7f0a021e
 int id nav_controller_view_tag 0x7f0a021f
@@ -4638,7 +4644,6 @@ int layout fragment_form_dishes 0x7f0d0047
 int layout fragment_form_product 0x7f0d0048
 int layout fragment_form_staff 0x7f0d0049
 int layout fragment_home 0x7f0d004a
-int layout fragment_mapa 0x7f0d004b
 int layout fragment_menu 0x7f0d004c
 int layout fragment_menu_detail 0x7f0d004d
 int layout fragment_offers 0x7f0d004e
