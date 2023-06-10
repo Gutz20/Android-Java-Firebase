@@ -27,9 +27,6 @@ public final class FragmentMenuBinding implements ViewBinding {
   public final ImageView imageView12;
 
   @NonNull
-  public final ImageView imageView13;
-
-  @NonNull
   public final ImageView imageView4;
 
   @NonNull
@@ -75,8 +72,8 @@ public final class FragmentMenuBinding implements ViewBinding {
   public final TextView textView2;
 
   private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView12,
-      @NonNull ImageView imageView13, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
-      @NonNull ImageView imageView6, @NonNull ImageView imageView7, @NonNull ImageView imageView8,
+      @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
+      @NonNull ImageView imageView7, @NonNull ImageView imageView8,
       @NonNull LinearLayout lrltToBebidas, @NonNull LinearLayout lrltToCombos,
       @NonNull LinearLayout lrltToExtras, @NonNull LinearLayout lrltToOfertas,
       @NonNull LinearLayout lrltToPrincipal, @NonNull MaterialCardView materialCardView7,
@@ -84,7 +81,6 @@ public final class FragmentMenuBinding implements ViewBinding {
       @NonNull TextView textView14, @NonNull TextView textView2) {
     this.rootView = rootView;
     this.imageView12 = imageView12;
-    this.imageView13 = imageView13;
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
     this.imageView6 = imageView6;
@@ -132,12 +128,6 @@ public final class FragmentMenuBinding implements ViewBinding {
       id = R.id.imageView12;
       ImageView imageView12 = ViewBindings.findChildViewById(rootView, id);
       if (imageView12 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView13;
-      ImageView imageView13 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView13 == null) {
         break missingId;
       }
 
@@ -231,8 +221,8 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMenuBinding((FrameLayout) rootView, imageView12, imageView13, imageView4,
-          imageView5, imageView6, imageView7, imageView8, lrltToBebidas, lrltToCombos, lrltToExtras,
+      return new FragmentMenuBinding((FrameLayout) rootView, imageView12, imageView4, imageView5,
+          imageView6, imageView7, imageView8, lrltToBebidas, lrltToCombos, lrltToExtras,
           lrltToOfertas, lrltToPrincipal, materialCardView7, recyclerMenu, textView10, textView14,
           textView2);
     }

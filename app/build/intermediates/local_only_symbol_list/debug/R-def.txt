@@ -291,7 +291,6 @@ id btnUpdateCartilla
 id btnViewDisable
 id btnViewState
 id btn_add
-id card
 id cartPlatillos
 id chipGroup
 id cityDescriptionTextView
@@ -319,6 +318,7 @@ id dniTextViewDesc
 id dniTextViewTitle
 id drawer_layout
 id editButton
+id editTextText
 id edtTextCategoria
 id edtTextDescripcion
 id edtTextEmail
@@ -349,7 +349,6 @@ id imageView
 id imageView10
 id imageView11
 id imageView12
-id imageView13
 id imageView14
 id imageView15
 id imageView16
@@ -403,6 +402,7 @@ id lrltToExtras
 id lrltToOfertas
 id lrltToPrincipal
 id main_item
+id map
 id materialCardView
 id materialCardView10
 id materialCardView2
@@ -418,9 +418,9 @@ id nameProduct
 id nameTextView
 id nameTextViewDesc
 id nameTextViewTitle
-id nav_bottom_cart
 id nav_bottom_favorite
 id nav_bottom_home
+id nav_bottom_map
 id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_graph
@@ -555,6 +555,7 @@ layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_form_staff
 layout fragment_home
+layout fragment_mapa
 layout fragment_menu
 layout fragment_menu_detail
 layout fragment_offers

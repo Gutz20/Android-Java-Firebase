@@ -2,6 +2,7 @@ package com.paqta.paqtafood.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +21,28 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.Categoria;
-import com.paqta.paqtafood.screens.admin.category.components.FormCategoryFragment;
+import com.paqta.paqtafood.services.CategoriaService;
+import com.paqta.paqtafood.ui.admin.category.components.FormCategoryFragment;
+import com.paqta.paqtafood.api.CategoriaAPI;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, CategoryAdapter.ViewHolder> {
 
     String storagePath = "categorias/*", prefijo = "category";
-    private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
-    private FirebaseStorage mStorage = FirebaseStorage.getInstance();
+    private FirebaseFirestore mFirestore;
+    private FirebaseStorage mStorage;
+
+    CategoriaAPI categoriaAPI = Apis.getCategoriaService();
     Activity activity;
     FragmentManager fm;
 
@@ -39,6 +50,8 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
         super(options);
         this.activity = activity;
         this.fm = fm;
+        mStorage = FirebaseStorage.getInstance();
+        mFirestore = FirebaseFirestore.getInstance();
     }
 
     @Override
@@ -49,52 +62,94 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
         holder.tituloView.setText(model.getNombre());
         holder.descriptionView.setText(model.getDescripcion());
         Glide.with(activity.getApplicationContext()).load(model.getImagen()).into(holder.imageCat);
-        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteCategory(id);
+
+        holder.btnEdit.setOnClickListener(v -> editarCategory(id));
+        holder.btnDelete.setOnClickListener(v -> {
+            if (model.getEstado()) {
+                inhabilitar(id);
+            } else {
+                eliminar(id);
             }
         });
-        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+
+        holder.swState.setChecked(model.getEstado());
+        holder.swState.setOnCheckedChangeListener(((buttonView, isChecked) -> {
+            if (isChecked) {
+                habilitar(id);
+            } else {
+                inhabilitar(id);
+            }
+        }));
+    }
+
+    private void habilitar(String id) {
+        Call<Boolean> call = categoriaAPI.enable(id);
+
+        call.enqueue(new Callback<Boolean>() {
             @Override
-            public void onClick(View v) {
-                FormCategoryFragment fragment = new FormCategoryFragment();
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Usuario habilitado", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-                Bundle bundle = new Bundle();
-                bundle.putString("idCategory", id);
-                fragment.setArguments(bundle);
-
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al habilitar al usuario", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    private void inhabilitar(String id) {
+        Call<Boolean> call = categoriaAPI.disable(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Usuario Inhabilitado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al inhabilitar el usuario", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void eliminar(String id) {
+        Call<Boolean> call = categoriaAPI.delete(id);
+
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(activity, "Usuario eliminado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(activity, "Error al eliminar el usuario", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void editarCategory(String id) {
+        FormCategoryFragment fragment = new FormCategoryFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("idCategory", id);
+        fragment.setArguments(bundle);
+
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     private void deleteCategory(String id) {
-//        DocumentReference categoriaRef = mFirestore.collection("categorias").document(id);
-//        CollectionReference platillosRef = mFirestore.collection("platillos");
-//        Query query = platillosRef.whereEqualTo("categoria", categoriaRef);
-//
-//        query.get().addOnSuccessListener(queryDocumentSnapshots -> {
-//            WriteBatch batch = mFirestore.batch();
-//            for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-//                DocumentReference platilloRef = documentSnapshot.getReference();
-//                batch.delete(platilloRef);
-//            }
-//            batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
-//                        @Override
-//                        public void onSuccess(Void unused) {
-//                            Toast.makeText(activity, "Se eliminaron los platillos relacionados", Toast.LENGTH_SHORT).show();
-//                        }
-//                    })
-//                    .addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(activity, "Error al eliminar los platillos relacionados", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
         mFirestore.collection("categorias").document(id).delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -103,8 +158,6 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
                     }
                 });
     }
-
-    ;
 
 
     private void deleteImage(String id) {
@@ -135,14 +188,16 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
         TextView tituloView, descriptionView;
         ImageView imageCat;
         MaterialButton btnEdit, btnDelete;
+        SwitchMaterial swState;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tituloView = itemView.findViewById(R.id.tituloCat);
             descriptionView = itemView.findViewById(R.id.descriptionCat);
             imageCat = itemView.findViewById(R.id.imageCat);
-            btnEdit = itemView.findViewById(R.id.btnEditar);
-            btnDelete = itemView.findViewById(R.id.btnEliminar);
+            btnEdit = itemView.findViewById(R.id.btnDetail);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
+            swState = itemView.findViewById(R.id.swState);
         }
     }
 }

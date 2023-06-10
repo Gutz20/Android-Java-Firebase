@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,12 +27,11 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.WriteBatch;
-import com.google.firebase.storage.FirebaseStorage;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.admin.dishes.components.FormDishesFragment;
-import com.paqta.paqtafood.services.ProductoService;
+import com.paqta.paqtafood.ui.admin.dishes.components.FormDishesFragment;
+import com.paqta.paqtafood.api.ProductoAPI;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +42,7 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     Activity activity;
     FragmentManager fm;
-    ProductoService productoService = Apis.getProductoService();
+    ProductoAPI productoService = Apis.getProductoService();
 
     public PlatilloAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Activity activity, FragmentManager fm) {
         super(options);

@@ -26,8 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.User;
-import com.paqta.paqtafood.screens.admin.staff.components.FormStaffFragment;
-import com.paqta.paqtafood.services.UserService;
+import com.paqta.paqtafood.ui.admin.staff.components.FormStaffFragment;
+import com.paqta.paqtafood.api.UserAPI;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +38,7 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
-    UserService userService = Apis.getUserService();
+    UserAPI userService = Apis.getUserService();
     Activity activity;
     FragmentManager fm;
 

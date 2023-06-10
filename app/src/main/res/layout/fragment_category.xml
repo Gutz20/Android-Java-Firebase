@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bckgestor"
-    tools:context=".screens.admin.category.CategoryFragment">
+    tools:context=".ui.admin.category.CategoryFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -64,6 +64,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="AÑADIR CATEGORIA" />
+
+                    <Button
+                        android:id="@+id/btnViewState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ver Categorias inhabilitadas" />
 
                 </LinearLayout>
 

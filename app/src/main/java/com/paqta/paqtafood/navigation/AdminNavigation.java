@@ -19,14 +19,14 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.admin.category.CategoryFragment;
-import com.paqta.paqtafood.screens.admin.dashboard.DashboardFragment;
-import com.paqta.paqtafood.screens.admin.desserts.DessertsFragment;
-import com.paqta.paqtafood.screens.admin.dishes.DishesFragment;
-import com.paqta.paqtafood.screens.admin.drinks.DrinksFragment;
-import com.paqta.paqtafood.screens.user.login.Login;
-import com.paqta.paqtafood.screens.components.profile.ProfileFragment;
-import com.paqta.paqtafood.screens.admin.staff.StaffFragment;
+import com.paqta.paqtafood.ui.admin.category.CategoryFragment;
+import com.paqta.paqtafood.ui.admin.dashboard.DashboardFragment;
+import com.paqta.paqtafood.ui.admin.desserts.DessertsFragment;
+import com.paqta.paqtafood.ui.admin.dishes.DishesFragment;
+import com.paqta.paqtafood.ui.admin.drinks.DrinksFragment;
+import com.paqta.paqtafood.ui.user.login.Login;
+import com.paqta.paqtafood.ui.components.profile.ProfileFragment;
+import com.paqta.paqtafood.ui.admin.staff.StaffFragment;
 
 public class AdminNavigation extends AppCompatActivity {
 

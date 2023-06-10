@@ -21,15 +21,16 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
-import com.paqta.paqtafood.screens.user.cart.CartFragment;
-import com.paqta.paqtafood.screens.user.favorite.FavoriteFragment;
-import com.paqta.paqtafood.screens.user.home.HomeFragment;
-import com.paqta.paqtafood.screens.user.login.Login;
-import com.paqta.paqtafood.screens.user.menu.MenuFragment;
-import com.paqta.paqtafood.screens.user.menu_detail.MenuDetailFragment;
-import com.paqta.paqtafood.screens.user.offers.OffersFragment;
-import com.paqta.paqtafood.screens.components.profile.ProfileFragment;
-import com.paqta.paqtafood.screens.user.search.SearchFragment;
+import com.paqta.paqtafood.ui.user.cart.CartFragment;
+import com.paqta.paqtafood.ui.user.favorite.FavoriteFragment;
+import com.paqta.paqtafood.ui.user.home.HomeFragment;
+import com.paqta.paqtafood.ui.user.login.Login;
+import com.paqta.paqtafood.ui.user.mapa.MapaFragment;
+import com.paqta.paqtafood.ui.user.menu.MenuFragment;
+import com.paqta.paqtafood.ui.user.menu_detail.MenuDetailFragment;
+import com.paqta.paqtafood.ui.user.offers.OffersFragment;
+import com.paqta.paqtafood.ui.components.profile.ProfileFragment;
+import com.paqta.paqtafood.ui.user.search.SearchFragment;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {
@@ -97,10 +98,14 @@ public class DefaultNavigationApp extends AppCompatActivity {
             } else if (item.getItemId() == R.id.nav_bottom_menu_detail) {
                 toolbar.setTitle("Menú");
                 replaceFragment(new MenuDetailFragment());
-            } else if (item.getItemId() == R.id.nav_bottom_cart) {
-                toolbar.setTitle("BUSQUEDA");
-                replaceFragment(new CartFragment());
+            } else if (item.getItemId() == R.id.nav_bottom_map) {
+                replaceFragment(new MapaFragment());
             }
+
+//            else if (item.getItemId() == R.id.nav_bottom_cart) {
+//                toolbar.setTitle("BUSQUEDA");
+//                replaceFragment(new CartFragment());
+//            }
 
             return true;
         });

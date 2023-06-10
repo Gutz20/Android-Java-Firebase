@@ -3746,7 +3746,6 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
-id card
 id carryVelocity
 id cartPlatillos
 id center
@@ -3861,6 +3860,7 @@ id easeOut
 id east
 id edge
 id editButton
+id editTextText
 id edit_phone_number
 id edit_query
 id edtTextCategoria
@@ -3953,7 +3953,6 @@ id imageView
 id imageView10
 id imageView11
 id imageView12
-id imageView13
 id imageView14
 id imageView15
 id imageView16
@@ -4038,6 +4037,7 @@ id ltr
 id m3_side_sheet
 id main_item
 id main_tos_and_pp
+id map
 id marquee
 id masked
 id match_constraint
@@ -4115,9 +4115,9 @@ id nameTextView
 id nameTextViewDesc
 id nameTextViewTitle
 id name_layout
-id nav_bottom_cart
 id nav_bottom_favorite
 id nav_bottom_home
+id nav_bottom_map
 id nav_bottom_menu_detail
 id nav_bottom_search
 id nav_controller_view_tag
@@ -4639,6 +4639,7 @@ layout fragment_form_dishes
 layout fragment_form_product
 layout fragment_form_staff
 layout fragment_home
+layout fragment_mapa
 layout fragment_menu
 layout fragment_menu_detail
 layout fragment_offers

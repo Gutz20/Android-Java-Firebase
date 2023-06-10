@@ -13,10 +13,10 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -83,25 +83,25 @@
             android:name="com.paqta.paqtafood.navigation.AdminNavigation"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.recycler.DescriptionActivity"
+            android:name="com.paqta.paqtafood.ui.recycler.DescriptionActivity"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.components.steps.StepsActivity"
+            android:name="com.paqta.paqtafood.ui.components.steps.StepsActivity"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.recycler.RecyclerActivity"
+            android:name="com.paqta.paqtafood.ui.recycler.RecyclerActivity"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.user.forgotPassword.ForgotPassword"
+            android:name="com.paqta.paqtafood.ui.user.forgotPassword.ForgotPassword"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.navigation.DefaultNavigationApp"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.user.signup.Signup"
+            android:name="com.paqta.paqtafood.ui.user.signup.Signup"
             android:exported="false" />
         <activity
-            android:name="com.paqta.paqtafood.screens.user.login.Login"
+            android:name="com.paqta.paqtafood.ui.user.login.Login"
             android:exported="false" />
         <activity
             android:name="com.paqta.paqtafood.MainActivity"
@@ -129,10 +129,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <!-- Google MAP API key -->
         <!-- <meta-data -->
-        <!-- android:name="com.google.android.geo.API_KEY" -->
-        <!-- android:value="" -->
-        <!-- /> -->
+        <!-- android:name="com.google.android.gms.maps.SupportMapFragment" -->
+        <!-- android:value="AIzaSyB7dE5n7bA6JRQrXzDdNKfKw0hQ97gLNKw" /> -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB7dE5n7bA6JRQrXzDdNKfKw0hQ97gLNKw" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

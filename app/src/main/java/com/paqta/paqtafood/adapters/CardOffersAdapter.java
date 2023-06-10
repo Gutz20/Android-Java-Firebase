@@ -21,7 +21,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.user.offers.components.content_offers.ContentOffersFragment;
+import com.paqta.paqtafood.ui.user.offers.components.content_offers.ContentOffersFragment;
 
 public class CardOffersAdapter extends FirestoreRecyclerAdapter<Producto, CardOffersAdapter.ViewHolder> {
 

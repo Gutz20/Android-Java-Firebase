@@ -1,9 +1,11 @@
 package com.paqta.paqtafood.model;
 
 public class Categoria {
+    private String id;
     private String imagen;
     private String nombre;
     private String descripcion;
+    private Boolean estado;
 
     public Categoria() {
     }
@@ -12,6 +14,14 @@ public class Categoria {
         this.imagen = imagen;
         this.nombre = nombre;
         this.descripcion = descripcion;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImagen() {
@@ -37,4 +47,13 @@ public class Categoria {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
 }

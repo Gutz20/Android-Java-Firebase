@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.recycler.RecyclerActivity">
+    tools:context=".ui.recycler.RecyclerActivity">
 
     <TextView
         android:id="@+id/titleTextView"

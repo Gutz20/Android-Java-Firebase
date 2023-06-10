@@ -27,6 +27,9 @@ public final class FragmentCategoryBinding implements ViewBinding {
   public final Button btnAddCategory;
 
   @NonNull
+  public final Button btnViewState;
+
+  @NonNull
   public final FloatingActionButton fab;
 
   @NonNull
@@ -39,10 +42,12 @@ public final class FragmentCategoryBinding implements ViewBinding {
   public final SearchView search;
 
   private FragmentCategoryBinding(@NonNull FrameLayout rootView, @NonNull Button btnAddCategory,
-      @NonNull FloatingActionButton fab, @NonNull LinearLayout linearLayout2,
-      @NonNull RecyclerView recyclerCategorias, @NonNull SearchView search) {
+      @NonNull Button btnViewState, @NonNull FloatingActionButton fab,
+      @NonNull LinearLayout linearLayout2, @NonNull RecyclerView recyclerCategorias,
+      @NonNull SearchView search) {
     this.rootView = rootView;
     this.btnAddCategory = btnAddCategory;
+    this.btnViewState = btnViewState;
     this.fab = fab;
     this.linearLayout2 = linearLayout2;
     this.recyclerCategorias = recyclerCategorias;
@@ -82,6 +87,12 @@ public final class FragmentCategoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnViewState;
+      Button btnViewState = ViewBindings.findChildViewById(rootView, id);
+      if (btnViewState == null) {
+        break missingId;
+      }
+
       id = R.id.fab;
       FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
       if (fab == null) {
@@ -106,8 +117,8 @@ public final class FragmentCategoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCategoryBinding((FrameLayout) rootView, btnAddCategory, fab, linearLayout2,
-          recyclerCategorias, search);
+      return new FragmentCategoryBinding((FrameLayout) rootView, btnAddCategory, btnViewState, fab,
+          linearLayout2, recyclerCategorias, search);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

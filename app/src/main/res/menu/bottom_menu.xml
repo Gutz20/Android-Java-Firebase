@@ -24,8 +24,13 @@
         android:icon="@drawable/icon_menu_detail"
         tools:ignore="MenuTitle" />
 
+<!--    <item-->
+<!--        android:id="@+id/nav_bottom_cart"-->
+<!--        android:icon="@drawable/outline_shopping_cart_24"-->
+<!--        tools:ignore="MenuTitle" />-->
+
     <item
-        android:id="@+id/nav_bottom_cart"
+        android:id="@+id/nav_bottom_map"
         android:icon="@drawable/outline_shopping_cart_24"
         tools:ignore="MenuTitle" />
 

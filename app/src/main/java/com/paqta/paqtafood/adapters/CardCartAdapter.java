@@ -28,8 +28,8 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.screens.user.detail_dishes.DetailDishesFragment;
-import com.paqta.paqtafood.screens.user.offers.components.content_offers.ContentOffersFragment;
+import com.paqta.paqtafood.ui.user.detail_dishes.DetailDishesFragment;
+import com.paqta.paqtafood.ui.user.offers.components.content_offers.ContentOffersFragment;
 
 public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCartAdapter.ViewHolder> {
 

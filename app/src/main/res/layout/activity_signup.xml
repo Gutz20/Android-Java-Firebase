@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bckp"
-    tools:context=".screens.user.signup.Signup">
+    tools:context=".ui.user.signup.Signup">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"

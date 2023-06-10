@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fondo_offers"
-    tools:context=".screens.user.offers.components.content_offers.ContentOffersFragment">
+    tools:context=".ui.user.offers.components.content_offers.ContentOffersFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bckgestor"
-    tools:context=".screens.admin.dishes.DishesFragment">
+    tools:context=".ui.admin.dishes.DishesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
