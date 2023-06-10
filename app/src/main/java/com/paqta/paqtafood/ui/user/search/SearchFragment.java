@@ -80,10 +80,11 @@ public class SearchFragment extends Fragment {
     }
 
     private void textSearch(String s) {
+        String busqueda = s.toLowerCase();
         FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Producto>()
-                        .setQuery(query.orderBy("nombre")
-                                .startAt(s).endAt(s + "~"), Producto.class).build();
+                        .setQuery(query.whereGreaterThanOrEqualTo("searchField", busqueda)
+                                .whereLessThanOrEqualTo("searchField", busqueda + "\uf8ff"), Producto.class).build();
 
         mAdapter = new CardSearchAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.startListening();

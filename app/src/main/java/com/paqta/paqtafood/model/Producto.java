@@ -13,11 +13,13 @@ public class Producto {
     private List<String> detalles;
     private Double descuento;
     private Boolean estado;
+    private String searchField;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String descripcion, String categoria, Integer cantidad, String imagen, Double precio, List<String> detalles, Double descuento) {
+    public Producto(String id, String nombre, String descripcion, String categoria, Integer cantidad, String imagen, Double precio, List<String> detalles, Double descuento, Boolean estado, String searchField) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;
@@ -26,6 +28,8 @@ public class Producto {
         this.precio = precio;
         this.detalles = detalles;
         this.descuento = descuento;
+        this.estado = estado;
+        this.searchField = searchField;
     }
 
     public String getId() {
@@ -105,5 +109,13 @@ public class Producto {
     }
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public String getSearchField() {
+        return searchField;
+    }
+
+    public void setSearchField(String searchField) {
+        this.searchField = searchField;
     }
 }

@@ -290,6 +290,7 @@ public class FormDishesFragment extends Fragment {
 
         Map<String, Object> updates = new HashMap<>();
         updates.put("nombre", nombre);
+        updates.put("searchField", nombre.toLowerCase());
         updates.put("descripcion", descripcion);
         updates.put("categoria", categoria);
         updates.put("detalles", listaContenido);
@@ -345,6 +346,7 @@ public class FormDishesFragment extends Fragment {
         map.put("detalles", listaContenido);
         map.put("precio", precio);
         map.put("estado", true);
+        map.put("searchField", nombre.toLowerCase());
         Timestamp timestamp = Timestamp.now();
         map.put("created_at", timestamp);
         map.put("updated_at", timestamp);
@@ -539,4 +541,5 @@ public class FormDishesFragment extends Fragment {
 
         return FileProvider.getUriForFile(getContext(), getActivity().getPackageName() + ".fileprovider", archivoTemporal);
     }
+
 }

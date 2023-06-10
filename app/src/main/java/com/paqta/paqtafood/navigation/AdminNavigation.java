@@ -1,5 +1,6 @@
 package com.paqta.paqtafood.navigation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -10,14 +11,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.MemoryFile;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.ui.admin.category.CategoryFragment;
 import com.paqta.paqtafood.ui.admin.dashboard.DashboardFragment;
@@ -37,6 +43,16 @@ public class AdminNavigation extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+    private FirebaseFirestore mFirestore;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null ) {
+            comprobarUser();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +61,7 @@ public class AdminNavigation extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+        mFirestore = FirebaseFirestore.getInstance();
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -105,6 +122,30 @@ public class AdminNavigation extends AppCompatActivity {
 
             return true;
         });
+    }
+
+    private void comprobarUser() {
+        mUser = mAuth.getCurrentUser();
+        mUser.getEmail();
+
+        mFirestore.collection("usuarios").document(mUser.getUid())
+                .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        String rol = documentSnapshot.get("rol").toString();
+                        if (!rol.equals("Administrador")) {
+                            Intent intent = new Intent(AdminNavigation.this, Login.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AdminNavigation.this, "Error al obtener el usuario", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override

@@ -113,25 +113,6 @@ public class CartFragment extends Fragment implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-//        btnGetLocation.setOnClickListener(v -> {
-//            ActivityResultLauncher<String []> locationPermissionRequest = registerForActivityResult(new ActivityResultContracts
-//                    .RequestMultiplePermissions(), result -> {
-//                Boolean fineLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false);
-//                Boolean coarseLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false);
-//                if (fineLocationGranted != null && fineLocationGranted) {
-//
-//                } else if (coarseLocationGranted != null && coarseLocationGranted) {
-//
-//                } else {
-//
-//                }
-//            });
-//
-//            locationPermissionRequest.launch(new String[] {
-//                    Manifest.permission.ACCESS_FINE_LOCATION,
-//                    Manifest.permission.ACCESS_COARSE_LOCATION
-//            });
-//        });
 
         configureRecyclers();
     }
