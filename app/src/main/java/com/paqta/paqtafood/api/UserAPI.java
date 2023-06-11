@@ -23,6 +23,9 @@ public interface UserAPI {
     @GET(PREFIX + "/disabled")
     Call<List<User>> listarDisabled();
 
+    @GET(PREFIX + "/{id}/googleProvider")
+    Call<Boolean> isLoggedInWithGoogle(@Path("id") String id);
+
     @GET(PREFIX + "/{id}/get")
     Call<User> obtenerUsuarioPorId(@Path("id") String id);
 
@@ -30,7 +33,7 @@ public interface UserAPI {
     Call<User> registrarUsuario(@Body HashMap<String, Object> user);
 
     @PUT(PREFIX + "/{id}/update")
-    Call<Boolean> editarUsuario(@Path("id") String id, @Body HashMap<String, Object> user);
+    Call<User> editarUsuario(@Path("id") String id, @Body HashMap<String, Object> user);
 
     @PUT(PREFIX + "/{id}/disable")
     Call<Boolean> inhabilitarUsuario(@Path("id") String id);

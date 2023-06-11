@@ -39,6 +39,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -84,6 +85,8 @@ public class FormStaffFragment extends Fragment {
     private Bitmap imageCamera;
 
     private UserAPI userService = Apis.getUserService();
+    Boolean isLoginWithGoogle = false;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -115,9 +118,33 @@ public class FormStaffFragment extends Fragment {
 
         btnDialogImage.setOnClickListener(v-> mostrarDialog());
 
+
+        initialize();
         procesarFormulario();
         setupDropdown();
         return root;
+    }
+
+    private void initialize() {
+        if (idStaff != null) {
+            Call<Boolean> call = userService.isLoggedInWithGoogle(idStaff);
+            call.enqueue(new Callback<Boolean>() {
+                @Override
+                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    if (response.isSuccessful()) {
+                        isLoginWithGoogle = response.body();
+                        if (Boolean.TRUE.equals(isLoginWithGoogle)) {
+                            edtTxtPassword.setEnabled(false);
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Boolean> call, Throwable t) {
+                    Toast.makeText(getActivity(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override
@@ -179,31 +206,34 @@ public class FormStaffFragment extends Fragment {
 
     private void updateStaff(String username, String rol, String password, String email) {
 
-        DocumentReference documentReference = mFirestore.collection("usuarios").document(idStaff);
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("username", username);
+        map.put("rol", rol);
+        map.put("password", password);
+        map.put("email", email);
 
-        Map<String, Object> updates = new HashMap<>();
-        updates.put("username", username);
-        updates.put("rol", rol);
-        updates.put("password", password);
-        updates.put("email", email);
+        Call<User> call = userService.editarUsuario(idStaff, map);
 
-        documentReference.update(updates)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        if (imageUrl != null) {
-                            subirImagen(documentReference);
-                        }
-                        Toast.makeText(getContext(), "El staff se modificó exitosamente", Toast.LENGTH_SHORT).show();
-                        replaceFragment(new StaffFragment());
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User user = response.body();
+                    DocumentReference documentReference = mFirestore.collection("usuarios").document(user.getId());
+                    if (imageUrl != null) {
+                        subirImagen(documentReference);
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Error al modificar el staff", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    Toast.makeText(getContext(), "El staff se modifico exitosamente", Toast.LENGTH_SHORT).show();
+                    replaceFragment(new StaffFragment());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(getContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -223,6 +253,7 @@ public class FormStaffFragment extends Fragment {
                     User user = response.body();
                     DocumentReference documentReference = mFirestore.collection("usuarios").document(user.getId());
                     subirImagen(documentReference);
+                    replaceFragment(new StaffFragment());
                     Toast.makeText(getActivity(), "Usuario registrado", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -246,7 +277,7 @@ public class FormStaffFragment extends Fragment {
                         Log.d("usuario", user.getCreated_at().toString());
                         edtTxtUsername.setText(user.getUsername());
                         edtTxtEmail.setText(user.getEmail());
-                        edtTxtPassword.setText(user.getPassword());
+                        //edtTxtPassword.setText(user.getPassword());
                         //Establece el rol en el cmb y lo vuelve a adaptar
                         rolAutoComplete.setText(user.getRol());
                         String[] roles = getResources().getStringArray(R.array.roles_array);
@@ -270,17 +301,28 @@ public class FormStaffFragment extends Fragment {
     private boolean validar(String username, String rol, String password, String email) {
         Drawable currentDrawable = userFoto.getDrawable();
         Drawable defaultDrawable = getResources().getDrawable(R.drawable.image_icon_124);
+
+        if (currentDrawable == null) {
+            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         Bitmap currentBitmap = ((BitmapDrawable) currentDrawable).getBitmap();
         Bitmap defaultBitmap = ((BitmapDrawable) defaultDrawable).getBitmap();
 
-        if (username.isEmpty() || rol.isEmpty() || password.isEmpty() || email.isEmpty()) {
+        if (username.isEmpty() || rol.isEmpty() || email.isEmpty()) {
             Toast.makeText(getContext(), "Ingresar los datos", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if (userFoto.getDrawable() == null) {
-            Toast.makeText(getContext(), "Selecciona una imagen", Toast.LENGTH_SHORT).show();
-            return false;
+        if (!isLoginWithGoogle) {
+            if (password.isEmpty()) {
+                Toast.makeText(getContext(), "Ingresar la contraseña", Toast.LENGTH_SHORT).show();
+                return false;
+            } else if (password.length() < 6) {
+                Toast.makeText(getContext(), "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         }
 
         if (currentBitmap.equals(defaultBitmap)) {
@@ -290,6 +332,7 @@ public class FormStaffFragment extends Fragment {
 
         return true;
     }
+
     private void mostrarDialog() {
         new MaterialAlertDialogBuilder(getContext())
                 .setTitle("Seleccione una opcion")
@@ -416,27 +459,4 @@ public class FormStaffFragment extends Fragment {
         return FileProvider.getUriForFile(getContext(), getActivity().getPackageName() + ".fileprovider", archivoTemporal);
     }
 
-    /**
-     * Hasheo de contraseña
-     *
-     * @param base
-     * @return
-     */
-    public static String sha256(String base) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(base.getBytes("UTF-8"));
-            StringBuffer hexString = new StringBuffer();
-
-            for (int i = 0; i < hash.length; i++) {
-                String hex = Integer.toHexString(0xff & hash[i]);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
-            }
-
-            return hexString.toString();
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
-        }
-    }
 }
