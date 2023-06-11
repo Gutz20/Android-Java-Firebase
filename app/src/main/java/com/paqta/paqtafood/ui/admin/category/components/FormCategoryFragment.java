@@ -155,6 +155,7 @@ public class FormCategoryFragment extends Fragment {
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", nombre);
         map.put("descripcion", descripcion);
+        map.put("disabled", false);
 
         documentReference.set(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

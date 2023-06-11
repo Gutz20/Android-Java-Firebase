@@ -64,11 +64,11 @@ public class DessertsFragment extends Fragment {
 
         btnViewState.setOnClickListener(v -> {
             if (mostrarHabilitados) {
-                setUpRecyclerView(query.whereEqualTo("estado", false));
+                setUpRecyclerView(query.whereEqualTo("disabled", true));
                 btnViewState.setText("Ver Postres habilitados");
                 mAdapter.startListening();
             } else {
-                setUpRecyclerView(query.whereEqualTo("estado", true));
+                setUpRecyclerView(query.whereEqualTo("disabled", false));
                 btnViewState.setText("Ver Postres inhabilitados");
                 mAdapter.startListening();
             }
@@ -76,7 +76,7 @@ public class DessertsFragment extends Fragment {
         });
 
 
-        setUpRecyclerView(query.whereEqualTo("estado", true));
+        setUpRecyclerView(query.whereEqualTo("disabled", false));
         setupSearchView();
     }
 

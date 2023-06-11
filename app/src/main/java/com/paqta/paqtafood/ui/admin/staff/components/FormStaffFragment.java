@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.api.Apis;
+import com.paqta.paqtafood.api.UserAPI;
+import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.ui.admin.staff.StaffFragment;
 
 import java.io.File;
@@ -58,6 +62,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FormStaffFragment extends Fragment {
 
@@ -74,6 +82,8 @@ public class FormStaffFragment extends Fragment {
     private static final int REQUEST_IMAGE_GALLERY = 2;
     private Uri imageUrl;
     private Bitmap imageCamera;
+
+    private UserAPI userService = Apis.getUserService();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,11 +137,10 @@ public class FormStaffFragment extends Fragment {
     }
 
     private void setupDropdown() {
-        List<String> opciones = new ArrayList<>();
-        opciones.add("Administrador");
-        opciones.add("Usuario");
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, opciones);
+        String[] roles = getResources().getStringArray(R.array.roles_array);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, roles);
         rolAutoComplete.setAdapter(adapter);
+
     }
 
     private void procesarFormulario(){
@@ -199,63 +208,63 @@ public class FormStaffFragment extends Fragment {
 
 
     private void postStaff(String username, String rol, String password, String email) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        mUser = mAuth.getCurrentUser();
+        HashMap<String, Object> usuario = new HashMap<>();
+        usuario.put("username", username);
+        usuario.put("password", password);
+        usuario.put("email", email);
+        usuario.put("rol", rol);
 
-                        DocumentReference documentReference = mFirestore.collection("usuarios").document(mUser.getUid());
+        Call<User> call = userService.registrarUsuario(usuario);
 
-                        Map<String, Object> map = new HashMap<>();
-                        map.put("id", mUser.getUid());
-                        map.put("username", username);
-                        map.put("rol", rol);
-                        map.put("password", password);
-                        map.put("email", email);
-
-                        documentReference.set(map)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        subirImagen(documentReference);
-                                        replaceFragment(new StaffFragment());
-                                    }
-                                });
-                    } else {
-                        Toast.makeText(getContext(), "Error al registrar el nuevo usuario", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User user = response.body();
+                    DocumentReference documentReference = mFirestore.collection("usuarios").document(user.getId());
+                    subirImagen(documentReference);
+                    Toast.makeText(getActivity(), "Usuario registrado", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(getActivity(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void getStaff() {
-        mFirestore.collection("usuarios").document(idStaff).get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        String username = documentSnapshot.getString("username");
-                        String rol = documentSnapshot.getString("rol");
-                        String password = documentSnapshot.getString("password");
-                        String imagen = documentSnapshot.getString("imagen");
-                        String email = documentSnapshot.getString("email");
+        Call<User> call = userService.obtenerUsuarioPorId(idStaff);
 
-                        edtTxtUsername.setText(username);
-                        edtTxtEmail.setText(email);
-                        edtTxtPassword.setText(password);
-
-
-                        if (imagen == null) {
-                            userFoto.setImageResource(R.drawable.image_icon_124);
-                        } else {
-                            Glide.with(getView()).load(imagen).into(userFoto);
-                            Snackbar.make(getView(), "Cargando Foto", Snackbar.LENGTH_LONG).show();
-                        }
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User user = response.body();
+                    if (user != null) {
+                        Glide.with(getView()).load(user.getImagen()).into(userFoto);
+                        Log.d("usuario", user.getCreated_at().toString());
+                        edtTxtUsername.setText(user.getUsername());
+                        edtTxtEmail.setText(user.getEmail());
+                        edtTxtPassword.setText(user.getPassword());
+                        //Establece el rol en el cmb y lo vuelve a adaptar
+                        rolAutoComplete.setText(user.getRol());
+                        String[] roles = getResources().getStringArray(R.array.roles_array);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, roles);
+                        rolAutoComplete.setAdapter(adapter);
+                    } else {
+                        Toast.makeText(getActivity(), "El usuario no existe", Toast.LENGTH_SHORT).show();
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Snackbar.make(getView(), "Error al obtener los datos", Snackbar.LENGTH_LONG).show();
-                    }
-                });
+                } else {
+                    Toast.makeText(getActivity(), "Error en la respuesta del servidor", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(getActivity(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private boolean validar(String username, String rol, String password, String email) {

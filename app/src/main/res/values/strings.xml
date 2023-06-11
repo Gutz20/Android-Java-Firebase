@@ -37,6 +37,11 @@
     <string name="labelCampoNulo">...</string>
     <string name="facebook">Facebook</string>
 
+    <string-array name="roles_array">
+        <item>Administrador</item>
+        <item>Usuario</item>
+    </string-array>
+
     <!--    Facebook-->
     <!--    <string name="facebook_app_id_def">941048803879345</string>-->
 

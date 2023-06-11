@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
+import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.ui.user.login.Login;
 import com.paqta.paqtafood.api.UserAPI;
 import com.paqta.paqtafood.utils.ChangeColorBar;
@@ -95,6 +96,12 @@ public class Signup extends AppCompatActivity {
         String password = txtRegPassword.getText().toString().trim();
         String confirmPassword = txtRegConfirmPassword.getText().toString().trim();
 
+        if (username.isEmpty()) {
+            txtRegUser.setError("Falta el usuario");
+        } else {
+            txtRegUser.setError(null);
+        }
+
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             txtRegEmail.setError("Correo Invalido");
             return;
@@ -123,28 +130,26 @@ public class Signup extends AppCompatActivity {
 
     public void registrar(View v, String username, String email, String password) {
 
-        HashMap<String, Object> map = new HashMap();
+        HashMap<String, Object> map = new HashMap<>();
         map.put("username", username);
         map.put("email", email);
         map.put("password", password);
 
-        Call<Boolean> call = userService.registrarUsuario(map);
+        Call<User> call = userService.registrarUsuario(map);
 
-        call.enqueue(new Callback<Boolean>() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
-                    Snackbar.make(v, "Registrado con éxito", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Registrado con éxito", Snackbar.LENGTH_SHORT).show();
                     Intent intent = new Intent(Signup.this, Login.class);
                     startActivity(intent);
-                } else {
-                    Snackbar.make(v, "Error al registrar el usuario", Snackbar.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Boolean> call, Throwable t) {
-                Snackbar.make(v, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<User> call, Throwable t) {
+                Snackbar.make(v, "Error: " + t.getMessage(), Snackbar.LENGTH_SHORT).show();
             }
         });
     }
@@ -152,8 +157,8 @@ public class Signup extends AppCompatActivity {
     /**
      * Hasheo de contraseña
      *
-     * @param base
-     * @return
+     * @param base, base de hasheo
+     * @return Regresa un string con la contraseña hasheada
      */
     public static String sha256(String base) {
         try {

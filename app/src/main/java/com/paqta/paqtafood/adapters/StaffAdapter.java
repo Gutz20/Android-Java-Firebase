@@ -59,28 +59,20 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
         holder.nameStaff.setText(model.getUsername());
         holder.rolStaff.setText(model.getRol());
 
-        if (model.getImagen() == null) {
-            Glide.with(holder.imageStaff.getContext())
-                    .load("https://img.freepik.com/vector-premium/icono-circulo-usuario-anonimo-ilustracion-vector-estilo-plano-sombra_520826-1931.jpg")
-                    .into(holder.imageStaff);
-        } else {
-            Glide.with(holder.imageStaff.getContext())
-                    .load(model.getImagen())
-                    .into(holder.imageStaff);
-        }
+        Glide.with(holder.imageStaff.getContext()).load(model.getImagen()).into(holder.imageStaff);
 
         holder.btnDetail.setOnClickListener(v -> irAlDetalle(id));
         holder.btnDelete.setOnClickListener(v -> {
-            if (model.getEstado()) {
-                inhabilitarUser(id);
-            } else {
+            if (model.isDisabled()) {
                 eliminarUser(id);
+            } else {
+                inhabilitarUser(id);
             }
         });
 
         holder.btnEnableUser.setOnClickListener(v -> habilitarUser(id));
 
-        if (!model.getEstado()) {
+        if (model.isDisabled()) {
             holder.btnEnableUser.setVisibility(View.VISIBLE);
         } else {
             holder.btnEnableUser.setVisibility(View.GONE);

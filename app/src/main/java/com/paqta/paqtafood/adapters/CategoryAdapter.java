@@ -2,7 +2,6 @@ package com.paqta.paqtafood.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +27,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.Categoria;
-import com.paqta.paqtafood.services.CategoriaService;
 import com.paqta.paqtafood.ui.admin.category.components.FormCategoryFragment;
 import com.paqta.paqtafood.api.CategoriaAPI;
 
@@ -65,14 +63,14 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
 
         holder.btnEdit.setOnClickListener(v -> editarCategory(id));
         holder.btnDelete.setOnClickListener(v -> {
-            if (model.getEstado()) {
+            if (model.isDisabled()) {
                 inhabilitar(id);
             } else {
                 eliminar(id);
             }
         });
 
-        holder.swState.setChecked(model.getEstado());
+        holder.swState.setChecked(!model.isDisabled());
         holder.swState.setOnCheckedChangeListener(((buttonView, isChecked) -> {
             if (isChecked) {
                 habilitar(id);
@@ -89,13 +87,13 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(activity, "Usuario habilitado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Categoria habilitada", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(activity, "Error al habilitar al usuario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Error al habilitar la categoria", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -107,13 +105,13 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(activity, "Usuario Inhabilitado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Categoria Inhabilitada", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(activity, "Error al inhabilitar el usuario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Error al inhabilitar la categoria", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -125,13 +123,13 @@ public class CategoryAdapter extends FirestoreRecyclerAdapter<Categoria, Categor
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(activity, "Usuario eliminado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Categoria eliminada", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(activity, "Error al eliminar el usuario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Error al eliminar la categoria", Toast.LENGTH_SHORT).show();
             }
         });
     }

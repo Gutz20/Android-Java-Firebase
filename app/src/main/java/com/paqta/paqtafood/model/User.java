@@ -2,10 +2,9 @@ package com.paqta.paqtafood.model;
 
 import com.google.firebase.Timestamp;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class User implements Serializable {
+public class User {
 
     private String id;
     private String username;
@@ -13,35 +12,28 @@ public class User implements Serializable {
     private String email;
     private String password;
     private String rol;
+    private boolean disabled;
+
     private List<String> favoritos;
     private List<String> carrito;
-    private Boolean estado;
     private Timestamp created_at;
     private Timestamp updated_at;
 
     public User() {
     }
 
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-    public User(String id, String username, String email, String password) {
+    public User(String id, String username, String imagen, String email, String password, String rol, boolean disabled, List<String> favoritos, List<String> carrito, Timestamp created_at, Timestamp updated_at) {
         this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-    public User(String username, String imagen, String email, String rol, List<String> favoritos, List<String> carrito) {
         this.username = username;
         this.imagen = imagen;
         this.email = email;
+        this.password = password;
         this.rol = rol;
+        this.disabled = disabled;
         this.favoritos = favoritos;
         this.carrito = carrito;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 
     public String getId() {
@@ -108,12 +100,12 @@ public class User implements Serializable {
         this.carrito = carrito;
     }
 
-    public Boolean getEstado() {
-        return estado;
+    public boolean isDisabled() {
+        return disabled;
     }
 
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
     }
 
     public Timestamp getCreated_at() {

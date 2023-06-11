@@ -206,7 +206,7 @@ public class Login extends AppCompatActivity {
                                                 userRef.update(usuario);
                                             } else {
                                                 usuario.put("id", id);
-                                                usuario.put("rol", "usuario");
+                                                usuario.put("rol", "Usuario");
                                                 userRef.set(usuario);
                                             }
                                         }

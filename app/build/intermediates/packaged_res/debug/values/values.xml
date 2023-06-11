@@ -23,6 +23,10 @@
         <item>@font/inter_bold</item>
         <item>@font/irish_grover</item>
     </array>
+    <string-array name="roles_array">
+        <item>Administrador</item>
+        <item>Usuario</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorBlanco">#fff</color>

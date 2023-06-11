@@ -12,13 +12,13 @@ public class Producto {
     private Double precio;
     private List<String> detalles;
     private Double descuento;
-    private Boolean estado;
+    private boolean disabled;
     private String searchField;
 
     public Producto() {
     }
 
-    public Producto(String id, String nombre, String descripcion, String categoria, Integer cantidad, String imagen, Double precio, List<String> detalles, Double descuento, Boolean estado, String searchField) {
+    public Producto(String id, String nombre, String descripcion, String categoria, Integer cantidad, String imagen, Double precio, List<String> detalles, Double descuento, Boolean disabled, String searchField) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -28,7 +28,7 @@ public class Producto {
         this.precio = precio;
         this.detalles = detalles;
         this.descuento = descuento;
-        this.estado = estado;
+        this.disabled = disabled;
         this.searchField = searchField;
     }
 
@@ -104,11 +104,12 @@ public class Producto {
         this.descuento = descuento;
     }
 
-    public Boolean getEstado() {
-        return estado;
+    public boolean isDisabled() {
+        return disabled;
     }
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
     }
 
     public String getSearchField() {

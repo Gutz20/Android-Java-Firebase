@@ -51,18 +51,18 @@ public class StaffFragment extends Fragment {
         btnAdd.setOnClickListener(v -> replaceFragment(new FormStaffFragment()));
         btnSeeStaffDisable.setOnClickListener(v -> {
             if (mostrarTodoElPersonal) {
-                setUpRecyclerView(query.whereEqualTo("estado", false));
+                setUpRecyclerView(query.whereEqualTo("disabled", true));
                 btnSeeStaffDisable.setText("Ver Personal Habilitado");
                 mAdapter.startListening();
             } else {
-                setUpRecyclerView(query.whereEqualTo("estado", true));
+                setUpRecyclerView(query.whereEqualTo("disabled", false));
                 btnSeeStaffDisable.setText("Ver Personal inhabilitado");
                 mAdapter.startListening();
             }
             mostrarTodoElPersonal = !mostrarTodoElPersonal;
         });
 
-        setUpRecyclerView(query.whereEqualTo("estado", true));
+        setUpRecyclerView(query.whereEqualTo("disabled", false));
     }
 
     @Override

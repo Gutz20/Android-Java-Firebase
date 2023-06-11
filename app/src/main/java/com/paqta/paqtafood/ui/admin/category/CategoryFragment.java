@@ -65,18 +65,18 @@ public class CategoryFragment extends Fragment {
 
         btnViewState.setOnClickListener(v -> {
             if (mostrarHabilitados) {
-                setUpRecyclerView(query.whereEqualTo("estado", false));
+                setUpRecyclerView(query.whereEqualTo("disabled", true));
                 btnViewState.setText("Ver Categorias habilitados");
                 mAdapter.startListening();
             } else {
-                setUpRecyclerView(query.whereEqualTo("estado", true));
+                setUpRecyclerView(query.whereEqualTo("disabled", false));
                 btnViewState.setText("Ver Categorias inhabilitados");
                 mAdapter.startListening();
             }
             mostrarHabilitados = !mostrarHabilitados;
         });
 
-        setUpRecyclerView(query.whereEqualTo("estado", true));
+        setUpRecyclerView(query.whereEqualTo("disabled", false));
         setupSearchView();
     }
 

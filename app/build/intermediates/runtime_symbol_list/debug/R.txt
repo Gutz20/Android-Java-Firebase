@@ -96,6 +96,7 @@ int array com_google_android_gms_fonts_certs 0x7f030000
 int array com_google_android_gms_fonts_certs_dev 0x7f030001
 int array com_google_android_gms_fonts_certs_prod 0x7f030002
 int array preloaded_fonts 0x7f030003
+int array roles_array 0x7f030005
 int array steps 0x7f030004
 int attr SharedValue 0x7f040000
 int attr SharedValueId 0x7f040001

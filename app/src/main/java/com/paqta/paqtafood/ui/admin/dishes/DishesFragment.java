@@ -100,11 +100,11 @@ public class DishesFragment extends Fragment {
 
         btnViewState.setOnClickListener(v -> {
             if (mostrarHabilitados) {
-                setUpRecyclerView(query.whereEqualTo("estado", false));
+                setUpRecyclerView(query.whereEqualTo("disabled", true));
                 btnViewState.setText("Ver Platillos habilitados");
                 mAdapter.startListening();
             } else {
-                setUpRecyclerView(query.whereEqualTo("estado", true));
+                setUpRecyclerView(query.whereEqualTo("disabled",false));
                 btnViewState.setText("Ver Platillos inhabilitados");
                 mAdapter.startListening();
             }
@@ -114,7 +114,7 @@ public class DishesFragment extends Fragment {
 //        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 //        StrictMode.setThreadPolicy(policy);
 
-        setUpRecyclerView(query.whereEqualTo("estado", true));
+        setUpRecyclerView(query.whereEqualTo("disabled", false));
         setupSearchView();
     }
 

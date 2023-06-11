@@ -63,18 +63,18 @@ public class DrinksFragment extends Fragment {
 
         btnViewDisable.setOnClickListener(v -> {
             if (mostrarHabilitados) {
-                setUpRecyclerView(query.whereEqualTo("estado", false));
+                setUpRecyclerView(query.whereEqualTo("disabled", true));
                 btnViewDisable.setText("Ver Bebidas habilitados");
                 mAdapter.startListening();
             } else {
-                setUpRecyclerView(query.whereEqualTo("estado", true));
+                setUpRecyclerView(query.whereEqualTo("disabled", false));
                 btnViewDisable.setText("Ver Bebidas inhabilitados");
                 mAdapter.startListening();
             }
             mostrarHabilitados = !mostrarHabilitados;
         });
 
-        setUpRecyclerView(query.whereEqualTo("estado", true));
+        setUpRecyclerView(query.whereEqualTo("disabled", false));
         setupSearchView();
     }
 

@@ -61,16 +61,16 @@ public class PlatilloAdapter extends FirestoreRecyclerAdapter<Producto, Platillo
         Glide.with(activity.getApplicationContext()).load(model.getImagen()).into(holder.imagen);
 
         holder.btnEliminar.setOnClickListener(v-> {
-            if (model.getEstado()) {
-                inhabilitarProducto(id);
-            } else {
+            if (model.isDisabled()) {
                 eliminarProducto(id);
+            } else {
+                inhabilitarProducto(id);
             }
         });
 
         holder.btnEditar.setOnClickListener(v -> editarProducto(id));
 
-        holder.swState.setChecked(model.getEstado());
+        holder.swState.setChecked(!model.isDisabled());
         holder.swState.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 // Activado

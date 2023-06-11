@@ -345,7 +345,7 @@ public class FormDishesFragment extends Fragment {
         map.put("categoria", categoria);
         map.put("detalles", listaContenido);
         map.put("precio", precio);
-        map.put("estado", true);
+        map.put("disabled", true);
         map.put("searchField", nombre.toLowerCase());
         Timestamp timestamp = Timestamp.now();
         map.put("created_at", timestamp);

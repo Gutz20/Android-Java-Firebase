@@ -113,7 +113,6 @@ public class CartFragment extends Fragment implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
         configureRecyclers();
     }
 

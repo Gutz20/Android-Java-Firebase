@@ -5,7 +5,7 @@ public class Categoria {
     private String imagen;
     private String nombre;
     private String descripcion;
-    private Boolean estado;
+    private boolean disabled;
 
     public Categoria() {
     }
@@ -48,12 +48,11 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public Boolean getEstado() {
-        return estado;
+    public boolean isDisabled() {
+        return disabled;
     }
 
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
     }
-
 }

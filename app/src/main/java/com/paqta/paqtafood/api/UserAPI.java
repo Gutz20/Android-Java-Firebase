@@ -1,5 +1,7 @@
 package com.paqta.paqtafood.api;
 
+import com.paqta.paqtafood.model.User;
+
 import java.util.HashMap;
 
 import retrofit2.Call;
@@ -15,10 +17,10 @@ public interface UserAPI {
     public static final String PREFIX = "api/usuarios";
 
     @GET(PREFIX + "/{id}/get")
-    Call<Boolean> obtenerUsuarioPorId(@Path("id") String id);
+    Call<User> obtenerUsuarioPorId(@Path("id") String id);
 
     @POST(PREFIX + "/add")
-    Call<Boolean> registrarUsuario(@Body HashMap<String, Object> user);
+    Call<User> registrarUsuario(@Body HashMap<String, Object> user);
 
     @PUT(PREFIX + "/{id}/update")
     Call<Boolean> editarUsuario(@Path("id") String id, @Body HashMap<String, Object> user);
