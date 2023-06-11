@@ -20,24 +20,20 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
+import com.paqta.paqtafood.api.UserAPI;
 import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.ui.admin.staff.components.FormStaffFragment;
-import com.paqta.paqtafood.api.UserAPI;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.ViewHolder> {
-    private FirebaseFirestore mFirestore;
-    private FirebaseAuth mAuth;
-    private FirebaseUser mUser;
-
     UserAPI userService = Apis.getUserService();
     Activity activity;
     FragmentManager fm;
@@ -46,9 +42,6 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
         super(options);
         this.activity = activity;
         this.fm = supportFragmentManager;
-        mFirestore = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
     }
 
     @Override
@@ -71,7 +64,6 @@ public class StaffAdapter extends FirestoreRecyclerAdapter<User, StaffAdapter.Vi
         });
 
         holder.btnEnableUser.setOnClickListener(v -> habilitarUser(id));
-
         if (model.isDisabled()) {
             holder.btnEnableUser.setVisibility(View.VISIBLE);
         } else {

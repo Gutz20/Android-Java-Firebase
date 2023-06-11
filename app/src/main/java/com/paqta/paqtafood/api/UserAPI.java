@@ -3,6 +3,7 @@ package com.paqta.paqtafood.api;
 import com.paqta.paqtafood.model.User;
 
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -15,6 +16,12 @@ import retrofit2.http.Path;
 public interface UserAPI {
 
     public static final String PREFIX = "api/usuarios";
+
+    @GET(PREFIX + "/list")
+    Call<List<User>> listar();
+
+    @GET(PREFIX + "/disabled")
+    Call<List<User>> listarDisabled();
 
     @GET(PREFIX + "/{id}/get")
     Call<User> obtenerUsuarioPorId(@Path("id") String id);

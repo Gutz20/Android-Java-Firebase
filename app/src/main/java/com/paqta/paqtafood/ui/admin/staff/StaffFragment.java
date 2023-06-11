@@ -14,22 +14,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.adapters.PlatilloAdapter;
 import com.paqta.paqtafood.adapters.StaffAdapter;
+import com.paqta.paqtafood.api.Apis;
+import com.paqta.paqtafood.api.UserAPI;
+import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.ui.admin.staff.components.FormStaffFragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class StaffFragment extends Fragment {
     RecyclerView rycStaff;
     Button btnAdd, btnSeeStaffDisable;
     private FirebaseFirestore mFirestore;
     StaffAdapter mAdapter;
-    Query query;
     private boolean mostrarTodoElPersonal = true;
+    Query query;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,8 +59,10 @@ public class StaffFragment extends Fragment {
         btnAdd = view.findViewById(R.id.btnAddStaff);
         btnSeeStaffDisable = view.findViewById(R.id.btnSeeDisableStaff);
 
-        query = mFirestore.collection("usuarios");
         btnAdd.setOnClickListener(v -> replaceFragment(new FormStaffFragment()));
+
+        query = mFirestore.collection("usuarios");
+
         btnSeeStaffDisable.setOnClickListener(v -> {
             if (mostrarTodoElPersonal) {
                 setUpRecyclerView(query.whereEqualTo("disabled", true));
@@ -78,6 +92,7 @@ public class StaffFragment extends Fragment {
     }
 
     private void setUpRecyclerView(Query query) {
+
         rycStaff.setLayoutManager(new LinearLayoutManager(getContext()));
 
         FirestoreRecyclerOptions<User> firestoreRecyclerOptions =
@@ -86,6 +101,8 @@ public class StaffFragment extends Fragment {
         mAdapter = new StaffAdapter(firestoreRecyclerOptions, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();
         rycStaff.setAdapter(mAdapter);
+
+
     }
 
     private void replaceFragment(Fragment fragment) {

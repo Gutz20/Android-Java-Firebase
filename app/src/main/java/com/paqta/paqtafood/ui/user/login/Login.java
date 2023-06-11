@@ -195,6 +195,9 @@ public class Login extends AppCompatActivity {
                             assert user != null;
                             usuario.put("username", user.getDisplayName());
                             usuario.put("email", user.getEmail());
+                            usuario.put("imagen", user.getPhotoUrl());
+                            usuario.put("phone", user.getPhoneNumber());
+                            usuario.put("disabled", false);
 
                             DocumentReference userRef = mFirestore.collection("usuarios").document(id);
 
