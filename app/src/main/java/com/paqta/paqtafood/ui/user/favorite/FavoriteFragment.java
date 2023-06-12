@@ -27,8 +27,11 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardFavoriteAdapter;
+import com.paqta.paqtafood.adapters.CardFavoriteAdapterV2;
 import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.model.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -38,7 +41,7 @@ public class FavoriteFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     RecyclerView mRecyclerPlatillos, mRecyclerBebibas, mRecyclerPostres;
-    CardFavoriteAdapter mAdapterPlatillos, mAdapterBebidas, mAdapterPostres;
+    CardFavoriteAdapterV2 mAdapterPlatillos, mAdapterBebidas, mAdapterPostres;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,53 +61,55 @@ public class FavoriteFragment extends Fragment {
         mRecyclerBebibas = view.findViewById(R.id.favoritesBebidas);
         mRecyclerPostres = view.findViewById(R.id.favoritesPostres);
 
-        setupRecycler();
+        mFirestore.collection("usuarios")
+                .document(mUser.getUid())
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        List<String> favoritos = documentSnapshot.toObject(User.class).getFavoritos();
+
+                        // Verificar si la lista de favoritos no es nula o vacía
+                        if (favoritos != null && !favoritos.isEmpty()) {
+                            // Obtener los productos favoritos de Firestore
+                            FirebaseFirestore.getInstance().collection("productos")
+                                    .whereIn(FieldPath.documentId(), favoritos)
+                                    .get()
+                                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                                        List<Producto> productosList = new ArrayList<>();
+                                        for (DocumentSnapshot snapshot : queryDocumentSnapshots) {
+                                            Producto producto = snapshot.toObject(Producto.class);
+                                            productosList.add(producto);
+                                        }
+
+                                        // Llama a un método para configurar el RecyclerView con los datos
+                                        setupRecycler(productosList);
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Maneja el error de recuperación de datos de Firestore
+                                    });
+                        } else {
+                            // La lista de favoritos está vacía
+                            // Llama a un método para configurar el RecyclerView con una lista vacía
+                            setupRecycler(new ArrayList<>());
+                        }
+                    } else {
+                        // El documento de usuario no existe
+                        // Llama a un método para configurar el RecyclerView con una lista vacía
+                        setupRecycler(new ArrayList<>());
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Maneja el error de recuperación de datos de Firestore
+                });
     }
 
-    private void setupRecycler() {
-        DocumentReference userRef = mFirestore.collection("usuarios").document(mUser.getUid());
-        userRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                List<String> favoritos = (List<String>) value.get("favoritos");
-
-                if (favoritos != null && !favoritos.isEmpty()) {
-                    Query query = mFirestore.collection("productos")
-                            .whereIn(FieldPath.documentId(), favoritos);
-
-                    FirestoreRecyclerOptions<Producto> options = new FirestoreRecyclerOptions.Builder<Producto>()
-                            .setQuery(query, Producto.class)
-                            .build();
-
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                    linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-
-                    mRecyclerPlatillos.setLayoutManager(linearLayoutManager);
-
-                    mAdapterPlatillos = new CardFavoriteAdapter(options, getActivity());
-                    mAdapterPlatillos.notifyDataSetChanged();
-                    mRecyclerPlatillos.setAdapter(mAdapterPlatillos);
-                    mAdapterPlatillos.startListening();
-                }
-            }
-        });
-
+    private void setupRecycler(List<Producto> productosList) {
+        mAdapterPlatillos = new CardFavoriteAdapterV2(productosList);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mRecyclerPlatillos.setLayoutManager(layoutManager);
+        mRecyclerPlatillos.setAdapter(mAdapterPlatillos);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (mAdapterPlatillos != null) {
-            mAdapterPlatillos.startListening();
-        }
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAdapterPlatillos != null) {
-            mAdapterPlatillos.stopListening();
-        }
-    }
 
 }
