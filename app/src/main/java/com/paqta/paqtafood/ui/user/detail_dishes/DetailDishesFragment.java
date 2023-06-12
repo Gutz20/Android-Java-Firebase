@@ -3,6 +3,8 @@ package com.paqta.paqtafood.ui.user.detail_dishes;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -12,9 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -41,6 +45,7 @@ public class DetailDishesFragment extends Fragment {
     DocumentReference usuarioRef;
     ImageView imageProduct;
     TextView titleTextView, textViewDetalles;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,24 +58,30 @@ public class DetailDishesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_detail_dishes, container, false);
+        return inflater.inflate(R.layout.fragment_detail_dishes, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        btnAddFavorito = root.findViewById(R.id.btnAddFavorito);
-        btnAddCart = root.findViewById(R.id.btnAddCart);
-        btnShare = root.findViewById(R.id.btnShare);
+        btnAddFavorito = view.findViewById(R.id.btnAddFavorito);
+        btnAddCart = view.findViewById(R.id.btnAddCart);
+        btnShare = view.findViewById(R.id.btnShare);
+        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
 
         iconFavoriteFilled = ContextCompat.getDrawable(getContext(), R.drawable.baseline_favorite_24);
         iconFavoriteOutlined = ContextCompat.getDrawable(getContext(), R.drawable.baseline_favorite_border_24);
         iconAddToCart = ContextCompat.getDrawable(getContext(), R.drawable.baseline_add_shopping_cart_24);
         iconRemoveFromCart = ContextCompat.getDrawable(getContext(), R.drawable.baseline_remove_shopping_cart_24);
 
-        titleTextView = root.findViewById(R.id.titleTextDetail);
-        imageProduct = root.findViewById(R.id.imgPlatillo);
-        textViewDetalles = root.findViewById(R.id.textViewDetalles);
+        titleTextView = view.findViewById(R.id.titleTextDetail);
+        imageProduct = view.findViewById(R.id.imgPlatillo);
+        textViewDetalles = view.findViewById(R.id.textViewDetalles);
 
 
         usuarioRef = mFirestore.collection("usuarios").document(mUser.getUid());
@@ -82,7 +93,6 @@ public class DetailDishesFragment extends Fragment {
 
         getProductById();
         verificarEstados();
-        return root;
     }
 
     private void getProductById() {
@@ -202,7 +212,10 @@ public class DetailDishesFragment extends Fragment {
     }
 
     private void mostrarMensaje(View v, String mensaje) {
-        Snackbar.make(v, mensaje, Snackbar.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();
+//        Snackbar.make(v, mensaje, Snackbar.LENGTH_SHORT)
+//                .setAnchorView(R.id.bottomNavigationView)
+//                .show();
     }
 
     private void actualizarFavoriteBtn(boolean isInFavorite) {

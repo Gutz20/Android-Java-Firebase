@@ -31,6 +31,8 @@ import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.ui.user.detail_dishes.DetailDishesFragment;
 import com.paqta.paqtafood.ui.user.offers.components.content_offers.ContentOffersFragment;
 
+import java.util.Optional;
+
 public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCartAdapter.ViewHolder> {
 
     private FirebaseFirestore mFirestore;
@@ -61,12 +63,11 @@ public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCart
         Glide.with(holder.imagenProductCart.getContext()).load(model.getImagen()).into(holder.imagenProductCart);
 
         holder.btnDelete.setOnClickListener(v -> {
-
             mFirestore.collection("usuarios")
                     .document(mUser.getUid())
                     .update("carrito", FieldValue.arrayRemove(id))
                     .addOnSuccessListener(command -> {
-                        deleteItem(position);
+
                         Toast.makeText(activity, "Eliminado del carrito", Toast.LENGTH_SHORT).show();
                     })
                     .addOnFailureListener(e -> {
@@ -75,28 +76,27 @@ public class CardCartAdapter extends FirestoreRecyclerAdapter<Producto, CardCart
 
         });
 
-        holder.btnDetail.setOnClickListener(v -> {
-            Fragment fragment;
-            Bundle bundle = new Bundle();
-            if (model.getDescuento() != null) {
-                fragment = new ContentOffersFragment();
-                bundle.putString("idOffer", id);
-            } else {
-                fragment = new DetailDishesFragment();
-                bundle.putString("idProd", id);
-            }
-            fragment.setArguments(bundle);
-
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-        });
+        holder.btnDetail.setOnClickListener(v -> verDetalle(model, id));
     }
 
-    public void deleteItem(int positiion) {
-        getSnapshots().getSnapshot(positiion).getReference().delete();
+    private void verDetalle(Producto model, String id) {
+        Fragment fragment;
+        Bundle bundle = new Bundle();
+        if (model.getDescuento() != null) {
+            fragment = new ContentOffersFragment();
+            bundle.putString("idOffer", id);
+        } else {
+            fragment = new DetailDishesFragment();
+            bundle.putString("idProd", id);
+        }
+        fragment.setArguments(bundle);
+
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
+
 
     @NonNull
     @Override

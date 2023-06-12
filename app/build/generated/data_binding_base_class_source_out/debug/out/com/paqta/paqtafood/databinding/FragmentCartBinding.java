@@ -11,10 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
 import com.paqta.paqtafood.R;
 import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
@@ -29,16 +27,7 @@ public final class FragmentCartBinding implements ViewBinding {
   public final Button btnComprar;
 
   @NonNull
-  public final MaterialButton btnGetUbication;
-
-  @NonNull
-  public final MaterialButton btnOpenMap;
-
-  @NonNull
-  public final Button btnReservar;
-
-  @NonNull
-  public final RecyclerView cartPlatillos;
+  public final FrameLayout fragmentContainer;
 
   @NonNull
   public final ImageView imageView3;
@@ -47,29 +36,20 @@ public final class FragmentCartBinding implements ViewBinding {
   public final LinearLayout linearLayout3;
 
   @NonNull
-  public final LinearLayout linearLayoutContaint;
-
-  @NonNull
   public final TextView stepTextView;
 
   @NonNull
   public final StepView stepView;
 
   private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
-      @NonNull MaterialButton btnGetUbication, @NonNull MaterialButton btnOpenMap,
-      @NonNull Button btnReservar, @NonNull RecyclerView cartPlatillos,
-      @NonNull ImageView imageView3, @NonNull LinearLayout linearLayout3,
-      @NonNull LinearLayout linearLayoutContaint, @NonNull TextView stepTextView,
+      @NonNull FrameLayout fragmentContainer, @NonNull ImageView imageView3,
+      @NonNull LinearLayout linearLayout3, @NonNull TextView stepTextView,
       @NonNull StepView stepView) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
-    this.btnGetUbication = btnGetUbication;
-    this.btnOpenMap = btnOpenMap;
-    this.btnReservar = btnReservar;
-    this.cartPlatillos = cartPlatillos;
+    this.fragmentContainer = fragmentContainer;
     this.imageView3 = imageView3;
     this.linearLayout3 = linearLayout3;
-    this.linearLayoutContaint = linearLayoutContaint;
     this.stepTextView = stepTextView;
     this.stepView = stepView;
   }
@@ -107,27 +87,9 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnGetUbication;
-      MaterialButton btnGetUbication = ViewBindings.findChildViewById(rootView, id);
-      if (btnGetUbication == null) {
-        break missingId;
-      }
-
-      id = R.id.btnOpenMap;
-      MaterialButton btnOpenMap = ViewBindings.findChildViewById(rootView, id);
-      if (btnOpenMap == null) {
-        break missingId;
-      }
-
-      id = R.id.btnReservar;
-      Button btnReservar = ViewBindings.findChildViewById(rootView, id);
-      if (btnReservar == null) {
-        break missingId;
-      }
-
-      id = R.id.cartPlatillos;
-      RecyclerView cartPlatillos = ViewBindings.findChildViewById(rootView, id);
-      if (cartPlatillos == null) {
+      id = R.id.fragmentContainer;
+      FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (fragmentContainer == null) {
         break missingId;
       }
 
@@ -143,12 +105,6 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.linearLayoutContaint;
-      LinearLayout linearLayoutContaint = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayoutContaint == null) {
-        break missingId;
-      }
-
       id = R.id.stepTextView;
       TextView stepTextView = ViewBindings.findChildViewById(rootView, id);
       if (stepTextView == null) {
@@ -161,9 +117,8 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, btnGetUbication,
-          btnOpenMap, btnReservar, cartPlatillos, imageView3, linearLayout3, linearLayoutContaint,
-          stepTextView, stepView);
+      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, fragmentContainer,
+          imageView3, linearLayout3, stepTextView, stepView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

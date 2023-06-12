@@ -35,10 +35,10 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   public final CheckBox imgViewIconFavorite;
 
   @NonNull
-  public final TextView textView3;
+  public final TextView textView5;
 
   @NonNull
-  public final TextView textView5;
+  public final TextView textViewPrecio;
 
   @NonNull
   public final TextView titleViewFavorite;
@@ -46,15 +46,15 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   private ViewPlatilloFavoriteBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout constraintLayout3, @NonNull MaterialButton icButtonDetail,
       @NonNull ImageView imageViewFavorite, @NonNull CheckBox imgViewIconFavorite,
-      @NonNull TextView textView3, @NonNull TextView textView5,
+      @NonNull TextView textView5, @NonNull TextView textViewPrecio,
       @NonNull TextView titleViewFavorite) {
     this.rootView = rootView;
     this.constraintLayout3 = constraintLayout3;
     this.icButtonDetail = icButtonDetail;
     this.imageViewFavorite = imageViewFavorite;
     this.imgViewIconFavorite = imgViewIconFavorite;
-    this.textView3 = textView3;
     this.textView5 = textView5;
+    this.textViewPrecio = textViewPrecio;
     this.titleViewFavorite = titleViewFavorite;
   }
 
@@ -109,15 +109,15 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
-        break missingId;
-      }
-
       id = R.id.textView5;
       TextView textView5 = ViewBindings.findChildViewById(rootView, id);
       if (textView5 == null) {
+        break missingId;
+      }
+
+      id = R.id.textViewPrecio;
+      TextView textViewPrecio = ViewBindings.findChildViewById(rootView, id);
+      if (textViewPrecio == null) {
         break missingId;
       }
 
@@ -128,7 +128,7 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
       }
 
       return new ViewPlatilloFavoriteBinding((ConstraintLayout) rootView, constraintLayout3,
-          icButtonDetail, imageViewFavorite, imgViewIconFavorite, textView3, textView5,
+          icButtonDetail, imageViewFavorite, imgViewIconFavorite, textView5, textViewPrecio,
           titleViewFavorite);
     }
     String missingId = rootView.getResources().getResourceName(id);

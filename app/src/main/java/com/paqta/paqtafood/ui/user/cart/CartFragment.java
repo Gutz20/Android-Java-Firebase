@@ -15,6 +15,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.location.LocationManagerCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +52,9 @@ import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardCartAdapter;
 import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.ui.user.cart.components.FirstStepCartFragment;
+import com.paqta.paqtafood.ui.user.cart.components.SecondStepCartFragment;
+import com.paqta.paqtafood.ui.user.cart.components.ThirdStepCartFragment;
 import com.shuhart.stepview.StepView;
 
 
@@ -57,24 +63,16 @@ import java.util.List;
 import java.util.concurrent.Executor;
 
 
-public class CartFragment extends Fragment implements OnMapReadyCallback {
+public class CartFragment extends Fragment {
     StepView stepView;
     TextView stepTextView;
-    MaterialButton btnGetLocation;
-    Button btnReservar, btnComprar;
-    RecyclerView rycrCart;
-    GoogleMap mMap;
-    CardCartAdapter mAdapterCart;
-    LinearLayout layoutContaint;
-
+    Button btnComprar;
     int stepIndex = 0;
     String[] stepsTexts = {"CARRITO", "ENTREGA", "METODO DE PAGO"};
-    List<TextView> textViewList = new ArrayList<>();
-
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-    private FusedLocationProviderClient fusedLocationClient;
+    FrameLayout frameContainer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,13 +88,8 @@ public class CartFragment extends Fragment implements OnMapReadyCallback {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        btnReservar = view.findViewById(R.id.btnReservar);
         btnComprar = view.findViewById(R.id.btnComprar);
-        btnGetLocation = view.findViewById(R.id.btnGetUbication);
-
-        rycrCart = view.findViewById(R.id.cartPlatillos);
-
-        layoutContaint = view.findViewById(R.id.linearLayoutContaint);
+        frameContainer = view.findViewById(R.id.fragmentContainer);
 
         stepTextView = view.findViewById(R.id.stepTextView);
         stepView = view.findViewById(R.id.step_view);
@@ -107,103 +100,36 @@ public class CartFragment extends Fragment implements OnMapReadyCallback {
                 .commit();
 
         btnComprar.setOnClickListener(v -> configureStep());
+        replaceFragment(new FirstStepCartFragment());
 
-        // GOOGLE MAPS
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
-        configureRecyclers();
     }
-
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAdapterCart != null) {
-            mAdapterCart.stopListening();
-        }
-    }
-
-    private void configureRecyclers() {
-        DocumentReference userRef = mFirestore.collection("usuarios").document(mUser.getUid());
-
-        userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                List<String> carrito = (List<String>) documentSnapshot.get("carrito");
-
-                if (carrito != null && !carrito.isEmpty()) {
-                    rycrCart.setLayoutManager(new LinearLayoutManager(getContext()));
-
-                    Query queryPlatillos = mFirestore.collection("productos")
-                            .whereIn("id", carrito);
-
-                    FirestoreRecyclerOptions<Producto> options = new FirestoreRecyclerOptions.Builder<Producto>()
-                            .setQuery(queryPlatillos, Producto.class)
-                            .build();
-
-                    mAdapterCart = new CardCartAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
-                    mAdapterCart.notifyDataSetChanged();
-                    rycrCart.setAdapter(mAdapterCart);
-                    mAdapterCart.startListening();
-                }
-            }
-        });
-    }
-
 
     private void configureStep() {
         stepIndex++;
         if (stepIndex < stepsTexts.length) {
             stepTextView.setText(stepsTexts[stepIndex]);
             stepView.go(stepIndex, true);
-        }
-    }
 
-    private void nextStep() {
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                stepIndex++;
-                if (stepIndex < stepsTexts.length) {
-                    stepTextView.setText(stepsTexts[stepIndex]);
-                    stepView.go(stepIndex, true);
-                    nextStep();
-                }
+            switch (stepIndex) {
+                case 0:
+                    replaceFragment(new FirstStepCartFragment());
+                    break;
+                case 1:
+                    replaceFragment(new SecondStepCartFragment());
+                    break;
+                case 2:
+                    replaceFragment(new ThirdStepCartFragment());
+                    break;
             }
-        }, 3000);
-    }
 
-
-
-
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
         }
-        mMap.setMyLocationEnabled(true);
-
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(0, 0))
-                .title("Marker"));
-
-        LatLng mexico = new LatLng(19.8077463, -99.4077038);
-        mMap.addMarker(new MarkerOptions().position(mexico).title("Mexico"));
-
-        // Configurar la cámara para mostrar los marcadores
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(mexico) // Ubicación de la cámara
-                .zoom(12) // Nivel de zoom
-                .build();
-
-        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 
-
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment);
+        fragmentTransaction.commit();
+    }
 
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_cart"
     tools:context=".ui.user.cart.CartFragment">
 
@@ -39,7 +39,7 @@
                     android:text="CARRITO"
                     android:textAlignment="center"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorBlanco"
+                    android:textColor="@color/white"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -52,12 +52,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
-
-                        <Button
-                            android:id="@+id/btnReservar"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Reservar" />
 
                         <Button
                             android:id="@+id/btnComprar"
@@ -150,121 +144,11 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayoutContaint"
-                android:layout_width="404dp"
+            <FrameLayout
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/cartPlatillos"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="Direccion"
-                        app:boxBackgroundColor="#fff"
-                        app:endIconContentDescription="Cambiar"
-                        app:endIconDrawable="@drawable/baseline_edit_location_alt_24"
-                        app:endIconMode="custom"
-                        app:startIconDrawable="@drawable/baseline_map_24">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:enabled="false"
-                            android:inputType="text"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnOpenMap"
-                        style="@style/Widget.Material3.Button.IconButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="Detalle"
-                        android:textColor="@color/colorBlanco"
-                        app:icon="@drawable/mapa_icon"
-                        app:iconSize="32dp"
-                        app:iconTint="@null"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                </LinearLayout>
-
-                <fragment
-                    android:id="@+id/map"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginBottom="10dp"
-                    map:cameraZoom="10"
-                    map:uiRotateGestures="true"
-                    map:uiZoomControls="true" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Telefono"
-                    app:boxBackgroundColor="#fff"
-                    app:startIconDrawable="@drawable/fui_ic_phone_white_24dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="phone" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Referencia"
-                    app:boxBackgroundColor="#fff"
-                    app:startIconDrawable="@drawable/arrow_right_home">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnGetUbication"
-                    style="@style/Widget.Material3.Button.IconButton.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Usar mi ubicacion actual"
-                    app:backgroundTint="@color/material_dynamic_primary40"
-                    app:icon="@drawable/baseline_location_on_24" />
-
-
-            </LinearLayout>
+                android:layout_marginTop="55dp" />
 
             <ImageView
                 android:id="@+id/imageView3"

@@ -184,6 +184,10 @@ drawable ic_launcher_logo_background
 drawable icon_cambiar
 drawable icon_menu_card
 drawable icon_menu_detail
+drawable icon_payment_e_wallet
+drawable icon_payment_pago_efectivo
+drawable icon_payment_paypal
+drawable icon_payment_visa
 drawable icon_sidebar_1
 drawable icon_sidebar_2
 drawable icon_sidebar_3
@@ -259,7 +263,9 @@ font archivo
 font caesar_dressing
 font ceviche_one
 font inter_bold
+font inter_medium
 font irish_grover
+font island_moments_regular
 id addressTextViewDesc
 id addressTextViewTitle
 id ageProduct
@@ -292,14 +298,17 @@ id btnHabilitarUser
 id btnLogin
 id btnOpenMap
 id btnRegister
-id btnReservar
 id btnSeeDisableStaff
 id btnShare
 id btnUpdateCartilla
 id btnViewDisable
 id btnViewState
 id btn_add
-id cartPlatillos
+id cardPaymentEWallet
+id cardPaymentPagoEfectivo
+id cardPaymentPaypal
+id cardPaymentVisa
+id cartProductos
 id chipGroup
 id cityDescriptionTextView
 id cityTextView
@@ -343,6 +352,7 @@ id filledTextField
 id filledTextField2
 id filledTextField3
 id filledTextField4
+id fragmentContainer
 id frame_layout
 id icButtonDetail
 id iconImageView
@@ -398,7 +408,6 @@ id linearLayout2
 id linearLayout3
 id linearLayout4
 id linearLayout5
-id linearLayoutContaint
 id listRecyclerView
 id logoImageView
 id logoImageViewLogin
@@ -495,6 +504,7 @@ id textView17
 id textView18
 id textView19
 id textView2
+id textView20
 id textView21
 id textView3
 id textView5
@@ -554,9 +564,11 @@ layout fragment_content_offers
 layout fragment_dashboard
 layout fragment_desserts
 layout fragment_detail_dishes
+layout fragment_detail_ticket
 layout fragment_dishes
 layout fragment_drinks
 layout fragment_favorite
+layout fragment_first_step_cart
 layout fragment_form_category
 layout fragment_form_dishes
 layout fragment_form_product
@@ -568,7 +580,9 @@ layout fragment_offers
 layout fragment_product
 layout fragment_profile
 layout fragment_search
+layout fragment_second_step_cart
 layout fragment_staff
+layout fragment_third_step_cart
 layout item_container_user
 layout list_element
 layout nav_header

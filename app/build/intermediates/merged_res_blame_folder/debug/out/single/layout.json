@@ -12,16 +12,16 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_content_offers.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-56:/layout/view_platillo_favorite.xml",
+        "source": "com.paqta.paqtafood.app-main-59:/layout/view_platillo_favorite.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\activity_admin_navigation.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\activity_admin_navigation.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\list_element.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\list_element.xml"
-    },
-    {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-56:/layout/fragment_form_staff.xml",
-        "source": "com.paqta.paqtafood.app-main-59:/layout/fragment_form_staff.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_home.xml",
@@ -32,12 +32,20 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\view_product_cart.xml"
     },
     {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_detail_ticket.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_detail_ticket.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_favorite.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_favorite.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_form_staff.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_form_staff.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_third_step_cart.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_third_step_cart.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_cart.xml",
@@ -160,6 +168,10 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_category.xml"
     },
     {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_first_step_cart.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_first_step_cart.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_staff.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_staff.xml"
     },
@@ -178,6 +190,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_detail_dishes.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_detail_dishes.xml"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\fragment_second_step_cart.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-59:\\layout\\fragment_second_step_cart.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-56:\\layout\\view_platillo_search.xml",
