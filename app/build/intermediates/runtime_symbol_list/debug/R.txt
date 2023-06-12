@@ -1542,6 +1542,7 @@ int color colorAccent 0x7f060032
 int color colorBlanco 0x7f060033
 int color colorFondo 0x7f060034
 int color colorFondo2 0x7f060035
+int color colorGris 0x7f06036e
 int color colorLetra 0x7f060036
 int color colorLogo 0x7f060037
 int color colorOscuro 0x7f060038
@@ -3486,6 +3487,7 @@ int drawable material_ic_menu_arrow_up_black_24dp 0x7f08015a
 int drawable menu_bebidas 0x7f08015b
 int drawable menu_combos 0x7f08015c
 int drawable menu_extras 0x7f08015d
+int drawable menu_offers 0x7f0801bb
 int drawable menu_principal 0x7f08015e
 int drawable messenger_icon 0x7f08015f
 int drawable mtrl_bottomsheet_drag_handle 0x7f080160
@@ -3758,6 +3760,7 @@ int id cache_measures 0x7f0a00a6
 int id callMeasure 0x7f0a00a7
 int id cancel_action 0x7f0a00a8
 int id cancel_button 0x7f0a00a9
+int id cardDrink 0x7f0a038f
 int id cardPaymentEWallet 0x7f0a00aa
 int id cardPaymentPagoEfectivo 0x7f0a00ab
 int id cardPaymentPaypal 0x7f0a00ac
@@ -3841,6 +3844,7 @@ int id default_activity_button 0x7f0a00f9
 int id deltaRelative 0x7f0a00fa
 int id dependency_ordering 0x7f0a00fb
 int id descripcion 0x7f0a00fc
+int id descripcionDrink 0x7f0a0389
 int id descriptionCat 0x7f0a00fd
 int id descriptionTextView 0x7f0a00fe
 int id design_bottom_sheet 0x7f0a00ff
@@ -3991,6 +3995,7 @@ int id imageView9 0x7f0a018f
 int id image_view_favorite 0x7f0a0190
 int id image_view_search 0x7f0a0191
 int id imagen 0x7f0a0192
+int id imagenDrink 0x7f0a038a
 int id imagenMenuDetail 0x7f0a0193
 int id imagenOffer 0x7f0a0194
 int id imagenPlatilloMenu 0x7f0a0195
@@ -4035,6 +4040,7 @@ int id linearLayout2 0x7f0a01bb
 int id linearLayout3 0x7f0a01bc
 int id linearLayout4 0x7f0a01bd
 int id linearLayout5 0x7f0a01be
+int id linearLayout6 0x7f0a0388
 int id listMode 0x7f0a01bf
 int id listRecyclerView 0x7f0a01c0
 int id list_item 0x7f0a01c1
@@ -4204,6 +4210,7 @@ int id phone_number 0x7f0a0264
 int id pin 0x7f0a0265
 int id position 0x7f0a0266
 int id postLayout 0x7f0a0267
+int id precioDrink 0x7f0a038b
 int id pressed 0x7f0a0268
 int id previous_button_container 0x7f0a0269
 int id progress_bar 0x7f0a026a
@@ -4240,6 +4247,7 @@ int id root 0x7f0a0288
 int id rounded 0x7f0a0289
 int id row_index_key 0x7f0a028a
 int id rtl 0x7f0a028b
+int id rycDrinks 0x7f0a038c
 int id rycViewStaff 0x7f0a028c
 int id satellite 0x7f0a028d
 int id save_non_transition_alpha 0x7f0a028e
@@ -4376,6 +4384,7 @@ int id textView2 0x7f0a0310
 int id textView20 0x7f0a0311
 int id textView21 0x7f0a0312
 int id textView3 0x7f0a0313
+int id textView4 0x7f0a038e
 int id textView5 0x7f0a0314
 int id textView6 0x7f0a0315
 int id textView7 0x7f0a0316
@@ -4408,6 +4417,7 @@ int id title_template 0x7f0a0330
 int id title_view_favorite 0x7f0a0331
 int id titulo 0x7f0a0332
 int id tituloCat 0x7f0a0333
+int id tituloDrink 0x7f0a038d
 int id toggle 0x7f0a0334
 int id top 0x7f0a0335
 int id topAppBar 0x7f0a0336
@@ -4650,6 +4660,7 @@ int layout fragment_detail_dishes 0x7f0d0042
 int layout fragment_detail_ticket 0x7f0d0043
 int layout fragment_dishes 0x7f0d0044
 int layout fragment_drinks 0x7f0d0045
+int layout fragment_drinks_menu 0x7f0d00cb
 int layout fragment_favorite 0x7f0d0046
 int layout fragment_first_step_cart 0x7f0d0047
 int layout fragment_form_category 0x7f0d0048
@@ -4772,6 +4783,7 @@ int layout select_dialog_multichoice_material 0x7f0d00bc
 int layout select_dialog_singlechoice_material 0x7f0d00bd
 int layout support_simple_spinner_dropdown_item 0x7f0d00be
 int layout view_category_single 0x7f0d00bf
+int layout view_drink_menu 0x7f0d00cc
 int layout view_platillo_favorite 0x7f0d00c0
 int layout view_platillo_menu 0x7f0d00c1
 int layout view_platillo_menu_detail 0x7f0d00c2

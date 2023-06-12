@@ -17,6 +17,7 @@ color colorAccent
 color colorBlanco
 color colorFondo
 color colorFondo2
+color colorGris
 color colorLetra
 color colorLogo
 color colorOscuro
@@ -219,6 +220,7 @@ drawable mask_group_ek4
 drawable menu_bebidas
 drawable menu_combos
 drawable menu_extras
+drawable menu_offers
 drawable menu_principal
 drawable messenger_icon
 drawable muestra_platillo
@@ -304,6 +306,7 @@ id btnUpdateCartilla
 id btnViewDisable
 id btnViewState
 id btn_add
+id cardDrink
 id cardPaymentEWallet
 id cardPaymentPagoEfectivo
 id cardPaymentPaypal
@@ -328,6 +331,7 @@ id cv
 id decorator_bottom
 id decorator_top
 id descripcion
+id descripcionDrink
 id descriptionCat
 id descriptionTextView
 id detailsOffer
@@ -388,6 +392,7 @@ id imageView9
 id image_view_favorite
 id image_view_search
 id imagen
+id imagenDrink
 id imagenMenuDetail
 id imagenOffer
 id imagenPlatilloMenu
@@ -408,6 +413,7 @@ id linearLayout2
 id linearLayout3
 id linearLayout4
 id linearLayout5
+id linearLayout6
 id listRecyclerView
 id logoImageView
 id logoImageViewLogin
@@ -459,6 +465,7 @@ id nombreMenuDetail
 id originPaqtaLogo
 id phoneTextViewDesc
 id phoneTextViewTitle
+id precioDrink
 id recCard
 id recCategory
 id recDescription
@@ -475,6 +482,7 @@ id recyclerPlatillos
 id recyclerProductos
 id recyclerSearch
 id recyclerViewOffers
+id rycDrinks
 id rycViewStaff
 id search
 id searchPlatillo
@@ -507,6 +515,7 @@ id textView2
 id textView20
 id textView21
 id textView3
+id textView4
 id textView5
 id textView6
 id textView7
@@ -525,6 +534,7 @@ id titleTextView
 id title_view_favorite
 id titulo
 id tituloCat
+id tituloDrink
 id topAppBar
 id tvwEjem
 id tvwLogin
@@ -567,6 +577,7 @@ layout fragment_detail_dishes
 layout fragment_detail_ticket
 layout fragment_dishes
 layout fragment_drinks
+layout fragment_drinks_menu
 layout fragment_favorite
 layout fragment_first_step_cart
 layout fragment_form_category
@@ -589,6 +600,7 @@ layout nav_header
 layout progress_layout
 layout recycler_item_product
 layout view_category_single
+layout view_drink_menu
 layout view_platillo_favorite
 layout view_platillo_menu
 layout view_platillo_menu_detail

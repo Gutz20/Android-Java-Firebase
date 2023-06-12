@@ -11,25 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardCartAdapter;
 import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.model.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class FirstStepCartFragment extends Fragment {
 
-    RecyclerView recyclerProductsCart;
+    RecyclerView mRecycler;
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
@@ -49,51 +49,46 @@ public class FirstStepCartFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        recyclerProductsCart = view.findViewById(R.id.cartProductos);
+        mRecycler = view.findViewById(R.id.cartProductos);
 
-        configureRecyclers();
+        mFirestore.collection("usuarios")
+                .document(mUser.getUid())
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        List<String> carrito = documentSnapshot.toObject(User.class).getCarrito();
+
+                        if (carrito != null && !carrito.isEmpty()) {
+
+                            mFirestore.collection("productos")
+                                    .whereIn(FieldPath.documentId(), carrito)
+                                    .get()
+                                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                                        List<Producto> productoList = new ArrayList<>();
+                                        for (DocumentSnapshot snapshot : queryDocumentSnapshots) {
+                                            Producto producto = snapshot.toObject(Producto.class);
+                                            productoList.add(producto);
+                                        }
+                                        setupRecycler(productoList);
+                                    }).addOnFailureListener(e -> {
+                                        Toast.makeText(getContext(), "Error al recuperar los datos", Toast.LENGTH_SHORT).show();
+                                    });
+                        } else {
+                            setupRecycler(new ArrayList<>());
+                            Toast.makeText(getActivity(), "No tienes nada en tu carrito 😔", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        setupRecycler(new ArrayList<>());
+                    }
+                });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (mAdapter != null) {
-            mAdapter.startListening();
-        }
+    private void setupRecycler(List<Producto> productoList) {
+        mAdapter = new CardCartAdapter(productoList, getActivity().getSupportFragmentManager());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecycler.setLayoutManager(layoutManager);
+        mRecycler.setAdapter(mAdapter);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAdapter != null) {
-            mAdapter.stopListening();
-        }
-    }
-
-    private void configureRecyclers() {
-        DocumentReference userRef = mFirestore.collection("usuarios").document(mUser.getUid());
-
-        userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                List<String> carrito = (List<String>) documentSnapshot.get("carrito");
-
-                if (carrito != null && !carrito.isEmpty()) {
-                    recyclerProductsCart.setLayoutManager(new LinearLayoutManager(getContext()));
-
-                    Query queryPlatillos = mFirestore.collection("productos")
-                            .whereIn("id", carrito);
-
-                    FirestoreRecyclerOptions<Producto> options = new FirestoreRecyclerOptions.Builder<Producto>()
-                            .setQuery(queryPlatillos, Producto.class)
-                            .build();
-
-                    mAdapter = new CardCartAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
-                    mAdapter.notifyDataSetChanged();
-                    recyclerProductsCart.setAdapter(mAdapter);
-                    mAdapter.startListening();
-                }
-            }
-        });
-    }
 }

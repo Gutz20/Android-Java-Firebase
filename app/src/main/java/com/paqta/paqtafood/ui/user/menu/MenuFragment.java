@@ -19,6 +19,7 @@ import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardMenuAdapter;
 import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.ui.user.drinks.DrinksMenuFragment;
 import com.paqta.paqtafood.ui.user.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.ui.user.offers.OffersFragment;
 import com.paqta.paqtafood.ui.user.search.SearchFragment;
@@ -55,7 +56,7 @@ public class MenuFragment extends Fragment {
         lrltNavPrincipal.setOnClickListener(v -> replaceFragment(new MenuDetailFragment()));
         lrltNavCombos.setOnClickListener(v -> replaceFragment(new OffersFragment()));
         lrltNavExtras.setOnClickListener(v -> replaceFragment(new SearchFragment()));
-        lrltNavBebidas.setOnClickListener(v -> replaceFragment(new SearchFragment()));
+        lrltNavBebidas.setOnClickListener(v -> replaceFragment(new DrinksMenuFragment()));
         lrltNavOffers.setOnClickListener(v -> replaceFragment(new OffersFragment()));
 
         setupRecyclerView();

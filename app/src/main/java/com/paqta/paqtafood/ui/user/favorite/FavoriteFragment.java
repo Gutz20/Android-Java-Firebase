@@ -13,21 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardFavoriteAdapter;
-import com.paqta.paqtafood.adapters.CardFavoriteAdapterV2;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.model.User;
 
@@ -41,7 +33,7 @@ public class FavoriteFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     RecyclerView mRecyclerPlatillos, mRecyclerBebibas, mRecyclerPostres;
-    CardFavoriteAdapterV2 mAdapterPlatillos, mAdapterBebidas, mAdapterPostres;
+    CardFavoriteAdapter mAdapterPlatillos, mAdapterBebidas, mAdapterPostres;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,7 +63,7 @@ public class FavoriteFragment extends Fragment {
                         // Verificar si la lista de favoritos no es nula o vacía
                         if (favoritos != null && !favoritos.isEmpty()) {
                             // Obtener los productos favoritos de Firestore
-                            FirebaseFirestore.getInstance().collection("productos")
+                            mFirestore.collection("productos")
                                     .whereIn(FieldPath.documentId(), favoritos)
                                     .get()
                                     .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -81,7 +73,6 @@ public class FavoriteFragment extends Fragment {
                                             productosList.add(producto);
                                         }
 
-                                        // Llama a un método para configurar el RecyclerView con los datos
                                         setupRecycler(productosList);
                                     })
                                     .addOnFailureListener(e -> {
@@ -89,12 +80,11 @@ public class FavoriteFragment extends Fragment {
                                     });
                         } else {
                             // La lista de favoritos está vacía
-                            // Llama a un método para configurar el RecyclerView con una lista vacía
                             setupRecycler(new ArrayList<>());
+                            Toast.makeText(getActivity(), "No hay nada en tu lista de favoritos 😔", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         // El documento de usuario no existe
-                        // Llama a un método para configurar el RecyclerView con una lista vacía
                         setupRecycler(new ArrayList<>());
                     }
                 })
@@ -104,7 +94,7 @@ public class FavoriteFragment extends Fragment {
     }
 
     private void setupRecycler(List<Producto> productosList) {
-        mAdapterPlatillos = new CardFavoriteAdapterV2(productosList);
+        mAdapterPlatillos = new CardFavoriteAdapter(productosList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecyclerPlatillos.setLayoutManager(layoutManager);

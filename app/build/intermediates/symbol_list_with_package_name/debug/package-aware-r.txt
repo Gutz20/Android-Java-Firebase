@@ -1543,6 +1543,7 @@ color colorAccent
 color colorBlanco
 color colorFondo
 color colorFondo2
+color colorGris
 color colorLetra
 color colorLogo
 color colorOscuro
@@ -3487,6 +3488,7 @@ drawable material_ic_menu_arrow_up_black_24dp
 drawable menu_bebidas
 drawable menu_combos
 drawable menu_extras
+drawable menu_offers
 drawable menu_principal
 drawable messenger_icon
 drawable mtrl_bottomsheet_drag_handle
@@ -3759,6 +3761,7 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
+id cardDrink
 id cardPaymentEWallet
 id cardPaymentPagoEfectivo
 id cardPaymentPaypal
@@ -3842,6 +3845,7 @@ id default_activity_button
 id deltaRelative
 id dependency_ordering
 id descripcion
+id descripcionDrink
 id descriptionCat
 id descriptionTextView
 id design_bottom_sheet
@@ -3992,6 +3996,7 @@ id imageView9
 id image_view_favorite
 id image_view_search
 id imagen
+id imagenDrink
 id imagenMenuDetail
 id imagenOffer
 id imagenPlatilloMenu
@@ -4036,6 +4041,7 @@ id linearLayout2
 id linearLayout3
 id linearLayout4
 id linearLayout5
+id linearLayout6
 id listMode
 id listRecyclerView
 id list_item
@@ -4205,6 +4211,7 @@ id phone_number
 id pin
 id position
 id postLayout
+id precioDrink
 id pressed
 id previous_button_container
 id progress_bar
@@ -4241,6 +4248,7 @@ id root
 id rounded
 id row_index_key
 id rtl
+id rycDrinks
 id rycViewStaff
 id satellite
 id save_non_transition_alpha
@@ -4377,6 +4385,7 @@ id textView2
 id textView20
 id textView21
 id textView3
+id textView4
 id textView5
 id textView6
 id textView7
@@ -4409,6 +4418,7 @@ id title_template
 id title_view_favorite
 id titulo
 id tituloCat
+id tituloDrink
 id toggle
 id top
 id topAppBar
@@ -4651,6 +4661,7 @@ layout fragment_detail_dishes
 layout fragment_detail_ticket
 layout fragment_dishes
 layout fragment_drinks
+layout fragment_drinks_menu
 layout fragment_favorite
 layout fragment_first_step_cart
 layout fragment_form_category
@@ -4773,6 +4784,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout view_category_single
+layout view_drink_menu
 layout view_platillo_favorite
 layout view_platillo_menu
 layout view_platillo_menu_detail

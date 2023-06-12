@@ -33,6 +33,7 @@
     <color name="colorBlanco">#fff</color>
     <color name="colorFondo">#151C48</color>
     <color name="colorFondo2">#9BA1CC</color>
+    <color name="colorGris">#D4D4D4</color>
     <color name="colorLetra">#103153</color>
     <color name="colorLogo">#DECDC6</color>
     <color name="colorOscuro">#000</color>

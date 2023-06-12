@@ -1,5 +1,6 @@
 package com.paqta.paqtafood.navigation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -10,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,12 +57,15 @@ public class DefaultNavigationApp extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
 
         toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
+
         replaceFragment(new HomeFragment());
 
         View headerView = navigationView.getHeaderView(0);
@@ -80,7 +85,6 @@ public class DefaultNavigationApp extends AppCompatActivity {
 
             return true;
         });
-
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -134,6 +138,7 @@ public class DefaultNavigationApp extends AppCompatActivity {
             return true;
         });
     }
+
 
     @Override
     protected void onResume() {

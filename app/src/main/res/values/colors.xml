@@ -8,6 +8,7 @@
     <color name="colorOscuro">#000</color>
     <color name="colorLetra">#103153</color>
     <color name="seed">#6750A4</color>
+    <color name="colorGris">#D4D4D4</color>
 
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>

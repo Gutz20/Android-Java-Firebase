@@ -42,6 +42,9 @@ public final class FragmentMenuBinding implements ViewBinding {
   public final ImageView imageView8;
 
   @NonNull
+  public final LinearLayout linearLayout6;
+
+  @NonNull
   public final LinearLayout lrltToBebidas;
 
   @NonNull
@@ -74,11 +77,11 @@ public final class FragmentMenuBinding implements ViewBinding {
   private FragmentMenuBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView12,
       @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
       @NonNull ImageView imageView7, @NonNull ImageView imageView8,
-      @NonNull LinearLayout lrltToBebidas, @NonNull LinearLayout lrltToCombos,
-      @NonNull LinearLayout lrltToExtras, @NonNull LinearLayout lrltToOfertas,
-      @NonNull LinearLayout lrltToPrincipal, @NonNull MaterialCardView materialCardView7,
-      @NonNull RecyclerView recyclerMenu, @NonNull TextView textView10,
-      @NonNull TextView textView14, @NonNull TextView textView2) {
+      @NonNull LinearLayout linearLayout6, @NonNull LinearLayout lrltToBebidas,
+      @NonNull LinearLayout lrltToCombos, @NonNull LinearLayout lrltToExtras,
+      @NonNull LinearLayout lrltToOfertas, @NonNull LinearLayout lrltToPrincipal,
+      @NonNull MaterialCardView materialCardView7, @NonNull RecyclerView recyclerMenu,
+      @NonNull TextView textView10, @NonNull TextView textView14, @NonNull TextView textView2) {
     this.rootView = rootView;
     this.imageView12 = imageView12;
     this.imageView4 = imageView4;
@@ -86,6 +89,7 @@ public final class FragmentMenuBinding implements ViewBinding {
     this.imageView6 = imageView6;
     this.imageView7 = imageView7;
     this.imageView8 = imageView8;
+    this.linearLayout6 = linearLayout6;
     this.lrltToBebidas = lrltToBebidas;
     this.lrltToCombos = lrltToCombos;
     this.lrltToExtras = lrltToExtras;
@@ -161,6 +165,12 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.linearLayout6;
+      LinearLayout linearLayout6 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout6 == null) {
+        break missingId;
+      }
+
       id = R.id.lrltToBebidas;
       LinearLayout lrltToBebidas = ViewBindings.findChildViewById(rootView, id);
       if (lrltToBebidas == null) {
@@ -222,9 +232,9 @@ public final class FragmentMenuBinding implements ViewBinding {
       }
 
       return new FragmentMenuBinding((FrameLayout) rootView, imageView12, imageView4, imageView5,
-          imageView6, imageView7, imageView8, lrltToBebidas, lrltToCombos, lrltToExtras,
-          lrltToOfertas, lrltToPrincipal, materialCardView7, recyclerMenu, textView10, textView14,
-          textView2);
+          imageView6, imageView7, imageView8, linearLayout6, lrltToBebidas, lrltToCombos,
+          lrltToExtras, lrltToOfertas, lrltToPrincipal, materialCardView7, recyclerMenu, textView10,
+          textView14, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
