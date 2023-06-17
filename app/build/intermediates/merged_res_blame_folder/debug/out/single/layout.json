@@ -24,10 +24,6 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-60:\\layout\\fragment_search.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-57:/layout/info_window_layout.xml",
-        "source": "com.paqta.paqtafood.app-main-60:/layout/info_window_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-57:\\layout\\view_platillo_menu_detail.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-60:\\layout\\view_platillo_menu_detail.xml"
     },
@@ -84,6 +80,10 @@
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-60:\\layout\\fragment_detail_ticket.xml"
     },
     {
+        "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-57:\\layout\\info_window_layout.xml",
+        "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-60:\\layout\\info_window_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-57:\\layout\\fragment_content_offers.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-60:\\layout\\fragment_content_offers.xml"
     },
@@ -122,6 +122,10 @@
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-57:\\layout\\view_product_cart.xml",
         "source": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-60:\\layout\\view_product_cart.xml"
+    },
+    {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-57:/layout/view_product_cart.xml",
+        "source": "com.paqta.paqtafood.app-main-60:/layout/view_product_cart.xml"
     },
     {
         "merged": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-57:\\layout\\activity_admin_navigation.xml",

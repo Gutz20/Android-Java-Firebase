@@ -20,9 +20,6 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final MaterialCardView cardPaymentEWallet;
-
-  @NonNull
   public final MaterialCardView cardPaymentPagoEfectivo;
 
   @NonNull
@@ -32,11 +29,9 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
   public final MaterialCardView cardPaymentVisa;
 
   private FragmentThirdStepCartBinding(@NonNull FrameLayout rootView,
-      @NonNull MaterialCardView cardPaymentEWallet,
       @NonNull MaterialCardView cardPaymentPagoEfectivo,
       @NonNull MaterialCardView cardPaymentPaypal, @NonNull MaterialCardView cardPaymentVisa) {
     this.rootView = rootView;
-    this.cardPaymentEWallet = cardPaymentEWallet;
     this.cardPaymentPagoEfectivo = cardPaymentPagoEfectivo;
     this.cardPaymentPaypal = cardPaymentPaypal;
     this.cardPaymentVisa = cardPaymentVisa;
@@ -69,12 +64,6 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardPaymentEWallet;
-      MaterialCardView cardPaymentEWallet = ViewBindings.findChildViewById(rootView, id);
-      if (cardPaymentEWallet == null) {
-        break missingId;
-      }
-
       id = R.id.cardPaymentPagoEfectivo;
       MaterialCardView cardPaymentPagoEfectivo = ViewBindings.findChildViewById(rootView, id);
       if (cardPaymentPagoEfectivo == null) {
@@ -93,8 +82,8 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentThirdStepCartBinding((FrameLayout) rootView, cardPaymentEWallet,
-          cardPaymentPagoEfectivo, cardPaymentPaypal, cardPaymentVisa);
+      return new FragmentThirdStepCartBinding((FrameLayout) rootView, cardPaymentPagoEfectivo,
+          cardPaymentPaypal, cardPaymentVisa);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

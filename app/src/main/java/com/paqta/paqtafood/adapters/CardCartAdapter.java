@@ -1,6 +1,10 @@
 package com.paqta.paqtafood.adapters;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +32,7 @@ import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.ui.user.detail_dishes.DetailDishesFragment;
 
 import java.util.List;
+import java.util.Locale;
 
 public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHolder> {
 
@@ -35,11 +40,15 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+    private SharedPreferences sharedPreferences;
+    Activity activity;
     FragmentManager fm;
 
-    public CardCartAdapter(List<Producto> productosList, FragmentManager fragmentManager) {
+    public CardCartAdapter(Activity activity, List<Producto> productosList, FragmentManager fragmentManager) {
         this.productosList = productosList;
         this.fm = fragmentManager;
+        this.activity = activity;
+        sharedPreferences = this.activity.getSharedPreferences("PrefsPaqtaFood", Context.MODE_PRIVATE);
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -57,16 +66,22 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         Producto producto = productosList.get(position);
         Glide.with(holder.imagenProductCart.getContext()).load(producto.getImagen()).into(holder.imagenProductCart);
 
+        holder.textViewCosto.setText(String.valueOf("Costo: S/" + (producto.getPrecio() * Integer.parseInt(holder.textViewCantidad.getText().toString()))));
+
         holder.addCantidad.setOnClickListener(v -> {
             int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
             cantidad += 1;
             holder.textViewCantidad.setText(String.valueOf(cantidad));
+            holder.textViewCosto.setText("Costo: S/" + cantidad * producto.getPrecio());
+
         });
+
         holder.subtractCantidad.setOnClickListener(v -> {
             int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
             if (cantidad > 1) {
                 cantidad -= 1;
                 holder.textViewCantidad.setText(String.valueOf(cantidad));
+                holder.textViewCosto.setText("Costo: S/" + cantidad * producto.getPrecio());
             }
         });
 
@@ -98,7 +113,8 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
     }
 
     private void verDetalle(String id) {
-        Fragment fragment = new DetailDishesFragment();;
+        Fragment fragment = new DetailDishesFragment();
+        ;
         Bundle bundle = new Bundle();
         bundle.putString("idProd", id);
         fragment.setArguments(bundle);
@@ -116,8 +132,9 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imagenProductCart;
-        TextView nameProduct, detailProduct, addCantidad, subtractCantidad, textViewCantidad;
+        TextView nameProduct, detailProduct, addCantidad, subtractCantidad, textViewCantidad, textViewCosto;
         MaterialButton btnDelete, btnDetail;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imagenProductCart = itemView.findViewById(R.id.imgProductCart);
@@ -128,6 +145,7 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
             addCantidad = itemView.findViewById(R.id.addCantidad);
             subtractCantidad = itemView.findViewById(R.id.subtractCantidad);
             textViewCantidad = itemView.findViewById(R.id.textViewCantidad);
+            textViewCosto = itemView.findViewById(R.id.textViewCosto);
         }
     }
 }

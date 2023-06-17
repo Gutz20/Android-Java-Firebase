@@ -27,14 +27,23 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
   public final MaterialButton btnOpenMap;
 
   @NonNull
+  public final TextInputEditText edtTxtPhonePedido;
+
+  @NonNull
+  public final TextInputEditText edtTxtReference;
+
+  @NonNull
   public final TextInputEditText textUbicationSelected;
 
   private FragmentSecondStepCartBinding(@NonNull FrameLayout rootView,
       @NonNull MaterialButton btnGetUbication, @NonNull MaterialButton btnOpenMap,
+      @NonNull TextInputEditText edtTxtPhonePedido, @NonNull TextInputEditText edtTxtReference,
       @NonNull TextInputEditText textUbicationSelected) {
     this.rootView = rootView;
     this.btnGetUbication = btnGetUbication;
     this.btnOpenMap = btnOpenMap;
+    this.edtTxtPhonePedido = edtTxtPhonePedido;
+    this.edtTxtReference = edtTxtReference;
     this.textUbicationSelected = textUbicationSelected;
   }
 
@@ -77,6 +86,18 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edtTxtPhonePedido;
+      TextInputEditText edtTxtPhonePedido = ViewBindings.findChildViewById(rootView, id);
+      if (edtTxtPhonePedido == null) {
+        break missingId;
+      }
+
+      id = R.id.edtTxtReference;
+      TextInputEditText edtTxtReference = ViewBindings.findChildViewById(rootView, id);
+      if (edtTxtReference == null) {
+        break missingId;
+      }
+
       id = R.id.textUbicationSelected;
       TextInputEditText textUbicationSelected = ViewBindings.findChildViewById(rootView, id);
       if (textUbicationSelected == null) {
@@ -84,7 +105,7 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
       }
 
       return new FragmentSecondStepCartBinding((FrameLayout) rootView, btnGetUbication, btnOpenMap,
-          textUbicationSelected);
+          edtTxtPhonePedido, edtTxtReference, textUbicationSelected);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

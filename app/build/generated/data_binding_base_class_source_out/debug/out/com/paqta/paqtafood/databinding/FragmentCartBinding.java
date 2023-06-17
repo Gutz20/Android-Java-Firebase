@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,7 +34,10 @@ public final class FragmentCartBinding implements ViewBinding {
   public final ImageView imageView3;
 
   @NonNull
-  public final LinearLayout linearLayout3;
+  public final LinearLayout layoutDataCart;
+
+  @NonNull
+  public final ScrollView scrollViewCart;
 
   @NonNull
   public final TextView stepTextView;
@@ -41,17 +45,27 @@ public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   public final StepView stepView;
 
+  @NonNull
+  public final TextView textViewSubTotal;
+
+  @NonNull
+  public final TextView textViewTotal;
+
   private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
       @NonNull FrameLayout fragmentContainer, @NonNull ImageView imageView3,
-      @NonNull LinearLayout linearLayout3, @NonNull TextView stepTextView,
-      @NonNull StepView stepView) {
+      @NonNull LinearLayout layoutDataCart, @NonNull ScrollView scrollViewCart,
+      @NonNull TextView stepTextView, @NonNull StepView stepView,
+      @NonNull TextView textViewSubTotal, @NonNull TextView textViewTotal) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
     this.fragmentContainer = fragmentContainer;
     this.imageView3 = imageView3;
-    this.linearLayout3 = linearLayout3;
+    this.layoutDataCart = layoutDataCart;
+    this.scrollViewCart = scrollViewCart;
     this.stepTextView = stepTextView;
     this.stepView = stepView;
+    this.textViewSubTotal = textViewSubTotal;
+    this.textViewTotal = textViewTotal;
   }
 
   @Override
@@ -99,9 +113,15 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.linearLayout3;
-      LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout3 == null) {
+      id = R.id.layoutDataCart;
+      LinearLayout layoutDataCart = ViewBindings.findChildViewById(rootView, id);
+      if (layoutDataCart == null) {
+        break missingId;
+      }
+
+      id = R.id.scrollViewCart;
+      ScrollView scrollViewCart = ViewBindings.findChildViewById(rootView, id);
+      if (scrollViewCart == null) {
         break missingId;
       }
 
@@ -117,8 +137,21 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textViewSubTotal;
+      TextView textViewSubTotal = ViewBindings.findChildViewById(rootView, id);
+      if (textViewSubTotal == null) {
+        break missingId;
+      }
+
+      id = R.id.textViewTotal;
+      TextView textViewTotal = ViewBindings.findChildViewById(rootView, id);
+      if (textViewTotal == null) {
+        break missingId;
+      }
+
       return new FragmentCartBinding((FrameLayout) rootView, btnComprar, fragmentContainer,
-          imageView3, linearLayout3, stepTextView, stepView);
+          imageView3, layoutDataCart, scrollViewCart, stepTextView, stepView, textViewSubTotal,
+          textViewTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

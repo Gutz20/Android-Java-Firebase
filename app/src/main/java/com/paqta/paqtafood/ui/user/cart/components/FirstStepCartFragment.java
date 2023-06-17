@@ -1,5 +1,7 @@
 package com.paqta.paqtafood.ui.user.cart.components;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +37,6 @@ public class FirstStepCartFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     CardCartAdapter mAdapter;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,8 +51,19 @@ public class FirstStepCartFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+
         mRecycler = view.findViewById(R.id.cartProductos);
 
+        loadCartItems();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.loadCartItems();
+    }
+
+    private void loadCartItems() {
         mFirestore.collection("usuarios")
                 .document(mUser.getUid())
                 .get()
@@ -70,6 +83,7 @@ public class FirstStepCartFragment extends Fragment {
                                             productoList.add(producto);
                                         }
                                         setupRecycler(productoList);
+                                        Log.d("Precio", String.valueOf(mAdapter.getCostoTotal()));
                                     }).addOnFailureListener(e -> {
                                         Toast.makeText(getContext(), "Error al recuperar los datos", Toast.LENGTH_SHORT).show();
                                     });
@@ -81,10 +95,12 @@ public class FirstStepCartFragment extends Fragment {
                         setupRecycler(new ArrayList<>());
                     }
                 });
+
     }
 
+
     private void setupRecycler(List<Producto> productoList) {
-        mAdapter = new CardCartAdapter(productoList, getActivity().getSupportFragmentManager());
+        mAdapter = new CardCartAdapter(getActivity(), productoList, getActivity().getSupportFragmentManager());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecycler.setLayoutManager(layoutManager);

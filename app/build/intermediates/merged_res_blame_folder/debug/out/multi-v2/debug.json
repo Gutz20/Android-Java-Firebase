@@ -772,21 +772,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-58:\\values-sw360dp-v13_values-sw360dp-v13.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\110cc85491ae93c6880610bb8b174538\\transformed\\firebase-ui-auth-8.0.2\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,186,247,302,356,414",
-                        "endColumns": "69,60,60,54,53,57,56",
-                        "endOffsets": "120,181,242,297,351,409,466"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-58:\\values-v17_values-v17.arsc.flat",
             "map": [
                 {
@@ -798,6 +783,21 @@
                         "endLines": "4,8,11,14,17,21,24,28,32,36,39,42,45,49,52,56,60",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12",
                         "endOffsets": "223,451,609,759,931,1156,1326,1554,1778,2020,2191,2365,2534,2807,3007,3211,3540"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\USUARIO\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-58:\\values-sw360dp-v13_values-sw360dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\110cc85491ae93c6880610bb8b174538\\transformed\\firebase-ui-auth-8.0.2\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,186,247,302,356,414",
+                        "endColumns": "69,60,60,54,53,57,56",
+                        "endOffsets": "120,181,242,297,351,409,466"
                     }
                 }
             ]

@@ -312,7 +312,6 @@ id btnViewDisable
 id btnViewState
 id btn_add
 id cardDrink
-id cardPaymentEWallet
 id cardPaymentPagoEfectivo
 id cardPaymentPaypal
 id cardPaymentVisa
@@ -354,6 +353,8 @@ id edtTextNombre
 id edtTextPassword
 id edtTextPrecio
 id edtTextUsername
+id edtTxtPhonePedido
+id edtTxtReference
 id emailTextView
 id end
 id fab
@@ -412,9 +413,9 @@ id imgQR1
 id imgQR2
 id imgQR3
 id img_view_icon_favorite
+id layoutDataCart
 id linearLayout
 id linearLayout2
-id linearLayout3
 id linearLayout4
 id linearLayout5
 id linearLayout6
@@ -489,6 +490,7 @@ id recyclerViewOffers
 id rycDesserts
 id rycDrinks
 id rycViewStaff
+id scrollViewCart
 id search
 id searchPlatillo
 id searchView
@@ -525,12 +527,15 @@ id textView7
 id textView8
 id textView9
 id textViewCantidad
+id textViewCosto
 id textViewDetailOffer
 id textViewDetalles
 id textViewNameStaff
 id textViewPrecio
 id textViewRolStaff
 id textViewShare
+id textViewSubTotal
+id textViewTotal
 id text_item_search
 id titleDescriptionTextView
 id titleTextDetail

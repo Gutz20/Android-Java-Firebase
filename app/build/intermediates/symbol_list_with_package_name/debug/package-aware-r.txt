@@ -4148,7 +4148,6 @@ id callMeasure
 id cancel_action
 id cancel_button
 id cardDrink
-id cardPaymentEWallet
 id cardPaymentPagoEfectivo
 id cardPaymentPaypal
 id cardPaymentVisa
@@ -4279,6 +4278,8 @@ id edtTextNombre
 id edtTextPassword
 id edtTextPrecio
 id edtTextUsername
+id edtTxtPhonePedido
+id edtTxtReference
 id elastic
 id email
 id emailTextView
@@ -4414,6 +4415,7 @@ id jumpToStart
 id labeled
 id large
 id layout
+id layoutDataCart
 id left
 id leftToRight
 id legacy
@@ -4423,7 +4425,6 @@ id line3
 id linear
 id linearLayout
 id linearLayout2
-id linearLayout3
 id linearLayout4
 id linearLayout5
 id linearLayout6
@@ -4664,6 +4665,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollViewCart
 id scrollable
 id search
 id searchPlatillo
@@ -4794,12 +4796,15 @@ id textView7
 id textView8
 id textView9
 id textViewCantidad
+id textViewCosto
 id textViewDetailOffer
 id textViewDetalles
 id textViewNameStaff
 id textViewPrecio
 id textViewRolStaff
 id textViewShare
+id textViewSubTotal
+id textViewTotal
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

@@ -10,16 +10,18 @@
 
 
     <ScrollView
+        android:id="@+id/scrollViewCart"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/linearLayout3"
+                android:id="@+id/layoutDataCart"
                 android:layout_width="310dp"
                 android:layout_height="160dp"
                 android:layout_gravity="center"
@@ -111,6 +113,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/textViewTotal"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
@@ -128,6 +131,7 @@
                                 android:textSize="10sp" />
 
                             <TextView
+                                android:id="@+id/textViewSubTotal"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
@@ -167,12 +171,12 @@
                 app:sv_doneCircleColor="@color/colorAccent"
                 app:sv_doneCircleRadius="12dp"
                 app:sv_doneStepLineColor="@color/colorAccent"
-                app:sv_doneStepMarkColor="@color/colorPrimary"
+                app:sv_doneStepMarkColor="@color/md_theme_light_inverseSurface"
                 app:sv_nextStepLineColor="@color/colorAccent"
-                app:sv_nextTextColor="@color/colorAccent"
-                app:sv_selectedCircleColor="@color/colorAccent"
+                app:sv_nextTextColor="@color/colorBlanco"
+                app:sv_selectedCircleColor="@color/colorFondo"
                 app:sv_selectedCircleRadius="12dp"
-                app:sv_selectedStepNumberColor="@color/colorPrimary"
+                app:sv_selectedStepNumberColor="@color/colorLogo"
                 app:sv_selectedTextColor="@color/colorAccent"
                 app:sv_stepLineWidth="1dp"
                 app:sv_stepNumberTextSize="18sp"

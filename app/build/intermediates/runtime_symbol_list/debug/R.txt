@@ -4147,7 +4147,6 @@ int id callMeasure 0x7f0a00a9
 int id cancel_action 0x7f0a00aa
 int id cancel_button 0x7f0a00ab
 int id cardDrink 0x7f0a00ac
-int id cardPaymentEWallet 0x7f0a00ad
 int id cardPaymentPagoEfectivo 0x7f0a00ae
 int id cardPaymentPaypal 0x7f0a00af
 int id cardPaymentVisa 0x7f0a00b0
@@ -4278,6 +4277,8 @@ int id edtTextNombre 0x7f0a012c
 int id edtTextPassword 0x7f0a012d
 int id edtTextPrecio 0x7f0a012e
 int id edtTextUsername 0x7f0a012f
+int id edtTxtPhonePedido 0x7f0a03a6
+int id edtTxtReference 0x7f0a03a7
 int id elastic 0x7f0a0130
 int id email 0x7f0a0131
 int id emailTextView 0x7f0a0132
@@ -4413,6 +4414,7 @@ int id jumpToStart 0x7f0a01b3
 int id labeled 0x7f0a01b4
 int id large 0x7f0a01b5
 int id layout 0x7f0a01b6
+int id layoutDataCart 0x7f0a03a4
 int id left 0x7f0a01b7
 int id leftToRight 0x7f0a01b8
 int id legacy 0x7f0a01b9
@@ -4422,7 +4424,6 @@ int id line3 0x7f0a01bc
 int id linear 0x7f0a01bd
 int id linearLayout 0x7f0a01be
 int id linearLayout2 0x7f0a01bf
-int id linearLayout3 0x7f0a01c0
 int id linearLayout4 0x7f0a01c1
 int id linearLayout5 0x7f0a01c2
 int id linearLayout6 0x7f0a01c3
@@ -4663,6 +4664,7 @@ int id scroll 0x7f0a02ad
 int id scrollIndicatorDown 0x7f0a02ae
 int id scrollIndicatorUp 0x7f0a02af
 int id scrollView 0x7f0a02b0
+int id scrollViewCart 0x7f0a03a5
 int id scrollable 0x7f0a02b1
 int id search 0x7f0a02b2
 int id searchPlatillo 0x7f0a02b3
@@ -4793,12 +4795,15 @@ int id textView7 0x7f0a032e
 int id textView8 0x7f0a032f
 int id textView9 0x7f0a0330
 int id textViewCantidad 0x7f0a0331
+int id textViewCosto 0x7f0a03aa
 int id textViewDetailOffer 0x7f0a0332
 int id textViewDetalles 0x7f0a0333
 int id textViewNameStaff 0x7f0a0334
 int id textViewPrecio 0x7f0a0335
 int id textViewRolStaff 0x7f0a0336
 int id textViewShare 0x7f0a0337
+int id textViewSubTotal 0x7f0a03a8
+int id textViewTotal 0x7f0a03a9
 int id text_input_end_icon 0x7f0a0338
 int id text_input_error_icon 0x7f0a0339
 int id text_input_start_icon 0x7f0a033a

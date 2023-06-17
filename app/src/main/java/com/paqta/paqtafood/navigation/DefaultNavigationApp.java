@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.ui.user.cart.CartFragment;
+import com.paqta.paqtafood.ui.user.cart.components.FirstStepCartFragment;
 import com.paqta.paqtafood.ui.user.favorite.FavoriteFragment;
 import com.paqta.paqtafood.ui.user.home.HomeFragment;
 import com.paqta.paqtafood.ui.user.login.Login;

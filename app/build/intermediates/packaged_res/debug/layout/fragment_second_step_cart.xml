@@ -67,6 +67,7 @@
             app:startIconDrawable="@drawable/fui_ic_phone_white_24dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTxtPhonePedido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone" />
@@ -93,6 +94,7 @@
             app:startIconDrawable="@drawable/arrow_right_home">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTxtReference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />

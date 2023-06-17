@@ -2,20 +2,24 @@ package com.paqta.paqtafood.ui.user.cart.components;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +27,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -31,13 +34,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -58,6 +59,7 @@ import com.google.maps.model.DirectionsStep;
 import com.google.maps.model.EncodedPolyline;
 import com.google.maps.model.TravelMode;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.ui.user.cart.CartFragment;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -65,10 +67,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SecondStepCartFragment extends Fragment implements OnMapReadyCallback {
-
     GoogleMap mMap;
     MaterialButton btnGetLocation, btnOpenMap;
-    TextInputEditText editTextUbication;
+    public TextInputEditText editTextUbication, editTextPhone, editTextReference;
     private FusedLocationProviderClient fusedLocationClient;
     private static final int PERMISSIONS_REQUEST_LOCATION = 100;
     private static final int PLACE_AUTOCOMPLETE_REQUEST = 1;
@@ -89,11 +90,22 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
 
         btnOpenMap = view.findViewById(R.id.btnOpenMap);
         editTextUbication = view.findViewById(R.id.textUbicationSelected);
+        editTextPhone = view.findViewById(R.id.edtTxtPhonePedido);
+        editTextReference = view.findViewById(R.id.edtTxtReference);
 
         // GOOGLE MAPS
         permisoUbicacion();
 
         btnOpenMap.setOnClickListener(v -> startPlacePicker());
+    }
+
+    private void guardarDatosSharedPreferences(String ubication, String phone, String reference) {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("DatosPaqtaFood", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("addressPedido", ubication);
+        editor.putString("phonePedido", phone);
+        editor.putString("referencePedido", reference);
+        editor.apply();
     }
 
     private void startPlacePicker() {
@@ -171,7 +183,7 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
         LatLng center = bounds.getCenter();
 
         double distance = calculateDistance(bounds.southwest, bounds.northeast);
-        int size = (int) (distance / 6);
+        int size = (int) (distance / 5.5);
 
         TextView textView = new TextView(getContext());
         textView.setText(duracionTexto);
@@ -179,12 +191,24 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
         textView.setBackgroundColor(Color.WHITE);
         textView.setPadding(8, 4, 8, 4);
         textView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+        Drawable icono = ContextCompat.getDrawable(getContext(), R.drawable.baseline_drive_eta_24);
+
+        icono.setBounds(0, 0, icono.getIntrinsicWidth(), icono.getIntrinsicHeight());
+
+        textView.setCompoundDrawables(icono, null, null, null);
+
+        textView.setCompoundDrawablePadding(8);
+        textView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        textView.layout(0, 0, textView.getMeasuredWidth(), textView.getMeasuredHeight());
+
+
         Bitmap bitmap = Bitmap.createBitmap(textView.getMeasuredWidth(), textView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
-        textView.layout(0, 0, textView.getMeasuredWidth(), textView.getMeasuredHeight());
+
         textView.draw(canvas);
 
-        LatLng newPosition = new LatLng(center.latitude, center.longitude + 0.002); // Ajusta la posición en longitud
+        LatLng newPosition = new LatLng(center.latitude, center.longitude + 0.004); // Ajusta la posición en longitud
 
         GroundOverlayOptions overlayOptions = new GroundOverlayOptions()
                 .image(BitmapDescriptorFactory.fromBitmap(bitmap))
@@ -219,7 +243,7 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
         super.onActivityResult(requestCode, resultCode, data);
 
         // Agregar los marcadores iniciales (locales) al mapa y a la lista
-        LatLng localLatLng1 = new LatLng(-14.0670, -75.7257);
+        LatLng localLatLng1 = new LatLng(-14.085979, -75.766444);
 
         if (requestCode == PLACE_AUTOCOMPLETE_REQUEST) {
             if (resultCode == RESULT_OK) {
@@ -320,8 +344,8 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
             return;
         }
 
-        LatLng ica = new LatLng(-14.0670, -75.7257);
-        mMap.addMarker(new MarkerOptions().position(ica).title("Ica"));
+        LatLng ica = new LatLng(-14.085979, -75.766444);
+        mMap.addMarker(new MarkerOptions().position(ica).title("Huacachina"));
 
         // Configurar la cámara para mostrar los marcadores
         CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -331,4 +355,5 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
 
         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
+
 }

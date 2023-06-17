@@ -20,7 +20,7 @@ import com.paqta.paqtafood.R;
 
 public class ThirdStepCartFragment extends Fragment {
 
-    MaterialCardView cardPaymentVisa, cardPaymentEWallet, cardPaymentPaypal, cardPaymentPagoEfectivo;
+    MaterialCardView cardPaymentVisa, cardPaymentPaypal, cardPaymentPagoEfectivo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,7 +32,6 @@ public class ThirdStepCartFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         cardPaymentVisa = view.findViewById(R.id.cardPaymentVisa);
-        cardPaymentEWallet = view.findViewById(R.id.cardPaymentEWallet);
         cardPaymentPaypal = view.findViewById(R.id.cardPaymentPaypal);
         cardPaymentPagoEfectivo = view.findViewById(R.id.cardPaymentPagoEfectivo);
 
@@ -41,12 +40,6 @@ public class ThirdStepCartFragment extends Fragment {
             // cardPaymentVisa.setStrokeWidth(20);
             // cardPaymentVisa.setStrokeColor(Color.BLACK);
             Snackbar.make(v, "Pago con tarjeta", Snackbar.LENGTH_SHORT)
-                    .setAnchorView(R.id.bottomNavigationView)
-                    .show();
-        });
-
-        cardPaymentEWallet.setOnClickListener(v -> {
-            Snackbar.make(v, "Pago con yape o plin", Snackbar.LENGTH_SHORT)
                     .setAnchorView(R.id.bottomNavigationView)
                     .show();
         });

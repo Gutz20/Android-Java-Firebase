@@ -70,56 +70,72 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="70dp"
-                android:layout_height="20dp"
-                app:cardBackgroundColor="#3F51B5"
-                android:layout_gravity="center"
-                app:cardCornerRadius="20dp"
-                app:strokeWidth="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
+                <TextView
+                    android:id="@+id/textViewCosto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_gravity="center"
+                    android:text="Costo: S/ 50"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:id="@+id/subtractCantidad"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="-"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#3F51B5"
+                    app:cardCornerRadius="20dp"
+                    app:strokeWidth="0dp">
 
-                    <TextView
-                        android:id="@+id/textViewCantidad"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="1"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/addCantidad"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="+"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/subtractCantidad"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/textViewCantidad"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
-            </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/addCantidad"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
 
         </LinearLayout>
 

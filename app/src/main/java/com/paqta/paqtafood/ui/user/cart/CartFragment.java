@@ -13,7 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,6 +38,9 @@ public class CartFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     FrameLayout frameContainer;
+    LinearLayout layoutDataCart;
+    ScrollView scrollView;
+    TextView textViewTotal, textViewSubtotal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +58,11 @@ public class CartFragment extends Fragment {
 
         btnComprar = view.findViewById(R.id.btnComprar);
         frameContainer = view.findViewById(R.id.fragmentContainer);
+        layoutDataCart = view.findViewById(R.id.layoutDataCart);
+        scrollView = view.findViewById(R.id.scrollViewCart);
+
+        textViewTotal = view.findViewById(R.id.textViewTotal);
+        textViewSubtotal = view.findViewById(R.id.textViewSubTotal);
 
         stepTextView = view.findViewById(R.id.stepTextView);
         stepView = view.findViewById(R.id.step_view);
@@ -63,8 +74,12 @@ public class CartFragment extends Fragment {
 
         btnComprar.setOnClickListener(v -> configureStep());
         replaceFragment(new FirstStepCartFragment());
+    }
+
+    private void setupPrices() {
 
     }
+
 
     private void configureStep() {
         stepIndex++;
