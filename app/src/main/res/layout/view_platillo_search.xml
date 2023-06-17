@@ -2,74 +2,75 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="330dp"
+    android:layout_width="match_parent"
     android:layout_height="100dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/bg_search_item"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/fondo_search_card"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
+        app:layout_constraintVertical_bias="0.25"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetail"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="Detalle"
+            app:icon="@drawable/baseline_menu_24"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
+            android:layout_marginHorizontal="10dp"
             android:id="@+id/image_view_search"
             android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.091"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/card_favorite_img" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/alitas" />
 
         <TextView
             android:id="@+id/text_item_search"
-            android:layout_width="172dp"
-            android:layout_height="44dp"
+            android:layout_width="165dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/inter_medium"
+            android:maxLines="3"
+            android:layout_marginRight="10dp"
             android:text="Alas con papas fritas y arroz chaufa"
-            android:textAlignment="viewStart"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.235"
-            app:layout_constraintStart_toEndOf="@+id/image_view_search"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView14"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetail2"
+            style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_menu_card" />
-
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:contentDescription="Detalle"
+            app:icon="@drawable/arrow_right_home"
+            app:iconTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.895"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.491"
-            app:srcCompat="@drawable/arrow_right_home" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="18dp"
         android:background="@drawable/badge_platillo_favorite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,8 +98,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="100dp"
         android:background="@drawable/simbol_dolar_favorite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -116,6 +116,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     // Google Maps Location
     implementation "com.google.android.gms:play-services-location:21.0.1"
+    // API de PLACES
+    implementation 'com.google.android.libraries.places:places:3.1.0'
+    // API de DIRECTIONS
+    implementation 'com.google.maps:google-maps-services:0.18.0'
 
 //    Retrofit | Consultas al backend
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -25,11 +26,16 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
   @NonNull
   public final MaterialButton btnOpenMap;
 
+  @NonNull
+  public final TextInputEditText textUbicationSelected;
+
   private FragmentSecondStepCartBinding(@NonNull FrameLayout rootView,
-      @NonNull MaterialButton btnGetUbication, @NonNull MaterialButton btnOpenMap) {
+      @NonNull MaterialButton btnGetUbication, @NonNull MaterialButton btnOpenMap,
+      @NonNull TextInputEditText textUbicationSelected) {
     this.rootView = rootView;
     this.btnGetUbication = btnGetUbication;
     this.btnOpenMap = btnOpenMap;
+    this.textUbicationSelected = textUbicationSelected;
   }
 
   @Override
@@ -71,7 +77,14 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSecondStepCartBinding((FrameLayout) rootView, btnGetUbication, btnOpenMap);
+      id = R.id.textUbicationSelected;
+      TextInputEditText textUbicationSelected = ViewBindings.findChildViewById(rootView, id);
+      if (textUbicationSelected == null) {
+        break missingId;
+      }
+
+      return new FragmentSecondStepCartBinding((FrameLayout) rootView, btnGetUbication, btnOpenMap,
+          textUbicationSelected);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

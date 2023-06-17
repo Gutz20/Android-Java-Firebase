@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -23,12 +22,6 @@ public final class FragmentSearchBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final ImageView imageView16;
-
-  @NonNull
-  public final RecyclerView recyclerOtherMenus;
-
-  @NonNull
   public final RecyclerView recyclerSearch;
 
   @NonNull
@@ -37,19 +30,12 @@ public final class FragmentSearchBinding implements ViewBinding {
   @NonNull
   public final TextView textView11;
 
-  @NonNull
-  public final TextView textView12;
-
-  private FragmentSearchBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView16,
-      @NonNull RecyclerView recyclerOtherMenus, @NonNull RecyclerView recyclerSearch,
-      @NonNull SearchView searchView, @NonNull TextView textView11, @NonNull TextView textView12) {
+  private FragmentSearchBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView recyclerSearch,
+      @NonNull SearchView searchView, @NonNull TextView textView11) {
     this.rootView = rootView;
-    this.imageView16 = imageView16;
-    this.recyclerOtherMenus = recyclerOtherMenus;
     this.recyclerSearch = recyclerSearch;
     this.searchView = searchView;
     this.textView11 = textView11;
-    this.textView12 = textView12;
   }
 
   @Override
@@ -79,18 +65,6 @@ public final class FragmentSearchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageView16;
-      ImageView imageView16 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView16 == null) {
-        break missingId;
-      }
-
-      id = R.id.recyclerOtherMenus;
-      RecyclerView recyclerOtherMenus = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerOtherMenus == null) {
-        break missingId;
-      }
-
       id = R.id.recyclerSearch;
       RecyclerView recyclerSearch = ViewBindings.findChildViewById(rootView, id);
       if (recyclerSearch == null) {
@@ -109,14 +83,8 @@ public final class FragmentSearchBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView12;
-      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
-      if (textView12 == null) {
-        break missingId;
-      }
-
-      return new FragmentSearchBinding((FrameLayout) rootView, imageView16, recyclerOtherMenus,
-          recyclerSearch, searchView, textView11, textView12);
+      return new FragmentSearchBinding((FrameLayout) rootView, recyclerSearch, searchView,
+          textView11);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

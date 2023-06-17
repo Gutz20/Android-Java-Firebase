@@ -23,7 +23,13 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ConstraintLayout constraintLayout3;
+  public final ConstraintLayout circleDescMoney;
+
+  @NonNull
+  public final ConstraintLayout circleTypeMoney;
+
+  @NonNull
+  public final ConstraintLayout containerCard;
 
   @NonNull
   public final MaterialButton icButtonDetail;
@@ -44,12 +50,15 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
   public final TextView titleViewFavorite;
 
   private ViewPlatilloFavoriteBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull MaterialButton icButtonDetail,
+      @NonNull ConstraintLayout circleDescMoney, @NonNull ConstraintLayout circleTypeMoney,
+      @NonNull ConstraintLayout containerCard, @NonNull MaterialButton icButtonDetail,
       @NonNull ImageView imageViewFavorite, @NonNull CheckBox imgViewIconFavorite,
       @NonNull TextView textView5, @NonNull TextView textViewPrecio,
       @NonNull TextView titleViewFavorite) {
     this.rootView = rootView;
-    this.constraintLayout3 = constraintLayout3;
+    this.circleDescMoney = circleDescMoney;
+    this.circleTypeMoney = circleTypeMoney;
+    this.containerCard = containerCard;
     this.icButtonDetail = icButtonDetail;
     this.imageViewFavorite = imageViewFavorite;
     this.imgViewIconFavorite = imgViewIconFavorite;
@@ -85,9 +94,21 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.constraintLayout3;
-      ConstraintLayout constraintLayout3 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout3 == null) {
+      id = R.id.circleDescMoney;
+      ConstraintLayout circleDescMoney = ViewBindings.findChildViewById(rootView, id);
+      if (circleDescMoney == null) {
+        break missingId;
+      }
+
+      id = R.id.circleTypeMoney;
+      ConstraintLayout circleTypeMoney = ViewBindings.findChildViewById(rootView, id);
+      if (circleTypeMoney == null) {
+        break missingId;
+      }
+
+      id = R.id.containerCard;
+      ConstraintLayout containerCard = ViewBindings.findChildViewById(rootView, id);
+      if (containerCard == null) {
         break missingId;
       }
 
@@ -127,9 +148,9 @@ public final class ViewPlatilloFavoriteBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewPlatilloFavoriteBinding((ConstraintLayout) rootView, constraintLayout3,
-          icButtonDetail, imageViewFavorite, imgViewIconFavorite, textView5, textViewPrecio,
-          titleViewFavorite);
+      return new ViewPlatilloFavoriteBinding((ConstraintLayout) rootView, circleDescMoney,
+          circleTypeMoney, containerCard, icButtonDetail, imageViewFavorite, imgViewIconFavorite,
+          textView5, textViewPrecio, titleViewFavorite);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

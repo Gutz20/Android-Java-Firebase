@@ -57,6 +57,20 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         Producto producto = productosList.get(position);
         Glide.with(holder.imagenProductCart.getContext()).load(producto.getImagen()).into(holder.imagenProductCart);
 
+        holder.addCantidad.setOnClickListener(v -> {
+            int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
+            cantidad += 1;
+            holder.textViewCantidad.setText(String.valueOf(cantidad));
+        });
+        holder.subtractCantidad.setOnClickListener(v -> {
+            int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
+            if (cantidad > 1) {
+                cantidad -= 1;
+                holder.textViewCantidad.setText(String.valueOf(cantidad));
+            }
+        });
+
+
         holder.btnDetail.setOnClickListener(v -> verDetalle(producto.getId()));
         holder.btnDelete.setOnClickListener(v -> {
             String productoId = producto.getId();
@@ -102,7 +116,7 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imagenProductCart;
-        TextView nameProduct, detailProduct;
+        TextView nameProduct, detailProduct, addCantidad, subtractCantidad, textViewCantidad;
         MaterialButton btnDelete, btnDetail;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -111,6 +125,9 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
             detailProduct = itemView.findViewById(R.id.textDetailProductCart);
             btnDetail = itemView.findViewById(R.id.btnDetail);
             btnDelete = itemView.findViewById(R.id.btnDeleteFromCart);
+            addCantidad = itemView.findViewById(R.id.addCantidad);
+            subtractCantidad = itemView.findViewById(R.id.subtractCantidad);
+            textViewCantidad = itemView.findViewById(R.id.textViewCantidad);
         }
     }
 }

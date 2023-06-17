@@ -22,6 +22,9 @@ public final class ViewProductCartBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView addCantidad;
+
+  @NonNull
   public final MaterialButton btnDeleteFromCart;
 
   @NonNull
@@ -31,29 +34,30 @@ public final class ViewProductCartBinding implements ViewBinding {
   public final ImageView imgProductCart;
 
   @NonNull
+  public final TextView subtractCantidad;
+
+  @NonNull
   public final TextView textDetailProductCart;
 
   @NonNull
-  public final TextView textView19;
-
-  @NonNull
-  public final TextView textView21;
+  public final TextView textViewCantidad;
 
   @NonNull
   public final TextView txtNameProductCart;
 
-  private ViewProductCartBinding(@NonNull ConstraintLayout rootView,
+  private ViewProductCartBinding(@NonNull ConstraintLayout rootView, @NonNull TextView addCantidad,
       @NonNull MaterialButton btnDeleteFromCart, @NonNull MaterialButton btnDetail,
-      @NonNull ImageView imgProductCart, @NonNull TextView textDetailProductCart,
-      @NonNull TextView textView19, @NonNull TextView textView21,
+      @NonNull ImageView imgProductCart, @NonNull TextView subtractCantidad,
+      @NonNull TextView textDetailProductCart, @NonNull TextView textViewCantidad,
       @NonNull TextView txtNameProductCart) {
     this.rootView = rootView;
+    this.addCantidad = addCantidad;
     this.btnDeleteFromCart = btnDeleteFromCart;
     this.btnDetail = btnDetail;
     this.imgProductCart = imgProductCart;
+    this.subtractCantidad = subtractCantidad;
     this.textDetailProductCart = textDetailProductCart;
-    this.textView19 = textView19;
-    this.textView21 = textView21;
+    this.textViewCantidad = textViewCantidad;
     this.txtNameProductCart = txtNameProductCart;
   }
 
@@ -84,6 +88,12 @@ public final class ViewProductCartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.addCantidad;
+      TextView addCantidad = ViewBindings.findChildViewById(rootView, id);
+      if (addCantidad == null) {
+        break missingId;
+      }
+
       id = R.id.btnDeleteFromCart;
       MaterialButton btnDeleteFromCart = ViewBindings.findChildViewById(rootView, id);
       if (btnDeleteFromCart == null) {
@@ -102,21 +112,21 @@ public final class ViewProductCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.subtractCantidad;
+      TextView subtractCantidad = ViewBindings.findChildViewById(rootView, id);
+      if (subtractCantidad == null) {
+        break missingId;
+      }
+
       id = R.id.textDetailProductCart;
       TextView textDetailProductCart = ViewBindings.findChildViewById(rootView, id);
       if (textDetailProductCart == null) {
         break missingId;
       }
 
-      id = R.id.textView19;
-      TextView textView19 = ViewBindings.findChildViewById(rootView, id);
-      if (textView19 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView21;
-      TextView textView21 = ViewBindings.findChildViewById(rootView, id);
-      if (textView21 == null) {
+      id = R.id.textViewCantidad;
+      TextView textViewCantidad = ViewBindings.findChildViewById(rootView, id);
+      if (textViewCantidad == null) {
         break missingId;
       }
 
@@ -126,8 +136,9 @@ public final class ViewProductCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewProductCartBinding((ConstraintLayout) rootView, btnDeleteFromCart, btnDetail,
-          imgProductCart, textDetailProductCart, textView19, textView21, txtNameProductCart);
+      return new ViewProductCartBinding((ConstraintLayout) rootView, addCantidad, btnDeleteFromCart,
+          btnDetail, imgProductCart, subtractCantidad, textDetailProductCart, textViewCantidad,
+          txtNameProductCart);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

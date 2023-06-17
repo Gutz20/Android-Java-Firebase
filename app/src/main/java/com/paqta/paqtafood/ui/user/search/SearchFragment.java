@@ -20,7 +20,6 @@ import com.paqta.paqtafood.model.Producto;
 
 public class SearchFragment extends Fragment {
 
-
     private FirebaseFirestore mFirestore;
     RecyclerView mRecycler;
     CardSearchAdapter mAdapter;
@@ -42,14 +41,17 @@ public class SearchFragment extends Fragment {
         searchView = root.findViewById(R.id.searchView);
         mRecycler = root.findViewById(R.id.recyclerSearch);
 
+        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
+
+        setupRecycler(query);
+        setupSearchView();
+        return root;
+    }
+
+    private void setupRecycler(Query query) {
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext());
-
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext());
-        layoutManager2.setOrientation(RecyclerView.HORIZONTAL);
-
         mRecycler.setLayoutManager(layoutManager1);
 
-        query = mFirestore.collection("productos").whereEqualTo("categoria", "Platillos");
 
         FirestoreRecyclerOptions<Producto> options = new FirestoreRecyclerOptions.Builder<Producto>()
                 .setQuery(query, Producto.class)
@@ -58,9 +60,6 @@ public class SearchFragment extends Fragment {
         mAdapter = new CardSearchAdapter(options, getActivity(), getActivity().getSupportFragmentManager());
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);
-
-        setupSearchView();
-        return root;
     }
 
     private void setupSearchView() {

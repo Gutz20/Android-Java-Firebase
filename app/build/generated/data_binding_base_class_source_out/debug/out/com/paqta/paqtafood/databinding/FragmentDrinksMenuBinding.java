@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,14 +22,10 @@ public final class FragmentDrinksMenuBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rycDrinks;
 
-  @NonNull
-  public final TextView textView4;
-
-  private FragmentDrinksMenuBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView rycDrinks,
-      @NonNull TextView textView4) {
+  private FragmentDrinksMenuBinding(@NonNull FrameLayout rootView,
+      @NonNull RecyclerView rycDrinks) {
     this.rootView = rootView;
     this.rycDrinks = rycDrinks;
-    this.textView4 = textView4;
   }
 
   @Override
@@ -66,13 +61,7 @@ public final class FragmentDrinksMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-      if (textView4 == null) {
-        break missingId;
-      }
-
-      return new FragmentDrinksMenuBinding((FrameLayout) rootView, rycDrinks, textView4);
+      return new FragmentDrinksMenuBinding((FrameLayout) rootView, rycDrinks);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

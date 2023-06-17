@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,13 +23,13 @@ public final class ViewPlatilloSearchBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ConstraintLayout constraintLayout3;
+  public final MaterialButton btnDetail;
 
   @NonNull
-  public final ImageView imageView14;
+  public final MaterialButton btnDetail2;
 
   @NonNull
-  public final ImageView imageView15;
+  public final LinearLayout constraintLayout3;
 
   @NonNull
   public final ImageView imageViewSearch;
@@ -42,13 +44,13 @@ public final class ViewPlatilloSearchBinding implements ViewBinding {
   public final TextView textView5;
 
   private ViewPlatilloSearchBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull ImageView imageView14,
-      @NonNull ImageView imageView15, @NonNull ImageView imageViewSearch,
+      @NonNull MaterialButton btnDetail, @NonNull MaterialButton btnDetail2,
+      @NonNull LinearLayout constraintLayout3, @NonNull ImageView imageViewSearch,
       @NonNull TextView textItemSearch, @NonNull TextView textView3, @NonNull TextView textView5) {
     this.rootView = rootView;
+    this.btnDetail = btnDetail;
+    this.btnDetail2 = btnDetail2;
     this.constraintLayout3 = constraintLayout3;
-    this.imageView14 = imageView14;
-    this.imageView15 = imageView15;
     this.imageViewSearch = imageViewSearch;
     this.textItemSearch = textItemSearch;
     this.textView3 = textView3;
@@ -82,21 +84,21 @@ public final class ViewPlatilloSearchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnDetail;
+      MaterialButton btnDetail = ViewBindings.findChildViewById(rootView, id);
+      if (btnDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.btnDetail2;
+      MaterialButton btnDetail2 = ViewBindings.findChildViewById(rootView, id);
+      if (btnDetail2 == null) {
+        break missingId;
+      }
+
       id = R.id.constraintLayout3;
-      ConstraintLayout constraintLayout3 = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout constraintLayout3 = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout3 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView14;
-      ImageView imageView14 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView14 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView15;
-      ImageView imageView15 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView15 == null) {
         break missingId;
       }
 
@@ -124,8 +126,8 @@ public final class ViewPlatilloSearchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewPlatilloSearchBinding((ConstraintLayout) rootView, constraintLayout3,
-          imageView14, imageView15, imageViewSearch, textItemSearch, textView3, textView5);
+      return new ViewPlatilloSearchBinding((ConstraintLayout) rootView, btnDetail, btnDetail2,
+          constraintLayout3, imageViewSearch, textItemSearch, textView3, textView5);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

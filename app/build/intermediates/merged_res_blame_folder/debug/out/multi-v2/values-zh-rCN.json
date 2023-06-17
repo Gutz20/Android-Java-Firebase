@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-55:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\ca8c61c4dbcf9f87623a53a3240df758\\transformed\\play-services-base-18.1.0\\res\\values-zh-rCN\\values.xml",
@@ -30,11 +30,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "233",
+                        "startLines": "241",
                         "startColumns": "4",
-                        "startOffsets": "18298",
+                        "startOffsets": "18789",
                         "endColumns": "100",
-                        "endOffsets": "18394"
+                        "endOffsets": "18885"
                     }
                 },
                 {
@@ -47,11 +47,11 @@
                         "endOffsets": "195,290,390,472,569,675,752,827,918,1011,1108,1204,1298,1391,1486,1578,1669,1760,1838,1934,2029,2124,2221,2317,2415,2563,2657,2736"
                     },
                     "to": {
-                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,232",
+                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,240",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "485,580,675,775,857,954,1060,1137,1212,1303,1396,1493,1589,1683,1776,1871,1963,2054,2145,2223,2319,2414,2509,2606,2702,2800,2948,18219",
+                        "startOffsets": "485,580,675,775,857,954,1060,1137,1212,1303,1396,1493,1589,1683,1776,1871,1963,2054,2145,2223,2319,2414,2509,2606,2702,2800,2948,18710",
                         "endColumns": "94,94,99,81,96,105,76,74,90,92,96,95,93,92,94,91,90,90,77,95,94,94,96,95,97,147,93,78",
-                        "endOffsets": "575,670,770,852,949,1055,1132,1207,1298,1391,1488,1584,1678,1771,1866,1958,2049,2140,2218,2314,2409,2504,2601,2697,2795,2943,3037,18293"
+                        "endOffsets": "575,670,770,852,949,1055,1132,1207,1298,1391,1488,1584,1678,1771,1866,1958,2049,2140,2218,2314,2409,2504,2601,2697,2795,2943,3037,18784"
                     }
                 },
                 {
@@ -106,6 +106,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\cedb0df6e6184a80dfc77f912396926d\\transformed\\places-3.1.0\\res\\values-zh-rCN\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "0,0,0,0,0,0,0,0",
+                        "startOffsets": "188,250,305,386,445,486,549,603",
+                        "endColumns": "61,54,80,58,40,62,53,43",
+                        "endOffsets": "249,304,385,444,485,548,602,646"
+                    },
+                    "to": {
+                        "startLines": "232,233,234,235,236,237,238,239",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "18219,18285,18344,18429,18492,18537,18604,18662",
+                        "endColumns": "65,58,84,62,44,66,57,47",
+                        "endOffsets": "18280,18339,18424,18487,18532,18599,18657,18705"
+                    }
+                },
+                {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\e876c9810320618aac2bbac3ecad8e5f\\transformed\\zxing-android-embedded-4.2.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -115,11 +132,11 @@
                         "endOffsets": "99,146,233,302"
                     },
                     "to": {
-                        "startLines": "234,235,236,237",
+                        "startLines": "242,243,244,245",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "18399,18448,18495,18582",
+                        "startOffsets": "18890,18939,18986,19073",
                         "endColumns": "48,46,86,68",
-                        "endOffsets": "18443,18490,18577,18646"
+                        "endOffsets": "18934,18981,19068,19137"
                     }
                 },
                 {

@@ -113,6 +113,7 @@ drawable baseline_clear_24
 drawable baseline_close_24
 drawable baseline_contact_mail_24
 drawable baseline_dashboard_24
+drawable baseline_drive_eta_24
 drawable baseline_edit_24
 drawable baseline_edit_location_alt_24
 drawable baseline_exit_app_24
@@ -174,6 +175,7 @@ drawable favorito
 drawable fondo
 drawable fondo_offers
 drawable fondo_prueba
+drawable fondo_search_card
 drawable gaseosas_icon
 drawable heart_bottom_nav
 drawable home_bebidas
@@ -221,6 +223,7 @@ drawable menu_bebidas
 drawable menu_combos
 drawable menu_extras
 drawable menu_offers
+drawable menu_postres
 drawable menu_principal
 drawable messenger_icon
 drawable muestra_platillo
@@ -268,6 +271,7 @@ font inter_bold
 font inter_medium
 font irish_grover
 font island_moments_regular
+id addCantidad
 id addressTextViewDesc
 id addressTextViewTitle
 id ageProduct
@@ -289,6 +293,7 @@ id btnDeleteFromCart
 id btnDeleteImage
 id btnDeleteStaff
 id btnDetail
+id btnDetail2
 id btnDetailOffer
 id btnDetailStaff
 id btnDialogImage
@@ -313,6 +318,8 @@ id cardPaymentPaypal
 id cardPaymentVisa
 id cartProductos
 id chipGroup
+id circleDescMoney
+id circleTypeMoney
 id cityDescriptionTextView
 id cityTextView
 id cmbCategoria
@@ -325,6 +332,7 @@ id constraintLayout5
 id constraintLayout6
 id constraintLayout7
 id constraintLayout8
+id containerCard
 id coordinatorLayout
 id coordinatorLayout2
 id cv
@@ -370,8 +378,6 @@ id imageView
 id imageView10
 id imageView11
 id imageView12
-id imageView14
-id imageView15
 id imageView16
 id imageView17
 id imageView18
@@ -383,8 +389,6 @@ id imageView22
 id imageView23
 id imageView25
 id imageView3
-id imageView4
-id imageView5
 id imageView6
 id imageView7
 id imageView8
@@ -422,6 +426,7 @@ id lrltToBebidas
 id lrltToCombos
 id lrltToExtras
 id lrltToOfertas
+id lrltToPostres
 id lrltToPrincipal
 id main_item
 id map
@@ -477,11 +482,11 @@ id recyclerDesserts
 id recyclerDrinks
 id recyclerMenu
 id recyclerMenuDetail
-id recyclerOtherMenus
 id recyclerPlatillos
 id recyclerProductos
 id recyclerSearch
 id recyclerViewOffers
+id rycDesserts
 id rycDrinks
 id rycViewStaff
 id search
@@ -495,32 +500,31 @@ id statusDescriptionTextView
 id statusTextView
 id stepTextView
 id step_view
+id subtractCantidad
 id swState
 id textDetailProductCart
 id textEmail
 id textName
 id textNombrePlatilloMenu
+id textUbicationSelected
 id textView
 id textView10
 id textView11
-id textView12
 id textView13
 id textView14
 id textView15
 id textView16
 id textView17
 id textView18
-id textView19
 id textView2
 id textView20
-id textView21
 id textView3
-id textView4
 id textView5
 id textView6
 id textView7
 id textView8
 id textView9
+id textViewCantidad
 id textViewDetailOffer
 id textViewDetalles
 id textViewNameStaff
@@ -536,6 +540,7 @@ id titulo
 id tituloCat
 id tituloDrink
 id topAppBar
+id tvDuration
 id tvwEjem
 id tvwLogin
 id tvwOlvidasteContra
@@ -573,6 +578,7 @@ layout fragment_category
 layout fragment_content_offers
 layout fragment_dashboard
 layout fragment_desserts
+layout fragment_desserts_menu
 layout fragment_detail_dishes
 layout fragment_detail_ticket
 layout fragment_dishes
@@ -594,6 +600,7 @@ layout fragment_search
 layout fragment_second_step_cart
 layout fragment_staff
 layout fragment_third_step_cart
+layout info_window_layout
 layout item_container_user
 layout list_element
 layout nav_header
@@ -634,8 +641,8 @@ string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_maps_key
 string google_storage_bucket
-string hello_blank_fragment
 string labelButtonLogin
 string labelButtonRegistro
 string labelCampoNulo

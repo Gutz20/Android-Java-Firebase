@@ -19,6 +19,7 @@ import com.google.firebase.firestore.Query;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardMenuAdapter;
 import com.paqta.paqtafood.model.Producto;
+import com.paqta.paqtafood.ui.user.desserts.DessertsMenuFragment;
 import com.paqta.paqtafood.ui.user.drinks.DrinksMenuFragment;
 import com.paqta.paqtafood.ui.user.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.ui.user.offers.OffersFragment;
@@ -37,7 +38,7 @@ public class MenuFragment extends Fragment {
     private RecyclerView mRecycler;
     CardMenuAdapter mAdapter;
     Query query;
-    LinearLayout lrltNavPrincipal, lrltNavCombos, lrltNavExtras, lrltNavBebidas, lrltNavOffers;
+    LinearLayout lrltNavPrincipal, lrltNavCombos, lrltNavExtras, lrltNavBebidas, lrltNavOffers, lrltNavPostres;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,12 +53,14 @@ public class MenuFragment extends Fragment {
         lrltNavPrincipal = root.findViewById(R.id.lrltToPrincipal);
         lrltNavBebidas = root.findViewById(R.id.lrltToBebidas);
         lrltNavOffers = root.findViewById(R.id.lrltToOfertas);
+        lrltNavPostres = root.findViewById(R.id.lrltToPostres);
 
         lrltNavPrincipal.setOnClickListener(v -> replaceFragment(new MenuDetailFragment()));
         lrltNavCombos.setOnClickListener(v -> replaceFragment(new OffersFragment()));
         lrltNavExtras.setOnClickListener(v -> replaceFragment(new SearchFragment()));
         lrltNavBebidas.setOnClickListener(v -> replaceFragment(new DrinksMenuFragment()));
         lrltNavOffers.setOnClickListener(v -> replaceFragment(new OffersFragment()));
+        lrltNavPostres.setOnClickListener(v -> replaceFragment(new DessertsMenuFragment()));
 
         setupRecyclerView();
         return root;

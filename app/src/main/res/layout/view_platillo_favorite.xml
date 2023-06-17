@@ -7,7 +7,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/containerCard"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_card_favorite"
@@ -17,6 +17,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,6 +89,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/circleDescMoney"
         android:layout_width="33dp"
         android:layout_height="33dp"
         android:layout_marginEnd="14dp"
@@ -117,9 +119,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/circleTypeMoney"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="14dp"
         android:background="@drawable/simbol_dolar_favorite"
         app:layout_constraintBottom_toBottomOf="parent"

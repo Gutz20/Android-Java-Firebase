@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-55:/values-es-rES/values-es-rES.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\3799e577ffcda8af5f15b9870989f921\\transformed\\facebook-login-16.0.1\\res\\values-es-rES\\values-es-rES.xml",

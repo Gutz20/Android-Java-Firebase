@@ -10,11 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -49,6 +51,25 @@ public class CardFavoriteAdapter extends RecyclerView.Adapter<CardFavoriteAdapte
     @Override
     public void onBindViewHolder(@NonNull CardFavoriteAdapter.ViewHolder holder, int position) {
         Producto producto = productosList.get(position);
+
+        switch (producto.getCategoria()) {
+            case "Bebidas":
+            case "Postres":
+                ConstraintLayout.LayoutParams typeMoneyLayoutParams = (ConstraintLayout.LayoutParams) holder.circleTypeMoney.getLayoutParams();
+                ConstraintLayout.LayoutParams moneyLayoutParams = (ConstraintLayout.LayoutParams) holder.circleDescMoney.getLayoutParams();
+                typeMoneyLayoutParams.setMarginEnd(185);
+                moneyLayoutParams.setMarginEnd(150);
+                holder.circleTypeMoney.setLayoutParams(typeMoneyLayoutParams);
+                holder.circleDescMoney.setLayoutParams(moneyLayoutParams);
+
+                ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) holder.containerCard.getLayoutParams();
+                layoutParams.width = 300;
+
+                holder.containerCard.setLayoutParams(layoutParams);
+                holder.tituloView.setMaxLines(1);
+                break;
+        }
+
         holder.tituloView.setText(producto.getNombre());
         Glide.with(holder.imagenView.getContext()).load(producto.getImagen()).into(holder.imagenView);
         holder.precioView.setText(String.valueOf(producto.getPrecio()));
@@ -91,6 +112,7 @@ public class CardFavoriteAdapter extends RecyclerView.Adapter<CardFavoriteAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        private ConstraintLayout containerCard, circleTypeMoney, circleDescMoney;
         private TextView tituloView, precioView;
         private ImageView imagenView;
         private CheckBox iconFavorite;
@@ -101,6 +123,10 @@ public class CardFavoriteAdapter extends RecyclerView.Adapter<CardFavoriteAdapte
             precioView = itemView.findViewById(R.id.textViewPrecio);
             imagenView = itemView.findViewById(R.id.image_view_favorite);
             iconFavorite = itemView.findViewById(R.id.img_view_icon_favorite);
+            containerCard = itemView.findViewById(R.id.containerCard);
+            circleDescMoney = itemView.findViewById(R.id.circleDescMoney);
+            circleTypeMoney = itemView.findViewById(R.id.circleTypeMoney);
+
         }
     }
 }

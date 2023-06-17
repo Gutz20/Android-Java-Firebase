@@ -38,8 +38,8 @@ public class ThirdStepCartFragment extends Fragment {
 
         cardPaymentVisa.setOnClickListener(v -> {
             // Le da un borde, podria aplicarse una animación de seleccion con un borde verde
-//            cardPaymentVisa.setStrokeWidth(20);
-//            cardPaymentVisa.setStrokeColor(Color.BLACK);
+            // cardPaymentVisa.setStrokeWidth(20);
+            // cardPaymentVisa.setStrokeColor(Color.BLACK);
             Snackbar.make(v, "Pago con tarjeta", Snackbar.LENGTH_SHORT)
                     .setAnchorView(R.id.bottomNavigationView)
                     .show();

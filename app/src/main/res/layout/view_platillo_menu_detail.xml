@@ -39,7 +39,9 @@
             <TextView
                 android:id="@+id/nombreMenuDetail"
                 android:layout_width="match_parent"
-                android:layout_height="32dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/inter_bold"
                 android:maxLines="3"
                 android:text="Alas con papas fritas y arroz chaufa"
                 android:textColor="@color/white"

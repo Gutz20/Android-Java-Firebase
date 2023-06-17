@@ -21,9 +21,6 @@
     <string name="open_nav">open</string>
     <string name="close_nav">close</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!--    Dishes-->
     <string name="labelTitleFishes">Directorio de Platos</string>
     <string name="btnNuevoFishes">NUEVO</string>
@@ -36,6 +33,7 @@
     <!--    Profile-->
     <string name="labelCampoNulo">...</string>
     <string name="facebook">Facebook</string>
+    <string name="google_maps_key">AIzaSyB7dE5n7bA6JRQrXzDdNKfKw0hQ97gLNKw</string>
 
     <string-array name="roles_array">
         <item>Administrador</item>

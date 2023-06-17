@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -33,7 +35,6 @@ public class FavoriteFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     RecyclerView mRecyclerPlatillos, mRecyclerBebibas, mRecyclerPostres;
-    CardFavoriteAdapter mAdapterPlatillos, mAdapterBebidas, mAdapterPostres;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,6 +54,32 @@ public class FavoriteFragment extends Fragment {
         mRecyclerBebibas = view.findViewById(R.id.favoritesBebidas);
         mRecyclerPostres = view.findViewById(R.id.favoritesPostres);
 
+        obtenerProductosFavoritos("Platillos",
+                platillos -> setupRecycler(platillos, mRecyclerPlatillos),
+                Throwable::printStackTrace
+        );
+
+
+        obtenerProductosFavoritos("Bebidas",
+                bebidas -> setupRecycler(bebidas, mRecyclerBebibas),
+                Throwable::printStackTrace
+        );
+
+        obtenerProductosFavoritos("Postres",
+                postres -> setupRecycler(postres, mRecyclerPostres),
+                Throwable::printStackTrace
+        );
+    }
+
+    private void setupRecycler(List<Producto> productosList, RecyclerView recyclerView) {
+        CardFavoriteAdapter adapter = new CardFavoriteAdapter(productosList);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void obtenerProductosFavoritos(String categoria, OnSuccessListener<List<Producto>> successListener, OnFailureListener failureListener) {
         mFirestore.collection("usuarios")
                 .document(mUser.getUid())
                 .get()
@@ -62,9 +89,9 @@ public class FavoriteFragment extends Fragment {
 
                         // Verificar si la lista de favoritos no es nula o vacía
                         if (favoritos != null && !favoritos.isEmpty()) {
-                            // Obtener los productos favoritos de Firestore
                             mFirestore.collection("productos")
                                     .whereIn(FieldPath.documentId(), favoritos)
+                                    .whereEqualTo("categoria", categoria)
                                     .get()
                                     .addOnSuccessListener(queryDocumentSnapshots -> {
                                         List<Producto> productosList = new ArrayList<>();
@@ -73,32 +100,19 @@ public class FavoriteFragment extends Fragment {
                                             productosList.add(producto);
                                         }
 
-                                        setupRecycler(productosList);
+                                        successListener.onSuccess(productosList);
                                     })
-                                    .addOnFailureListener(e -> {
-                                        // Maneja el error de recuperación de datos de Firestore
-                                    });
+                                    .addOnFailureListener(failureListener);
                         } else {
                             // La lista de favoritos está vacía
-                            setupRecycler(new ArrayList<>());
-                            Toast.makeText(getActivity(), "No hay nada en tu lista de favoritos 😔", Toast.LENGTH_SHORT).show();
+                            successListener.onSuccess(new ArrayList<>());
                         }
                     } else {
                         // El documento de usuario no existe
-                        setupRecycler(new ArrayList<>());
+                        successListener.onSuccess(new ArrayList<>());
                     }
                 })
-                .addOnFailureListener(e -> {
-                    // Maneja el error de recuperación de datos de Firestore
-                });
-    }
-
-    private void setupRecycler(List<Producto> productosList) {
-        mAdapterPlatillos = new CardFavoriteAdapter(productosList);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        mRecyclerPlatillos.setLayoutManager(layoutManager);
-        mRecyclerPlatillos.setAdapter(mAdapterPlatillos);
+                .addOnFailureListener(failureListener);
     }
 
 
