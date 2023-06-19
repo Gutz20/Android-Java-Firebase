@@ -138,13 +138,8 @@
                                 android:gravity="start|center_vertical"
                                 android:text="S/. 126.95"
                                 android:textColor="@color/white" />
-
-
                         </LinearLayout>
-
-
                     </LinearLayout>
-
                 </LinearLayout>
             </LinearLayout>
 

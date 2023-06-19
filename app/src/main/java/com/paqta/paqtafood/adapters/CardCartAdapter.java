@@ -66,7 +66,8 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         Producto producto = productosList.get(position);
         Glide.with(holder.imagenProductCart.getContext()).load(producto.getImagen()).into(holder.imagenProductCart);
 
-        holder.textViewCosto.setText(String.valueOf("Costo: S/" + (producto.getPrecio() * Integer.parseInt(holder.textViewCantidad.getText().toString()))));
+        double totalProducto = Integer.parseInt(holder.textViewCantidad.getText().toString()) * producto.getPrecio();
+        holder.textViewCosto.setText("Costo: S/" + totalProducto);
 
         holder.addCantidad.setOnClickListener(v -> {
             int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
@@ -110,6 +111,16 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
                         }
                     });
         });
+    }
+
+    public double calcularTotal() {
+        double total = 0;
+        for (Producto producto : productosList) {
+            int cantidad = 1;
+            double precio = producto.getPrecio();
+            total += cantidad * precio;
+        }
+        return total;
     }
 
     private void verDetalle(String id) {

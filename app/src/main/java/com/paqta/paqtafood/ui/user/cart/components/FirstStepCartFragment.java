@@ -83,7 +83,6 @@ public class FirstStepCartFragment extends Fragment {
                                             productoList.add(producto);
                                         }
                                         setupRecycler(productoList);
-                                        Log.d("Precio", String.valueOf(mAdapter.getCostoTotal()));
                                     }).addOnFailureListener(e -> {
                                         Toast.makeText(getContext(), "Error al recuperar los datos", Toast.LENGTH_SHORT).show();
                                     });

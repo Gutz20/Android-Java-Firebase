@@ -22,10 +22,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
+import com.paqta.paqtafood.adapters.CardCartAdapter;
+import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.ui.user.cart.components.FirstStepCartFragment;
 import com.paqta.paqtafood.ui.user.cart.components.SecondStepCartFragment;
 import com.paqta.paqtafood.ui.user.cart.components.ThirdStepCartFragment;
 import com.shuhart.stepview.StepView;
+
+import java.util.List;
 
 
 public class CartFragment extends Fragment {
@@ -41,6 +45,8 @@ public class CartFragment extends Fragment {
     LinearLayout layoutDataCart;
     ScrollView scrollView;
     TextView textViewTotal, textViewSubtotal;
+
+    CardCartAdapter cardCartAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,9 +82,6 @@ public class CartFragment extends Fragment {
         replaceFragment(new FirstStepCartFragment());
     }
 
-    private void setupPrices() {
-
-    }
 
 
     private void configureStep() {
