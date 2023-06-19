@@ -7,44 +7,43 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.adapters.CardCartAdapter;
 import com.paqta.paqtafood.model.Producto;
-import com.paqta.paqtafood.ui.user.cart.components.FirstStepCartFragment;
+import com.paqta.paqtafood.model.User;
 import com.paqta.paqtafood.ui.user.cart.components.SecondStepCartFragment;
-import com.paqta.paqtafood.ui.user.cart.components.ThirdStepCartFragment;
 import com.shuhart.stepview.StepView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements CardCartAdapter.OnCartItemRemovedListener{
     StepView stepView;
     TextView stepTextView;
     Button btnComprar;
-    int stepIndex = 0;
-    String[] stepsTexts = {"CARRITO", "ENTREGA", "METODO DE PAGO"};
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-    FrameLayout frameContainer;
     LinearLayout layoutDataCart;
-    ScrollView scrollView;
     TextView textViewTotal, textViewSubtotal;
+    RecyclerView recyclerView;
 
     CardCartAdapter cardCartAdapter;
 
@@ -62,10 +61,10 @@ public class CartFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+        recyclerView = view.findViewById(R.id.rycCart);
+
         btnComprar = view.findViewById(R.id.btnComprar);
-        frameContainer = view.findViewById(R.id.fragmentContainer);
         layoutDataCart = view.findViewById(R.id.layoutDataCart);
-        scrollView = view.findViewById(R.id.scrollViewCart);
 
         textViewTotal = view.findViewById(R.id.textViewTotal);
         textViewSubtotal = view.findViewById(R.id.textViewSubTotal);
@@ -78,38 +77,115 @@ public class CartFragment extends Fragment {
                 .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
                 .commit();
 
-        btnComprar.setOnClickListener(v -> configureStep());
-        replaceFragment(new FirstStepCartFragment());
+        btnComprar.setOnClickListener(v -> {
+            goToNextStep();
+        });
+
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.loadCartItems();
+    }
 
+    private void loadCartItems() {
+        mFirestore.collection("usuarios")
+                .document(mUser.getUid())
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        List<String> carrito = documentSnapshot.toObject(User.class).getCarrito();
 
-    private void configureStep() {
-        stepIndex++;
-        if (stepIndex < stepsTexts.length) {
-            stepTextView.setText(stepsTexts[stepIndex]);
-            stepView.go(stepIndex, true);
+                        if (carrito != null && !carrito.isEmpty()) {
 
-            switch (stepIndex) {
-                case 0:
-                    replaceFragment(new FirstStepCartFragment());
-                    break;
-                case 1:
-                    replaceFragment(new SecondStepCartFragment());
-                    break;
-                case 2:
-                    replaceFragment(new ThirdStepCartFragment());
-                    break;
+                            mFirestore.collection("productos")
+                                    .whereIn(FieldPath.documentId(), carrito)
+                                    .get()
+                                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                                        List<Producto> productoList = new ArrayList<>();
+                                        double subtotal = 0.0; // Variable para calcular el subtotal
+
+                                        for (DocumentSnapshot snapshot : queryDocumentSnapshots) {
+                                            Producto producto = snapshot.toObject(Producto.class);
+                                            productoList.add(producto);
+
+                                            // Sumar el precio de cada producto al subtotal
+                                            subtotal += producto.getPrecio();
+                                        }
+
+                                        // Mostrar el subtotal en el textViewSubtotal
+                                        textViewSubtotal.setText(String.format("S/%.2f", subtotal));
+
+                                        // Calcular el total con algún impuesto o cargo adicional si es necesario
+                                        double total = subtotal; // En este caso, el total es igual al subtotal
+
+                                        // Mostrar el total en el textViewTotal
+                                        textViewTotal.setText(String.format("S/%.2f", total));
+
+                                        setupRecycler(productoList);
+                                    }).addOnFailureListener(e -> {
+                                        Toast.makeText(getContext(), "Error al recuperar los datos", Toast.LENGTH_SHORT).show();
+                                    });
+                        } else {
+                            setupRecycler(new ArrayList<>());
+                            Toast.makeText(getActivity(), "No tienes nada en tu carrito 😔", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        setupRecycler(new ArrayList<>());
+                    }
+                });
+
+    }
+
+    private void setupRecycler(List<Producto> productoList) {
+        cardCartAdapter = new CardCartAdapter(getActivity(), productoList, getActivity().getSupportFragmentManager());
+        cardCartAdapter.setOnCartItemRemovedListener(this);
+        cardCartAdapter.setOnQuantityChangeListener(new CardCartAdapter.OnQuantityChangeListener() {
+            @Override
+            public void onQuantityChange(int position, int quantity) {
+                updateTotal();
             }
-
-        }
+        });
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(cardCartAdapter);
+        updateTotal();
     }
 
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+    private void updateTotal() {
+        double subtotal = 0.0;
+        for (int i = 0; i < cardCartAdapter.getItemCount(); i++) {
+            Producto producto = cardCartAdapter.getItem(i);
+            int quantity = cardCartAdapter.getQuantity(i);
+            subtotal += (producto.getPrecio() * quantity);
+        }
+
+        double total = subtotal; // En este caso, el total es igual al subtotal
+
+        textViewTotal.setText(String.format("S/%.2f", total));
+        textViewSubtotal.setText(String.format("S/%.2f", total));
+    }
+
+
+    private void goToNextStep() {
+        int currentStep = 2; // El número de paso al que quieres ir
+
+        Fragment nextStepFragment = new SecondStepCartFragment();
+        Bundle args = new Bundle();
+        args.putInt("currentStep", currentStep);
+        nextStepFragment.setArguments(args);
+
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, fragment);
+        fragmentTransaction.replace(R.id.frame_layout, nextStepFragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onCartItemRemoved() {
+        updateTotal();
+    }
 }

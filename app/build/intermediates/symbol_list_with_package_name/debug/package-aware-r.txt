@@ -4152,7 +4152,6 @@ id cardPaymentPagoEfectivo
 id cardPaymentPaypal
 id cardPaymentVisa
 id carryVelocity
-id cartProductos
 id center
 id centerCrop
 id centerInside
@@ -4318,7 +4317,6 @@ id fixed
 id flip
 id floating
 id forever
-id fragmentContainer
 id fragment_container_view_tag
 id fragment_phone
 id fragment_register_email
@@ -4652,6 +4650,7 @@ id root
 id rounded
 id row_index_key
 id rtl
+id rycCart
 id rycDesserts
 id rycDrinks
 id rycViewStaff
@@ -4665,7 +4664,6 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
-id scrollViewCart
 id scrollable
 id search
 id searchPlatillo
@@ -5073,7 +5071,6 @@ layout fragment_dishes
 layout fragment_drinks
 layout fragment_drinks_menu
 layout fragment_favorite
-layout fragment_first_step_cart
 layout fragment_form_category
 layout fragment_form_dishes
 layout fragment_form_product

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,16 +30,20 @@ import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.model.Producto;
 import com.paqta.paqtafood.ui.user.detail_dishes.DetailDishesFragment;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHolder> {
-
+    private Context context;
     private List<Producto> productosList;
+    private OnQuantityChangeListener quantityChangeListener;
+    private OnCartItemRemovedListener cartItemRemovedListener;
+    private List<Integer> quantities;
     private FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private SharedPreferences sharedPreferences;
+    private double total = 0;
     Activity activity;
     FragmentManager fm;
 
@@ -48,6 +51,10 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         this.productosList = productosList;
         this.fm = fragmentManager;
         this.activity = activity;
+        quantities = new ArrayList<>();
+        for (int i = 0; i < productosList.size(); i++) {
+            quantities.add(1); // Inicialmente, todas las cantidades son 1
+        }
         sharedPreferences = this.activity.getSharedPreferences("PrefsPaqtaFood", Context.MODE_PRIVATE);
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -61,28 +68,55 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         return new ViewHolder(view);
     }
 
+
+
+
+
+    public interface OnQuantityChangeListener {
+        void onQuantityChange(int position, int quantity);
+    }
+
+    public interface OnCartItemRemovedListener {
+        void onCartItemRemoved();
+    }
+
+    public void setOnQuantityChangeListener(OnQuantityChangeListener listener) {
+        quantityChangeListener = listener;
+    }
+
+    public void setOnCartItemRemovedListener(OnCartItemRemovedListener listener) {
+        cartItemRemovedListener = listener;
+    }
+
+
     @Override
     public void onBindViewHolder(@NonNull CardCartAdapter.ViewHolder holder, int position) {
         Producto producto = productosList.get(position);
+        holder.nameProduct.setText(producto.getNombre());
         Glide.with(holder.imagenProductCart.getContext()).load(producto.getImagen()).into(holder.imagenProductCart);
+        holder.textViewCosto.setText("Costo: S/" + quantities.get(position) * producto.getPrecio());
 
-        double totalProducto = Integer.parseInt(holder.textViewCantidad.getText().toString()) * producto.getPrecio();
-        holder.textViewCosto.setText("Costo: S/" + totalProducto);
-
+        holder.textViewCantidad.setText(String.valueOf(quantities.get(position)));
         holder.addCantidad.setOnClickListener(v -> {
-            int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
-            cantidad += 1;
-            holder.textViewCantidad.setText(String.valueOf(cantidad));
-            holder.textViewCosto.setText("Costo: S/" + cantidad * producto.getPrecio());
-
+            int currentQuantity = quantities.get(position);
+            int newQuantity = currentQuantity + 1;
+            quantities.set(position, newQuantity);
+            holder.textViewCantidad.setText(String.valueOf(newQuantity));
+            holder.textViewCosto.setText("Costo: S/" + newQuantity * producto.getPrecio());
+            if (quantityChangeListener != null) {
+                quantityChangeListener.onQuantityChange(position, newQuantity);
+            }
         });
-
         holder.subtractCantidad.setOnClickListener(v -> {
-            int cantidad = Integer.parseInt(holder.textViewCantidad.getText().toString());
-            if (cantidad > 1) {
-                cantidad -= 1;
-                holder.textViewCantidad.setText(String.valueOf(cantidad));
-                holder.textViewCosto.setText("Costo: S/" + cantidad * producto.getPrecio());
+            int currentQuantity = quantities.get(position);
+            if (currentQuantity > 1) {
+                int newQuantity = currentQuantity - 1;
+                quantities.set(position, newQuantity);
+                holder.textViewCantidad.setText(String.valueOf(newQuantity));
+                holder.textViewCosto.setText("Costo: S/" + newQuantity * producto.getPrecio());
+                if (quantityChangeListener != null) {
+                    quantityChangeListener.onQuantityChange(position, newQuantity);
+                }
             }
         });
 
@@ -102,6 +136,10 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
                             notifyItemRangeChanged(holder.getBindingAdapterPosition(), getItemCount());
 
                             Toast.makeText(holder.itemView.getContext(), "Producto removido del carrito", Toast.LENGTH_SHORT).show();
+
+                            if (cartItemRemovedListener != null) {
+                                cartItemRemovedListener.onCartItemRemoved();
+                            }
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -113,15 +151,7 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         });
     }
 
-    public double calcularTotal() {
-        double total = 0;
-        for (Producto producto : productosList) {
-            int cantidad = 1;
-            double precio = producto.getPrecio();
-            total += cantidad * precio;
-        }
-        return total;
-    }
+
 
     private void verDetalle(String id) {
         Fragment fragment = new DetailDishesFragment();
@@ -134,6 +164,14 @@ public class CardCartAdapter extends RecyclerView.Adapter<CardCartAdapter.ViewHo
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    public int getQuantity(int position) {
+        return quantities.get(position);
+    }
+
+    public Producto getItem(int i) {
+        return productosList.get(i);
     }
 
     @Override

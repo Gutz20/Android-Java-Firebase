@@ -315,7 +315,6 @@ id cardDrink
 id cardPaymentPagoEfectivo
 id cardPaymentPaypal
 id cardPaymentVisa
-id cartProductos
 id chipGroup
 id circleDescMoney
 id circleTypeMoney
@@ -365,7 +364,6 @@ id filledTextField
 id filledTextField2
 id filledTextField3
 id filledTextField4
-id fragmentContainer
 id frame_layout
 id icButtonDetail
 id iconImageView
@@ -487,10 +485,10 @@ id recyclerPlatillos
 id recyclerProductos
 id recyclerSearch
 id recyclerViewOffers
+id rycCart
 id rycDesserts
 id rycDrinks
 id rycViewStaff
-id scrollViewCart
 id search
 id searchPlatillo
 id searchView
@@ -590,7 +588,6 @@ layout fragment_dishes
 layout fragment_drinks
 layout fragment_drinks_menu
 layout fragment_favorite
-layout fragment_first_step_cart
 layout fragment_form_category
 layout fragment_form_dishes
 layout fragment_form_product

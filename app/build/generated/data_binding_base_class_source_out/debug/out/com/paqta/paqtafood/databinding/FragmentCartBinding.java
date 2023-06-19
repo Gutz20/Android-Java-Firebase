@@ -4,16 +4,16 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.paqta.paqtafood.R;
 import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
@@ -25,10 +25,7 @@ public final class FragmentCartBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button btnComprar;
-
-  @NonNull
-  public final FrameLayout fragmentContainer;
+  public final MaterialButton btnComprar;
 
   @NonNull
   public final ImageView imageView3;
@@ -37,7 +34,7 @@ public final class FragmentCartBinding implements ViewBinding {
   public final LinearLayout layoutDataCart;
 
   @NonNull
-  public final ScrollView scrollViewCart;
+  public final RecyclerView rycCart;
 
   @NonNull
   public final TextView stepTextView;
@@ -51,17 +48,15 @@ public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   public final TextView textViewTotal;
 
-  private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull Button btnComprar,
-      @NonNull FrameLayout fragmentContainer, @NonNull ImageView imageView3,
-      @NonNull LinearLayout layoutDataCart, @NonNull ScrollView scrollViewCart,
-      @NonNull TextView stepTextView, @NonNull StepView stepView,
+  private FragmentCartBinding(@NonNull FrameLayout rootView, @NonNull MaterialButton btnComprar,
+      @NonNull ImageView imageView3, @NonNull LinearLayout layoutDataCart,
+      @NonNull RecyclerView rycCart, @NonNull TextView stepTextView, @NonNull StepView stepView,
       @NonNull TextView textViewSubTotal, @NonNull TextView textViewTotal) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
-    this.fragmentContainer = fragmentContainer;
     this.imageView3 = imageView3;
     this.layoutDataCart = layoutDataCart;
-    this.scrollViewCart = scrollViewCart;
+    this.rycCart = rycCart;
     this.stepTextView = stepTextView;
     this.stepView = stepView;
     this.textViewSubTotal = textViewSubTotal;
@@ -96,14 +91,8 @@ public final class FragmentCartBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnComprar;
-      Button btnComprar = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnComprar = ViewBindings.findChildViewById(rootView, id);
       if (btnComprar == null) {
-        break missingId;
-      }
-
-      id = R.id.fragmentContainer;
-      FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
-      if (fragmentContainer == null) {
         break missingId;
       }
 
@@ -119,9 +108,9 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.scrollViewCart;
-      ScrollView scrollViewCart = ViewBindings.findChildViewById(rootView, id);
-      if (scrollViewCart == null) {
+      id = R.id.rycCart;
+      RecyclerView rycCart = ViewBindings.findChildViewById(rootView, id);
+      if (rycCart == null) {
         break missingId;
       }
 
@@ -149,9 +138,8 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, fragmentContainer,
-          imageView3, layoutDataCart, scrollViewCart, stepTextView, stepView, textViewSubTotal,
-          textViewTotal);
+      return new FragmentCartBinding((FrameLayout) rootView, btnComprar, imageView3, layoutDataCart,
+          rycCart, stepTextView, stepView, textViewSubTotal, textViewTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4151,7 +4151,6 @@ int id cardPaymentPagoEfectivo 0x7f0a00ae
 int id cardPaymentPaypal 0x7f0a00af
 int id cardPaymentVisa 0x7f0a00b0
 int id carryVelocity 0x7f0a00b1
-int id cartProductos 0x7f0a00b2
 int id center 0x7f0a00b3
 int id centerCrop 0x7f0a00b4
 int id centerInside 0x7f0a00b5
@@ -4317,7 +4316,6 @@ int id fixed 0x7f0a0152
 int id flip 0x7f0a0153
 int id floating 0x7f0a0154
 int id forever 0x7f0a0155
-int id fragmentContainer 0x7f0a0156
 int id fragment_container_view_tag 0x7f0a0157
 int id fragment_phone 0x7f0a0158
 int id fragment_register_email 0x7f0a0159
@@ -4651,6 +4649,7 @@ int id root 0x7f0a02a0
 int id rounded 0x7f0a02a1
 int id row_index_key 0x7f0a02a2
 int id rtl 0x7f0a02a3
+int id rycCart 0x7f0a03ab
 int id rycDesserts 0x7f0a02a4
 int id rycDrinks 0x7f0a02a5
 int id rycViewStaff 0x7f0a02a6
@@ -4664,7 +4663,6 @@ int id scroll 0x7f0a02ad
 int id scrollIndicatorDown 0x7f0a02ae
 int id scrollIndicatorUp 0x7f0a02af
 int id scrollView 0x7f0a02b0
-int id scrollViewCart 0x7f0a03a5
 int id scrollable 0x7f0a02b1
 int id search 0x7f0a02b2
 int id searchPlatillo 0x7f0a02b3
@@ -5072,7 +5070,6 @@ int layout fragment_dishes 0x7f0d0045
 int layout fragment_drinks 0x7f0d0046
 int layout fragment_drinks_menu 0x7f0d0047
 int layout fragment_favorite 0x7f0d0048
-int layout fragment_first_step_cart 0x7f0d0049
 int layout fragment_form_category 0x7f0d004a
 int layout fragment_form_dishes 0x7f0d004b
 int layout fragment_form_product 0x7f0d004c
