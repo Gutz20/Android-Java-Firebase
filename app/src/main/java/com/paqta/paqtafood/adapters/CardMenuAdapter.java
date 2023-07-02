@@ -37,6 +37,7 @@ public class CardMenuAdapter extends FirestoreRecyclerAdapter<Producto, CardMenu
         DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getBindingAdapterPosition());
         final String id = documentSnapshot.getId();
 
+
         holder.nombreView.setText(model.getNombre());
         Glide.with(holder.imageView.getContext()).load(model.getImagen()).into(holder.imageView);
         holder.btnDetail.setOnClickListener(new View.OnClickListener() {

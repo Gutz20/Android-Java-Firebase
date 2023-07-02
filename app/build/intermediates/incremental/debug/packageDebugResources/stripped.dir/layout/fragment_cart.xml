@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_cart"
+    tools:context=".ui.user.cart.CartFragment">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutDataCart"
+            android:layout_width="310dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/stepTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ceviche_one"
+                android:shadowColor="#5BACFF"
+                android:shadowDx="-5"
+                android:shadowDy="7"
+                android:shadowRadius="2"
+                android:text="CARRITO"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                        android:id="@+id/btnComprar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/outline_shopping_cart_24"
+                        android:text="Comprar" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Total:"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Envio:"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Subtotal:"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="..."
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="Calculado en el siguiente paso"
+                            android:textColor="#A7A7A7"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSubTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:text="..."
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rycCart"
+            android:layout_width="match_parent"
+            android:layout_height="244dp" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/logo_white_2" />
+
+        <com.shuhart.stepview.StepView
+            android:id="@+id/step_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            app:sv_doneCircleColor="@color/colorAccent"
+            app:sv_doneCircleRadius="12dp"
+            app:sv_doneStepLineColor="@color/colorAccent"
+            app:sv_doneStepMarkColor="@color/md_theme_light_inverseSurface"
+            app:sv_nextStepLineColor="@color/colorAccent"
+            app:sv_nextTextColor="@color/colorBlanco"
+            app:sv_selectedCircleColor="@color/colorFondo"
+            app:sv_selectedCircleRadius="12dp"
+            app:sv_selectedStepNumberColor="@color/colorLogo"
+            app:sv_selectedTextColor="@color/colorAccent"
+            app:sv_stepLineWidth="2dp"
+            app:sv_stepNumberTextSize="18sp"
+            app:sv_stepPadding="4dp"
+            app:sv_stepViewStyle="@style/StepView" />
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>

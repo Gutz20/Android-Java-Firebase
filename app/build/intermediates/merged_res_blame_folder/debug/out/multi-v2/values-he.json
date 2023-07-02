@@ -4,7 +4,7 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-he/values-he.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\e876c9810320618aac2bbac3ecad8e5f\\transformed\\zxing-android-embedded-4.2.0\\res\\values-he\\values-he.xml",
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\e876c9810320618aac2bbac3ecad8e5f\\transformed\\zxing-android-embedded-4.2.0\\res\\values-he\\values-he.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

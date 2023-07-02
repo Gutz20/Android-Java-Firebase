@@ -4,7 +4,7 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\110cc85491ae93c6880610bb8b174538\\transformed\\firebase-ui-auth-8.0.2\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\110cc85491ae93c6880610bb8b174538\\transformed\\firebase-ui-auth-8.0.2\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6,10,14",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\cb39e9460243cdc189a54868e0d2f3c8\\transformed\\appcompat-1.6.1\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\cb39e9460243cdc189a54868e0d2f3c8\\transformed\\appcompat-1.6.1\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

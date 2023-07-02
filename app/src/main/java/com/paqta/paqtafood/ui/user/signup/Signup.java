@@ -1,10 +1,14 @@
 package com.paqta.paqtafood.ui.user.signup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
@@ -12,12 +16,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.api.Apis;
 import com.paqta.paqtafood.model.User;
@@ -27,6 +41,7 @@ import com.paqta.paqtafood.utils.ChangeColorBar;
 
 import java.security.MessageDigest;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 import retrofit2.Call;
@@ -123,13 +138,58 @@ public class Signup extends AppCompatActivity {
             txtRegConfirmPassword.setError("Deben ser iguales");
             return;
         } else {
-            registrar(v, username, email, password);
+            registrarV2(username, email, password);
         }
 
     }
 
-    public void registrar(View v, String username, String email, String password) {
+    public void registrarV2(String username, String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    guardarUserDB(username, user, password);
+                    Intent intent = new Intent(Signup.this, Login.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Signup.this, "Fallo en autenticación", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
+    private void guardarUserDB(String username, FirebaseUser user, String password) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("id", user.getUid());
+        map.put("username", Optional.ofNullable(user.getDisplayName()).orElse(username));
+        map.put("email", user.getEmail());
+        map.put("imagen", Optional.ofNullable(user.getPhotoUrl()).orElse(Uri.parse("")));
+        map.put("phone", Optional.ofNullable(user.getPhoneNumber()).orElse(""));
+        map.put("password", sha256(password));
+        map.put("rol", "Usuario");
+        map.put("disabled", false);
+        map.put("created_at", Timestamp.now());
+
+        mFirestore.collection("usuarios")
+                .document(user.getUid())
+                .set(map)
+                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Signup.this, "Registrado con exito", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Signup.this, "Error al registrar", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
+
+    public void registrar(View v, String username, String email, String password) {
         HashMap<String, Object> map = new HashMap<>();
         map.put("username", username);
         map.put("email", email);

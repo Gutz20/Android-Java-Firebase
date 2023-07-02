@@ -4,26 +4,24 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\Desktop\\PaqtaFood\\cliente\\PaqtaFood\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\cb39e9460243cdc189a54868e0d2f3c8\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
-                        "startLines": "31,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "2373,102",
-                        "endLines": "34,29",
-                        "endColumns": "12,12",
-                        "endOffsets": "2597,2329"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
                     },
                     "to": {
-                        "startLines": "2,6",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,177",
-                        "endLines": "5,33",
-                        "endColumns": "12,12",
-                        "endOffsets": "172,2377"
+                        "startLines": "34,35,36,37,38,39,40,66",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "2382,2452,2536,2620,2716,2818,2920,5775",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "2447,2531,2615,2711,2813,2915,3009,5859"
                     }
                 },
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\66a7e1bd747984e4f39cf2fc4e5b1553\\transformed\\material-1.9.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\66a7e1bd747984e4f39cf2fc4e5b1553\\transformed\\material-1.9.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,20 +38,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\cb39e9460243cdc189a54868e0d2f3c8\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\demet\\Desktop\\PaqtaFood\\PaqtaFood\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
+                        "startLines": "31,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "2373,102",
+                        "endLines": "34,29",
+                        "endColumns": "12,12",
+                        "endOffsets": "2597,2329"
                     },
                     "to": {
-                        "startLines": "34,35,36,37,38,39,40,66",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "2382,2452,2536,2620,2716,2818,2920,5775",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "2447,2531,2615,2711,2813,2915,3009,5859"
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,177",
+                        "endLines": "5,33",
+                        "endColumns": "12,12",
+                        "endOffsets": "172,2377"
                     }
                 }
             ]

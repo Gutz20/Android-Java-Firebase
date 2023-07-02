@@ -4,7 +4,7 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\Desktop\\PaqtaFood\\cliente\\PaqtaFood\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "source": "C:\\Users\\demet\\Desktop\\PaqtaFood\\PaqtaFood\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

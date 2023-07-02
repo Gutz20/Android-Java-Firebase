@@ -4,7 +4,7 @@
             "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USUARIO\\.gradle\\caches\\transforms-3\\66a7e1bd747984e4f39cf2fc4e5b1553\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\66a7e1bd747984e4f39cf2fc4e5b1553\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
