@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -40,9 +39,6 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
   public final TextInputEditText edtTxtReference;
 
   @NonNull
-  public final ImageView imageView3;
-
-  @NonNull
   public final LinearLayout layoutDataCart;
 
   @NonNull
@@ -54,32 +50,22 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
   @NonNull
   public final TextInputEditText textUbicationSelected;
 
-  @NonNull
-  public final TextView textViewSubTotal;
-
-  @NonNull
-  public final TextView textViewTotal;
-
   private FragmentSecondStepCartBinding(@NonNull FrameLayout rootView,
       @NonNull MaterialButton btnComprar, @NonNull MaterialButton btnGetUbication,
       @NonNull MaterialButton btnOpenMap, @NonNull TextInputEditText edtTxtPhonePedido,
-      @NonNull TextInputEditText edtTxtReference, @NonNull ImageView imageView3,
-      @NonNull LinearLayout layoutDataCart, @NonNull TextView stepTextView,
-      @NonNull StepView stepView, @NonNull TextInputEditText textUbicationSelected,
-      @NonNull TextView textViewSubTotal, @NonNull TextView textViewTotal) {
+      @NonNull TextInputEditText edtTxtReference, @NonNull LinearLayout layoutDataCart,
+      @NonNull TextView stepTextView, @NonNull StepView stepView,
+      @NonNull TextInputEditText textUbicationSelected) {
     this.rootView = rootView;
     this.btnComprar = btnComprar;
     this.btnGetUbication = btnGetUbication;
     this.btnOpenMap = btnOpenMap;
     this.edtTxtPhonePedido = edtTxtPhonePedido;
     this.edtTxtReference = edtTxtReference;
-    this.imageView3 = imageView3;
     this.layoutDataCart = layoutDataCart;
     this.stepTextView = stepTextView;
     this.stepView = stepView;
     this.textUbicationSelected = textUbicationSelected;
-    this.textViewSubTotal = textViewSubTotal;
-    this.textViewTotal = textViewTotal;
   }
 
   @Override
@@ -139,12 +125,6 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView3;
-      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView3 == null) {
-        break missingId;
-      }
-
       id = R.id.layoutDataCart;
       LinearLayout layoutDataCart = ViewBindings.findChildViewById(rootView, id);
       if (layoutDataCart == null) {
@@ -169,21 +149,9 @@ public final class FragmentSecondStepCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textViewSubTotal;
-      TextView textViewSubTotal = ViewBindings.findChildViewById(rootView, id);
-      if (textViewSubTotal == null) {
-        break missingId;
-      }
-
-      id = R.id.textViewTotal;
-      TextView textViewTotal = ViewBindings.findChildViewById(rootView, id);
-      if (textViewTotal == null) {
-        break missingId;
-      }
-
       return new FragmentSecondStepCartBinding((FrameLayout) rootView, btnComprar, btnGetUbication,
-          btnOpenMap, edtTxtPhonePedido, edtTxtReference, imageView3, layoutDataCart, stepTextView,
-          stepView, textUbicationSelected, textViewSubTotal, textViewTotal);
+          btnOpenMap, edtTxtPhonePedido, edtTxtReference, layoutDataCart, stepTextView, stepView,
+          textUbicationSelected);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

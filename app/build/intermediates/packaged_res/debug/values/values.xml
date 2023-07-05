@@ -122,6 +122,7 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD-j3wQVy5DJ8Jdgxsh-OxnxeQmlF5P8HM</string>
     <string name="google_maps_key">AIzaSyB7dE5n7bA6JRQrXzDdNKfKw0hQ97gLNKw</string>
     <string name="google_storage_bucket" translatable="false">paqtafood.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="labelButtonLogin">Iniciar Sesion</string>
     <string name="labelButtonRegistro">Registrarse</string>
     <string name="labelCampoNulo">...</string>

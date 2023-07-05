@@ -39,6 +39,8 @@
         <item>Administrador</item>
         <item>Usuario</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    Facebook-->
     <!--    <string name="facebook_app_id_def">941048803879345</string>-->

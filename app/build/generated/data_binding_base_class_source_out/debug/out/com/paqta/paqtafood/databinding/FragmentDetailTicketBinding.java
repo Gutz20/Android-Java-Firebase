@@ -4,13 +4,14 @@ package com.paqta.paqtafood.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.paqta.paqtafood.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,20 +22,38 @@ public final class FragmentDetailTicketBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final ImageView imageView3;
+  public final MaterialButton btnHome;
+
+  @NonNull
+  public final CheckBox cbCamino;
+
+  @NonNull
+  public final CheckBox cbConfirmado;
+
+  @NonNull
+  public final CheckBox cbEntregado;
+
+  @NonNull
+  public final CheckBox cbOrdenado;
+
+  @NonNull
+  public final CheckBox cbRecibido;
 
   @NonNull
   public final TextView stepTextView;
 
-  @NonNull
-  public final TextView textView20;
-
-  private FragmentDetailTicketBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView3,
-      @NonNull TextView stepTextView, @NonNull TextView textView20) {
+  private FragmentDetailTicketBinding(@NonNull FrameLayout rootView,
+      @NonNull MaterialButton btnHome, @NonNull CheckBox cbCamino, @NonNull CheckBox cbConfirmado,
+      @NonNull CheckBox cbEntregado, @NonNull CheckBox cbOrdenado, @NonNull CheckBox cbRecibido,
+      @NonNull TextView stepTextView) {
     this.rootView = rootView;
-    this.imageView3 = imageView3;
+    this.btnHome = btnHome;
+    this.cbCamino = cbCamino;
+    this.cbConfirmado = cbConfirmado;
+    this.cbEntregado = cbEntregado;
+    this.cbOrdenado = cbOrdenado;
+    this.cbRecibido = cbRecibido;
     this.stepTextView = stepTextView;
-    this.textView20 = textView20;
   }
 
   @Override
@@ -64,9 +83,39 @@ public final class FragmentDetailTicketBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageView3;
-      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView3 == null) {
+      id = R.id.btnHome;
+      MaterialButton btnHome = ViewBindings.findChildViewById(rootView, id);
+      if (btnHome == null) {
+        break missingId;
+      }
+
+      id = R.id.cbCamino;
+      CheckBox cbCamino = ViewBindings.findChildViewById(rootView, id);
+      if (cbCamino == null) {
+        break missingId;
+      }
+
+      id = R.id.cbConfirmado;
+      CheckBox cbConfirmado = ViewBindings.findChildViewById(rootView, id);
+      if (cbConfirmado == null) {
+        break missingId;
+      }
+
+      id = R.id.cbEntregado;
+      CheckBox cbEntregado = ViewBindings.findChildViewById(rootView, id);
+      if (cbEntregado == null) {
+        break missingId;
+      }
+
+      id = R.id.cbOrdenado;
+      CheckBox cbOrdenado = ViewBindings.findChildViewById(rootView, id);
+      if (cbOrdenado == null) {
+        break missingId;
+      }
+
+      id = R.id.cbRecibido;
+      CheckBox cbRecibido = ViewBindings.findChildViewById(rootView, id);
+      if (cbRecibido == null) {
         break missingId;
       }
 
@@ -76,14 +125,8 @@ public final class FragmentDetailTicketBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView20;
-      TextView textView20 = ViewBindings.findChildViewById(rootView, id);
-      if (textView20 == null) {
-        break missingId;
-      }
-
-      return new FragmentDetailTicketBinding((FrameLayout) rootView, imageView3, stepTextView,
-          textView20);
+      return new FragmentDetailTicketBinding((FrameLayout) rootView, btnHome, cbCamino,
+          cbConfirmado, cbEntregado, cbOrdenado, cbRecibido, stepTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

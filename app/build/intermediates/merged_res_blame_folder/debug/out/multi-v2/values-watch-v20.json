@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-96:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\1e5e7767c99f133e108ef888a977d5c8\\transformed\\play-services-auth-20.5.0\\res\\values-watch-v20\\values.xml",

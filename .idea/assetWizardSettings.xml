@@ -305,7 +305,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/drive_eta/baseline_drive_eta_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/home/baseline_home_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -315,7 +315,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_drive_eta_24" />
+                            <entry key="color" value="555555" />
+                            <entry key="outputName" value="ic_home" />
                             <entry key="sourceFile" value="C:\Users\USUARIO\Desktop\ProyectsAndroidStudio\PaqtaFood" />
                           </map>
                         </option>

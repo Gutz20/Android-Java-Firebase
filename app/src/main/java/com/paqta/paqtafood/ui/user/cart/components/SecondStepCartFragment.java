@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -60,6 +62,7 @@ import com.google.maps.model.EncodedPolyline;
 import com.google.maps.model.TravelMode;
 import com.paqta.paqtafood.R;
 import com.paqta.paqtafood.ui.user.cart.CartFragment;
+import com.shuhart.stepview.StepView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -67,8 +70,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SecondStepCartFragment extends Fragment implements OnMapReadyCallback {
+    StepView stepView;
     GoogleMap mMap;
-    MaterialButton btnGetLocation, btnOpenMap;
+    MaterialButton btnGetLocation, btnOpenMap, btnComprar;
     public TextInputEditText editTextUbication, editTextPhone, editTextReference;
     private FusedLocationProviderClient fusedLocationClient;
     private static final int PERMISSIONS_REQUEST_LOCATION = 100;
@@ -84,29 +88,44 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initUI(view);
+        initComponents();
+        // GOOGLE MAPS
+        permisoUbicacion();
+    }
 
-        btnGetLocation = view.findViewById(R.id.btnGetUbication);
-        btnGetLocation.setOnClickListener(v -> obtenerUbicacionActual());
-
+    private void initUI(View view) {
         btnOpenMap = view.findViewById(R.id.btnOpenMap);
         editTextUbication = view.findViewById(R.id.textUbicationSelected);
         editTextPhone = view.findViewById(R.id.edtTxtPhonePedido);
         editTextReference = view.findViewById(R.id.edtTxtReference);
+        btnComprar = view.findViewById(R.id.btnComprar);
+        btnGetLocation = view.findViewById(R.id.btnGetUbication);
+        stepView = view.findViewById(R.id.step_view);
+    }
 
-        // GOOGLE MAPS
-        permisoUbicacion();
-
+    private void initComponents() {
+        btnGetLocation.setOnClickListener(v -> obtenerUbicacionActual());
         btnOpenMap.setOnClickListener(v -> startPlacePicker());
+        btnComprar.setOnClickListener(v -> navigateToThirdStep());
+        stepView.getState()
+                .animationType(StepView.ANIMATION_ALL)
+                .stepsNumber(3)
+                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
+                .commit();
+        stepView.go(1, true);
     }
 
-    private void guardarDatosSharedPreferences(String ubication, String phone, String reference) {
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("DatosPaqtaFood", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("addressPedido", ubication);
-        editor.putString("phonePedido", phone);
-        editor.putString("referencePedido", reference);
-        editor.apply();
+    private void navigateToThirdStep() {
+        Fragment fragment = new ThirdStepCartFragment();
+
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
+
 
     private void startPlacePicker() {
         List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG);
@@ -171,7 +190,6 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
             Log.d("mapa", e.getMessage());
         }
     }
-
 
 
     private void mostrarDuracionEnMapa(String duracionTexto, List<LatLng> polylinePoints) {
@@ -286,8 +304,6 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSIONS_REQUEST_LOCATION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permiso de ubicación concedido, puedes realizar acciones adicionales aquí
-
                 // Obtener la ubicación actual del usuario
                 obtenerUbicacionActual();
             } else {

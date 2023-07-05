@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.paqta.paqtafood.R;
+import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -18,6 +21,9 @@ import java.lang.String;
 public final class FragmentThirdStepCartBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final MaterialButton btnComprar;
 
   @NonNull
   public final MaterialCardView cardPaymentPagoEfectivo;
@@ -28,13 +34,23 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
   @NonNull
   public final MaterialCardView cardPaymentVisa;
 
+  @NonNull
+  public final StepView stepView;
+
+  @NonNull
+  public final TextView tvTitle;
+
   private FragmentThirdStepCartBinding(@NonNull FrameLayout rootView,
-      @NonNull MaterialCardView cardPaymentPagoEfectivo,
-      @NonNull MaterialCardView cardPaymentPaypal, @NonNull MaterialCardView cardPaymentVisa) {
+      @NonNull MaterialButton btnComprar, @NonNull MaterialCardView cardPaymentPagoEfectivo,
+      @NonNull MaterialCardView cardPaymentPaypal, @NonNull MaterialCardView cardPaymentVisa,
+      @NonNull StepView stepView, @NonNull TextView tvTitle) {
     this.rootView = rootView;
+    this.btnComprar = btnComprar;
     this.cardPaymentPagoEfectivo = cardPaymentPagoEfectivo;
     this.cardPaymentPaypal = cardPaymentPaypal;
     this.cardPaymentVisa = cardPaymentVisa;
+    this.stepView = stepView;
+    this.tvTitle = tvTitle;
   }
 
   @Override
@@ -64,6 +80,12 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnComprar;
+      MaterialButton btnComprar = ViewBindings.findChildViewById(rootView, id);
+      if (btnComprar == null) {
+        break missingId;
+      }
+
       id = R.id.cardPaymentPagoEfectivo;
       MaterialCardView cardPaymentPagoEfectivo = ViewBindings.findChildViewById(rootView, id);
       if (cardPaymentPagoEfectivo == null) {
@@ -82,8 +104,20 @@ public final class FragmentThirdStepCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentThirdStepCartBinding((FrameLayout) rootView, cardPaymentPagoEfectivo,
-          cardPaymentPaypal, cardPaymentVisa);
+      id = R.id.step_view;
+      StepView stepView = ViewBindings.findChildViewById(rootView, id);
+      if (stepView == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentThirdStepCartBinding((FrameLayout) rootView, btnComprar,
+          cardPaymentPagoEfectivo, cardPaymentPaypal, cardPaymentVisa, stepView, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

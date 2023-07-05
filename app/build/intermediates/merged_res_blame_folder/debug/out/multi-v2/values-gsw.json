@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-gsw/values-gsw.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-96:/values-gsw/values-gsw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\110cc85491ae93c6880610bb8b174538\\transformed\\firebase-ui-auth-8.0.2\\res\\values-gsw\\values-gsw.xml",

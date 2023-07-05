@@ -31,6 +31,8 @@ import com.paqta.paqtafood.ui.user.menu_detail.MenuDetailFragment;
 import com.paqta.paqtafood.ui.user.offers.OffersFragment;
 import com.paqta.paqtafood.ui.components.profile.ProfileFragment;
 import com.paqta.paqtafood.ui.user.search.SearchFragment;
+import com.stripe.android.PaymentConfiguration;
+import com.stripe.android.paymentsheet.PaymentSheet;
 
 
 public class DefaultNavigationApp extends AppCompatActivity {
@@ -43,12 +45,13 @@ public class DefaultNavigationApp extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
-
+    String PUBLISH_KEY = "pk_test_51NHfg9EfcKxNGCdSWG6saQG9uV7RfXRi8pdUZfN5qwRMIDH28yfFRbhS9mwLyNxDQLhxQIeKgYsqS6ilRey8pW1R00P5Nh0ODJ";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_default_navigation_app);
         Places.initialize(getApplicationContext(), getString(R.string.google_maps_key));
+        PaymentConfiguration.init(this, PUBLISH_KEY);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();

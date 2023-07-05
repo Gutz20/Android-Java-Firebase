@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-96:/values-mdpi-v4/values-mdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\73dd459c87db715b1c345d195f176954\\transformed\\payments-core-20.25.5\\res\\values-mdpi-v4\\values-mdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}

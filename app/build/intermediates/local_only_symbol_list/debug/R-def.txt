@@ -181,6 +181,7 @@ drawable heart_bottom_nav
 drawable home_bebidas
 drawable home_qr
 drawable ic_delete_24
+drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_logo_background
@@ -302,6 +303,7 @@ id btnEliminar
 id btnGetUbication
 id btnGoogle
 id btnHabilitarUser
+id btnHome
 id btnLogin
 id btnOpenMap
 id btnRegister
@@ -315,6 +317,11 @@ id cardDrink
 id cardPaymentPagoEfectivo
 id cardPaymentPaypal
 id cardPaymentVisa
+id cbCamino
+id cbConfirmado
+id cbEntregado
+id cbOrdenado
+id cbRecibido
 id chipGroup
 id circleDescMoney
 id circleTypeMoney
@@ -517,7 +524,6 @@ id textView16
 id textView17
 id textView18
 id textView2
-id textView20
 id textView3
 id textView5
 id textView6
@@ -544,6 +550,7 @@ id tituloCat
 id tituloDrink
 id topAppBar
 id tvDuration
+id tvTitle
 id tvwEjem
 id tvwLogin
 id tvwOlvidasteContra
@@ -645,6 +652,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_maps_key
 string google_storage_bucket
+string hello_blank_fragment
 string labelButtonLogin
 string labelButtonRegistro
 string labelCampoNulo

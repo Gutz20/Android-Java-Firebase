@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-56:/values-he/values-he.xml",
+            "outputFile": "com.paqta.paqtafood.app-mergeDebugResources-96:/values-he/values-he.xml",
             "map": [
                 {
                     "source": "C:\\Users\\demet\\.gradle\\caches\\transforms-3\\e876c9810320618aac2bbac3ecad8e5f\\transformed\\zxing-android-embedded-4.2.0\\res\\values-he\\values-he.xml",
