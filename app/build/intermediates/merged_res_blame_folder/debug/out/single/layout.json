@@ -140,6 +140,10 @@
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\layout\\view_staff_single.xml"
     },
     {
+        "merged": "com.paqta.paqtafood.app-mergeDebugResources-97:/layout/fragment_detail_dishes.xml",
+        "source": "com.paqta.paqtafood.app-main-100:/layout/fragment_detail_dishes.xml"
+    },
+    {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-97:\\layout\\fragment_product.xml",
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\layout\\fragment_product.xml"
     },
@@ -190,10 +194,6 @@
     {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-97:\\layout\\fragment_detail_ticket.xml",
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\layout\\fragment_detail_ticket.xml"
-    },
-    {
-        "merged": "com.paqta.paqtafood.app-mergeDebugResources-97:/layout/fragment_detail_ticket.xml",
-        "source": "com.paqta.paqtafood.app-main-100:/layout/fragment_detail_ticket.xml"
     },
     {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-mergeDebugResources-97:\\layout\\fragment_form_product.xml",

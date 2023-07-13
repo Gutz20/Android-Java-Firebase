@@ -4054,7 +4054,6 @@ drawable llamita
 drawable logo
 drawable logo_black_transparent
 drawable logo_black_transparent_small
-drawable logo_blank_transparent
 drawable logo_header_sidebar
 drawable logo_prueba
 drawable logo_rose_transparent
@@ -5313,7 +5312,6 @@ id textView13
 id textView14
 id textView15
 id textView16
-id textView17
 id textView18
 id textView2
 id textView3

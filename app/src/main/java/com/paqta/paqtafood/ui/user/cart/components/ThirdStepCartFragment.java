@@ -60,8 +60,7 @@ public class ThirdStepCartFragment extends Fragment {
     String EphericalKey;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_third_step_cart, container, false);
     }
 
@@ -82,11 +81,7 @@ public class ThirdStepCartFragment extends Fragment {
     }
 
     private void initComponents() {
-        stepView.getState()
-                .animationType(StepView.ANIMATION_ALL)
-                .stepsNumber(3)
-                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
-                .commit();
+        stepView.getState().animationType(StepView.ANIMATION_ALL).stepsNumber(3).animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime)).commit();
         stepView.go(2, true);
         requestEtherical();
         cardPaymentVisa.setOnClickListener(v -> paymentFlow());
@@ -120,15 +115,16 @@ public class ThirdStepCartFragment extends Fragment {
     }
 
     private void paymentFlow() {
-        paymentSheet.presentWithPaymentIntent(
-                ClientSecret, new PaymentSheet.Configuration("VISA", new PaymentSheet.CustomerConfiguration(customerID, EphericalKey))
-        );
+        paymentSheet.presentWithPaymentIntent(ClientSecret, new PaymentSheet.Configuration("VISA", new PaymentSheet.CustomerConfiguration(customerID, EphericalKey)));
     }
 
     private void onPaymentResult(PaymentSheetResult paymentSheetResult) {
         if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
             Toast.makeText(getContext(), "Pago completado 😎", Toast.LENGTH_SHORT).show();
-//            navigateToDetailOrder();
+
+            // CREAR EL PEDIDO Y DETALLE DE PEDIDO, Y YA CON ESO TERMINARIA EL PAGO
+
+            navigateToDetailOrder();
         }
     }
 
@@ -161,15 +157,14 @@ public class ThirdStepCartFragment extends Fragment {
                 Map<String, String> header = new HashMap<>();
                 header.put("Authorization", "Bearer " + SECRET_KEY);
                 return header;
-
             }
 
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("customer", customerID);
-                params.put("amount", "10" + "00");
-                params.put("currency", "PEN");
+                params.put("customer", customerID); // ID
+                params.put("amount", "10" + "00"); // Establece precio
+                params.put("currency", "PEN"); // Tipo moneda
                 params.put("automatic_payment_methods[enabled]", "true");
                 return params;
             }
@@ -184,10 +179,7 @@ public class ThirdStepCartFragment extends Fragment {
                 JSONObject object = new JSONObject(response);
                 EphericalKey = object.getString("id");
                 Toast.makeText(getContext(), EphericalKey, Toast.LENGTH_SHORT).show();
-
                 getClientSecret(customerID, EphericalKey);
-
-
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
@@ -201,7 +193,6 @@ public class ThirdStepCartFragment extends Fragment {
                 header.put("Authorization", "Bearer " + SECRET_KEY);
                 header.put("Stripe-Version", "2022-11-15 ");
                 return header;
-
             }
 
             @Override
@@ -226,24 +217,19 @@ public class ThirdStepCartFragment extends Fragment {
                 try {
                     String paymentDetails = paymentConfirmation.toJSONObject().toString();
                     JSONObject object = new JSONObject(paymentDetails);
-
                 } catch (JSONException e) {
                     Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT);
                 }
-
             } else if (requestCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(getContext(), "Error 😕", Toast.LENGTH_SHORT).show();
             }
-
         } else if (requestCode == PaymentActivity.RESULT_EXTRAS_INVALID) {
             Toast.makeText(getContext(), "Pago Invalido 😢", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void showMessage(View view, String message) {
-        Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
-                .setAnchorView(R.id.bottomNavigationView)
-                .show();
+        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).setAnchorView(R.id.bottomNavigationView).show();
     }
 
 }

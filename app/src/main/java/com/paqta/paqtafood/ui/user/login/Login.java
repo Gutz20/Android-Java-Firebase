@@ -231,37 +231,35 @@ public class Login extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        if (user != null) {
 
-            String userEmail = user.getEmail();
+        String userEmail = user.getEmail();
 
-            CollectionReference usuarioRef = mFirestore.collection("usuarios");
+        CollectionReference usuarioRef = mFirestore.collection("usuarios");
 
-            usuarioRef.whereEqualTo("email", userEmail)
-                    .get()
-                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                        @Override
-                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                            if (!queryDocumentSnapshots.isEmpty()) {
-                                DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
-                                String rol = documentSnapshot.getString("rol");
+        usuarioRef.whereEqualTo("email", userEmail)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                            String rol = documentSnapshot.getString("rol");
 
-                                if (rol != null && rol.equals("Administrador")) {
-                                    Intent intent = new Intent(Login.this, AdminNavigation.class);
-                                    startActivity(intent);
-                                } else {
-                                    irHome();
-                                }
+                            if (rol != null && rol.equals("Administrador")) {
+                                Intent intent = new Intent(Login.this, AdminNavigation.class);
+                                startActivity(intent);
+                            } else {
+                                irHome();
                             }
                         }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Login.this, "Error al redirigir", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Login.this, "Error al redirigir", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void irHome() {
@@ -313,7 +311,9 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            irHome();
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            assert user != null;
+                            updateUI(user);
                             Snackbar.make(v, "Bienvenido", Snackbar.LENGTH_LONG)
                                     .show();
                         } else {

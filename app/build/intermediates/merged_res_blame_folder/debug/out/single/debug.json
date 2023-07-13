@@ -156,6 +156,10 @@
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\mipmap-xxhdpi\\ic_launcher_logo.png"
     },
     {
+        "merged": "com.paqta.paqtafood.app-merged_res-98:/layout_fragment_detail_dishes.xml.flat",
+        "source": "com.paqta.paqtafood.app-main-100:/layout/fragment_detail_dishes.xml"
+    },
+    {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\drawable_facebook_icon.png.flat",
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\drawable\\facebook_icon.png"
     },
@@ -680,12 +684,12 @@
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\drawable\\menu_combos.png"
     },
     {
-        "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\drawable_muestra_platillo.png.flat",
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\drawable\\muestra_platillo.png"
+    },
+    {
+        "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\drawable_menu_principal.png.flat",
@@ -940,10 +944,6 @@
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\layout\\activity_signup.xml"
     },
     {
-        "merged": "com.paqta.paqtafood.app-merged_res-98:/layout_fragment_detail_ticket.xml.flat",
-        "source": "com.paqta.paqtafood.app-main-100:/layout/fragment_detail_ticket.xml"
-    },
-    {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\menu_nav_menu_admin.xml.flat",
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\menu\\nav_menu_admin.xml"
     },
@@ -1038,10 +1038,6 @@
     {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\drawable_baseline_home_24.xml.flat",
         "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\drawable\\baseline_home_24.xml"
-    },
-    {
-        "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\drawable_logo_blank_transparent.png.flat",
-        "source": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-main-100:\\drawable\\logo_blank_transparent.png"
     },
     {
         "merged": "C:\\Users\\demet\\.gradle\\daemon\\8.0\\com.paqta.paqtafood.app-merged_res-98:\\layout_fragment_form_staff.xml.flat",
