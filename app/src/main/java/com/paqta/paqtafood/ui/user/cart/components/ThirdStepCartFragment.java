@@ -41,6 +41,7 @@ import com.stripe.android.paymentsheet.PaymentSheetResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,6 +59,7 @@ public class ThirdStepCartFragment extends Fragment {
     Integer PAYPAL_REQUEST_CODE = 123;
     String customerID;
     String EphericalKey;
+    String totalCart;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,6 +69,10 @@ public class ThirdStepCartFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Double totalCart = getArguments().getDouble("totalCart");
+        DecimalFormat decimalFormat = new DecimalFormat("#");
+        this.totalCart = decimalFormat.format(totalCart);
+        Log.d("test", this.totalCart);
         initUI(view);
         initComponents();
     }
@@ -163,7 +169,7 @@ public class ThirdStepCartFragment extends Fragment {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("customer", customerID); // ID
-                params.put("amount", "10" + "00"); // Establece precio
+                params.put("amount", "1000"); // Establece precio
                 params.put("currency", "PEN"); // Tipo moneda
                 params.put("automatic_payment_methods[enabled]", "true");
                 return params;

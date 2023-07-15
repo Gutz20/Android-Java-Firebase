@@ -119,6 +119,10 @@ public class SecondStepCartFragment extends Fragment implements OnMapReadyCallba
     private void navigateToThirdStep() {
         Fragment fragment = new ThirdStepCartFragment();
 
+        Bundle args = new Bundle();
+        args.putDouble("totalCart", getArguments().getDouble("totalCart"));
+        fragment.setArguments(args);
+
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);

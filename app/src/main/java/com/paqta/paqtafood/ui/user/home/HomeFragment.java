@@ -72,21 +72,15 @@ public class HomeFragment extends Fragment {
             String qrContent = result.getContents();
 
             StorageReference storageRef = mStorage.getReference().child("archivos/cartilla.pdf");
-            storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    String storageUrl = uri.toString();
-                    if (qrContent.equals(storageUrl)) {
-                        descargarPDFFromStorage();
-                    }
+            storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                String storageUrl = uri.toString();
+                if (qrContent.equals(storageUrl)) {
+                    descargarPDFFromStorage();
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    // Ocurrió un error al obtener la URL del archivo
-                    Toast.makeText(getContext(), "Error al obtener la URL del archivo", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
+            }).addOnFailureListener(e -> {
+                // Ocurrió un error al obtener la URL del archivo
+                Toast.makeText(getContext(), "Error al obtener la URL del archivo", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
             });
         }
     }

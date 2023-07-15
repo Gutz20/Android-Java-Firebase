@@ -79,15 +79,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB7dE5n7bA6JRQrXzDdNKfKw0hQ97gLNKw" />
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.paqta.paqtafood.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="com.paqta.paqtafood.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/file_paths" />-->
+<!--        </provider>-->
     </application>
 
 </manifest>

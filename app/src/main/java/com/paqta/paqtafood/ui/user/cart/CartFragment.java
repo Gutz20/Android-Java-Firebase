@@ -44,7 +44,6 @@ public class CartFragment extends Fragment implements CardCartAdapter.OnCartItem
     LinearLayout layoutDataCart;
     TextView textViewTotal, textViewSubtotal;
     RecyclerView recyclerView;
-
     CardCartAdapter cardCartAdapter;
 
     @Override
@@ -104,23 +103,23 @@ public class CartFragment extends Fragment implements CardCartAdapter.OnCartItem
                                     .get()
                                     .addOnSuccessListener(queryDocumentSnapshots -> {
                                         List<Producto> productoList = new ArrayList<>();
-                                        double subtotal = 0.0; // Variable para calcular el subtotal
+                                        double subtotal = 0.0;
 
                                         for (DocumentSnapshot snapshot : queryDocumentSnapshots) {
                                             Producto producto = snapshot.toObject(Producto.class);
                                             productoList.add(producto);
 
-                                            // Sumar el precio de cada producto al subtotal
+
                                             subtotal += producto.getPrecio();
                                         }
 
-                                        // Mostrar el subtotal en el textViewSubtotal
+
                                         textViewSubtotal.setText(String.format("S/%.2f", subtotal));
 
-                                        // Calcular el total con algún impuesto o cargo adicional si es necesario
-                                        double total = subtotal; // En este caso, el total es igual al subtotal
 
-                                        // Mostrar el total en el textViewTotal
+                                        double total = subtotal;
+
+
                                         textViewTotal.setText(String.format("S/%.2f", total));
 
                                         setupRecycler(productoList);
@@ -154,7 +153,7 @@ public class CartFragment extends Fragment implements CardCartAdapter.OnCartItem
         updateTotal();
     }
 
-    private void updateTotal() {
+    private Double updateTotal() {
         double subtotal = 0.0;
         for (int i = 0; i < cardCartAdapter.getItemCount(); i++) {
             Producto producto = cardCartAdapter.getItem(i);
@@ -166,6 +165,7 @@ public class CartFragment extends Fragment implements CardCartAdapter.OnCartItem
 
         textViewTotal.setText(String.format("S/%.2f", total));
         textViewSubtotal.setText(String.format("S/%.2f", total));
+        return total;
     }
 
 
@@ -175,6 +175,7 @@ public class CartFragment extends Fragment implements CardCartAdapter.OnCartItem
         Fragment nextStepFragment = new SecondStepCartFragment();
         Bundle args = new Bundle();
         args.putInt("currentStep", currentStep);
+        args.putDouble("totalCart", updateTotal());
         nextStepFragment.setArguments(args);
 
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();

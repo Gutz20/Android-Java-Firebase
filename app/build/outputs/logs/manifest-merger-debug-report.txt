@@ -39,11 +39,11 @@ MERGED from [androidx.fragment:fragment-ktx:1.5.5] C:\Users\demet\.gradle\caches
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:2:1-119:12
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\demet\.gradle\caches\transforms-3\66a7e1bd747984e4f39cf2fc4e5b1553\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\demet\.gradle\caches\transforms-3\a2eca281908e1f35b6020391f2e7f16f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.android:facebook-login:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\c79afd19d59372eccfede783eee4c4bd\transformed\facebook-login-16.1.2\AndroidManifest.xml:9:1-19:12
+MERGED from [com.facebook.android:facebook-login:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\e5a10c98f95fd922a0461d5448d8d429\transformed\facebook-login-16.1.3\AndroidManifest.xml:9:1-19:12
 MERGED from [com.github.shuhart:stepview:1.5.1] C:\Users\demet\.gradle\caches\transforms-3\d9c15eca16184966333d607a811221c9\transformed\stepview-1.5.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gradle\caches\transforms-3\cedb0df6e6184a80dfc77f912396926d\transformed\places-3.1.0\AndroidManifest.xml:2:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\demet\.gradle\caches\transforms-3\aa95268fe15c9d6c802177145ce285a8\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:9:1-44:12
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:9:1-44:12
 MERGED from [com.stripe:payments-model:20.25.5] C:\Users\demet\.gradle\caches\transforms-3\68693339fab8ab5f48c62603de5912c7\transformed\payments-model-20.25.5\AndroidManifest.xml:2:1-7:12
 MERGED from [com.airbnb.android:mavericks:3.0.3] C:\Users\demet\.gradle\caches\transforms-3\71a0cd0cfbd6c07454af0fdc364ab8fb\transformed\mavericks-3.0.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\demet\.gradle\caches\transforms-3\cb39e9460243cdc189a54868e0d2f3c8\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -91,7 +91,7 @@ MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\demet\.g
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\demet\.gradle\caches\transforms-3\dd2b2fe3f0c98c3f75014881a6f08434\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\demet\.gradle\caches\transforms-3\26560b261e686612a3d8e0505cae0b85\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\demet\.gradle\caches\transforms-3\9863f95944ac1c9c1b3fb48c18453e80\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:9:1-50:12
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:9:1-50:12
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\7a7c56abcc5791a02a2c92b28c7d4836\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:17:1-46:12
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2cef96c76213b365d8f4fe1497f75f6e\transformed\play-services-measurement-sdk-21.2.2\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2e5a5ac2bf8eca2647ee20ce6b30aa36\transformed\play-services-measurement-impl-21.2.2\AndroidManifest.xml:17:1-32:12
@@ -100,7 +100,7 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\demet\.gr
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\fe627498d6675b352bd60b421d06ee02\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\7b2aef298323198509c5bf5cdd871fbc\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\demet\.gradle\caches\transforms-3\42d6227f91c3d0c5d6b1a2a01058bf78\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.android:facebook-bolts:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\714e73359524043fceec6fddae7ef905\transformed\facebook-bolts-16.1.2\AndroidManifest.xml:9:1-19:12
+MERGED from [com.facebook.android:facebook-bolts:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\bf3f95e34c16f21315f0f8f50aa952ab\transformed\facebook-bolts-16.1.3\AndroidManifest.xml:9:1-19:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\e518112df060c890b16367a0cdf253ec\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
 MERGED from [com.firebaseui:firebase-ui-common:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\7f460535a57ecbec94949d2fc282915c\transformed\firebase-ui-common-8.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\demet\.gradle\caches\transforms-3\9a11fd3359afe7acd25835c46a2206d0\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
@@ -321,12 +321,12 @@ MERGED from [com.google.android.material:material:1.9.0] C:\Users\demet\.gradle\
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\demet\.gradle\caches\transforms-3\66a7e1bd747984e4f39cf2fc4e5b1553\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\demet\.gradle\caches\transforms-3\a2eca281908e1f35b6020391f2e7f16f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\demet\.gradle\caches\transforms-3\a2eca281908e1f35b6020391f2e7f16f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
-MERGED from [com.facebook.android:facebook-login:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\c79afd19d59372eccfede783eee4c4bd\transformed\facebook-login-16.1.2\AndroidManifest.xml:16:5-17:19
-MERGED from [com.facebook.android:facebook-login:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\c79afd19d59372eccfede783eee4c4bd\transformed\facebook-login-16.1.2\AndroidManifest.xml:16:5-17:19
+MERGED from [com.facebook.android:facebook-login:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\e5a10c98f95fd922a0461d5448d8d429\transformed\facebook-login-16.1.3\AndroidManifest.xml:16:5-17:19
+MERGED from [com.facebook.android:facebook-login:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\e5a10c98f95fd922a0461d5448d8d429\transformed\facebook-login-16.1.3\AndroidManifest.xml:16:5-17:19
 MERGED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gradle\caches\transforms-3\cedb0df6e6184a80dfc77f912396926d\transformed\places-3.1.0\AndroidManifest.xml:14:5-22:19
 MERGED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gradle\caches\transforms-3\cedb0df6e6184a80dfc77f912396926d\transformed\places-3.1.0\AndroidManifest.xml:14:5-22:19
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:21:5-42:19
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:21:5-42:19
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:21:5-42:19
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:21:5-42:19
 MERGED from [com.airbnb.android:mavericks:3.0.3] C:\Users\demet\.gradle\caches\transforms-3\71a0cd0cfbd6c07454af0fdc364ab8fb\transformed\mavericks-3.0.3\AndroidManifest.xml:9:5-20
 MERGED from [com.airbnb.android:mavericks:3.0.3] C:\Users\demet\.gradle\caches\transforms-3\71a0cd0cfbd6c07454af0fdc364ab8fb\transformed\mavericks-3.0.3\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\demet\.gradle\caches\transforms-3\8055a309009aa0f9991181f8aa0a224f\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
@@ -375,8 +375,8 @@ MERGED from [com.google.firebase:firebase-common:20.3.2] C:\Users\demet\.gradle\
 MERGED from [com.google.firebase:firebase-common:20.3.2] C:\Users\demet\.gradle\caches\transforms-3\bdb90605090776947e89c7fa2f6547b1\transformed\firebase-common-20.3.2\AndroidManifest.xml:24:5-37:19
 MERGED from [androidx.window:window:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\a5ef7ae27cf703cc022e98fc03308a47\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\a5ef7ae27cf703cc022e98fc03308a47\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:18:5-48:19
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:18:5-48:19
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:18:5-48:19
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:18:5-48:19
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\7a7c56abcc5791a02a2c92b28c7d4836\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\7a7c56abcc5791a02a2c92b28c7d4836\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2cef96c76213b365d8f4fe1497f75f6e\transformed\play-services-measurement-sdk-21.2.2\AndroidManifest.xml:22:5-23:19
@@ -385,8 +385,8 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2e5a5ac2bf8eca2647ee20ce6b30aa36\transformed\play-services-measurement-impl-21.2.2\AndroidManifest.xml:29:5-30:19
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\demet\.gradle\caches\transforms-3\6b8454b06a7fc41e73be3621cef4b49c\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\demet\.gradle\caches\transforms-3\6b8454b06a7fc41e73be3621cef4b49c\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
-MERGED from [com.facebook.android:facebook-bolts:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\714e73359524043fceec6fddae7ef905\transformed\facebook-bolts-16.1.2\AndroidManifest.xml:16:5-17:19
-MERGED from [com.facebook.android:facebook-bolts:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\714e73359524043fceec6fddae7ef905\transformed\facebook-bolts-16.1.2\AndroidManifest.xml:16:5-17:19
+MERGED from [com.facebook.android:facebook-bolts:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\bf3f95e34c16f21315f0f8f50aa952ab\transformed\facebook-bolts-16.1.3\AndroidManifest.xml:16:5-17:19
+MERGED from [com.facebook.android:facebook-bolts:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\bf3f95e34c16f21315f0f8f50aa952ab\transformed\facebook-bolts-16.1.3\AndroidManifest.xml:16:5-17:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\demet\.gradle\caches\transforms-3\5860db1f1311df4dfaf15a24df81c7dc\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\demet\.gradle\caches\transforms-3\5860db1f1311df4dfaf15a24df81c7dc\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\demet\.gradle\caches\transforms-3\42e0396db76686199188162760d0113f\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
@@ -617,16 +617,16 @@ MERGED from [com.google.android.material:material:1.9.0] C:\Users\demet\.gradle\
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\demet\.gradle\caches\transforms-3\66a7e1bd747984e4f39cf2fc4e5b1553\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\demet\.gradle\caches\transforms-3\a2eca281908e1f35b6020391f2e7f16f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\demet\.gradle\caches\transforms-3\a2eca281908e1f35b6020391f2e7f16f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.android:facebook-login:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\c79afd19d59372eccfede783eee4c4bd\transformed\facebook-login-16.1.2\AndroidManifest.xml:12:5-14:41
-MERGED from [com.facebook.android:facebook-login:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\c79afd19d59372eccfede783eee4c4bd\transformed\facebook-login-16.1.2\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-login:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\e5a10c98f95fd922a0461d5448d8d429\transformed\facebook-login-16.1.3\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-login:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\e5a10c98f95fd922a0461d5448d8d429\transformed\facebook-login-16.1.3\AndroidManifest.xml:12:5-14:41
 MERGED from [com.github.shuhart:stepview:1.5.1] C:\Users\demet\.gradle\caches\transforms-3\d9c15eca16184966333d607a811221c9\transformed\stepview-1.5.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.shuhart:stepview:1.5.1] C:\Users\demet\.gradle\caches\transforms-3\d9c15eca16184966333d607a811221c9\transformed\stepview-1.5.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gradle\caches\transforms-3\cedb0df6e6184a80dfc77f912396926d\transformed\places-3.1.0\AndroidManifest.xml:7:5-44
 MERGED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gradle\caches\transforms-3\cedb0df6e6184a80dfc77f912396926d\transformed\places-3.1.0\AndroidManifest.xml:7:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\demet\.gradle\caches\transforms-3\aa95268fe15c9d6c802177145ce285a8\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\demet\.gradle\caches\transforms-3\aa95268fe15c9d6c802177145ce285a8\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:13:5-15:41
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:13:5-15:41
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:13:5-15:41
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:13:5-15:41
 MERGED from [com.stripe:payments-model:20.25.5] C:\Users\demet\.gradle\caches\transforms-3\68693339fab8ab5f48c62603de5912c7\transformed\payments-model-20.25.5\AndroidManifest.xml:5:5-44
 MERGED from [com.stripe:payments-model:20.25.5] C:\Users\demet\.gradle\caches\transforms-3\68693339fab8ab5f48c62603de5912c7\transformed\payments-model-20.25.5\AndroidManifest.xml:5:5-44
 MERGED from [com.airbnb.android:mavericks:3.0.3] C:\Users\demet\.gradle\caches\transforms-3\71a0cd0cfbd6c07454af0fdc364ab8fb\transformed\mavericks-3.0.3\AndroidManifest.xml:5:5-7:41
@@ -721,8 +721,8 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\demet\.gradl
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\demet\.gradle\caches\transforms-3\26560b261e686612a3d8e0505cae0b85\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\demet\.gradle\caches\transforms-3\9863f95944ac1c9c1b3fb48c18453e80\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\demet\.gradle\caches\transforms-3\9863f95944ac1c9c1b3fb48c18453e80\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:12:5-14:41
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:12:5-14:41
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\7a7c56abcc5791a02a2c92b28c7d4836\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\7a7c56abcc5791a02a2c92b28c7d4836\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2cef96c76213b365d8f4fe1497f75f6e\transformed\play-services-measurement-sdk-21.2.2\AndroidManifest.xml:20:5-44
@@ -739,8 +739,8 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\demet\.gradle\caches\t
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\7b2aef298323198509c5bf5cdd871fbc\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\demet\.gradle\caches\transforms-3\42d6227f91c3d0c5d6b1a2a01058bf78\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\demet\.gradle\caches\transforms-3\42d6227f91c3d0c5d6b1a2a01058bf78\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.facebook.android:facebook-bolts:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\714e73359524043fceec6fddae7ef905\transformed\facebook-bolts-16.1.2\AndroidManifest.xml:12:5-14:41
-MERGED from [com.facebook.android:facebook-bolts:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\714e73359524043fceec6fddae7ef905\transformed\facebook-bolts-16.1.2\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-bolts:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\bf3f95e34c16f21315f0f8f50aa952ab\transformed\facebook-bolts-16.1.3\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-bolts:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\bf3f95e34c16f21315f0f8f50aa952ab\transformed\facebook-bolts-16.1.3\AndroidManifest.xml:12:5-14:41
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\e518112df060c890b16367a0cdf253ec\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\e518112df060c890b16367a0cdf253ec\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [com.firebaseui:firebase-ui-common:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\7f460535a57ecbec94949d2fc282915c\transformed\firebase-ui-common-8.0.2\AndroidManifest.xml:5:5-7:41
@@ -955,8 +955,8 @@ MERGED from [com.stripe:financial-connections:20.25.5] C:\Users\demet\.gradle\ca
 MERGED from [com.stripe:financial-connections:20.25.5] C:\Users\demet\.gradle\caches\transforms-3\d93ea1769fc85e355d07634dab8e50d3\transformed\financial-connections-20.25.5\AndroidManifest.xml:10:5-18:15
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:15:5-23:15
 MERGED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:15:5-23:15
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:17:5-19:15
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:17:5-19:15
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:17:5-19:15
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:17:5-19:15
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\demet\.gradle\caches\transforms-3\c1bbe46e628103dfd423792cc4193791\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\demet\.gradle\caches\transforms-3\c1bbe46e628103dfd423792cc4193791\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
 package#com.android.chrome
@@ -1283,8 +1283,8 @@ ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches
 		ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:90:13-80
 activity#com.facebook.FacebookActivity
 ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:93:9-97:48
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:22:9-25:66
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:22:9-25:66
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:22:9-25:66
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:22:9-25:66
 	android:label
 		ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:96:13-45
 	tools:ignore
@@ -1292,15 +1292,15 @@ MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle
 	android:configChanges
 		ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:95:13-96
 	android:theme
-		ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:25:13-63
+		ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:25:13-63
 	android:name
 		ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:94:13-57
 activity#com.facebook.CustomTabActivity
 ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:98:9-110:20
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:27:9-41:20
-MERGED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:27:9-41:20
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:27:9-41:20
+MERGED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:27:9-41:20
 	tools:node
-		ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:30:13-31
+		ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:30:13-31
 	android:exported
 		ADDED from [com.firebaseui:firebase-ui-auth:8.0.2] C:\Users\demet\.gradle\caches\transforms-3\110cc85491ae93c6880610bb8b174538\transformed\firebase-ui-auth-8.0.2\AndroidManifest.xml:100:13-36
 	tools:ignore
@@ -1336,17 +1336,17 @@ ADDED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gr
 	android:name
 		ADDED from [com.google.android.libraries.places:places:3.1.0] C:\Users\demet\.gradle\caches\transforms-3\cedb0df6e6184a80dfc77f912396926d\transformed\places-3.1.0\AndroidManifest.xml:16:13-91
 package#com.facebook.katana
-ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:18:9-55
+ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:18:9-55
 	android:name
-		ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:18:18-52
+		ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:18:18-52
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:26:9-71
+ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:26:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:26:19-68
+		ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:26:19-68
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:cct.${applicationId}+data:scheme:fbconnect
-ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:31:13-40:29
+ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:31:13-40:29
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:cct.com.paqta.paqtafood+data:scheme:fbconnect
-ADDED from [com.facebook.android:facebook-common:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\41a10843cc6cf36a2aecb936c9ccb3b3\transformed\facebook-common-16.1.2\AndroidManifest.xml:31:13-40:29
+ADDED from [com.facebook.android:facebook-common:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\6cc27db958ab6b4b8903938d2dd4a6b5\transformed\facebook-common-16.1.3\AndroidManifest.xml:31:13-40:29
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
 ADDED from [com.google.android.gms:play-services-auth:20.5.0] C:\Users\demet\.gradle\caches\transforms-3\1e5e7767c99f133e108ef888a977d5c8\transformed\play-services-auth-20.5.0\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
@@ -1523,8 +1523,8 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.2] C:
 		ADDED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\16074aff6b15ec81483de8971af76dc6\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:24:22-65
 uses-permission#com.google.android.gms.permission.AD_ID
 ADDED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\16074aff6b15ec81483de8971af76dc6\transformed\play-services-measurement-api-21.2.2\AndroidManifest.xml:25:5-79
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:16:5-79
-MERGED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:16:5-79
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:16:5-79
+MERGED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:16:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2e5a5ac2bf8eca2647ee20ce6b30aa36\transformed\play-services-measurement-impl-21.2.2\AndroidManifest.xml:27:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2e5a5ac2bf8eca2647ee20ce6b30aa36\transformed\play-services-measurement-impl-21.2.2\AndroidManifest.xml:27:5-79
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\demet\.gradle\caches\transforms-3\bdcc890bf0ca1e11575c5cac44c0c6c9\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
@@ -1570,37 +1570,37 @@ ADDED from [androidx.window:window:1.0.0] C:\Users\demet\.gradle\caches\transfor
 	android:name
 		ADDED from [androidx.window:window:1.0.0] C:\Users\demet\.gradle\caches\transforms-3\a5ef7ae27cf703cc022e98fc03308a47\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
 provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:29:9-32:40
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:29:9-32:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:31:13-72
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:31:13-72
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:32:13-37
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:30:13-70
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:30:13-70
 receiver#com.facebook.CurrentAccessTokenExpirationBroadcastReceiver
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:34:9-40:20
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:34:9-40:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:36:13-37
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:36:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:35:13-86
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:35:13-86
 intent-filter#action:name:com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:37:13-39:29
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:37:13-39:29
 action#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:38:17-95
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:38:17-95
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:38:25-92
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:38:25-92
 receiver#com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:41:9-47:20
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:41:9-47:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:43:13-37
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:42:13-118
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:42:13-118
 intent-filter#action:name:com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:44:13-46:29
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:44:13-46:29
 action#com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:45:17-103
+ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:45:17-103
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.1.2] C:\Users\demet\.gradle\caches\transforms-3\ab6ab0aacaf853b8dcbf088e51166aff\transformed\facebook-core-16.1.2\AndroidManifest.xml:45:25-100
+		ADDED from [com.facebook.android:facebook-core:16.1.3] C:\Users\demet\.gradle\caches\transforms-3\d6bff05aa8b4e050d59d58b45a08b154\transformed\facebook-core-16.1.3\AndroidManifest.xml:45:25-100
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\7a7c56abcc5791a02a2c92b28c7d4836\transformed\play-services-measurement-21.2.2\AndroidManifest.xml:26:5-110
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Users\demet\.gradle\caches\transforms-3\2e5a5ac2bf8eca2647ee20ce6b30aa36\transformed\play-services-measurement-impl-21.2.2\AndroidManifest.xml:26:5-110
