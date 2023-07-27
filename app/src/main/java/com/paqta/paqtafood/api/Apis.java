@@ -18,4 +18,8 @@ public class Apis {
         return RetrofitClient.getCliente(URL_001).create(CategoriaAPI.class);
     }
 
+    public static  PedidoAPI getPedidoService() {
+        return RetrofitClient.getCliente(URL_001).create(PedidoAPI.class);
+    }
+
 }

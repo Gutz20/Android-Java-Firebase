@@ -14,8 +14,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.paqta.paqtafood.ui.user.login.Login;
-
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

@@ -3,6 +3,12 @@ package com.paqta.paqtafood.ui.admin.dishes;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,13 +17,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -59,7 +58,6 @@ public class DishesFragment extends Fragment {
 
     private static final String STORAGE_PATH_PDF_CARTILLA = "archivos/cartilla.pdf";
     private static final String STORAGE_EDITED_PDF_NAME = "cartilla_editada.pdf";
-
     FloatingActionButton fab;
     Button btnAdd, btnUpdateCartilla, btnViewState;
     RecyclerView mRecycler;

@@ -609,6 +609,8 @@ layout fragment_staff
 layout fragment_third_step_cart
 layout info_window_layout
 layout item_container_user
+layout item_detalle_pedido
+layout item_pedido
 layout list_element
 layout nav_header
 layout progress_layout

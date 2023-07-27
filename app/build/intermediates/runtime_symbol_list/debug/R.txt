@@ -5670,6 +5670,8 @@ int layout image_carousel 0x7f0d0071
 int layout info_window_layout 0x7f0d0072
 int layout item_carousel 0x7f0d0073
 int layout item_container_user 0x7f0d0074
+int layout item_detalle_pedido 0x7f0d0109
+int layout item_pedido 0x7f0d010a
 int layout list_element 0x7f0d0075
 int layout m3_alert_dialog 0x7f0d0076
 int layout m3_alert_dialog_actions 0x7f0d0077
